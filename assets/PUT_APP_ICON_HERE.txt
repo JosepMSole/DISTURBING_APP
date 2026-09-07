@@ -1,0 +1,22 @@
+ICONO DE LA APP
+===============
+
+Coloca aquí tu PNG cuadrado con este nombre exacto:
+
+    app-icon.png
+
+Ruta final:
+
+    pwa/assets/app-icon.png
+
+Al ejecutar START_DISTURBING_LOCAL.bat / .command, launcher.py genera automáticamente:
+- pwa/icons/icon-180.png
+- pwa/icons/icon-192.png
+- pwa/icons/icon-512.png
+
+Esos son los iconos usados al instalar la PWA.
+El logo lateral sigue siendo:
+
+    pwa/assets/disturbing-logo.png
+
+El archivo ICO no es necesario para la PWA.

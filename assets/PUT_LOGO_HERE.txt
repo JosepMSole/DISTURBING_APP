@@ -1,0 +1,11 @@
+LOGO DISTURBING STORIES
+
+Coloca aquí tu logo como:
+
+disturbing-logo.png
+
+Ruta final:
+pwa/assets/disturbing-logo.png
+
+Recomendado: PNG transparente, horizontal, sin márgenes excesivos.
+La PWA lo cargará automáticamente en la cabecera. Si el archivo no existe, mostrará el texto DISTURBING STORIES como respaldo.
