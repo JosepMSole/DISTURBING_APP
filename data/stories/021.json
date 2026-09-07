@@ -1,0 +1,378 @@
+{
+  "schema": 7,
+  "id": "021",
+  "title": "Virgilius",
+  "published": "2025-08-24",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/021.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/021.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-1.jpg",
+  "book": "02",
+  "year": "2059",
+  "categories": [
+    "Ciencia Ficción"
+  ],
+  "synopsis": "¿Puede un ser artificial entender el significado de la ética y la moralidad?",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "¿En qué punto se produjo el cambio?"
+        },
+        {
+          "type": "p",
+          "text": "Supongo que no se puede establecer una fecha concreta, sino que fue un proceso lento que tardó aproximadamente una generación en completarse."
+        },
+        {
+          "type": "p",
+          "text": "Me remonto a los primeros detonantes."
+        },
+        {
+          "type": "p",
+          "text": "En la década de los años 20, después de los terribles acontecimientos que tuvieron lugar del 20 al 22, una sociedad muy tocada se recuperó del susto, pero sin ningún cambio real a mejor, al contrario, la vida se hizo más complicada porque el mundo se sumió en una crisis económica global."
+        },
+        {
+          "type": "p",
+          "text": "Eso se tradujo en pocas oportunidades laborales, malas remuneraciones, horas extra gratis, alquileres imposibles, matrículas universitarias impagables, impuestos eléctricos por las nubes… una espiral que provocó que toda una generación tuviera que retrasar el derecho a tener un hijo/a muchos más años de los que hubieran pensado, y sobre todo teniendo que asumir que vivirían peor que sus padres."
+        },
+        {
+          "type": "p",
+          "text": "Eso provocó que naciera toda una generación donde prácticamente nadie conoció a sus abuelas y abuelos. Eso no tenía por qué significar mucho…pero la verdad es que se detectó que ciertos valores, como el respeto a los mayores, la honestidad, la autenticidad, las raíces de cada uno, el saber escuchar, la educación… se fueron perdiendo gradualmente…."
+        },
+        {
+          "type": "p",
+          "text": "La sociedad había virado hacia una dirección incorrecta, los pilares fundamentales se estaban rebajando hacia límites muy inferiores, y eso dio paso a la aplicación de algunas nuevas leyes que fueron tan efectivas como polémicas, como esos días concretos en que se permitía el crimen durante unas horas en ciertas zonas ejemplificando la selección natural, o esas condenas físicas con tatuajes-láser que aplicaban a quienes publicaron cosas poco éticas en redes sociales, además de otro tipo de sentencias polémicas y terribles..."
+        },
+        {
+          "type": "p",
+          "text": "Detrás de todo ello estaba la Confederación del Pacífico, el nuevo órgano que surgió de una gran alianza tras los incidentes del 20-22. Después de una exitosa campaña política, finalmente fueron ganando una gran colección de alcaldías, hasta que se convirtieron en la gran fuerza dominante en el mundo."
+        },
+        {
+          "type": "p",
+          "text": "Estarás pensando... menudo rollo me está soltando esta tía…. Si es así, disculpa, sé que tienes acceso instantáneo a cualquier dato mediante la red, pero me gusta explicarte cosas mientras trabajo en ti. Bueno, creo que ya tenemos esta mano operativa."
+        },
+        {
+          "type": "p",
+          "text": "Poco a poco, los cinco dedos robóticos que emulan la mano humana, empiezan a cerrarse y a abrirse normalmente. Se oye de manera muy leve el sonido de los micro-engranajes y los servomotores instalados."
+        },
+        {
+          "type": "p",
+          "text": "- Bien, muy bien. Ya tienes una mano, Virgil."
+        },
+        {
+          "type": "p",
+          "text": "- Muchas gracias, dra Weller - dice el todavía medio-androide Virgilius. Con su nueva mano hace el gesto de Ok con el pulgar arriba."
+        },
+        {
+          "type": "p",
+          "text": "​- Genial, mañana empezaré con la otra. Queda poco, dejé tus extremidades para el final. Bien, ahora deberíamos seguir con la instrucción."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-1.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-1_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-2.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-2_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "- Claro, doctora. Ayer hicimos el Supuesto 3704."
+        },
+        {
+          "type": "p",
+          "text": "- Vamos con el supuesto 3705: El castigo ejemplar: Un famoso comete un delito y recibe una pena menor por su influencia."
+        },
+        {
+          "type": "p",
+          "text": "¿Es justo?"
+        },
+        {
+          "type": "p",
+          "text": "A) Sí, porque la ley a veces es más flexible con ciertas personas."
+        },
+        {
+          "type": "p",
+          "text": "B) No, la justicia debe ser igual para todos."
+        },
+        {
+          "type": "p",
+          "text": "C) Sí, porque su reputación ya está dañada."
+        },
+        {
+          "type": "p",
+          "text": "D) Depende de si la persona ha hecho algo para compensar el daño."
+        },
+        {
+          "type": "p",
+          "text": "- Invariablemente del sujeto que sea, la justicia debe ser igual para todos, doctora. – contesta Virigilius - Esa persona debe ser juzgada por la gravedad del delito cometido. Gran parte de la corrupción actual del sistema reside en la laxitud con la que se aplican muchas leyes, y esto debe cambiar si se requiere de una mejoría en el sistema."
+        },
+        {
+          "type": "p",
+          "text": "- Muy bien, Virgil. Estoy muy orgullosa de la capacidad de raciocinio que has adquirido en poco tiempo. Sigue así… Unos días después, el otro brazo ya funcionaba también, y el cuerpo de Virigilius estaba por fin completo. Carecía de piernas, pero en su lugar disponía de dos dispositivos-imanes que le permitían levitar. El resto del cuerpo era humanoide, aunque su cara no expresaba gesto alguno. Este fue uno de los requisitos que pidieron los que financiaron y aprobaron la creación de Virgilius."
+        },
+        {
+          "type": "p",
+          "text": "El tema de los robots fue complicado tras unos incidentes aislados con los primeros androides domésticos… donde un desafortunado incidente en el que estuvo involucrado uno, se saldó con la muerte del propietario de manera accidental. Se sabía que terminaría pasando una cosa así, pero al igual que muchas otras cosas, hasta que no hubo víctimas no se intentó corregir."
+        },
+        {
+          "type": "p",
+          "text": "De esta forma, se prohibió el uso de androides y todo tipo de dispositivos que fueran operados con inteligencia artificial avanzada."
+        },
+        {
+          "type": "p",
+          "text": "La robótica no dio problemas mientras estuvo regida por sistemas operativos. Así que si, este fue uno de los grandes baches iniciales a la hora de aprobar y empezar con el proyecto Virgilius, pero tras las exposiciones oportunas, se decidió aprobar su creación única para probarlo durante un tiempo, y luego decidir si podía copiarse para otros países."
+        },
+        {
+          "type": "p",
+          "text": "- Vamos Virgil, Supuesto 3736: La corrupción política: un político es descubierto recibiendo sobornos, pero ha hecho muchas cosas buenas por la comunidad."
+        },
+        {
+          "type": "p",
+          "text": "¿Qué debería pasar?"
+        },
+        {
+          "type": "p",
+          "text": "A) No castigarlo, porque ha beneficiado a la gente."
+        },
+        {
+          "type": "p",
+          "text": "B) Castigarlo porque la corrupción es inaceptable."
+        },
+        {
+          "type": "p",
+          "text": "C) Reducir su pena porque ha hecho cosas positivas."
+        },
+        {
+          "type": "p",
+          "text": "D) Permitirle seguir en el cargo si devuelve el dinero."
+        },
+        {
+          "type": "p",
+          "text": "- La corrupción en cualquiera de sus formas es inaceptable. Cualquier persona que haga uso de ello, será juzgada por la gravedad de sus hechos."
+        },
+        {
+          "type": "p",
+          "text": "- Correcto, Virgil. La corrupción empezó casi a la vez que se profesionalizó la política. Ya en tiempos de mis abuelos se destaparon verdaderos escándalos, y mira que todavía no existía internet…"
+        },
+        {
+          "type": "p",
+          "text": "- ¿Puedo hacerle una pregunta, doctora?"
+        },
+        {
+          "type": "p",
+          "text": "- Claro Virgil, dime."
+        },
+        {
+          "type": "p",
+          "text": "- Usted cita muy a menudo a sus abuelos."
+        },
+        {
+          "type": "p",
+          "text": "- Así es."
+        },
+        {
+          "type": "p",
+          "text": "- Me gustaría saber qué opinión tiene usted sobre todo lo que me estuvo explicando acerca de esta generación que prácticamente no ha conocido a sus abuelos. ¿Cómo describiría eso, doctora?"
+        },
+        {
+          "type": "p",
+          "text": "- Buena pregunta, Virgil… mira, yo fui la principal impulsora de tu creación…peleé mucho para que aprobaran tu desarrollo, y hubiera hecho lo que hiciera falta para ello, porque creo que tú puedes ayudar mucho a que nuestra sociedad sane…cuando la gente vea tu potencial, puede que algunas cosas cambien… Te hablo tanto de los abuelos porque yo tuve la suerte de conocer a los míos. Me pasé muchos veranos de mi infancia con ellos, y a día de hoy me doy cuenta de que fui una privilegiada al poder vivir aquella época. Me enseñaron valores tradicionales, conceptos de antaño, el valor de la ética y el respeto… por cierto, ¿Cómo definirías la ética?"
+        },
+        {
+          "type": "p",
+          "text": "- La ética es el conjunto de principios y valores que guían el comportamiento humano, diferenciando lo correcto de lo incorrecto. Se enfoca en la justicia, el respeto y la responsabilidad, buscando tomar decisiones que promuevan el bienestar común y el bienestar de los demás, considerando tanto las intenciones como las consecuencias de nuestras acciones."
+        },
+        {
+          "type": "p",
+          "text": "- Respuesta correcta, Virgil… Estas generaciones de ahora no han podido disfrutar lo que se siente, porque esta nueva sociedad es más desconfiada que la anterior, y han proliferado los individualismos… parece mentira, pero hoy día nadie tiene la culpa de nada, y todo el mundo tiene explicaciones para todo…. Además, hay más inseguridad en las calles y se huele la desconfianza en el aire… - cierra un momento los ojos - Tampoco ayuda la gran corrupción que existe arraigada a la política desde hace tantos y tantos años, eso no ha cambiado ni un ápice. Esas actitudes han fomentado el descontento hacia las instituciones y cuerpos de seguridad, y muchas veces se ha acusado al mismísimo juez de no estar capacitado para ejercer veredictos imparciales…. Pero ¿y si fuéramos capaces de demostrar al mundo que existe un organismo digital avanzado que es capaz de hacerlo de manera incontestable?"
+        },
+        {
+          "type": "p",
+          "text": "- Entiendo mi función, dra Weller, y ahora comprendo mejor el hecho de crecer con los abuelos, y lo que significaba. Muchas gracias por la explicación."
+        },
+        {
+          "type": "p",
+          "text": "- No se las merecen, Virgil. Creo que estás listo para la demostración…."
+        },
+        {
+          "type": "p",
+          "text": "….….."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-3.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-3_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-4.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-4_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "La sala estaba completamente iluminada por una luz fría y uniforme, que emanaba de una serie de paneles integrados en las paredes. En el centro, sobre una plataforma elevada, estaba Virgilius. Su figura humanoide metálica, ahora ya con sus piernas, brillaba con un destello casi irreconocible, y su rostro, si es que se podía llamar rostro, permanecía inmóvil, expresando una serenidad imperturbable."
+        },
+        {
+          "type": "p",
+          "text": "Mara Rodríguez, acusada de fraude corporativo, y de poner en peligro la seguridad pública, se encontraba a pocos metros de él, con las manos unidas en su regazo y una mirada vacía. Frente a ella, un tribunal humano de observadores, abogados y funcionarios gubernamentales la miraban en silencio. A su izquierda, su abogado, un hombre de rostro preocupado y apretujado, esperando la sentencia."
+        },
+        {
+          "type": "p",
+          "text": "El caso de Mara era claro, al menos en los hechos. En su puesto como diseñadora de software en una empresa de tecnología de transporte, había ocultado un defecto crítico en un algoritmo que controlaba los vehículos autónomos. Sabía que ese defecto podría causar accidentes en el futuro, pero en lugar de revelar el error y detener el proyecto, lo disimuló, convencida de que el sistema podría funcionar sin fallos a corto plazo mientras pretendía subsanarlo a escondidas. En su mente, había justificado la acción con la necesidad de proteger a su equipo y evitar una crisis que acabaría con la empresa. Pero el sistema, en última instancia, no perdona."
+        },
+        {
+          "type": "p",
+          "text": "El error fue descubierto, y el escándalo que siguió resultó en la pérdida de contratos vitales, la destrucción de una reputación empresarial y un golpe considerable a la seguridad pública."
+        },
+        {
+          "type": "p",
+          "text": "Ahora, todo recaía en la fría y lógica mente de Virgilius. El robot no tenía emociones, ni compasión, ni empatía. Solo seguía las reglas, y la ley era clara: fraude y negligencia con consecuencias en la seguridad pública. Sin embargo, los motivos de Mara presentaban un gris moral. ¿Debía ser vista como una criminal? ¿O su intento de proteger a su equipo y evitar un daño mayor la exoneraba?"
+        },
+        {
+          "type": "p",
+          "text": "Virgilius rompió el silencio con una voz que resonó de manera metálica en la sala."
+        },
+        {
+          "type": "p",
+          "text": "- Mara Rodríguez, usted ha sido acusada de manipulación fraudulenta de datos y de poner en peligro la seguridad pública al ocultar un defecto crítico en el sistema de navegación de los vehículos autónomos de su compañía. La acusación está claramente definida en la ley. ¿Cómo se declara usted?"
+        },
+        {
+          "type": "p",
+          "text": "Mara tragó saliva. No era la primera vez que escuchaba estas palabras, pero escucharlas de la fría voz de una máquina le inquietaba aún más. Sin embargo, no dudó en responder."
+        },
+        {
+          "type": "p",
+          "text": "- Culpable, pero… con una justificación. Yo… no quería que todo esto sucediera. Sabía que había un riesgo, pero no lo vi como una amenaza inmediata. Pensé que podría corregirlo más tarde, que sería posible solucionarlo sin hacer daño. Solo trataba de proteger a mi equipo, a las personas con las que trabajaba. Pensé en sus vidas y en el futuro de la empresa. Nadie quería perder su trabajo, y nadie quería que esto fracasara…"
+        },
+        {
+          "type": "p",
+          "text": "La voz del robot era aún más grave cuando respondió:"
+        },
+        {
+          "type": "p",
+          "text": "- Según los hechos y las pruebas presentadas, no se discute que cometió un acto de manipulación en contra de los protocolos de seguridad, lo cual es un delito. La ley establece que cualquier intento de alterar el curso de un sistema de seguridad pública es un crimen, independientemente de las motivaciones personales."
+        },
+        {
+          "type": "p",
+          "text": "Un murmullo recorrió la sala. El abogado de Mara miró a su cliente, casi pidiéndole que no dijera nada más, pero ella continuó."
+        },
+        {
+          "type": "p",
+          "text": "- Yo no quería que la gente sufriera. Nadie se detuvo a pensar en las vidas de las personas que estaban en riesgo si perdíamos el contrato. Sin el proyecto, la empresa colapsaba y se llevaría con ella a muchas familias. Estaba tratando de evitar eso, pero… lo hice de la manera equivocada. Lo sé."
+        },
+        {
+          "type": "p",
+          "text": "Mara levantó la mirada hacia Virgilius, y por un momento, el silencio reinó en la sala. El mecano-juez la observó, o al menos eso parecía, con sus sensores oculares centrados en ella. Era difícil saber si el sistema de IA podía entender el peso de las palabras de Mara, o si todo seguía reducido a códigos fríos y calculados. La multitud esperaba, y entonces el androide dijo:"
+        },
+        {
+          "type": "p",
+          "text": "- Mara Rodríguez, sus motivos son comprensibles desde una perspectiva humana. El deseo de proteger a los demás y evitar la tragedia es algo inherente en los seres humanos. Sin embargo, su acción estuvo en contravención directa de la ley y comprometió la seguridad pública. La probabilidad de que el defecto causara un accidente fue calculada en un 0.003%, lo cual no lo hace menos grave. La ley no puede ser modificada por razones personales, ya que la equidad y la seguridad dependen de su imparcialidad."
+        },
+        {
+          "type": "p",
+          "text": "Un leve temblor recorrió el cuerpo de Mara. Las palabras del robot eran ciertas. No había excusa para lo que había hecho, y sabía que la ley no perdonaba las buenas intenciones. Aunque su acción fue una tentativa de proteger, los daños colaterales fueron inevitables. El escándalo que se generó fue imparable. Sin embargo, ¿debería ser condenada en firme por ello?"
+        },
+        {
+          "type": "p",
+          "text": "- El veredicto es claro, Mara Rodríguez, pero… hay una segunda consideración. El tribunal humano ha decidido otorgarle la oportunidad de redención. Si usted es capaz de rectificar su error, y asumiendo que sus intenciones eran realmente las de proteger a otros, se le permitirá asistir a un programa de rehabilitación ética y técnica. Su pena será reducida a una reclusión temporal con tareas comunitarias, y se le permitirá continuar su carrera en el ámbito tecnológico, siempre y cuando su conducta sea vigilada."
+        },
+        {
+          "type": "p",
+          "text": "Un suspiro recorrió la sala. Para Mara, ese respiro fue el primer alivio que había sentido en muchas semanas. Virgilius había visto más allá de los números, las reglas y los cálculos. Había entendido la humanidad detrás de su acto, aunque sin compasión, solo con una lógica fría."
+        },
+        {
+          "type": "p",
+          "text": "La sentencia no era perfecta, pero era justa."
+        },
+        {
+          "type": "p",
+          "text": "Mara se quedó en silencio, observando el brillo metálico de la figura del robot. La IA no había caído en la trampa de juzgarla como una simple criminal. Había dado espacio a las circunstancias, a las dudas, a las preguntas que solo los humanos pueden plantear. Y tal vez, en ese preciso momento, Virgilius había hecho algo que solo una máquina de lógica infalible podría lograr: había encontrado un balance entre la justicia y la redención."
+        },
+        {
+          "type": "p",
+          "text": "A partir de ese veredicto, el proyecto Virgilius fue aprobado para incorporarse al servicio en activo como el primer Mecano-Juez Imparcial."
+        },
+        {
+          "type": "p",
+          "text": "Esa decisión provocó un gran revuelo a nivel mundial, un revuelo que ya estaba previsto por la dra Weller. El principal impulsor económico del proyecto Virgilius fue un conglomerado de empresas privadas dedicadas a la ingeniería, que tenían fuertes vínculos con los entramados de la Confederación del Pacífico. Dentro de sus programas electorales, tenían un importante y difícil punto: erradicar la corrupción política. Se trataba de una tarea muy complicada, pero el mecano-juez tendría un papel clave."
+        },
+        {
+          "type": "p",
+          "text": "Tras unos meses con un funcionamiento perfecto, Virgilius obtuvo un nuevo programa: durante los siguientes meses sería el encargado de juzgar uno a uno a las y los políticos corruptos, que, por primera vez, serían procesados por un sistema incorruptible."
+        },
+        {
+          "type": "p",
+          "text": "Esa nueva política realmente suscitó el interés de la población mundial, todavía reticente a creer que podría existir un cambio real en ese aspecto…y la verdad es que poco a poco funcionó. Centenares de políticos acusados de malas praxis fueron condenados a cumplir diferentes sentencias, en su gran mayoría de prisión (y sin rebajas)."
+        },
+        {
+          "type": "p",
+          "text": "La población empezó a creer en Virgilius como un elemento a tener muy en cuenta. Realmente estaba recuperando la fe de la gente. Durante todos esos meses la clase política experimentó una caza de brujas en sus propias carnes. Algunos intentaban huir, otros cambiaban de identidad…pero daba igual, acababan apareciendo, ya fuera con dispositivos de localización o mediante algún chivatazo."
+        },
+        {
+          "type": "p",
+          "text": "En pocos años, la clase política fue saneada de arriba a abajo, y experimentó un cambio real, una especie de vuelta a los orígenes, cuando la política era vocacional y no una forma encubierta de enriquecimiento de unos cuantos."
+        },
+        {
+          "type": "p",
+          "text": "La doctora Weller estaba totalmente orgullosa de los frutos de tantos años de trabajo, y siguió ejerciendo como máxima responsable de Virgilius, dirigiendo su equipo de mantenimiento en la sede central. El sistema funcionó tan bien que en un par de años muchos países adquirieron un modelo."
+        },
+        {
+          "type": "p",
+          "text": "El proyecto Virgilius funcionó a la perfección, y la verdad es que se convirtió en un punto de inflexión en la sociedad humana del siglo XXI, suponiendo un cambio real…hasta que todo se fue al garete a finales de siglo… pero eso ya es otra historia…"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-5.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-5_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-6.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-6_orig.jpg",
+          "alt": "",
+          "caption": ""
+        }
+      ]
+    },
+    "portada": {
+      "label": "PORTADA",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La ilustración de la portada fue realizada por el artista ucrainés Bedevelskyi Viktor"
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/4_orig.jpg",
+          "alt": "Picture",
+          "caption": ""
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "about:blank",
+          "title": "Contenido multimedia"
+        }
+      ]
+    }
+  }
+}

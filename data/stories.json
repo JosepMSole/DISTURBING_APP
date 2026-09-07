@@ -1,0 +1,1369 @@
+{
+  "schema": 6,
+  "updated": "2026-09-07T18:34:42.999158+00:00",
+  "stories": [
+    {
+      "id": "277",
+      "title": "Marzo 1950",
+      "published": "2026-08-02",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/277.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/277-marzo-1950-frame-1.jpg",
+      "data": "./data/stories/277.json",
+      "source": "https://www.disturbingstories.com/277.html",
+      "protected": true,
+      "book": "05",
+      "year": "1950",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "El último mensaje del Aurora anunciaba una pesadilla bajo el mar…",
+      "tabLabels": [
+        "LEER",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 12
+    },
+    {
+      "id": "174",
+      "title": "Cabezas Perdidas: un caso de Charles McSuzan",
+      "published": "2026-08-02",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/174.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/174-cabezas-perdidas-frame-1.jpg",
+      "data": "./data/stories/174.json",
+      "source": "https://www.disturbingstories.com/174.html",
+      "protected": true,
+      "book": "05",
+      "year": "2026",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Alguien estaba dejando unos inquietantes frascos por toda la ciudad…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 6
+    },
+    {
+      "id": "136",
+      "title": "Colección",
+      "published": "2026-08-02",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/136.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/136-coleccion-frame-01.jpg",
+      "data": "./data/stories/136.json",
+      "source": "https://www.disturbingstories.com/136.html",
+      "protected": true,
+      "book": "05",
+      "year": "2378",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "El Gigamotor debía llevar a la humanidad a un brillante futuro.…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 15
+    },
+    {
+      "id": "130",
+      "title": "La Logia",
+      "published": "2026-08-02",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/130.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/130-la-logia-frame-1.jpg",
+      "data": "./data/stories/130.json",
+      "source": "https://www.disturbingstories.com/130.html",
+      "protected": true,
+      "book": "05",
+      "year": "1999",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Miriam tiene predilección por el estudio de sectas medievales...",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 11
+    },
+    {
+      "id": "105",
+      "title": "Motel Lockwood",
+      "published": "2026-08-02",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/105.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/105-motel-lockwood-frame-1.jpg",
+      "data": "./data/stories/105.json",
+      "source": "https://www.disturbingstories.com/105.html",
+      "protected": true,
+      "book": "05",
+      "year": "2048",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "¿Quieres una habitación en este apartado motel de carretera?",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 8
+    },
+    {
+      "id": "091",
+      "title": "Conflicto Lunar: Episodio I",
+      "published": "2026-08-02",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/091.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/091-conflicto-lunar-1-frame-1.jpg",
+      "data": "./data/stories/091.json",
+      "source": "https://www.disturbingstories.com/091.html",
+      "protected": true,
+      "book": "05",
+      "year": "2074",
+      "categories": [
+        "Terror",
+        "Ciencia Ficción"
+      ],
+      "synopsis": "En 2074 se empezó a construir la primera colonia lunar de la humanidad…",
+      "tabLabels": [
+        "LEER",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 13
+    },
+    {
+      "id": "026",
+      "title": "Distorsion: Vendetta",
+      "published": "2026-08-02",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/026.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/book-5-final-saga-distorsion-v2.jpg?1781186213",
+      "data": "./data/stories/026.json",
+      "source": "https://www.disturbingstories.com/026.html",
+      "protected": true,
+      "book": "05",
+      "year": "2029",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Ni el Doctor Desmond Phelps hubiera imaginado un final así…",
+      "tabLabels": [
+        "LEER",
+        "EPÍLOGO",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 26
+    },
+    {
+      "id": "008",
+      "title": "Rugidos en la Lluvia",
+      "published": "2026-07-26",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/008.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/008-rugidos-en-la-lluvia-frame-01.jpg",
+      "data": "./data/stories/008.json",
+      "source": "https://www.disturbingstories.com/008.html",
+      "protected": false,
+      "book": "05",
+      "year": "1997",
+      "categories": [
+        "Terror",
+        "Oscuras"
+      ],
+      "synopsis": "En plena tormenta, Jacob vio temblar el agua de su vaso...",
+      "tabLabels": [
+        "LEER",
+        "AUDIO",
+        "TEASER"
+      ],
+      "features": [
+        "audio"
+      ],
+      "readTime": 7
+    },
+    {
+      "id": "180",
+      "title": "Dolor por Caída",
+      "published": "2026-07-19",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/180.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/180-dolor-por-caida-frame-1.jpg",
+      "data": "./data/stories/180.json",
+      "source": "https://www.disturbingstories.com/180.html",
+      "protected": false,
+      "book": "05",
+      "year": "2034",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "A veces el dolor no se siente… se libera…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 7
+    },
+    {
+      "id": "088",
+      "title": "Render Final",
+      "published": "2026-07-05",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/088.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-1.jpg",
+      "data": "./data/stories/088.json",
+      "source": "https://www.disturbingstories.com/088.html",
+      "protected": false,
+      "book": "05",
+      "year": "2073",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Xavier recibió un email con una curiosa propuesta 3D…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 16
+    },
+    {
+      "id": "240",
+      "title": "Las Sillas",
+      "published": "2026-06-28",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/240.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/240-las-sillas-frame-1.jpg",
+      "data": "./data/stories/240.json",
+      "source": "https://www.disturbingstories.com/240.html",
+      "protected": false,
+      "book": "05",
+      "year": "2003",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Pensaron que por ser turistas tendrían impunidad…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 3
+    },
+    {
+      "id": "211",
+      "title": "Michi",
+      "published": "2026-06-21",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/211.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/01.jpg",
+      "data": "./data/stories/211.json",
+      "source": "https://www.disturbingstories.com/211.html",
+      "protected": false,
+      "book": "05",
+      "year": "2099",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "El gato notaba un zumbido que nadie más escuchaba…",
+      "tabLabels": [
+        "LEER",
+        "CORTO",
+        "GATETE",
+        "TEASER"
+      ],
+      "features": [
+        "extra",
+        "video"
+      ],
+      "readTime": 8
+    },
+    {
+      "id": "209",
+      "title": "El Guardián del Pretorio",
+      "published": "2026-06-14",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/209.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/209-guardian-pretorio-frame-1.jpg",
+      "data": "./data/stories/209.json",
+      "source": "https://www.disturbingstories.com/209.html",
+      "protected": false,
+      "book": "05",
+      "year": "2010",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Debajo de Tarragona, la historia no se estudia: te examina...",
+      "tabLabels": [
+        "LEER",
+        "JUGAR",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 15
+    },
+    {
+      "id": "188",
+      "title": "Inodoro",
+      "published": "2026-06-07",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/188.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/188-inodoro-frame-1.jpg",
+      "data": "./data/stories/188.json",
+      "source": "https://www.disturbingstories.com/188.html",
+      "protected": false,
+      "book": "05",
+      "year": "2027",
+      "categories": [
+        "Terror",
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Nunca hagas scroll demasiado tiempo en el baño…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 11
+    },
+    {
+      "id": "276",
+      "title": "Febrero 1900",
+      "published": "2026-04-05",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/276.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/276-febrero-1900-frame-1.jpg",
+      "data": "./data/stories/276.json",
+      "source": "https://www.disturbingstories.com/276.html",
+      "protected": true,
+      "book": "04",
+      "year": "1900",
+      "categories": [
+        "Terror",
+        "Oscuras"
+      ],
+      "synopsis": "El periodista Leonard Voss está a punto de descubrir algo aterrador en la Torre Eiffel…",
+      "tabLabels": [
+        "LEER",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 7
+    },
+    {
+      "id": "050",
+      "title": "Quincuaginta",
+      "published": "2026-04-05",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/050.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/49-stories-v2_orig.jpg",
+      "data": "./data/stories/050.json",
+      "source": "https://www.disturbingstories.com/050.html",
+      "protected": true,
+      "book": "04",
+      "year": "2999",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Adéntrate en los secretos de la misteriosa Story publicada número #50…",
+      "tabLabels": [
+        "LEER",
+        "JUGAR",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 7
+    },
+    {
+      "id": "041",
+      "title": "Fratres usque ad finem",
+      "published": "2026-04-05",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/041.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/book-4-final-saga-hermanos-v2.jpg?1769742799",
+      "data": "./data/stories/041.json",
+      "source": "https://www.disturbingstories.com/041.html",
+      "protected": true,
+      "book": "04",
+      "year": "2052",
+      "categories": [
+        "Terror",
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "…hermanos, a pesar de todo…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 17
+    },
+    {
+      "id": "025",
+      "title": "Raven",
+      "published": "2026-04-05",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/025.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/book-4-final-saga-trilogia-raven-v2.jpg?1769741752",
+      "data": "./data/stories/025.json",
+      "source": "https://www.disturbingstories.com/025.html",
+      "protected": true,
+      "book": "04",
+      "year": "2020",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "A veces, hay que hacer lo que hay que hacer…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 8
+    },
+    {
+      "id": "017",
+      "title": "El Plan de 95 Delta",
+      "published": "2026-04-05",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/017.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/editor/book-4-final-saga-delta-files-v4.jpg?1769720438",
+      "data": "./data/stories/017.json",
+      "source": "https://www.disturbingstories.com/017.html",
+      "protected": true,
+      "book": "04",
+      "year": "2099",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Finales que llegan de forma inusitada…",
+      "tabLabels": [
+        "LEER",
+        "SPECIAL THEME",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 11
+    },
+    {
+      "id": "013",
+      "title": "La Isla de los Gruñidos",
+      "published": "2026-04-05",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/013.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/013-growl-island-frame-1.jpg",
+      "data": "./data/stories/013.json",
+      "source": "https://www.disturbingstories.com/013.html",
+      "protected": true,
+      "book": "04",
+      "year": "2007",
+      "categories": [
+        "Terror"
+      ],
+      "synopsis": "Una terrible y extraña tormenta tropical ha atrapado a un lujoso crucero…",
+      "tabLabels": [
+        "LEER",
+        "AUDIO",
+        "TEASER"
+      ],
+      "features": [
+        "audio"
+      ],
+      "readTime": 6
+    },
+    {
+      "id": "162",
+      "title": "El Fantasma Gigante",
+      "published": "2026-03-29",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/162.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/162-fantasma-gigante-frame-1.jpg",
+      "data": "./data/stories/162.json",
+      "source": "https://www.disturbingstories.com/162.html",
+      "protected": false,
+      "book": "04",
+      "year": "2016",
+      "categories": [
+        "Terror",
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Los chavales llegaron con sus bicicletas para jugar un rato detrás de ese antiguo castillo…",
+      "tabLabels": [
+        "LEER",
+        "CASTILLO",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 6
+    },
+    {
+      "id": "195",
+      "title": "Hotel Estelar",
+      "published": "2026-03-22",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/195.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/195-hotel-estelar-frame-1.jpg",
+      "data": "./data/stories/195.json",
+      "source": "https://www.disturbingstories.com/195.html",
+      "protected": false,
+      "book": "04",
+      "year": "2803",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Adéntrate en las misteriosas salas y pasillos de este particular Hotel…",
+      "tabLabels": [
+        "LEER",
+        "PRÓLOGO",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 7
+    },
+    {
+      "id": "148",
+      "title": "Cristal Trombón",
+      "published": "2026-03-15",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/148.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/148-cristal-trombon-frame-1.jpg",
+      "data": "./data/stories/148.json",
+      "source": "https://www.disturbingstories.com/148.html",
+      "protected": false,
+      "book": "04",
+      "year": "2018",
+      "categories": [
+        "Terror",
+        "Oscuras"
+      ],
+      "synopsis": "Algo vivía en el silencio de Nico…",
+      "tabLabels": [
+        "LEER",
+        "INSTRUMENTO",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 9
+    },
+    {
+      "id": "016",
+      "title": "Distorsion: Virus",
+      "published": "2026-03-08",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/016.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-saga-blackborder_orig.jpg",
+      "data": "./data/stories/016.json",
+      "source": "https://www.disturbingstories.com/016.html",
+      "protected": false,
+      "book": "04",
+      "year": "2023",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Antes de converger, hay ciertos procesos que avanzan paralelamente…",
+      "tabLabels": [
+        "LEER",
+        "BANDA SONORA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 18
+    },
+    {
+      "id": "023",
+      "title": "Dark Limits: El Otro Lado",
+      "published": "2026-03-01",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/023.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/book-4-final-saga-dark-limits-prelude-v4.jpg?1769738963",
+      "data": "./data/stories/023.json",
+      "source": "https://www.disturbingstories.com/023.html",
+      "protected": false,
+      "book": "04",
+      "year": "2020",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Finalmente, alguien se atreve a mirar al Otro Lado…",
+      "tabLabels": [
+        "LEER",
+        "JUGAR",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 7
+    },
+    {
+      "id": "215",
+      "title": "Skincare",
+      "published": "2026-02-22",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/215.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-1.jpg",
+      "data": "./data/stories/215.json",
+      "source": "https://www.disturbingstories.com/215.html",
+      "protected": false,
+      "book": "04",
+      "year": "2036",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Acompáñame a descubrir las maravillas de la nueva rutina Noctis Ritual, de Lumina…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 9
+    },
+    {
+      "id": "049",
+      "title": "Far Far West",
+      "published": "2026-02-15",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/049.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/far-far-west-gif-1.gif",
+      "data": "./data/stories/049.json",
+      "source": "https://www.disturbingstories.com/049.html",
+      "protected": false,
+      "book": "04",
+      "year": "1886",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Un encargo. Un objeto. Dinero. Sin preguntas…",
+      "tabLabels": [
+        "LEER",
+        "CORTO",
+        "TEASER"
+      ],
+      "features": [
+        "video"
+      ],
+      "readTime": 12
+    },
+    {
+      "id": "251",
+      "title": "Alien Park",
+      "published": "2026-02-08",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/251.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-1.jpg",
+      "data": "./data/stories/251.json",
+      "source": "https://www.disturbingstories.com/251.html",
+      "protected": false,
+      "book": "04",
+      "year": "2356",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Déjate cautivar por esta sorprendente biofauna alienígena…",
+      "tabLabels": [
+        "LEER",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 7
+    },
+    {
+      "id": "171",
+      "title": "Feliz Horror Nuevo",
+      "published": "2025-12-31",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/171.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/171-feliz-horror-nuevo-frame-1.jpg",
+      "data": "./data/stories/171.json",
+      "source": "https://www.disturbingstories.com/171.html",
+      "protected": false,
+      "book": "04",
+      "year": "2026",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Emilio y Claudia se disponen a celebrar la Nochevieja… aunque el año no empezará como esperan…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 16
+    },
+    {
+      "id": "003",
+      "title": "Recluso 93 Delta",
+      "published": "2025-12-07",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/003.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-1.gif",
+      "data": "./data/stories/003.json",
+      "source": "https://www.disturbingstories.com/003.html",
+      "protected": false,
+      "book": "03",
+      "year": "2099",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Recluso 93 Delta, humano, buenos días…",
+      "tabLabels": [
+        "LEER",
+        "AUDIO",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "audio",
+        "extra"
+      ],
+      "readTime": 4
+    },
+    {
+      "id": "238",
+      "title": "Acueducto Maldito",
+      "published": "2025-11-30",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/238.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/238-acueducto-maldito-frame-1.jpg",
+      "data": "./data/stories/238.json",
+      "source": "https://www.disturbingstories.com/238.html",
+      "protected": false,
+      "book": "03",
+      "year": "2009",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "La madre de Marc solía decir que tenía un radar para lo extraño, y aquel lugar olía a historia dormida...",
+      "tabLabels": [
+        "LEER",
+        "\"PONT DEL DIABLE\"",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 9
+    },
+    {
+      "id": "160",
+      "title": "Brainstorming: un caso de Charles McSuzan",
+      "published": "2025-11-23",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/160.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/160-brainstorming-frame-1.jpg",
+      "data": "./data/stories/160.json",
+      "source": "https://www.disturbingstories.com/160.html",
+      "protected": false,
+      "book": "03",
+      "year": "2025",
+      "categories": [
+        "Terror",
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Cada hilo que tiraba en sus investigaciones personales lo llevaba a una misma palabra: Aura…",
+      "tabLabels": [
+        "LEER",
+        "MCSUZAN",
+        "PRECUELA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 7
+    },
+    {
+      "id": "107",
+      "title": "Battleaxe Legends",
+      "published": "2025-11-16",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/107.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/107-battleaxe-frame-1-gif.gif",
+      "data": "./data/stories/107.json",
+      "source": "https://www.disturbingstories.com/107.html",
+      "protected": false,
+      "book": "03",
+      "year": "1996",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Teníamos por delante todo el fin de semana para dedicarlo a nuestro hobby favorito: ¡Battleaxe!",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 16
+    },
+    {
+      "id": "007",
+      "title": "Infection",
+      "published": "2025-11-09",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/007.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/007-infection-frame-1.jpg",
+      "data": "./data/stories/007.json",
+      "source": "https://www.disturbingstories.com/007.html",
+      "protected": false,
+      "book": "03",
+      "year": "2023",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "¿Mi sitio en todo esto? Yo no soy nadie… y parece que alguien pensó lo mismo...",
+      "tabLabels": [
+        "LEER",
+        "AUDIO",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "audio",
+        "extra"
+      ],
+      "readTime": 4
+    },
+    {
+      "id": "029",
+      "title": "Se Busca Niñera",
+      "published": "2025-11-02",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/029.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/029-se-busca-ni-era-gif-1.gif?1760237088",
+      "data": "./data/stories/029.json",
+      "source": "https://www.disturbingstories.com/029.html",
+      "protected": false,
+      "book": "03",
+      "year": "2032",
+      "categories": [
+        "Terror"
+      ],
+      "synopsis": "Marisa necesita empleo, y cada día rebusca entre anuncios para encontrar alguna oportunidad…",
+      "tabLabels": [
+        "LEER",
+        "CORTO",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra",
+        "video"
+      ],
+      "readTime": 8
+    },
+    {
+      "id": "097",
+      "title": "El Libro Misterioso",
+      "published": "2025-10-25",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/097.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/097-el-libro-misterioso-frame-1.jpg",
+      "data": "./data/stories/097.json",
+      "source": "https://www.disturbingstories.com/097.html",
+      "protected": false,
+      "book": "03",
+      "year": "2018",
+      "categories": [
+        "Terror"
+      ],
+      "synopsis": "La campanilla de la puerta emitió su habitual tintineo cuando Michel empujó, pero descubrió algo extraño: había una caja misteriosa encima del mostrador…",
+      "tabLabels": [
+        "LEER",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 8
+    },
+    {
+      "id": "015",
+      "title": "El Último Tren",
+      "published": "2025-10-19",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/015.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/015-el-ultimo-tren-frame-1.jpg",
+      "data": "./data/stories/015.json",
+      "source": "https://www.disturbingstories.com/015.html",
+      "protected": false,
+      "book": "03",
+      "year": "2109",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Todos los habitantes del continente conocen las normas…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 6
+    },
+    {
+      "id": "275",
+      "title": "Enero 1850",
+      "published": "2025-10-12",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/275.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/275-enero-1850-frame-1.jpg",
+      "data": "./data/stories/275.json",
+      "source": "https://www.disturbingstories.com/275.html",
+      "protected": false,
+      "book": "03",
+      "year": "1850",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "La ciudad de Viena se encontraba sumida en un invierno despiadado...",
+      "tabLabels": [
+        "LEER",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 8
+    },
+    {
+      "id": "033",
+      "title": "La Maldición del Escarabajo",
+      "published": "2025-08-31",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/033.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/frase-1-bk_orig.jpg",
+      "data": "./data/stories/033.json",
+      "source": "https://www.disturbingstories.com/033.html",
+      "protected": false,
+      "book": "02",
+      "year": "1915",
+      "categories": [
+        "Terror"
+      ],
+      "synopsis": "Acompaña a un intrépido arqueólogo en la búsqueda de una legendaria pirámide…",
+      "tabLabels": [
+        "LEER",
+        "JEROGLÍFICOS",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 8
+    },
+    {
+      "id": "021",
+      "title": "Virgilius",
+      "published": "2025-08-24",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/021.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-1.jpg",
+      "data": "./data/stories/021.json",
+      "source": "https://www.disturbingstories.com/021.html",
+      "protected": false,
+      "book": "02",
+      "year": "2059",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "¿Puede un ser artificial entender el significado de la ética y la moralidad?",
+      "tabLabels": [
+        "LEER",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 13
+    },
+    {
+      "id": "137",
+      "title": "Dolor de Muelas",
+      "published": "2025-08-17",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/137.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/137-frame-1.jpg",
+      "data": "./data/stories/137.json",
+      "source": "https://www.disturbingstories.com/137.html",
+      "protected": false,
+      "book": "02",
+      "year": "2029",
+      "categories": [
+        "Terror",
+        "Ciencia Ficción"
+      ],
+      "synopsis": "¿Alguna vez han sufrido de algún intenso dolor durante mucho tiempo?",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 14
+    },
+    {
+      "id": "069",
+      "title": "Distorsion: Phelps",
+      "published": "2025-07-20",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/069.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-1_orig.jpg",
+      "data": "./data/stories/069.json",
+      "source": "https://www.disturbingstories.com/069.html",
+      "protected": false,
+      "book": "02",
+      "year": "2010",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "El Doctor Desmond Phelps recibe un encargo que marcará su vida para siempre…",
+      "tabLabels": [
+        "LEER",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 21
+    },
+    {
+      "id": "167",
+      "title": "Una Vampira Diferente",
+      "published": "2025-07-13",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/167.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/167-frame-1.jpg",
+      "data": "./data/stories/167.json",
+      "source": "https://www.disturbingstories.com/167.html",
+      "protected": false,
+      "book": "02",
+      "year": "1991",
+      "categories": [
+        "Terror"
+      ],
+      "synopsis": "Los balones, desgraciadamente, siempre acaban cayendo en algún cementerio abandonado…",
+      "tabLabels": [
+        "LEER",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 6
+    },
+    {
+      "id": "184",
+      "title": "Agrokinesis",
+      "published": "2025-06-30",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/184.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/184-frame-1.jpg",
+      "data": "./data/stories/184.json",
+      "source": "https://www.disturbingstories.com/184.html",
+      "protected": false,
+      "book": "02",
+      "year": "2637",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Conoce a Eve, una peculiar muchacha con una gran conexión con la naturaleza…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 5
+    },
+    {
+      "id": "152",
+      "title": "El Último Marciano",
+      "published": "2025-04-20",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/152.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/last-martian-loop-1.gif?1739217170",
+      "data": "./data/stories/152.json",
+      "source": "https://www.disturbingstories.com/152.html",
+      "protected": false,
+      "book": "01",
+      "year": "2099",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "El Dr. Kevin Beckett tiene la oportunidad de su vida para probar unos ansiados experimentos...",
+      "tabLabels": [
+        "LEER",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 11
+    },
+    {
+      "id": "154",
+      "title": "El Relato Robado",
+      "published": "2025-04-13",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/154.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/relato-robado-4.jpg",
+      "data": "./data/stories/154.json",
+      "source": "https://www.disturbingstories.com/154.html",
+      "protected": false,
+      "book": "01",
+      "year": "1891",
+      "categories": [
+        "Terror"
+      ],
+      "synopsis": "Una chica entra en una oscura mansión abandonada y se acerca lentamente a una máquina de escribir tenuemente iluminada, donde puede verse un papel con una historia escrita...",
+      "tabLabels": [
+        "LEER",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 4
+    },
+    {
+      "id": "020",
+      "title": "El Proyector Cerebral",
+      "published": "2025-04-13",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/020.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/proyector-3.jpg",
+      "data": "./data/stories/020.json",
+      "source": "https://www.disturbingstories.com/020.html",
+      "protected": false,
+      "book": "01",
+      "year": "2023",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "La Doctora Kramer, una reputada investigadora en el campo de la neurociencia, está desarrollando un proyecto que va a revolucionar los estudios que tenemos sobre el cerebro humano...",
+      "tabLabels": [
+        "LEER",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 9
+    },
+    {
+      "id": "151",
+      "title": "La Criatura Perdida",
+      "published": "2025-04-06",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/151.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/lost-creature-1.jpg",
+      "data": "./data/stories/151.json",
+      "source": "https://www.disturbingstories.com/151.html",
+      "protected": false,
+      "book": "01",
+      "year": "2006",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Existe un juego indie prohibido, uno que casi nadie ha conseguido completar... y prácticamente ninguno de los que lo han hecho ha vivido para contarlo.",
+      "tabLabels": [
+        "LEER",
+        "PORTADA",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 4
+    },
+    {
+      "id": "040",
+      "title": "El Bolo de la Charanga",
+      "published": "2025-04-06",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/040.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bolo-charanga-1.jpg",
+      "data": "./data/stories/040.json",
+      "source": "https://www.disturbingstories.com/040.html",
+      "protected": false,
+      "book": "01",
+      "year": "2024",
+      "categories": [
+        "Terror"
+      ],
+      "synopsis": "Era una mañana cálida de primavera cuando la charanga \"Peix Vell\" llegó a un pequeño pueblo de las montañas... un pueblo que nunca olvidarían...",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 9
+    },
+    {
+      "id": "010",
+      "title": "Un Cuento de Navidad Disonante",
+      "published": "2025-03-30",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/010.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dissonant-christmas-ais-1.jpg",
+      "data": "./data/stories/010.json",
+      "source": "https://www.disturbingstories.com/010.html",
+      "protected": false,
+      "book": "01",
+      "year": "2103",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Llega la Navidad....esa maravillosa época del año donde los sueños se hacen realidad…",
+      "tabLabels": [
+        "LEER",
+        "CORTO",
+        "MAKING OF",
+        "TEASER"
+      ],
+      "features": [
+        "extra",
+        "video"
+      ],
+      "readTime": 3
+    },
+    {
+      "id": "004",
+      "title": "Dark Limits: Momento Cero",
+      "published": "2025-03-30",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/004.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/momento-cero-3.jpg",
+      "data": "./data/stories/004.json",
+      "source": "https://www.disturbingstories.com/004.html",
+      "protected": false,
+      "book": "01",
+      "year": "2020",
+      "categories": [
+        "Terror",
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Hace pocos días, ocurrió un incidente sorprendente en la ciudad, que relata desde su punto de vista la joven Susan Waters...",
+      "tabLabels": [
+        "LEER",
+        "AUDIO",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "audio",
+        "extra"
+      ],
+      "readTime": 4
+    },
+    {
+      "id": "036",
+      "title": "Coleccionista",
+      "published": "2025-03-23",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/036.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/coleccion-3.jpg",
+      "data": "./data/stories/036.json",
+      "source": "https://www.disturbingstories.com/036.html",
+      "protected": false,
+      "book": "01",
+      "year": "2186",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Año 2186. Espacio profundo y lejano…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 8
+    },
+    {
+      "id": "002",
+      "title": "Caracteres",
+      "published": "2025-03-23",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/002.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/3b.jpg?1742003114",
+      "data": "./data/stories/002.json",
+      "source": "https://www.disturbingstories.com/002.html",
+      "protected": false,
+      "book": "01",
+      "year": "2051",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Jason Peters despierta sentado en un extraño dispositivo de donde prácticamente no puede moverse....¿porqué está ahí?",
+      "tabLabels": [
+        "LEER",
+        "AUDIO",
+        "TEASER"
+      ],
+      "features": [
+        "audio"
+      ],
+      "readTime": 2
+    }
+  ]
+}

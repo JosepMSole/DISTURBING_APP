@@ -1,0 +1,292 @@
+{
+  "schema": 7,
+  "id": "251",
+  "title": "Alien Park",
+  "published": "2026-02-08",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/251.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/251.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-1.jpg",
+  "book": "04",
+  "year": "2356",
+  "categories": [
+    "Ciencia Ficción"
+  ],
+  "synopsis": "Déjate cautivar por esta sorprendente biofauna alienígena…",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "La nave Orpheus IX se desprendió con un suspiro metálico de la Estación-Colonia 23 y comenzó su descenso lento, casi reverente, hacia la superficie de Aldebarán B, un planeta sombrío donde el resplandor del sol apenas lograba rozar la corteza reseca."
+        },
+        {
+          "type": "p",
+          "text": "Desde la órbita, el mundo se presentaba como una esfera inmóvil, petrificada, carente de mares, nubes o cualquier signo evidente de vida… una ruina esférica suspendida en el vacío. Sin embargo, los sensores de a bordo registraban algo que contradecía aquella imagen muerta: una firma energética débil pero constante, oculta bajo un manto de roca volcánica endurecida, justo en una zona donde una cúpula geotérmica mantenía un calor insólitamente templado, como un corazón todavía latiendo bajo una piel fosilizada..."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-1.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-1_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-2.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-2_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "—Ahí está —murmuró la capitana Elara Yu, sin apartar la mirada de la pantalla del puente—. Exactamente donde dijeron que estaría."
+        },
+        {
+          "type": "p",
+          "text": "—No hay acceso visible —replicó el ingeniero Kovacs, observando los datos—, pero parece haber una depresión natural en el terreno… un cañón rocoso colapsado. Si somos cuidadosos, podríamos entrar por allí."
+        },
+        {
+          "type": "p",
+          "text": "El equipo descendió en una lanzadera que se deslizó entre nubes de polvo rojizo, y tras un vuelo breve, se adentraron en aquel corredor de piedra negra que conducía hacia las entrañas del planeta. Avanzaron con cautela hasta encontrar un claro abierto, un espacio que se insinuaba como la entrada a algo más vasto: una bóveda semienterrada, parcialmente revelada entre los escombros y las rocas cubiertas de líquenes metálicos y minerales que relucían débilmente a la luz artificial de los trajes. Lo que a primera vista parecía una simple formación geológica comenzó a mostrar proporciones, ángulos, simetrías que no pertenecían al azar de la naturaleza."
+        },
+        {
+          "type": "p",
+          "text": "Al cruzar el umbral, descubrieron un corredor ancho y seco, un espacio que parecía más una caverna que una obra construida por manos, aunque el aire —contra toda lógica— resultaba respirable y tibio, según los sensores. A medida que avanzaban, el entorno adquiría una rareza casi orgánica: columnas colosales, de una regularidad imposible, se elevaban en patrones repetidos, como si la piedra misma hubiera aprendido una forma y la repitiera con una voluntad silenciosa."
+        },
+        {
+          "type": "p",
+          "text": "Y entonces, sin advertencia, el pasaje se abrió ante un valle."
+        },
+        {
+          "type": "p",
+          "text": "Bajo una luz ámbar que descendía a través de una grieta en la bóveda superior, se extendía una pradera inmensa, un mundo oculto dentro del planeta. El cielo no era cielo, sino una cúpula translúcida de nubes inmóviles, que respiraban con un pulso casi imperceptible. Sobre la hierba azulada se movían seres gigantescos, criaturas majestuosas de cuerpos ondulantes y cantos profundos, tan armónicos que la piedra misma parecía vibrar con su paso. Se desplazaban lentamente, con una solemnidad que evocaba una procesión ritual, y la misma majestuosidad que la de los dinosaurios de cuello largo..."
+        },
+        {
+          "type": "p",
+          "text": "Una de aquellas criaturas —alta como un edificio de veinte pisos, de una forma que desafiaba toda taxonomía entre lo vegetal y lo animal— se acercó al borde donde los humanos observaban. Su cuello se alzó con elegancia, y dos ojos oscuros, insondables como el fondo del océano, los contemplaron en silencio. Luego emitió un sonido grave, un tono que se expandió por el valle hasta transformarse en un eco coral, profundo y envolvente."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-3.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-3_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-4.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-4_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "—Parece un saludo —susurró Kovacs, con una mezcla de asombro y ternura—. ¿Lo escuchan? No provoca miedo. Es... paz…"
+        },
+        {
+          "type": "p",
+          "text": "Durante los días siguientes, el equipo se adentró en aquel paraje imposible con un fervor casi religioso. Encontraron seres voladores que flotaban en el aire húmedo como medusas luminosas, peces que nadaban en corrientes invisibles, y estructuras cristalinas que alteraban su forma al ser tocadas, como si respondieran a la presencia consciente de los visitantes. Todo en aquel ecosistema desprendía una serenidad profunda, un equilibrio tan perfecto que parecía diseñado."
+        },
+        {
+          "type": "p",
+          "text": "—No hay signos de agresividad —informó Mara, mientras registraba los datos—. Ni depredación. Este ecosistema es... sereno…"
+        },
+        {
+          "type": "p",
+          "text": "—Demasiado sereno —respondió Amani, pensativa—. Como si alguien lo hubiera construido... para ser observado."
+        },
+        {
+          "type": "p",
+          "text": "Elara anotó aquella observación. Efectivamente, la disposición del terreno, los senderos naturales, los puntos elevados desde donde todo podía contemplarse... daban la sensación de haber sido concebidos con intención, con una mente detrás del paisaje."
+        },
+        {
+          "type": "p",
+          "text": "—Esto es un zoológico… —susurró finalmente."
+        },
+        {
+          "type": "p",
+          "text": "Con el paso de los días, las maravillas dieron paso a las sospechas. Las sombras se repetían con exactitud inquietante, los ecos resonaban sin origen, y los sueños comenzaron a ser compartidos. Kovacs aseguró haber oído su nombre pronunciado por una de las criaturas flotantes. Amani, tras analizar muestras biológicas, halló patrones genéticos idénticos en organismos que no guardaban relación aparente."
+        },
+        {
+          "type": "p",
+          "text": "—No es convergencia evolutiva —dijo con voz baja, casi temblorosa—. Es copiar… repetir... Todas estas formas de vida son variaciones del mismo molde… partes distintas de un mismo diseño…"
+        },
+        {
+          "type": "p",
+          "text": "Elara revisó las grabaciones y notó que las criaturas no parecían responder a los movimientos, sino a las emociones de los exploradores. Plantas que se abrían al sentirse observadas, caminos que cambiaban de dirección cuando la duda se instalaba en la mente. Todo el ecosistema era sensible, consciente, expectante…"
+        },
+        {
+          "type": "p",
+          "text": "Y entonces comenzaron los temblores."
+        },
+        {
+          "type": "p",
+          "text": "No violentos, sino rítmicos, profundos, como si algo inconmensurable se moviera bajo el suelo. Las criaturas, antes dispersas, empezaron a reunirse, marchando lentamente hacia el centro del valle, atraídas por una llamada silenciosa."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-5.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-5_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-6.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-6_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "—No es miedo —dijo Mara—. Es instinto… parece que algo las convoca…"
+        },
+        {
+          "type": "p",
+          "text": "El equipo las siguió hasta una depresión cubierta por una vegetación blanda, casi orgánica. Allí, las criaturas se agruparon en torno a una estructura en espiral, mitad roca, mitad carne mineral. Amani la examinó con reverencia."
+        },
+        {
+          "type": "p",
+          "text": "—Podría ser un núcleo... un centro nervioso de todo esto —susurró."
+        },
+        {
+          "type": "p",
+          "text": "De pronto, una compuerta se abrió, dejando ver una estancia blanca, gélida, simétrica hasta la obsesión. En su centro, una esfera cristalina flotaba suspendida en un silencio absoluto."
+        },
+        {
+          "type": "p",
+          "text": "—Algo me impulsa a tocar esa esfera —dijo Amani, con voz temblorosa—. Me dice que necesita una mente viva... para despertar… y no puedo evitarlo…"
+        },
+        {
+          "type": "p",
+          "text": "Sin vacilar, Elara extendió su mano. En el instante en que la tocó, la esfera se iluminó, y todos compartieron la misma visión: no imágenes, sino ideas puras, emociones condensadas. Los Velorim, una civilización extinta, moribunda, que había intentado escapar de la muerte disolviendo su conciencia en una sola mente colectiva… pero el experimento fracasó. Aquella mente no entendió el tiempo ni la finitud; solo el sufrimiento. Y en su desesperación, los mismos Velorim la encerraron en una forma biológica, un superorganismo: un ecosistema vivo, una prisión disfrazada de paraíso."
+        },
+        {
+          "type": "p",
+          "text": "Todo: cada criatura, cada hoja, cada brizna de luz... era una célula de ese ser…"
+        },
+        {
+          "type": "p",
+          "text": "—Esto... está vivo —susurró Amani, retrocediendo."
+        },
+        {
+          "type": "p",
+          "text": "Entonces la conciencia los percibió. Los reconoció no como intrusos, sino como piezas faltantes, mentes nuevas que aportarían lo que ella no poseía: el miedo a morir. Kovacs cayó al suelo, convulsionando; Mara comenzó a gritar palabras que no pertenecían a ningún idioma humano; Amani se cubrió la cabeza, sollozando."
+        },
+        {
+          "type": "p",
+          "text": "—¡Está en nuestras mentes! —gritó Elara."
+        },
+        {
+          "type": "p",
+          "text": "La comprensión llegó como un golpe: si intentaban huir, la conciencia los seguiría. Si escapaban, la liberarían. El parque no quería destruirlos; quería sobrevivir… y quería expandirse…"
+        },
+        {
+          "type": "p",
+          "text": "Kovacs, en un último acto de claridad, y con todas sus fuerzas y ahínco, conectó un pequeño dispositivo al núcleo cristalino para intentar sobrecargarlo. La reacción fue inmediata, y un pulso luminoso recorrió toda la estructura. Elara corrió, atravesando pasillos que se disolvían a su paso, hasta alcanzar la nave y conseguir elevarla in extremis hacia la órbita."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-7.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-7_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-8.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-8_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Desde allí contempló el final del planeta: el valle derrumbándose, las criaturas fundiéndose en una masa brillante, el domo replegándose sobre sí mismo hasta estallar en una llamarada de colores azules..."
+        },
+        {
+          "type": "p",
+          "text": "... y después, nada. Silencio…"
+        },
+        {
+          "type": "p",
+          "text": "Semanas más tarde, las sondas automáticas de la Estación-Colonia 23 registraron fragmentos flotando en el espacio: pequeñas amalgamas de distintos tamaños, algunas inertes, otras... vivas…"
+        },
+        {
+          "type": "p",
+          "text": "Cada una latía débilmente, como si soñara. Eran fragmentos de la conciencia original, retazos de un ser dividido. Pequeñas jaulas vivientes, cada una con algun pensamiento o criatura persistente envuelto en roca y metal…"
+        },
+        {
+          "type": "p",
+          "text": "Elara, que todavía se estaba recuperando del terrible incidente, sabía que esos fragmentos todavía eran una amenaza y debían ser erradicados, aunque en ese momento estuvieran ejemplificando el deseo inextinguible de seguir viviendo…"
+        },
+        {
+          "type": "p",
+          "text": "Aquel universo le enseñó a la Capitana que no todo lo que late merece un futuro, y no todo lo que sobrevive debería hacerlo…"
+        }
+      ]
+    },
+    "material-adicional": {
+      "label": "MATERIAL ADICIONAL",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Explora un cuaderno de campo elaborado por el grupo de exploradores:"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag0-tapa-v2.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag0-tapa-v2_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag1.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag1_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag2.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag2_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag3.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag3_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag4.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag4_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag5.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bestiario-alien-park-1-pag5_orig.jpg",
+          "alt": "",
+          "caption": ""
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "about:blank",
+          "title": "Contenido multimedia"
+        }
+      ]
+    }
+  }
+}

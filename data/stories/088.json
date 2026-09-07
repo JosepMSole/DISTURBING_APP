@@ -1,0 +1,317 @@
+{
+  "schema": 7,
+  "id": "088",
+  "title": "Render Final",
+  "published": "2026-07-05",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/088.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/088.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-1.jpg",
+  "book": "05",
+  "year": "2073",
+  "categories": [
+    "Ciencia Ficción"
+  ],
+  "synopsis": "Xavier recibió un email con una curiosa propuesta 3D…",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Xavier siempre había desconfiado de la palabra final."
+        },
+        {
+          "type": "p",
+          "text": "En su oficio no significaba cierre, sino una pausa conveniente. Un archivo se marcaba como definitivo solo para poder pasar al siguiente, como si bastara con nombrar una cosa para fingir que estaba terminada. Después siempre llegaba otra versión, un ajuste pendiente, una corrección futura... Nada era realmente final; solo lo parecía durante el tiempo suficiente para seguir avanzando. Quizá por eso aquel correo le produjo una inquietud tan inmediata…"
+        },
+        {
+          "type": "p",
+          "text": "Había aparecido en su bandeja de entrada sin presentación ni firma, como si alguien hubiera querido reducirlo todo a lo esencial. El asunto decía únicamente: RENDER FINAL."
+        },
+        {
+          "type": "p",
+          "text": "Xavier lo abrió con la vaga sensación de que estaba entrando en algo que no terminaba de comprender. El mensaje afirmaba que habían seguido su trayectoria durante años, que conocían su manera de trabajar y su obsesión por unos detalles que nadie pedía, pero que acababan otorgando a cada proyecto una calidad difícil de imitar. Decían estar buscando diseñadores 3D capaces de crear entornos complejos sin supervisión directa y con un uso relativo —o nulo— de IA generativa, porque querían un resultado más artesanal, menos automático, más humano. El trabajo sería remoto, estable y excepcionalmente bien pagado. No se explicaba el objetivo del proyecto, pero el contrato de confidencialidad, en cambio, resultaba minucioso hasta la extenuación."
+        },
+        {
+          "type": "p",
+          "text": "Lo leyó dos veces con la desconfianza prudente de quien lleva años trabajando por encargo y ha aprendido a detectar demasiado tarde las ofertas imposibles. A la tercera, sin embargo, aceptó. Como buen freelance, sabía reconocer ciertas oportunidades extrañamente buenas: esa clase de trenes que, si de verdad existen, solo pasan una vez."
+        },
+        {
+          "type": "p",
+          "text": "Pocos minutos después recibió un nuevo correo con instrucciones precisas y acceso a una plataforma privada desde la que, al parecer, se desarrollaría todo el trabajo. Cuando entró por primera vez, tuvo la sensación desconcertante de estar mirando algo a la vez nuevo y conocido. No coincidía con ningún motor 3D comercial que hubiese usado antes, pero tampoco le resultaba ajeno. Tras examinar la interfaz, reconoció la mayoría de los iconos y dedujo sin dificultad para qué debía servir cada módulo. La impresión general era la de varios softwares habituales fundidos en uno solo, depurados hasta una versión más elegante, más silenciosa, más poderosa. Aquello implicaba una inversión tecnológica fuera de lo normal, así que fuera quien fuese la empresa que había detrás, no estaba jugando en una liga pequeña."
+        },
+        {
+          "type": "p",
+          "text": "Su primera tarea consistió en diseñar una región exterior: terreno, vegetación, desniveles, rutas naturales, pequeñas irregularidades del paisaje… Sobre el papel, no había nada extraordinario en ello, pero lo singular era la forma en que el sistema evaluaba su trabajo."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-1.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-1_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-2.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-2_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "En la esquina superior derecha del programa había un pequeño cuadrado con un círculo inscrito en su interior. Parecía un widget secundario, casi decorativo, pero pronto comprobó que se trataba de un microasistente capaz de intervenir en tiempo real sobre lo que él estaba creando. A veces respondía preguntas concretas; otras señalaba detalles mejorables con una precisión insólita. No se limitaba a valorar la apariencia visual de lo que veía en pantalla, sino que analizaba la coherencia interna del conjunto, como si aquella escena 3D debiera sostenerse bajo reglas físicas completas y no solo parecer convincente a simple vista."
+        },
+        {
+          "type": "p",
+          "text": "Si Xavier colocaba una roca, el sistema evaluaba su peso, su apoyo y su estabilidad. Si añadía hierba, comprobaba si podría crecer allí, brizna a brizna, según la humedad, el suelo y la luz. Si una pendiente no permitía un drenaje correcto, aparecía una advertencia. Los errores no se marcaban como defectos visuales, sino como inestabilidades. Eso fue lo primero que le llamó la atención."
+        },
+        {
+          "type": "p",
+          "text": "Lo segundo fue el tono."
+        },
+        {
+          "type": "p",
+          "text": "No se parecía en nada al tipo de feedback al que estaba acostumbrado. No había sequedad, ni jerga corporativa, ni esa brusquedad impersonal con la que tantos clientes señalaban un problema como si el simple hecho de detectarlo los eximiera de todo respeto. El pequeño asistente circular se expresaba con una cortesía sobria, incluso amable, como si al corregirle algo estuviera colaborando con él en lugar de vigilarlo."
+        },
+        {
+          "type": "p",
+          "text": "A Xavier le sorprendió más de lo que habría querido admitir. Tal vez porque llevaba demasiado tiempo trabajando a la defensiva, encadenando plazos imposibles y encargos donde el detalle se exigía sin conceder jamás el tiempo necesario para alcanzarlo. Llegó a considerarse un “mono de nivel 5”, alguien que debía acatar las órdenes sin rechistar… Pero allí, en cambio, la exigencia parecía de otra naturaleza. Era profunda, sí, incluso obsesiva, pero no admitía atajos ni premiaba la velocidad vacía, sino que lo obligaba a trabajar despacio, a pensar mejor, a volver a disfrutar de su propia minuciosidad."
+        },
+        {
+          "type": "p",
+          "text": "Poco a poco fue aflojando el ritmo frenético con el que solía enfrentarse a cualquier encargo. Empezó a construir con más calma y con una concentración más limpia, menos defensiva, y se volcó de lleno en esos matices invisibles que le habían dado reputación: la lógica de la erosión en una ladera, el modo en que una ruta de paso acaba insinuándose en la tierra sin que nadie la trace deliberadamente, la densidad variable de la vegetación donde el agua se acumula más o menos… En catorce días modeló un valle entero que parecía haber existido antes que él. No solo era realista: daba la impresión de haber tenido tiempo, de haber atravesado lluvias, estaciones, desgaste y reposo. Las hojas y las briznas reaccionaban al subprograma climático que alteraba la escena de forma aleatoria, y todo respiraba una coherencia extrañamente natural."
+        },
+        {
+          "type": "p",
+          "text": "Por eso, cuando comenzaron a aparecer ciertas anomalías, Xavier tardó en inquietarse."
+        },
+        {
+          "type": "p",
+          "text": "Al principio fueron detalles aislados, casi fáciles de justificar. Al cargar su zona por la mañana encontraba un sendero que continuaba más allá de donde lo había dejado la noche anterior, o un pequeño puente surgido justo en el punto donde días atrás había abierto un cauce. Nunca coincidía con nadie en línea, pero aquello lo llevó a una conclusión razonable: no estaba trabajando solo. Debía de haber otros diseñadores construyendo áreas colindantes del mismo mapa, y el sistema estaría integrando sus avances de forma dinámica para coser unas zonas con otras. Era, desde luego, la explicación más plausible."
+        },
+        {
+          "type": "p",
+          "text": "Un par de días después apareció una prueba más concreta. Mientras ajustaba la malla de una roca junto a un talud, vio una especie de nota anclada a la superficie, como si alguien hubiera clavado allí un comentario físico en el espacio tridimensional. En cuanto acercó el cursor, el widget de la esquina se activó y le comunicó, con la misma serenidad de siempre, que otro diseñador le había dejado una observación relacionada con el área que estaba editando."
+        },
+        {
+          "type": "p",
+          "text": "A Xavier la idea le pareció excelente. Permitía señalar problemas concretos allí donde ocurrían, sin necesidad de interminables correos o capturas ambiguas. Hizo doble clic sobre la nota y esta se desplegó como una hoja de libreta."
+        },
+        {
+          "type": "p",
+          "text": "El mensaje decía que, si mantenía aquella pendiente tal y como estaba, el barro no se acumularía en la base. A largo plazo, eso terminaría resultando artificial. Además, en una zona colindante había un pequeño vecindario que no podía verse afectado por una acumulación inverosímil de barro procedente de su terreno. El autor añadía que quizá se trataba de un matiz que el widget aún no había detectado y le agradecía de antemano la corrección. Firmado: Mauro."
+        },
+        {
+          "type": "p",
+          "text": "Xavier se quedó unos segundos leyendo de nuevo el texto. Le llamó la atención la precisión del comentario y también su tono: directo, útil, nada invasivo. Le respondió dando las gracias y corrigió la pendiente."
+        },
+        {
+          "type": "p",
+          "text": "A partir de ahí, no tardó demasiado en recibir otra nota, y luego otra. Mauro trabajaba en otra parte del proyecto, en espacios interiores: casas, pasillos, zonas de descanso, lugares de tránsito más íntimos que el paisaje abierto que Xavier modelaba. Sus mensajes eran siempre concretos; no había en ellos nada excéntrico ni teatral. Si detectaba un problema, lo explicaba con claridad; si sugería un cambio, justificaba por qué. Y así empezaron a escribirse con cierta regularidad."
+        },
+        {
+          "type": "p",
+          "text": "Al principio solo hablaban de trabajo. Mauro le señalaba cuestiones que podían afectar a las zonas interiores si el terreno se comportaba de un modo u otro; Xavier le advertía cuando encontraba algo en el paisaje que parecía repercutir en las transiciones hacia otras áreas. Se trataba de un intercambio técnico, sobrio, casi rutinario. Sin embargo, con el paso de los días, sus mensajes empezaron a desviarse hacia un asunto que inquietaba a ambos y que ninguno terminaba de formular del todo sin sentirse ridículo: ese mundo parecía cambiar incluso cuando ellos no estaban trabajando…"
+        },
+        {
+          "type": "p",
+          "text": "Xavier lo percibía en indicios mínimos: un desgaste tenue en peldaños que nadie había usado aún, objetos desplazados unos centímetros de donde él recordaba haberlos visto, puertas que aparecían entornadas, cajones mal cerrados... No era nada espectacular, pero precisamente por eso resultaba más perturbador…"
+        },
+        {
+          "type": "p",
+          "text": "Una noche, incapaz de seguir fingiendo que no lo notaba, se lo escribió a Mauro. Le preguntó si él también estaba viéndolo, y la respuesta llegó casi de inmediato. Mauro contestó que sí, y añadió que cada vez ocurría con más frecuencia. Xavier quiso aferrarse a la explicación inicial, de modo que le preguntó si aún creía que podía tratarse simplemente de otros diseñadores trabajando en sus propias zonas."
+        },
+        {
+          "type": "p",
+          "text": "Mauro respondió que al principio había pensado eso, pero que ya no estaba seguro… y aquella frase, tan breve y tan contenida, dejó en Xavier una incomodidad persistente, porqué no era solo lo que decía, sino lo que se abstenía de decir…"
+        },
+        {
+          "type": "p",
+          "text": "A la mañana siguiente, el sistema empezó a comportarse de un modo todavía más extraño. Ya no se limitaba a valorar caminos, rocas, pendientes o drenajes, sino que ahora emitía avisos relacionados con ideas impropias de un escenario técnico: descanso, sensación de seguridad, rutina, tolerancia al aislamiento, continuidad emocional del espacio... Xavier se quedó mirando uno de esos mensajes sin saber si estaba interpretándolo mal o si, simplemente, algo en la lógica del proyecto había cambiado."
+        },
+        {
+          "type": "p",
+          "text": "Aquello no tenía sentido. Él estaba construyendo un entorno 3D, un mapa, un escenario complejo, pero no un lugar destinado a ser habitado en serio."
+        },
+        {
+          "type": "p",
+          "text": "Movido por una mezcla de fastidio y curiosidad, eliminó una pequeña cabaña que había colocado días antes junto a una zona de descanso. No cumplía ninguna función esencial; servía, hasta donde él entendía, para dar textura al paisaje, para sugerir una vida posible, aunque nadie fuera a vivirla de verdad. Pero la cabaña reapareció al instante. No hubo transición ni confirmación de deshacer, sino que simplemente volvió a estar allí, íntegra, como si el sistema hubiese corregido un error de concepto y no de ejecución."
+        },
+        {
+          "type": "p",
+          "text": "En la esquina de la pantalla apareció un mensaje escueto: “Elemento necesario para estabilidad”."
+        },
+        {
+          "type": "p",
+          "text": "Xavier se quedó inmóvil unos segundos, con la mano aún apoyada en el ratón. Después abrió el chat con Mauro y le escribió una única pregunta: ¿de qué estabilidad estaba hablando exactamente el sistema?"
+        },
+        {
+          "type": "p",
+          "text": "Esta vez Mauro no respondió por texto, sino que le envió una solicitud de llamada de voz, y Xavier aceptó rápidamente, ávido de respuestas."
+        },
+        {
+          "type": "p",
+          "text": "La voz de Mauro sonó al otro lado cargada de cansancio, no solo físico, sino de agotamiento nervioso. Le dijo, sin preámbulos, que había encontrado archivos ocultos dentro de la plataforma… y que contenían verdades inquietantes..."
+        },
+        {
+          "type": "p",
+          "text": "Xavier le pidió que concretara, y Mauro respondió que eran planos reales, documentos técnicos, materiales del proyecto verdadero. A continuación, compartió pantalla."
+        },
+        {
+          "type": "p",
+          "text": "Lo que apareció no tenía nada que ver con un pipeline de diseño 3D ni con documentación de producción visual. Xavier vio fotografías aéreas, esquemas de instalaciones subterráneas, diagramas densos llenos de terminología médica y tecnológica... En varias imágenes se repetía una misma estructura: enormes cilindros enterrados bajo tierra, dispuestos en hileras exactas, como si formasen parte de una infraestructura industrial gigantesca."
+        },
+        {
+          "type": "p",
+          "text": "Sin entender nada, preguntó qué era aquello. Mauro tardó un instante en responder, y luego dijo una sola palabra: silos…"
+        },
+        {
+          "type": "p",
+          "text": "Xavier frunció el ceño y admitió que seguía sin entender nada. Mauro abrió otro documento, y en la pantalla apareció un esquema del cerebro humano conectado a una máquina mediante un proceso descrito por fases, flechas y etiquetas técnicas. Entonces le explicó que aquel mundo 3D no era un juego ni una simulación de prueba: era un entorno destinado a alojar mentes humanas transferidas."
+        },
+        {
+          "type": "p",
+          "text": "La frase dio varias vueltas dentro de la cabeza de Xavier, y tras unos instantes donde intentaba dar lógica real a eso, preguntó si se refería a copias."
+        },
+        {
+          "type": "p",
+          "text": "Mauro respondió que no, y añadió, con gravedad, que eso era precisamente lo peor: no hablaban de copias funcionales, ni de réplicas, ni de conciencias simuladas... hablaban de personas reales: conciencias humanas introducidas dentro del sistema…"
+        },
+        {
+          "type": "p",
+          "text": "Xavier sintió que la boca se le secaba. Miró otra vez las imágenes y, de pronto, una serie de detalles dispersos comenzaron a ordenarse con una claridad abominable: los avisos sobre estabilidad, la insistencia del sistema en que todo pareciera coherente, vívido y seguro, los cambios del entorno, las marcas de uso que nadie había programado… No estaban construyendo un escenario, ¡estaban construyendo un mundo habitable!"
+        },
+        {
+          "type": "p",
+          "text": "Xavier estaba perplejo…"
+        },
+        {
+          "type": "p",
+          "text": "Mauro pasó a otro archivo y le explicó que, según aquellos documentos, el entorno debía resultar lo bastante estable, verosímil y humano como para que quienes despertaran dentro no colapsaran de inmediato. Si el mundo no parecía coherente, si no transmitía la sensación de haber sido vivido y sostenido por una lógica completa, la mente comenzaba a deteriorarse. Se desorientaban, entraban en pánico, y podían perder la identidad, según unos experimentos previos ya realizados."
+        },
+        {
+          "type": "p",
+          "text": "Xavier apartó la vista de la pantalla y notó cómo se le formaba un nudo en el estómago. Entonces dijo, más para sí mismo que para Mauro, que todo aquello estaba hecho para retenerlos allí."
+        },
+        {
+          "type": "p",
+          "text": "Mauro contestó que sí, que el objetivo era precisamente ese: conseguir que aceptaran ese mundo como real y no intentaran escapar…"
+        },
+        {
+          "type": "p",
+          "text": "Durante unos inquietantes segundos ninguno habló. En el silencio, Xavier tuvo la desagradable sensación de haber oído cómo cambiaba de forma todo lo que había pensado hasta entonces sobre el proyecto. Finalmente formuló la pregunta que más miedo le daba hacer: “¿Por qué nos han contratado a nosotros?”"
+        },
+        {
+          "type": "p",
+          "text": "Mauro tardó en contestar, pero cuando lo hizo su respuesta sonó tristemente lógica. Dijo que necesitaban gente capaz de construir lugares creíbles, espacios llenos de detalles humanos, de pequeñas decisiones verosímiles que ningún sistema puramente automático sabría inventar del todo. No querían que diseñara aquello alguien que supiera desde el principio que estaba levantando una cárcel. Necesitaban que pareciera un hogar de verdad, y para eso hacía falta una mirada que aún creyera en la honestidad del trabajo bien hecho."
+        },
+        {
+          "type": "p",
+          "text": "Xavier sintió un escalofrío."
+        },
+        {
+          "type": "p",
+          "text": "Recordó el correo inicial, el contrato de confidencialidad, el tono amable del asistente, las exigencias absurdamente precisas… Todo había sido medido para atraer exactamente a alguien como él."
+        },
+        {
+          "type": "p",
+          "text": "Entonces hizo otra pregunta, quizá la peor de todas: “¿quiénes van a meter allí dentro?”"
+        },
+        {
+          "type": "p",
+          "text": "Al otro lado de la llamada cayó un silencio más largo. Cuando Mauro respondió, su voz había descendido todavía un grado más, como si pronunciar lo que sabía fuera una forma de firmar algo irreversible, y dijo que creía que ya habían empezado. Xavier preguntó con quién, y Mauro vaciló apenas un segundo antes de responder: “con nosotros...”"
+        },
+        {
+          "type": "p",
+          "text": "La negación de Xavier fue casi automática, instintiva, pero sonó débil incluso para sus propios oídos. Mauro siguió hablando, y le explicó que había encontrado referencias a “sujetos de implementación externa”: freelance, personal sin vínculo directo, perfiles fáciles de aislar y de hacer desaparecer sin generar demasiado ruido administrativo ni social. Según los documentos, el procedimiento constaba de varias fases: primero los hacían trabajar desde fuera, para que conocieran íntimamente el entorno, después realizaban la transferencia, y, finalmente, borraban el recuerdo del proyecto para que el sujeto despertara dentro sin saber qué había ocurrido."
+        },
+        {
+          "type": "p",
+          "text": "Xavier quiso reírse, romper la lógica de aquella conclusión a base de incredulidad, decir que Mauro estaba interpretando mal los archivos o dejándose arrastrar por el miedo… pero no pudo hacerlo, porque en el fondo había una parte de él que ya había reconocido la estructura completa de la trampa."
+        },
+        {
+          "type": "p",
+          "text": "Mauro, cada vez más acelerado, añadió que, si su interpretación era correcta, algunos ya estaban dentro. Seguían trabajando allí, seguían diseñando... solo que ahora creían que ese era su mundo normal..."
+        },
+        {
+          "type": "p",
+          "text": "Fue en ese momento cuando todo encajó definitivamente para Xavier. Las rarezas del proyecto dejaron de parecer anomalías técnicas, coincidencias o simples decisiones extrañas del sistema: los cajones entreabiertos, el desgaste en las escaleras, los objetos movidos, los caminos insinuados por el paso, las huellas leves… nada de eso era fruto del azar ni del trabajo descuidado de otros diseñadores. Eran rastros de presencia, señales de uso, indicios de que dentro de ese mundo ya había alguien viviendo, o al menos moviéndose por él con una continuidad que el sistema no podía ocultar del todo."
+        },
+        {
+          "type": "p",
+          "text": "Apenas tuvo tiempo de reaccionar a esa comprensión, cuando la llamada con Mauro se cortó abruptamente. No hubo ruido, ni despedida, ni interferencia: simplemente desapareció. Su usuario dejó de estar disponible en la plataforma, como si no hubiese existido nunca. Xavier intentó reabrir el chat, buscar el historial, recuperar la conexión, pero el programa había dejado de obedecerle. El cursor seguía moviéndose y, sin embargo, nada respondía como debía."
+        },
+        {
+          "type": "p",
+          "text": "Entonces la pantalla mostró una actualización obligatoria, con un mensaje que ocupaba el centro con una frialdad total: RENDERIZANDO ENTORNO FINAL."
+        },
+        {
+          "type": "p",
+          "text": "Casi al mismo tiempo empezó a oír un tono extraño, una frecuencia sostenida que fue creciendo poco a poco, infiltrándose en la habitación con una violencia silenciosa. Notó un mareo repentino, una especie de desequilibrio que no parecía venir solo del cuerpo. Todo a su alrededor comenzó a perder consistencia, como si la realidad estuviera volviéndose un poco menos firme en los bordes. Xavier intentó levantarse, alejarse del ordenador, salir al pasillo, tocar una pared que no vibrara con aquel zumbido ascendente, pero cuando consiguió ponerse en pie, el suelo se inclinó bajo él de una forma imposible. Dio dos pasos torpes hacia la puerta y terminó desplomándose sobre el sofá, arrastrado por una oleada de oscuridad que le dejó sin sentido..."
+        },
+        {
+          "type": "p",
+          "text": "Cuando despertó, seguía en su estudio. El ordenador seguía encendido frente a él y el proyecto continuaba abierto, exactamente como si nada hubiera interrumpido la jornada."
+        },
+        {
+          "type": "p",
+          "text": "Durante unos segundos permaneció quieto, tratando de orientarse. Todo parecía normal: la luz de la habitación, el escritorio, la taza vacía junto al teclado, la interfaz de trabajo… sin embargo, algo desentonaba en un nivel más íntimo… Tenía la sensación inequívoca de haber olvidado algo importante, algo reciente, algo que, de alguna forma, lo concernía por completo… Intentó fijar el pensamiento, pero se le escurría en cuanto lo rozaba, como una palabra que uno sabe que conoce y no consigue recordar."
+        },
+        {
+          "type": "p",
+          "text": "En la pantalla, el estado del archivo aparecía marcado como RENDER FINAL. Xavier lo miró sin experimentar más que una extrañeza leve, un roce de incomodidad que no encontraba anclaje concreto. Al cabo de unos segundos apartó esa sensación con la naturalidad con que se descarta una distracción menor y siguió trabajando. Esta vez no estaba centrado en zonas abiertas del terreno, sino en interiores y espacios habitables. Empezó a colocar muebles, a distribuir objetos cotidianos, a añadir marcas de uso y pequeños signos de permanencia que hacían que cada habitación resultara más convincente, más cálida, más propia de alguien…"
+        },
+        {
+          "type": "p",
+          "text": "Y así, el trabajo siguió avanzando con una fluidez tranquila."
+        },
+        {
+          "type": "p",
+          "text": "A veces, mientras ajustaba una mesa, una lámpara o el desgaste sutil de un marco de puerta, lo asaltaba una incomodidad breve, como un eco sin contenido. En una de esas jornadas, al alzar la vista hacia una colina a lo lejos, distinguió durante apenas unos segundos la figura de alguien sentado en silencio. La imagen era inestable, casi un glitch, una presencia que no terminaba de definirse del todo. El sistema la marcó con una etiqueta breve: Instancia activa."
+        },
+        {
+          "type": "p",
+          "text": "Xavier se quedó mirando hacia allí más tiempo del necesario. Por un instante sintió que algo estaba a punto de regresar a su memoria: un nombre, unos silos enterrados, una conversación urgente, la intuición atroz de una verdad que alguna vez había comprendido por completo... pero la idea se borró antes de tomar forma, deshecha con una eficacia limpia, como si nunca hubiera existido."
+        },
+        {
+          "type": "p",
+          "text": "Después siguió trabajando."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-3.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-3_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-4.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-4_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Lo hizo en silencio, dentro de su nueva casa con jardín a las afueras del norte de Binnary City, la capital de aquel mundo virtual, modelando habitaciones, refugios y espacios de descanso para un lugar que ya casi no se distinguía de la realidad. No recordaba qué había olvidado, solo notaba en su interior una paz extraña, incompleta, casi suficiente…"
+        },
+        {
+          "type": "p",
+          "text": "Al final, olvidar también puede parecer una forma de descanso…"
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "about:blank",
+          "title": "Contenido multimedia"
+        }
+      ]
+    }
+  }
+}

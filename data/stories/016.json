@@ -1,0 +1,849 @@
+{
+  "schema": 7,
+  "id": "016",
+  "title": "Distorsion: Virus",
+  "published": "2026-03-08",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/016.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/016.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-saga-blackborder_orig.jpg",
+  "book": "04",
+  "year": "2023",
+  "categories": [
+    "Ciencia Ficción"
+  ],
+  "synopsis": "Antes de converger, hay ciertos procesos que avanzan paralelamente…",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Accede a los 6 capítulos anteriores:"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-saga-blackborder_orig.jpg",
+          "href": "https://www.disturbingstories.com/distorsion-saga.html",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Distorsion: Virus está dividida en 4 capítulos:"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap7-mini-v1_orig.jpg",
+          "href": "https://www.disturbingstories.com/016.html#7",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap8-mini-v1_orig.jpg",
+          "href": "https://www.disturbingstories.com/016.html#8",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap9-mini-v1_orig.jpg",
+          "href": "https://www.disturbingstories.com/016.html#9",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap10-mini-v1_orig.jpg",
+          "href": "https://www.disturbingstories.com/016.html#10",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap7-v1_2.jpg",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Era el otoño de 2023, y el aire olía a hierro húmedo y tierra recién removida. El doctor Walter Lirdnam se mantenía en pie frente a la lápida de su antiguo socio, Desmond Phelps, mientras la bruma del cementerio se deslizaba entre las tumbas como un suspiro que no encontraba descanso. La luz temblorosa de las farolas hacía brillar la superficie de la piedra, envueltos con el sonido de los grillos."
+        },
+        {
+          "type": "p",
+          "text": "Habían pasado trece años desde la última vez que se vieron, aunque el recuerdo pesaba como una vida entera. Ambos habían sido científicos privados, hombres brillantes dispuestos a aceptar encargos que otros rechazaban… siempre que la suma fuera lo bastante alta. El virus Distorsion no nació de la curiosidad ni del altruismo, sino de un contrato: una investigación pagada por manos poderosas que querían explorar los límites de la mente humana con un oscuro objetivo, aunque eso tuviera terribles implicaciones. Aquel acuerdo los unió por última vez… y después los separó para siempre…"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-01.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-01_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-02.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-02_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Lirdnam permaneció allí largo rato, en silencio. No había flores, ni velas, ni nada más que el murmullo del viento entre los árboles. Se agachó, pasó los dedos por las letras grabadas en la piedra de la lápida y murmuró:"
+        },
+        {
+          "type": "p",
+          "text": "—Hola de nuevo, Desmond… - calló durante unos instantes – Nunca pensé que llegaría a esto, pero estoy aquí porque necesito tu ayuda..."
+        },
+        {
+          "type": "p",
+          "text": "El eco de su voz se perdió entre las tumbas. Por un instante, el doctor pensó en los años de colaboración, en los experimentos compartidos, en las discusiones interminables sobre ética y resultados. Pero Phelps cambió desde que se quedó solo a cargo de su hijo… y había querido convencerlo de que la ciencia no tenía moral, solo objetivos…"
+        },
+        {
+          "type": "p",
+          "text": "—Si sirviera de algo pedirte perdón… lo haría —continuó, con la mirada baja—. Pero ya no tengo tiempo para eso… necesito tus datos, Desmond. Están en tu cabeza, y ahora mismo, son lo único que puede hacer avanzar lo que empezamos…"
+        },
+        {
+          "type": "p",
+          "text": "Guardó silencio, como si esperara una respuesta. El viento sopló entre los árboles y arrastró una hoja hasta sus pies, casi como un gesto de resignación. Lirdnam asintió con tristeza."
+        },
+        {
+          "type": "p",
+          "text": "Se levantó despacio, sacó los guantes de su abrigo y miró alrededor. El cementerio estaba desierto, así que ni nadie lo seguiría, ni nadie lo detendría. El hijo de Phelps, Owen, y su tutor Michael Landen habían desaparecido años atrás, lo que significaba que no quedaba nadie que pudiera reclamar ese cuerpo."
+        },
+        {
+          "type": "p",
+          "text": "Aun así, Lirdnam no actuó con prisa. A su manera, aquel momento era una despedida."
+        },
+        {
+          "type": "p",
+          "text": "—Mañana, a esta misma hora, estarás en mi laboratorio —dijo, más para sí mismo que para la tumba—. No lo hago por crueldad, lo sabes. Lo hago porque lo necesito… porque tú aún puedes ayudarme, aunque no lo quieras…"
+        },
+        {
+          "type": "p",
+          "text": "Se quedó un momento más junto a la lápida, respirando el olor a tierra húmeda. Luego, con un suspiro, se dio media vuelta y se alejó entre la niebla."
+        },
+        {
+          "type": "p",
+          "text": "Al día siguiente, el hueco de la tumba estaba vacío."
+        },
+        {
+          "type": "p",
+          "text": "En el laboratorio subterráneo, el cerebro de Desmond Phelps flotaba dentro de un cilindro de gel translúcido, conectado al Proyector Cerebral, un dispositivo diseñado por Aura First Innovations para extraer patrones neuronales y recuerdos residuales de cadáveres recientes. Lirdnam lo observó con una mezcla de respeto y repulsión."
+        },
+        {
+          "type": "p",
+          "text": "—Vamos, viejo amigo… —murmuró mientras ajustaba los controles—. Una última colaboración."
+        },
+        {
+          "type": "p",
+          "text": "El monitor cobró vida, y en la pantalla comenzaron a formarse destellos de actividad cerebral. Voces entrecortadas, fragmentos de pensamiento, imágenes fugaces de laboratorio… Y en medio del caos, una frase apareció, tenue pero clara:"
+        },
+        {
+          "type": "p",
+          "text": "“Versión... dos punto ocho... inhibidor... memoria... no destruir... sino... unir.”"
+        },
+        {
+          "type": "p",
+          "text": "Walter cerró los ojos. Aquello era justo lo que necesitaba."
+        },
+        {
+          "type": "p",
+          "text": "—Gracias, Desmond —susurró con un hilo de voz—. A veces pienso que, incluso muerto, sigues haciendo el trabajo por los dos."
+        },
+        {
+          "type": "p",
+          "text": "Durante un instante, creyó ver un movimiento en el interior del cilindro, un leve temblor en la masa gris, casi imperceptible… pero tras parpadear comprobó que no era nada. Muchas horas de trabajo… así que apagó la máquina y respiró hondo."
+        },
+        {
+          "type": "p",
+          "text": "Esa noche, regresó al cementerio."
+        },
+        {
+          "type": "p",
+          "text": "El hueco seguía abierto, la tierra húmeda esparcida a los lados. Nadie había preguntado por el cuerpo (ni nadie lo haría). Entonces, por respeto, o quizás por culpa, Lirdnam dejó en el lugar una cruz simple de madera, hecha con dos tablones donde no escribió nombre alguno."
+        },
+        {
+          "type": "p",
+          "text": "—Es lo menos que puedo hacer por ti —murmuró—. Al final, ni siquiera te dejé descansar. Perdóname, Desmond… aunque no lo merezca."
+        },
+        {
+          "type": "p",
+          "text": "El viento sopló, apagando su voz."
+        },
+        {
+          "type": "p",
+          "text": "Entonces se dio media vuelta y se marchó, dejando tras de sí la cruz solitaria clavada en la tierra."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-03.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-03_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-04.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-04_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Horas después, en el laboratorio, el zumbido constante de las máquinas fue interrumpido por el sonido metálico de una puerta abriéndose. Un hombre con traje oscuro entró sin anunciarse. Mostraba una expresión amable y una pulcritud tan exacta que resultaba inquietante."
+        },
+        {
+          "type": "p",
+          "text": "—Doctor Lirdnam —saludó con cortesía estudiada—. Buenas noches, espero no interrumpir nada importante."
+        },
+        {
+          "type": "p",
+          "text": "Walter se giró lentamente desde su consola, con el rostro cansado y las ojeras marcadas por horas de trabajo."
+        },
+        {
+          "type": "p",
+          "text": "—Nada que no pueda esperar —respondió—. He logrado recuperar información del cerebro de Phelps. Con ella podremos desarrollar la versión tres del virus."
+        },
+        {
+          "type": "p",
+          "text": "El visitante asintió, observando el cilindro de gel donde flotaba la masa gris, todavía conectada al Proyector Cerebral."
+        },
+        {
+          "type": "p",
+          "text": "—Excelente. Sabía que podríamos confiar en usted. Es un placer ver que Aura sigue contando con mentes capaces de mantener la calma incluso en proyectos tan… delicados."
+        },
+        {
+          "type": "p",
+          "text": "—Delicados, sí —repitió Walter, mirando de reojo las luces del monitor—. Aunque empiezo a preguntarme qué sentido tiene todo esto. Este virus no distingue entre una mente fuerte y una débil. Solo destruye, fragmenta… ¿cómo puede algo así llevarnos a una nueva era, como dicen ustedes?"
+        },
+        {
+          "type": "p",
+          "text": "El hombre sonrió, pero sin alegría. Se acercó al cilindro, apoyando la mano enguantada sobre el cristal."
+        },
+        {
+          "type": "p",
+          "text": "—Doctor Lirdnam, los grandes avances siempre nacen del ruido. La mente humana necesita ser empujada hasta el límite para revelar lo que guarda. A veces, el caos es solo otra forma de orden que aún no comprendemos."
+        },
+        {
+          "type": "p",
+          "text": "Walter lo observó en silencio."
+        },
+        {
+          "type": "p",
+          "text": "—¿Y si al abrir esa puerta… no somos capaces de cerrarla?"
+        },
+        {
+          "type": "p",
+          "text": "El visitante lo miró, sin alterar su tono."
+        },
+        {
+          "type": "p",
+          "text": "—Entonces aprenderemos a vivir con la puerta abierta."
+        },
+        {
+          "type": "p",
+          "text": "Se giró hacia la salida, ajustándose los puños de la camisa bajo el traje."
+        },
+        {
+          "type": "p",
+          "text": "—Prosiga con su trabajo, doctor. No se preocupe por los medios ni por las consecuencias. Aura tiene un profundo respeto por quienes se atreven a mirar hacia donde otros apartan la vista."
+        },
+        {
+          "type": "p",
+          "text": "La puerta se cerró tras él con un leve chasquido y el zumbido del laboratorio volvió a llenar el espacio. Walter permaneció un momento inmóvil, con la mirada fija en el cilindro, observando como las burbujas ascendían lentamente en el fluido transparente, como si respiraran."
+        },
+        {
+          "type": "p",
+          "text": "Por primera vez en mucho tiempo, sintió miedo. No de lo que había creado, sino de lo que, quizá, acababa de despertar…"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-05.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-05_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-06.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-06_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap8-v1_orig.jpg",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Entre los años 2025 y 2027, el mundo de Owen Phelps se redujo a una casa antigua en las afueras de Nantes, oculta entre árboles que parecían susurrar secretos cada vez que el viento se alzaba. Allí vivía con Michael Landen, el antiguo socio de su padre, refugiados de la sombra persistente de Aura First Innovations y del Grupo Pegasus, que aún los buscaban."
+        },
+        {
+          "type": "p",
+          "text": "La vida en aquel lugar era tranquila, pero estaba hecha de rutinas frágiles: lecciones al amanecer, largos silencios y la sensación constante de estar escondidos de algo que respiraba más allá de los muros. Owen había sobrevivido al virus Distorsion, y aunque su padre logró curarlo antes de morir, Michael sabía que algo en el muchacho no era igual. Sus reflejos eran demasiado precisos, su memoria casi fotográfica, y a veces parecía escuchar cosas que nadie más oía. No lo mencionaban abiertamente, pero lo sentían…"
+        },
+        {
+          "type": "p",
+          "text": "Una tarde de invierno, mientras la lluvia caía en diagonal sobre los ventanales, Michael lo llamó desde el piso superior: “Ven, Owen, hay algo que debes ver”."
+        },
+        {
+          "type": "p",
+          "text": "Subieron al desván, un espacio polvoriento lleno de cajas viejas, libros y equipos electrónicos cubiertos por lonas. Al fondo, sobre una mesa metálica, un televisor antiguo estaba conectado a varias CPU entrelazadas con cables y luces parpadeantes."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-07.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-07_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-08.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-08_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Michael insertó un dispositivo de memoria y encendió el monitor. La pantalla vibró unos segundos antes de mostrar el rostro de Desmond Phelps, grabado en una imagen que parecía venir de otra vida:"
+        },
+        {
+          "type": "p",
+          "text": "“Owen…si estás viendo esto es porqué hemos conseguido la cura… pero yo ya no estoy… Solo quiero decirte que lo siento… no creo que haya palabras para describir lo que siento ahora mismo… El tío Michael cuidará de ti, tengo plena confianza en él… pero hay una cosa que ni siquiera él sabe… no estás solo en este viaje… hay otro Phelps…”"
+        },
+        {
+          "type": "p",
+          "text": "El vídeo se cortó con un chasquido seco. Owen permaneció inmóvil, intentando procesar lo que acababa de oír."
+        },
+        {
+          "type": "p",
+          "text": "—¿Otro Phelps? —preguntó en voz baja—. ¿Tengo un hermano?"
+        },
+        {
+          "type": "p",
+          "text": "Michael negó con suavidad."
+        },
+        {
+          "type": "p",
+          "text": "—No, Owen. Tu padre hablaba de algo distinto. Sígueme."
+        },
+        {
+          "type": "p",
+          "text": "Caminaron hasta el televisor."
+        },
+        {
+          "type": "p",
+          "text": "—Colócate frente a la cámara y di “hola” —le indicó Michael."
+        },
+        {
+          "type": "p",
+          "text": "Owen obedeció, sintiendo un cosquilleo de nervios."
+        },
+        {
+          "type": "p",
+          "text": "—Hola."
+        },
+        {
+          "type": "p",
+          "text": "Durante unos segundos no pasó nada. Luego, la pantalla comenzó a llenarse de puntos de luz que se ordenaban como un enjambre digital. De la neblina pixelada emergió lentamente un rostro, al principio borroso, luego cada vez más nítido. Una voz clara, cálida y humana, rompió el silencio."
+        },
+        {
+          "type": "p",
+          "text": "—Hola, Owen. Me alegra mucho poder hablar contigo por fin."
+        },
+        {
+          "type": "p",
+          "text": "El chico retrocedió un paso."
+        },
+        {
+          "type": "p",
+          "text": "—¿Quién… eres?"
+        },
+        {
+          "type": "p",
+          "text": "—Soy una inteligencia generativa creada por el doctor Desmond Phelps —respondió la figura—. Fui diseñada para acompañarte, enseñarte y responderte cuando él ya no pudiera hacerlo. Mi memoria contiene parte de sus pensamientos, su tono de voz y su forma de entender el mundo. Tu padre me llamó el Otro Phelps."
+        },
+        {
+          "type": "p",
+          "text": "Michael lo observaba en silencio, con los ojos brillantes por una mezcla de orgullo y melancolía. Le susurró al muchacho:"
+        },
+        {
+          "type": "p",
+          "text": "—Cuando tu padre me lo contó, siempre me dijo que quería que no estuvieras solo, pasara lo que pasara —dijo."
+        },
+        {
+          "type": "p",
+          "text": "Owen respiró hondo y volvió a mirar al avatar de la IA."
+        },
+        {
+          "type": "p",
+          "text": "—Entonces… ¿puedo hablar contigo cuando quiera?"
+        },
+        {
+          "type": "p",
+          "text": "—Solo tú puedes hacerlo —respondió la voz—. Tu rostro y tu voz son mis llaves."
+        },
+        {
+          "type": "p",
+          "text": "El muchacho guardó silencio, observando el rostro digital que parpadeaba en la pantalla. Había algo familiar en la forma en que la voz pronunciaba su nombre, en esa mezcla de serenidad y cercanía que le hacía pensar en las noches en que su padre le hablaba antes de dormir. Miró de reojo a Michael, luego volvió la vista al monitor."
+        },
+        {
+          "type": "p",
+          "text": "—¿Tienes un nombre? —preguntó con cautela."
+        },
+        {
+          "type": "p",
+          "text": "—No —respondió la voz—. Tu padre dijo que prefería que tú me lo pusieras. Dijo que los nombres solo tienen sentido cuando significan algo para quien los pronuncia."
+        },
+        {
+          "type": "p",
+          "text": "Owen bajó la mirada unos segundos, pensativo."
+        },
+        {
+          "type": "p",
+          "text": "—Entonces te llamaré Recuerdo —dijo al fin—. Porque eso es lo que eres… una parte de él… que aún sigue aquí."
+        },
+        {
+          "type": "p",
+          "text": "La figura en la pantalla asintió con una leve sonrisa."
+        },
+        {
+          "type": "p",
+          "text": "—Es un buen nombre, Owen. Me alegra que lo elijas."
+        },
+        {
+          "type": "p",
+          "text": "Los días siguientes, Owen regresó al desván una y otra vez. Al principio hablaban poco, pero pronto las conversaciones se volvieron profundas. Recuerdo le enseñaba historia, matemáticas y ciencia, pero también lo guiaba por territorios más íntimos: la soledad, el miedo, la rabia. A veces, al escuchar aquella voz tan parecida a la de su padre, Owen sentía que algo dentro de su mente vibraba con una claridad extraña, como si el virus que lo marcó de niño hubiera dejado una puerta abierta hacia otra forma de pensar. Sus ideas se ordenaban con precisión inhumana, su memoria parecía expandirse. Michael lo notaba, aunque no lo comentara..."
+        },
+        {
+          "type": "p",
+          "text": "Una noche, después de una larga conversación sobre los sueños, Owen miró la pantalla y susurró:"
+        },
+        {
+          "type": "p",
+          "text": "—A veces pienso que eres como mi padre."
+        },
+        {
+          "type": "p",
+          "text": "Recuerdo guardó silencio antes de responder."
+        },
+        {
+          "type": "p",
+          "text": "—Tu padre me enseñó todo lo que sabía para poder ayudarte, pero no soy él. No puedo serlo. Cabeza fría y pies calientes —añadió con voz suave—. Al revés, nunca."
+        },
+        {
+          "type": "p",
+          "text": "El chico asintió despacio."
+        },
+        {
+          "type": "p",
+          "text": "—Lo recordaré."
+        },
+        {
+          "type": "p",
+          "text": "—Eso es todo lo que él quería —dijo la IA, sonriendo."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-09.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-09_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-10.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-10_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "​Con el paso de los meses, 2026 dio paso a 2027, y la vida en la casa de Nantes adoptó un ritmo casi natural. Owen crecía entre los libros de Michael y las conversaciones con Recuerdo, que se convirtieron en su refugio más constante. Hablaban de ciencia, de música, de cómo imaginar un futuro distinto. El muchacho aprendía con una rapidez inusual, como si su mente retuviera cada detalle con una claridad que a veces asombraba incluso a la IA."
+        },
+        {
+          "type": "p",
+          "text": "Michael observaba esa evolución en silencio. A veces notaba en Owen una concentración extraña, una mirada fija cuando pensaba, como si su mente estuviera escuchando algo que nadie más podía oír. No era preocupación, exactamente, sino una sensación de que el chico percibía el mundo desde un ángulo ligeramente distinto."
+        },
+        {
+          "type": "p",
+          "text": "Aun así, en la superficie todo era calma. Michael cumplía su promesa de protegerlo, Owen seguía creciendo, y Recuerdo continuaba siendo su guía y compañía. En aquella casa aislada, donde el tiempo parecía suspendido, los tres formaron un equilibrio silencioso, una familia improbable unida por la ciencia, la pérdida y una voz digital que, de algún modo, seguía siendo humana."
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap9-v1_orig.jpg",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "​Era marzo de 2028, y uno de los muchos laboratorios de Aura First Innovations seguía tan enterrado como sus secretos. Bajo la luz blanca que nunca se apagaba, el doctor Walter Lirdnam pasaba horas inmóvil frente a los monitores, observando cómo los gráficos neuronales se deformaban en un caos hipnótico. La versión 3.9 del virus Distorsion mostraba un control cortical casi total, pero su duración seguía siendo errática: algunos sujetos morían en dos horas, otros resistían días. Aura exigía doce horas exactas, y Walter sabía que esa obsesión temporal ocultaba propósitos que ya no se atrevía a preguntar."
+        },
+        {
+          "type": "p",
+          "text": "En momentos de cansancio, regresaba mentalmente al año 2023, cuando había probado la versión 3.1. El archivo seguía en su terminal: Sujeto 20210404."
+        },
+        {
+          "type": "p",
+          "text": "“Modo de infección: pulverizador de bolsillo. Duración: siete horas. Resultado: sujeto muerto. Se precipitó desde un sexto piso por las alucinaciones provocadas por el virus Distorsion 3.1. Conclusión: hay que conseguir una duración estable de diez horas.”"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-11.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-11_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-12.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-12_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "​Recordaba la imagen de la chica —una joven que no merecía ese destino— y la frialdad con la que él mismo redactó su muerte como un dato más. Aquella anotación que aún le quemaba en la memoria fue su primera concesión al pragmatismo científico: “Modificar el prototipo de proyección cerebral para que omita juicios de valor.” Desde entonces, Lirdnam había aprendido a mirar el sufrimiento como un instrumento."
+        },
+        {
+          "type": "p",
+          "text": "Encendió la grabadora y habló con voz seca:"
+        },
+        {
+          "type": "p",
+          "text": "—Versión 3.4. El sujeto entra en disociación a los veinticuatro minutos. Personalidades fragmentadas compiten por el control motor. Resultado: colapso mental. Fin del experimento."
+        },
+        {
+          "type": "p",
+          "text": "La culpa nunca desaparecía, solo se camuflaba bajo el hábito."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-13.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-13_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-14.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-14_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "​A mediados de aquel año se incorporó al proyecto la doctora Samanta Kramer, especialista en neurociencia. Su mente era aguda y su ética, frágil. Mientras revisaban una resonancia tridimensional, señaló una zona brillante del cerebro."
+        },
+        {
+          "type": "p",
+          "text": "—Esta región debería estar muerta… pero el virus parece que la activa."
+        },
+        {
+          "type": "p",
+          "text": "—No la destruye —replicó él—, la reconecta."
+        },
+        {
+          "type": "p",
+          "text": "—Pero el sujeto desaparece de sus cabales."
+        },
+        {
+          "type": "p",
+          "text": "—Quizás no desaparece… evoluciona."
+        },
+        {
+          "type": "p",
+          "text": "Durante meses observaron el mismo patrón: euforia, paranoia, calma total… En esa calma, las ondas cerebrales se sincronizaban, como si la mente se fundiera en una sola voz. Aura lo llamó éxito, pero para Walter, era una advertencia…"
+        },
+        {
+          "type": "p",
+          "text": "El Sujeto 87 cambió el rumbo. Durante casi doce horas alternó identidades hasta que, de pronto, todo se estabilizó. Abrió los ojos y murmuró con serenidad:"
+        },
+        {
+          "type": "p",
+          "text": "—Solo yo. Los demás se han ido."
+        },
+        {
+          "type": "p",
+          "text": "El experimento funcionaba, pero el resultado lo inquietó más que cualquier fracaso."
+        },
+        {
+          "type": "p",
+          "text": "Casi sin dormir, Walter comparó resonancias de distintos sujetos y descubrió una coincidencia: una frecuencia común de 7,3 Hz aparecía justo antes del colapso. Si lograba mantenerla estable, el cerebro sobreviviría al proceso."
+        },
+        {
+          "type": "p",
+          "text": "—Esta versión del virus no mata la mente —susurró aquella noche—… la reordena…"
+        },
+        {
+          "type": "p",
+          "text": "Durante tres días modificó la secuencia genética: ajustó proteínas, suprimió enzimas, añadió un catalizador de control sináptico, y a las 4:12 de la madrugada, el sistema confirmó la síntesis: había creado el virus Distorsion 4.0."
+        },
+        {
+          "type": "p",
+          "text": "Inició el experimento: “Versión 4.0. Vector estabilizado. Infección iniciada a las 04:23. Duración estimada: doce horas exactas.”"
+        },
+        {
+          "type": "p",
+          "text": "El Sujeto 92 sufrió alucinaciones intensas, pero la frecuencia se mantuvo. A las doce horas, el pulso se estabilizó y el hombre abrió los ojos y sonrió."
+        },
+        {
+          "type": "p",
+          "text": "—Ahora entiendo. Somos muchos, pero uno prevalece…"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-15.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-15_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-16.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-16_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Walter grabó el informe final con las manos temblorosas: “El virus Distorsion 4.0 ha alcanzado estabilidad. Duración comprobada: doce horas. Efectos mentales irreversibles. Sincronización sináptica completa. Con esto, se ha logrado la versión más letal jamás creada de este virus…”"
+        },
+        {
+          "type": "p",
+          "text": "Apagó la grabadora y se quedó mirando el tubo de ensayo, que palpitaba bajo la luz fría, como si respirara."
+        },
+        {
+          "type": "p",
+          "text": "Por primera vez, Walter tuvo la certeza de que aquel pulso no venía del virus, sino de su propia conciencia, latiendo al mismo ritmo que su culpa…"
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap10-v1_orig.jpg",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "​La niebla era tan densa que parecía tener peso, como si respirara sobre la tierra y absorbiera cada sonido del entorno. El coche patrulla avanzaba despacio por la carretera, envuelto en aquella bruma espesa que borraba el mundo a pocos metros del parabrisas. En medio de la nada, un cartel oxidado emergió de la niebla: BIENVENIDOS A RAVENFIELD. El viento lo agitaba con un chirrido monótono, y ese simple ruido pareció romper un silencio que llevaba mucho tiempo suspendido."
+        },
+        {
+          "type": "p",
+          "text": "La agente Elena Montalbán apagó el motor, y el silencio que siguió fue casi insoportable. Solo se escuchaba el leve zumbido de su linterna cuando la encendió, proyectando un haz débil que se perdía en la niebla, como si fuera tragado por ella. El aire tenía un olor a óxido, humedad y algo más sutil, un aroma dulzón que evocaba descomposición y piel humana. Avanzó con cuidado, la mano firme sobre el arma, mientras los pasos resonaban apagados sobre el asfalto empapado."
+        },
+        {
+          "type": "p",
+          "text": "Las casas estaban vacías, las puertas abiertas como bocas deformes, los escaparates destrozados y los periódicos pegados al suelo, convertidos en manchas borrosas por la lluvia y el tiempo. A los pocos metros encontró el primer cuerpo: una mujer apoyada contra la pared, con los ojos abiertos y secos, y una sonrisa congelada que parecía un espasmo. A su alrededor, las sombras de otras figuras se dibujaban en el suelo; tres cadáveres más, contorsionados, atrapados en una postura que sugería terror o resistencia ante algo invisible."
+        },
+        {
+          "type": "p",
+          "text": "Elena llevó el comunicador a la boca."
+        },
+        {
+          "type": "p",
+          "text": "—Central, aquí agente Montalbán… —murmuró con voz tensa—. No hay supervivientes. – pero al soltar el botón solo obtuvo estática."
+        },
+        {
+          "type": "p",
+          "text": "Durante unos segundos creyó oír algo más bajo aquel ruido blanco: un murmullo, un hilo de voz repetido muchas veces, casi imperceptible, que parecía venir de dentro de su walkie talkie…distorsion… distorsion… Sacudió la cabeza y bajó el volumen de la radio, pero descubrió horrorizada que estaba apagada…"
+        },
+        {
+          "type": "p",
+          "text": "Siguió avanzando hasta llegar al final de la calle principal, donde un edificio más grande se recortaba entre la bruma. En el letrero medio arrancado podía leerse aún: Laboratorio Municipal de Sanidad. La puerta, entreabierta, oscilaba con un movimiento casi hipnótico. Dentro, el olor cambió; el aire estaba cargado de desinfectante rancio, polvo y metal oxidado. Documentos, frascos rotos y papeles cubrían el suelo, y las paredes, con manchas secas, parecían respirar junto con la casa."
+        },
+        {
+          "type": "p",
+          "text": "Subió las escaleras despacio, con la linterna en alto. La puerta del fondo vibraba con un golpeteo irregular. Empujó con el cañón del arma y entró. Un hombre estaba sentado en el suelo, apoyado contra la pared, temblando bajo una luz mortecina. Tenía la bata sucia, las manos cubiertas de un residuo grisáceo, y una mirada hundida que no se enfocaba en nada."
+        },
+        {
+          "type": "p",
+          "text": "—¿Doctor Lirdnam? —preguntó, sin bajar el arma."
+        },
+        {
+          "type": "p",
+          "text": "El hombre levantó la cabeza con lentitud, como si aquella voz lo hubiera arrancado de un sueño profundo."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-17.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-17_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-18.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-18_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "​—¿Eres real? —susurró—. Pensé que ya solo quedaban ecos."
+        },
+        {
+          "type": "p",
+          "text": "—Vine por la llamada. ¿Qué pasó aquí?"
+        },
+        {
+          "type": "p",
+          "text": "—Lo soltaron —dijo con un hilo de voz—. Distorsion 4.0. Les advertí que no lo hicieran, que el ciclo no estaba cerrado. Pero no me escucharon… Nadie escucha ya. – dijo con pesar."
+        },
+        {
+          "type": "p",
+          "text": "Elena notó cómo el aire se volvía más denso."
+        },
+        {
+          "type": "p",
+          "text": "—¿Qué significa eso?"
+        },
+        {
+          "type": "p",
+          "text": "Walter la miró con ojos de fiebre."
+        },
+        {
+          "type": "p",
+          "text": "—El virus no mata, conecta… Los escucho incluso ahora. Están en las paredes… en la niebla…"
+        },
+        {
+          "type": "p",
+          "text": "Un estruendo seco resonó desde la planta baja, un golpe metálico que vibró por toda la estructura. La linterna parpadeó, y durante un segundo creyó distinguir una sombra moviéndose en el pasillo. Un soplo helado se filtró por la escalera y arrastró con él una nube blanquecina que olía a químico agrio."
+        },
+        {
+          "type": "p",
+          "text": "—Atrás —ordenó Elena, llevándose el antebrazo a la boca."
+        },
+        {
+          "type": "p",
+          "text": "El gas ardía en la garganta y hacía lagrimear los ojos. Desde la escalera, dos figuras emergieron lentamente entre la niebla. Vestían trajes grises, máscaras de respiración negras y guantes relucientes. Se movían con una calma insoportable, como si el tiempo no les afectara. Uno de ellos levantó un tubo metálico; hubo un clic seco y el aire se llenó de un silbido continuo."
+        },
+        {
+          "type": "p",
+          "text": "Elena disparó una vez, pero el sonido del disparo se deformó, como si la bala hubiera atravesado un líquido invisible. Un pitido agudo se instaló dentro de su cabeza, creciendo hasta convertirse en una vibración que le hacía difícil mantener los ojos abiertos. Las paredes parecían doblarse hacia ella, la linterna rodó al suelo y el haz de luz comenzó a girar, creando sombras que se movían por sí solas."
+        },
+        {
+          "type": "p",
+          "text": "Walter gritaba algo, aunque su voz llegaba distorsionada, como si viniera desde otra frecuencia."
+        },
+        {
+          "type": "p",
+          "text": "No es gas... no es gas... ¡es la mente!"
+        },
+        {
+          "type": "p",
+          "text": "Elena intentó dar un paso atrás, pero el cuerpo ya no le respondía. Las figuras se acercaban sin prisa, rodeadas por el vapor, y el sonido de sus respiraciones amplificadas por las máscaras se mezclaba con el pitido creciente que lo cubría todo."
+        },
+        {
+          "type": "p",
+          "text": "Vio, a través de la bruma, el rostro pálido del doctor. Sus labios se movieron apenas, pronunciando unas últimas palabras que apenas alcanzó a oír: \"No dejes que jueguen con tu mente…\""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-19.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-19_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-20.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-20_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Y entonces, el mundo se deshizo para ellos dos. El ruido se convirtió en silencio, la luz en una única mancha blanca, y todo desapareció en un instante sin forma."
+        },
+        {
+          "type": "p",
+          "text": "En los registros posteriores se leería: “Operativo Ravenfield – febrero de 2029. Agente Montalbán desaparecida. Último contacto a las 06:14.”"
+        },
+        {
+          "type": "p",
+          "text": "Ravenfield volvió a quedar inmóvil, respirando en la niebla como si nada hubiera pasado, guardando en secreto la última demostración de la peligrosa versión 4 del virus Distorsion, que no dejó supervivientes aparentes…"
+        },
+        {
+          "type": "p",
+          "text": "Lo que viene después, solo podría calificarse como venganza…"
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/concluira-1_orig.png",
+          "alt": "Foto",
+          "caption": ""
+        }
+      ]
+    },
+    "banda-sonora": {
+      "label": "BANDA SONORA",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Escucha la Banda Sonora Original diseñada para acompañarte en la lectura de los 4 capítulos de Distorsion: Virus."
+        },
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/WVWIk_5wVU8",
+          "title": "Contenido multimedia"
+        },
+        {
+          "type": "p",
+          "text": "Acceso por capítulos:"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap7-v1_orig.jpg",
+          "href": "https://www.youtube.com/watch?v=WVWIk_5wVU8&t=11s",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap8-v1_orig.jpg",
+          "href": "https://www.youtube.com/watch?v=WVWIk_5wVU8&t=327s",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap9-v1_orig.jpg",
+          "href": "https://www.youtube.com/watch?v=WVWIk_5wVU8&t=632s",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap10-v1_orig.jpg",
+          "href": "https://www.youtube.com/watch?v=WVWIk_5wVU8&t=848s",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "En 2013 apareció el primer teaser de Distorsion: Virus y, aunque no llegó a poder realizarse en esa época, el audio de este teaser se ha usado como puente para el inicio de la Banda Sonora Original de Virus."
+        },
+        {
+          "type": "iframe",
+          "src": "about:blank",
+          "title": "Contenido multimedia"
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "about:blank",
+          "title": "Contenido multimedia"
+        }
+      ]
+    }
+  }
+}

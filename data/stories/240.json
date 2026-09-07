@@ -1,0 +1,141 @@
+{
+  "schema": 7,
+  "id": "240",
+  "title": "Las Sillas",
+  "published": "2026-06-28",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/240.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/240.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/240-las-sillas-frame-1.jpg",
+  "book": "05",
+  "year": "2003",
+  "categories": [
+    "Oscuras"
+  ],
+  "synopsis": "Pensaron que por ser turistas tendrían impunidad…",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Agosto caía sobre el pueblo como una sábana húmeda, apagando las conversaciones, cerrando las persianas y dejando en las calles ese silencio blanco que solo se rompe, de vez en cuando, con el rumor del mar. Leonor y Julio, que habían alquilado un piso para todo el mes, volvían del mercado cuando pasaron frente al bar de la curva, un local apartado del paseo, medio oculto por los tamarindos y por una sal vieja que parecía haberlo cubierto todo."
+        },
+        {
+          "type": "p",
+          "text": "El rótulo decía BAR LA SIRENA, aunque la pintura estaba comida y a la sirena le faltaba el rostro. La terraza permanecía desierta, con las mesas arrinconadas y varias sillas de madera apiladas contra la pared, verdes, sólidas, mucho mejores que los dos taburetes de plástico que tenían en el balcón del apartamento."
+        },
+        {
+          "type": "p",
+          "text": "Leonor se detuvo primero, y Julio entendió la idea antes de que ella la dijera."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/240-las-sillas-frame-1.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/240-las-sillas-frame-1_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/240-las-sillas-frame-2.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/240-las-sillas-frame-2_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "—Está cerrado desde que llegamos —murmuró ella, como si aquello no fuera una observación, sino un permiso."
+        },
+        {
+          "type": "p",
+          "text": "Él miró los cristales oscuros del bar, donde no se distinguía más que una sombra espesa, y quiso decir que no, que no hacía falta, que a su edad uno ya debía saber qué cosas no se tocaban. Pero el verano, el calor y la pequeña impunidad de los lugares desconocidos parece que ablandan la conciencia de algunas personas, así que cada uno tomó una silla y comenzaron a alejarse con una prisa torpe, fingiendo naturalidad."
+        },
+        {
+          "type": "p",
+          "text": "No habían llegado a la esquina cuando la puerta del bar se abrió detrás de ellos con un gemido largo, como si despertara una madera enterrada. Entonces oyeron una voz."
+        },
+        {
+          "type": "p",
+          "text": "—¡Eh!"
+        },
+        {
+          "type": "p",
+          "text": "Fue una sola palabra, pero les heló la espalda. Al volverse, vieron en el umbral una figura alta, inmóvil, con el pelo larguísimo cayéndole sobre la cara hasta ocultarla por completo. Llevaba un delantal oscuro y parecía demasiado delgada para sostenerse en pie, aunque en su quietud había algo bastante inquietante."
+        },
+        {
+          "type": "p",
+          "text": "—¡Eh! —repitió, y esta vez la voz sonó como si estuviera a su lado."
+        },
+        {
+          "type": "p",
+          "text": "Leonor soltó la silla de un respingo, Julio la imitó y ambos huyeron calle arriba con la dignidad hecha jirones, jadeando, tropezando, corriendo tan rápido como les permitían las rodillas y el miedo. Nadie los siguió…"
+        },
+        {
+          "type": "p",
+          "text": "Cuando llegaron al piso, cerraron con pestillo y se quedaron escuchando, hasta convencerse de que nadie los había seguido. Entonces entraron en el comedor y se les heló la sangre, porque descubrieron horrorizados que las dos sillas verdes estaban allí, colocadas a ambos lados de la mesa."
+        },
+        {
+          "type": "p",
+          "text": "Julio retrocedió, pero algo respiró en la penumbra del pasillo. Leonor volvió rápidamente la cabeza y vio a la figura del bar esperándolos dentro de casa, con el pelo larguísimo cubriéndole el rostro y los brazos colgando como ramas muertas. De su cuerpo salía un olor a madera podrida, vino agrio y mar estancado."
+        },
+        {
+          "type": "p",
+          "text": "—Lo sentimos —susurró Julio—. Las devolveremos…"
+        },
+        {
+          "type": "p",
+          "text": "La figura no respondió. Solo levantó lentamente la cabeza, y desde algún lugar bajo aquel pelo húmedo brotó la misma voz de antes."
+        },
+        {
+          "type": "p",
+          "text": "—Eh..."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/240-las-sillas-frame-3.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/240-las-sillas-frame-3_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/240-las-sillas-frame-4.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/240-las-sillas-frame-4_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Entonces Leonor y Julio comprendieron, demasiado tarde, que no era necesario que nadie los acusara, ni que nadie los persiguiera… Bastaba con el hecho de haberlas cogido. Bastaba con haber cruzado la calle llevando entre las manos algo que no era suyo…"
+        },
+        {
+          "type": "p",
+          "text": "En ese momento, las sillas crujieron, y sintieron que algo tiraba de ellos desde dentro, arrancándolos del cuerpo. Intentaron gritar, pero ya no tenían voz…"
+        },
+        {
+          "type": "p",
+          "text": "Al día siguiente, el piso amaneció vacío…"
+        },
+        {
+          "type": "p",
+          "text": "Esa noche, en el bar La Sirena, nadie pudo ver a Leonor y Julio sentados en las sillas verdes, golpeando los cristales desde el interior mientras gritaban sin sonido atrapados allí dentro para siempre..."
+        },
+        {
+          "type": "p",
+          "text": "La figura de pelo largo aguardaba tras la barra, inmóvil, como aguardan las cosas malditas cuando ya han cumplido su trabajo… y mientras, bajo el rótulo exterior roto, alguien había escrito con tiza: “No cogerás lo que no es tuyo…”"
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "about:blank",
+          "title": "Contenido multimedia"
+        }
+      ]
+    }
+  }
+}

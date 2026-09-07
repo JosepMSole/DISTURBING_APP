@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "books": {
+    "5": {
+      "front": "./assets/books/book-5-front.jpg",
+      "back": "./assets/books/book-5-back.jpg",
+      "spine": "./assets/books/book-5-spine.jpg"
+    }
+  },
+  "updated": "2026-09-07T18:36:36.023759+00:00"
+}

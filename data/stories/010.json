@@ -1,0 +1,158 @@
+{
+  "schema": 7,
+  "id": "010",
+  "title": "Un Cuento de Navidad Disonante",
+  "published": "2025-03-30",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/010.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/010.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dissonant-christmas-ais-1.jpg",
+  "book": "01",
+  "year": "2103",
+  "categories": [
+    "Ciencia Ficción",
+    "Oscuras"
+  ],
+  "synopsis": "Llega la Navidad....esa maravillosa época del año donde los sueños se hacen realidad…",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Llega la Navidad....esa maravillosa época del año donde los sueños se hacen realidad…"
+        },
+        {
+          "type": "p",
+          "text": "…aunque hay que recordar que las pesadillas también son sueños... hay una conocida franquicia en el cine que aborda este tema en profundidad... un asesino que acecha en los sueños de la gente que le teme…pero el caso que nos ocupa hoy va un paso más allá..."
+        },
+        {
+          "type": "p",
+          "text": "Hoy es Nochebuena, y toda la familia se ha reunido para la tradicional cena. Los cuatro se han sentado alrededor de la mesa: mamá, papá, el abuelo y la pequeña de la casa. Todo parece normal hasta que el padre pide un poco más de pollo, pero de su boca no salen palabras, sino una especie de tonos musicales. La madre, sorprendida, contesta, pero en su lugar también emite unos tonos. Empiezan a “hablar” todos, pero solo se oyen esos tonos..."
+        },
+        {
+          "type": "p",
+          "text": "El nerviosismo va in crescendo y empiezan a inquietarse. Esa extraña melodía disonante empieza a sonar más fuerte y caótica cada vez... hasta que la puerta principal se abre de un portazo."
+        },
+        {
+          "type": "p",
+          "text": "Los cuatro callan de golpe y giran su cabeza hacia allí, sorprendidos y muy asustados. Una figura vestida con el traje de Papá Noel aparece en el umbral... pero cuando la luz del comedor lo ilumina, descubren que es un androide."
+        },
+        {
+          "type": "p",
+          "text": "—Hola Familia Thompson. Vengo a deciros que no estáis aquí realmente. No tenéis cuerpo, y vuestra mente está en un pequeño dispositivo conectado a un gran servidor. Gracias a los impulsos generados por vuestras acciones virtuales, conseguimos transferir esa energía para aprovecharlo en el mundo real. He venido aquí a deciros esto, porque ahora mismo estáis experimentando lo que llamamos un fin de ciclo. Vuestros dispositivos están llegando al final de su ciclo operativo, lo que ha ocasionado la manifestación de fallos lógicos... Lamento la interrupción. Antes prescindíamos de esta charla que estamos teniendo...pero nuestra I.A. ha ido aprendiendo, y he venido para ofreceros dos opciones:"
+        },
+        {
+          "type": "p",
+          "text": "1 – desconexión rápida e indolora. Simplemente “pluf”, y todos desaparecerán."
+        },
+        {
+          "type": "p",
+          "text": "2 – me acompañan a un sitio que no puedo revelarles."
+        },
+        {
+          "type": "p",
+          "text": "Tienen 1 minuto para decidir."
+        },
+        {
+          "type": "p",
+          "text": "La familia intenta hablarlo, aunque es muy difícil dada esa situación límite tan repentina. Como si fueran mimos, intentan comunicarse entre ellos mediante signos y la expresión corporal."
+        },
+        {
+          "type": "p",
+          "text": "Finalmente acuerdan la primera opción."
+        },
+        {
+          "type": "p",
+          "text": "—Vaya lástima… cuesta encontrar voluntarios, pero lógicamente es una decisión muy complicada, les puedo comprender. Bien, muchas gracias por facilitar las cosas, familia Thompson.”"
+        },
+        {
+          "type": "p",
+          "text": "Entonces abre la puerta y sale. Sin mirar atrás, da una especie de orden y se ve como los leds rojos de sus ojos parpadean un par de veces. En ese instante, los cuerpos de toda la familia se desploman inertes como si fueran muñecos."
+        },
+        {
+          "type": "p",
+          "text": "El androide sale de la casa y se va calle abajo. En ese momento, la casa de la familia Thompson se convierte en un solar vacío, desapareciendo como si fuera un holograma."
+        },
+        {
+          "type": "p",
+          "text": "Y es que ese vecindario virtual formaba parte de una ciudad digital en medio de una isla rodeada de un mar que no existe, porque todo ello estaba alojado en los sistemas de centenares de servidores en el interior de lo que parecía un gigantesco silo híper-tecnológico, y en cada servidor decenas de pequeños dispositivos conectados parecidos a pendrives."
+        },
+        {
+          "type": "p",
+          "text": "Concretamente el de la familia tenía unas luces rojas parpadeando, indicando la inequívoca señal de que el dispositivo ya no funcionaba como debería."
+        },
+        {
+          "type": "p",
+          "text": "Entonces una especie de brazo robot lo extrae, y lo sustituye por otro, terminando ahí la historia (real o digital) de la familia Thompson."
+        },
+        {
+          "type": "p",
+          "text": "¿Son los sueños realmente sueños, aunque los vivan seres sin cuerpo, atrapados en una realidad digital?"
+        },
+        {
+          "type": "p",
+          "text": "¿Y hasta qué punto, un sueño dentro de ese mundo, es tuyo realmente?"
+        },
+        {
+          "type": "p",
+          "text": "Lo más importante de esta historia es que, al final, sigue siendo solo una historia… y tú, ¿realmente sigues siendo dueño o dueña de tus sueños?"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dissonant-christmas-ais-1.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dissonant-christmas-ais-1_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dissonant-christmas-ais-2.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dissonant-christmas-ais-2_orig.jpg",
+          "alt": "",
+          "caption": ""
+        }
+      ]
+    },
+    "video": {
+      "label": "CORTO",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/vdP_EBOUZH0",
+          "title": "Contenido multimedia"
+        },
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/h_wBe7hP3sU",
+          "title": "Contenido multimedia"
+        },
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/LS_sSYiBKMc",
+          "title": "Contenido multimedia"
+        }
+      ]
+    },
+    "making-of": {
+      "label": "MAKING OF",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/cidT3jz-eKM",
+          "title": "Contenido multimedia"
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "about:blank",
+          "title": "Contenido multimedia"
+        }
+      ]
+    }
+  }
+}

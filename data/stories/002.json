@@ -1,0 +1,145 @@
+{
+  "schema": 7,
+  "id": "002",
+  "title": "Caracteres",
+  "published": "2025-03-23",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/002.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/002.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/3b.jpg?1742003114",
+  "book": "01",
+  "year": "2051",
+  "categories": [
+    "Oscuras"
+  ],
+  "synopsis": "Jason Peters despierta sentado en un extraño dispositivo de donde prácticamente no puede moverse....¿porqué está ahí?",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Un hombre despierta en una sala que parece de operaciones, rodeado de una extraña máquina, y sin posibilidad de escapar por mucho que se mueva o grite."
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/3b.jpg?1742003114",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Se encuentra totalmente desnudo y con muy poco margen para moverse, ya que unos mecanismos le retienen manos y pies."
+        },
+        {
+          "type": "p",
+          "text": "Una pantalla se enciende en la pared frontal y aparece una especie de alto político andrógino que empieza a hablar:"
+        },
+        {
+          "type": "p",
+          "text": "—Jason Peters, por orden de la Confederación del Pacífico Este, se le declara culpable de los delitos de: odio, incitación al odio, incitación a la violencia, y sedición. ¿Cómo se declara el acusado?"
+        },
+        {
+          "type": "p",
+          "text": "—¿Qué? ¡Inocente! ¡Por dios! ¡¿Pero qué están diciendo?! ¡¡Yo nunca he hecho nada!!"
+        },
+        {
+          "type": "p",
+          "text": "—El acusado rehúsa la confesión. Se pasará a leer los motivos por los que se le ha procesado: usted redactó los siguientes posts, leo textualmente:"
+        },
+        {
+          "type": "p",
+          "text": "“Quién ha puesto una mujer ahí al mando?”"
+        },
+        {
+          "type": "p",
+          "text": "“Esto, cuando no permitíamos la entrada a ese tipo de gente, funcionaba mejor”"
+        },
+        {
+          "type": "p",
+          "text": "“¡Extranjeros, volved a casa!”"
+        },
+        {
+          "type": "p",
+          "text": "—……y así hasta un total de 17 entradas. ¿Confirma el acusado la autoría de dichos posts?"
+        },
+        {
+          "type": "p",
+          "text": "— (duda un instante) Sí que los escribí…¡pero de esto hace mucho tiempo! ¡¡Ni lo recordaba!!"
+        },
+        {
+          "type": "p",
+          "text": "—Entonces, tras el reconocimiento por parte del acusado, y por orden del tribunal Independiente del Ministerio de las Buenas Praxis, se le condena a un castigo ejemplar como parte del Movimiento de Limpieza del Espacio Virtual."
+        },
+        {
+          "type": "p",
+          "text": "—¡¡Pero esto es injusto!! ¡¡No he hecho nada!!"
+        },
+        {
+          "type": "p",
+          "text": "—Con casos como el suyo, el Ministerio sólo busca erradicar esta clase de comportamientos en la red. Puede iniciar el castigo."
+        },
+        {
+          "type": "p",
+          "text": "Entonces la máquina que rodea al joven comienza a girar y unos rayos se proyectan en su piel. Vemos como poco a poco se empiezan a tatuar por todo su cuerpo los 17 posts de los que se le acusa. El protagonista grita de dolor, aunque está inmovilizado y no puede escapar."
+        },
+        {
+          "type": "p",
+          "text": "Cuando el macabro proceso finaliza, el acusado se desmaya."
+        },
+        {
+          "type": "p",
+          "text": "Se oye todavía la voz del alto-político:"
+        },
+        {
+          "type": "p",
+          "text": "—El castigo amparado dentro del Movimiento de Limpieza del Espacio Virtual ha concluido. El acusado será inmediatamente puesto en libertad tan pronto como recupere el sentido. Ninguno de sus bienes ni nada de su vida personal o laboral ha sido alterado. Resumen de la Condena Número 985 del Movimiento de Limpieza del Espacio Virtual: Total de caracteres impresos: 325. Fin del caso 2286-A1205-0985. Procedan a la extracción de éste módulo, y adelante con el siguiente acusado."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/openart-image-ao8e2mrp-1739117875493-raw-psd.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/openart-image-ao8e2mrp-1739117875493-raw-psd_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/openart-image-p3vctgpd-1739116898827-raw-psd.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/openart-image-p3vctgpd-1739116898827-raw-psd_orig.jpg",
+          "alt": "",
+          "caption": ""
+        }
+      ]
+    },
+    "audio": {
+      "label": "AUDIO",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/wt5eCSZ3XTc",
+          "title": "Contenido multimedia"
+        },
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/SkrMQmvkxNM",
+          "title": "Contenido multimedia"
+        },
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/XuH7IHYdZWM",
+          "title": "Contenido multimedia"
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "about:blank",
+          "title": "Contenido multimedia"
+        }
+      ]
+    }
+  }
+}

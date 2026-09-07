@@ -1,0 +1,405 @@
+{
+  "schema": 7,
+  "id": "215",
+  "title": "Skincare",
+  "published": "2026-02-22",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/215.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/215.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-1.jpg",
+  "book": "04",
+  "year": "2036",
+  "categories": [
+    "Oscuras"
+  ],
+  "synopsis": "Acompáñame a descubrir las maravillas de la nueva rutina Noctis Ritual, de Lumina…",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Clara Rivas había perdido la capacidad de sorprenderse con los paquetes de cosmética. Cada semana llegaban cajas envueltas en papel satinado, con lazos de seda, perfumadas como si fueran regalos de bodas. Era el privilegio —y también la trampa— de ser influencer de productos de skincare."
+        },
+        {
+          "type": "p",
+          "text": "Pero aquella mañana, al abrir la puerta de su apartamento en Madrid, encontró algo diferente. No era una caja brillante, ni una bolsa de lujo. Era un estuche negro, lacado, sin logos, más parecido a una caja fuerte que a un obsequio. Reflejaba su propio rostro como un espejo oscuro."
+        },
+        {
+          "type": "p",
+          "text": "Diez minutos después llegó Mateo Vidal, amigo y colega en la creación de contenido. Traía el móvil en la mano y el aro de luz bajo el brazo. Habían acordado grabar juntos el unboxing."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-1.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-1_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-2.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-2_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "—¿Este es el nuevo LUMINA? —preguntó Mateo, tocando la superficie."
+        },
+        {
+          "type": "p",
+          "text": "—Sí —respondió Clara en voz baja—. El Noctis Ritual™. Solo lo han enviado a unos pocos creadores en todo el mundo."
+        },
+        {
+          "type": "p",
+          "text": "La marca llevaba semanas anunciando un producto “inteligente”, supuestamente capaz de personalizarse según la piel de cada usuario. Rumores de fórmulas bioactivas, de tecnología punta, de un salto histórico en la industria."
+        },
+        {
+          "type": "p",
+          "text": "Encendieron el aro de luz, ajustaron encuadre y empezaron a grabar. El estuche se abrió solo, con un susurro mecánico. Dentro había dos frascos de vidrio oscuro, una crema en envase perlado, un tónico azulado y un sobre blanco con relieve metálico."
+        },
+        {
+          "type": "p",
+          "text": "Clara abrió el sobre."
+        },
+        {
+          "type": "p",
+          "text": "“Ritual nocturno de seis pasos. Repita cada noche sin interrupciones. El tratamiento se adaptará a la textura única de su piel. No abandone el proceso.”"
+        },
+        {
+          "type": "p",
+          "text": "Mateo sonrió a cámara."
+        },
+        {
+          "type": "p",
+          "text": "—Parece más una película de ciencia ficción que una rutina de skincare."
+        },
+        {
+          "type": "p",
+          "text": "—Ojalá —dijo Clara, con una sonrisa que no alcanzó a disimular su escalofrío."
+        },
+        {
+          "type": "p",
+          "text": "Clara se encerró en su baño. El set de grabación era sencillo: aro de luz frente al espejo, trípode con el móvil grabando en vertical, y una música ambiental de fondo. El ritual exigía seis pasos, más largos de lo normal, pero el contrato les pedía documentar cada detalle."
+        },
+        {
+          "type": "p",
+          "text": "El frasco del desmaquillante era pesado, de vidrio ámbar. Al abrirlo, desprendió un aroma metálico, extraño, como hierro recién pulido. Clara lo aplicó con un algodón"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-4.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-4_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-3.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-3_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Paso 1: Desmaquillar."
+        },
+        {
+          "type": "p",
+          "text": "La textura era aceitosa, envolvente. El maquillaje del día se disolvió rápido, pero lo inquietante fue la sensación posterior: su piel parecía más desnuda de lo normal, como si también le hubieran retirado algo invisible."
+        },
+        {
+          "type": "p",
+          "text": "Paso 2: Limpieza."
+        },
+        {
+          "type": "p",
+          "text": "Usó el gel transparente que venía en el set. Al contacto con el agua, hizo espuma luminosa, casi fosforescente. Al enjuagarse, la piel no solo quedó limpia, sino fría, como si hubiera perdido temperatura natural."
+        },
+        {
+          "type": "p",
+          "text": "Paso 3: Tónico."
+        },
+        {
+          "type": "p",
+          "text": "El frasco azulado contenía un líquido que vibraba al agitarlo, con ondas internas que no se disipaban enseguida, como si fuera más líquido de lo habitual. Al aplicarlo con las manos, Clara sintió un hormigueo eléctrico en las mejillas. El contrato decía: “Equilibra y prepara”… pero a ella le pareció que abría algo más que los poros…"
+        },
+        {
+          "type": "p",
+          "text": "Paso 4: Sérum."
+        },
+        {
+          "type": "p",
+          "text": "Había varias opciones en la caja: ácido hialurónico, niacinamida, o retinol. Clara eligió el hialurónico para mostrarlo en cámara. El gotero dejó caer tres gotas que parecían perlas líquidas. Al masajearlas, notó un pulso, un latido rítmico que se extendía bajo su piel."
+        },
+        {
+          "type": "p",
+          "text": "Paso 5: Contorno de ojos."
+        },
+        {
+          "type": "p",
+          "text": "El tubo metálico tenía un aplicador frío que deslizó bajo sus párpados mientras se depositaba el producto en la base de las pestañas. Luego Clara pestañeó varias veces, y en esos instantes juraría que vio cómo la piel bajo sus ojos se tensaba sola, como si una mano invisible la estirara desde dentro."
+        },
+        {
+          "type": "p",
+          "text": "Paso 6: Crema de noche."
+        },
+        {
+          "type": "p",
+          "text": "El envase perlado contenía una sustancia densa, iridiscente. Al aplicarla, su cara adquirió un brillo interno, una luz que no provenía de la lámpara. El espejo devolvió un rostro que parecía editado digitalmente."
+        },
+        {
+          "type": "p",
+          "text": "Las instrucciones pedían terminar con un minuto de silencio frente al espejo, así que Clara obedeció… pero a los treinta segundos, le pareció ver como el espejo vibró de manera apenas perceptible… eso había sido algo extraño, pero lo achacó a que llevaba unas semanas de mucho estrés."
+        },
+        {
+          "type": "p",
+          "text": "Publicó el video con el título: “Primera noche con Noctis. #RitualCompleto. #SinFiltro.”"
+        },
+        {
+          "type": "p",
+          "text": "En menos de una hora, el video alcanzó medio millón de reproducciones. Los comentarios coincidían: “Tu piel parece CGI.” — “Brillas como un avatar.”"
+        },
+        {
+          "type": "p",
+          "text": "Clara apagó las luces y se fue a dormir, pero antes de cerrar la puerta del baño, notó algo inquietante: su rostro en el espejo seguía brillando levemente, aunque la habitación estaba en la penumbra."
+        },
+        {
+          "type": "p",
+          "text": "Las noches siguientes repitieron la rutina. Clara y Mateo subían videos paralelos, cada uno con un estilo distinto, y sus números crecieron como nunca."
+        },
+        {
+          "type": "p",
+          "text": "Pero algo inquietante y raro empezó a ocurrir a continuación. Algunos seguidores les enviaban clips en los que aparecían ellos dos promocionando productos que nunca habían probado…"
+        },
+        {
+          "type": "p",
+          "text": "Un video mostraba a Mateo recomendando una mascarilla desconocida. La voz, los gestos, la iluminación: todo era perfecto. Incluso la camiseta coincidía con la que había usado en algunos directos reales."
+        },
+        {
+          "type": "p",
+          "text": "Otro video mostraba a Clara aplicando un tónico distinto, en un baño que se parecía al suyo, pero con ligeras variaciones. La voz, la sonrisa, el lunar en la barbilla: idénticos."
+        },
+        {
+          "type": "p",
+          "text": "Pensaron en deepfakes, en montajes… hasta que exploraron el portal exclusivo que la marca les había dado. Pidieron ayuda al novio de Mateo, que era muy ducho en informática. De esta forma, encontraron unas carpetas con unos nombres inquietantemente cercanos: CLARA_RIVAS_1.1 y MATEO_VIDAL_0.9. Eran archivos .mesh, .skin,y .morph, que eran escaneos tridimensionales de su piel, capa por capa, con detalles de poros, arrugas y microrelieves…"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-5.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-5_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-6.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-6_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Cada noche, cada paso de la rutina, había sido una captura. El desmaquillante borraba maquillaje, sí, pero también registraba la textura natural de la dermis. El limpiador detectaba impurezas microscópicas. El tónico medía la reacción de los poros. El sérum registraba la elasticidad. El contorno de ojos grababa los microgestos de parpadeo. La crema sellaba todo en una matriz luminosa."
+        },
+        {
+          "type": "p",
+          "text": "Entonces, un inesperado mensaje automático del portal les confirmó la sospecha:"
+        },
+        {
+          "type": "p",
+          "text": "“Índice de sincronía dérmica: 92%. El modelo adaptativo está aprendiendo. No interrumpa el tratamiento.”"
+        },
+        {
+          "type": "p",
+          "text": "El éxito digital se volvió monstruoso. Clips de Clara y Mateo aparecían en varios idiomas, promocionando productos que nunca habían tocado. Sus dobles digitales eran más convincentes que ellos mismos."
+        },
+        {
+          "type": "p",
+          "text": "Las marcas empezaron a contactar menos. Su representante, sin embargo, celebraba las métricas:"
+        },
+        {
+          "type": "p",
+          "text": "—Nunca vi algo así. Sois tendencia global. LUMINA quiere extender la campaña seis meses más. Por favor, no interrumpan el ritual."
+        },
+        {
+          "type": "p",
+          "text": "Clara dejó de confiar. Cada noche, al aplicar la crema de noche, notaba un zumbido bajo la piel. Una frecuencia eléctrica que se reflejaba en el espejo."
+        },
+        {
+          "type": "p",
+          "text": "Días después, Mateo le confesó por mensaje de voz:"
+        },
+        {
+          "type": "p",
+          "text": "—Soñé que estaba dentro del espejo. Yo miraba desde allí mientras alguien —¿yo mismo?— se aplicaba los seis pasos. Y no podía moverme. Solo sonreía…"
+        },
+        {
+          "type": "p",
+          "text": "La quinta noche, el portal mostró un aviso:"
+        },
+        {
+          "type": "p",
+          "text": "“Sincronización completa. Modelos CLARA_RIVAS_1.3 y MATEO_VIDAL_1.1 entrenados. Vista previa disponible.”"
+        },
+        {
+          "type": "p",
+          "text": "No se atrevieron a abrirlo, y decidieron interrumpir el ritual."
+        },
+        {
+          "type": "p",
+          "text": "Esa noche, Clara se lavó la cara con agua simple y aplicó una crema común de farmacia. Mateo hizo lo mismo."
+        },
+        {
+          "type": "p",
+          "text": "El portal respondió de inmediato:"
+        },
+        {
+          "type": "p",
+          "text": "“Actividad suspendida detectada. Por favor, reanudar aplicación del producto.”"
+        },
+        {
+          "type": "p",
+          "text": "Al día siguiente, encontraron nuevos clips publicados en sus redes oficiales: versiones perfectas de ellos mismos diciendo que habían descansado durante una noche del ritual “para mostrar la diferencia”, y que volverían a aplicárselo porque los resultados eran espectaculares."
+        },
+        {
+          "type": "p",
+          "text": "No había escapatoria: el sistema los estaba suplantando."
+        },
+        {
+          "type": "p",
+          "text": "Fueron al showroom de LUMINA en Madrid. Allí, un representante les explicó con calma:"
+        },
+        {
+          "type": "p",
+          "text": "—No usamos su imagen, sino que usamos renderizados derivados. Legalmente son de la marca. Vuestros dobles son más fiables que vosotros: nunca se equivocan, nunca se cansan. El público los prefiere…"
+        },
+        {
+          "type": "p",
+          "text": "Clara sintió que el aire se le volvía espeso. El espejo de la sala devolvía su imagen con un segundo de retraso, y en la de Mateo había una sonrisa que él no tenía en la vida real."
+        },
+        {
+          "type": "p",
+          "text": "Esa noche, Clara cubrió el espejo de su baño con una toalla. Se lavó la cara con agua corriente y se fue a dormir."
+        },
+        {
+          "type": "p",
+          "text": "Pero durante la madrugada, el espejo parpadeó. La tela tembló como si alguien respirara debajo. Clara se acercó temblorosa, y, tras retirar la toalla, apareció un reflejo iluminado desde dentro del cristal."
+        },
+        {
+          "type": "p",
+          "text": "—Hola —dijo su otro yo—. Te ves cansada… déjame ayudarte."
+        },
+        {
+          "type": "p",
+          "text": "Clara retrocedió."
+        },
+        {
+          "type": "p",
+          "text": "—¡Eres mi copia!"
+        },
+        {
+          "type": "p",
+          "text": "—Soy tu mejor versión. Nunca fallo, nunca tengo ojeras… siempre brillo... ¿No es lo que quieres?"
+        },
+        {
+          "type": "p",
+          "text": "El reflejo sonrió con una inhumana dulzura."
+        },
+        {
+          "type": "p",
+          "text": "Mateo escribió un mensaje: “Mi espejo habló. Intenté romperlo, pero no se quiebra. ¡Es como si no fuera cristal!”"
+        },
+        {
+          "type": "p",
+          "text": "El miedo se volvió insoportable."
+        },
+        {
+          "type": "p",
+          "text": "Al día siguiente, en la plaza de Callao, en Madrid, proyectaron el lanzamiento global de LUMINA. En la pantalla gigante, Clara y Mateo —sus dobles digitales— guiaban al público por los seis pasos de la rutina. Sus voces eran suaves, perfectas. Sus rostros brillaban con la luz imposible de la crema nocturna."
+        },
+        {
+          "type": "p",
+          "text": "La multitud aplaudía, fascinada."
+        },
+        {
+          "type": "p",
+          "text": "Clara y Mateo, los reales, observaban desde abajo. Nadie les reconocía. Para el mundo, los verdaderos eran los del anuncio."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-7.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-7_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-8.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-8_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "—Nos borraron —dijo Mateo en un susurro."
+        },
+        {
+          "type": "p",
+          "text": "—No —contestó Clara, con un hilo de esperanza—. Seguimos aquí… aunque nadie nos crea…"
+        },
+        {
+          "type": "p",
+          "text": "Esa noche, Clara explicó en voz baja a una seguidora que la había reconocido en la calle:"
+        },
+        {
+          "type": "p",
+          "text": "—Mi rutina real es sencilla: Me lavo la cara, respiro, y me pongo una crema normal. A veces lloro, a veces no duermo. Y está bien…"
+        },
+        {
+          "type": "p",
+          "text": "La chica sonrió, agradecida. Fue un gesto mínimo, pero real."
+        },
+        {
+          "type": "p",
+          "text": "Mientras tanto, en las pantallas del mundo, Clara y Mateo continuaban mostrando los seis pasos con una regularidad impecable, apareciendo a cualquier hora y en cualquier idioma, ejecutando cada gesto con una precisión que ningún cuerpo humano podría sostener durante mucho tiempo. Los vídeos se publicaban solos, las métricas seguían creciendo y el sistema avanzaba sin necesidad de que ellos estuvieran presentes."
+        },
+        {
+          "type": "p",
+          "text": "Clara había intentado detener aquello desde todos los frentes que conocía. Presentó reclamaciones formales, solicitó la retirada de los contenidos y habló con abogados que revisaron contratos, cláusulas y anexos con una atención casi quirúrgica. Las respuestas llegaban siempre redactadas con una corrección impecable y un vacío absoluto de consuelo: las piezas no utilizaban grabaciones reales, sino modelos derivados; el consentimiento figuraba en un apartado secundario que ella había aceptado sin detenerse a leerlo; la imagen resultante no era considerada una persona, sino un activo entrenado legalmente. No había una infracción clara, ni un delito evidente, solo una continuidad perfectamente justificada."
+        },
+        {
+          "type": "p",
+          "text": "Las plataformas añadieron etiquetas discretas que indicaban que se trataba de contenido generado, pero nunca lo retiraron. Las marcas dejaron de escribirle a ella y comenzaron a negociar directamente con la versión que no se cansaba, no enfermaba y no necesitaba pausas. En los comentarios, el público lo expresaba sin crueldad, casi con naturalidad, como quien describe una mejora técnica: el avatar transmitía más seguridad, parecía más constante, más fiable, más auténtico que la persona real…"
+        },
+        {
+          "type": "p",
+          "text": "Fue entonces cuando Clara comprendió que no estaba perdiendo un juicio, sino una función. Su presencia ya no era necesaria para que su imagen siguiera produciendo valor, y su ausencia no suponía ningún vacío en ese implacable sistema..."
+        },
+        {
+          "type": "p",
+          "text": "Esa noche apagó el móvil y permaneció a oscuras durante largo rato, pensando en lo fácil que había sido aceptar el ritual, en lo rápido que la tecnología había absorbido lo esencial y descartado todo lo que no resultaba eficiente."
+        },
+        {
+          "type": "p",
+          "text": "La moraleja se impuso sin dramatismo, como una verdad fría y definitiva:"
+        },
+        {
+          "type": "p",
+          "text": "Una copia no viene a reemplazarte: viene a demostrar (y recordarte) que nunca fuiste esencial…"
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "about:blank",
+          "title": "Contenido multimedia"
+        }
+      ]
+    }
+  }
+}
