@@ -5,7 +5,27 @@
       "front": "./assets/books/book-5-front.jpg",
       "back": "./assets/books/book-5-back.jpg",
       "spine": "./assets/books/book-5-spine.jpg"
+    },
+    "4": {
+      "front": "./assets/books/book-4-front.jpg",
+      "back": "./assets/books/book-4-back.jpg",
+      "spine": "./assets/books/book-4-spine.jpg"
+    },
+    "3": {
+      "front": "./assets/books/book-3-front.jpg",
+      "back": "./assets/books/book-3-back.jpg",
+      "spine": "./assets/books/book-3-spine.jpg"
+    },
+    "2": {
+      "front": "./assets/books/book-2-front.jpg",
+      "back": "./assets/books/book-2-back.jpg",
+      "spine": "./assets/books/book-2-spine.jpg"
+    },
+    "1": {
+      "front": "./assets/books/book-1-front.jpg",
+      "back": "./assets/books/book-1-back.jpg",
+      "spine": "./assets/books/book-1-spine.jpg"
     }
   },
-  "updated": "2026-09-07T18:36:36.023759+00:00"
+  "updated": "2026-09-07T19:01:20.947404+00:00"
 }
