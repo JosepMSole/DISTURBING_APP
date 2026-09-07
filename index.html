@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#080808" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Disturbing" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-180.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Disturbing Stories</title>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <button id="brandBtn" class="brand" aria-label="Inicio">
+        <img class="brand-home-icon" src="assets/app-icon.png" alt="Disturbing Stories" onload="this.classList.add('ready');this.nextElementSibling.classList.add('hidden')" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.classList.add('logo-fallback');this.src='assets/disturbing-logo.png'}else{this.classList.add('hidden')}">
+        <span class="brand-fallback"><span class="brand-main">DISTURBING</span><span class="brand-sub">STORIES</span></span>
+      </button>
+      <button id="backBtn" class="back-nav-btn hidden" aria-label="Atrás">‹ ATRÁS</button>
+      <div class="topbar-actions">
+        <button id="headerPlayerBtn" class="icon-btn header-player-btn hidden" aria-label="Abrir Player" title="Player">♫</button>
+        <button id="toTopHeaderBtn" class="icon-btn top-jump hidden" aria-label="Ir arriba del todo" title="Ir arriba">↑</button>
+        <button id="menuBtn" class="icon-btn" aria-label="Menú">☰</button>
+      </div>
+    </header>
+
+    <main id="view" class="view" aria-live="polite"></main>
+
+    <nav class="bottom-nav" aria-label="Navegación principal">
+      <button data-route="home" class="nav-btn active"><span>⌂</span><small>Inicio</small></button>
+      <button data-route="stories" class="nav-btn"><span>▦</span><small>Stories</small></button>
+      <button data-route="unlocked" class="nav-btn"><span>◇</span><small>Mis Stories</small></button>
+      <button data-route="collection" class="nav-btn"><span>▤</span><small>Colección</small></button>
+      <button data-route="player" class="nav-btn"><span>♫</span><small>Player</small></button>
+    </nav>
+
+    <div id="miniPlayer" class="mini-player hidden" aria-label="Player">
+      <button id="miniPlayerOpen" class="mini-player-main" aria-label="Abrir Player">
+        <span class="mini-player-kicker">♫ PLAYER</span>
+        <strong id="miniPlayerTrack">—</strong>
+        <span class="mini-player-progress"><i id="miniPlayerProgress"></i></span>
+      </button>
+      <button id="miniPrev" class="mini-player-btn" aria-label="Anterior">‹</button>
+      <button id="miniPlay" class="mini-player-btn mini-play" aria-label="Play/Pause">▶</button>
+      <button id="miniNext" class="mini-player-btn" aria-label="Siguiente">›</button>
+    </div>
+    <audio id="globalPlayerAudio" preload="metadata"></audio>
+
+    <aside id="drawer" class="drawer" aria-hidden="true">
+      <button id="closeDrawer" class="drawer-close">×</button>
+      <button class="drawer-brand" data-drawer-route="home" aria-label="Inicio">
+        <img class="drawer-logo" src="assets/disturbing-logo.png" alt="Disturbing Stories" onload="this.classList.add('ready');this.nextElementSibling.classList.add('hidden')" onerror="this.classList.add('hidden')">
+        <span class="drawer-brand-fallback"><span>DISTURBING</span><small>STORIES</small></span>
+      </button>
+      <button data-drawer-route="home">Última Story</button>
+      <button data-drawer-route="stories">Todas las Stories</button>
+      <button data-drawer-route="unlocked">Mis Stories</button>
+      <button data-drawer-route="collection">Colección</button>
+      <button data-drawer-route="player">♫ Player</button>
+      <button id="scanBtn">Desbloquear Story</button>
+      <a href="https://www.disturbingstories.com/mural.html" target="_blank" rel="noopener">Mural interactivo ↗</a>
+      <button id="installBtn" class="hidden">Instalar app</button>
+      <p class="drawer-note">v0.18 · navegación + pulido visual</p>
+    </aside>
+    <div id="scrim" class="scrim hidden"></div>
+  </div>
+
+  <template id="loadingTemplate"><div class="loading"><div class="spinner"></div><p>Cargando Stories…</p></div></template>
+  <script src="app.js" defer></script>
+</body>
+</html>
