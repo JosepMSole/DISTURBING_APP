@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/007.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/007.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/007-infection-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/007-infection-frame-4b.jpg",
   "book": "03",
   "year": "2023",
   "categories": [
@@ -280,8 +280,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/nJbp2zujS2E",
+          "title": "Teaser"
         }
       ]
     }

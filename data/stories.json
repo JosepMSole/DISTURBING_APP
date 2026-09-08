@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T14:53:06.198044+00:00",
+  "updated": "2026-09-08T14:53:39.746704+00:00",
   "stories": [
     {
       "id": "277",
@@ -1027,7 +1027,7 @@
       "published": "2025-11-09",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/007.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/007-infection-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/007-infection-frame-4b.jpg",
       "data": "./data/stories/007.json",
       "source": "https://www.disturbingstories.com/007.html",
       "protected": false,
