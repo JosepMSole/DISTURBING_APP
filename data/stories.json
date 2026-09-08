@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:00:23.949049+00:00",
+  "updated": "2026-09-08T15:00:48.759211+00:00",
   "stories": [
     {
       "id": "277",
@@ -642,7 +642,7 @@
       "published": "2026-03-01",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/023.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/book-4-final-saga-dark-limits-prelude-v4.jpg?1769738963",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-04.jpg",
       "data": "./data/stories/023.json",
       "source": "https://www.disturbingstories.com/023.html",
       "protected": false,

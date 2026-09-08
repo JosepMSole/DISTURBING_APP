@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/023.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/023.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/book-4-final-saga-dark-limits-prelude-v4.jpg?1769738963",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-04.jpg",
   "book": "04",
   "year": "2020",
   "categories": [
@@ -240,8 +240,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/7VWz4OvLXI0",
+          "title": "Teaser"
         }
       ]
     }
