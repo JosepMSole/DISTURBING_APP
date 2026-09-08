@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:02:03.708148+00:00",
+  "updated": "2026-09-08T15:02:32.921924+00:00",
   "stories": [
     {
       "id": "277",
@@ -589,7 +589,7 @@
       "published": "2026-03-15",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/148.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/148-cristal-trombon-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/148-cristal-trombon-frame-6.jpg",
       "data": "./data/stories/148.json",
       "source": "https://www.disturbingstories.com/148.html",
       "protected": false,
