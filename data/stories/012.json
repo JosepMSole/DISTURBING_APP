@@ -1,0 +1,210 @@
+{
+  "schema": 7,
+  "id": "012",
+  "title": "Icarus Starflight",
+  "published": "2025-04-20",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/012.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/012.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-gif.gif",
+  "book": "01",
+  "year": "2073",
+  "categories": [
+    "Ciencia Ficción"
+  ],
+  "synopsis": "Acompaña al coronel James Cunningham en un vuelo de prueba con los nuevos motores Icarus, pero algo se sobrecalienta y aumenta la velocidad de manera inusitada hasta límites insospechados...",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "¡¡Por favor, base, respondan!!"
+        },
+        {
+          "type": "p",
+          "text": "¡Aquí Icarus en llamada de emergencia!"
+        },
+        {
+          "type": "p",
+          "text": "¡¡He sido atraído por el campo gravitacional de un planeta desconocido!! …me dirijo a toda velocidad hacia la superficie."
+        },
+        {
+          "type": "p",
+          "text": "¡Tengo fallos en todos los sistemas, no funciona nada!"
+        },
+        {
+          "type": "p",
+          "text": "¡¡Ayuda!! ¡Por favor respondan!"
+        },
+        {
+          "type": "p",
+          "text": "Y se corta."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-3.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-3_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-gif.gif",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-gif_orig.gif",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Después de una breve pausa, la grabación continúa:"
+        },
+        {
+          "type": "p",
+          "text": "—¿A ver? Un-dos, probando… parece que funciona. Bien, soy el coronel James Cunningham, de las Fuerzas Aéreas de la Confederación del Pacífico. Estaba realizando unas maniobras de vuelo agresivo por la estratosfera terrestre con el nuevo modelo Icarus 4.3. Estaba en la fase final, con el último test del prototipo funcional de motor de híper-velocidad. Lo activé para realizar la prueba viajando desde la órbita terrestre, a la órbita de Marte. El trayecto debía durar unas 6 horas, …pero algo salió mal… a las 2 horas de viaje, la velocidad fue incrementando poco a poco. Ahora he entendido que esa versión del motor se recalentó demasiado, y provocó que me convirtiera literalmente en una bala de luz… todo lo que conseguí entrever, fue solo luz blanca desde todas las ventanas de la nave… y en cierto punto me desmayé. Cuando desperté, me encontré cayendo en picado contra este planeta desconocido…"
+        },
+        {
+          "type": "p",
+          "text": "… de eso hace 2 días."
+        },
+        {
+          "type": "p",
+          "text": "He entendido que estoy perdido… tan lejos que no hay señal posible que pueda hacer llegar a nadie... Debí ir a tal velocidad que puede que esté en el otro extremo del universo conocido…"
+        },
+        {
+          "type": "p",
+          "text": "No he explorado nada más que mi alrededor, por ahora… pero es el momento de empezar."
+        },
+        {
+          "type": "p",
+          "text": "He decidido dejar constancia de todo en este diario, por si alguien lo encuentra alguna vez..."
+        },
+        {
+          "type": "p",
+          "text": "La cámara captó un ángulo panorámico de un mundo desolado. James observaba el horizonte grisáceo, la superficie cubierta por una capa de polvo y rocas erosionadas. El aire estaba cargado de una atmósfera densa, pero respirable. Sin embargo, el calor que emanaba del suelo y las altas montañas en la lejanía dejaban claro que este planeta estaba lejos de ser un lugar acogedor."
+        },
+        {
+          "type": "p",
+          "text": "El coronel se frotó los ojos, intentando despejar la niebla en su mente. El viaje había sido largo, aunque ahora no podía recordar cuántos días habían pasado desde que se estrelló. A lo lejos, vio una figura que caminaba hacia él, encorvada, casi como si fuera parte de las mismas rocas que cubrían la tierra. Era la figura de un ser bípedo, pero sus movimientos eran erráticos, lentos. James, con el poco equipo que le quedaba en la nave, se acercó lentamente."
+        },
+        {
+          "type": "p",
+          "text": "Esa raza alienígena era algo extraño para él. Al principio, lo que parecía un ser primitivo y rudimentario pronto reveló un nivel de sofisticación que escapaba a su comprensión. A pesar de la apariencia de una sociedad aún en sus primeras etapas, con estructuras básicas y herramientas que parecían extraídas de los inicios de la humanidad, algo en sus ojos sugería una inteligencia superior, una sabiduría ancestral que se extendía más allá de su tecnología."
+        },
+        {
+          "type": "p",
+          "text": "Los habitantes de este planeta, llamados los Arvak, vivían en comunidades dispersas que en principio se comunicaban a través de sonidos guturales y gestos, pero con el paso del tiempo James descubrió que poseían una especie de “lenguaje” que se transmitía a través de impulsos eléctricos en el aire. Se trataba de una forma de comunicación no verbal que ellos podían procesar en sus cerebros sin palabras, una mezcla de sentimientos y visiones compartidas que tocaban sus mentes de manera inexplicable."
+        },
+        {
+          "type": "p",
+          "text": "James, con el tiempo, se vio atrapado por la curiosidad y por el deseo de encontrar una manera de regresar a su hogar. Había aprendido lo suficiente sobre ellos para entender que su cultura era profundamente espiritual."
+        },
+        {
+          "type": "p",
+          "text": "Los Arvak veneraban el Camino de las Estrellas, un concepto que no solo representaba el viaje físico entre planetas, sino también un viaje metafísico a través del tiempo y la conciencia. Los antiguos relatos de los Arvak hablaban de seres que podían manipular el tiempo, viajando entre momentos clave en sus vidas para corregir los errores cometidos."
+        },
+        {
+          "type": "p",
+          "text": "Era una oportunidad demasiado tentadora. James, desesperado por encontrar una salida, comenzó a relacionarse más estrechamente con ellos. Con su ayuda, consiguió acceso a un aparato antiguo: un Portal Temporal. Era un círculo de metal, erosionado por el tiempo, con extraños símbolos en su interior. A través de este artefacto, los Arvak realizaban lo que ellos llamaban el salto."
+        },
+        {
+          "type": "p",
+          "text": "Pero, como descubrió James demasiado tarde, no todos los Arvak veían su presencia con buenos ojos. En su mundo, algunos miembros de la raza eran celosos de las relaciones con el humano, y muchos sentían que la intervención de una raza extranjera en sus rituales podría alterar el equilibrio cósmico. Así, el ritual del salto, que prometía una nueva oportunidad para el coronel, terminó siendo saboteado por uno de estos Arvak."
+        },
+        {
+          "type": "p",
+          "text": "El Portal, en lugar de enviar a James de regreso a la Tierra antes de despegar con la misión Icarus, lo proyectó dos días después de su llegada al planeta. Y ahí, frente a sus ojos, vio a su yo joven, el James que acababa de llegar al planeta, exactamente como en la grabación inicial."
+        },
+        {
+          "type": "p",
+          "text": "El viejo coronel, con la amargura y la desesperación de 30 años de sufrimiento, comprendió que su destino estaba irremediablemente maldito. En ese momento, el tiempo parecía detenerse. De inmediato, la ira lo envolvió, y la rabia de su alma, marcada por los años de espera y frustración, se apoderó de su mente."
+        },
+        {
+          "type": "p",
+          "text": "Observó a su versión joven alejarse de la nave, con la inocencia y la esperanza que él mismo había tenido en su momento. Pero esa esperanza se había desvanecido en él hacía mucho. Ya no era el joven piloto con sueños de regresar a casa, sino un hombre quebrado por el tiempo y la desolación."
+        },
+        {
+          "type": "p",
+          "text": "Esa noche, mientras su yo más joven acampaba cerca de la nave, el James viejo se acercó sigilosamente, con el corazón acelerado y la respiración entrecortada. Con un rápido movimiento, le arrebató el videograbador y se alejó. Vio el mensaje, el mismo mensaje que él mismo había grabado años atrás."
+        },
+        {
+          "type": "p",
+          "text": "Destruyó el aparato con furia, lanzándolo contra el suelo con toda su fuerza… estaba demasiado perdido en su rabia, en su angustia…"
+        },
+        {
+          "type": "p",
+          "text": "Entonces, con una determinación fría, se acercó a su versión más joven. Lo inmovilizó, tapándole la boca con una mano, evitando que pudiera gritar. El joven James se despertó sobresaltado, luchando por liberarse, pero no pudo. Con una mirada llena de desesperación, el viejo coronel susurró:"
+        },
+        {
+          "type": "p",
+          "text": "—Créeme, esto es lo mejor para todos..."
+        },
+        {
+          "type": "p",
+          "text": "Sacó un dispositivo de su cinturón, algo parecido a una granada. En sus manos, el aparato brillaba con una luz tenue, como si esperara la señal para actuar."
+        },
+        {
+          "type": "p",
+          "text": "Antes de que el joven pudiera reaccionar, el dispositivo explotó con una violencia inusitada, envolviendo a ambos en una onda expansiva cegadora."
+        },
+        {
+          "type": "p",
+          "text": "Ambos desaparecieron dentro de la explosión."
+        },
+        {
+          "type": "p",
+          "text": "Cuando el humo se disipó, todo quedó en silencio."
+        },
+        {
+          "type": "p",
+          "text": "La superficie árida de ese planeta desconocido seguía tan inmóvil como antes."
+        },
+        {
+          "type": "p",
+          "text": "Y el ciclo, ¿se habría roto o se repetiría una vez más?"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-1_1.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-1_1_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-2_1.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-2_1_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/editor/nave-30.png?1768014693",
+          "href": "https://www.disturbingstories.com/icarus-racers-temp.html",
+          "alt": "",
+          "caption": ""
+        }
+      ]
+    },
+    "audio": {
+      "label": "AUDIO",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/b-tY8aeXmVo",
+          "title": "Contenido multimedia"
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "about:blank",
+          "title": "Contenido multimedia"
+        }
+      ]
+    }
+  }
+}

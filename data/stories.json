@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:04:34.651610+00:00",
+  "updated": "2026-09-08T13:04:55.909413+00:00",
   "stories": [
     {
       "id": "277",
@@ -1563,6 +1563,32 @@
         "extra"
       ],
       "readTime": 11
+    },
+    {
+      "id": "012",
+      "title": "Icarus Starflight",
+      "published": "2025-04-20",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/012.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-gif.gif",
+      "data": "./data/stories/012.json",
+      "source": "https://www.disturbingstories.com/012.html",
+      "protected": false,
+      "book": "01",
+      "year": "2073",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Acompaña al coronel James Cunningham en un vuelo de prueba con los nuevos motores Icarus, pero algo se sobrecalienta y aumenta la velocidad de manera inusitada hasta límites insospechados...",
+      "tabLabels": [
+        "LEER",
+        "AUDIO",
+        "TEASER"
+      ],
+      "features": [
+        "audio"
+      ],
+      "readTime": 6
     },
     {
       "id": "154",
