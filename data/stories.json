@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T14:58:44.787004+00:00",
+  "updated": "2026-09-08T14:59:11.151719+00:00",
   "stories": [
     {
       "id": "277",
@@ -744,7 +744,7 @@
       "published": "2025-12-31",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/171.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/171-feliz-horror-nuevo-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/171-feliz-horror-nuevo-frame-3.jpg",
       "data": "./data/stories/171.json",
       "source": "https://www.disturbingstories.com/171.html",
       "protected": false,
