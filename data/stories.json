@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T11:33:54.687395+00:00",
+  "updated": "2026-09-08T11:34:03.041571+00:00",
   "stories": [
     {
       "id": "277",
@@ -1262,7 +1262,7 @@
       "published": "2025-08-10",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/028.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/028-frames-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/028-frames-3.jpg",
       "data": "./data/stories/028.json",
       "source": "https://www.disturbingstories.com/028.html",
       "protected": false,
