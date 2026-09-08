@@ -200,3 +200,814 @@ img{max-width:100%}
  .icon-btn{width:37px;height:37px}.brand-home-icon{width:50px;height:50px;max-width:50px}
  .library-stats span{font-size:8.5px!important}
 }
+
+/* ========================================================================
+   DISTURBING PWA v1.1 · CRYO LAB + HOLO HUD
+   Tipografía: Oxanium + Exo 2 · lenguaje de movimiento Holo HUD
+   ======================================================================== */
+:root{
+  --bg:#03080b!important;
+  --panel:#071116!important;
+  --panel2:#0b171d!important;
+  --text:#f3fcff!important;
+  --muted:#8eafb9!important;
+  --line:#24434e!important;
+  --accent:#6edcea!important;
+  --accent2:#2b8798!important;
+  --cryo:#8ef4ff;
+  --cryo-soft:#75c8d8;
+  --cryo-blue:#7898ff;
+  --cryo-panel:rgba(7,18,23,.88);
+  --cryo-panel-2:rgba(10,26,33,.9);
+  --danger:#e55461;
+  --success:#79e49b;
+  --topbar-base:80px;
+  --bottomnav-base:88px;
+}
+html,body,button,input,select,textarea{font-family:'Exo 2',ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+body{background:#020507!important}
+.app-shell{background:linear-gradient(180deg,#071015,#03080b 48%,#020507)!important}
+
+/* Typography system */
+.hero h1,.section-title h1,.section-title h2,.story-header h1,.story-copy h3,.story-grid-copy h3,
+.book-copy h2,.book-detail-head h1,.player-title-row h1,.player-section>h1,.story-number,
+.library-stats strong,.personal-stats strong,.progress-big strong,.progress-big .progress-denom,
+.player-summary strong,.player-summary b,.player-summary span,.player-summary small,.book-detail-stats strong,
+.book-numbers strong,.player-console-head strong,.read-celebration strong{
+  font-family:'Oxanium',ui-sans-serif,system-ui,sans-serif!important;
+  font-weight:700!important;
+}
+.eyebrow,.pill,.tab,.story-select,.advanced-toggle,.my-filter,.view-mode,.book-story-filter,.player-mode,
+.nav-btn small,.mini-player-kicker,.back-nav-btn,.drawer button,.drawer a{
+  font-family:'Exo 2',ui-sans-serif,system-ui,sans-serif!important;
+}
+.reader p,.reader blockquote,.reader .note{font-family:'Exo 2',ui-sans-serif,system-ui,sans-serif!important}
+.reader p{font-size:clamp(17px,4.65vw,19.5px)!important;line-height:1.7!important;color:#e9f2f4!important}
+
+/* Header */
+.topbar{
+  background:rgba(3,10,13,.94)!important;
+  border-bottom:1px solid rgba(122,225,239,.15)!important;
+  box-shadow:0 8px 26px rgba(0,0,0,.28)!important;
+}
+.back-nav-btn{
+  height:50px!important;
+  min-width:104px!important;
+  padding:0 15px!important;
+  border:1px solid #315966!important;
+  border-radius:7px!important;
+  background:linear-gradient(180deg,rgba(142,244,255,.07),rgba(142,244,255,.02))!important;
+  color:#e8fbff!important;
+  font-size:14px!important;
+  font-weight:800!important;
+  letter-spacing:.025em!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05)!important;
+}
+.back-nav-btn:active{transform:scale(.95)!important;border-color:var(--cryo)!important}
+.icon-btn{
+  border-color:#2d525e!important;background:#091419!important;color:#e8fbff!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04)!important;
+}
+.header-player-btn{color:var(--cryo)!important}
+
+/* Footer: icons ~2x v0.18, labels legible and fitted */
+.bottom-nav{
+  padding:5px 4px var(--bottom-safe)!important;
+  background:rgba(3,10,13,.97)!important;
+  border-top:1px solid rgba(122,225,239,.18)!important;
+  box-shadow:0 -10px 28px rgba(0,0,0,.38)!important;
+}
+.nav-btn{min-height:78px!important;gap:3px!important;color:#6f8a94!important;padding:3px 1px!important;min-width:0!important}
+.nav-btn span{
+  font-size:38px!important;
+  line-height:.9!important;
+  width:100%!important;
+  min-width:0!important;
+  display:grid!important;
+  place-items:center!important;
+  color:#7897a1!important;
+  text-shadow:0 0 0 transparent!important;
+}
+.nav-btn small{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  padding:0 1px!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+  text-align:center!important;
+  font-size:clamp(8px,2.4vw,10px)!important;
+  line-height:1.05!important;
+  font-weight:750!important;
+  letter-spacing:-.01em!important;
+}
+.nav-btn.active{color:#fff!important}
+.nav-btn.active span{color:#eafbff!important;filter:drop-shadow(0 0 7px rgba(142,244,255,.30))}
+.nav-btn.active small{color:#fff!important}
+
+/* Common Holo HUD objects */
+.library-stats div,.progress-dashboard,.personal-stats div,.home-progress,.home-continue,
+.story-card,.story-grid-card,.continue-card,.book-card,.book-detail-stats div,.player-summary,.player-console,
+.lock-screen,.story-select,.advanced-toggle,.my-filter,.view-mode,.book-story-filter,.player-track{
+  border-color:#294c58!important;
+  background:linear-gradient(180deg,rgba(142,244,255,.035),rgba(255,255,255,.012)),#081217!important;
+  border-radius:7px!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035)!important;
+}
+.story-card,.story-grid-card,.book-card,.continue-card,.player-track{transition:border-color .18s ease,background .18s ease,transform .18s ease,box-shadow .18s ease}
+.story-card:active,.story-grid-card:active,.story-cover-card:active,.book-card:active{transform:scale(.985)}
+
+/* Pills / buttons / controls */
+.pill,.filter{
+  border-color:#31515d!important;background:rgba(8,22,28,.72)!important;color:#cbe6ed!important;border-radius:999px!important
+}
+.pill.red{border-color:#7d3139!important;background:rgba(137,29,40,.18)!important;color:#ffc9ce!important}
+.cta{
+  border:1px solid #5ccad9!important;
+  border-radius:7px!important;
+  background:linear-gradient(180deg,#78e5f1,#45aebb)!important;
+  color:#031014!important;
+  font-family:'Oxanium',sans-serif!important;
+  font-weight:700!important;
+  box-shadow:0 8px 28px rgba(55,190,207,.16),inset 0 1px 0 rgba(255,255,255,.25)!important;
+}
+.secondary-btn,.continue-btn,.link-btn{
+  border-color:#315663!important;background:#0b171c!important;color:#d8f3f8!important;border-radius:7px!important
+}
+.story-select,.advanced-toggle,.my-filter,.view-mode,.book-story-filter{
+  color:#b8d7df!important
+}
+.my-filter.active,.view-mode.active,.book-story-filter.active{
+  background:rgba(126,232,244,.14)!important;color:#fff!important;border-color:#66d8e7!important;box-shadow:0 0 18px rgba(111,230,244,.08)!important
+}
+
+/* Reader tabs: Holo HUD */
+.tabs{
+  background:rgba(3,10,13,.95)!important;
+  border-color:#1d3942!important;
+  gap:9px!important;
+}
+.tab{
+  position:relative!important;
+  background:transparent!important;
+  color:#87a9b3!important;
+  border:1px solid #294b57!important;
+  border-radius:4px!important;
+  padding:15px 19px!important;
+  font-family:'Oxanium',sans-serif!important;
+  font-size:clamp(13px,3.7vw,16px)!important;
+}
+.tab.active{
+  color:#f3feff!important;
+  background:rgba(111,230,244,.075)!important;
+  border-color:#74e6f2!important;
+  box-shadow:0 0 16px rgba(111,230,244,.08)!important;
+}
+.tab::before,.tab::after{content:"";position:absolute;width:9px;height:9px;pointer-events:none}
+.tab::before{left:-1px;top:-1px;border-left:2px solid #76e7f2;border-top:2px solid #76e7f2}
+.tab::after{right:-1px;bottom:-1px;border-right:2px solid #76e7f2;border-bottom:2px solid #76e7f2}
+
+/* Library lock state = bubble over the poster, top-right */
+.story-thumb-wrap{position:relative;width:clamp(64px,19vw,82px);aspect-ratio:4/5;overflow:hidden;border-radius:8px;flex:none}
+.story-thumb-wrap>.story-thumb,.story-thumb-wrap>.story-thumb-placeholder{width:100%!important;height:100%!important;aspect-ratio:auto!important;border-radius:0!important;object-fit:cover!important;display:block!important}
+.ex-badge{
+  top:6px!important;right:6px!important;bottom:auto!important;
+  width:34px!important;height:34px!important;border-radius:50%!important;
+  background:rgba(3,10,13,.87)!important;
+  backdrop-filter:blur(7px)!important;-webkit-backdrop-filter:blur(7px)!important;
+  box-shadow:0 4px 14px rgba(0,0,0,.42)!important;
+}
+.ex-badge .lock-svg{width:19px!important;height:19px!important}
+.ex-badge.ex-locked{border:1.5px solid #a94450!important;color:#ffadb5!important;background:rgba(42,8,12,.88)!important}
+.ex-badge.ex-unlocked{border:1.5px solid #58a06b!important;color:#cffff0!important;background:rgba(8,38,18,.90)!important}
+.ex-inline{position:relative!important;top:auto!important;right:auto!important}
+.story-state .ex-badge{display:none!important}
+.story-state{border-color:#294b57!important;color:#9fc1cb!important;background:#081319!important}
+.story-cover-card>.ex-badge,.story-grid-card>.ex-badge{top:7px!important;right:7px!important}
+.cover-read{left:6px!important;bottom:6px!important;background:rgba(3,12,14,.86)!important;border-color:#365b66!important;color:#dff8fc!important}
+.cover-progress{background:rgba(117,72,20,.9)!important;color:#ffe2be!important;border-color:#a66a27!important}
+
+/* Library numbers */
+.library-stats strong{color:#f1fdff!important;text-shadow:0 0 14px rgba(142,244,255,.10)!important}
+.library-stats span,.personal-stats span{color:#9fc0ca!important}
+.results-count{color:#7fa2ac!important}
+
+/* Progress */
+.collection-progress,.mini-progress,.player-progress,.progress-wrap{
+  background:rgba(0,0,0,.72)!important;border-color:#2a4e59!important
+}
+.collection-progress span,.mini-progress span,.progress,.player-progress span,.mini-player-progress i{
+  background:linear-gradient(90deg,#67dce9,#7a9dff)!important;
+  box-shadow:0 0 10px rgba(111,230,244,.13)!important
+}
+.progress-dashboard.hud-progress-init .collection-progress span{transform:scaleX(0);transform-origin:left center}
+.progress-dashboard.hud-progress-ready .collection-progress span{transform:scaleX(1);transition:transform .75s cubic-bezier(.2,.75,.18,1)}
+
+/* Player */
+.player-summary strong,.player-summary b{color:#effdff!important}
+.player-summary span,.player-summary small{color:#8fb7c1!important}
+.player-console{border-color:#315965!important}
+.player-main-play{background:#66dce9!important;border-color:#66dce9!important;color:#031015!important}
+.player-mode.active{border-color:#5bc9d8!important;background:rgba(91,201,216,.11)!important;color:#fff!important}
+.mini-player{
+  background:rgba(3,10,13,.98)!important;border-top-color:#31545f!important;box-shadow:0 -10px 30px rgba(0,0,0,.42)!important
+}
+.mini-player-kicker{color:#7ce9f5!important}
+
+/* Collection */
+.book-open{color:#9fe9f2!important}
+.book-shelf-title,.book-cover-side figcaption{color:#7da7b1!important}
+.shelf-board{background:linear-gradient(180deg,#31505b,#112129)!important;box-shadow:0 8px 20px rgba(0,0,0,.42)!important}
+
+/* Holo corner motion injected by app.js */
+.hud-motion-box{position:relative!important}
+.hud-corner{position:absolute;width:16px;height:16px;z-index:12;pointer-events:none;opacity:1;filter:drop-shadow(0 0 0 transparent)}
+.hud-tl{left:0;top:0;border-left:2px solid var(--cryo);border-top:2px solid var(--cryo)}
+.hud-tr{right:0;top:0;border-right:2px solid var(--cryo);border-top:2px solid var(--cryo)}
+.hud-bl{left:0;bottom:0;border-left:2px solid var(--cryo);border-bottom:2px solid var(--cryo)}
+.hud-br{right:0;bottom:0;border-right:2px solid var(--cryo);border-bottom:2px solid var(--cryo)}
+.hud-box-pending{
+  border-color:transparent!important;background:transparent!important;box-shadow:none!important
+}
+.hud-box-pending>:not(.hud-corner){opacity:0!important}
+.hud-box-pending.hud-frame-on{
+  border-color:#294c58!important;background:linear-gradient(180deg,rgba(142,244,255,.035),rgba(255,255,255,.012)),#081217!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035)!important;transition:background .24s ease,border-color .24s ease,box-shadow .24s ease
+}
+.hud-box-pending.hud-content-on>:not(.hud-corner){opacity:1!important;transition:opacity .24s ease}
+.hud-box-pending .hud-corner{opacity:0}
+.hud-corners-live .hud-corner{animation:hudCornerTravel .52s cubic-bezier(.2,.75,.18,1) both}
+@keyframes hudCornerTravel{
+  0%{opacity:0;transform:translate(var(--hud-from-x),var(--hud-from-y)) scale(.2);filter:drop-shadow(0 0 10px rgba(142,244,255,.85))}
+  15%{opacity:1}
+  100%{opacity:1;transform:translate(0,0) scale(1);filter:drop-shadow(0 0 0 transparent)}
+}
+.hud-progress-blink{animation:hudModuleBlink .52s steps(1,end) 1!important}
+@keyframes hudModuleBlink{
+  0%{opacity:1;filter:brightness(1)}
+  18%{opacity:.08;filter:brightness(3.2)}
+  34%{opacity:1;filter:brightness(1.55)}
+  50%{opacity:.16;filter:brightness(2.6)}
+  68%{opacity:1;filter:brightness(1.35)}
+  82%{opacity:.38;filter:brightness(1.9)}
+  100%{opacity:1;filter:brightness(1)}
+}
+
+/* Typewriter */
+.typewriter-motion::after{content:"_";color:var(--cryo);margin-left:.06em;animation:hudCursor .62s step-end infinite}
+.typewriter-motion.typewriter-done::after{animation:hudCursorOut .38s ease forwards}
+@keyframes hudCursor{50%{opacity:0}}
+@keyframes hudCursorOut{to{opacity:0}}
+
+/* Story/reader reveals */
+.story-list-reveal{opacity:0;transform:translateY(9px);filter:blur(2px)}
+.story-list-reveal.story-list-reveal-live{opacity:1;transform:none;filter:none;transition:opacity .36s ease,transform .36s cubic-bezier(.2,.75,.18,1),filter .36s ease}
+.reader-reveal-pending{opacity:0!important;transform:translateY(8px)!important;filter:blur(3px)!important}
+.reader-reveal-pending.reader-reveal-live{opacity:1!important;transform:none!important;filter:blur(0)!important;transition:opacity .42s ease,transform .42s cubic-bezier(.2,.75,.18,1),filter .42s ease}
+
+/* Entry Story: keep 5 visual frames + stronger Cryo/red horror contrast */
+.app-shell.story-entering{animation:storyHorrorShake .25s steps(5,end) 1!important}
+.app-shell.story-entering::after{
+  background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.86) 0 3%,rgba(107,224,239,.46) 12%,rgba(217,47,61,.62) 24%,rgba(64,0,7,.46) 46%,transparent 72%)!important
+}
+
+/* Unlock reward — intentionally vivid */
+.unlock-reward{position:fixed;z-index:1200;inset:0;display:grid;place-items:center;pointer-events:none;opacity:0;background:rgba(0,4,5,.32);transition:opacity .16s ease}
+.unlock-reward.show{opacity:1}
+.unlock-reward-flash{position:absolute;inset:0;opacity:0;background:radial-gradient(circle at 50% 45%,#fff 0 4%,rgba(122,255,160,.92) 7%,rgba(95,226,255,.38) 23%,transparent 58%)}
+.unlock-reward.show .unlock-reward-flash{animation:unlockFlashV1 .56s .27s ease-out both}
+.unlock-reward-card{
+  width:min(88vw,430px);display:grid;grid-template-columns:94px minmax(0,1fr);gap:18px;align-items:center;
+  padding:22px;border:1px solid #3c6974;background:rgba(5,17,20,.96);box-shadow:0 24px 80px rgba(0,0,0,.65);position:relative
+}
+.unlock-reward.show .unlock-reward-card{animation:unlockWiggleV1 .46s .31s cubic-bezier(.36,.07,.19,.97) both}
+.unlock-reward-ring{width:88px;height:88px;border-radius:50%;border:1px solid #3b6570;display:grid;place-items:center;background:#071317}
+.unlock-reward.show .unlock-reward-ring{animation:unlockRingV1 .9s .25s cubic-bezier(.2,.75,.18,1) both}
+.unlock-reward-icon .lock-svg{width:42px;height:42px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;color:#dffaff}
+.unlock-reward-copy small{color:#8ebac5;font:700 9px/1 'Oxanium',sans-serif;letter-spacing:.1em}
+.unlock-reward-copy strong{display:block;margin-top:6px;font:700 20px/1 'Oxanium',sans-serif;color:#fff}
+.unlock-reward-copy em{display:block;margin-top:9px;font-style:normal;color:#8df2aa;font:700 10px/1 'Exo 2',sans-serif;letter-spacing:.12em}
+@keyframes unlockFlashV1{0%{opacity:0;transform:scale(.58)}18%{opacity:1;transform:scale(1)}40%{opacity:.92}100%{opacity:0;transform:scale(1.45)}}
+@keyframes unlockWiggleV1{0%,100%{transform:translateX(0) rotate(0)}15%{transform:translateX(-8px) rotate(-1.2deg)}30%{transform:translateX(8px) rotate(1.2deg)}45%{transform:translateX(-6px) rotate(-.8deg)}60%{transform:translateX(5px) rotate(.8deg)}75%{transform:translateX(-2px)}}
+@keyframes unlockRingV1{0%{border-color:#3b6570;box-shadow:none;transform:scale(1)}38%{border-color:#fff;box-shadow:0 0 0 12px rgba(121,228,155,.12),0 0 50px rgba(121,228,155,.58);transform:scale(1.2)}62%{border-color:#79e49b;transform:scale(.94)}100%{border-color:#4c9564;box-shadow:0 0 22px rgba(121,228,155,.18);transform:scale(1)}}
+
+/* Drawer */
+.drawer{background:#061014!important;border-left-color:#2b4b56!important}
+.drawer button,.drawer a{border-color:#1e3841!important;color:#cfe8ee!important}
+.drawer-note{color:#6f99a4!important}
+
+/* iPhone / narrow phones */
+@media(max-width:390px){
+  .back-nav-btn{height:47px!important;min-width:90px!important;padding:0 11px!important;font-size:12px!important}
+  .topbar{column-gap:5px!important;padding-left:7px!important;padding-right:7px!important}
+  .topbar-actions{gap:4px!important}
+  .icon-btn{width:38px!important;height:38px!important}
+  .nav-btn span{font-size:35px!important}
+  .nav-btn small{font-size:8px!important}
+}
+@media(max-width:350px){
+  .back-nav-btn{min-width:78px!important;font-size:11px!important;padding:0 8px!important}
+  .nav-btn span{font-size:32px!important}
+  .nav-btn small{font-size:7.5px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hud-corner{animation:none!important;opacity:1!important;transform:none!important}
+  .hud-box-pending{border-color:#294c58!important;background:#081217!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.035)!important}
+  .hud-box-pending>:not(.hud-corner){opacity:1!important}
+  .story-list-reveal,.reader-reveal-pending{opacity:1!important;transform:none!important;filter:none!important}
+  .typewriter-motion::after{display:none!important}
+  .unlock-reward-card,.unlock-reward-flash,.unlock-reward-ring{animation:none!important}
+}
+
+/* ========================================================================
+   DISTURBING PWA v1.2 · readability + responsive content + richer library
+   ======================================================================== */
+:root{--bottomnav-base:128px!important}
+
+/* Never let compact UI text become unreadable. */
+.eyebrow{font-size:clamp(10.5px,2.9vw,12px)!important;line-height:1.25!important}
+.story-number{font-size:clamp(10px,2.8vw,12px)!important;line-height:1.2!important}
+.story-copy p,.story-grid-copy p,.results-count,.player-console-head span,.player-time,.player-volume,.player-note,.player-track span,.scanner-help{
+  font-size:clamp(10px,2.75vw,12px)!important;line-height:1.35!important
+}
+.story-copy,.story-grid-copy,.book-copy,.player-console,.player-summary,.player-summary-row,.personal-stats>div,.library-stats>div,.book-detail-stats>div{min-width:0!important}
+.story-copy h3,.story-copy p,.story-grid-copy h3,.story-grid-copy p,.book-copy h2,.player-console-head strong,.player-note,.personal-stats span,.library-stats span,.book-detail-stats span{overflow-wrap:anywhere}
+
+/* PLAYER summary: labels left, numbers right, everything contained. */
+.player-title-row{grid-template-columns:minmax(0,1fr) minmax(150px,42%)!important;gap:14px!important;align-items:stretch!important}
+.player-summary{
+  width:100%!important;min-width:0!important;max-width:100%!important;min-height:112px!important;
+  padding:9px 11px!important;display:grid!important;grid-template-columns:1fr!important;grid-template-rows:1fr 1fr!important;
+  gap:0!important;align-content:stretch!important;text-align:initial!important;overflow:hidden!important
+}
+.player-summary-row{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;gap:8px!important;min-width:0!important}
+.player-summary-row+ .player-summary-row{border-top:1px solid rgba(142,244,255,.12)!important}
+.player-summary-row span,.player-summary-row small{
+  justify-self:start!important;text-align:left!important;white-space:nowrap!important;
+  font-family:'Exo 2',sans-serif!important;font-size:clamp(11px,3.15vw,13px)!important;line-height:1!important;font-weight:750!important;letter-spacing:.035em!important;color:#9fc5cf!important
+}
+.player-summary-row strong,.player-summary-row b{
+  justify-self:end!important;text-align:right!important;white-space:nowrap!important;max-width:100%!important;
+  font-family:'Oxanium',sans-serif!important;font-size:clamp(14px,3.8vw,18px)!important;line-height:1!important;font-weight:700!important;letter-spacing:-.015em!important;color:#f2fdff!important
+}
+.player-mode-controls{gap:9px!important;margin-top:13px!important}
+.player-mode{
+  min-height:54px!important;height:auto!important;padding:10px 6px!important;
+  font-size:clamp(11.5px,3.25vw,13.5px)!important;line-height:1.15!important;font-weight:850!important;letter-spacing:.025em!important;
+  color:#abc7cf!important;border-color:#355965!important
+}
+.player-mode.active{color:#fff!important}
+.player-volume>span{font-size:11px!important;font-weight:800!important}
+.player-track strong{font-size:clamp(13px,3.7vw,15px)!important;line-height:1.35!important}
+
+/* Footer navigation: substantially larger and brighter than v1.1. */
+.bottom-nav{padding:7px 2px var(--bottom-safe)!important;min-height:calc(var(--bottomnav-base) + var(--bottom-safe))!important}
+.nav-btn{min-height:112px!important;gap:7px!important;padding:4px 0!important;color:#9eb8c1!important;overflow:hidden!important}
+.nav-btn span{
+  font-size:64px!important;line-height:.78!important;color:#a7c4cd!important;
+  filter:drop-shadow(0 0 5px rgba(142,244,255,.08));
+}
+.nav-btn small{
+  font-size:clamp(12px,3.55vw,15px)!important;line-height:1.05!important;font-weight:800!important;
+  letter-spacing:-.035em!important;color:#a7c0c8!important;overflow:visible!important;text-overflow:clip!important;white-space:nowrap!important
+}
+.nav-btn.active span{color:#f2fdff!important;filter:drop-shadow(0 0 10px rgba(142,244,255,.32))!important}
+.nav-btn.active small{color:#fff!important}
+
+/* Poster information bubbles. */
+.sort-badge{
+  position:absolute;z-index:7;left:6px;top:6px;max-width:calc(100% - 52px);
+  padding:5px 7px;border:1px solid rgba(180,239,249,.44);border-radius:999px;
+  background:rgba(3,13,17,.9);color:#e9fbff;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);
+  box-shadow:0 4px 13px rgba(0,0,0,.36);font:700 clamp(8px,2.35vw,10px)/1 'Oxanium',sans-serif;white-space:nowrap
+}
+.story-media-badges{
+  position:absolute;z-index:8;right:6px;bottom:6px;display:flex;flex-direction:row;gap:4px;align-items:center;pointer-events:none
+}
+.media-badge{
+  width:29px;height:29px;border-radius:50%;display:grid;place-items:center;
+  backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 4px 13px rgba(0,0,0,.4)
+}
+.media-feature-svg{width:17px;height:17px;display:block;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.media-badge.media-audio{color:#00ff48!important;border:1.5px solid #00ff48!important;background:rgba(0,58,17,.9)!important}
+.media-badge.media-video{color:#009dff!important;border:1.5px solid #009dff!important;background:rgba(0,30,62,.92)!important}
+.story-thumb-wrap .story-media-badges{right:5px;bottom:5px}
+.story-thumb-wrap .media-badge{width:25px;height:25px}.story-thumb-wrap .media-feature-svg{width:14px;height:14px}
+.story-grid-card>.sort-badge,.story-cover-card>.sort-badge{left:7px!important;top:7px!important}
+
+/* MIS STORIES: orange pending callout adopts Holo HUD behavior but keeps its identity. */
+.my-stories-title{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(150px,44%)!important;gap:12px!important;align-items:end!important}
+.unread-callout{
+  width:100%!important;min-width:0!important;max-width:100%!important;padding:13px 12px!important;
+  border:1px solid #7e562d!important;border-radius:7px!important;background:linear-gradient(180deg,rgba(255,169,76,.08),rgba(255,255,255,.01)),#17100a!important;
+  overflow:visible!important
+}
+.unread-callout strong{font-family:'Exo 2',sans-serif!important;font-size:clamp(12px,3.25vw,14px)!important;line-height:1.2!important;color:#e0bc98!important;overflow-wrap:anywhere!important}
+.unread-callout strong b{font-family:'Oxanium',sans-serif!important;font-size:clamp(25px,7.5vw,31px)!important;color:#ff9c42!important}
+.unread-callout .hud-corner{border-color:#ffad58!important;filter:drop-shadow(0 0 8px rgba(255,156,66,.35))!important}
+.unread-callout.hud-box-pending.hud-frame-on{
+  border-color:#7e562d!important;background:linear-gradient(180deg,rgba(255,169,76,.08),rgba(255,255,255,.01)),#17100a!important;
+  box-shadow:inset 0 1px 0 rgba(255,220,179,.06)!important
+}
+.personal-stats strong{font-size:clamp(27px,8vw,32px)!important;line-height:.95!important}
+.personal-stats span{font-size:clamp(10px,2.9vw,11.5px)!important;line-height:1.16!important;margin-top:7px!important;letter-spacing:.025em!important}
+.personal-stats>div{padding:15px 5px!important}
+
+/* Collection: counts and media/exclusive summary on each physical book. */
+.book-copy{min-width:0!important}
+.book-numbers-row{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;margin:0 0 14px!important;min-width:0!important}
+.book-numbers{margin:0!important;flex:0 0 auto!important}
+.book-feature-counts{display:flex;align-items:center;justify-content:flex-end;gap:7px;margin-left:auto;min-width:0}
+.book-feature-count{display:inline-flex;align-items:center;justify-content:center;gap:3px;min-width:30px;color:#dceff4}
+.book-feature-count .media-feature-svg,.book-feature-count .lock-svg{width:18px!important;height:18px!important;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.book-feature-count b{font-family:'Oxanium',sans-serif!important;font-size:13px!important;line-height:1!important;color:currentColor!important}
+.book-feature-count.audio{color:#00ff48}.book-feature-count.video{color:#009dff}.book-feature-count.exclusive{color:#ff8a97}
+.shelf-book.has-spine img{width:auto!important;height:var(--shelf-h,340px)!important;max-width:none!important;aspect-ratio:auto!important;object-fit:contain!important}
+
+/* Box-content safety across narrow phones. */
+.library-stats>div,.personal-stats>div,.book-detail-stats>div,.player-console,.progress-dashboard,.home-progress,.home-continue,.book-card,.continue-card,.lock-screen{
+  min-width:0!important
+}
+.library-stats span,.personal-stats span,.book-detail-stats span,.progress-side p,.player-console-head strong{max-width:100%!important;overflow-wrap:anywhere!important}
+
+@media(max-width:390px){
+  :root{--bottomnav-base:120px!important}
+  .nav-btn{min-height:104px!important;gap:6px!important}
+  .nav-btn span{font-size:58px!important}
+  .nav-btn small{font-size:13.5px!important}
+  .player-title-row{grid-template-columns:minmax(0,1fr) minmax(142px,43%)!important;gap:10px!important}
+  .player-summary{min-height:106px!important;padding:8px 9px!important}
+  .player-summary-row span,.player-summary-row small{font-size:11px!important}
+  .player-summary-row strong,.player-summary-row b{font-size:14px!important}
+  .my-stories-title{grid-template-columns:minmax(0,1fr) minmax(136px,45%)!important;gap:9px!important}
+  .book-feature-counts{gap:5px}.book-feature-count{min-width:27px}.book-feature-count .media-feature-svg,.book-feature-count .lock-svg{width:16px!important;height:16px!important}.book-feature-count b{font-size:12px!important}
+}
+@media(max-width:350px){
+  :root{--bottomnav-base:112px!important}
+  .nav-btn{min-height:96px!important;gap:5px!important}
+  .nav-btn span{font-size:52px!important}
+  .nav-btn small{font-size:12px!important;letter-spacing:-.05em!important}
+  .player-title-row{grid-template-columns:minmax(0,1fr) 136px!important}
+  .my-stories-title{grid-template-columns:minmax(0,1fr) 130px!important}
+  .personal-stats strong{font-size:25px!important}.personal-stats span{font-size:9.8px!important}
+}
+
+/* v1.2 final sizing pass: footer and personal status are intentionally large on phone. */
+:root{--bottomnav-base:154px!important}
+.bottom-nav{padding:8px 1px var(--bottom-safe)!important}
+.nav-btn{min-height:136px!important;gap:8px!important;padding:5px 0!important}
+.nav-btn span{font-size:76px!important;line-height:.76!important}
+.nav-btn small{
+  font-size:clamp(16px,4.25vw,20px)!important;
+  line-height:1.02!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  max-width:100%!important;
+  min-height:2.04em!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  padding:0 2px!important;
+}
+
+/* 1.5x emphasis requested for the three MIS STORIES status modules. */
+.personal-stats strong{font-size:clamp(42px,11.7vw,48px)!important;line-height:.9!important}
+.personal-stats span{font-size:clamp(13px,3.65vw,15px)!important;line-height:1.12!important;margin-top:8px!important;letter-spacing:.015em!important}
+.personal-stats>div{padding:18px 4px!important;overflow:visible!important}
+.unread-callout strong{font-size:clamp(13px,3.55vw,15.5px)!important}
+.unread-callout strong b{font-size:clamp(31px,8.7vw,38px)!important}
+
+/* Remaining information-bearing microcopy must stay readable. */
+.mini-player-kicker{font-size:10px!important;line-height:1.1!important}
+.mini-player-main strong{font-size:12px!important;line-height:1.2!important}
+.pill{font-size:10.5px!important;line-height:1.1!important}
+.tab{font-size:clamp(10.5px,2.9vw,12px)!important}
+.story-select{font-size:clamp(11px,3vw,12.5px)!important}
+.advanced-toggle,.my-filter,.view-mode,.book-story-filter{font-size:clamp(10px,2.8vw,11.5px)!important}
+.book-numbers span,.book-open,.collection-back{font-size:clamp(10px,2.8vw,12px)!important}
+.drawer-note{font-size:11px!important}
+
+/* Defensive wrapping: box contents should never escape horizontally. */
+.player-summary-row,.book-numbers-row,.book-feature-counts,.personal-stats>div,.library-stats>div,.progress-dashboard,.unread-callout{max-width:100%!important}
+.player-summary-row>*{min-width:0!important}
+.player-summary-row span,.player-summary-row small{overflow:hidden!important;text-overflow:ellipsis!important}
+
+@media(max-width:390px){
+  :root{--bottomnav-base:146px!important}
+  .nav-btn{min-height:128px!important;gap:7px!important}
+  .nav-btn span{font-size:70px!important}
+  .nav-btn small{font-size:16px!important}
+  .personal-stats strong{font-size:42px!important}.personal-stats span{font-size:13px!important}
+}
+@media(max-width:350px){
+  :root{--bottomnav-base:136px!important}
+  .nav-btn{min-height:118px!important;gap:6px!important}
+  .nav-btn span{font-size:64px!important}
+  .nav-btn small{font-size:14.5px!important}
+  .personal-stats strong{font-size:38px!important}.personal-stats span{font-size:12px!important}
+  .my-stories-title{grid-template-columns:minmax(0,1fr) minmax(124px,44%)!important}
+}
+
+
+/* ============================================================
+   DISTURBING PWA v1.3 — previous update/persistence + collection polish
+   ============================================================ */
+.nav-btn[data-route="collection"] span{transform:rotate(90deg)!important;transform-origin:center!important}
+.story-featured{position:relative!important}
+.story-featured>.story-media-badges{right:10px!important;bottom:10px!important}
+.continue-cover.story-thumb-wrap{position:relative!important;overflow:hidden!important}
+.continue-cover.story-thumb-wrap>.story-media-badges{right:4px!important;bottom:4px!important}
+.continue-cover.story-thumb-wrap>.ex-badge{right:4px!important;top:4px!important}
+.amazon-buy-btn{
+  display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-height:52px!important;
+  margin:14px 0 10px!important;padding:12px 16px!important;border:1px solid #7bddec!important;border-radius:8px!important;
+  background:linear-gradient(180deg,rgba(142,244,255,.14),rgba(142,244,255,.035)),#0a171c!important;
+  color:#effdff!important;text-decoration:none!important;font:700 clamp(13px,3.8vw,16px)/1.15 'Oxanium',sans-serif!important;
+  letter-spacing:.055em!important;text-align:center!important;box-shadow:0 0 22px rgba(98,225,240,.08)!important
+}
+.amazon-buy-btn:active{transform:scale(.985)!important;border-color:#fff!important}
+
+
+/* ============================================================
+   DISTURBING PWA v1.4 — navigation, player, collection and layout pass
+   ============================================================ */
+
+/* Continue-reading content must always begin to the right of the poster. */
+.continue-card{
+  grid-template-columns:clamp(64px,19vw,82px) minmax(0,1fr) 40px!important;
+  gap:12px!important;overflow:hidden!important
+}
+.continue-cover.story-thumb-wrap{width:100%!important;min-width:0!important;max-width:none!important}
+.continue-copy{position:relative!important;z-index:2!important;padding-left:2px!important;overflow:hidden!important}
+.continue-copy strong{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.2!important}
+.resume-arrow{position:relative!important;z-index:2!important;justify-self:end!important}
+
+/* HOME resume panel includes the poster without covering its copy. */
+.home-continue{
+  grid-template-columns:clamp(62px,18vw,78px) minmax(0,1fr) auto!important;
+  gap:12px!important;padding:10px 12px!important;overflow:hidden!important
+}
+.home-continue-cover{width:100%!important;aspect-ratio:2/3!important;border-radius:7px!important;background:#091116!important;overflow:hidden!important}
+.home-continue-cover>img{display:block;width:100%;height:100%;object-fit:cover}
+.home-continue-copy{min-width:0!important;position:relative!important;z-index:2!important}
+.home-continue-copy strong{font-size:clamp(13px,3.45vw,15px)!important;white-space:normal!important;overflow-wrap:anywhere!important}
+.home-continue .continue-btn{position:relative!important;z-index:2!important;min-width:88px!important}
+.hero-story-media{width:100%!important;height:100%!important;aspect-ratio:auto!important;border-radius:0!important}
+.hero-story-media>.story-media-badges{right:12px!important;bottom:14px!important}
+
+/* Footer labels: approximately triple the original 0.18 scale, while still fitting 5 columns. */
+:root{--bottomnav-base:176px!important}
+.bottom-nav{min-height:calc(var(--bottomnav-base) + var(--bottom-safe))!important}
+.nav-btn{min-height:156px!important;gap:9px!important;padding:7px 1px!important}
+.nav-btn span{font-size:78px!important;line-height:.74!important}
+.nav-btn small{
+  font-size:clamp(22px,5.7vw,27px)!important;line-height:.94!important;font-weight:850!important;
+  letter-spacing:-.055em!important;min-height:1.9em!important;white-space:normal!important;overflow:visible!important
+}
+@media(max-width:390px){
+  :root{--bottomnav-base:166px!important}
+  .nav-btn{min-height:146px!important}.nav-btn span{font-size:72px!important}.nav-btn small{font-size:clamp(20px,5.3vw,24px)!important}
+}
+@media(max-width:350px){
+  :root{--bottomnav-base:154px!important}
+  .nav-btn{min-height:136px!important}.nav-btn span{font-size:66px!important}.nav-btn small{font-size:19px!important}
+}
+
+/* PLAYER: one clean summary box, no separator; animated audio bars live above progress. */
+.player-summary-row + .player-summary-row{border-top:0!important}
+.player-progress-meta{display:grid!important;grid-template-columns:auto minmax(90px,1fr)!important;align-items:end!important;gap:14px!important;margin:12px 0 7px!important;min-width:0!important}
+.player-progress-meta .player-time{margin:0!important;white-space:nowrap!important;align-self:end!important}
+.player-wave{height:34px;display:flex;align-items:flex-end;justify-content:flex-end;gap:3px;overflow:hidden;opacity:.42}
+.player-wave i{display:block;width:3px;height:5px;flex:0 0 3px;border-radius:3px 3px 1px 1px;background:linear-gradient(180deg,#98f7ff,#6ea6ff);transform-origin:center bottom}
+.player-wave.playing{opacity:1}
+.player-wave.playing i{animation:disturbingWave .62s ease-in-out infinite alternate;animation-delay:calc(var(--wave-i) * -37ms)}
+@keyframes disturbingWave{from{transform:scaleY(.22);opacity:.42}to{transform:scaleY(1);opacity:1}}
+.player-wave i:nth-child(5n+1){height:13px}.player-wave i:nth-child(5n+2){height:22px}.player-wave i:nth-child(5n+3){height:31px}.player-wave i:nth-child(5n+4){height:18px}.player-wave i:nth-child(5n){height:27px}
+
+/* Book detail: same feature summary alongside Book#X, larger stats, Amazon identity. */
+.book-detail-title-row{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;min-width:0!important}
+.book-detail-title-row h1{min-width:0!important;margin-right:auto!important}
+.book-detail-title-row .book-feature-counts{margin-left:auto!important;flex:0 0 auto!important;gap:9px!important}
+.book-detail-title-row .book-feature-count{min-width:38px!important}.book-detail-title-row .book-feature-count b{font-size:16px!important}
+.book-detail-title-row .media-feature-svg,.book-detail-title-row .lock-svg{width:21px!important;height:21px!important}
+.amazon-buy-btn{
+  border-color:#ffb23f!important;background:linear-gradient(180deg,#ffb52e,#ff9900)!important;color:#111!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 9px 24px rgba(255,153,0,.15)!important;
+  gap:10px!important;font-weight:850!important;text-shadow:none!important
+}
+.amazon-buy-btn .amazon-wordmark{font-family:Arial,sans-serif!important;font-weight:900!important;font-size:18px!important;letter-spacing:-.06em!important;text-transform:lowercase!important;color:#111!important}
+.amazon-buy-btn:active{border-color:#ffd08a!important;filter:brightness(1.05)!important}
+.book-detail-stats strong{font-size:clamp(54px,14vw,64px)!important;line-height:.9!important}
+.book-detail-stats span{font-size:clamp(15px,4vw,18px)!important;line-height:1.08!important;margin-top:9px!important;font-weight:850!important}
+.book-detail-stats>div{padding:20px 5px!important;overflow:hidden!important}
+
+/* Library Holo corners: exact attachment to the 3 statistic boxes. */
+.library-stats>div{overflow:visible!important;isolation:isolate!important}
+.library-stats>div .hud-corner{width:15px!important;height:15px!important;box-sizing:border-box!important}
+.library-stats>div .hud-tl{left:-1px!important;top:-1px!important}
+.library-stats>div .hud-tr{right:-1px!important;top:-1px!important}
+.library-stats>div .hud-bl{left:-1px!important;bottom:-1px!important}
+.library-stats>div .hud-br{right:-1px!important;bottom:-1px!important}
+
+/* STORIES: status + more filters + 3 view icons stay on one line. */
+.story-control-strip{display:grid!important;grid-template-columns:minmax(104px,1fr) minmax(88px,auto) auto!important;gap:7px!important;align-items:center!important;margin-bottom:9px!important;min-width:0!important}
+.story-control-strip>.story-select{width:100%!important;min-width:0!important;padding-left:8px!important;padding-right:24px!important}
+.story-control-strip>.advanced-toggle{min-width:0!important;padding:0 8px!important;white-space:nowrap!important}
+.story-control-strip>.view-modes{display:grid!important;grid-template-columns:repeat(3,34px)!important;gap:4px!important;padding:0!important;margin:0!important;justify-content:end!important}
+.story-control-strip .view-mode{width:34px!important;height:42px!important;padding:0!important;font-size:18px!important}
+@media(max-width:360px){
+  .story-control-strip{grid-template-columns:minmax(95px,1fr) 82px auto!important;gap:4px!important}
+  .story-control-strip>.advanced-toggle{font-size:9px!important;padding:0 5px!important}
+  .story-control-strip>.view-modes{grid-template-columns:repeat(3,31px)!important;gap:3px!important}
+  .story-control-strip .view-mode{width:31px!important}
+}
+
+/* Poster badges stay visible on every Story representation. */
+.story-cover-card,.story-grid-card,.story-thumb-wrap,.story-featured,.hero-media{position:relative!important}
+.story-cover-card>.story-media-badges,.story-grid-card>.story-media-badges{right:7px!important;bottom:7px!important}
+
+
+
+/* ============================================================
+   v1.5 · Poster badges + footer readability
+   ============================================================ */
+/* AUDIO and VIDEO are ALWAYS at the upper-right of every poster.
+   The exclusive lock remains upper-right too, immediately below the media row. */
+.story-media-badges,
+.story-thumb-wrap .story-media-badges,
+.story-cover-card>.story-media-badges,
+.story-grid-card>.story-media-badges,
+.story-featured>.story-media-badges,
+.continue-cover.story-thumb-wrap>.story-media-badges,
+.hero-story-media>.story-media-badges{
+  top:7px!important;
+  right:7px!important;
+  bottom:auto!important;
+  left:auto!important;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:5px!important;
+  z-index:14!important;
+}
+/* Reserve a second row for the exclusive lock so nothing overlaps. */
+.story-thumb-wrap>.ex-badge,
+.story-cover-card>.ex-badge,
+.story-grid-card>.ex-badge{
+  top:43px!important;
+  right:7px!important;
+  bottom:auto!important;
+  z-index:13!important;
+}
+.story-media-badges:not(.has-exclusive) + .ex-badge{top:7px!important}
+
+/* Footer labels: intentionally large and high-contrast on phone. */
+:root{--bottomnav-base:174px!important}
+.bottom-nav{
+  min-height:calc(var(--bottomnav-base) + var(--bottom-safe))!important;
+  padding:9px 0 var(--bottom-safe)!important;
+}
+.nav-btn{
+  min-height:154px!important;
+  gap:9px!important;
+  padding:4px 1px!important;
+  overflow:visible!important;
+}
+.nav-btn span{
+  font-size:72px!important;
+  line-height:.76!important;
+}
+.nav-btn small{
+  width:100%!important;
+  max-width:100%!important;
+  min-height:auto!important;
+  padding:0 1px!important;
+  display:block!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  color:#e5f7fb!important;
+  font-family:'Exo 2',sans-serif!important;
+  font-size:clamp(22px,5.8vw,27px)!important;
+  line-height:.9!important;
+  font-weight:900!important;
+  letter-spacing:-.065em!important;
+  text-align:center!important;
+}
+.nav-btn.active small{color:#fff!important;text-shadow:0 0 12px rgba(142,244,255,.24)!important}
+@media(max-width:390px){
+  :root{--bottomnav-base:165px!important}
+  .nav-btn{min-height:145px!important}.nav-btn span{font-size:66px!important}
+  .nav-btn small{font-size:clamp(20px,5.45vw,24px)!important}
+}
+@media(max-width:350px){
+  :root{--bottomnav-base:158px!important}
+  .nav-btn{min-height:138px!important}.nav-btn span{font-size:60px!important}
+  .nav-btn small{font-size:19px!important;letter-spacing:-.075em!important}
+}
+
+
+/* ============================================================
+   DISTURBING PWA v1.8 — copy, HOME motion, footer and QR polish
+   ============================================================ */
+
+/* HOME featured image: unsettling breathing movement, but the complete image
+   always remains inside its frame. We only animate between <100% and 100%. */
+.hero.latest-storm .hero-media{
+  background:#03070a!important;
+  display:grid!important;
+  place-items:center!important;
+}
+.hero.latest-storm .hero-media>img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform-origin:center center!important;
+  will-change:transform,filter!important;
+  animation:disturbingHeroBreath 8.4s cubic-bezier(.45,.02,.32,.98) infinite!important;
+}
+@keyframes disturbingHeroBreath{
+  0%{transform:scale(.945);filter:brightness(.84) contrast(1.06)}
+  28%{transform:scale(.982);filter:brightness(.94) contrast(1.09)}
+  53%{transform:scale(1);filter:brightness(.89) contrast(1.08)}
+  74%{transform:scale(.967);filter:brightness(.96) contrast(1.05)}
+  100%{transform:scale(.945);filter:brightness(.84) contrast(1.06)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero.latest-storm .hero-media>img{animation:none!important;transform:none!important;filter:none!important}
+}
+
+/* QR actions: camera and album are equally important and equally readable. */
+.unlock-panel .cta,
+.unlock-panel .secondary-btn{
+  min-height:58px!important;
+  padding:15px 14px!important;
+  font-family:'Oxanium',sans-serif!important;
+  font-size:clamp(14px,4vw,18px)!important;
+  line-height:1.12!important;
+  font-weight:800!important;
+  letter-spacing:.025em!important;
+  text-align:center!important;
+  white-space:normal!important;
+}
+
+/* Amazon: only AMAZON uses the wordmark treatment, inside the phrase. */
+.amazon-buy-btn{gap:0!important}
+.amazon-buy-copy{
+  display:inline-flex!important;
+  align-items:baseline!important;
+  justify-content:center!important;
+  flex-wrap:wrap!important;
+  gap:.34em!important;
+}
+.amazon-buy-btn .amazon-wordmark{
+  display:inline-block!important;
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-weight:900!important;
+  font-size:1.22em!important;
+  line-height:.9!important;
+  letter-spacing:-.07em!important;
+  text-transform:none!important;
+  color:#111!important;
+}
+
+/* Footer section labels: substantially larger than v1.5. The horizontal
+   compression lets the large glyphs remain inside each of the five columns. */
+:root{--bottomnav-base:198px!important}
+.bottom-nav{min-height:calc(var(--bottomnav-base) + var(--bottom-safe))!important;padding-top:10px!important}
+.nav-btn{min-height:178px!important;gap:12px!important;overflow:visible!important}
+.nav-btn span{font-size:78px!important;line-height:.72!important}
+.nav-btn small{
+  display:block!important;
+  width:176%!important;
+  max-width:none!important;
+  margin-left:-38%!important;
+  margin-right:-38%!important;
+  font-family:'Oxanium',sans-serif!important;
+  font-size:clamp(31px,8.6vw,39px)!important;
+  line-height:.79!important;
+  font-weight:800!important;
+  letter-spacing:-.10em!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  transform:scaleX(.58)!important;
+  transform-origin:center center!important;
+  color:#effcff!important;
+  text-align:center!important;
+}
+@media(max-width:390px){
+  :root{--bottomnav-base:187px!important}
+  .nav-btn{min-height:167px!important}.nav-btn span{font-size:72px!important}
+  .nav-btn small{font-size:clamp(29px,8.25vw,35px)!important}
+}
+@media(max-width:350px){
+  :root{--bottomnav-base:178px!important}
+  .nav-btn{min-height:158px!important}.nav-btn span{font-size:66px!important}
+  .nav-btn small{font-size:28px!important;transform:scaleX(.55)!important}
+}

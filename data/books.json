@@ -1,31 +1,33 @@
 {
-  "schema": 1,
+  "schema": 3,
+  "source": "assets/books + importer metadata",
+  "naming": "book-N-front/back/spine.ext",
   "books": {
     "5": {
-      "front": "./assets/books/book-5-front.jpg",
       "back": "./assets/books/book-5-back.jpg",
+      "front": "./assets/books/book-5-front.jpg",
       "spine": "./assets/books/book-5-spine.jpg"
     },
     "4": {
-      "front": "./assets/books/book-4-front.jpg",
       "back": "./assets/books/book-4-back.jpg",
+      "front": "./assets/books/book-4-front.jpg",
       "spine": "./assets/books/book-4-spine.jpg"
     },
     "3": {
-      "front": "./assets/books/book-3-front.jpg",
       "back": "./assets/books/book-3-back.jpg",
+      "front": "./assets/books/book-3-front.jpg",
       "spine": "./assets/books/book-3-spine.jpg"
     },
     "2": {
-      "front": "./assets/books/book-2-front.jpg",
       "back": "./assets/books/book-2-back.jpg",
+      "front": "./assets/books/book-2-front.jpg",
       "spine": "./assets/books/book-2-spine.jpg"
     },
     "1": {
-      "front": "./assets/books/book-1-front.jpg",
       "back": "./assets/books/book-1-back.jpg",
+      "front": "./assets/books/book-1-front.jpg",
       "spine": "./assets/books/book-1-spine.jpg"
     }
   },
-  "updated": "2026-09-07T19:01:20.947404+00:00"
+  "updated": "2026-09-08T09:41:00.584513+00:00"
 }
