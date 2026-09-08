@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T11:31:42.810613+00:00",
+  "updated": "2026-09-08T11:32:02.977388+00:00",
   "stories": [
     {
       "id": "277",
@@ -864,6 +864,30 @@
       ],
       "features": [],
       "readTime": 10
+    },
+    {
+      "id": "032",
+      "title": "El Método 32",
+      "published": "2025-12-14",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/032.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/032-metodo-32-frame-4.jpg",
+      "data": "./data/stories/032.json",
+      "source": "https://www.disturbingstories.com/032.html",
+      "protected": true,
+      "book": "03",
+      "year": "2062",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Shh… desde aquí podrá presenciar el final de una de las sesiones… le recuerdo que todo lo que escuche o vea es confidencial…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 6
     },
     {
       "id": "003",
