@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/020.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/020.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/proyector-3.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/proyector-4b.jpg",
   "book": "01",
   "year": "2023",
   "categories": [
@@ -327,8 +327,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/cfIbgDoKG8k",
+          "title": "Teaser"
         }
       ]
     }
