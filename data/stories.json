@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T11:34:03.041571+00:00",
+  "updated": "2026-09-08T11:34:20.841313+00:00",
   "stories": [
     {
       "id": "277",
@@ -1278,6 +1278,32 @@
       ],
       "features": [],
       "readTime": 10
+    },
+    {
+      "id": "153",
+      "title": "Dark Limits: Tormenta en la Costa",
+      "published": "2025-08-03",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/153.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/153-frame-3.jpg",
+      "data": "./data/stories/153.json",
+      "source": "https://www.disturbingstories.com/153.html",
+      "protected": false,
+      "book": "02",
+      "year": "2020",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Una peligrosa tormenta esconde un horrible secreto que descubrirá el pequeño Ramon…",
+      "tabLabels": [
+        "LEER",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 4
     },
     {
       "id": "069",
