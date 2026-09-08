@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T11:32:55.345079+00:00",
+  "updated": "2026-09-08T11:33:54.687395+00:00",
   "stories": [
     {
       "id": "277",
@@ -1255,6 +1255,29 @@
       ],
       "features": [],
       "readTime": 14
+    },
+    {
+      "id": "028",
+      "title": "Hermanos",
+      "published": "2025-08-10",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/028.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/028-frames-1.jpg",
+      "data": "./data/stories/028.json",
+      "source": "https://www.disturbingstories.com/028.html",
+      "protected": false,
+      "book": "02",
+      "year": "2002",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Pase lo que pase, un hermano siempre debe estar ahí…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 10
     },
     {
       "id": "069",
