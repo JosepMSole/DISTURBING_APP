@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T14:52:35.252998+00:00",
+  "updated": "2026-09-08T14:53:06.198044+00:00",
   "stories": [
     {
       "id": "277",
@@ -1056,7 +1056,7 @@
       "published": "2025-11-02",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/029.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/029-se-busca-ni-era-gif-1.gif?1760237088",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/029-se-busca-ni-era-gif-5_orig.gif",
       "data": "./data/stories/029.json",
       "source": "https://www.disturbingstories.com/029.html",
       "protected": false,

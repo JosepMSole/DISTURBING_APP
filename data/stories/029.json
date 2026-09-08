@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/029.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/029.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/029-se-busca-ni-era-gif-1.gif?1760237088",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/029-se-busca-ni-era-gif-5_orig.gif",
   "book": "03",
   "year": "2032",
   "categories": [
@@ -413,8 +413,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/ZXc5i_tPAgQ",
+          "title": "Teaser"
         }
       ]
     }
