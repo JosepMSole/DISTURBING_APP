@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:24:16.035241+00:00",
+  "updated": "2026-09-08T13:24:49.844015+00:00",
   "stories": [
     {
       "id": "277",
@@ -1288,7 +1288,7 @@
       "published": "2025-08-31",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/033.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/frase-1-bk_orig.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/josep-maria-sol-a-photo-realistic-shoot-from-the-side-about-a-silhouette-of-a-man-https-cdn-imagine-art-processed-b8895c17-e24f-4d98-82ce-68bbe7d-ezgif-com-video-to-gif-converter.gif",
       "data": "./data/stories/033.json",
       "source": "https://www.disturbingstories.com/033.html",
       "protected": false,

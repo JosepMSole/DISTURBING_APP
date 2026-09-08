@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/033.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/033.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/frase-1-bk_orig.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/josep-maria-sol-a-photo-realistic-shoot-from-the-side-about-a-silhouette-of-a-man-https-cdn-imagine-art-processed-b8895c17-e24f-4d98-82ce-68bbe7d-ezgif-com-video-to-gif-converter.gif",
   "book": "02",
   "year": "1915",
   "categories": [
@@ -266,8 +266,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/BsDu8j8-5vM",
+          "title": "Teaser"
         }
       ]
     }
