@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:11:23.841315+00:00",
+  "updated": "2026-09-08T15:11:45.858647+00:00",
   "stories": [
     {
       "id": "277",
@@ -34,7 +34,7 @@
       "published": "2026-08-02",
       "access": "exclusive",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/174.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/174-cabezas-perdidas-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/174-cabezas-perdidas-frame-5.jpg",
       "data": "./data/stories/174.json",
       "source": "https://www.disturbingstories.com/174.html",
       "protected": true,
