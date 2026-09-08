@@ -1738,7 +1738,7 @@ body{background:#020507!important}
 
 
 /* ============================================================
-   DISTURBING PWA v1.15 · final UI corrections
+   DISTURBING PWA v1.16 · final UI corrections
    ============================================================ */
 
 /* MIS STORIES footer icon: selected Watcher Eye. */
@@ -1771,7 +1771,7 @@ body{background:#020507!important}
 }
 
 /* Lightning must NEVER remain static. Earlier .lightning{opacity:0}
-   overrode the keyframes; v1.15 removes that visual state explicitly. */
+   overrode the keyframes; v1.16 removes that visual state explicitly. */
 .hero.latest-storm .lightning{opacity:0;pointer-events:none!important}
 .hero.latest-storm .lightning-a{animation:lightningV115A 2.85s steps(1,end) infinite!important}
 .hero.latest-storm .lightning-b{animation:lightningV115B 4.05s .8s steps(1,end) infinite!important}
@@ -1850,3 +1850,32 @@ body{background:#020507!important}
   .hero.latest-storm .hero-media>.hero-main-image{animation:none!important;transform:scale(1.015)!important}
   .hero.latest-storm .lightning-a,.hero.latest-storm .lightning-b,.hero.latest-storm .storm-flash-a,.hero.latest-storm .storm-flash-b{animation:none!important;opacity:0!important}
 }
+
+
+/* ===== v1.16 · grupos de 3 cajas + badges de lectura ===== */
+/* Solo conjuntos de TRES cajas Holo HUD. Las cajas independientes no se modifican. */
+.library-stats>div .hud-tl,
+.library-stats>div .hud-tr,
+.personal-stats>div .hud-tl,
+.personal-stats>div .hud-tr,
+.book-detail-stats>div .hud-tl,
+.book-detail-stats>div .hud-tr{
+  top:-7px!important;
+}
+.library-stats>div .hud-tl,
+.personal-stats>div .hud-tl,
+.book-detail-stats>div .hud-tl{left:-1px!important}
+.library-stats>div .hud-tr,
+.personal-stats>div .hud-tr,
+.book-detail-stats>div .hud-tr{right:-1px!important}
+/* Mantener las esquinas inferiores donde ya estaban. */
+.library-stats>div .hud-bl,.personal-stats>div .hud-bl,.book-detail-stats>div .hud-bl{left:-1px!important;bottom:-1px!important}
+.library-stats>div .hud-br,.personal-stats>div .hud-br,.book-detail-stats>div .hud-br{right:-1px!important;bottom:-1px!important}
+
+/* La bubble LEÍDA vuelve a su posición original, superpuesta al triángulo verde. */
+.cover-read{left:6px!important;bottom:6px!important;z-index:9!important}
+.read-corner{z-index:5!important}
+
+/* El enlace del copyright mantiene el aspecto del pie. */
+.drawer-note a{color:inherit!important;text-decoration:none!important}
+.drawer-note a:hover,.drawer-note a:focus{text-decoration:underline!important;color:#dffcff!important}

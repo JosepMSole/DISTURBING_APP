@@ -1,4 +1,4 @@
-const APP_VERSION = '1.15.0';
+const APP_VERSION = '1.16.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,qrScanner=null,qrScanBusy=false,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -211,7 +211,7 @@ function renderCollection(bookId=''){
   }
   const shelf=ordered.map(([book])=>{const a=bookAsset(book),has=!!a.spine;return `<button class="shelf-book ${has?'has-spine':'fallback-spine'}" data-book-scroll="${escAttr(book)}" aria-label="Ir a ${escAttr(bookLabel(book))}">${has?`<img src="${escAttr(a.spine)}" alt="${escAttr(bookLabel(book))}">`:`<span>${escapeHtml(bookLabel(book))}</span>`}</button>`}).join('');
   const cards=ordered.map(([book,stories])=>{stories.sort((a,b)=>new Date(b.published)-new Date(a.published));const read=stories.filter(s=>readIds.has(s.id)).length,asset=bookAsset(book),thumbs=stories.slice(0,3).map(s=>displayCover(s)).filter(Boolean);const visual=asset.front?`<div class="book-front"><img src="${escAttr(asset.front)}" alt="${escAttr(bookLabel(book))}" loading="lazy"></div>`:`<div class="book-thumbs">${thumbs.length?thumbs.map(src=>`<img src="${escAttr(src)}" alt="" loading="lazy" referrerpolicy="no-referrer">`).join(''):`<div class="book-placeholder">${escapeHtml(book)}</div>`}</div>`;return `<article id="book-${escAttr(book)}" class="book-card" data-book-id="${escAttr(book)}">${visual}<div class="book-copy"><h2>${escapeHtml(bookLabel(book))}</h2><div class="book-numbers-row"><div class="book-numbers"><strong>${read}/15</strong><span>LEÍDAS</span></div>${bookFeatureSummary(stories)}</div><div class="collection-progress"><span style="width:${pct(read/15)}"></span></div><span class="book-open">VER STORIES ›</span></div></article>`}).join('');
-  view.innerHTML=`<section class="section collection-section"><div class="section-title"><div><div class="eyebrow">BIBLIOTECA DE LA</div><h1>Colección</h1></div></div><p class="collection-intro">Progreso por libro según las Stories ya publicadas. Cada exclusiva se desbloquea individualmente con su propio QR.</p>${shelf?`<div class="book-shelf-wrap"><div class="book-shelf-title">ESTANTERÍA</div><div class="book-shelf">${shelf}</div><div class="shelf-board"></div></div>`:''}<div class="books-grid">${cards||'<div class="empty">Todavía no hay libros con Stories publicadas.</div>'}</div></section>`;
+  view.innerHTML=`<section class="section collection-section"><div class="section-title"><div><div class="eyebrow">BIBLIOTECA DE LA</div><h1>Colección</h1></div></div>${shelf?`<div class="book-shelf-wrap"><div class="book-shelf-title">ESTANTERÍA</div><div class="book-shelf">${shelf}</div><div class="shelf-board"></div></div>`:''}<div class="books-grid">${cards||'<div class="empty">Todavía no hay libros con Stories publicadas.</div>'}</div></section>`;
   $$('[data-book-id]').forEach(el=>el.onclick=()=>go(`collection/${el.dataset.bookId}`));$$('[data-book-scroll]').forEach(el=>el.onclick=()=>document.getElementById(`book-${el.dataset.bookScroll}`)?.scrollIntoView({behavior:'smooth',block:'start'}));bindBrokenImages();requestAnimationFrame(fitCollectionShelf);
 }
 
@@ -426,5 +426,5 @@ async function showUnlockReward(id){
   el.classList.remove('show');setTimeout(()=>el.remove(),260);
 }
 
-async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=1.15.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=1.16.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
