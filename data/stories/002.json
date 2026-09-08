@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/002.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/002.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/3b.jpg?1742003114",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/openart-image-ao8e2mrp-1739117875493-raw-psd.jpg",
   "book": "01",
   "year": "2051",
   "categories": [
@@ -136,8 +136,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/75-yvBiiFfA",
+          "title": "Teaser"
         }
       ]
     }
