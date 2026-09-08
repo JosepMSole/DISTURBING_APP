@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/137.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/137.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/137-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/137-frame-3.jpg",
   "book": "02",
   "year": "2029",
   "categories": [
@@ -351,8 +351,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/NIw-oLblnCA",
+          "title": "Teaser"
         }
       ]
     }
