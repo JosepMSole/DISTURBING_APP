@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:14:56.642096+00:00",
+  "updated": "2026-09-08T13:15:26.389907+00:00",
   "stories": [
     {
       "id": "277",
@@ -1845,7 +1845,7 @@
       "published": "2025-03-30",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/004.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/momento-cero-3.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dark-limits-momento-cero-gif-2.gif",
       "data": "./data/stories/004.json",
       "source": "https://www.disturbingstories.com/004.html",
       "protected": false,
