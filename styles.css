@@ -1536,3 +1536,136 @@ body{background:#020507!important}
   .hero.latest-storm .hero-media>.hero-main-image{animation:none!important;transform:none!important}
   .hero.latest-storm .storm-flash-a,.hero.latest-storm .storm-flash-b,.hero.latest-storm .lightning-a,.hero.latest-storm .lightning-b{animation:none!important}
 }
+
+
+/* ============================================================
+   DISTURBING PWA v1.13 — footer icons + readable labels
+   ============================================================ */
+
+/* Footer stays compact but labels gain real reading size. */
+:root{--bottomnav-base:108px!important}
+.bottom-nav{
+  min-height:calc(var(--bottomnav-base) + var(--bottom-safe))!important;
+  padding:0 2px var(--bottom-safe)!important;
+  align-items:stretch!important;
+}
+.nav-btn{
+  min-height:102px!important;
+  padding:1px 1px 3px!important;
+  gap:2px!important;
+  justify-content:flex-start!important;
+  overflow:visible!important;
+}
+.nav-btn .nav-icon{
+  width:44px!important;
+  height:44px!important;
+  flex:0 0 44px!important;
+  margin:0 auto!important;
+  display:grid!important;
+  place-items:center!important;
+  color:currentColor!important;
+  line-height:1!important;
+}
+.nav-btn small{
+  width:100%!important;
+  max-width:100%!important;
+  font-family:'Exo 2',sans-serif!important;
+  font-size:clamp(20px,5.25vw,23px)!important;
+  line-height:.90!important;
+  font-weight:850!important;
+  letter-spacing:-.06em!important;
+  white-space:normal!important;
+  text-align:center!important;
+  transform:none!important;
+  margin:0!important;
+  overflow:visible!important;
+}
+
+/* HOME slightly larger than the rest. */
+.nav-home{
+  font-family:Arial,sans-serif!important;
+  font-size:48px!important;
+  transform:translateY(-1px)!important;
+}
+/* MIS STORIES: skull, monochrome UI glyph. */
+.nav-skull{
+  font-family:'Arial Unicode MS','Segoe UI Symbol',Arial,sans-serif!important;
+  font-size:40px!important;
+}
+/* PLAYER deliberately a little smaller. */
+.nav-player{
+  font-family:Arial,sans-serif!important;
+  font-size:33px!important;
+  transform:translateY(-1px)!important;
+}
+
+/* STORIES = exactly 3 × 3 = 9 squares. */
+.nav-grid9{
+  grid-template-columns:repeat(3,8px)!important;
+  grid-template-rows:repeat(3,8px)!important;
+  gap:3px!important;
+  align-content:center!important;
+  justify-content:center!important;
+}
+.nav-grid9 i{
+  display:block!important;
+  width:8px!important;
+  height:8px!important;
+  border:1.7px solid currentColor!important;
+  border-radius:1px!important;
+  background:transparent!important;
+}
+
+/* COLECCIÓN = exactly four narrow book rectangles. */
+.nav-collection4{
+  grid-template-columns:repeat(4,6px)!important;
+  grid-template-rows:30px!important;
+  gap:3px!important;
+  align-content:center!important;
+  justify-content:center!important;
+  transform:none!important;
+}
+.nav-collection4 i{
+  display:block!important;
+  width:6px!important;
+  height:30px!important;
+  border:1.7px solid currentColor!important;
+  border-radius:1px!important;
+  background:transparent!important;
+}
+
+@media(max-width:390px){
+  :root{--bottomnav-base:105px!important}
+  .nav-btn{min-height:99px!important}
+  .nav-btn .nav-icon{width:42px!important;height:42px!important;flex-basis:42px!important}
+  .nav-btn small{font-size:clamp(18.5px,5vw,21px)!important}
+  .nav-home{font-size:46px!important}
+  .nav-skull{font-size:38px!important}
+  .nav-player{font-size:31px!important}
+}
+@media(max-width:350px){
+  :root{--bottomnav-base:101px!important}
+  .nav-btn{min-height:95px!important}
+  .nav-btn .nav-icon{width:39px!important;height:39px!important;flex-basis:39px!important}
+  .nav-btn small{font-size:17px!important;letter-spacing:-.07em!important}
+  .nav-home{font-size:43px!important}
+  .nav-skull{font-size:35px!important}
+  .nav-player{font-size:29px!important}
+  .nav-grid9{grid-template-columns:repeat(3,7px)!important;grid-template-rows:repeat(3,7px)!important;gap:3px!important}
+  .nav-grid9 i{width:7px!important;height:7px!important}
+  .nav-collection4{grid-template-columns:repeat(4,5px)!important;grid-template-rows:27px!important;gap:3px!important}
+  .nav-collection4 i{width:5px!important;height:27px!important}
+}
+
+/* MIS STORIES: labels must remain on one line, especially DESBLOQUEADAS. */
+.personal-stats>div{min-width:0!important;padding-left:2px!important;padding-right:2px!important}
+.personal-stats span{
+  font-size:clamp(9.5px,2.65vw,11.5px)!important;
+  line-height:1!important;
+  letter-spacing:-.025em!important;
+  white-space:nowrap!important;
+  overflow:visible!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+@media(max-width:350px){.personal-stats span{font-size:9px!important;letter-spacing:-.04em!important}}
