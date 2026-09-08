@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T14:54:07.303060+00:00",
+  "updated": "2026-09-08T14:54:38.232974+00:00",
   "stories": [
     {
       "id": "277",
@@ -976,7 +976,7 @@
       "published": "2025-11-23",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/160.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/160-brainstorming-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/160-brainstorming-frame-2-gif.gif",
       "data": "./data/stories/160.json",
       "source": "https://www.disturbingstories.com/160.html",
       "protected": false,
