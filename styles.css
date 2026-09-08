@@ -1705,7 +1705,7 @@ body{background:#020507!important}
 .storm-flash{opacity:0;animation-duration:2.1s!important}
 .storm-flash-a{animation:stormFlashA 2.1s steps(1,end) infinite!important}
 .storm-flash-b{animation:stormFlashB 3.4s steps(1,end) infinite!important}
-.lightning{opacity:.5!important}
+.lightning{opacity:0}
 .home-previous .section-title{margin-bottom:10px!important}
 .secondary-home-cta{margin-top:14px!important;width:100%!important}
 .story-media-badges,.story-thumb-wrap .story-media-badges,.story-cover-card>.story-media-badges,.story-grid-card>.story-media-badges,.story-featured>.story-media-badges,.continue-cover.story-thumb-wrap>.story-media-badges,.hero-story-media>.story-media-badges{top:7px!important;right:7px!important;bottom:auto!important;display:flex!important;flex-direction:column!important;align-items:flex-end!important;gap:5px!important;z-index:5!important}
@@ -1734,4 +1734,119 @@ body{background:#020507!important}
   .nav-grid9 i{width:7px!important;height:7px!important}
   .nav-collection4{grid-template-columns:repeat(4,5px)!important;grid-template-rows:26px!important}
   .nav-collection4 i{width:5px!important;height:26px!important}
+}
+
+
+/* ============================================================
+   DISTURBING PWA v1.15 · final UI corrections
+   ============================================================ */
+
+/* MIS STORIES footer icon: selected Watcher Eye. */
+.nav-watcher{font-size:0!important}
+.nav-watcher svg{width:34px!important;height:34px!important;display:block!important;overflow:visible!important;fill:none!important;stroke:currentColor!important;stroke-width:1.65!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.nav-watcher .watcher-pupil{fill:currentColor!important;stroke:none!important}
+.nav-btn[data-route="unlocked"].active .nav-watcher{filter:drop-shadow(0 0 8px rgba(142,244,255,.38))!important}
+@media(max-width:480px){.nav-watcher svg{width:32px!important;height:32px!important}}
+
+/* HOME image: it always fills its frame. Zoom oscillates only ABOVE scale 1,
+   so neither side/top/bottom can expose empty space during the motion. */
+.hero.latest-storm .hero-media{overflow:hidden!important;background:#020608!important}
+.hero.latest-storm .hero-media>.hero-main-image{
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  object-fit:cover!important;object-position:center center!important;transform-origin:center center!important;
+  animation:heroFullFrameZoomV115 3.55s cubic-bezier(.45,.03,.3,.98) infinite alternate!important;
+  will-change:transform,filter!important;
+}
+.hero.latest-storm .hero-media>.hero-backdrop{
+  position:absolute!important;inset:-4%!important;width:108%!important;height:108%!important;
+  object-fit:cover!important;object-position:center center!important;opacity:.34!important;
+  filter:blur(11px) brightness(.60)!important;transform:scale(1.05)!important;
+  animation:none!important;
+}
+@keyframes heroFullFrameZoomV115{
+  0%{transform:scale(1.015);filter:brightness(.86) contrast(1.08)}
+  38%{transform:scale(1.075);filter:brightness(.96) contrast(1.10)}
+  72%{transform:scale(1.105);filter:brightness(.90) contrast(1.11)}
+  100%{transform:scale(1.025);filter:brightness(.97) contrast(1.07)}
+}
+
+/* Lightning must NEVER remain static. Earlier .lightning{opacity:0}
+   overrode the keyframes; v1.15 removes that visual state explicitly. */
+.hero.latest-storm .lightning{opacity:0;pointer-events:none!important}
+.hero.latest-storm .lightning-a{animation:lightningV115A 2.85s steps(1,end) infinite!important}
+.hero.latest-storm .lightning-b{animation:lightningV115B 4.05s .8s steps(1,end) infinite!important}
+.hero.latest-storm .storm-flash-a{animation:stormFlashV115A 2.85s steps(1,end) infinite!important}
+.hero.latest-storm .storm-flash-b{animation:stormFlashV115B 4.05s .8s steps(1,end) infinite!important}
+@keyframes lightningV115A{
+  0%,17%,17.08%,18.05%,53%,53.08%,54.1%,100%{opacity:0}
+  17.16%,17.54%{opacity:1}17.38%{opacity:.10}
+  53.16%,53.7%{opacity:.92}53.43%{opacity:.08}
+}
+@keyframes lightningV115B{
+  0%,37%,37.08%,38.15%,78%,78.08%,79.18%,100%{opacity:0}
+  37.16%,37.72%{opacity:.95}37.43%{opacity:.06}
+  78.16%,78.76%{opacity:.82}78.46%{opacity:.05}
+}
+@keyframes stormFlashV115A{
+  0%,16.8%,18.4%,52.8%,54.4%,100%{opacity:0}
+  17.05%{opacity:.46}17.35%{opacity:.07}17.7%{opacity:.72}
+  53.05%{opacity:.34}53.38%{opacity:.05}53.78%{opacity:.57}
+}
+@keyframes stormFlashV115B{
+  0%,36.8%,38.5%,77.8%,79.5%,100%{opacity:0}
+  37.05%{opacity:.38}37.4%{opacity:.06}37.82%{opacity:.64}
+  78.05%{opacity:.31}78.42%{opacity:.05}78.85%{opacity:.55}
+}
+
+/* ONLY the repeated groups of three Holo boxes: snap all four corners to the
+   actual physical box after the center-out animation. Independent boxes are untouched. */
+.library-stats>div,.personal-stats>div,.book-detail-stats>div{overflow:visible!important;position:relative!important}
+.library-stats>div .hud-corner,.personal-stats>div .hud-corner,.book-detail-stats>div .hud-corner{
+  width:15px!important;height:15px!important;box-sizing:border-box!important
+}
+.library-stats>div .hud-tl,.personal-stats>div .hud-tl,.book-detail-stats>div .hud-tl{left:-1px!important;top:-1px!important}
+.library-stats>div .hud-tr,.personal-stats>div .hud-tr,.book-detail-stats>div .hud-tr{right:-1px!important;top:-1px!important}
+.library-stats>div .hud-bl,.personal-stats>div .hud-bl,.book-detail-stats>div .hud-bl{left:-1px!important;bottom:-1px!important}
+.library-stats>div .hud-br,.personal-stats>div .hud-br,.book-detail-stats>div .hud-br{right:-1px!important;bottom:-1px!important}
+.library-stats>div.hud-motion-done .hud-corner,
+.personal-stats>div.hud-motion-done .hud-corner,
+.book-detail-stats>div.hud-motion-done .hud-corner{transform:translate3d(0,0,0)!important;opacity:1!important}
+
+/* TODAS LAS STORIES: PUBLICADAS is the only golden statistics box. */
+.library-stats>div:nth-child(3){
+  border-color:#8b6b25!important;
+  background:linear-gradient(180deg,rgba(255,207,87,.10),rgba(105,74,15,.025)),#151107!important;
+  box-shadow:inset 0 1px 0 rgba(255,224,137,.12),0 0 18px rgba(181,129,26,.055)!important
+}
+.library-stats>div:nth-child(3) strong{color:#ffd86a!important;text-shadow:0 0 13px rgba(255,198,55,.14)!important}
+.library-stats>div:nth-child(3) span{color:#d4b866!important}
+.library-stats>div:nth-child(3) .hud-corner{border-color:#d5a936!important;filter:drop-shadow(0 0 6px rgba(222,172,48,.28))!important}
+.library-stats>div:nth-child(3).hud-box-pending.hud-frame-on{
+  border-color:#8b6b25!important;
+  background:linear-gradient(180deg,rgba(255,207,87,.10),rgba(105,74,15,.025)),#151107!important;
+  box-shadow:inset 0 1px 0 rgba(255,224,137,.12),0 0 18px rgba(181,129,26,.055)!important
+}
+
+/* Read state: green folded-corner triangle sits on the poster below badges.
+   Existing LEÍDA bubble stays above it. */
+.story-thumb-wrap,.story-cover-card,.story-grid-poster{position:relative!important;overflow:hidden!important}
+.story-grid-poster{width:100%!important}
+.story-grid-poster>.story-thumb{width:100%!important;display:block!important}
+.story-grid-poster>.story-thumb,.story-grid-poster>.story-thumb-placeholder{width:100%!important;aspect-ratio:2/3!important;height:auto!important;object-fit:cover!important;border-radius:0!important;display:block!important}
+.read-corner{
+  position:absolute!important;left:0!important;bottom:0!important;width:36px!important;height:36px!important;
+  background:#18b85a!important;clip-path:polygon(0 0,0 100%,100% 100%)!important;
+  filter:drop-shadow(1px -1px 4px rgba(0,0,0,.42))!important;
+  z-index:5!important;pointer-events:none!important
+}
+.cover-read{z-index:9!important;left:7px!important;bottom:42px!important}
+.story-thumb-wrap>.ex-badge,.story-cover-card>.ex-badge,.story-grid-poster>.ex-badge{z-index:14!important}
+.story-thumb-wrap>.story-media-badges,.story-cover-card>.story-media-badges,.story-grid-poster>.story-media-badges{z-index:15!important}
+
+/* PLAYER compact summary wording. */
+.player-summary-row small{letter-spacing:.03em!important}
+
+@media(prefers-reduced-motion:reduce){
+  .hero.latest-storm .hero-media>.hero-main-image{animation:none!important;transform:scale(1.015)!important}
+  .hero.latest-storm .lightning-a,.hero.latest-storm .lightning-b,.hero.latest-storm .storm-flash-a,.hero.latest-storm .storm-flash-b{animation:none!important;opacity:0!important}
 }
