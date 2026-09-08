@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:05:33.705689+00:00",
+  "updated": "2026-09-08T15:06:01.456563+00:00",
   "stories": [
     {
       "id": "277",
@@ -457,7 +457,7 @@
       "published": "2026-04-05",
       "access": "exclusive",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/025.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/book-4-final-saga-trilogia-raven-v2.jpg?1769741752",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/025-raven-frame-02.jpg",
       "data": "./data/stories/025.json",
       "source": "https://www.disturbingstories.com/025.html",
       "protected": true,
