@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:26:32.187338+00:00",
+  "updated": "2026-09-08T14:51:52.034551+00:00",
   "stories": [
     {
       "id": "277",
@@ -1133,7 +1133,7 @@
       "published": "2025-10-12",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/275.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/275-enero-1850-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/275-enero-1850-frame-3.jpg",
       "data": "./data/stories/275.json",
       "source": "https://www.disturbingstories.com/275.html",
       "protected": false,
