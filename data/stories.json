@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:04:17.846605+00:00",
+  "updated": "2026-09-08T15:04:46.098961+00:00",
   "stories": [
     {
       "id": "277",
@@ -406,7 +406,7 @@
       "published": "2026-04-05",
       "access": "exclusive",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/050.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/49-stories-v2_orig.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/050-quincuaginta-frame-6.jpg",
       "data": "./data/stories/050.json",
       "source": "https://www.disturbingstories.com/050.html",
       "protected": true,
