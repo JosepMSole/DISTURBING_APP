@@ -8,16 +8,16 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Disturbing Stories APP" />
   <meta name="application-name" content="Disturbing Stories APP" />
-  <link rel="manifest" href="manifest.webmanifest?v=1.13.0" />
-  <link rel="icon" type="image/png" href="assets/app-icon.png?v=1.13.0" />
-  <link rel="shortcut icon" type="image/png" href="assets/app-icon.png?v=1.13.0" />
-  <link rel="icon" href="favicon.ico?v=1.13.0" sizes="any" />
-  <link rel="icon" type="image/png" href="icons/icon-192.png?v=1.13.0" />
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png?v=1.13.0" />
+  <link rel="manifest" href="manifest.webmanifest?v=1.14.0" />
+  <link rel="icon" type="image/png" href="assets/app-icon.png?v=1.14.0" />
+  <link rel="shortcut icon" type="image/png" href="assets/app-icon.png?v=1.14.0" />
+  <link rel="icon" href="favicon.ico?v=1.14.0" sizes="any" />
+  <link rel="icon" type="image/png" href="icons/icon-192.png?v=1.14.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png?v=1.14.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Oxanium:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=1.13.0" />
+  <link rel="stylesheet" href="styles.css?v=1.14.0" />
   <title>Disturbing Stories APP</title>
 </head>
 <body>
@@ -39,11 +39,11 @@
     <main id="view" class="view" aria-live="polite"></main>
 
     <nav class="bottom-nav" aria-label="Navegación principal">
-      <button data-route="home" class="nav-btn active"><span class="nav-icon nav-home" aria-hidden="true">⌂</span><small>Inicio</small></button>
-      <button data-route="stories" class="nav-btn"><span class="nav-icon nav-grid9" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><small>Stories</small></button>
-      <button data-route="unlocked" class="nav-btn"><span class="nav-icon nav-skull" aria-hidden="true">☠</span><small>Mis Stories</small></button>
-      <button data-route="collection" class="nav-btn"><span class="nav-icon nav-collection4" aria-hidden="true"><i></i><i></i><i></i><i></i></span><small>Colección</small></button>
-      <button data-route="player" class="nav-btn"><span class="nav-icon nav-player" aria-hidden="true">♫</span><small>Player</small></button>
+      <button data-route="home" class="nav-btn active" aria-label="Inicio"><span class="nav-icon nav-home" aria-hidden="true">⌂</span></button>
+      <button data-route="stories" class="nav-btn" aria-label="Stories"><span class="nav-icon nav-grid9" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></button>
+      <button data-route="unlocked" class="nav-btn" aria-label="Mis Stories"><span class="nav-icon nav-skull" aria-hidden="true"><svg viewBox="0 0 24 24" role="presentation"><path d="M12 3.2c-4.16 0-7.5 3.14-7.5 7.15 0 2.2 1 4.13 2.66 5.45v2.34c0 .55.45 1 1 1h1.57c.42 0 .78-.27.92-.66l.35-1h1.99l.35 1c.14.39.5.66.92.66h1.57c.55 0 1-.45 1-1V15.8c1.66-1.32 2.66-3.25 2.66-5.45 0-4.01-3.34-7.15-7.49-7.15Zm-2.28 8.1a1.15 1.15 0 1 1 0-2.3 1.15 1.15 0 0 1 0 2.3Zm4.56 0a1.15 1.15 0 1 1 0-2.3 1.15 1.15 0 0 1 0 2.3Zm-4.76 3.27c.4-.73 1.28-1.2 2.48-1.2 1.2 0 2.08.47 2.48 1.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <button data-route="collection" class="nav-btn" aria-label="Colección"><span class="nav-icon nav-collection4" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
+      <button data-route="player" class="nav-btn" aria-label="Player"><span class="nav-icon nav-player" aria-hidden="true">♫</span></button>
     </nav>
 
     <div id="miniPlayer" class="mini-player hidden" aria-label="Player">
@@ -72,12 +72,12 @@
       <button id="scanBtn">Desbloquear Story</button>
       <a href="https://www.disturbingstories.com/mural.html" target="_blank" rel="noopener">Mural interactivo ↗</a>
       <button id="installBtn" class="hidden">Instalar app</button>
-      <p class="drawer-note">v1.13 · © Vianda Visual 2026</p>
+      <p class="drawer-note">v1.14 · © Vianda Visual 2026</p>
     </aside>
     <div id="scrim" class="scrim hidden"></div>
   </div>
 
   <template id="loadingTemplate"><div class="loading"><div class="spinner"></div><p>Cargando Stories…</p></div></template>
-  <script src="app.js?v=1.13.0" defer></script>
+  <script src="app.js?v=1.14.0" defer></script>
 </body>
 </html>
