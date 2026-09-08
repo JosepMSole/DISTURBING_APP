@@ -1377,3 +1377,162 @@ body{background:#020507!important}
   .home-continue.hud-corners-live .home-continue-copy,
   .home-continue.hud-corners-live .continue-btn{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
 }
+
+
+/* ============================================================
+   DISTURBING PWA v1.12 — navigation, HOME energy, compact UI
+   ============================================================ */
+
+/* Header layout is now physically split in two groups, so controls never
+   collapse to the left while the app is booting. */
+.topbar{
+  display:flex!important;
+  grid-template-columns:none!important;
+  justify-content:space-between!important;
+  align-items:center!important;
+  gap:8px!important;
+  padding-left:9px!important;
+  padding-right:9px!important;
+}
+.topbar-left,.topbar-actions{
+  display:flex!important;
+  align-items:center!important;
+  min-width:0!important;
+}
+.topbar-left{gap:6px!important;flex:1 1 auto!important;justify-content:flex-start!important}
+.topbar-actions{gap:6px!important;flex:0 0 auto!important;justify-content:flex-end!important;margin-left:auto!important}
+.topbar .brand{width:52px!important;min-width:52px!important;max-width:52px!important;height:52px!important;display:grid!important;place-items:center!important}
+.brand-home-icon{width:50px!important;height:50px!important;max-width:50px!important;object-fit:contain!important}
+
+/* No accidental oval header controls. Music and burger are squares; the
+   small up-arrow is deliberately circular. */
+.topbar .header-player-btn,.topbar .menu-square-btn{
+  width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important;
+  padding:0!important;border-radius:8px!important;display:grid!important;place-items:center!important;
+  line-height:1!important;aspect-ratio:1/1!important;
+}
+.topbar .top-jump{
+  width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important;
+  padding:0!important;border-radius:50%!important;display:grid!important;place-items:center!important;
+  font-size:19px!important;line-height:1!important;aspect-ratio:1/1!important;opacity:.92!important;
+}
+.music-glyph{display:grid!important;place-items:center!important;width:100%!important;height:100%!important;font-size:25px!important;line-height:1!important;transform:translateY(-1px)!important}
+.burger-glyph{width:22px!important;height:16px!important;margin:0!important;display:flex!important;flex-direction:column!important;justify-content:space-between!important;align-items:stretch!important}
+.burger-glyph i{width:22px!important;height:2px!important;min-height:2px!important;display:block!important;margin:0!important;border:0!important;border-radius:999px!important;background:#f4fdff!important}
+.back-nav-btn{flex:0 1 auto!important;max-width:104px!important}
+@media(max-width:390px){
+  .topbar{padding-left:6px!important;padding-right:6px!important;gap:5px!important}
+  .topbar-left,.topbar-actions{gap:4px!important}
+  .topbar .brand{width:48px!important;min-width:48px!important;max-width:48px!important;height:48px!important}
+  .brand-home-icon{width:46px!important;height:46px!important;max-width:46px!important}
+  .topbar .header-player-btn,.topbar .menu-square-btn{width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important}
+  .topbar .top-jump{width:36px!important;height:36px!important;min-width:36px!important;min-height:36px!important;font-size:17px!important}
+  .back-nav-btn{min-width:74px!important;max-width:82px!important;height:42px!important;font-size:10px!important;padding:0 7px!important}
+}
+@media(max-width:350px){
+  .topbar-left,.topbar-actions{gap:3px!important}
+  .topbar .brand{width:44px!important;min-width:44px!important;max-width:44px!important;height:44px!important}
+  .brand-home-icon{width:42px!important;height:42px!important;max-width:42px!important}
+  .topbar .header-player-btn,.topbar .menu-square-btn{width:38px!important;height:38px!important;min-width:38px!important;min-height:38px!important}
+  .topbar .top-jump{width:34px!important;height:34px!important;min-width:34px!important;min-height:34px!important}
+  .back-nav-btn{min-width:66px!important;max-width:72px!important;font-size:9px!important}
+}
+
+/* Footer: slightly larger but more compact vertically. */
+:root{--bottomnav-base:104px!important}
+.bottom-nav{
+  min-height:calc(var(--bottomnav-base) + var(--bottom-safe))!important;
+  padding:0 2px var(--bottom-safe)!important;
+  align-items:stretch!important;
+}
+.nav-btn{
+  min-height:98px!important;
+  padding:0 1px 2px!important;
+  gap:1px!important;
+  justify-content:flex-start!important;
+}
+.nav-btn span{
+  font-size:43px!important;
+  line-height:.9!important;
+  height:44px!important;
+  flex:0 0 44px!important;
+  margin-top:0!important;
+}
+.nav-btn small{
+  font-size:clamp(18px,4.9vw,21px)!important;
+  line-height:.9!important;
+  font-weight:850!important;
+  letter-spacing:-.055em!important;
+  margin-top:0!important;
+}
+@media(max-width:390px){
+  :root{--bottomnav-base:101px!important}
+  .nav-btn{min-height:95px!important}
+  .nav-btn span{font-size:41px!important;height:42px!important;flex-basis:42px!important}
+  .nav-btn small{font-size:clamp(17px,4.65vw,19.5px)!important}
+}
+@media(max-width:350px){
+  :root{--bottomnav-base:98px!important}
+  .nav-btn{min-height:92px!important}
+  .nav-btn span{font-size:39px!important;height:40px!important;flex-basis:40px!important}
+  .nav-btn small{font-size:16px!important}
+}
+
+/* PLAYER title summary: hug the actual two rows. */
+.player-title-row{align-items:center!important}
+.player-summary{
+  min-height:0!important;
+  height:auto!important;
+  align-self:center!important;
+  padding:4px 9px!important;
+  row-gap:0!important;
+  align-content:center!important;
+}
+.player-summary-row{min-height:0!important;padding:0!important;line-height:1!important;gap:7px!important}
+.player-summary-row span,.player-summary-row small,.player-summary-row strong,.player-summary-row b{line-height:1.05!important;margin:0!important;padding:0!important}
+@media(max-width:390px){.player-summary{padding:3px 8px!important;row-gap:0!important}}
+
+/* HOME zoom: significantly more frequent and visible, but the foreground
+   never exceeds scale(1), so its top/edges cannot be cropped. */
+.hero.latest-storm .hero-media>.hero-main-image{
+  object-fit:contain!important;
+  object-position:center top!important;
+  transform-origin:center top!important;
+  animation:disturbingHeroBreathV112 4.25s cubic-bezier(.44,.02,.26,.98) infinite!important;
+}
+@keyframes disturbingHeroBreathV112{
+  0%{transform:scale(.950);filter:brightness(.82) contrast(1.08)}
+  22%{transform:scale(.978);filter:brightness(.96) contrast(1.11)}
+  47%{transform:scale(1);filter:brightness(.90) contrast(1.10)}
+  68%{transform:scale(.970);filter:brightness(.99) contrast(1.07)}
+  84%{transform:scale(.992);filter:brightness(.91) contrast(1.12)}
+  100%{transform:scale(.950);filter:brightness(.82) contrast(1.08)}
+}
+.hero.latest-storm .storm-glow{opacity:.62!important;animation-duration:2.8s!important}
+.hero.latest-storm .storm-flash-a{animation:stormFlashV112A 3.15s infinite!important}
+.hero.latest-storm .storm-flash-b{animation:stormFlashV112B 4.35s .65s infinite!important}
+.hero.latest-storm .lightning-a{animation:lightningV112A 3.15s infinite!important;filter:drop-shadow(0 0 12px rgba(220,245,255,1))!important}
+.hero.latest-storm .lightning-b{animation:lightningV112B 4.35s .65s infinite!important;filter:drop-shadow(0 0 12px rgba(180,235,255,.96))!important}
+@keyframes stormFlashV112A{0%,23%,25%,61%,63%,100%{opacity:0}23.2%{opacity:.42}23.55%{opacity:.08}23.9%{opacity:.78}24.35%{opacity:.12}61.2%{opacity:.30}61.55%{opacity:.06}61.9%{opacity:.52}}
+@keyframes stormFlashV112B{0%,42%,44%,82%,84%,100%{opacity:0}42.2%{opacity:.34}42.65%{opacity:.08}43.05%{opacity:.62}82.15%{opacity:.26}82.55%{opacity:.55}83.05%{opacity:.07}}
+@keyframes lightningV112A{0%,23%,23.12%,24.45%,61%,61.12%,62.25%,100%{opacity:0}23.20%,23.84%{opacity:1}23.50%{opacity:.12}61.18%,61.75%{opacity:.82}61.45%{opacity:.08}}
+@keyframes lightningV112B{0%,42%,42.12%,43.8%,82%,82.12%,83.45%,100%{opacity:0}42.2%,42.9%{opacity:.92}42.55%{opacity:.08}82.2%,82.92%{opacity:.78}82.55%{opacity:.07}}
+
+/* Install helper for iOS/iPadOS: system installation cannot be invoked by a
+   PWA, so we make Apple's required 3-step flow explicit and visual. */
+.install-guide{position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:18px}
+.install-guide-scrim{position:absolute;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.install-guide-card{position:relative;z-index:1;width:min(92vw,420px);background:#071217;border:1px solid #477683;padding:24px 20px 20px;box-shadow:0 24px 90px rgba(0,0,0,.75),0 0 36px rgba(96,223,240,.10)}
+.install-guide-card h2{margin:5px 42px 12px 0;font:700 27px/1 'Oxanium',sans-serif;text-transform:uppercase}
+.install-guide-card p{color:#c7dde3;font-size:14px;line-height:1.55;margin:0 0 16px}
+.install-guide-close{position:absolute;right:9px;top:9px;width:38px;height:38px;border-radius:50%;border:1px solid #3b606a;background:#0a171c;color:#fff;font-size:25px;line-height:1;display:grid;place-items:center;padding:0}
+.install-steps{display:grid;gap:8px;margin:14px 0}
+.install-steps>div{display:grid;grid-template-columns:42px 1fr;align-items:center;gap:11px;border:1px solid #294b56;background:#0a171c;padding:10px}
+.install-steps b{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid #76e7f4;color:#dfffff;font:700 16px/1 'Oxanium',sans-serif}
+.install-steps span{color:#cde7ed;font-size:13px;line-height:1.35}.install-steps strong{color:#fff}.install-steps em{font-style:normal;color:#8ef4ff;font-size:20px}
+.install-guide-card small{display:block;color:#79a4af;font-size:11px;line-height:1.45}
+
+@media(prefers-reduced-motion:reduce){
+  .hero.latest-storm .hero-media>.hero-main-image{animation:none!important;transform:none!important}
+  .hero.latest-storm .storm-flash-a,.hero.latest-storm .storm-flash-b,.hero.latest-storm .lightning-a,.hero.latest-storm .lightning-b{animation:none!important}
+}
