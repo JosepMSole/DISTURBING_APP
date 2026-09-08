@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/069.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/069.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-1_orig.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-15_orig.jpg",
   "book": "02",
   "year": "2010",
   "categories": [
@@ -725,8 +725,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/fbFarXAmY4c",
+          "title": "Teaser"
         }
       ]
     }
