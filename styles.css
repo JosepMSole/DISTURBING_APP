@@ -1069,7 +1069,7 @@ body{background:#020507!important}
 
 
 /* ============================================================
-   DISTURBING PWA v1.10 — smartphone balance + HOME fix
+   DISTURBING PWA v1.11 — smartphone balance + HOME fix
    ============================================================ */
 
 /* Header action buttons: true squares. The burger is drawn with three
@@ -1225,4 +1225,155 @@ body{background:#020507!important}
     animation:none!important;
     transform:none!important;
   }
+}
+
+
+/* ============================================================
+   DISTURBING PWA v1.11 — compact footer, install UX, HOME motion
+   ============================================================ */
+
+/* Footer: slightly larger icon + text than v1.11, with almost no dead
+   space above the icons. Compact, readable and still easy to tap. */
+:root{--bottomnav-base:102px!important}
+.bottom-nav{
+  min-height:calc(var(--bottomnav-base) + var(--bottom-safe))!important;
+  padding:1px 2px var(--bottom-safe)!important;
+  align-items:stretch!important;
+}
+.nav-btn{
+  min-height:94px!important;
+  padding:3px 1px 3px!important;
+  gap:2px!important;
+  justify-content:flex-start!important;
+}
+.nav-btn span{
+  font-size:39px!important;
+  line-height:.92!important;
+  height:40px!important;
+  flex:0 0 40px!important;
+  display:grid!important;
+  place-items:center!important;
+}
+.nav-btn small{
+  font-family:'Exo 2',sans-serif!important;
+  font-size:clamp(17px,4.65vw,20px)!important;
+  line-height:.91!important;
+  font-weight:850!important;
+  letter-spacing:-.055em!important;
+  color:#e5f8fc!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0 1px!important;
+  transform:none!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+}
+@media(max-width:390px){
+  :root{--bottomnav-base:100px!important}
+  .nav-btn{min-height:92px!important}
+  .nav-btn span{font-size:37px!important;height:38px!important;flex-basis:38px!important}
+  .nav-btn small{font-size:clamp(16px,4.45vw,18.5px)!important}
+}
+@media(max-width:350px){
+  :root{--bottomnav-base:96px!important}
+  .nav-btn{min-height:88px!important}
+  .nav-btn span{font-size:35px!important;height:36px!important;flex-basis:36px!important}
+  .nav-btn small{font-size:15px!important;letter-spacing:-.065em!important}
+}
+
+/* PLAYER summary: PISTAS and DURACIÓN form one tight two-line unit. */
+.player-summary{
+  min-height:92px!important;
+  padding:8px 10px!important;
+  grid-template-rows:auto auto!important;
+  align-content:center!important;
+  row-gap:3px!important;
+}
+.player-summary-row{
+  min-height:0!important;
+  padding:1px 0!important;
+}
+@media(max-width:390px){
+  .player-summary{min-height:88px!important;padding:7px 9px!important;row-gap:2px!important}
+}
+
+/* HOME featured image: the complete top edge is always visible.
+   The foreground never grows beyond its fitted size; the duplicate backdrop
+   fills the frame so there are no empty bands. */
+.hero.latest-storm .hero-media>.hero-main-image{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center top!important;
+  transform-origin:center top!important;
+  animation:disturbingHeroBreathV111 8.6s cubic-bezier(.45,.02,.32,.98) infinite!important;
+}
+.hero.latest-storm .hero-media>.hero-backdrop{
+  inset:-8%!important;
+  width:116%!important;
+  height:116%!important;
+  object-fit:cover!important;
+  object-position:center top!important;
+}
+@keyframes disturbingHeroBreathV111{
+  0%{transform:scale(.982);filter:brightness(.84) contrast(1.08)}
+  30%{transform:scale(.993);filter:brightness(.95) contrast(1.10)}
+  54%{transform:scale(1);filter:brightness(.90) contrast(1.08)}
+  76%{transform:scale(.989);filter:brightness(.97) contrast(1.06)}
+  100%{transform:scale(.982);filter:brightness(.84) contrast(1.08)}
+}
+
+/* CONTINUAR LEYENDO: explicit staged entry for poster, copy and action. */
+.home-continue.hud-corners-live .home-continue-cover{
+  animation:homeContinuePosterIn .46s .04s cubic-bezier(.2,.75,.18,1) both!important;
+}
+.home-continue.hud-corners-live .home-continue-copy{
+  animation:homeContinueCopyIn .42s .10s cubic-bezier(.2,.75,.18,1) both!important;
+}
+.home-continue.hud-corners-live .continue-btn{
+  animation:homeContinueActionIn .40s .16s cubic-bezier(.2,.75,.18,1) both!important;
+}
+@keyframes homeContinuePosterIn{
+  from{opacity:0;transform:translateX(-9px) scale(.96);filter:blur(3px)}
+  to{opacity:1;transform:none;filter:blur(0)}
+}
+@keyframes homeContinueCopyIn{
+  from{opacity:0;transform:translateY(7px);filter:blur(2px)}
+  to{opacity:1;transform:none;filter:blur(0)}
+}
+@keyframes homeContinueActionIn{
+  from{opacity:0;transform:translateX(8px) scale(.96)}
+  to{opacity:1;transform:none}
+}
+
+/* Story entry: 5-frame Cryo flash. No red. */
+.app-shell.story-entering::after{
+  background:
+    radial-gradient(circle at 50% 42%,
+      rgba(255,255,255,.90) 0 3%,
+      rgba(142,244,255,.78) 11%,
+      rgba(72,184,224,.60) 24%,
+      rgba(22,72,118,.48) 46%,
+      transparent 72%)!important;
+}
+.story-enter-target{
+  box-shadow:
+    0 0 0 2px rgba(237,253,255,.96),
+    0 0 18px 7px rgba(91,214,235,.88),
+    0 0 44px 16px rgba(45,125,194,.66)!important;
+  filter:contrast(1.16) saturate(1.20) brightness(1.04)!important;
+}
+
+#installBtn:not(.hidden){
+  color:#e8fbff!important;
+  font-weight:850!important;
+  border-color:#31515d!important;
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero.latest-storm .hero-media>.hero-main-image{animation:none!important;transform:none!important}
+  .home-continue.hud-corners-live .home-continue-cover,
+  .home-continue.hud-corners-live .home-continue-copy,
+  .home-continue.hud-corners-live .continue-btn{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
 }

@@ -1,4 +1,4 @@
-const APP_VERSION = '1.10.0';
+const APP_VERSION = '1.11.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,qrScanner=null,qrScanBusy=false,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -19,7 +19,37 @@ let navHistory=[],navGoingBack=false,storyTransitionBusy=false;
 const store={get(k,f){try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}},set(k,v){localStorage.setItem(k,JSON.stringify(v))}};
 
 async function boot(){showLoading();try{const r=await fetch('./data/stories.json',{cache:'no-store'});if(!r.ok)throw new Error(`stories.json: HTTP ${r.status}`);indexData=await r.json();indexData.stories=(indexData.stories||[]).sort((a,b)=>new Date(b.published)-new Date(a.published));try{const br=await fetch('./data/books.json',{cache:'no-store'});if(br.ok)bookAssets=(await br.json()).books||{}}catch{}bindShell();initMotionSystem();initPlayer();routeFromHash();registerSW();}catch(e){view.innerHTML=`<div class="empty"><h2>No se pudieron cargar las Stories</h2><p>${escapeHtml(e.message)}</p><p>Usa el lanzador local incluido en el paquete.</p></div>`;}}
-function bindShell(){$('#brandBtn').onclick=()=>go('home');$('#backBtn').onclick=navigateBack;$('#headerPlayerBtn').onclick=()=>go('player');$('#toTopHeaderBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('#menuBtn').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;$$('.nav-btn').forEach(b=>b.onclick=()=>go(b.dataset.route));$$('[data-drawer-route]').forEach(b=>b.onclick=()=>{closeDrawer();go(b.dataset.drawerRoute)});$('#miniPlayerOpen').onclick=()=>go('player');$('#miniPrev').onclick=()=>playerStep(-1,true);$('#miniPlay').onclick=()=>playerToggle();$('#miniNext').onclick=()=>playerStep(1,true);$('#scanBtn').onclick=()=>{closeDrawer();showUnlock()};$('#installBtn').onclick=async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('#installBtn').classList.add('hidden')}};addEventListener('hashchange',routeFromHash);addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;$('#installBtn').classList.remove('hidden')});addEventListener('scroll',updateProgress,{passive:true});addEventListener('pagehide',persistCurrentReadingPosition);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persistCurrentReadingPosition()});addEventListener('blur',()=>setTimeout(()=>{if(currentStory&&document.activeElement?.tagName==='IFRAME')playerPauseForStoryMedia()},0));addEventListener('resize',()=>{if(routeName()==='collection')requestAnimationFrame(fitCollectionShelf)},{passive:true});}
+
+function isStandaloneInstall(){
+  try{return matchMedia('(display-mode: standalone)').matches||navigator.standalone===true}catch{return false}
+}
+function isIOSInstall(){
+  return /iphone|ipad|ipod/i.test(navigator.userAgent||'') || (navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1)
+}
+function updateInstallButton(){
+  const btn=$('#installBtn');if(!btn)return;
+  btn.classList.toggle('hidden',isStandaloneInstall());
+}
+async function handleInstallApp(){
+  const btn=$('#installBtn');if(!btn)return;
+  if(isStandaloneInstall()){btn.classList.add('hidden');return}
+  if(installPrompt){
+    try{
+      installPrompt.prompt();
+      await installPrompt.userChoice;
+      installPrompt=null;
+      updateInstallButton();
+      return;
+    }catch{}
+  }
+  if(isIOSInstall()){
+    alert('Para instalar Disturbing Stories APP en iPhone o iPad: abre esta página en Safari, pulsa el botón Compartir y elige “Añadir a pantalla de inicio”.');
+  }else{
+    alert('Para instalar Disturbing Stories APP, abre el menú del navegador y elige “Instalar app” o “Añadir a pantalla de inicio”.');
+  }
+}
+
+function bindShell(){$('#brandBtn').onclick=()=>go('home');$('#backBtn').onclick=navigateBack;$('#headerPlayerBtn').onclick=()=>go('player');$('#toTopHeaderBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('#menuBtn').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;$$('.nav-btn').forEach(b=>b.onclick=()=>go(b.dataset.route));$$('[data-drawer-route]').forEach(b=>b.onclick=()=>{closeDrawer();go(b.dataset.drawerRoute)});$('#miniPlayerOpen').onclick=()=>go('player');$('#miniPrev').onclick=()=>playerStep(-1,true);$('#miniPlay').onclick=()=>playerToggle();$('#miniNext').onclick=()=>playerStep(1,true);$('#scanBtn').onclick=()=>{closeDrawer();showUnlock()};$('#installBtn').onclick=handleInstallApp;updateInstallButton();addEventListener('hashchange',routeFromHash);addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;updateInstallButton()});addEventListener('appinstalled',()=>{installPrompt=null;updateInstallButton()});addEventListener('scroll',updateProgress,{passive:true});addEventListener('pagehide',persistCurrentReadingPosition);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persistCurrentReadingPosition()});addEventListener('blur',()=>setTimeout(()=>{if(currentStory&&document.activeElement?.tagName==='IFRAME')playerPauseForStoryMedia()},0));addEventListener('resize',()=>{updateInstallButton();if(routeName()==='collection')requestAnimationFrame(fitCollectionShelf)},{passive:true});}
 function currentHash(){return location.hash||'#/home'}
 function navigateHash(target){const cur=currentHash();if(cur===target)return;navHistory.push(cur);if(navHistory.length>5)navHistory=navHistory.slice(-5);location.hash=target}
 function go(r){navigateHash(`#/${r}`)}
@@ -27,8 +57,8 @@ function routeFallback(){const p=currentHash().replace(/^#\//,'').split('/'),rou
 function updateBackButton(){const btn=$('#backBtn'),fallback=routeFallback();if(!btn)return;const can=navHistory.length>0||!!fallback;btn.classList.toggle('hidden',!can);btn.disabled=!can}
 function navigateBack(){if(navHistory.length){const target=navHistory.pop();navGoingBack=true;location.hash=target;return}const fallback=routeFallback();if(fallback){navGoingBack=true;location.hash=fallback}}
 function fiveFrameHaptic(){try{if('vibrate' in navigator)navigator.vibrate([24,26,24,26,24,26,24,26,24])}catch{}}
-function playStoryEnterTransition(id){if(storyTransitionBusy){return}const target=`#/story/${encodeURIComponent(id)}`;if(matchMedia('(prefers-reduced-motion: reduce)').matches){navigateHash(target);return}storyTransitionBusy=true;fiveFrameHaptic();const shell=$('#app'),card=document.querySelector(`[data-story-id="${CSS.escape(id)}"]`);card?.classList.add('story-enter-target');shell?.classList.add('story-entering');setTimeout(()=>{card?.classList.remove('story-enter-target');shell?.classList.remove('story-entering');storyTransitionBusy=false;navigateHash(target)},270)}
-function storyGo(id,resume=false){if(resume){navigateHash(`#/story/${encodeURIComponent(id)}/resume`);return}playStoryEnterTransition(id)}
+function playStoryEnterTransition(id,sourceEl=null){if(storyTransitionBusy){return}const target=`#/story/${encodeURIComponent(id)}`;if(matchMedia('(prefers-reduced-motion: reduce)').matches){navigateHash(target);return}storyTransitionBusy=true;fiveFrameHaptic();const shell=$('#app');let card=sourceEl&&sourceEl.nodeType===1?sourceEl:null;if(!card)card=document.querySelector(`[data-story-id="${CSS.escape(id)}"]`);if(!card&&routeName()==='home')card=$('.hero.latest-storm');card?.classList.add('story-enter-target');shell?.classList.add('story-entering');setTimeout(()=>{card?.classList.remove('story-enter-target');shell?.classList.remove('story-entering');storyTransitionBusy=false;navigateHash(target)},270)}
+function storyGo(id,resume=false,sourceEl=null){if(resume){navigateHash(`#/story/${encodeURIComponent(id)}/resume`);return}playStoryEnterTransition(id,sourceEl)}
 function routeFromHash(){persistCurrentReadingPosition();stopQrScanner();const p=currentHash().replace(/^#\//,'').split('/'),route=p[0]||'home',isResume=route==='story'&&p[2]==='resume';if(!isResume)scrollTo({top:0,behavior:'auto'});setNav(route);updateBackButton();$('#headerPlayerBtn').classList.toggle('hidden',route!=='home');$('#toTopHeaderBtn').classList.add('hidden');if(route==='home')return renderHome();if(route==='stories')return renderStories('all');if(route==='unlocked')return renderMyStories();if(route==='collection')return renderCollection(decodeURIComponent(p[1]||''));if(route==='player')return renderPlayer();if(route==='story')return renderStory(decodeURIComponent(p[1]||''),isResume);renderHome();}
 function setNav(route){$$('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.route===route||(route==='story'&&b.dataset.route==='stories')));updateMiniPlayerVisibility(route)}
 function showLoading(){view.innerHTML='';view.append($('#loadingTemplate').content.cloneNode(true))}
@@ -71,7 +101,7 @@ function renderHome(){
   const reading=latestInProgress(),readCount=publishedReadCount(),total=indexData.stories.length,global=total?readCount/total:0;
   const continueCover=reading?displayCover(reading):'',continueHtml=reading?`<section class="home-continue"><div class="home-continue-cover story-thumb-wrap">${continueCover?`<img src="${escAttr(continueCover)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:`<span>${escapeHtml(reading.id)}</span>`}${exclusiveBadge(reading,'cover')}${storyMediaBadges(reading)}</div><div class="home-continue-copy"><div class="eyebrow">Continuar leyendo</div><strong>STORY ${escapeHtml(reading.id)} · ${escapeHtml(reading.title)}</strong><div class="mini-progress"><span style="width:${pct(storyProgress(reading.id))}"></span></div><small>${pct(storyProgress(reading.id))}</small></div><button id="continueReading" class="continue-btn">CONTINUAR</button></section>`:'';
   view.innerHTML=`<section class="hero latest-storm">${heroMedia(latest)}<div class="storm-fx" aria-hidden="true"><span class="storm-cloud storm-cloud-a"></span><span class="storm-cloud storm-cloud-b"></span><span class="storm-cloud storm-cloud-c"></span><span class="storm-glow"></span><span class="storm-flash storm-flash-a"></span><span class="storm-flash storm-flash-b"></span><span class="lightning lightning-a"></span><span class="lightning lightning-b"></span></div><div class="hero-content"><div class="eyebrow">ÚLTIMA PUBLICACIÓN · ${formatDate(latest.published)}</div><div class="story-number">STORY ${escapeHtml(latest.id)}</div><h1>${escapeHtml(latest.title)}</h1><div class="meta-row">${latest.access==='exclusive'?'<span class="pill red">EXCLUSIVA</span>':'<span class="pill">GRATIS</span>'}${latest.readTime?`<span class="pill">${escapeHtml(latest.readTime)} min</span>`:''}${isRead(latest.id)?'<span class="pill read-pill">✓ LEÍDA</span>':''}</div><button class="cta" id="openLatest">${isLocked(latest)?'VER STORY':'ENTRAR'}</button></div></section>${continueHtml}<section class="home-progress"><div class="home-progress-copy"><div class="eyebrow">Tu progreso</div><strong>${readCount} / ${total} STORIES LEÍDAS</strong></div><div class="collection-progress"><span style="width:${pct(global)}"></span></div><button id="openMyStories" class="link-btn">VER MIS STORIES ›</button></section><section class="section home-previous"><div class="section-title"><h2>Publicadas anteriormente</h2><small>4 anteriores</small></div><div class="story-list">${indexData.stories.slice(1,5).map(storyCard).join('')}</div></section>`;
-  $('#openLatest').onclick=()=>storyGo(latest.id);
+  $('#openLatest').onclick=e=>storyGo(latest.id,false,$('.hero.latest-storm')||e.currentTarget);
   $('#openMyStories').onclick=()=>go('unlocked');
   if(reading)$('#continueReading').onclick=()=>storyGo(reading.id,true);
   bindStoryCards();bindBrokenImages();
@@ -80,7 +110,7 @@ function renderHome(){
 function renderStories(initial='all'){
   currentStory=null;
   const savedView=store.get(storiesViewKey,'covers'),validViews=['covers','grid','list'];
-  let viewMode=validViews.includes(savedView)?savedView:'covers',currentFilter=initial,search='',sortMode=store.get(storiesSortKey,'published-desc'),feature='all',category='all',book='all';
+  let viewMode=validViews.includes(savedView)?savedView:'covers',currentFilter=initial,search='',sortMode='published-desc',feature='all',category='all',book='all';
   const categories=[...new Set(indexData.stories.flatMap(s=>s.categories||[]).filter(Boolean))].sort((a,b)=>String(a).localeCompare(String(b),'es',{sensitivity:'base'}));
   const books=[...new Set(indexData.stories.map(s=>String(s.book||'').trim()).filter(Boolean))].sort((a,b)=>Number(a)-Number(b));
   const readCount=publishedReadCount(),available=availableStoryCount(),total=indexData.stories.length;
@@ -104,7 +134,7 @@ function renderStories(initial='all'){
     bindStoryCards();bindBrokenImages();
   };
   $('#storySearch').oninput=e=>{search=e.target.value;draw()};
-  $('#storySort').onchange=e=>{sortMode=e.target.value;store.set(storiesSortKey,sortMode);draw()};
+  $('#storySort').onchange=e=>{sortMode=e.target.value;draw()};
   $('#statusFilter').onchange=e=>{currentFilter=e.target.value;draw()};
   $('#categoryFilter').onchange=e=>{category=e.target.value;draw()};
   $('#bookFilter').onchange=e=>{book=e.target.value;draw()};
@@ -142,7 +172,7 @@ function storyCard(s,mode='list',sortMode=''){
   if(mode==='grid')return `<article class="story-grid-card" data-story-id="${escAttr(s.id)}">${image}${sortBadge}<div class="story-grid-copy"><div class="story-number">STORY ${escapeHtml(s.id)}</div><h3>${escapeHtml(s.title)}</h3><p>${s.access==='exclusive'?(locked?'EXCLUSIVA · BLOQUEADA':'EXCLUSIVA · DESBLOQUEADA'):'GRATIS'}${read?' · LEÍDA':''}</p></div>${ex}${media}</article>`;
   return `<article class="story-card" data-story-id="${escAttr(s.id)}">${thumb}<div class="story-copy"><div class="story-number">STORY ${escapeHtml(s.id)} · ${formatDate(s.published)}</div><h3>${escapeHtml(s.title)}</h3><p>${s.access==='exclusive'?(locked?'Exclusiva · bloqueada':'Exclusiva · desbloqueada'):'Gratis'}${read?' · Leída':''}</p></div><div class="story-state">${read?'✓':'›'}</div></article>`;
 }
-function bindStoryCards(){$$('[data-story-id]').forEach(el=>el.onclick=()=>storyGo(el.dataset.storyId))}
+function bindStoryCards(){$$('[data-story-id]').forEach(el=>el.onclick=e=>storyGo(el.dataset.storyId,false,e.currentTarget))}
 
 function bookAsset(book){const k=String(Number(book)||book);return bookAssets?.[k]||{}}
 function bookLabel(book){return `Book#${Number(book)||book}`}
@@ -316,11 +346,11 @@ function enhanceDynamicUI(){
   view.querySelectorAll('.library-stats strong,.personal-stats strong,.unread-callout strong b,.progress-big>strong,.book-detail-stats strong').forEach(prepareCounter);
   view.querySelectorAll('.reader p').forEach(p=>{if(p.dataset.readerMotion)return;p.dataset.readerMotion='1';p.classList.add('reader-reveal-pending');if(motionReduced())p.classList.add('reader-reveal-live');else readerIntersectionObserver?.observe(p)});
   view.querySelectorAll('.story-card,.story-grid-card,.story-cover-card,.continue-card').forEach(el=>{if(el.dataset.listMotion)return;el.dataset.listMotion='1';el.classList.add('story-list-reveal');if(motionReduced())el.classList.add('story-list-reveal-live');else cardIntersectionObserver?.observe(el)});
-  view.querySelectorAll('.hero-content h1,.section-title h1,.story-header-content h1,.player-title-row h1,.book-detail-head h1,.library-stats span,.personal-stats span,.book-detail-stats span').forEach(prepareTypewriter);
+  view.querySelectorAll('.hero-content h1,.section-title h1,.story-header-content h1,.player-title-row h1,.book-detail-head h1,.library-stats span,.personal-stats span,.book-detail-stats span,.home-continue .eyebrow').forEach(prepareTypewriter);
 }
 function prepareHoloBox(el){
   if(el.dataset.holoMotion)return;el.dataset.holoMotion='1';el.classList.add('hud-motion-box');
-  if(el.parentElement?.classList.contains('library-stats')||el.parentElement?.classList.contains('personal-stats'))el.dataset.hudDelay=String([...el.parentElement.children].indexOf(el)*90);if(el.parentElement?.classList.contains('library-stats'))el.dataset.hudContentEarly='1';
+  if(el.parentElement?.classList.contains('library-stats')||el.parentElement?.classList.contains('personal-stats'))el.dataset.hudDelay=String([...el.parentElement.children].indexOf(el)*90);if(el.parentElement?.classList.contains('library-stats')||el.classList.contains('home-continue'))el.dataset.hudContentEarly='1';
   ['tl','tr','bl','br'].forEach(pos=>{const c=document.createElement('span');c.className=`hud-corner hud-${pos}`;c.setAttribute('aria-hidden','true');el.append(c)});
   if(motionReduced()){el.classList.add('hud-frame-on','hud-content-on','hud-motion-done','hud-progress-ready');return}
   if(el.classList.contains('progress-dashboard')){el.classList.add('hud-progress-init');hudIntersectionObserver?.observe(el);return}
@@ -382,5 +412,5 @@ async function showUnlockReward(id){
   el.classList.remove('show');setTimeout(()=>el.remove(),260);
 }
 
-async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=1.10.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=1.11.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
