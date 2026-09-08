@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/119.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/119.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/119-aula-de-repaso-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/119-aula-de-repaso-frame-4.jpg",
   "book": "05",
   "year": "2014",
   "categories": [
@@ -297,8 +297,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/9xnnBHiSyVQ",
+          "title": "Teaser"
         }
       ]
     }

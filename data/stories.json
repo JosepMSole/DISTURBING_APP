@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:08:38.194605+00:00",
+  "updated": "2026-09-08T15:08:59.578644+00:00",
   "stories": [
     {
       "id": "277",
@@ -232,7 +232,7 @@
       "published": "2026-07-12",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/119.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/119-aula-de-repaso-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/119-aula-de-repaso-frame-4.jpg",
       "data": "./data/stories/119.json",
       "source": "https://www.disturbingstories.com/119.html",
       "protected": false,
