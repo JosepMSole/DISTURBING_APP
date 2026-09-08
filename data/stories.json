@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T11:32:02.977388+00:00",
+  "updated": "2026-09-08T11:32:29.642129+00:00",
   "stories": [
     {
       "id": "277",
@@ -888,6 +888,32 @@
       ],
       "features": [],
       "readTime": 6
+    },
+    {
+      "id": "001",
+      "title": "Mi Primera Cinta",
+      "published": "2025-12-14",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/001.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/001-mi-primera-cinta-frame-3.jpg",
+      "data": "./data/stories/001.json",
+      "source": "https://www.disturbingstories.com/001.html",
+      "protected": true,
+      "book": "03",
+      "year": "2013",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Se suele decir que uno no sabe lo que tiene hasta que realiza una mudanza…",
+      "tabLabels": [
+        "LEER",
+        "AUDIO",
+        "TEASER"
+      ],
+      "features": [
+        "audio"
+      ],
+      "readTime": 3
     },
     {
       "id": "003",
