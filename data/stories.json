@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:04:55.909413+00:00",
+  "updated": "2026-09-08T13:05:51.789996+00:00",
   "stories": [
     {
       "id": "277",
@@ -1589,6 +1589,29 @@
         "audio"
       ],
       "readTime": 6
+    },
+    {
+      "id": "159",
+      "title": "Obitus",
+      "published": "2025-04-19",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/159.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/obitus-3b.jpg",
+      "data": "./data/stories/159.json",
+      "source": "https://www.disturbingstories.com/159.html",
+      "protected": true,
+      "book": "01",
+      "year": "2089",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Si algo había quedado claro tras el Conflicto Lunar, era que los Exteriores habían llegado para quedarse…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 5
     },
     {
       "id": "154",
