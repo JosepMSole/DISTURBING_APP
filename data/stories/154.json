@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/154.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/154.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/relato-robado-4.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/relato-robado-3b.jpg",
   "book": "01",
   "year": "1891",
   "categories": [
@@ -243,8 +243,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/qQ72FbbPt0Q",
+          "title": "Teaser"
         }
       ]
     }

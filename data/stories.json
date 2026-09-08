@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:17:49.746670+00:00",
+  "updated": "2026-09-08T13:18:34.406501+00:00",
   "stories": [
     {
       "id": "277",
@@ -1714,7 +1714,7 @@
       "published": "2025-04-13",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/154.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/relato-robado-4.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/relato-robado-3b.jpg",
       "data": "./data/stories/154.json",
       "source": "https://www.disturbingstories.com/154.html",
       "protected": false,
