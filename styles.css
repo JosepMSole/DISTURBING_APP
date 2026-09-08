@@ -1066,3 +1066,163 @@ body{background:#020507!important}
   .hero.latest-storm .hero-media>.hero-backdrop{animation:none!important}
   .hero.latest-storm .hero-media>.hero-main-image{transform:none!important}
 }
+
+
+/* ============================================================
+   DISTURBING PWA v1.10 — smartphone balance + HOME fix
+   ============================================================ */
+
+/* Header action buttons: true squares. The burger is drawn with three
+   independent bars so it remains optically centered on iPhone. */
+.topbar-actions .icon-btn{
+  width:44px!important;
+  height:44px!important;
+  min-width:44px!important;
+  min-height:44px!important;
+  padding:0!important;
+  border-radius:9px!important;
+  display:grid!important;
+  place-items:center!important;
+  line-height:1!important;
+  background:rgba(10,20,25,.94)!important;
+  border:1px solid #31515d!important;
+  box-shadow:inset 0 0 0 1px rgba(142,244,255,.025)!important;
+}
+.burger-glyph{
+  width:22px!important;
+  height:16px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:space-between!important;
+  align-items:stretch!important;
+  margin:0!important;
+  transform:none!important;
+}
+.burger-glyph i{
+  display:block!important;
+  width:22px!important;
+  height:2px!important;
+  min-height:2px!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:999px!important;
+  background:#f1fdff!important;
+  box-shadow:0 0 7px rgba(142,244,255,.13)!important;
+}
+.music-glyph{
+  width:100%!important;
+  height:100%!important;
+  display:grid!important;
+  place-items:center!important;
+  font-family:Arial,"Helvetica Neue",sans-serif!important;
+  font-size:25px!important;
+  line-height:1!important;
+  transform:translateY(-1px)!important;
+}
+
+/* Footer: back to a compact, tappable smartphone footer.
+   Icons are no longer gigantic; labels are genuinely readable and
+   are NOT horizontally compressed. */
+:root{--bottomnav-base:96px!important}
+.bottom-nav{
+  min-height:calc(var(--bottomnav-base) + var(--bottom-safe))!important;
+  padding:6px 3px var(--bottom-safe)!important;
+  align-items:stretch!important;
+}
+.nav-btn{
+  min-height:84px!important;
+  padding:5px 2px 4px!important;
+  gap:4px!important;
+  overflow:hidden!important;
+  justify-content:center!important;
+}
+.nav-btn span{
+  font-size:32px!important;
+  line-height:1!important;
+  height:34px!important;
+  display:grid!important;
+  place-items:center!important;
+}
+.nav-btn small{
+  width:100%!important;
+  max-width:100%!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:0 1px!important;
+  display:block!important;
+  color:#dff4f9!important;
+  font-family:'Exo 2',sans-serif!important;
+  font-size:clamp(15px,4.15vw,18px)!important;
+  line-height:.94!important;
+  font-weight:800!important;
+  letter-spacing:-.04em!important;
+  white-space:normal!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+  transform:none!important;
+  text-align:center!important;
+}
+.nav-btn.active small{
+  color:#fff!important;
+  text-shadow:0 0 10px rgba(142,244,255,.18)!important;
+}
+@media(max-width:390px){
+  :root{--bottomnav-base:94px!important}
+  .nav-btn{min-height:82px!important}
+  .nav-btn span{font-size:30px!important;height:32px!important}
+  .nav-btn small{font-size:clamp(14px,4vw,16px)!important}
+}
+@media(max-width:350px){
+  :root{--bottomnav-base:92px!important}
+  .nav-btn{min-height:80px!important}
+  .nav-btn span{font-size:28px!important;height:30px!important}
+  .nav-btn small{font-size:13.5px!important;letter-spacing:-.055em!important}
+}
+
+/* HOME: undo the accidental poster-card sizing rule that could collapse the
+   featured hero. The frame is always full-screen width/height. */
+.hero.latest-storm>.hero-media,
+.hero.latest-storm .hero-media.hero-story-media{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  min-width:100%!important;
+  aspect-ratio:auto!important;
+  border-radius:0!important;
+  display:block!important;
+  overflow:hidden!important;
+}
+.hero.latest-storm .hero-media>.hero-main-image{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+
+/* Keep the complete featured art in front while the duplicate backdrop fills
+   any aspect-ratio difference, so there is never an empty band. */
+.hero.latest-storm .hero-media>.hero-main-image{
+  object-fit:contain!important;
+  object-position:center center!important;
+  animation:disturbingHeroBreathV110 8.4s cubic-bezier(.45,.02,.32,.98) infinite!important;
+}
+.hero.latest-storm .hero-media>.hero-backdrop{
+  display:block!important;
+  object-fit:cover!important;
+  opacity:.72!important;
+}
+@keyframes disturbingHeroBreathV110{
+  0%{transform:scale(.972);filter:brightness(.84) contrast(1.08)}
+  30%{transform:scale(.991);filter:brightness(.95) contrast(1.10)}
+  55%{transform:scale(1);filter:brightness(.90) contrast(1.08)}
+  77%{transform:scale(.985);filter:brightness(.97) contrast(1.06)}
+  100%{transform:scale(.972);filter:brightness(.84) contrast(1.08)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero.latest-storm .hero-media>.hero-main-image{
+    animation:none!important;
+    transform:none!important;
+  }
+}
