@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T11:34:20.841313+00:00",
+  "updated": "2026-09-08T11:34:53.981148+00:00",
   "stories": [
     {
       "id": "277",
@@ -1304,6 +1304,35 @@
         "extra"
       ],
       "readTime": 4
+    },
+    {
+      "id": "005",
+      "title": "La Máquina de Escribir",
+      "published": "2025-07-27",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/005.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/005-frame-1.jpg",
+      "data": "./data/stories/005.json",
+      "source": "https://www.disturbingstories.com/005.html",
+      "protected": false,
+      "book": "02",
+      "year": "2020",
+      "categories": [
+        "Terror",
+        "Oscuras"
+      ],
+      "synopsis": "¿Hasta dónde llega la curiosidad antes de convertirse en ego?",
+      "tabLabels": [
+        "LEER",
+        "AUDIO",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "audio",
+        "extra"
+      ],
+      "readTime": 3
     },
     {
       "id": "069",
