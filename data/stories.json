@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T11:32:29.642129+00:00",
+  "updated": "2026-09-08T11:32:55.345079+00:00",
   "stories": [
     {
       "id": "277",
@@ -1152,6 +1152,32 @@
         "extra"
       ],
       "readTime": 8
+    },
+    {
+      "id": "274",
+      "title": "Vahl, el Caído",
+      "published": "2025-09-07",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/274.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/274-frame-2.jpg",
+      "data": "./data/stories/274.json",
+      "source": "https://www.disturbingstories.com/274.html",
+      "protected": true,
+      "book": "02",
+      "year": "686",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "¿Está el mundo preparado para la locura y genialidad de la preclara mente de Vahl?",
+      "tabLabels": [
+        "LEER",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 10
     },
     {
       "id": "033",
