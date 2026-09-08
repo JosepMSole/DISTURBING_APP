@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T14:53:39.746704+00:00",
+  "updated": "2026-09-08T14:54:07.303060+00:00",
   "stories": [
     {
       "id": "277",
@@ -1004,7 +1004,7 @@
       "published": "2025-11-16",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/107.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/107-battleaxe-frame-1-gif.gif",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/107-battleaxe-frame-5.jpg",
       "data": "./data/stories/107.json",
       "source": "https://www.disturbingstories.com/107.html",
       "protected": false,

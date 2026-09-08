@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/107.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/107.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/107-battleaxe-frame-1-gif.gif",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/107-battleaxe-frame-5.jpg",
   "book": "03",
   "year": "1996",
   "categories": [
@@ -406,8 +406,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/IOvf7Ho22TI",
+          "title": "Teaser"
         }
       ]
     }
