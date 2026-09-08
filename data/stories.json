@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:03:20.751105+00:00",
+  "updated": "2026-09-08T15:03:48.906357+00:00",
   "stories": [
     {
       "id": "277",
@@ -534,7 +534,7 @@
       "published": "2026-03-29",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/162.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/162-fantasma-gigante-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/162-fantasma-gigante-frame-2.jpg",
       "data": "./data/stories/162.json",
       "source": "https://www.disturbingstories.com/162.html",
       "protected": false,

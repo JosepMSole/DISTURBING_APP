@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/162.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/162.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/162-fantasma-gigante-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/162-fantasma-gigante-frame-2.jpg",
   "book": "04",
   "year": "2016",
   "categories": [
@@ -343,8 +343,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/GnW4NhVUOoQ",
+          "title": "Teaser"
         }
       ]
     }
