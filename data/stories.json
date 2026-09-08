@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T11:35:30.779386+00:00",
+  "updated": "2026-09-08T13:02:54.943608+00:00",
   "stories": [
     {
       "id": "277",
@@ -1178,6 +1178,32 @@
         "extra"
       ],
       "readTime": 10
+    },
+    {
+      "id": "163",
+      "title": "Catherine en la Isla",
+      "published": "2025-09-07",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/163.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/163-frame-4.jpg",
+      "data": "./data/stories/163.json",
+      "source": "https://www.disturbingstories.com/163.html",
+      "protected": true,
+      "book": "02",
+      "year": "2689",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "La soledad prolongada es la peor prisión para una persona…",
+      "tabLabels": [
+        "LEER",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 13
     },
     {
       "id": "033",
