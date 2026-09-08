@@ -1,4 +1,4 @@
-const APP_VERSION = '1.8.0';
+const APP_VERSION = '1.9.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,qrScanner=null,qrScanBusy=false,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -60,7 +60,7 @@ function bookFeatureSummary(stories){const audio=stories.filter(s=>storyHasFeatu
 
 function isLocked(s){return s.access==='exclusive'&&!secretMap()[s.id]}
 function displayCover(s){if(!s)return'';return s.cover||coverCache()[s.id]||''}
-function heroMedia(s){const image=displayFeatured(s);return `<div class="hero-media story-thumb-wrap hero-story-media">${image?`<img src="${escAttr(image)}" alt="" loading="eager" referrerpolicy="no-referrer">`:`<div class="hero-placeholder">${escapeHtml(s.id||'')}</div>`}${storyMediaBadges(s)}</div>`}
+function heroMedia(s){const image=displayFeatured(s);return `<div class="hero-media story-thumb-wrap hero-story-media">${image?`<img class="hero-backdrop" src="${escAttr(image)}" alt="" aria-hidden="true" loading="eager" referrerpolicy="no-referrer"><img class="hero-main-image" src="${escAttr(image)}" alt="" loading="eager" referrerpolicy="no-referrer">`:`<div class="hero-placeholder">${escapeHtml(s.id||'')}</div>`}${storyMediaBadges(s)}</div>}`}
 function displayFeatured(s){if(!s)return'';return s.featuredImage||displayCover(s)||''}
 function storyFeaturedMedia(s,locked=false){const image=locked?displayCover(s):displayFeatured(s);return `<div class="story-featured">${image?`<img src="${escAttr(image)}" alt="${escAttr(s.title||'')}" loading="eager" decoding="async" referrerpolicy="no-referrer">`:`<div class="story-featured-placeholder">${escapeHtml(s.id||'')}</div>`}${storyMediaBadges(s)}</div>`}
 
@@ -328,5 +328,5 @@ async function showUnlockReward(id){
   el.classList.remove('show');setTimeout(()=>el.remove(),260);
 }
 
-async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=1.8.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=1.9.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();

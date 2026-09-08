@@ -912,7 +912,7 @@ body{background:#020507!important}
 
 
 /* ============================================================
-   DISTURBING PWA v1.8 — copy, HOME motion, footer and QR polish
+   DISTURBING PWA v1.9 — copy, HOME motion, footer and QR polish
    ============================================================ */
 
 /* HOME featured image: unsettling breathing movement, but the complete image
@@ -1010,4 +1010,59 @@ body{background:#020507!important}
   :root{--bottomnav-base:178px!important}
   .nav-btn{min-height:158px!important}.nav-btn span{font-size:66px!important}
   .nav-btn small{font-size:28px!important;transform:scaleX(.55)!important}
+}
+
+/* ============================================================
+   DISTURBING PWA v1.9 — HOME full-image treatment
+   La imagen principal se ve completa; el mismo arte crea un fondo
+   cover desenfocado para que nunca haya huecos vacíos en el marco.
+   ============================================================ */
+.hero.latest-storm .hero-media{
+  background:#020608!important;
+  display:block!important;
+  isolation:isolate!important;
+}
+.hero.latest-storm .hero-media>.hero-backdrop{
+  position:absolute!important;
+  inset:-7%!important;
+  width:114%!important;
+  height:114%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  opacity:.72!important;
+  filter:blur(18px) brightness(.48) saturate(.86)!important;
+  transform:scale(1.06)!important;
+  animation:disturbingHeroBackdrop 10.8s ease-in-out infinite alternate!important;
+  z-index:0!important;
+}
+.hero.latest-storm .hero-media>.hero-main-image{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  opacity:1!important;
+  filter:brightness(.9) contrast(1.06)!important;
+  transform-origin:center center!important;
+  will-change:transform,filter!important;
+  animation:disturbingHeroBreathV19 8.4s cubic-bezier(.45,.02,.32,.98) infinite!important;
+  z-index:1!important;
+}
+.hero.latest-storm .hero-media>.story-media-badges{z-index:5!important}
+@keyframes disturbingHeroBreathV19{
+  0%{transform:scale(.965);filter:brightness(.84) contrast(1.08)}
+  28%{transform:scale(.988);filter:brightness(.95) contrast(1.10)}
+  54%{transform:scale(1);filter:brightness(.90) contrast(1.08)}
+  76%{transform:scale(.982);filter:brightness(.97) contrast(1.06)}
+  100%{transform:scale(.965);filter:brightness(.84) contrast(1.08)}
+}
+@keyframes disturbingHeroBackdrop{
+  from{transform:scale(1.06) translate3d(-.7%,-.4%,0);filter:blur(18px) brightness(.44) saturate(.82)}
+  to{transform:scale(1.10) translate3d(.7%,.5%,0);filter:blur(20px) brightness(.52) saturate(.9)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero.latest-storm .hero-media>.hero-main-image,
+  .hero.latest-storm .hero-media>.hero-backdrop{animation:none!important}
+  .hero.latest-storm .hero-media>.hero-main-image{transform:none!important}
 }

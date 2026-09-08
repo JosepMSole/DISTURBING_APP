@@ -1,5 +1,5 @@
-const CACHE='disturbing-pwa-v1.8';
-const CORE=['./','./index.html','./styles.css?v=1.8.0','./app.js?v=1.8.0','./manifest.webmanifest','./data/stories.json','./data/books.json','./assets/app-icon.png','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-180.png','./favicon.ico'];
+const CACHE='disturbing-pwa-v1.9';
+const CORE=['./','./index.html','./styles.css?v=1.9.0','./app.js?v=1.9.0','./manifest.webmanifest','./data/stories.json','./data/books.json','./assets/app-icon.png','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-180.png','./favicon.ico'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>Promise.allSettled(CORE.map(x=>c.add(x)))).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 function networkFirst(req){return fetch(req,{cache:'no-store'}).then(r=>{if(r.ok||r.type==='opaque'){const c=r.clone();caches.open(CACHE).then(x=>x.put(req,c))}return r}).catch(()=>caches.match(req))}
