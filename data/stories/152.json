@@ -291,8 +291,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/TZWxNBmd-7c",
+          "title": "Teaser"
         }
       ]
     }
