@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T11:29:53.158086+00:00",
+  "updated": "2026-09-08T11:30:41.248203+00:00",
   "stories": [
     {
       "id": "277",
@@ -787,6 +787,33 @@
         "extra"
       ],
       "readTime": 6
+    },
+    {
+      "id": "168",
+      "title": "Jason & Gideon",
+      "published": "2025-12-14",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/168.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/168-jason-gideon-gif-1_orig.gif",
+      "data": "./data/stories/168.json",
+      "source": "https://www.disturbingstories.com/168.html",
+      "protected": true,
+      "book": "03",
+      "year": "2053",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Todo el mundo merece una segunda oportunidad, siempre y cuando haya un arrepentimiento real y un objetivo de cambiar… ¿Es ese su caso, señora Martinson?",
+      "tabLabels": [
+        "LEER",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 18
     },
     {
       "id": "003",
