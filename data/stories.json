@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:02:54.943608+00:00",
+  "updated": "2026-09-08T13:03:25.007681+00:00",
   "stories": [
     {
       "id": "277",
@@ -1204,6 +1204,33 @@
         "extra"
       ],
       "readTime": 13
+    },
+    {
+      "id": "157",
+      "title": "El Ascenso de Gideon",
+      "published": "2025-09-07",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/157.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/157-frame-3.jpg",
+      "data": "./data/stories/157.json",
+      "source": "https://www.disturbingstories.com/157.html",
+      "protected": true,
+      "book": "02",
+      "year": "2052",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Un sistema injusto puede engendrar soluciones drásticas…",
+      "tabLabels": [
+        "LEER",
+        "PORTADA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 12
     },
     {
       "id": "033",
