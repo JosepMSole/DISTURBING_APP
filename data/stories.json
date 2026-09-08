@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T14:59:11.151719+00:00",
+  "updated": "2026-09-08T14:59:36.340286+00:00",
   "stories": [
     {
       "id": "277",
@@ -718,7 +718,7 @@
       "published": "2026-02-08",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/251.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-2.jpg",
       "data": "./data/stories/251.json",
       "source": "https://www.disturbingstories.com/251.html",
       "protected": false,

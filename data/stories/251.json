@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/251.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/251.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/251-alien-park-frame-2.jpg",
   "book": "04",
   "year": "2356",
   "categories": [
@@ -283,8 +283,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/znirr9ow1DI",
+          "title": "Teaser"
         }
       ]
     }
