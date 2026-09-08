@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-07T18:34:42.999158+00:00",
+  "updated": "2026-09-08T11:20:31.163858+00:00",
   "stories": [
     {
       "id": "277",
@@ -225,6 +225,29 @@
       ],
       "features": [],
       "readTime": 7
+    },
+    {
+      "id": "119",
+      "title": "Aula de Repaso",
+      "published": "2026-07-12",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/119.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/119-aula-de-repaso-frame-1.jpg",
+      "data": "./data/stories/119.json",
+      "source": "https://www.disturbingstories.com/119.html",
+      "protected": false,
+      "book": "05",
+      "year": "2014",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "El último año de la señora Nora iba a ser aparentemente tranquilo…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 9
     },
     {
       "id": "088",
