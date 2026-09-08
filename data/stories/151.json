@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/151.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/151.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/lost-creature-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/lost-creature-3.jpg",
   "book": "01",
   "year": "2006",
   "categories": [
@@ -294,8 +294,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/zQ60K8syg8c",
+          "title": "Teaser"
         }
       ]
     }
