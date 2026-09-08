@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T14:51:52.034551+00:00",
+  "updated": "2026-09-08T14:52:15.015626+00:00",
   "stories": [
     {
       "id": "277",
@@ -1110,7 +1110,7 @@
       "published": "2025-10-19",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/015.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/015-el-ultimo-tren-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/015-el-ultimo-tren-frame-2.jpg",
       "data": "./data/stories/015.json",
       "source": "https://www.disturbingstories.com/015.html",
       "protected": false,

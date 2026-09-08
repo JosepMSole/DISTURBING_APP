@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/015.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/015.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/015-el-ultimo-tren-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/015-el-ultimo-tren-frame-2.jpg",
   "book": "03",
   "year": "2109",
   "categories": [
@@ -316,8 +316,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/psz7vx81WNM",
+          "title": "Teaser"
         }
       ]
     }
