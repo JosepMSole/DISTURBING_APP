@@ -1879,3 +1879,75 @@ body{background:#020507!important}
 /* El enlace del copyright mantiene el aspecto del pie. */
 .drawer-note a{color:inherit!important;text-decoration:none!important}
 .drawer-note a:hover,.drawer-note a:focus{text-decoration:underline!important;color:#dffcff!important}
+
+
+/* ============================================================
+   DISTURBING PWA v1.17 · final session polish
+   ============================================================ */
+
+/* Every poster-status/media icon starts from the SAME top-right anchor and
+   grows downwards in one vertical column. No icon is pushed sideways. */
+.story-media-badges,
+.story-thumb-wrap .story-media-badges,
+.story-cover-card>.story-media-badges,
+.story-grid-poster>.story-media-badges,
+.story-grid-card>.story-media-badges,
+.continue-cover.story-thumb-wrap>.story-media-badges,
+.hero-story-media>.story-media-badges,
+.story-featured>.story-media-badges{
+  top:7px!important;right:7px!important;bottom:auto!important;left:auto!important;
+  display:flex!important;flex-direction:column!important;align-items:center!important;gap:5px!important;
+}
+.story-media-badges.has-exclusive,
+.story-featured>.story-media-badges.has-exclusive,
+.hero-story-media>.story-media-badges.has-exclusive{right:7px!important}
+.story-thumb-wrap>.ex-badge,
+.story-cover-card>.ex-badge,
+.story-grid-poster>.ex-badge,
+.story-grid-card>.ex-badge,
+.hero-story-media>.ex-badge,
+.story-featured>.ex-badge{
+  right:7px!important;left:auto!important;bottom:auto!important;
+}
+.ex-badge.ex-after-0{top:7px!important}
+.ex-badge.ex-after-1{top:41px!important}
+.ex-badge.ex-after-2{top:75px!important}
+
+/* Locked Story detail is the deliberate exception: the red closed lock stays
+   at the bottom of the featured poster, but centered horizontally. */
+.story-featured>.ex-badge.ex-locked{
+  top:auto!important;bottom:8px!important;left:50%!important;right:auto!important;
+  transform:translateX(-50%)!important;
+}
+
+/* HOME: smooth, slower zoom in/out. Minimum scale still fills the complete
+   assigned frame, so the animation can never uncover empty lateral space. */
+.hero.latest-storm .hero-media>.hero-main-image{
+  animation:heroFullFrameZoomV117 8s ease-in-out infinite alternate!important;
+  transform-origin:center center!important;
+  will-change:transform,filter!important;
+}
+@keyframes heroFullFrameZoomV117{
+  0%{transform:scale(1.02) translate3d(0,0,0);filter:brightness(.91) contrast(1.08)}
+  100%{transform:scale(1.09) translate3d(-.55%,-.35%,0);filter:brightness(.98) contrast(1.10)}
+}
+
+/* Book detail: AUDIO and VIDEO counters are genuine buttons. EXCLUSIVAS stays
+   informational and deliberately non-clickable. */
+.book-detail-title-row .book-feature-count.clickable{
+  appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:4px 3px;margin:-4px -3px;
+  font:inherit;cursor:pointer;border-radius:7px;
+}
+.book-detail-title-row .book-feature-count.clickable:hover,
+.book-detail-title-row .book-feature-count.clickable:focus-visible{
+  background:rgba(142,244,255,.07);outline:1px solid rgba(142,244,255,.26);
+  filter:drop-shadow(0 0 7px currentColor);
+}
+.book-detail-title-row .book-feature-count.clickable:active{transform:scale(.94)}
+
+/* Drawer version/copyright always stays on one visual line. */
+.drawer-note{white-space:nowrap!important;font-size:clamp(9px,2.7vw,11px)!important;letter-spacing:-.015em!important}
+
+@media(prefers-reduced-motion:reduce){
+  .hero.latest-storm .hero-media>.hero-main-image{animation:none!important;transform:scale(1.02)!important}
+}
