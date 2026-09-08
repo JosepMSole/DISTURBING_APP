@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:06:25.359937+00:00",
+  "updated": "2026-09-08T13:07:08.130097+00:00",
   "stories": [
     {
       "id": "277",
@@ -1629,6 +1629,29 @@
         "Oscuras"
       ],
       "synopsis": "Un detective accede a las celdas de un sanatorio para interrogar a un anciano con un secreto...",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 5
+    },
+    {
+      "id": "083",
+      "title": "Aquatika",
+      "published": "2025-04-19",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/083.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/aquatika-1.jpg",
+      "data": "./data/stories/083.json",
+      "source": "https://www.disturbingstories.com/083.html",
+      "protected": true,
+      "book": "01",
+      "year": "2324",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Bienvenidos a Aquatika, el mayor parque de vida marina que existe. Recuerden no bajar ni soltarse de su asiento bajo ningún concepto. Relájense y disfruten de este recorrido asombroso.",
       "tabLabels": [
         "LEER",
         "TEASER"
