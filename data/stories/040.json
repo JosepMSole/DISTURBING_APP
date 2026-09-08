@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/040.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/040.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bolo-charanga-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bolo-charanga-4.jpg",
   "book": "01",
   "year": "2024",
   "categories": [
@@ -336,8 +336,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/GAdRD3ktpk0",
+          "title": "Teaser"
         }
       ]
     }

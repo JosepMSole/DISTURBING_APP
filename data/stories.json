@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:19:30.880421+00:00",
+  "updated": "2026-09-08T13:19:58.841504+00:00",
   "stories": [
     {
       "id": "277",
@@ -1793,7 +1793,7 @@
       "published": "2025-04-06",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/040.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bolo-charanga-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/bolo-charanga-4.jpg",
       "data": "./data/stories/040.json",
       "source": "https://www.disturbingstories.com/040.html",
       "protected": false,
