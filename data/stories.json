@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:04:15.274649+00:00",
+  "updated": "2026-09-08T13:04:34.651610+00:00",
   "stories": [
     {
       "id": "277",
@@ -1486,6 +1486,32 @@
       ],
       "features": [
         "extra"
+      ],
+      "readTime": 6
+    },
+    {
+      "id": "009",
+      "title": "El Piloto",
+      "published": "2025-07-06",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/009.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/009-frame-3.jpg",
+      "data": "./data/stories/009.json",
+      "source": "https://www.disturbingstories.com/009.html",
+      "protected": false,
+      "book": "02",
+      "year": "2092",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Acompaña a un piloto a bordo de su carguero espacial en una rutinaria misión…",
+      "tabLabels": [
+        "LEER",
+        "CORTO",
+        "TEASER"
+      ],
+      "features": [
+        "video"
       ],
       "readTime": 6
     },
