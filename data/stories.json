@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:06:01.456563+00:00",
+  "updated": "2026-09-08T15:06:19.555455+00:00",
   "stories": [
     {
       "id": "277",
@@ -481,7 +481,7 @@
       "published": "2026-04-05",
       "access": "exclusive",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/017.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/editor/book-4-final-saga-delta-files-v4.jpg?1769720438",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/017-plan-95-delta-frame-3.jpg",
       "data": "./data/stories/017.json",
       "source": "https://www.disturbingstories.com/017.html",
       "protected": true,
