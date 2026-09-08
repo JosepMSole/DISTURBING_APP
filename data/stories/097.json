@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/097.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/097.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/097-el-libro-misterioso-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/097-el-libro-misterioso-frame-3.jpg",
   "book": "03",
   "year": "2018",
   "categories": [
@@ -303,8 +303,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/Mtje9p7uahE",
+          "title": "Teaser"
         }
       ]
     }
