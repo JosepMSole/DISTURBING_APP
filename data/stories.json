@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:08:00.884425+00:00",
+  "updated": "2026-09-08T13:08:22.458062+00:00",
   "stories": [
     {
       "id": "277",
@@ -1677,6 +1677,30 @@
         "Oscuras"
       ],
       "synopsis": "En una antigua cinta se oye un interrogatorio de 1977 a una trabajadora de una empresa de métodos cuestionables…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 5
+    },
+    {
+      "id": "014",
+      "title": "Selena",
+      "published": "2025-04-19",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/014.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/selena-6.jpg",
+      "data": "./data/stories/014.json",
+      "source": "https://www.disturbingstories.com/014.html",
+      "protected": true,
+      "book": "01",
+      "year": "2486",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Año 2486. Colonia 35. Luna Xena.",
       "tabLabels": [
         "LEER",
         "TEASER"
