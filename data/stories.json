@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T11:20:31.163858+00:00",
+  "updated": "2026-09-08T11:29:53.158086+00:00",
   "stories": [
     {
       "id": "277",
@@ -761,6 +761,32 @@
       ],
       "features": [],
       "readTime": 16
+    },
+    {
+      "id": "178",
+      "title": "Zenito",
+      "published": "2025-12-14",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/178.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/178-zenito-frame-2-gif.gif",
+      "data": "./data/stories/178.json",
+      "source": "https://www.disturbingstories.com/178.html",
+      "protected": true,
+      "book": "03",
+      "year": "1998",
+      "categories": [
+        "Terror"
+      ],
+      "synopsis": "Querer a lo distinto es también una forma de entender el mundo… ¿no?",
+      "tabLabels": [
+        "LEER",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "readTime": 6
     },
     {
       "id": "003",
