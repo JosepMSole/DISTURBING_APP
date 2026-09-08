@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:08:59.578644+00:00",
+  "updated": "2026-09-08T15:09:18.265614+00:00",
   "stories": [
     {
       "id": "277",
@@ -208,7 +208,7 @@
       "published": "2026-07-19",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/180.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/180-dolor-por-caida-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/180-dolor-por-caida-frame-4.jpg",
       "data": "./data/stories/180.json",
       "source": "https://www.disturbingstories.com/180.html",
       "protected": false,
