@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:00:02.599134+00:00",
+  "updated": "2026-09-08T15:00:23.949049+00:00",
   "stories": [
     {
       "id": "277",
@@ -669,7 +669,7 @@
       "published": "2026-02-22",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/215.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/215-skincare-frame-8.jpg",
       "data": "./data/stories/215.json",
       "source": "https://www.disturbingstories.com/215.html",
       "protected": false,
