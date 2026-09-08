@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/088.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/088.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/088-render-final-frame-2.jpg",
   "book": "05",
   "year": "2073",
   "categories": [
@@ -308,8 +308,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/lifCeNh2Rh8",
+          "title": "Teaser"
         }
       ]
     }
