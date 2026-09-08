@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:05:51.789996+00:00",
+  "updated": "2026-09-08T13:06:25.359937+00:00",
   "stories": [
     {
       "id": "277",
@@ -1606,6 +1606,29 @@
         "Ciencia Ficción"
       ],
       "synopsis": "Si algo había quedado claro tras el Conflicto Lunar, era que los Exteriores habían llegado para quedarse…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 5
+    },
+    {
+      "id": "158",
+      "title": "El Interno",
+      "published": "2025-04-19",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/158.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/interno-1.jpg",
+      "data": "./data/stories/158.json",
+      "source": "https://www.disturbingstories.com/158.html",
+      "protected": true,
+      "book": "01",
+      "year": "2062",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Un detective accede a las celdas de un sanatorio para interrogar a un anciano con un secreto...",
       "tabLabels": [
         "LEER",
         "TEASER"
