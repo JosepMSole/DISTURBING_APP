@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/167.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/167.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/167-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/167-frame-4.jpg",
   "book": "02",
   "year": "1991",
   "categories": [
@@ -219,8 +219,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/P8eeIYeQcT4",
+          "title": "Teaser"
         }
       ]
     }
