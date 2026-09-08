@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:15:26.389907+00:00",
+  "updated": "2026-09-08T13:15:58.922467+00:00",
   "stories": [
     {
       "id": "277",
@@ -1816,7 +1816,7 @@
       "published": "2025-03-30",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/010.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dissonant-christmas-ais-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dissonant-christmas-ais-2.jpg",
       "data": "./data/stories/010.json",
       "source": "https://www.disturbingstories.com/010.html",
       "protected": false,

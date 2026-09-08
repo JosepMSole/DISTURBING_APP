@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/010.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/010.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dissonant-christmas-ais-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dissonant-christmas-ais-2.jpg",
   "book": "01",
   "year": "2103",
   "categories": [
@@ -149,8 +149,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/-kSCd0b1r-A",
+          "title": "Teaser"
         }
       ]
     }
