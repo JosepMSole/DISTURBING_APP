@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/016.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/016.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-saga-blackborder_orig.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-16.jpg",
   "book": "04",
   "year": "2023",
   "categories": [
@@ -31,34 +31,6 @@
         {
           "type": "p",
           "text": "Distorsion: Virus está dividida en 4 capítulos:"
-        },
-        {
-          "type": "image_link",
-          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap7-mini-v1_orig.jpg",
-          "href": "https://www.disturbingstories.com/016.html#7",
-          "alt": "Foto",
-          "caption": ""
-        },
-        {
-          "type": "image_link",
-          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap8-mini-v1_orig.jpg",
-          "href": "https://www.disturbingstories.com/016.html#8",
-          "alt": "Foto",
-          "caption": ""
-        },
-        {
-          "type": "image_link",
-          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap9-mini-v1_orig.jpg",
-          "href": "https://www.disturbingstories.com/016.html#9",
-          "alt": "Foto",
-          "caption": ""
-        },
-        {
-          "type": "image_link",
-          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-cap10-mini-v1_orig.jpg",
-          "href": "https://www.disturbingstories.com/016.html#10",
-          "alt": "Foto",
-          "caption": ""
         },
         {
           "type": "image",
@@ -840,8 +812,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/8ooqdWT3nZo",
+          "title": "Teaser"
         }
       ]
     }

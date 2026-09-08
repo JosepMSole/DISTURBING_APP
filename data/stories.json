@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:00:48.759211+00:00",
+  "updated": "2026-09-08T15:02:03.708148+00:00",
   "stories": [
     {
       "id": "277",
@@ -616,7 +616,7 @@
       "published": "2026-03-08",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/016.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/banner-distorsion-saga-blackborder_orig.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-16.jpg",
       "data": "./data/stories/016.json",
       "source": "https://www.disturbingstories.com/016.html",
       "protected": false,
