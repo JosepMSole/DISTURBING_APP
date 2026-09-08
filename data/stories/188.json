@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/188.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/188.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/188-inodoro-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/188-inodoro-frame-2.jpg",
   "book": "05",
   "year": "2027",
   "categories": [
@@ -323,8 +323,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/vko7azeB3sg",
+          "title": "Teaser"
         }
       ]
     }
