@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/238.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/238.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/238-acueducto-maldito-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/238-acueducto-maldito-frame-2.jpg",
   "book": "03",
   "year": "2009",
   "categories": [
@@ -320,8 +320,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/-sFmdF5sC2E",
+          "title": "Teaser"
         }
       ]
     }

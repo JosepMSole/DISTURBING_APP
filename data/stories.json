@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T14:54:38.232974+00:00",
+  "updated": "2026-09-08T14:55:04.121220+00:00",
   "stories": [
     {
       "id": "277",
@@ -949,7 +949,7 @@
       "published": "2025-11-30",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/238.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/238-acueducto-maldito-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/238-acueducto-maldito-frame-2.jpg",
       "data": "./data/stories/238.json",
       "source": "https://www.disturbingstories.com/238.html",
       "protected": false,
