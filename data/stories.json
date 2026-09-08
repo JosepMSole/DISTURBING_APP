@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T13:03:25.007681+00:00",
+  "updated": "2026-09-08T13:03:53.019445+00:00",
   "stories": [
     {
       "id": "277",
@@ -1231,6 +1231,30 @@
         "extra"
       ],
       "readTime": 12
+    },
+    {
+      "id": "085",
+      "title": "Noche Estrellada",
+      "published": "2025-09-07",
+      "access": "exclusive",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/085.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/085-frame-2.jpg",
+      "data": "./data/stories/085.json",
+      "source": "https://www.disturbingstories.com/085.html",
+      "protected": true,
+      "book": "02",
+      "year": "2533",
+      "categories": [
+        "Ciencia Ficción",
+        "Oscuras"
+      ],
+      "synopsis": "Leo y Nox disfrutan de una bonita vista del cielo nocturno, contemplando las estrellas…",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "readTime": 9
     },
     {
       "id": "033",
