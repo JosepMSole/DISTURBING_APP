@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/209.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/209.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/209-guardian-pretorio-frame-1.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/209-guardian-pretorio-frame-4.jpg",
   "book": "05",
   "year": "2010",
   "categories": [
@@ -659,8 +659,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/wHJYX_IeY7g",
+          "title": "Teaser"
         }
       ]
     }
