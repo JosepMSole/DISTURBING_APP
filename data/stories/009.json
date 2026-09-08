@@ -273,8 +273,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "about:blank",
-          "title": "Contenido multimedia"
+          "src": "https://www.youtube.com/embed/_6b0zYUGRb4",
+          "title": "Teaser"
         }
       ]
     }
