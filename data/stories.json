@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-09T18:34:31.532418+00:00",
+  "updated": "2026-09-09T22:53:08.201753+00:00",
   "stories": [
     {
       "id": "277",
@@ -327,6 +327,15 @@
       "readTime": 8,
       "mediaDurations": {
         "video": 164
+      },
+      "mediaYoutube": {
+        "video": [
+          {
+            "videoId": "gbElt_W_GWA",
+            "url": "https://www.youtube.com/watch?v=gbElt_W_GWA",
+            "durationSeconds": 164
+          }
+        ]
       }
     },
     {
