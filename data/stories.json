@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-09T22:54:02.593166+00:00",
+  "updated": "2026-09-09T22:55:05.935711+00:00",
   "stories": [
     {
       "id": "277",
@@ -202,7 +202,16 @@
       ],
       "readTime": 7,
       "mediaDurations": {
-        "audio": 802
+        "audio": 266
+      },
+      "mediaYoutube": {
+        "audio": [
+          {
+            "videoId": "S7d2YBa6Iw8",
+            "url": "https://www.youtube.com/watch?v=S7d2YBa6Iw8",
+            "durationSeconds": 266
+          }
+        ]
       }
     },
     {
@@ -976,7 +985,16 @@
       ],
       "readTime": 4,
       "mediaDurations": {
-        "audio": 1098
+        "audio": 366
+      },
+      "mediaYoutube": {
+        "audio": [
+          {
+            "videoId": "H0WxiH87NIs",
+            "url": "https://www.youtube.com/watch?v=H0WxiH87NIs",
+            "durationSeconds": 366
+          }
+        ]
       }
     },
     {
@@ -1086,7 +1104,16 @@
       ],
       "readTime": 4,
       "mediaDurations": {
-        "audio": 1065
+        "audio": 355
+      },
+      "mediaYoutube": {
+        "audio": [
+          {
+            "videoId": "ktWej50QHdQ",
+            "url": "https://www.youtube.com/watch?v=ktWej50QHdQ",
+            "durationSeconds": 355
+          }
+        ]
       }
     },
     {
@@ -1491,7 +1518,16 @@
       ],
       "readTime": 3,
       "mediaDurations": {
-        "audio": 912
+        "audio": 304
+      },
+      "mediaYoutube": {
+        "audio": [
+          {
+            "videoId": "ikRtpP0ID1o",
+            "url": "https://www.youtube.com/watch?v=ikRtpP0ID1o",
+            "durationSeconds": 304
+          }
+        ]
       }
     },
     {
@@ -1572,7 +1608,16 @@
       ],
       "readTime": 6,
       "mediaDurations": {
-        "video": 1122
+        "video": 374
+      },
+      "mediaYoutube": {
+        "video": [
+          {
+            "videoId": "0sEKsil_z0Q",
+            "url": "https://www.youtube.com/watch?v=0sEKsil_z0Q",
+            "durationSeconds": 374
+          }
+        ]
       }
     },
     {
@@ -1911,7 +1956,16 @@
       ],
       "readTime": 3,
       "mediaDurations": {
-        "video": 930
+        "video": 310
+      },
+      "mediaYoutube": {
+        "video": [
+          {
+            "videoId": "vdP_EBOUZH0",
+            "url": "https://www.youtube.com/watch?v=vdP_EBOUZH0",
+            "durationSeconds": 310
+          }
+        ]
       }
     },
     {
@@ -1944,7 +1998,16 @@
       ],
       "readTime": 4,
       "mediaDurations": {
-        "audio": 900
+        "audio": 300
+      },
+      "mediaYoutube": {
+        "audio": [
+          {
+            "videoId": "EhIbBEnXL5s",
+            "url": "https://www.youtube.com/watch?v=EhIbBEnXL5s",
+            "durationSeconds": 300
+          }
+        ]
       }
     },
     {
