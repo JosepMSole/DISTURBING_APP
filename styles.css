@@ -2002,3 +2002,73 @@ body{background:#020507!important}
 .future-placeholder-box{border:1px dashed #3b555d;background:#071116;border-radius:13px;padding:24px;text-align:center;margin-top:20px}.future-placeholder-box strong{font-family:Oxanium,sans-serif;font-size:19px}.future-placeholder-box p{color:#789097;line-height:1.5}.future-placeholder.rosa .future-placeholder-box{border-color:#73336e}.future-placeholder.rojo-blanco .future-placeholder-box{border-color:#78272a}
 
 @media(prefers-reduced-motion:reduce){.random-wheel.spin,.spotify-companion svg{animation:none!important}.intro-layer{transition:none!important}}
+
+/* ============================================================
+   DISTURBING STORIES APP v2.1 · polish / navigation / catalog
+   ============================================================ */
+
+/* Drawer: coherent icon language and definitive two-line footer. */
+.drawer>button:not(.drawer-close):not(.drawer-brand),.drawer>.drawer-disabled{display:flex!important;align-items:center!important;gap:11px!important;text-align:left!important}
+.drawer-menu-icon{width:25px;height:25px;flex:0 0 25px;display:grid;place-items:center;color:currentColor;font-size:19px;line-height:1}
+.drawer-grid9{grid-template-columns:repeat(3,4px);grid-template-rows:repeat(3,4px);gap:2px;align-content:center;justify-content:center}
+.drawer-grid9 i{width:4px;height:4px;border:1px solid currentColor;display:block}
+.drawer-watcher svg,.drawer-qr svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.drawer-watcher .watcher-pupil{fill:currentColor;stroke:none}.drawer-bars4{display:flex;align-items:center;justify-content:center;gap:2px}.drawer-bars4 i{display:block;width:3px;height:17px;border:1px solid currentColor}.drawer-help{width:22px;height:22px;border:1px solid currentColor;border-radius:50%;font-family:Oxanium,sans-serif;font-size:12px}.drawer-disabled{padding:12px 14px;color:#626f73;opacity:.72;cursor:default;user-select:none}.drawer-note{display:flex!important;flex-direction:column!important;gap:3px!important;align-items:flex-start!important;white-space:normal!important}.drawer-note>span,.drawer-note>a{display:block!important;line-height:1.15!important}
+
+/* HOME featured image: composite frame is always full, while the main image is
+   never cropped. The subtle zoom runs slowly between two safe contained sizes. */
+.hero.latest-storm .hero-media{overflow:hidden!important;background:#020608!important}
+.hero.latest-storm .hero-media>.hero-backdrop{position:absolute!important;inset:-6%!important;width:112%!important;height:112%!important;object-fit:cover!important;object-position:center!important;opacity:.42!important;filter:blur(12px) brightness(.56)!important;animation:heroBackdropV21 10s ease-in-out infinite alternate!important}
+.hero.latest-storm .hero-media>.hero-main-image{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;transform-origin:center!important;animation:heroSafeZoomV21 9.2s ease-in-out infinite alternate!important;will-change:transform,filter!important}
+@keyframes heroSafeZoomV21{0%{transform:scale(.982) translate3d(-.25%,.15%,0);filter:brightness(.91) contrast(1.06)}100%{transform:scale(1) translate3d(.25%,-.15%,0);filter:brightness(.98) contrast(1.09)}}
+@keyframes heroBackdropV21{0%{transform:scale(1.02) translate3d(-.4%,0,0)}100%{transform:scale(1.07) translate3d(.4%,-.3%,0)}}
+
+/* Stronger entry choreography for CONTINUAR LEYENDO and headings. */
+.home-continue-v21 .home-continue-cover,.home-continue-v21 .home-continue-copy,.home-continue-v21 .continue-btn,
+.my-continue-group .section-title,.continue-card .continue-cover,.continue-card .continue-copy,.continue-card .resume-arrow{opacity:0;transform:translateY(8px);transition:opacity .46s ease,transform .46s ease}
+.home-continue-v21.hud-content-on .home-continue-cover,.home-continue-v21.hud-content-on .home-continue-copy,.home-continue-v21.hud-content-on .continue-btn,
+.continue-card.hud-content-on .continue-cover,.continue-card.hud-content-on .continue-copy,.continue-card.hud-content-on .resume-arrow{opacity:1;transform:none}
+.home-continue-v21.hud-content-on .home-continue-copy,.continue-card.hud-content-on .continue-copy{transition-delay:.10s}.home-continue-v21.hud-content-on .continue-btn,.continue-card.hud-content-on .resume-arrow{transition-delay:.18s}
+.my-continue-group .section-title{animation:v21HeadingIn .58s ease .08s both}.my-stories-title .eyebrow,.collection-title .eyebrow{animation:v21HeadingIn .58s ease both}@keyframes v21HeadingIn{from{opacity:0;transform:translateY(8px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+.resume-arrow,.continue-card .resume-arrow,.continue-btn.icon-only{border-radius:50%!important;aspect-ratio:1/1!important}
+
+/* NEW is a dedicated bubble; exclusive lock keeps the prime upper-left anchor. */
+.new-story-badge{position:absolute!important;left:7px!important;right:auto!important;top:7px!important;z-index:18!important;padding:5px 8px!important;border-radius:999px!important;background:#f2f5f6!important;color:#061014!important;border:1px solid #fff!important;font-family:Oxanium,sans-serif!important;font-size:8px!important;font-weight:900!important;letter-spacing:.08em!important;box-shadow:0 0 10px rgba(255,255,255,.22)!important;pointer-events:none!important}
+.new-story-badge.new-has-lock{top:42px!important}
+
+/* Access status in every catalog: upper-left. Media remains upper-right. */
+.story-thumb-wrap>.ex-badge,.story-cover-card>.ex-badge,.story-grid-poster>.ex-badge,.story-grid-card>.ex-badge,
+.continue-cover>.ex-badge,.hero-story-media>.ex-badge,.story-featured>.ex-badge,.media-collection-poster>.ex-badge,
+.random-result-poster>.ex-badge,.timeline-poster>.ex-badge,.saga-part-poster>.ex-badge{top:7px!important;left:7px!important;right:auto!important;bottom:auto!important;transform:none!important;z-index:17!important}
+.ex-badge.ex-locked{color:#ff686d!important;border-color:#8d272d!important;background:rgba(35,5,7,.86)!important}.ex-badge.ex-unlocked{color:#75ff9b!important;border-color:#287b43!important;background:rgba(5,31,14,.86)!important}
+.story-media-badges,.story-thumb-wrap .story-media-badges,.story-cover-card>.story-media-badges,.story-grid-poster>.story-media-badges,.continue-cover>.story-media-badges,.hero-story-media>.story-media-badges,.story-featured>.story-media-badges{top:7px!important;right:7px!important;left:auto!important;bottom:auto!important}
+.timeline-poster,.saga-part-poster{position:relative!important;overflow:hidden!important}.saga-part-poster{width:50px;flex:0 0 50px;border-radius:6px}.saga-part-poster img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover}.timeline-poster>.ex-badge,.saga-part-poster>.ex-badge{width:20px!important;height:20px!important;top:4px!important;left:4px!important}.timeline-poster>.ex-badge svg,.saga-part-poster>.ex-badge svg{width:13px!important;height:13px!important}
+
+/* Locked Story: large centered lock ABOVE the poster + teaser. */
+.locked-story-page{padding:4px var(--reader-pad) 34px}.locked-main-lock{width:96px;height:96px;margin:12px auto 16px;border-radius:50%;display:grid;place-items:center;color:#ff6268;border:1px solid #8b252b;background:radial-gradient(circle,rgba(132,20,27,.22),rgba(19,3,5,.9));box-shadow:0 0 24px rgba(210,36,46,.2)}.locked-main-lock svg{width:58px;height:58px;fill:none;stroke:currentColor;stroke-width:1.55}.locked-story-page .story-featured{margin-left:auto!important;margin-right:auto!important}.locked-teaser{margin:20px auto 8px;max-width:720px}.locked-teaser>.eyebrow{text-align:center;margin-bottom:8px}.locked-story-page .lock-screen{padding-top:22px!important;min-height:0!important}.locked-story-page .lock-screen:before{display:none!important}
+
+/* iOS badge permission helper. */
+.badge-permission-panel{display:grid;grid-template-columns:1fr auto;gap:5px 12px;align-items:center;border:1px solid #294a54;background:#071217;border-radius:11px;padding:11px;margin:0 0 11px}.badge-permission-panel strong{font-family:Oxanium,sans-serif;font-size:10px;color:#c9f8ff}.badge-permission-panel span{font-size:9px;color:#739097}.badge-permission-panel button{grid-column:2;grid-row:1/3;white-space:nowrap;font-size:8px;padding:8px 10px}
+
+/* MIS STORIES: make summary fit and every statistic a real shortcut. */
+.progress-dashboard.stat-action,.unread-callout.stat-action{width:100%;color:inherit;font:inherit;text-align:inherit;cursor:pointer}.progress-dashboard.stat-action{display:grid!important}.progress-big .progress-denom,.progress-big>em{font-size:clamp(9px,2.7vw,12px)!important}.progress-side{grid-template-columns:minmax(78px,.72fr) minmax(0,1fr)!important}.progress-side .collection-progress.large{max-width:125px!important}.personal-stats .stat-action,.unread-callout.stat-action{cursor:pointer}.personal-stats .stat-action:active,.unread-callout.stat-action:active,.progress-dashboard.stat-action:active{filter:brightness(1.2)}.my-tabs{grid-template-columns:repeat(4,minmax(0,1fr))!important}.my-tabs .my-filter{font-size:clamp(6.5px,2vw,8px)!important;padding-inline:4px!important}
+
+/* TODAS LAS STORIES portals. */
+.portal-custom-svg{width:30px!important;height:24px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}.timeline-portal-svg circle{fill:#071116!important}.portal-grid-4{grid-template-columns:repeat(2,minmax(0,1fr))!important}.nightmare-diamond{display:block!important;width:12px!important;height:12px!important;transform:rotate(45deg)!important;border:1.5px solid currentColor!important;margin:auto!important}.portal-btn.games .gamepad-portal-svg{color:#ff8de9!important}
+
+/* Collection interactions + book metadata. */
+.book-card{transition:filter .22s ease,box-shadow .22s ease,transform .22s ease}.book-card-flash{animation:bookCardFlashV21 1s ease both!important}.book-card-opening{animation:bookOpenFlashV21 .38s ease both!important;pointer-events:none!important}@keyframes bookCardFlashV21{0%,100%{filter:brightness(1);box-shadow:inherit}28%,62%{filter:brightness(1.45);box-shadow:0 0 28px rgba(142,244,255,.32)}}@keyframes bookOpenFlashV21{to{filter:brightness(1.52);box-shadow:0 0 30px rgba(142,244,255,.34);transform:scale(1.012)}}.book-pages{display:flex;align-items:baseline;gap:5px;margin:7px 0;color:#92adb4}.book-pages strong{font-family:Oxanium,sans-serif;font-size:13px;color:#d8f8ff}.book-pages span{font-size:7px;letter-spacing:.08em}.book-pages-detail{margin-top:7px;color:#8daab2;font-family:Oxanium,sans-serif;font-size:9px;letter-spacing:.07em}.book-detail-title-row .book-feature-counts{gap:8px!important}.book-detail-title-row .book-feature-count{min-width:42px!important;min-height:38px!important;padding:5px 7px!important}.book-detail-title-row .book-feature-count svg{width:22px!important;height:22px!important}.book-detail-title-row .book-feature-count b{font-size:14px!important}
+
+/* Player: deterministic total + Spotify one-line title. */
+.spotify-companion span{min-width:0!important}.spotify-companion strong{display:block!important;font-family:Oxanium,sans-serif!important;font-size:clamp(11px,3.5vw,15px)!important;line-height:1.1!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;margin:0!important}.player-summary-row b{white-space:nowrap}
+
+/* Cassettes / Tapes: larger, more homogeneous information area. */
+.media-collection-card{grid-template-columns:58px minmax(0,1fr)!important;min-height:102px!important;padding:8px 10px 8px 8px!important;cursor:pointer}.media-collection-copy{display:grid;align-content:center;gap:4px;min-width:0}.media-collection-card .media-collection-copy>span{font-size:8px!important;letter-spacing:.08em}.media-collection-card .media-collection-copy>strong{font-size:clamp(12px,3.4vw,15px)!important;line-height:1.15!important;margin:0!important}.media-collection-card .media-collection-copy>em{font-size:9px!important;margin-top:2px!important}.media-collection-card:active{filter:brightness(1.18)}
+
+@media(prefers-reduced-motion:reduce){.hero.latest-storm .hero-media>.hero-main-image,.hero.latest-storm .hero-media>.hero-backdrop,.book-card-flash,.book-card-opening,.my-continue-group .section-title,.my-stories-title .eyebrow,.collection-title .eyebrow{animation:none!important}.home-continue-v21 .home-continue-cover,.home-continue-v21 .home-continue-copy,.home-continue-v21 .continue-btn,.continue-card .continue-cover,.continue-card .continue-copy,.continue-card .resume-arrow{opacity:1!important;transform:none!important;transition:none!important}}
+/* v2.1 · Spotify CTA must outrank playlist titles while remaining single-line. */
+.spotify-companion strong{font-size:clamp(14px,3.9vw,17px)!important;letter-spacing:-.01em!important}
+@media(max-width:360px){.spotify-companion{gap:8px!important;padding-inline:10px!important}.spotify-companion svg{width:30px!important;height:30px!important}.spotify-companion>b{font-size:17px!important}.spotify-companion strong{font-size:14px!important}}
+/* Lock/NEW keep the upper-left priority; sort bubbles stack below them. */
+.sort-badge.sort-has-lock,.sort-badge.sort-has-new{top:42px!important}
+.sort-badge.sort-has-lock.sort-has-new{top:77px!important}
