@@ -8,16 +8,16 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Disturbing Stories APP" />
   <meta name="application-name" content="Disturbing Stories APP" />
-  <link rel="manifest" href="manifest.webmanifest?v=1.17.0" />
-  <link rel="icon" type="image/png" href="assets/app-icon.png?v=1.17.0" />
-  <link rel="shortcut icon" type="image/png" href="assets/app-icon.png?v=1.17.0" />
-  <link rel="icon" href="favicon.ico?v=1.17.0" sizes="any" />
-  <link rel="icon" type="image/png" href="icons/icon-192.png?v=1.17.0" />
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png?v=1.17.0" />
+  <link rel="manifest" href="manifest.webmanifest?v=2.0.0" />
+  <link rel="icon" type="image/png" href="assets/app-icon.png?v=2.0.0" />
+  <link rel="shortcut icon" type="image/png" href="assets/app-icon.png?v=2.0.0" />
+  <link rel="icon" href="favicon.ico?v=2.0.0" sizes="any" />
+  <link rel="icon" type="image/png" href="icons/icon-192.png?v=2.0.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png?v=2.0.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Oxanium:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=1.17.0" />
+  <link rel="stylesheet" href="styles.css?v=2.0.0" />
   <title>Disturbing Stories APP</title>
 </head>
 <body>
@@ -69,15 +69,20 @@
       <button data-drawer-route="unlocked">Mis Stories</button>
       <button data-drawer-route="collection">Colección</button>
       <button data-drawer-route="player">♫ Player</button>
+      <button data-drawer-route="tutorials">Tutoriales</button>
       <button id="scanBtn">Desbloquear Story</button>
       <a href="https://www.disturbingstories.com/mural.html" target="_blank" rel="noopener">Mural interactivo ↗</a>
       <button id="installBtn" class="hidden">Instalar app</button>
-      <p class="drawer-note">v1.17 · © <a href="https://www.disturbingstories.com/contact.html" target="_blank" rel="noopener">Vianda Visual 2026</a></p>
+      <p class="drawer-note">v2.0 · © <a href="https://www.disturbingstories.com/contact.html" target="_blank" rel="noopener">Vianda Visual 2026</a></p>
     </aside>
     <div id="scrim" class="scrim hidden"></div>
+    <div id="introLayer" class="intro-layer hidden" aria-hidden="true">
+      <video id="introVideo" class="intro-video" muted playsinline preload="auto" src="assets/intro.webm"></video>
+      <div class="intro-fallback" aria-hidden="true">DISTURBING STORIES</div>
+    </div>
   </div>
 
   <template id="loadingTemplate"><div class="loading"><div class="spinner"></div><p>Cargando Stories…</p></div></template>
-  <script src="app.js?v=1.17.0" defer></script>
+  <script src="app.js?v=2.0.0" defer></script>
 </body>
 </html>

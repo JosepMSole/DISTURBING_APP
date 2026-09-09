@@ -1,0 +1,2 @@
+Coloca aquí el vídeo de introducción como: intro.webm
+Duración orientativa: 5 segundos. La app tiene fallback automático si falta.
