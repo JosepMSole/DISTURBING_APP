@@ -1,0 +1,16 @@
+{
+  "extras": [
+    {
+      "id": "extra-01",
+      "number": 1,
+      "title": "Presentación del Proyecto",
+      "book": "1",
+      "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-01-presentacion-del-proyecto-v1_orig.jpg",
+      "image": "",
+      "text": "",
+      "availability": "digital"
+    }
+  ],
+  "schema": 1,
+  "updated": "2026-09-09T22:49:05.516424+00:00"
+}
