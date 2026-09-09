@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-09T22:53:08.201753+00:00",
+  "updated": "2026-09-09T22:53:30.050904+00:00",
   "stories": [
     {
       "id": "277",
@@ -731,6 +731,15 @@
       "readTime": 12,
       "mediaDurations": {
         "video": 493
+      },
+      "mediaYoutube": {
+        "video": [
+          {
+            "videoId": "vR3yJOOdA-s",
+            "url": "https://www.youtube.com/watch?v=vR3yJOOdA-s",
+            "durationSeconds": 493
+          }
+        ]
       }
     },
     {
