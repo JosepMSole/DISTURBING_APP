@@ -1,0 +1,29 @@
+{
+  "sagas": [
+    {
+      "id": "la-trilogia-de-atlas",
+      "name": "La Trilogía de Atlas",
+      "synopsis": "Descubre la inquietante presencia de Atlas...",
+      "totalParts": 3,
+      "banner": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/editor/la-trilogia-de-atlas-3.jpg?1741824954",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": "151"
+        },
+        {
+          "order": 2,
+          "storyId": "158"
+        },
+        {
+          "order": 3,
+          "storyId": ""
+        }
+      ]
+    }
+  ],
+  "schema": 1,
+  "updated": "2026-09-09T23:01:19.019745+00:00"
+}
