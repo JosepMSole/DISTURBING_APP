@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-08T15:11:45.858647+00:00",
+  "updated": "2026-09-09T18:34:31.532418+00:00",
   "stories": [
     {
       "id": "277",
@@ -200,7 +200,10 @@
       "features": [
         "audio"
       ],
-      "readTime": 7
+      "readTime": 7,
+      "mediaDurations": {
+        "audio": 802
+      }
     },
     {
       "id": "180",
@@ -321,7 +324,10 @@
         "extra",
         "video"
       ],
-      "readTime": 8
+      "readTime": 8,
+      "mediaDurations": {
+        "video": 164
+      }
     },
     {
       "id": "209",
@@ -526,7 +532,10 @@
       "features": [
         "audio"
       ],
-      "readTime": 6
+      "readTime": 6,
+      "mediaDurations": {
+        "audio": 553
+      }
     },
     {
       "id": "162",
@@ -710,7 +719,10 @@
       "features": [
         "video"
       ],
-      "readTime": 12
+      "readTime": 12,
+      "mediaDurations": {
+        "video": 493
+      }
     },
     {
       "id": "251",
@@ -913,7 +925,10 @@
       "features": [
         "audio"
       ],
-      "readTime": 3
+      "readTime": 3,
+      "mediaDurations": {
+        "audio": 1081
+      }
     },
     {
       "id": "003",
@@ -941,7 +956,10 @@
         "audio",
         "extra"
       ],
-      "readTime": 4
+      "readTime": 4,
+      "mediaDurations": {
+        "audio": 1098
+      }
     },
     {
       "id": "238",
@@ -1048,7 +1066,10 @@
         "audio",
         "extra"
       ],
-      "readTime": 4
+      "readTime": 4,
+      "mediaDurations": {
+        "audio": 1065
+      }
     },
     {
       "id": "029",
@@ -1076,7 +1097,10 @@
         "extra",
         "video"
       ],
-      "readTime": 8
+      "readTime": 8,
+      "mediaDurations": {
+        "video": 452
+      }
     },
     {
       "id": "097",
@@ -1280,7 +1304,10 @@
       "features": [
         "audio"
       ],
-      "readTime": 3
+      "readTime": 3,
+      "mediaDurations": {
+        "audio": 858
+      }
     },
     {
       "id": "033",
@@ -1435,7 +1462,10 @@
         "audio",
         "extra"
       ],
-      "readTime": 3
+      "readTime": 3,
+      "mediaDurations": {
+        "audio": 912
+      }
     },
     {
       "id": "069",
@@ -1513,7 +1543,10 @@
       "features": [
         "video"
       ],
-      "readTime": 6
+      "readTime": 6,
+      "mediaDurations": {
+        "video": 1122
+      }
     },
     {
       "id": "184",
@@ -1588,7 +1621,10 @@
       "features": [
         "audio"
       ],
-      "readTime": 6
+      "readTime": 6,
+      "mediaDurations": {
+        "audio": 342
+      }
     },
     {
       "id": "159",
@@ -1837,7 +1873,10 @@
         "extra",
         "video"
       ],
-      "readTime": 3
+      "readTime": 3,
+      "mediaDurations": {
+        "video": 930
+      }
     },
     {
       "id": "004",
@@ -1867,7 +1906,10 @@
         "audio",
         "extra"
       ],
-      "readTime": 4
+      "readTime": 4,
+      "mediaDurations": {
+        "audio": 900
+      }
     },
     {
       "id": "036",
@@ -1916,7 +1958,10 @@
       "features": [
         "audio"
       ],
-      "readTime": 2
+      "readTime": 2,
+      "mediaDurations": {
+        "audio": 822
+      }
     }
   ]
 }
