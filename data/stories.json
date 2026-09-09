@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-09T22:53:30.050904+00:00",
+  "updated": "2026-09-09T22:54:02.593166+00:00",
   "stories": [
     {
       "id": "277",
@@ -1118,6 +1118,15 @@
       "readTime": 8,
       "mediaDurations": {
         "video": 452
+      },
+      "mediaYoutube": {
+        "video": [
+          {
+            "videoId": "gD2bgUCGuwI",
+            "url": "https://www.youtube.com/watch?v=gD2bgUCGuwI",
+            "durationSeconds": 452
+          }
+        ]
       }
     },
     {
@@ -1642,6 +1651,15 @@
       "readTime": 6,
       "mediaDurations": {
         "audio": 342
+      },
+      "mediaYoutube": {
+        "audio": [
+          {
+            "videoId": "b-tY8aeXmVo",
+            "url": "https://www.youtube.com/watch?v=b-tY8aeXmVo",
+            "durationSeconds": 342
+          }
+        ]
       }
     },
     {
