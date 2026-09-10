@@ -1,7 +1,7 @@
-const APP_VERSION = '2.11.0';
+const APP_VERSION = '2.12.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
-let indexData=null,currentStory=null,currentTab='read',installPrompt=null,qrScanner=null,qrScanBusy=false,qrLiveStream=null,qrLiveTimer=0,qrLiveDecodeBusy=false,qrFrameDecoder=null,qrLiveCanvas=null,qrCameraAttempt=0,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
+let indexData=null,currentStory=null,currentTab='read',installPrompt=null,qrScanner=null,qrScanBusy=false,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
 let sagasData={schema:1,sagas:[]},timelineData={schema:1,orders:{}},extrasData={schema:1,extras:[]},playerCatalogData={schema:1,tracks:[]};
 let lastRandomStoryId='',randomSpinTimer=0,randomSpinRunning=false,randomSpinCurrent=null,randomSpinPool=[],tutorialActive=null,introPlayed=false,suppressNewClearOnceId='';
 const unlockSecretsKey='disturbing_unlock_secrets_v2';
@@ -420,129 +420,94 @@ function showUnlock(prefill=''){
   $('#photoQr').onclick=()=>gallery?.click();
   gallery.onchange=e=>scanQrPhoto(e.target.files?.[0],prefill,'qrFile');
 }
-async function ensureQrLibrary(silent=false){
+async function ensureQrLibrary(){
   if(typeof Html5Qrcode!=='undefined')return true;
-  if(!silent)unlockStatus('Preparando lector QR…');
-  return new Promise(resolve=>{let settled=false;const finish=ok=>{if(settled)return;settled=true;resolve(!!ok)};const old=document.querySelector('script[data-qr-lib]');if(old){old.addEventListener('load',()=>finish(typeof Html5Qrcode!=='undefined'),{once:true});old.addEventListener('error',()=>finish(false),{once:true});setTimeout(()=>finish(typeof Html5Qrcode!=='undefined'),6500);return}const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js';sc.async=true;sc.dataset.qrLib='1';sc.onload=()=>finish(typeof Html5Qrcode!=='undefined');sc.onerror=()=>finish(false);document.head.append(sc);setTimeout(()=>finish(typeof Html5Qrcode!=='undefined'),6500)})
-}
-function mountQrNativeViewer(){
-  const reader=$('#qr-reader');if(!reader)return null;
-  reader.innerHTML=`<div class="qr-native-stage"><video id="qrLiveVideo" class="qr-live-video" autoplay muted playsinline webkit-playsinline></video><canvas id="qrLiveCanvas" class="qr-live-canvas" aria-hidden="true"></canvas><div class="qr-live-overlay" aria-hidden="true"><i></i><i></i><i></i><i></i><span></span></div></div>`;
-  const video=$('#qrLiveVideo');
-  if(video){video.autoplay=true;video.muted=true;video.playsInline=true;video.setAttribute('playsinline','');video.setAttribute('webkit-playsinline','');video.setAttribute('muted','');}
-  qrLiveCanvas=$('#qrLiveCanvas');
-  return video
-}
-function qrCameraErrorText(e){
-  const n=e?.name||'';
-  if(n==='NotAllowedError'||n==='SecurityError')return 'No hay permiso para usar la cámara. Actívalo en Safari/Ajustes y vuelve a intentarlo.';
-  if(n==='NotFoundError'||n==='DevicesNotFoundError')return 'No se ha encontrado ninguna cámara disponible en este dispositivo.';
-  if(n==='NotReadableError'||n==='TrackStartError')return 'La cámara no puede abrirse ahora mismo. Comprueba que otra app no la esté usando y reintenta.';
-  if(n==='OverconstrainedError'||n==='ConstraintNotSatisfiedError')return 'No se pudo activar la cámara trasera con esa configuración. Pulsa REINTENTAR.';
-  if(n==='AbortError')return 'Safari interrumpió la apertura de la cámara. Pulsa REINTENTAR.';
-  if(n==='QrVideoTimeout')return 'Safari ha concedido acceso, pero no está entregando imagen al visor. Pulsa REINTENTAR; si persiste, cierra y vuelve a abrir la App.';
-  return 'No se pudo abrir la cámara. Revisa el permiso de cámara y vuelve a intentarlo.'
-}
-function waitForQrVideo(video,timeout=6500){
-  return new Promise((resolve,reject)=>{
-    let done=false,timer=0,poll=0;
-    const clean=()=>{clearTimeout(timer);clearInterval(poll);['loadedmetadata','loadeddata','canplay','playing','resize'].forEach(ev=>video.removeEventListener(ev,check))};
-    const finish=ok=>{if(done)return;done=true;clean();if(ok)resolve(true);else{const e=new Error('QR video timeout');e.name='QrVideoTimeout';reject(e)}};
-    const check=()=>{if(video.videoWidth>1&&video.videoHeight>1&&video.readyState>=2)finish(true)};
-    ['loadedmetadata','loadeddata','canplay','playing','resize'].forEach(ev=>video.addEventListener(ev,check));
-    poll=setInterval(check,120);timer=setTimeout(()=>finish(false),timeout);check()
+  unlockStatus('Preparando lector QR…');
+  return new Promise(resolve=>{
+    const old=document.querySelector('script[data-qr-lib]');
+    if(old){
+      old.addEventListener('load',()=>resolve(typeof Html5Qrcode!=='undefined'),{once:true});
+      old.addEventListener('error',()=>resolve(false),{once:true});
+      return
+    }
+    const sc=document.createElement('script');
+    sc.src='https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js';
+    sc.async=true;
+    sc.dataset.qrLib='1';
+    sc.onload=()=>resolve(typeof Html5Qrcode!=='undefined');
+    sc.onerror=()=>resolve(false);
+    document.head.append(sc)
   })
-}
-async function attachQrStream(video,constraints){
-  const stream=await navigator.mediaDevices.getUserMedia(constraints);
-  try{
-    video.srcObject=stream;
-    try{await video.play()}catch(e){console.debug('QR video.play()',e)}
-    await waitForQrVideo(video);
-    return stream
-  }catch(e){stopStreamObject(stream);try{video.pause();video.srcObject=null}catch{}throw e}
-}
-async function openQrCameraStream(video){
-  if(!navigator.mediaDevices?.getUserMedia){const e=new Error('getUserMedia unavailable');e.name='NotFoundError';throw e}
-  let firstError=null;
-  try{return await attachQrStream(video,{audio:false,video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720}}})}
-  catch(e){firstError=e;if(e?.name==='NotAllowedError'||e?.name==='SecurityError'||e?.name==='NotReadableError')throw e}
-  try{
-    const devices=(await navigator.mediaDevices.enumerateDevices()).filter(d=>d.kind==='videoinput');
-    const rear=devices.find(d=>/back camera|back|rear|environment|trasera|posterior/i.test(d.label||''))||null;
-    if(rear?.deviceId)return await attachQrStream(video,{audio:false,video:{deviceId:{exact:rear.deviceId},width:{ideal:1280},height:{ideal:720}}})
-  }catch(e){if(e?.name==='NotAllowedError'||e?.name==='SecurityError')throw e;firstError=e||firstError}
-  try{return await attachQrStream(video,{audio:false,video:true})}catch(e){throw e||firstError}
-}
-function qrFrameBlob(canvas){return new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',.9))}
-function scheduleQrFrameScan(video,prefill,session,delay=320){clearTimeout(qrLiveTimer);qrLiveTimer=setTimeout(()=>scanQrVideoFrame(video,prefill,session),delay)}
-async function scanQrVideoFrame(video,prefill,session){
-  if(!qrScanBusy||session!==qrCameraAttempt||!qrFrameDecoder||qrLiveDecodeBusy)return;
-  if(!video||video.readyState<2||!video.videoWidth||!video.videoHeight){scheduleQrFrameScan(video,prefill,session,220);return}
-  qrLiveDecodeBusy=true;
-  try{
-    const canvas=qrLiveCanvas||document.createElement('canvas'),maxSide=960,scale=Math.min(1,maxSide/Math.max(video.videoWidth,video.videoHeight));
-    canvas.width=Math.max(2,Math.round(video.videoWidth*scale));canvas.height=Math.max(2,Math.round(video.videoHeight*scale));
-    const ctx=canvas.getContext('2d',{willReadFrequently:false});ctx.drawImage(video,0,0,canvas.width,canvas.height);
-    const blob=await qrFrameBlob(canvas);if(!blob)throw new Error('Frame vacío');
-    const frame=new File([blob],'qr-live-frame.jpg',{type:'image/jpeg',lastModified:Date.now()});
-    const decoded=await qrFrameDecoder.scanFile(frame,false);
-    if(decoded&&qrScanBusy&&session===qrCameraAttempt){qrScanBusy=false;await stopQrScanner(false);await tryUnlock(decoded,prefill);return}
-  }catch(e){/* Un frame sin QR es el estado normal: seguimos analizando. */}
-  finally{qrLiveDecodeBusy=false}
-  if(qrScanBusy&&session===qrCameraAttempt)scheduleQrFrameScan(video,prefill,session,340)
-}
-async function startQrAutoDetect(video,prefill,session){
-  const ready=await ensureQrLibrary(true);
-  if(!qrScanBusy||session!==qrCameraAttempt)return;
-  if(!ready){unlockStatus('CÁMARA ACTIVA · no se pudo cargar el AUTO-DETECT. Puedes usar CARGAR IMAGEN DESDE TU ÁLBUM.');return}
-  try{qrFrameDecoder=new Html5Qrcode('qr-file-reader');unlockStatus('CÁMARA ACTIVA · AUTO-DETECT ACTIVO · apunta al QR.');scheduleQrFrameScan(video,prefill,session,180)}
-  catch(e){console.warn('QR decoder',e);unlockStatus('CÁMARA ACTIVA · el lector QR no pudo iniciarse. Usa CARGAR IMAGEN DESDE TU ÁLBUM.')}
 }
 async function startQrCamera(prefill=''){
   if(qrScanBusy)return;
   if(!window.isSecureContext){unlockStatus('El escáner en directo necesita HTTPS.');return}
-  await stopQrScanner(false);
+  if(!await ensureQrLibrary()){
+    unlockStatus('No se ha podido cargar el lector QR. Comprueba la conexión e inténtalo de nuevo.');
+    return
+  }
+  await stopQrScanner();
   qrScanBusy=true;
-  const session=++qrCameraAttempt,btn=$('#startQr'),video=mountQrNativeViewer();
-  if(!video){qrScanBusy=false;unlockStatus('No se ha podido crear el visor de cámara.');return}
-  if(btn){btn.disabled=true;btn.textContent='ABRIENDO CÁMARA…'}
   unlockStatus('Solicitando acceso a la cámara…');
   try{
-    qrLiveStream=await openQrCameraStream(video);
-    if(!qrScanBusy||session!==qrCameraAttempt){stopStreamObject(qrLiveStream);qrLiveStream=null;return}
-    const track=qrLiveStream.getVideoTracks?.()[0],settings=track?.getSettings?.()||{},size=settings.width&&settings.height?` · ${settings.width}×${settings.height}`:'';
-    if(btn){btn.disabled=false;btn.textContent='DETENER ESCÁNER QR';btn.onclick=()=>stopQrScanner(true)}
-    unlockStatus(`CÁMARA ACTIVA${size} · preparando AUTO-DETECT…`);
-    startQrAutoDetect(video,prefill,session)
+    qrScanner=new Html5Qrcode('qr-reader');
+    await qrScanner.start(
+      {facingMode:'environment'},
+      {
+        fps:10,
+        qrbox:(w,h)=>{
+          const n=Math.max(180,Math.min(w,h)*.72);
+          return{width:n,height:n}
+        },
+        aspectRatio:1.0
+      },
+      async decoded=>{
+        if(qrScanBusy){
+          qrScanBusy=false;
+          await stopQrScanner();
+          await tryUnlock(decoded,prefill)
+        }
+      },
+      ()=>{}
+    );
+    unlockStatus('CÁMARA ACTIVA · AUTO-DETECT ACTIVO · apunta al QR.')
   }catch(e){
-    console.warn('QR native camera',e);
-    await stopQrScanner(false);
-    const retry=$('#startQr');if(retry){retry.disabled=false;retry.textContent='REINTENTAR ESCÁNER QR';retry.onclick=()=>startQrCamera(prefill)}
-    unlockStatus(qrCameraErrorText(e))
+    console.warn('QR v0.18 camera',e);
+    qrScanBusy=false;
+    try{await qrScanner?.clear()}catch{}
+    qrScanner=null;
+    unlockStatus('No se pudo abrir el escáner en directo. Usa «CARGAR IMAGEN DESDE TU ÁLBUM».')
   }
 }
 async function scanQrPhoto(file,prefill='',inputId='qrFile'){
   if(!file)return;
-  await stopQrScanner(false);
-  if(!await ensureQrLibrary()){unlockStatus('No se ha podido cargar el lector QR.');return}
-  unlockStatus('Analizando QR…');let scanner=null;
-  try{scanner=new Html5Qrcode('qr-file-reader');const decoded=await scanner.scanFile(file,true);await scanner.clear();await tryUnlock(decoded,prefill)}
-  catch(e){try{await scanner?.clear()}catch{}unlockStatus('No se ha podido leer un QR válido en esa imagen. Intenta acercarte más y evita reflejos.')}
-  finally{const f=$('#'+inputId);if(f)f.value=''}
+  await stopQrScanner();
+  if(!await ensureQrLibrary()){
+    unlockStatus('No se ha podido cargar el lector QR.');
+    return
+  }
+  unlockStatus('Analizando QR…');
+  let scanner=null;
+  try{
+    scanner=new Html5Qrcode('qr-file-reader');
+    const decoded=await scanner.scanFile(file,true);
+    await scanner.clear();
+    await tryUnlock(decoded,prefill)
+  }catch(e){
+    try{await scanner?.clear()}catch{}
+    unlockStatus('No se ha podido leer un QR válido en esa imagen.')
+  }finally{
+    const f=$('#'+inputId);if(f)f.value=''
+  }
 }
-async function stopQrScanner(showStatus=false){
-  const oldScanner=qrScanner;qrScanner=null;qrScanBusy=false;qrCameraAttempt++;
-  clearTimeout(qrLiveTimer);qrLiveTimer=0;qrLiveDecodeBusy=false;
-  const video=$('#qrLiveVideo');if(video){try{video.pause();video.srcObject=null}catch{}}
-  stopStreamObject(qrLiveStream);qrLiveStream=null;qrLiveCanvas=null;
-  const d=qrFrameDecoder;qrFrameDecoder=null;if(d&&typeof d.clear==='function')try{await d.clear()}catch{}
-  if(oldScanner){try{if(oldScanner.isScanning)await oldScanner.stop()}catch{}try{await oldScanner.clear()}catch{}}
-  const reader=$('#qr-reader');if(reader)reader.innerHTML='<div class="qr-placeholder">CÁMARA</div>';
-  const btn=$('#startQr');if(btn){btn.disabled=false;btn.textContent='ACTIVAR ESCÁNER QR'}
-  if(showStatus)unlockStatus('Escáner detenido.')
+async function stopQrScanner(){
+  const s=qrScanner;
+  qrScanner=null;
+  qrScanBusy=false;
+  if(!s)return;
+  try{if(s.isScanning)await s.stop()}catch{}
+  try{await s.clear()}catch{}
 }
-function stopStreamObject(stream){try{stream?.getTracks?.().forEach(t=>t.stop())}catch{}}
 async function tryUnlock(raw,prefill=''){const parsedId=storyIdFromPrivateUrl(raw),id=prefill||parsedId;if(!id){unlockStatus('El QR no corresponde a una Story reconocible.');return}if(prefill&&parsedId&&prefill!==parsedId){unlockStatus(`Ese QR pertenece a la Story ${parsedId}, no a la ${prefill}.`);return}const meta=indexData.stories.find(s=>s.id===id);if(!meta||meta.access!=='exclusive'){unlockStatus('Ese QR no corresponde a una Story exclusiva disponible en la app.');return}const secret=normalizeUnlockSecret(raw,id);if(!secret){unlockStatus('El QR no tiene el formato esperado.');return}unlockStatus('Validando acceso…');try{const data=await loadStoryData(meta,secret);if(data.id!==id)throw new Error('El QR no corresponde a esta Story');const m=secretMap();m[id]=secret;store.set(unlockSecretsKey,m);markStoryAcquired(id,true);updateAppBadge();suppressNewClearOnceId=id;unlockStatus('');await showUnlockReward(id);navigateHash(`#/story/${encodeURIComponent(id)}`)}catch{unlockStatus('QR no válido para esta Story.')}}
 function unlockStatus(t){const el=$('#unlockStatus');if(el)el.textContent=t}
 function storyIdFromPrivateUrl(raw){try{const u=new URL(raw);const m=u.pathname.match(/\/([0-9]{3})_[^/]+\.html$/i);return m?.[1]||''}catch{return''}}
@@ -702,9 +667,9 @@ function spotifyCompanionHtml(){return `<a class="spotify-companion" href="https
 
 function maybeAutoTutorial(){return}
 
-function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><div class="eyebrow">PREPARADO PARA FUTURA ITERACIÓN</div><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong><p>La entrada visual ya forma parte de Disturbing Stories App v2.11. Su contenido se desarrollará en una iteración posterior.</p></div></section>`}
+function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><div class="eyebrow">PREPARADO PARA FUTURA ITERACIÓN</div><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong><p>La entrada visual ya forma parte de Disturbing Stories App v2.12. Su contenido se desarrollará en una iteración posterior.</p></div></section>`}
 
 async function playEntryIntro(){const onceKey='disturbing_intro_played_session_v26';if(introPlayed||sessionStorage.getItem(onceKey)==='1')return;introPlayed=true;sessionStorage.setItem(onceKey,'1');const layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return;layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0}catch{}return new Promise(resolve=>{const done=()=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}layer.classList.add('intro-out');setTimeout(()=>{layer.classList.add('hidden');layer.classList.remove('intro-out');layer.setAttribute('aria-hidden','true');resolve()},220)};const start=()=>{clearTimeout(fallback);const p=video.play();if(p&&typeof p.catch==='function')p.catch(done)};const fallback=setTimeout(done,2500);layer.onclick=done;video.addEventListener('ended',done,{once:true});video.addEventListener('error',done,{once:true});if(video.readyState>=3)start();else video.addEventListener('canplay',start,{once:true})})}
 
-async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.11.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.12.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();

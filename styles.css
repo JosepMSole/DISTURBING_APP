@@ -2915,3 +2915,58 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .qr-native-stage .qr-live-overlay span{position:absolute;left:4%;right:4%;top:50%;height:1px;background:linear-gradient(90deg,transparent,#8ef4ff,transparent);box-shadow:0 0 8px rgba(142,244,255,.5);animation:qrScanLineV211 1.5s ease-in-out infinite alternate}
 @keyframes qrScanLineV211{from{transform:translateY(-74px);opacity:.42}to{transform:translateY(74px);opacity:1}}
 @media(prefers-reduced-motion:reduce){.qr-native-stage .qr-live-overlay span{animation:none!important}}
+
+/* ============================================================
+   DISTURBING STORIES APP v2.12
+   QR: motor y visor restaurados desde v0.18
+   ============================================================ */
+/* Esta capa anula únicamente las reglas del visor nativo de v2.11.
+   Html5Qrcode vuelve a crear y controlar su propio <video>, como en v0.18. */
+.qr-reader,#qr-reader{
+  width:100%!important;
+  min-height:280px!important;
+  aspect-ratio:auto!important;
+  position:relative!important;
+  display:block!important;
+  overflow:hidden!important;
+  background:#050505!important;
+  border:1px solid #292929!important;
+  border-radius:16px!important;
+  isolation:auto!important;
+}
+.qr-reader video,#qr-reader video{
+  position:static!important;
+  inset:auto!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  width:100%!important;
+  height:auto!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:100%!important;
+  max-height:58svh!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  transform:none!important;
+  -webkit-transform:none!important;
+  background:#050505!important;
+}
+#qr-reader__scan_region{
+  position:relative!important;
+  inset:auto!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  background:#050505!important;
+}
+#qr-reader__dashboard,#qr-reader__dashboard_section{
+  position:relative!important;
+  inset:auto!important;
+  z-index:auto!important;
+  background:#080808!important;
+  color:#ddd!important;
+  border:0!important;
+}
+#qr-reader img{max-width:100%!important}
