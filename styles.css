@@ -3009,3 +3009,58 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .qr-ios-photo-mode span{max-width:340px;font-size:12px;line-height:1.55;color:#b8c7cb;font-weight:600}
 .qr-ios-standalone #startQr{min-height:52px}
 .qr-ios-standalone #unlockStatus{min-height:18px}
+
+/* ============================================================
+   DISTURBING STORIES APP v2.14
+   QR iOS standalone · AUTO-DETECT live con fallback seguro a foto
+   ============================================================ */
+.qr-ios-live-mode{
+  width:min(88%,420px);
+  min-height:210px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-align:center;
+  padding:24px 20px;
+  color:#dce9ec;
+}
+.qr-ios-live-mode strong{font:800 15px/1.2 Oxanium,sans-serif;letter-spacing:.1em;color:#f3d675}
+.qr-ios-live-mode span{max-width:340px;font-size:12px;line-height:1.55;color:#b8c7cb;font-weight:600}
+.qr-ios-live-wrap{
+  position:relative;
+  width:100%;
+  min-height:250px;
+  overflow:hidden;
+  background:#000;
+  display:grid;
+  place-items:center;
+}
+#qrIosLiveVideo{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:250px;
+  max-height:430px;
+  object-fit:cover;
+  background:#000;
+}
+.qr-ios-live-target{
+  position:absolute;
+  left:50%;top:50%;
+  width:min(62vw,220px);height:min(62vw,220px);
+  max-width:220px;max-height:220px;
+  transform:translate(-50%,-50%);
+  border:2px solid rgba(141,239,255,.9);
+  box-shadow:0 0 0 999px rgba(0,0,0,.18),0 0 26px rgba(141,239,255,.18);
+  pointer-events:none;
+}
+.qr-gallery-btn{opacity:.82}
+.qr-fallback-ready{
+  animation:qrFallbackPulse .7s ease-in-out 3;
+}
+@keyframes qrFallbackPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.025);box-shadow:0 0 0 3px rgba(243,214,117,.16),0 0 22px rgba(243,214,117,.18)}
+}

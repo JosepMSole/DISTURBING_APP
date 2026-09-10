@@ -1,7 +1,8 @@
-const APP_VERSION = '2.13.0';
+const APP_VERSION = '2.14.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,qrScanner=null,qrScanBusy=false,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
+let qrIosLiveStream=null,qrIosLiveRaf=0,qrIosLiveCanvas=null,qrIosLiveLastFrame=0,qrIosLiveAttemptToken=0;
 let sagasData={schema:1,sagas:[]},timelineData={schema:1,orders:{}},extrasData={schema:1,extras:[]},playerCatalogData={schema:1,tracks:[]};
 let lastRandomStoryId='',randomSpinTimer=0,randomSpinRunning=false,randomSpinCurrent=null,randomSpinPool=[],tutorialActive=null,introPlayed=false,suppressNewClearOnceId='';
 const unlockSecretsKey='disturbing_unlock_secrets_v2';
@@ -414,26 +415,30 @@ function isIOSStandaloneQrMode(){return isIOSInstall()&&isStandaloneInstall()}
 function qrScanControlsHtml(){
   const iosStandalone=isIOSStandaloneQrMode();
   const monitor=iosStandalone
-    ?`<div class="qr-ios-photo-mode"><div class="qr-ios-photo-mark" aria-hidden="true">QR</div><strong>ESCÁNER iPHONE</strong><span>iOS abrirá la cámara del sistema. Haz una foto del QR y Disturbing Stories App lo analizará automáticamente.</span></div>`
+    ?`<div class="qr-ios-live-mode" id="qrIosLiveMode"><div class="qr-ios-photo-mark" aria-hidden="true">QR</div><strong>AUTO-DETECT iPHONE</strong><span>Intentaremos primero el escáner en directo. Si iOS bloquea el vídeo, pasaremos al método de foto.</span></div>`
     :`<div class="qr-placeholder">CÁMARA</div>`;
-  return `<div class="scan-zone ${iosStandalone?'qr-ios-standalone':''}"><div id="qr-reader" class="qr-reader">${monitor}</div><div id="qr-file-reader" class="qr-file-reader" aria-hidden="true"></div><button class="cta" id="startQr">${iosStandalone?'ABRIR CÁMARA Y ESCANEAR QR':'ACTIVAR ESCÁNER QR'}</button><button class="secondary-btn" id="photoQr" style="margin-top:10px">${iosStandalone?'ELEGIR FOTO DEL QR':'CARGAR IMAGEN DESDE TU ÁLBUM'}</button><input id="qrCameraFile" class="qr-native-input" type="file" accept="image/*" capture="environment"><input id="qrFile" class="qr-native-input" type="file" accept="image/*"><p id="unlockStatus" class="note" style="margin-top:12px"></p></div>`
+  const iosActions=iosStandalone
+    ?`<button class="cta" id="startQr">ACTIVAR AUTO-DETECT QR</button><button class="secondary-btn" id="photoQr" style="margin-top:10px">HACER FOTO DEL QR</button><button class="secondary-btn qr-gallery-btn" id="galleryQr" style="margin-top:8px">ELEGIR FOTO DEL QR</button>`
+    :`<button class="cta" id="startQr">ACTIVAR ESCÁNER QR</button><button class="secondary-btn" id="photoQr" style="margin-top:10px">CARGAR IMAGEN DESDE TU ÁLBUM</button>`;
+  return `<div class="scan-zone ${iosStandalone?'qr-ios-standalone':''}"><div id="qr-reader" class="qr-reader">${monitor}</div><div id="qr-file-reader" class="qr-file-reader" aria-hidden="true"></div>${iosActions}<input id="qrCameraFile" class="qr-native-input" type="file" accept="image/*" capture="environment"><input id="qrFile" class="qr-native-input" type="file" accept="image/*"><p id="unlockStatus" class="note" style="margin-top:12px"></p></div>`
+}
+function openQrNativeCamera(){
+  const camera=$('#qrCameraFile');if(!camera)return false;
+  try{camera.value='';camera.click();return true}catch{return false}
 }
 function bindQrControls(prefill=''){
-  const camera=$('#qrCameraFile'),gallery=$('#qrFile'),start=$('#startQr'),photo=$('#photoQr');
-  if(start)start.onclick=()=>{
+  const camera=$('#qrCameraFile'),gallery=$('#qrFile'),start=$('#startQr'),photo=$('#photoQr'),galleryBtn=$('#galleryQr');
+  if(start)start.onclick=()=>isIOSStandaloneQrMode()?startIosStandaloneAutoDetect(prefill):startQrCamera(prefill);
+  if(photo)photo.onclick=()=>{
     if(isIOSStandaloneQrMode()){
-      if(!camera)return;
-      camera.value='';
       unlockStatus('Haz una foto del QR; se analizará automáticamente al volver.');
-      camera.click();
-      return
-    }
-    startQrCamera(prefill)
+      openQrNativeCamera();
+    }else if(gallery){gallery.value='';gallery.click()}
   };
-  if(photo)photo.onclick=()=>{if(gallery){gallery.value='';gallery.click()}};
+  if(galleryBtn)galleryBtn.onclick=()=>{if(gallery){gallery.value='';gallery.click()}};
   if(camera)camera.onchange=e=>scanQrPhoto(e.target.files?.[0],prefill,'qrCameraFile','camera');
   if(gallery)gallery.onchange=e=>scanQrPhoto(e.target.files?.[0],prefill,'qrFile','album');
-  if(isIOSStandaloneQrMode())requestAnimationFrame(()=>unlockStatus('Modo iPhone instalado: cámara fotográfica + detección automática de QR.'))
+  if(isIOSStandaloneQrMode())requestAnimationFrame(()=>unlockStatus('iPhone instalado: AUTO-DETECT primero · foto instantánea como respaldo.'))
 }
 function showUnlock(prefill=''){
   const meta=prefill?indexData.stories.find(s=>s.id===prefill):null,book=meta?String(Number(meta.book)||meta.book||'—'):'X';
@@ -441,6 +446,109 @@ function showUnlock(prefill=''){
   const instruction=meta?`<div class="scanner-instruction story-specific"><strong>SÓLO EN EL LIBRO ${escapeHtml(book)}</strong><p>Esta Story requiere el QR que aparece junto a este relato en el libro físico. Escanéalo para desbloquearla.</p></div>`:`<div class="scanner-instruction general-unlock"><p>Escanea los QR de todas las Stories de los libros físicos, y desbloquéalas aquí.</p></div>`;
   view.innerHTML=`<section class="unlock-panel section"><div class="eyebrow">Acceso mediante QR</div><h1>Desbloquear Story${prefill?' '+escapeHtml(prefill):''}</h1>${instruction}${qrScanControlsHtml()}${meta?lockedTeaserHtml(meta):''}</section>`;
   bindQrControls(prefill)
+}
+function stopMediaStream(stream){try{stream?.getTracks?.().forEach(t=>t.stop())}catch{}}
+function waitMs(ms){return new Promise(resolve=>setTimeout(resolve,ms))}
+async function cameraPermissionState(){
+  try{if(!navigator.permissions?.query)return'unknown';const r=await navigator.permissions.query({name:'camera'});return r?.state||'unknown'}catch{return'unknown'}
+}
+function getUserMediaWithTimeout(constraints,timeoutMs,token){
+  return new Promise((resolve,reject)=>{
+    if(!navigator.mediaDevices?.getUserMedia){const e=new Error('getUserMedia unavailable');e.name='NotSupportedError';reject(e);return}
+    let settled=false;
+    const timer=setTimeout(()=>{if(settled)return;settled=true;const e=new Error('camera-timeout');e.name='TimeoutError';reject(e)},timeoutMs);
+    let request;
+    try{request=navigator.mediaDevices.getUserMedia(constraints)}catch(e){clearTimeout(timer);settled=true;reject(e);return}
+    Promise.resolve(request).then(stream=>{
+      if(settled||token!==qrIosLiveAttemptToken){stopMediaStream(stream);return}
+      settled=true;clearTimeout(timer);resolve(stream)
+    }).catch(e=>{if(settled)return;settled=true;clearTimeout(timer);reject(e)})
+  })
+}
+function waitForVideoFrame(video,timeoutMs=1800){
+  return new Promise((resolve,reject)=>{
+    const started=performance.now();
+    const tick=()=>{
+      if(video.videoWidth>0&&video.videoHeight>0&&video.readyState>=2){resolve();return}
+      if(performance.now()-started>=timeoutMs){const e=new Error('video-timeout');e.name='TimeoutError';reject(e);return}
+      requestAnimationFrame(tick)
+    };tick()
+  })
+}
+function showIosLiveVideo(stream){
+  const reader=$('#qr-reader');if(!reader)return null;
+  reader.innerHTML='<div class="qr-ios-live-wrap"><video id="qrIosLiveVideo" autoplay muted playsinline></video><div class="qr-ios-live-target" aria-hidden="true"></div></div>';
+  const video=$('#qrIosLiveVideo');if(!video)return null;
+  video.srcObject=stream;return video
+}
+function showIosPhotoFallback(reason=''){
+  const reader=$('#qr-reader');
+  if(reader)reader.innerHTML='<div class="qr-ios-photo-mode"><div class="qr-ios-photo-mark" aria-hidden="true">QR</div><strong>MODO FOTO LISTO</strong><span>Haz una foto del QR. Disturbing Stories App la analizará automáticamente al volver.</span></div>';
+  const btn=$('#photoQr');if(btn){btn.classList.add('qr-fallback-ready');setTimeout(()=>btn.classList.remove('qr-fallback-ready'),2600)}
+  unlockStatus(reason||'AUTO-DETECT no disponible en esta PWA. Pulsa «HACER FOTO DEL QR».')
+}
+async function startIosStandaloneAutoDetect(prefill=''){
+  if(qrScanBusy)return;
+  await stopQrScanner();
+  if(!window.isSecureContext){showIosPhotoFallback('El AUTO-DETECT necesita HTTPS. Usa «HACER FOTO DEL QR».');return}
+  qrScanBusy=true;
+  const token=++qrIosLiveAttemptToken;
+  const permission=await Promise.race([cameraPermissionState(),waitMs(450).then(()=>'unknown')]);
+  const timeoutMs=permission==='granted'?4500:permission==='prompt'?12000:6500;
+  unlockStatus('Intentando AUTO-DETECT en directo…');
+  const decoderPromise=ensureJsQrLibrary();
+  let stream=null;
+  try{
+    stream=await getUserMediaWithTimeout({audio:false,video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720}}},timeoutMs,token);
+    if(token!==qrIosLiveAttemptToken){stopMediaStream(stream);return}
+    qrIosLiveStream=stream;
+    const video=showIosLiveVideo(stream);if(!video)throw new Error('video-element');
+    try{await video.play()}catch{}
+    await waitForVideoFrame(video,2000);
+    if(!await Promise.race([decoderPromise,waitMs(2600).then(()=>false)]))throw new Error('decoder-unavailable');
+    if(token!==qrIosLiveAttemptToken)return;
+    qrIosLiveCanvas=document.createElement('canvas');
+    qrIosLiveLastFrame=0;
+    unlockStatus('CÁMARA ACTIVA · AUTO-DETECT ACTIVO · apunta al QR.');
+    const scan=async now=>{
+      if(token!==qrIosLiveAttemptToken||!qrScanBusy||!qrIosLiveStream)return;
+      qrIosLiveRaf=requestAnimationFrame(scan);
+      if(now-qrIosLiveLastFrame<120||video.readyState<2||!video.videoWidth)return;
+      qrIosLiveLastFrame=now;
+      const maxSide=1000,scale=Math.min(1,maxSide/Math.max(video.videoWidth,video.videoHeight));
+      const w=Math.max(1,Math.round(video.videoWidth*scale)),h=Math.max(1,Math.round(video.videoHeight*scale));
+      const canvas=qrIosLiveCanvas;canvas.width=w;canvas.height=h;
+      const ctx=canvas.getContext('2d',{willReadFrequently:true});if(!ctx)return;
+      try{
+        ctx.drawImage(video,0,0,w,h);
+        const frame=ctx.getImageData(0,0,w,h);
+        const hit=window.jsQR(frame.data,w,h,{inversionAttempts:'attemptBoth'});
+        const decoded=String(hit?.data||'').trim();
+        if(decoded){
+          qrScanBusy=false;
+          await stopIosQrLive();
+          await tryUnlock(decoded,prefill)
+        }
+      }catch{}
+    };
+    qrIosLiveRaf=requestAnimationFrame(scan)
+  }catch(e){
+    console.warn('QR v2.14 iOS live fallback',e);
+    if(token!==qrIosLiveAttemptToken){stopMediaStream(stream);return}
+    qrScanBusy=false;
+    await stopIosQrLive();
+    showIosPhotoFallback('iOS no ha entregado vídeo al AUTO-DETECT. Abriendo el modo foto…');
+    // Best effort: algunos iPhone aceptan todavía esta apertura; si iOS la bloquea,
+    // el botón HACER FOTO DEL QR queda resaltado y funciona mediante un nuevo toque.
+    setTimeout(()=>{if(document.visibilityState==='visible')openQrNativeCamera()},80)
+  }
+}
+async function stopIosQrLive(){
+  qrIosLiveAttemptToken++;
+  if(qrIosLiveRaf){cancelAnimationFrame(qrIosLiveRaf);qrIosLiveRaf=0}
+  const stream=qrIosLiveStream;qrIosLiveStream=null;stopMediaStream(stream);
+  const video=$('#qrIosLiveVideo');if(video){try{video.pause()}catch{};try{video.srcObject=null}catch{}}
+  qrIosLiveCanvas=null;qrIosLiveLastFrame=0
 }
 async function ensureQrLibrary(){
   if(typeof Html5Qrcode!=='undefined')return true;
@@ -462,7 +570,7 @@ async function ensureQrLibrary(){
   })
 }
 async function startQrCamera(prefill=''){
-  if(isIOSStandaloneQrMode()){const camera=$('#qrCameraFile');if(camera){camera.value='';camera.click()}return}
+  if(isIOSStandaloneQrMode()){await startIosStandaloneAutoDetect(prefill);return}
   if(qrScanBusy)return;
   if(!window.isSecureContext){unlockStatus('El escáner en directo necesita HTTPS.');return}
   if(!await ensureQrLibrary()){
@@ -596,7 +704,7 @@ async function scanQrPhoto(file,prefill='',inputId='qrFile',sourceKind='album'){
   unlockStatus(sourceKind==='camera'?'Analizando la foto del QR…':'Analizando QR…');
   try{
     let decoded='';
-    try{decoded=await decodeQrPhotoWithJsQr(file)}catch(e){console.warn('QR v2.13 jsQR photo',e)}
+    try{decoded=await decodeQrPhotoWithJsQr(file)}catch(e){console.warn('QR v2.14 jsQR photo',e)}
     if(!decoded)decoded=await decodeQrPhotoWithHtml5(file);
     if(decoded){await tryUnlock(decoded,prefill);return}
     unlockStatus('No se ha detectado un QR válido. Acerca más el QR, céntralo y vuelve a hacer la foto.')
@@ -605,6 +713,7 @@ async function scanQrPhoto(file,prefill='',inputId='qrFile',sourceKind='album'){
   }
 }
 async function stopQrScanner(){
+  await stopIosQrLive();
   const s=qrScanner;
   qrScanner=null;
   qrScanBusy=false;
@@ -771,9 +880,9 @@ function spotifyCompanionHtml(){return `<a class="spotify-companion" href="https
 
 function maybeAutoTutorial(){return}
 
-function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><div class="eyebrow">PREPARADO PARA FUTURA ITERACIÓN</div><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong><p>La entrada visual ya forma parte de Disturbing Stories App v2.13. Su contenido se desarrollará en una iteración posterior.</p></div></section>`}
+function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><div class="eyebrow">PREPARADO PARA FUTURA ITERACIÓN</div><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong><p>La entrada visual ya forma parte de Disturbing Stories App v2.14. Su contenido se desarrollará en una iteración posterior.</p></div></section>`}
 
 async function playEntryIntro(){const onceKey='disturbing_intro_played_session_v26';if(introPlayed||sessionStorage.getItem(onceKey)==='1')return;introPlayed=true;sessionStorage.setItem(onceKey,'1');const layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return;layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0}catch{}return new Promise(resolve=>{const done=()=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}layer.classList.add('intro-out');setTimeout(()=>{layer.classList.add('hidden');layer.classList.remove('intro-out');layer.setAttribute('aria-hidden','true');resolve()},220)};const start=()=>{clearTimeout(fallback);const p=video.play();if(p&&typeof p.catch==='function')p.catch(done)};const fallback=setTimeout(done,2500);layer.onclick=done;video.addEventListener('ended',done,{once:true});video.addEventListener('error',done,{once:true});if(video.readyState>=3)start();else video.addEventListener('canplay',start,{once:true})})}
 
-async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.13.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.14.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
