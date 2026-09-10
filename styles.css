@@ -2309,3 +2309,81 @@ body{background:#020507!important}
 /* v2.3 · también en Timeline/Sagas el candado conserva exactamente la métrica común. */
 .timeline-poster>.ex-badge,.saga-part-poster>.ex-badge{width:29px!important;height:29px!important}
 .timeline-poster>.ex-badge .lock-svg,.saga-part-poster>.ex-badge .lock-svg{width:17px!important;height:17px!important;stroke-width:1.9!important}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v2.4
+   QR live scanner · locked Story · badge · unlock reward · intro
+   ============================================================ */
+
+/* Locked Story poster: always complete, centered and never cropped. */
+.locked-story-page .story-featured{
+  width:100%!important;
+  max-width:min(520px,100%)!important;
+  min-height:0!important;
+  display:grid!important;
+  place-items:center!important;
+  background:#050505!important;
+  overflow:hidden!important;
+  border-radius:12px!important;
+}
+.locked-story-page .story-featured>img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:100%!important;
+  max-height:68svh!important;
+  margin:auto!important;
+  object-fit:contain!important;
+  object-position:50% 50%!important;
+}
+
+/* Scanner v2.4: smaller live camera zone, centered. */
+.unlock-panel .qr-reader{
+  width:min(82vw,360px)!important;
+  min-height:220px!important;
+  aspect-ratio:1/1!important;
+  margin:0 auto 14px!important;
+  border-radius:14px!important;
+}
+.unlock-panel .qr-reader video{
+  width:100%!important;
+  height:100%!important;
+  max-height:none!important;
+  object-fit:cover!important;
+}
+.unlock-panel .locked-teaser{margin:22px auto 4px!important;max-width:560px!important}
+.unlock-panel .locked-teaser>.eyebrow{text-align:center!important}
+
+/* Badge permission reminder: gold, alive but not distracting. */
+.badge-permission-panel{
+  border-color:#b99a3e!important;
+  box-shadow:0 0 0 1px rgba(255,215,93,.10),0 0 18px rgba(211,171,58,.12)!important;
+  animation:badgeReminderGoldV24 2.7s ease-in-out infinite!important;
+}
+.badge-permission-panel strong{color:#ffe394!important}
+@keyframes badgeReminderGoldV24{
+  0%,100%{border-color:#806b2c;box-shadow:0 0 0 1px rgba(255,215,93,.05),0 0 10px rgba(211,171,58,.07);transform:translateZ(0)}
+  50%{border-color:#e0bd50;box-shadow:0 0 0 1px rgba(255,226,119,.22),0 0 24px rgba(223,181,63,.26);transform:translateZ(0)}
+}
+
+/* Unlock reward: poster appears above the confirmation and fades first. */
+.unlock-reward-stack{position:relative;z-index:2;display:grid;justify-items:center;gap:14px;width:min(90vw,430px)}
+.unlock-reward-poster{width:min(38vw,150px);max-height:42vh;opacity:0;transform:translateY(12px) scale(.94);transition:opacity .38s ease,transform .38s ease,filter .42s ease;filter:brightness(.9);filter:drop-shadow(0 18px 30px rgba(0,0,0,.58))}
+.unlock-reward-poster img{display:block;width:100%;height:auto;max-height:42vh;object-fit:contain;border-radius:8px;border:1px solid #41656e;background:#05090a}
+.unlock-reward.show .unlock-reward-poster{opacity:1;transform:translateY(0) scale(1)}
+.unlock-reward-poster.fade-poster{opacity:0!important;transform:translateY(-8px) scale(.97)!important;filter:blur(2px) brightness(.65)!important}
+.unlock-reward-card{width:100%!important}
+
+/* Desktop/Windows: preserve the authored 9:16 intro frame in full. */
+@media (min-width:700px) and (orientation:landscape){
+  .intro-video{
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    background:#000!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){.badge-permission-panel{animation:none!important}.unlock-reward-poster{transition:none!important}}
