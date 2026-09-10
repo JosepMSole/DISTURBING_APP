@@ -2970,3 +2970,42 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
   border:0!important;
 }
 #qr-reader img{max-width:100%!important}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v2.13
+   QR iOS standalone safe · cámara nativa + foto normalizada + jsQR
+   ============================================================ */
+.qr-ios-standalone .qr-reader,
+.qr-ios-standalone #qr-reader{
+  min-height:250px!important;
+  display:grid!important;
+  place-items:center!important;
+  background:radial-gradient(circle at 50% 40%,rgba(33,95,108,.18),transparent 55%),#030708!important;
+  border-color:#315965!important;
+}
+.qr-ios-photo-mode{
+  width:min(88%,420px);
+  min-height:210px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-align:center;
+  padding:24px 20px;
+  color:#dce9ec;
+}
+.qr-ios-photo-mark{
+  width:72px;height:72px;
+  display:grid;place-items:center;
+  border:2px solid #8defff;
+  box-shadow:0 0 0 6px rgba(141,239,255,.045),0 0 25px rgba(141,239,255,.13);
+  font:900 22px/1 Oxanium,sans-serif;
+  letter-spacing:.08em;
+  color:#b9f6ff;
+}
+.qr-ios-photo-mode strong{font:800 15px/1.2 Oxanium,sans-serif;letter-spacing:.1em;color:#f3d675}
+.qr-ios-photo-mode span{max-width:340px;font-size:12px;line-height:1.55;color:#b8c7cb;font-weight:600}
+.qr-ios-standalone #startQr{min-height:52px}
+.qr-ios-standalone #unlockStatus{min-height:18px}

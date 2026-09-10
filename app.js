@@ -1,4 +1,4 @@
-const APP_VERSION = '2.12.0';
+const APP_VERSION = '2.13.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,qrScanner=null,qrScanBusy=false,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -377,8 +377,8 @@ function publicTeaserSource(s){
 }
 function lockedTeaserHtml(s,hero=false){const src=publicTeaserSource(s),embed=youtubeEmbedUrl(src);if(!embed)return'';const cls=hero?'locked-hero-teaser':'locked-teaser';return `<section class="${cls}">${hero?'':'<div class="eyebrow">TEASER</div>'}<div class="locked-teaser-video"><iframe src="${escAttr(embed)}" title="Teaser Story ${escAttr(s.id)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="${hero?'eager':'lazy'}" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></section>`}
 function lockedHeroMedia(s){const teaser=lockedTeaserHtml(s,true);return teaser||`<section class="locked-hero-teaser teaser-unavailable"><div class="locked-teaser-video teaser-placeholder"><span>TEASER</span><small>Actualiza los metadatos desde el Importer para publicar la excepción pública de esta Story.</small></div></section>`}
-function renderLocked(s,msg=''){const book=String(Number(s.book)||s.book||'—');return `<section class="locked-story-page"><div class="locked-main-lock" aria-label="Story bloqueada">${lockSvg(false)}</div>${lockedHeroMedia(s)}${msg?`<p class="locked-error-note">${escapeHtml(msg)}</p>`:''}<section class="unlock-panel locked-inline-unlock"><div class="scanner-instruction story-specific"><strong>SÓLO EN EL LIBRO ${escapeHtml(book)}</strong><p>Esta Story requiere el QR que aparece junto a este relato en el libro físico. Escanéalo para desbloquearla.</p></div><div class="scan-zone"><div id="qr-reader" class="qr-reader"><div class="qr-placeholder">CÁMARA</div></div><div id="qr-file-reader" class="qr-file-reader" aria-hidden="true"></div><button class="cta" id="startQr">ACTIVAR ESCÁNER QR</button><button class="secondary-btn" id="photoQr" style="margin-top:10px">CARGAR IMAGEN DESDE TU ÁLBUM</button><input id="qrFile" class="qr-native-input" type="file" accept="image/*"><p id="unlockStatus" class="note" style="margin-top:12px"></p></div></section></section>`}
-function bindInlineUnlock(prefill){const gallery=$('#qrFile');const start=$('#startQr'),photo=$('#photoQr');if(start)start.onclick=()=>startQrCamera(prefill);if(photo)photo.onclick=()=>gallery?.click();if(gallery)gallery.onchange=e=>scanQrPhoto(e.target.files?.[0],prefill,'qrFile')}
+function renderLocked(s,msg=''){const book=String(Number(s.book)||s.book||'—');return `<section class="locked-story-page"><div class="locked-main-lock" aria-label="Story bloqueada">${lockSvg(false)}</div>${lockedHeroMedia(s)}${msg?`<p class="locked-error-note">${escapeHtml(msg)}</p>`:''}<section class="unlock-panel locked-inline-unlock"><div class="scanner-instruction story-specific"><strong>SÓLO EN EL LIBRO ${escapeHtml(book)}</strong><p>Esta Story requiere el QR que aparece junto a este relato en el libro físico. Escanéalo para desbloquearla.</p></div>${qrScanControlsHtml()}</section></section>`}
+function bindInlineUnlock(prefill){bindQrControls(prefill)}
 function drawTab(){const tab=currentStory.tabs?.[currentTab];if(!tab)return;$$('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===currentTab));const mediaOnly=isVideoOnlyTab(currentTab,tab),isTeaser=/teaser|trailer/i.test(`${currentTab} ${tab?.label||''}`);let blocks=mediaOnly?(tab.blocks||[]).filter(b=>b.type==='iframe'||b.type==='video'):[...(tab.blocks||[])];if(currentTab==='read'&&currentStory.featuredImage)blocks=blocks.filter(b=>!(b.type==='image'&&b.src===currentStory.featuredImage));const reader=$('#reader');reader.classList.toggle('teaser-reader',isTeaser);reader.innerHTML=blocks.length?blocks.map(renderBlock).join(''):'<div class="empty">Esta sección no contiene material.</div>';bindReaderMedia();const topBtn=$('#toTopHeaderBtn');if(topBtn)topBtn.classList.remove('hidden');const progress=$('.progress-wrap');if(progress)progress.classList.toggle('hidden',currentTab!=='read');const header=$('.story-header');if(currentTab==='read'&&resumeOnOpen){resumeOnOpen=false;storyInitialOpen=false;requestAnimationFrame(()=>restoreReadPosition(currentStory.id));}else if(currentTab==='read'&&storyInitialOpen){storyInitialOpen=false;requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}));}else if(header)scrollTo({top:Math.max(0,header.offsetHeight-20),behavior:'smooth'});requestAnimationFrame(updateProgress)}
 function isVideoOnlyTab(key,tab){const label=`${key} ${tab?.label||''}`.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();return /(^|\s|[-_/])(audio|video|corto|escuchar|listen)(\s|$|[-_/])/.test(label)}
 function renderBlock(b){if(b.type==='p')return `<p>${escapeHtml(b.text)}</p>`;if(b.type==='image_link')return `<a class="reader-linked-image" href="${escAttr(b.href)}" target="_blank" rel="noopener noreferrer" aria-label="Abrir contenido enlazado"><figure class="reader-image linked"><img src="${escAttr(b.src)}" alt="${escAttr(b.alt||'')}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${b.caption?`<figcaption>${escapeHtml(b.caption)}</figcaption>`:''}</figure></a>`;if(b.type==='image')return `<figure class="reader-image"><img src="${escAttr(b.src)}" alt="${escAttr(b.alt||'')}" loading="lazy" decoding="async" referrerpolicy="no-referrer">${b.caption?`<figcaption>${escapeHtml(b.caption)}</figcaption>`:''}</figure>`;if(b.type==='iframe')return `<div class="reader-media"><iframe src="${escAttr(b.src)}" title="${escAttr(b.title||'Contenido multimedia')}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;if(b.type==='video')return `<div class="reader-media"><video controls playsinline preload="metadata" src="${escAttr(b.src)}"></video></div>`;if(b.type==='audio')return `<div class="reader-media"><audio controls preload="metadata" src="${escAttr(b.src)}"></audio></div>`;if(b.type==='note')return `<p class="note">${escapeHtml(b.text)}</p>`;if(b.type==='heading')return `<h2>${escapeHtml(b.text)}</h2>`;if(b.type==='quote')return `<blockquote>${escapeHtml(b.text)}</blockquote>`;if(b.type==='link')return `<p><a href="${escAttr(b.href)}" target="_blank" rel="noopener">${escapeHtml(b.text||'Abrir contenido')} ↗</a></p>`;return ''}
@@ -410,15 +410,37 @@ function restoreReadPosition(id){
   const images=[...r.querySelectorAll('img')];if(!images.length)return setTimeout(doRestore,30);let left=images.filter(i=>!i.complete).length;if(!left)return setTimeout(doRestore,30);const done=()=>{left--;if(left<=0)setTimeout(doRestore,20)};images.filter(i=>!i.complete).forEach(i=>{i.addEventListener('load',done,{once:true});i.addEventListener('error',done,{once:true})});setTimeout(doRestore,900);
 }
 
+function isIOSStandaloneQrMode(){return isIOSInstall()&&isStandaloneInstall()}
+function qrScanControlsHtml(){
+  const iosStandalone=isIOSStandaloneQrMode();
+  const monitor=iosStandalone
+    ?`<div class="qr-ios-photo-mode"><div class="qr-ios-photo-mark" aria-hidden="true">QR</div><strong>ESCÁNER iPHONE</strong><span>iOS abrirá la cámara del sistema. Haz una foto del QR y Disturbing Stories App lo analizará automáticamente.</span></div>`
+    :`<div class="qr-placeholder">CÁMARA</div>`;
+  return `<div class="scan-zone ${iosStandalone?'qr-ios-standalone':''}"><div id="qr-reader" class="qr-reader">${monitor}</div><div id="qr-file-reader" class="qr-file-reader" aria-hidden="true"></div><button class="cta" id="startQr">${iosStandalone?'ABRIR CÁMARA Y ESCANEAR QR':'ACTIVAR ESCÁNER QR'}</button><button class="secondary-btn" id="photoQr" style="margin-top:10px">${iosStandalone?'ELEGIR FOTO DEL QR':'CARGAR IMAGEN DESDE TU ÁLBUM'}</button><input id="qrCameraFile" class="qr-native-input" type="file" accept="image/*" capture="environment"><input id="qrFile" class="qr-native-input" type="file" accept="image/*"><p id="unlockStatus" class="note" style="margin-top:12px"></p></div>`
+}
+function bindQrControls(prefill=''){
+  const camera=$('#qrCameraFile'),gallery=$('#qrFile'),start=$('#startQr'),photo=$('#photoQr');
+  if(start)start.onclick=()=>{
+    if(isIOSStandaloneQrMode()){
+      if(!camera)return;
+      camera.value='';
+      unlockStatus('Haz una foto del QR; se analizará automáticamente al volver.');
+      camera.click();
+      return
+    }
+    startQrCamera(prefill)
+  };
+  if(photo)photo.onclick=()=>{if(gallery){gallery.value='';gallery.click()}};
+  if(camera)camera.onchange=e=>scanQrPhoto(e.target.files?.[0],prefill,'qrCameraFile','camera');
+  if(gallery)gallery.onchange=e=>scanQrPhoto(e.target.files?.[0],prefill,'qrFile','album');
+  if(isIOSStandaloneQrMode())requestAnimationFrame(()=>unlockStatus('Modo iPhone instalado: cámara fotográfica + detección automática de QR.'))
+}
 function showUnlock(prefill=''){
   const meta=prefill?indexData.stories.find(s=>s.id===prefill):null,book=meta?String(Number(meta.book)||meta.book||'—'):'X';
   updateSectionIndicator('unlock');
   const instruction=meta?`<div class="scanner-instruction story-specific"><strong>SÓLO EN EL LIBRO ${escapeHtml(book)}</strong><p>Esta Story requiere el QR que aparece junto a este relato en el libro físico. Escanéalo para desbloquearla.</p></div>`:`<div class="scanner-instruction general-unlock"><p>Escanea los QR de todas las Stories de los libros físicos, y desbloquéalas aquí.</p></div>`;
-  view.innerHTML=`<section class="unlock-panel section"><div class="eyebrow">Acceso mediante QR</div><h1>Desbloquear Story${prefill?' '+escapeHtml(prefill):''}</h1>${instruction}<div class="scan-zone"><div id="qr-reader" class="qr-reader"><div class="qr-placeholder">CÁMARA</div></div><div id="qr-file-reader" class="qr-file-reader" aria-hidden="true"></div><button class="cta" id="startQr">ACTIVAR ESCÁNER QR</button><button class="secondary-btn" id="photoQr" style="margin-top:10px">CARGAR IMAGEN DESDE TU ÁLBUM</button><input id="qrFile" class="qr-native-input" type="file" accept="image/*"><p id="unlockStatus" class="note" style="margin-top:12px"></p></div>${meta?lockedTeaserHtml(meta):''}</section>`;
-  const gallery=$('#qrFile');
-  $('#startQr').onclick=()=>startQrCamera(prefill);
-  $('#photoQr').onclick=()=>gallery?.click();
-  gallery.onchange=e=>scanQrPhoto(e.target.files?.[0],prefill,'qrFile');
+  view.innerHTML=`<section class="unlock-panel section"><div class="eyebrow">Acceso mediante QR</div><h1>Desbloquear Story${prefill?' '+escapeHtml(prefill):''}</h1>${instruction}${qrScanControlsHtml()}${meta?lockedTeaserHtml(meta):''}</section>`;
+  bindQrControls(prefill)
 }
 async function ensureQrLibrary(){
   if(typeof Html5Qrcode!=='undefined')return true;
@@ -440,6 +462,7 @@ async function ensureQrLibrary(){
   })
 }
 async function startQrCamera(prefill=''){
+  if(isIOSStandaloneQrMode()){const camera=$('#qrCameraFile');if(camera){camera.value='';camera.click()}return}
   if(qrScanBusy)return;
   if(!window.isSecureContext){unlockStatus('El escáner en directo necesita HTTPS.');return}
   if(!await ensureQrLibrary()){
@@ -479,23 +502,104 @@ async function startQrCamera(prefill=''){
     unlockStatus('No se pudo abrir el escáner en directo. Usa «CARGAR IMAGEN DESDE TU ÁLBUM».')
   }
 }
-async function scanQrPhoto(file,prefill='',inputId='qrFile'){
-  if(!file)return;
-  await stopQrScanner();
-  if(!await ensureQrLibrary()){
-    unlockStatus('No se ha podido cargar el lector QR.');
-    return
+async function ensureJsQrLibrary(){
+  if(typeof window.jsQR==='function')return true;
+  const sources=[
+    'https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js',
+    'https://unpkg.com/jsqr@1.4.0/dist/jsQR.js'
+  ];
+  for(let i=0;i<sources.length;i++){
+    if(typeof window.jsQR==='function')return true;
+    const src=sources[i];
+    document.querySelectorAll(`script[data-jsqr-lib="${i}"]`).forEach(x=>x.remove());
+    const ok=await new Promise(resolve=>{
+      const sc=document.createElement('script');
+      sc.src=src;sc.async=true;sc.dataset.jsqrLib=String(i);
+      sc.onload=()=>resolve(typeof window.jsQR==='function');
+      sc.onerror=()=>resolve(false);
+      document.head.append(sc)
+    });
+    if(ok)return true
   }
-  unlockStatus('Analizando QR…');
+  return false
+}
+async function loadQrPhotoSource(file){
+  let objectUrl='';
+  try{
+    objectUrl=URL.createObjectURL(file);
+    const img=new Image();img.decoding='async';
+    await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=()=>reject(new Error('image-decode'));img.src=objectUrl});
+    if(img.naturalWidth&&img.naturalHeight)return{source:img,width:img.naturalWidth,height:img.naturalHeight,cleanup:()=>URL.revokeObjectURL(objectUrl)}
+  }catch(e){if(objectUrl)URL.revokeObjectURL(objectUrl)}
+  if('createImageBitmap'in window){
+    try{
+      let bitmap;
+      try{bitmap=await createImageBitmap(file,{imageOrientation:'from-image'})}catch{bitmap=await createImageBitmap(file)}
+      if(bitmap?.width&&bitmap?.height)return{source:bitmap,width:bitmap.width,height:bitmap.height,cleanup:()=>{try{bitmap.close()}catch{}}}
+    }catch{}
+  }
+  throw new Error('No se pudo abrir la fotografía')
+}
+function renderQrCandidate(source,sourceW,sourceH,cropRatio=1,maxSide=1800,rotation=0){
+  const crop=Math.max(.45,Math.min(1,cropRatio));
+  const sw=Math.max(1,Math.round(sourceW*crop)),sh=Math.max(1,Math.round(sourceH*crop));
+  const sx=Math.max(0,Math.round((sourceW-sw)/2)),sy=Math.max(0,Math.round((sourceH-sh)/2));
+  const scale=Math.min(1,maxSide/Math.max(sw,sh));
+  const dw=Math.max(1,Math.round(sw*scale)),dh=Math.max(1,Math.round(sh*scale));
+  const turns=((rotation%360)+360)%360;
+  const quarter=turns===90||turns===270;
+  const canvas=document.createElement('canvas');canvas.width=quarter?dh:dw;canvas.height=quarter?dw:dh;
+  const ctx=canvas.getContext('2d',{willReadFrequently:true});if(!ctx)return null;
+  ctx.imageSmoothingEnabled=true;try{ctx.imageSmoothingQuality='high'}catch{}
+  ctx.save();ctx.translate(canvas.width/2,canvas.height/2);ctx.rotate(turns*Math.PI/180);ctx.drawImage(source,sx,sy,sw,sh,-dw/2,-dh/2,dw,dh);ctx.restore();
+  return canvas
+}
+function decodeQrCanvasJsQr(canvas){
+  if(!canvas||typeof window.jsQR!=='function')return'';
+  const ctx=canvas.getContext('2d',{willReadFrequently:true});if(!ctx)return'';
+  try{
+    const frame=ctx.getImageData(0,0,canvas.width,canvas.height);
+    const hit=window.jsQR(frame.data,frame.width,frame.height,{inversionAttempts:'attemptBoth'});
+    return String(hit?.data||'').trim()
+  }catch{return''}
+}
+async function decodeQrPhotoWithJsQr(file){
+  const loaded=await ensureJsQrLibrary();if(!loaded)return'';
+  const img=await loadQrPhotoSource(file);
+  try{
+    const candidates=[
+      [1,1600,0],[.82,1800,0],[.62,1800,0],[1,2200,0],
+      [1,1400,90],[1,1400,180],[1,1400,270],
+      [.78,1700,90],[.78,1700,270]
+    ];
+    for(const [crop,maxSide,rotation] of candidates){
+      const canvas=renderQrCandidate(img.source,img.width,img.height,crop,maxSide,rotation);
+      const decoded=decodeQrCanvasJsQr(canvas);if(decoded)return decoded;
+      await new Promise(requestAnimationFrame)
+    }
+    return''
+  }finally{try{img.cleanup?.()}catch{}}
+}
+async function decodeQrPhotoWithHtml5(file){
+  if(!await ensureQrLibrary())return'';
   let scanner=null;
   try{
     scanner=new Html5Qrcode('qr-file-reader');
     const decoded=await scanner.scanFile(file,true);
-    await scanner.clear();
-    await tryUnlock(decoded,prefill)
-  }catch(e){
-    try{await scanner?.clear()}catch{}
-    unlockStatus('No se ha podido leer un QR válido en esa imagen.')
+    try{await scanner.clear()}catch{}
+    return String(decoded||'').trim()
+  }catch(e){try{await scanner?.clear()}catch{};return''}
+}
+async function scanQrPhoto(file,prefill='',inputId='qrFile',sourceKind='album'){
+  if(!file)return;
+  await stopQrScanner();
+  unlockStatus(sourceKind==='camera'?'Analizando la foto del QR…':'Analizando QR…');
+  try{
+    let decoded='';
+    try{decoded=await decodeQrPhotoWithJsQr(file)}catch(e){console.warn('QR v2.13 jsQR photo',e)}
+    if(!decoded)decoded=await decodeQrPhotoWithHtml5(file);
+    if(decoded){await tryUnlock(decoded,prefill);return}
+    unlockStatus('No se ha detectado un QR válido. Acerca más el QR, céntralo y vuelve a hacer la foto.')
   }finally{
     const f=$('#'+inputId);if(f)f.value=''
   }
@@ -667,9 +771,9 @@ function spotifyCompanionHtml(){return `<a class="spotify-companion" href="https
 
 function maybeAutoTutorial(){return}
 
-function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><div class="eyebrow">PREPARADO PARA FUTURA ITERACIÓN</div><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong><p>La entrada visual ya forma parte de Disturbing Stories App v2.12. Su contenido se desarrollará en una iteración posterior.</p></div></section>`}
+function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><div class="eyebrow">PREPARADO PARA FUTURA ITERACIÓN</div><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong><p>La entrada visual ya forma parte de Disturbing Stories App v2.13. Su contenido se desarrollará en una iteración posterior.</p></div></section>`}
 
 async function playEntryIntro(){const onceKey='disturbing_intro_played_session_v26';if(introPlayed||sessionStorage.getItem(onceKey)==='1')return;introPlayed=true;sessionStorage.setItem(onceKey,'1');const layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return;layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0}catch{}return new Promise(resolve=>{const done=()=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}layer.classList.add('intro-out');setTimeout(()=>{layer.classList.add('hidden');layer.classList.remove('intro-out');layer.setAttribute('aria-hidden','true');resolve()},220)};const start=()=>{clearTimeout(fallback);const p=video.play();if(p&&typeof p.catch==='function')p.catch(done)};const fallback=setTimeout(done,2500);layer.onclick=done;video.addEventListener('ended',done,{once:true});video.addEventListener('error',done,{once:true});if(video.readyState>=3)start();else video.addEventListener('canplay',start,{once:true})})}
 
-async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.12.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.13.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
