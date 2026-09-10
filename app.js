@@ -1,4 +1,4 @@
-const APP_VERSION = '2.9.0';
+const APP_VERSION = '2.10.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,qrScanner=null,qrScanBusy=false,qrLiveStream=null,qrLiveTimer=0,qrLiveDecodeBusy=false,qrFrameDecoder=null,qrLiveCanvas=null,qrCameraAttempt=0,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -377,7 +377,7 @@ function publicTeaserSource(s){
 }
 function lockedTeaserHtml(s,hero=false){const src=publicTeaserSource(s),embed=youtubeEmbedUrl(src);if(!embed)return'';const cls=hero?'locked-hero-teaser':'locked-teaser';return `<section class="${cls}">${hero?'':'<div class="eyebrow">TEASER</div>'}<div class="locked-teaser-video"><iframe src="${escAttr(embed)}" title="Teaser Story ${escAttr(s.id)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="${hero?'eager':'lazy'}" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></section>`}
 function lockedHeroMedia(s){const teaser=lockedTeaserHtml(s,true);return teaser||`<section class="locked-hero-teaser teaser-unavailable"><div class="locked-teaser-video teaser-placeholder"><span>TEASER</span><small>Actualiza los metadatos desde el Importer para publicar la excepción pública de esta Story.</small></div></section>`}
-function renderLocked(s,msg=''){const book=String(Number(s.book)||s.book||'—');return `<section class="locked-story-page"><div class="locked-main-lock" aria-label="Story bloqueada">${lockSvg(false)}</div>${lockedHeroMedia(s)}${msg?`<p class="locked-error-note">${escapeHtml(msg)}</p>`:''}<section class="unlock-panel locked-inline-unlock"><div class="scanner-instruction story-specific"><strong>SÓLO EN EL LIBRO ${escapeHtml(book)}</strong><p>Esta Story requiere el QR que aparece junto a este relato en el libro físico. Escanéalo para desbloquearla.</p></div><div class="scan-zone"><div id="qr-reader" class="qr-reader qr-reader-live"><div class="qr-placeholder">CÁMARA</div></div><div id="qr-file-reader" class="qr-file-reader" aria-hidden="true"></div><button class="cta" id="startQr">ACTIVAR ESCÁNER QR</button><button class="secondary-btn" id="photoQr" style="margin-top:10px">CARGAR IMAGEN DESDE TU ÁLBUM</button><input id="qrFile" class="qr-native-input" type="file" accept="image/*"><p id="unlockStatus" class="note" style="margin-top:12px"></p></div></section></section>`}
+function renderLocked(s,msg=''){const book=String(Number(s.book)||s.book||'—');return `<section class="locked-story-page"><div class="locked-main-lock" aria-label="Story bloqueada">${lockSvg(false)}</div>${lockedHeroMedia(s)}${msg?`<p class="locked-error-note">${escapeHtml(msg)}</p>`:''}<section class="unlock-panel locked-inline-unlock"><div class="scanner-instruction story-specific"><strong>SÓLO EN EL LIBRO ${escapeHtml(book)}</strong><p>Esta Story requiere el QR que aparece junto a este relato en el libro físico. Escanéalo para desbloquearla.</p></div><div class="scan-zone"><div id="qr-reader" class="qr-reader"><div class="qr-placeholder">CÁMARA</div></div><div id="qr-file-reader" class="qr-file-reader" aria-hidden="true"></div><button class="cta" id="startQr">ACTIVAR ESCÁNER QR</button><button class="secondary-btn" id="photoQr" style="margin-top:10px">CARGAR IMAGEN DESDE TU ÁLBUM</button><input id="qrFile" class="qr-native-input" type="file" accept="image/*"><p id="unlockStatus" class="note" style="margin-top:12px"></p></div></section></section>`}
 function bindInlineUnlock(prefill){const gallery=$('#qrFile');const start=$('#startQr'),photo=$('#photoQr');if(start)start.onclick=()=>startQrCamera(prefill);if(photo)photo.onclick=()=>gallery?.click();if(gallery)gallery.onchange=e=>scanQrPhoto(e.target.files?.[0],prefill,'qrFile')}
 function drawTab(){const tab=currentStory.tabs?.[currentTab];if(!tab)return;$$('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===currentTab));const mediaOnly=isVideoOnlyTab(currentTab,tab),isTeaser=/teaser|trailer/i.test(`${currentTab} ${tab?.label||''}`);let blocks=mediaOnly?(tab.blocks||[]).filter(b=>b.type==='iframe'||b.type==='video'):[...(tab.blocks||[])];if(currentTab==='read'&&currentStory.featuredImage)blocks=blocks.filter(b=>!(b.type==='image'&&b.src===currentStory.featuredImage));const reader=$('#reader');reader.classList.toggle('teaser-reader',isTeaser);reader.innerHTML=blocks.length?blocks.map(renderBlock).join(''):'<div class="empty">Esta sección no contiene material.</div>';bindReaderMedia();const topBtn=$('#toTopHeaderBtn');if(topBtn)topBtn.classList.remove('hidden');const progress=$('.progress-wrap');if(progress)progress.classList.toggle('hidden',currentTab!=='read');const header=$('.story-header');if(currentTab==='read'&&resumeOnOpen){resumeOnOpen=false;storyInitialOpen=false;requestAnimationFrame(()=>restoreReadPosition(currentStory.id));}else if(currentTab==='read'&&storyInitialOpen){storyInitialOpen=false;requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}));}else if(header)scrollTo({top:Math.max(0,header.offsetHeight-20),behavior:'smooth'});requestAnimationFrame(updateProgress)}
 function isVideoOnlyTab(key,tab){const label=`${key} ${tab?.label||''}`.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();return /(^|\s|[-_/])(audio|video|corto|escuchar|listen)(\s|$|[-_/])/.test(label)}
@@ -414,7 +414,7 @@ function showUnlock(prefill=''){
   const meta=prefill?indexData.stories.find(s=>s.id===prefill):null,book=meta?String(Number(meta.book)||meta.book||'—'):'X';
   updateSectionIndicator('unlock');
   const instruction=meta?`<div class="scanner-instruction story-specific"><strong>SÓLO EN EL LIBRO ${escapeHtml(book)}</strong><p>Esta Story requiere el QR que aparece junto a este relato en el libro físico. Escanéalo para desbloquearla.</p></div>`:`<div class="scanner-instruction general-unlock"><p>Escanea los QR de todas las Stories de los libros físicos, y desbloquéalas aquí.</p></div>`;
-  view.innerHTML=`<section class="unlock-panel section"><div class="eyebrow">Acceso mediante QR</div><h1>Desbloquear Story${prefill?' '+escapeHtml(prefill):''}</h1>${instruction}<div class="scan-zone"><div id="qr-reader" class="qr-reader qr-reader-live"><div class="qr-placeholder">CÁMARA</div></div><div id="qr-file-reader" class="qr-file-reader" aria-hidden="true"></div><button class="cta" id="startQr">ACTIVAR ESCÁNER QR</button><button class="secondary-btn" id="photoQr" style="margin-top:10px">CARGAR IMAGEN DESDE TU ÁLBUM</button><input id="qrFile" class="qr-native-input" type="file" accept="image/*"><p id="unlockStatus" class="note" style="margin-top:12px"></p></div>${meta?lockedTeaserHtml(meta):''}</section>`;
+  view.innerHTML=`<section class="unlock-panel section"><div class="eyebrow">Acceso mediante QR</div><h1>Desbloquear Story${prefill?' '+escapeHtml(prefill):''}</h1>${instruction}<div class="scan-zone"><div id="qr-reader" class="qr-reader"><div class="qr-placeholder">CÁMARA</div></div><div id="qr-file-reader" class="qr-file-reader" aria-hidden="true"></div><button class="cta" id="startQr">ACTIVAR ESCÁNER QR</button><button class="secondary-btn" id="photoQr" style="margin-top:10px">CARGAR IMAGEN DESDE TU ÁLBUM</button><input id="qrFile" class="qr-native-input" type="file" accept="image/*"><p id="unlockStatus" class="note" style="margin-top:12px"></p></div>${meta?lockedTeaserHtml(meta):''}</section>`;
   const gallery=$('#qrFile');
   $('#startQr').onclick=()=>startQrCamera(prefill);
   $('#photoQr').onclick=()=>gallery?.click();
@@ -425,75 +425,64 @@ async function ensureQrLibrary(){
   unlockStatus('Preparando lector QR…');
   return new Promise(resolve=>{let settled=false;const finish=ok=>{if(settled)return;settled=true;resolve(!!ok)};const old=document.querySelector('script[data-qr-lib]');if(old){old.addEventListener('load',()=>finish(typeof Html5Qrcode!=='undefined'),{once:true});old.addEventListener('error',()=>finish(false),{once:true});setTimeout(()=>finish(typeof Html5Qrcode!=='undefined'),5000);return}const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js';sc.async=true;sc.dataset.qrLib='1';sc.onload=()=>finish(typeof Html5Qrcode!=='undefined');sc.onerror=()=>finish(false);document.head.append(sc);setTimeout(()=>finish(typeof Html5Qrcode!=='undefined'),5000)})
 }
-function qrLiveMarkup(){return `<video id="qrLiveVideo" class="qr-live-video" autoplay muted playsinline webkit-playsinline></video><canvas id="qrLiveCanvas" class="qr-live-canvas" aria-hidden="true"></canvas><div class="qr-live-overlay" aria-hidden="true"><i></i><i></i><i></i><i></i><span></span></div>`}
-function qrAttemptActive(token){return qrScanBusy&&token===qrCameraAttempt}
-function qrTimeout(ms,label='camera-timeout'){return new Promise((_,reject)=>setTimeout(()=>reject(new Error(label)),ms))}
-function stopStreamObject(stream){try{stream?.getTracks?.().forEach(t=>t.stop())}catch{}}
-async function waitForQrVideo(video,token){const start=performance.now();while(qrAttemptActive(token)&&performance.now()-start<3200){if(video.readyState>=2&&video.videoWidth>0&&video.videoHeight>0)return true;await new Promise(r=>setTimeout(r,80))}return video.videoWidth>0&&video.videoHeight>0}
-function startQrCamera(prefill=''){
+async function startQrCamera(prefill=''){
   if(qrScanBusy)return;
   if(!window.isSecureContext){unlockStatus('El escáner en directo necesita HTTPS.');return}
-  const reader=$('#qr-reader'),btn=$('#startQr');if(!reader)return;
-  // v2.9: un único flujo live, basado en el lector inicial que ya funcionaba.
-  // Html5Qrcode controla cámara + autodetección; nosotros solo verificamos que su <video> sea visible y reproduzca frames.
-  qrScanBusy=true;const token=++qrCameraAttempt;
-  if(btn){btn.disabled=true;btn.textContent='ABRIENDO CÁMARA…'}unlockStatus('Abriendo cámara…');
-  launchHtml5QrLive(prefill,token,false).catch(async first=>{
-    console.warn('QR live environment',first);
-    if(!qrAttemptActive(token))return;
-    try{await stopQrScannerInstanceOnly();await launchHtml5QrLive(prefill,token,true)}catch(second){
-      console.warn('QR live device fallback',second);
-      if(!qrAttemptActive(token))return;qrScanBusy=false;
-      reader.innerHTML='<div class="qr-placeholder">CÁMARA</div>';
-      if(btn){btn.disabled=false;btn.textContent='REINTENTAR ESCÁNER QR';btn.onclick=()=>startQrCamera(prefill)}
-      unlockStatus('No se pudo mostrar vídeo live de la cámara. Pulsa REINTENTAR ESCÁNER QR o revisa el permiso de cámara.');
+  if(!await ensureQrLibrary()){unlockStatus('No se ha podido cargar el lector QR. Comprueba la conexión e inténtalo de nuevo.');return}
+  await stopQrScanner();
+  qrScanBusy=true;
+  const btn=$('#startQr');
+  if(btn){btn.disabled=true;btn.textContent='ABRIENDO CÁMARA…'}
+  unlockStatus('Solicitando acceso a la cámara…');
+  const onDecoded=async decoded=>{
+    if(!qrScanBusy)return;
+    qrScanBusy=false;
+    await stopQrScanner();
+    await tryUnlock(decoded,prefill)
+  };
+  // v2.10: restauración del camino clásico que utilizaba la app inicial.
+  // Un solo propietario de cámara, sin getUserMedia paralelo ni manipulación del <video> generado.
+  const config={fps:10,qrbox:{width:220,height:220},aspectRatio:1.0,disableFlip:false};
+  try{
+    qrScanner=new Html5Qrcode('qr-reader');
+    try{
+      await qrScanner.start({facingMode:'environment'},config,onDecoded,()=>{});
+    }catch(first){
+      try{await qrScanner.clear()}catch{}
+      qrScanner=new Html5Qrcode('qr-reader');
+      const cams=await Html5Qrcode.getCameras();
+      if(!cams?.length)throw first;
+      const preferred=cams.find(c=>/back|rear|environment|trasera|posterior/i.test(c.label||''))||cams[cams.length-1];
+      await qrScanner.start(preferred.id,config,onDecoded,()=>{});
     }
-  });
-}
-async function stopQrScannerInstanceOnly(){
-  const s=qrScanner;qrScanner=null;if(!s)return;
-  try{if(s.isScanning)await s.stop()}catch{}try{await s.clear()}catch{}
-}
-function forceQrGeneratedVideo(){
-  const v=$('#qr-reader video');if(!v)return null;
-  v.setAttribute('playsinline','');v.setAttribute('webkit-playsinline','');v.setAttribute('autoplay','');v.setAttribute('muted','');
-  v.playsInline=true;v.autoplay=true;v.muted=true;v.controls=false;
-  v.style.display='block';v.style.visibility='visible';v.style.opacity='1';v.style.width='100%';v.style.height='100%';v.style.objectFit='cover';v.style.background='#000';
-  try{const p=v.play();if(p&&p.catch)p.catch(()=>{})}catch{}
-  return v;
-}
-async function waitForQrGeneratedVideo(token,ms=4200){
-  const t=performance.now();let v=null;
-  while(qrAttemptActive(token)&&performance.now()-t<ms){v=forceQrGeneratedVideo();if(v&&v.readyState>=2&&v.videoWidth>0&&v.videoHeight>0&&!v.paused)return v;await new Promise(r=>setTimeout(r,100))}
-  throw new Error('qr-video-black');
-}
-async function launchHtml5QrLive(prefill,token,useDeviceId){
-  if(!await ensureQrLibrary())throw new Error('qr-library');if(!qrAttemptActive(token))return;
-  const reader=$('#qr-reader');reader.innerHTML='';
-  const scanner=new Html5Qrcode('qr-reader');qrScanner=scanner;
-  const decoded=async text=>{if(!qrAttemptActive(token))return;unlockStatus('QR detectado. Validando acceso…');qrScanBusy=false;await stopQrScanner();await tryUnlock(text,prefill)};
-  const config={fps:10,qrbox:{width:220,height:220},disableFlip:false};
-  let camera={facingMode:'environment'};
-  if(useDeviceId){
-    const cams=await Html5Qrcode.getCameras();if(!cams?.length)throw new Error('no-cameras');
-    const preferred=cams.find(c=>/back|rear|environment|trasera|posterior/i.test(c.label||''))||cams[cams.length-1];camera=preferred.id;
+    qrScanBusy=true;
+    if(btn){btn.disabled=false;btn.textContent='DETENER ESCÁNER QR';btn.onclick=()=>stopQrScanner()}
+    unlockStatus('ESCÁNER ACTIVO · apunta la cámara al QR. La detección es automática.');
+  }catch(e){
+    console.warn('QR scanner',e);
+    try{await stopQrScanner()}catch{}
+    if(btn){btn.disabled=false;btn.textContent='REINTENTAR ESCÁNER QR';btn.onclick=()=>startQrCamera(prefill)}
+    unlockStatus('No se pudo abrir el escáner en directo. Revisa el permiso de cámara y vuelve a intentarlo.');
+    qrScanBusy=false
   }
-  await Promise.race([scanner.start(camera,config,decoded,()=>{}),qrTimeout(9000,'qr-start-timeout')]);
-  if(!qrAttemptActive(token))return;
-  const video=await waitForQrGeneratedVideo(token);
-  // Segundo play explícito después de loadedmetadata: especialmente importante en Safari/PWA.
-  try{await video.play()}catch{}
-  if(video.paused||!video.videoWidth)throw new Error('qr-video-not-playing');
-  unlockStatus('ESCÁNER ACTIVO · acerca el QR a la cámara. La lectura es automática.');
-  const btn=$('#startQr');if(btn){btn.disabled=false;btn.textContent='DETENER ESCÁNER QR';btn.onclick=()=>stopQrScanner()}
 }
-async function scanQrPhoto(file,prefill='',inputId='qrFile'){if(!file)return;if(!await ensureQrLibrary()){unlockStatus('No se ha podido cargar el lector QR.');return}unlockStatus('Analizando QR…');let scanner=null;try{scanner=new Html5Qrcode('qr-file-reader');const decoded=await scanner.scanFile(file,true);await scanner.clear();await tryUnlock(decoded,prefill)}catch(e){try{await scanner?.clear()}catch{}unlockStatus('No se ha podido leer un QR válido en esa imagen. Intenta acercarte más y evita reflejos.')}finally{const f=$('#'+inputId);if(f)f.value=''}}
+async function scanQrPhoto(file,prefill='',inputId='qrFile'){
+  if(!file)return;
+  if(!await ensureQrLibrary()){unlockStatus('No se ha podido cargar el lector QR.');return}
+  unlockStatus('Analizando QR…');let scanner=null;
+  try{scanner=new Html5Qrcode('qr-file-reader');const decoded=await scanner.scanFile(file,true);await scanner.clear();await tryUnlock(decoded,prefill)}
+  catch(e){try{await scanner?.clear()}catch{}unlockStatus('No se ha podido leer un QR válido en esa imagen. Intenta acercarte más y evita reflejos.')}
+  finally{const f=$('#'+inputId);if(f)f.value=''}
+}
 async function stopQrScanner(){
-  qrScanBusy=false;++qrCameraAttempt;clearTimeout(qrLiveTimer);qrLiveTimer=0;qrLiveDecodeBusy=false;stopStreamObject(qrLiveStream);qrLiveStream=null;qrLiveCanvas=null;
+  const s=qrScanner;qrScanner=null;qrScanBusy=false;
+  // Limpia restos de experimentos anteriores por compatibilidad con sesiones ya abiertas.
+  clearTimeout(qrLiveTimer);qrLiveTimer=0;qrLiveDecodeBusy=false;stopStreamObject(qrLiveStream);qrLiveStream=null;qrLiveCanvas=null;
   const d=qrFrameDecoder;qrFrameDecoder=null;if(d&&typeof d.clear==='function')try{await d.clear()}catch{}
-  const s=qrScanner;qrScanner=null;if(s){try{if(s.isScanning)await s.stop()}catch{}try{await s.clear()}catch{}}
+  if(s){try{if(s.isScanning)await s.stop()}catch{}try{await s.clear()}catch{}}
   const btn=$('#startQr');if(btn){btn.disabled=false;btn.textContent='ACTIVAR ESCÁNER QR'}
 }
+function stopStreamObject(stream){try{stream?.getTracks?.().forEach(t=>t.stop())}catch{}}
 async function tryUnlock(raw,prefill=''){const parsedId=storyIdFromPrivateUrl(raw),id=prefill||parsedId;if(!id){unlockStatus('El QR no corresponde a una Story reconocible.');return}if(prefill&&parsedId&&prefill!==parsedId){unlockStatus(`Ese QR pertenece a la Story ${parsedId}, no a la ${prefill}.`);return}const meta=indexData.stories.find(s=>s.id===id);if(!meta||meta.access!=='exclusive'){unlockStatus('Ese QR no corresponde a una Story exclusiva disponible en la app.');return}const secret=normalizeUnlockSecret(raw,id);if(!secret){unlockStatus('El QR no tiene el formato esperado.');return}unlockStatus('Validando acceso…');try{const data=await loadStoryData(meta,secret);if(data.id!==id)throw new Error('El QR no corresponde a esta Story');const m=secretMap();m[id]=secret;store.set(unlockSecretsKey,m);markStoryAcquired(id,true);updateAppBadge();suppressNewClearOnceId=id;unlockStatus('');await showUnlockReward(id);navigateHash(`#/story/${encodeURIComponent(id)}`)}catch{unlockStatus('QR no válido para esta Story.')}}
 function unlockStatus(t){const el=$('#unlockStatus');if(el)el.textContent=t}
 function storyIdFromPrivateUrl(raw){try{const u=new URL(raw);const m=u.pathname.match(/\/([0-9]{3})_[^/]+\.html$/i);return m?.[1]||''}catch{return''}}
@@ -653,9 +642,9 @@ function spotifyCompanionHtml(){return `<a class="spotify-companion" href="https
 
 function maybeAutoTutorial(){return}
 
-function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><div class="eyebrow">PREPARADO PARA FUTURA ITERACIÓN</div><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong><p>La entrada visual ya forma parte de Disturbing Stories App v2.9. Su contenido se desarrollará en una iteración posterior.</p></div></section>`}
+function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><div class="eyebrow">PREPARADO PARA FUTURA ITERACIÓN</div><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong><p>La entrada visual ya forma parte de Disturbing Stories App v2.10. Su contenido se desarrollará en una iteración posterior.</p></div></section>`}
 
 async function playEntryIntro(){const onceKey='disturbing_intro_played_session_v26';if(introPlayed||sessionStorage.getItem(onceKey)==='1')return;introPlayed=true;sessionStorage.setItem(onceKey,'1');const layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return;layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0}catch{}return new Promise(resolve=>{const done=()=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}layer.classList.add('intro-out');setTimeout(()=>{layer.classList.add('hidden');layer.classList.remove('intro-out');layer.setAttribute('aria-hidden','true');resolve()},220)};const start=()=>{clearTimeout(fallback);const p=video.play();if(p&&typeof p.catch==='function')p.catch(done)};const fallback=setTimeout(done,2500);layer.onclick=done;video.addEventListener('ended',done,{once:true});video.addEventListener('error',done,{once:true});if(video.readyState>=3)start();else video.addEventListener('canplay',start,{once:true})})}
 
-async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.9.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.10.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
