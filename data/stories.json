@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-10T00:42:27.228092+00:00",
+  "updated": "2026-09-10T00:44:06.246305+00:00",
   "stories": [
     {
       "id": "277",
@@ -560,10 +560,7 @@
       "features": [
         "audio"
       ],
-      "readTime": 6,
-      "mediaDurations": {
-        "audio": 553
-      }
+      "readTime": 6
     },
     {
       "id": "162",
@@ -962,10 +959,7 @@
       "features": [
         "audio"
       ],
-      "readTime": 3,
-      "mediaDurations": {
-        "audio": 1081
-      }
+      "readTime": 3
     },
     {
       "id": "003",
