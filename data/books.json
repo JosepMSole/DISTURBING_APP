@@ -1,38 +1,43 @@
 {
-  "schema": 3,
+  "schema": 4,
   "source": "assets/books + importer metadata",
   "naming": "book-N-front/back/spine.ext",
   "books": {
     "5": {
+      "amazon": "https://amzn.eu/d/0eaVJ9O0",
       "back": "./assets/books/book-5-back.jpg",
       "front": "./assets/books/book-5-front.jpg",
       "spine": "./assets/books/book-5-spine.jpg",
-      "amazon": "https://amzn.eu/d/0eaVJ9O0"
+      "pages": 298
     },
     "4": {
+      "amazon": "https://amzn.eu/d/03BWQF0B",
       "back": "./assets/books/book-4-back.jpg",
       "front": "./assets/books/book-4-front.jpg",
       "spine": "./assets/books/book-4-spine.jpg",
-      "amazon": "https://amzn.eu/d/03BWQF0B"
+      "pages": 288
     },
     "3": {
+      "amazon": "https://amzn.eu/d/1ZCINFs",
       "back": "./assets/books/book-3-back.jpg",
       "front": "./assets/books/book-3-front.jpg",
       "spine": "./assets/books/book-3-spine.jpg",
-      "amazon": "https://amzn.eu/d/1ZCINFs"
+      "pages": 252
     },
     "2": {
+      "amazon": "https://amzn.eu/d/6OrkNU2",
       "back": "./assets/books/book-2-back.jpg",
       "front": "./assets/books/book-2-front.jpg",
       "spine": "./assets/books/book-2-spine.jpg",
-      "amazon": "https://amzn.eu/d/6OrkNU2"
+      "pages": 262
     },
     "1": {
+      "amazon": "https://amzn.eu/d/6fH61MD",
       "back": "./assets/books/book-1-back.jpg",
       "front": "./assets/books/book-1-front.jpg",
       "spine": "./assets/books/book-1-spine.jpg",
-      "amazon": "https://amzn.eu/d/6fH61MD"
+      "pages": 222
     }
   },
-  "updated": "2026-09-08T10:12:56.764075+00:00"
+  "updated": "2026-09-10T00:31:15.096433+00:00"
 }
