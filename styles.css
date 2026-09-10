@@ -2658,3 +2658,72 @@ body{background:#020507!important}
 .timeline-multi .timeline-items{padding-top:14px!important;padding-bottom:14px!important;background:linear-gradient(90deg,rgba(71,154,178,.07),transparent 42%)!important;border-top:1px solid rgba(83,157,177,.24)!important;border-bottom:1px solid rgba(83,157,177,.24)!important}
 .timeline-multi .timeline-items:after{content:'';position:absolute;left:0;top:14px;width:13px;border-top:2px solid #426b77;pointer-events:none}
 .hero.latest-storm .hero-media>.hero-main-image{filter:brightness(.9) contrast(1.08) drop-shadow(2px 0 0 rgba(255,35,48,.10)) drop-shadow(-2px 0 0 rgba(205,240,255,.09))!important}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v2.8
+   teaser bloqueado · QR live híbrido · header · timeline · random · HOME
+   ============================================================ */
+
+/* Story bloqueada: el TEASER sustituye físicamente al póster superior. */
+.locked-story-page>.locked-hero-teaser{display:block!important;width:min(100%,520px)!important;max-width:520px!important;margin:0 auto 16px!important;padding:0!important;position:relative!important;z-index:1!important}
+.locked-story-page>.locked-hero-teaser .locked-teaser-video{width:min(100%,calc(68svh * 9 / 16))!important;max-width:100%!important;aspect-ratio:9/16!important;margin:0 auto!important;border-radius:12px!important;border:1px solid #343027!important;overflow:hidden!important;background:#000!important;position:relative!important;box-shadow:0 10px 30px rgba(0,0,0,.42)!important}
+.locked-story-page>.locked-hero-teaser iframe{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;border:0!important;display:block!important}
+.locked-story-page>.locked-hero-teaser.teaser-unavailable .teaser-placeholder{display:grid!important;place-items:center!important;text-align:center!important;padding:24px!important;color:#d8b951!important}
+.locked-story-page>.locked-hero-teaser.teaser-unavailable .teaser-placeholder span{font:900 22px/1 Oxanium,sans-serif!important;letter-spacing:.15em!important}.locked-story-page>.locked-hero-teaser.teaser-unavailable .teaser-placeholder small{max-width:280px;color:#7d7460;font-size:9px;line-height:1.5}
+
+/* QR v2.8: vídeo nativo visible + autodetección continua. */
+.qr-reader-live{position:relative!important;width:min(100%,300px)!important;aspect-ratio:1/1!important;margin:0 auto 12px!important;min-height:0!important;background:#000!important;border:1px solid #315965!important;border-radius:12px!important;overflow:hidden!important;box-shadow:inset 0 0 22px rgba(0,0,0,.7)!important}
+.qr-live-video{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;background:#000!important;display:block!important}
+.qr-live-canvas{position:absolute!important;width:1px!important;height:1px!important;opacity:.001!important;pointer-events:none!important;left:-10px!important;top:-10px!important}
+.qr-live-overlay{position:absolute!important;inset:11%!important;z-index:5!important;pointer-events:none!important}
+.qr-live-overlay i{position:absolute;width:28px;height:28px;border-color:#b9f6ff;border-style:solid;filter:drop-shadow(0 0 6px rgba(142,244,255,.45))}.qr-live-overlay i:nth-child(1){left:0;top:0;border-width:2px 0 0 2px}.qr-live-overlay i:nth-child(2){right:0;top:0;border-width:2px 2px 0 0}.qr-live-overlay i:nth-child(3){left:0;bottom:0;border-width:0 0 2px 2px}.qr-live-overlay i:nth-child(4){right:0;bottom:0;border-width:0 2px 2px 0}.qr-live-overlay span{position:absolute;left:4%;right:4%;top:50%;height:1px;background:linear-gradient(90deg,transparent,#8ef4ff,transparent);box-shadow:0 0 8px rgba(142,244,255,.4);animation:qrScanLineV28 1.5s ease-in-out infinite alternate}
+@keyframes qrScanLineV28{from{transform:translateY(-74px);opacity:.4}to{transform:translateY(74px);opacity:1}}
+
+/* Header: iconografía contextual sin caja y copiada de la semántica real de cada sección. */
+.section-indicator{border:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important}
+.section-indicator-collection{display:grid!important;grid-template-columns:repeat(4,6px)!important;grid-template-rows:32px!important;gap:3px!important;place-content:center!important;align-content:center!important;justify-content:center!important}
+.section-indicator-collection i{display:block!important;width:6px!important;height:32px!important;border-radius:2px!important;background:currentColor!important;margin:0!important;padding:0!important}
+.section-indicator-saga,.section-indicator-random,.section-indicator-extras{font:800 34px/1 Oxanium,sans-serif!important}
+.section-indicator-timeline .timeline-portal-svg{width:42px!important;height:24px!important;fill:none!important;stroke:currentColor!important;stroke-width:2!important}
+.section-indicator-cassette .media-feature-svg,.section-indicator-tape .media-feature-svg{width:39px!important;height:39px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.8!important}
+.section-indicator-cassette{color:#70ff9c!important}.section-indicator-tape{color:#66cfff!important}
+.section-indicator-games .gamepad-portal-svg{width:42px!important;height:31px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.9!important}
+.section-indicator-micro .nightmare-diamond{display:block!important;width:29px!important;height:29px!important;transform:rotate(45deg)!important;border:2px solid #ff8590!important;background:linear-gradient(135deg,#190508,#3a0a10)!important;box-shadow:0 0 11px rgba(255,90,104,.28)!important}
+
+/* Timeline: eje general más a la izquierda, ramales visibles y cifras respirando. */
+.timeline-year-group{grid-template-columns:minmax(96px,116px) 20px minmax(0,1fr)!important;column-gap:0!important;margin:10px 0 24px!important}
+.timeline-year{font-size:clamp(34px,10vw,46px)!important;letter-spacing:.025em!important;padding:0 8px 0 0!important;justify-content:flex-end!important;font-variant-numeric:tabular-nums!important}
+.timeline-year-axis{grid-column:2!important}
+.timeline-year-axis:before{left:50%!important;border-left-width:2px!important}
+.timeline-year-axis:after{width:18px!important;height:18px!important}
+.timeline-year-axis i{left:50%!important;right:-34px!important;width:auto!important}
+.timeline-items{grid-column:3!important;margin-left:28px!important;padding-left:34px!important;overflow:visible!important}
+.timeline-item .timeline-node{left:-34px!important}
+.timeline-item:before{left:-34px!important;width:34px!important}
+.timeline-multi .timeline-items:before{left:-34px!important;top:58px!important;bottom:58px!important;border-left:2px solid #426b77!important}
+.timeline-multi .timeline-items:after{left:-34px!important;width:34px!important}
+@media(max-width:470px){.timeline-year-group{grid-template-columns:82px 18px minmax(0,1fr)!important}.timeline-year{font-size:33px!important;letter-spacing:.02em!important}.timeline-items{margin-left:18px!important;padding-left:28px!important}.timeline-item .timeline-node{left:-28px!important}.timeline-item:before{left:-28px!important;width:28px!important}.timeline-multi .timeline-items:before{left:-28px!important}.timeline-multi .timeline-items:after{left:-28px!important;width:28px!important}}
+
+/* Ruleta: poster inmediatamente debajo de filtros; mantiene 10px hasta GIRAR RANDOM. */
+.random-filters{margin-bottom:1px!important}
+.random-stage{flex:0 0 auto!important;min-height:0!important;align-content:start!important;place-items:center!important;margin:0 0 10px!important;padding:0!important}
+.random-poster-roll{margin-top:0!important;transform:none!important}
+
+/* HOME v2.8: sin sweeps, imagen completa, wiggle y separación RGB real. */
+.signal-sweep,.signal-sweep-red,.signal-sweep-white{display:none!important;animation:none!important}
+.hero.latest-storm .hero-media>.hero-main-image,.hero.latest-storm .hero-media>.hero-rgb-ghost{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;transform-origin:center center!important}
+.hero.latest-storm .hero-media>.hero-main-image{z-index:2!important;animation:homeDynamicV28 3.2s steps(1,end) infinite!important;filter:brightness(.93) contrast(1.1) saturate(1.05)!important;will-change:transform,filter!important}
+.hero.latest-storm .hero-media>.hero-rgb-ghost{z-index:1!important;pointer-events:none!important;opacity:0;mix-blend-mode:screen!important;will-change:transform,opacity,filter!important}
+.hero.latest-storm .hero-media>.hero-rgb-red{filter:sepia(1) saturate(8) hue-rotate(316deg) brightness(.8)!important;animation:rgbRedV28 2.3s steps(1,end) infinite!important}
+.hero.latest-storm .hero-media>.hero-rgb-cyan{filter:sepia(1) saturate(7) hue-rotate(132deg) brightness(.86)!important;animation:rgbCyanV28 2.3s .04s steps(1,end) infinite!important}
+.hero.latest-storm .hero-media>.hero-backdrop{inset:-3%!important;width:106%!important;height:106%!important;object-fit:cover!important;opacity:.46!important;filter:blur(12px) brightness(.48) contrast(1.12)!important;animation:homeBackdropV28 5.8s ease-in-out infinite alternate!important}
+@keyframes homeDynamicV28{0%,12%,100%{transform:scale(.997) translate3d(0,0,0)}13%{transform:scale(.997) translate3d(.5%,-.2%,0)}14%{transform:scale(.997) translate3d(-.35%,.25%,0)}15%,46%{transform:scale(.997) translate3d(.1%,0,0)}47%{transform:scale(.997) translate3d(-.55%,.2%,0)}48%{transform:scale(.997) translate3d(.45%,-.15%,0)}49%,76%{transform:scale(.997) translate3d(0,.1%,0)}77%{transform:scale(.997) translate3d(.38%,-.22%,0)}78%{transform:scale(.997) translate3d(-.3%,.18%,0)}79%{transform:scale(.997) translate3d(.15%,0,0)}}
+@keyframes rgbRedV28{0%,10%,100%{opacity:.04;transform:scale(.997) translateX(1px)}11%{opacity:.28;transform:scale(.997) translateX(5px)}12%{opacity:.12;transform:scale(.997) translateX(2px)}43%{opacity:.04}44%{opacity:.24;transform:scale(.997) translateX(4px)}45%{opacity:.07;transform:scale(.997) translateX(1px)}76%{opacity:.04}77%{opacity:.2;transform:scale(.997) translateX(3px)}78%{opacity:.05}}
+@keyframes rgbCyanV28{0%,10%,100%{opacity:.04;transform:scale(.997) translateX(-1px)}11%{opacity:.25;transform:scale(.997) translateX(-5px)}12%{opacity:.1;transform:scale(.997) translateX(-2px)}43%{opacity:.04}44%{opacity:.22;transform:scale(.997) translateX(-4px)}45%{opacity:.06;transform:scale(.997) translateX(-1px)}76%{opacity:.04}77%{opacity:.18;transform:scale(.997) translateX(-3px)}78%{opacity:.05}}
+@keyframes homeBackdropV28{from{transform:scale(1.01) translate3d(-.35%,.15%,0)}to{transform:scale(1.025) translate3d(.4%,-.25%,0)}}
+/* NEW sigue dorado en listados, pero la primera media dentro de una Story nunca recibe marco dorado. */
+.story-featured:has(.new-story-badge){outline:none!important;box-shadow:none!important}
+@media(prefers-reduced-motion:reduce){.qr-live-overlay span,.hero.latest-storm .hero-media>.hero-main-image,.hero.latest-storm .hero-media>.hero-rgb-ghost,.hero.latest-storm .hero-media>.hero-backdrop{animation:none!important}.hero.latest-storm .hero-media>.hero-rgb-ghost{display:none!important}}
+/* v2.8 final: GAMES un paso más pequeño que en v2.7, sin tocar el resto del bloque MULTIMEDIA. */
+.portal-btn.games .gamepad-portal-svg{width:26px!important;height:18px!important}
