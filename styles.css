@@ -53,7 +53,7 @@ img{max-width:100%}
 .read-celebration{position:fixed;z-index:150;left:50%;top:50%;transform:translate(-50%,-46%) scale(.92);width:min(76vw,280px);padding:24px 18px 22px;border:1px solid #343434;border-radius:20px;background:rgba(8,8,8,.96);box-shadow:0 24px 80px rgba(0,0,0,.75);text-align:center;opacity:0;transition:.24s ease;pointer-events:none;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.read-celebration.show{opacity:1;transform:translate(-50%,-50%) scale(1)}.read-check{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;margin:0 auto 13px;background:#173b20;border:1px solid #315d3a;color:#dff7e4;font-size:28px;font-weight:900}.read-celebration strong{display:block;font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Black",sans-serif;font-size:36px;font-weight:400;letter-spacing:.04em;margin:4px 0}.read-celebration small{color:#888;font-size:9px}
 
 .metadata-filters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}.metadata-filters select{height:38px;min-width:0;border:1px solid #292929;background:#0c0c0c;color:#aaa;border-radius:11px;padding:0 9px;font-size:9px}@media(max-width:340px){.metadata-filters{grid-template-columns:1fr}}
-\n\n/* v0.13 · estados EX, biblioteca simplificada y colección */\n.hero-content .eyebrow,.hero-content .story-number,.hero-content h1,.hero-content .meta-row{ text-shadow:0 2px 4px rgba(0,0,0,.95),0 0 12px rgba(0,0,0,.85);}\n.drawer-brand{min-height:82px;padding-right:42px!important}.drawer-logo{max-height:96px;width:100%;object-fit:contain;object-position:left center}\n.ex-badge{position:absolute;right:6px;bottom:6px;width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.82);font-size:9px;font-weight:1000;letter-spacing:-.02em;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:4}.ex-badge.ex-locked{border:1.5px solid #9b3338;color:#ffb5b8}.ex-badge.ex-unlocked{border:1.5px solid #5e8d67;color:#e4ffe9;background:rgba(14,49,22,.86)}.ex-badge i{position:absolute;right:-3px;top:-4px;width:13px;height:13px;border-radius:50%;display:grid;place-items:center;background:#e7f5e9;color:#113216;font-style:normal;font-size:8px;font-weight:1000;border:1px solid #183d20}.ex-inline{position:relative;right:auto;bottom:auto;display:grid;width:31px;height:31px}.story-state .ex-badge{margin:auto}.library-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:-2px 0 15px}.library-stats div{border:1px solid #262626;background:#0d0d0d;border-radius:13px;padding:12px 5px;text-align:center}.library-stats strong{display:block;font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Black",sans-serif;font-size:29px;line-height:.9;font-weight:400}.library-stats span{display:block;margin-top:7px;color:#888;font-size:6.5px;line-height:1.15;font-weight:900;letter-spacing:.06em}.library-controls{grid-template-columns:minmax(0,1fr) 132px}.story-select{height:42px;min-width:0;border:1px solid #292929;background:#0c0c0c;color:#bbb;border-radius:12px;padding:0 10px;font-size:10px}.primary-filter-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin-bottom:9px}.advanced-toggle{height:42px;border:1px solid #292929;background:#101010;color:#aaa;border-radius:12px;padding:0 12px;font-size:8px;font-weight:900;letter-spacing:.04em}.advanced-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 10px}.stories-toolbar{display:flex;justify-content:flex-end;margin-bottom:4px}.view-modes{padding-bottom:8px}.results-count{margin:0 1px 9px}.collection-intro{margin:-2px 0 18px;color:#888;font-size:11px;line-height:1.5}.books-grid{display:grid;gap:10px}.book-card{border:1px solid #252525;background:#0d0d0d;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:116px minmax(0,1fr);min-height:120px;cursor:pointer}.book-thumbs{display:flex;height:100%;overflow:hidden;background:#050505}.book-thumbs img{width:calc(100% / 3);height:100%;object-fit:cover}.book-placeholder{display:grid;place-items:center;width:100%;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:32px;color:#444}.book-copy{padding:15px 14px;align-self:center}.book-copy h2{font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Black",sans-serif;font-size:28px;font-weight:400;text-transform:uppercase;margin:3px 0 7px}.book-numbers{color:#999;font-size:9px;margin-bottom:10px}.collection-back{border:0;background:transparent;color:#aaa;padding:0 0 14px;font-size:10px;font-weight:900}.book-detail-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:14px 0 9px}.book-detail-stats div{text-align:center;border:1px solid #252525;background:#0d0d0d;border-radius:12px;padding:12px 6px}.book-detail-stats strong{display:block;font-size:23px}.book-detail-stats span{display:block;color:#777;font-size:7px;margin-top:4px}.collection-story-grid{margin-top:18px}.bottom-nav .nav-btn{min-width:0}.bottom-nav .nav-btn small{font-size:6.5px}\n@media(max-width:390px){.library-controls{grid-template-columns:1fr}.primary-filter-row{grid-template-columns:1fr 116px}.advanced-filters{grid-template-columns:1fr}.book-card{grid-template-columns:98px minmax(0,1fr)}.library-stats strong{font-size:25px}}\n
+\n\n/* v0.13 · estados EX, biblioteca simplificada y colección */\n.hero-content .eyebrow,.hero-content .story-number,.hero-content h1,.hero-content .meta-row{ text-shadow:0 2px 4px rgba(0,0,0,.95),0 0 12px rgba(0,0,0,.85);}\n.drawer-brand{min-height:82px;padding-right:42px!important}.drawer-logo{max-height:96px;width:100%;object-fit:contain;object-position:left center}\n.ex-badge{position:absolute;right:6px;bottom:6px;width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:rgba(0,0,0,.82);font-size:9px;font-weight:1000;letter-spacing:-.02em;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:4}.ex-badge.ex-locked{border:1.5px solid #9b3338;color:#ffb5b8}.ex-badge.ex-unlocked{border:1.5px solid #5e8d67;color:#e4ffe9;background:rgba(14,49,22,.86)}.ex-badge i{position:absolute;right:-3px;top:-4px;width:13px;height:13px;border-radius:50%;display:grid;place-items:center;background:#e7f5e9;color:#113216;font-style:normal;font-size:8px;font-weight:1000;border:1px solid #183d20}.ex-inline{position:relative;right:auto;bottom:auto;display:grid;width:31px;height:31px}.story-state .ex-badge{margin:auto}.library-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:-2px 0 15px}.library-stats button{border:1px solid #262626;background:#0d0d0d;border-radius:13px;padding:12px 5px;text-align:center}.library-stats strong{display:block;font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Black",sans-serif;font-size:29px;line-height:.9;font-weight:400}.library-stats span{display:block;margin-top:7px;color:#888;font-size:6.5px;line-height:1.15;font-weight:900;letter-spacing:.06em}.library-controls{grid-template-columns:minmax(0,1fr) 132px}.story-select{height:42px;min-width:0;border:1px solid #292929;background:#0c0c0c;color:#bbb;border-radius:12px;padding:0 10px;font-size:10px}.primary-filter-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin-bottom:9px}.advanced-toggle{height:42px;border:1px solid #292929;background:#101010;color:#aaa;border-radius:12px;padding:0 12px;font-size:8px;font-weight:900;letter-spacing:.04em}.advanced-filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 10px}.stories-toolbar{display:flex;justify-content:flex-end;margin-bottom:4px}.view-modes{padding-bottom:8px}.results-count{margin:0 1px 9px}.collection-intro{margin:-2px 0 18px;color:#888;font-size:11px;line-height:1.5}.books-grid{display:grid;gap:10px}.book-card{border:1px solid #252525;background:#0d0d0d;border-radius:16px;overflow:hidden;display:grid;grid-template-columns:116px minmax(0,1fr);min-height:120px;cursor:pointer}.book-thumbs{display:flex;height:100%;overflow:hidden;background:#050505}.book-thumbs img{width:calc(100% / 3);height:100%;object-fit:cover}.book-placeholder{display:grid;place-items:center;width:100%;font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:32px;color:#444}.book-copy{padding:15px 14px;align-self:center}.book-copy h2{font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Black",sans-serif;font-size:28px;font-weight:400;text-transform:uppercase;margin:3px 0 7px}.book-numbers{color:#999;font-size:9px;margin-bottom:10px}.collection-back{border:0;background:transparent;color:#aaa;padding:0 0 14px;font-size:10px;font-weight:900}.book-detail-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:14px 0 9px}.book-detail-stats div{text-align:center;border:1px solid #252525;background:#0d0d0d;border-radius:12px;padding:12px 6px}.book-detail-stats strong{display:block;font-size:23px}.book-detail-stats span{display:block;color:#777;font-size:7px;margin-top:4px}.collection-story-grid{margin-top:18px}.bottom-nav .nav-btn{min-width:0}.bottom-nav .nav-btn small{font-size:6.5px}\n@media(max-width:390px){.library-controls{grid-template-columns:1fr}.primary-filter-row{grid-template-columns:1fr 116px}.advanced-filters{grid-template-columns:1fr}.book-card{grid-template-columns:98px minmax(0,1fr)}.library-stats strong{font-size:25px}}\n
 
 /* v0.14 · progreso pendiente, colección visual y Player persistente */
 .cover-progress{background:rgba(188,91,8,.94)!important;border-color:#ff9b37!important;color:#fff!important;box-shadow:0 0 0 1px rgba(255,151,46,.12),0 4px 14px rgba(205,88,0,.32)}
@@ -174,7 +174,7 @@ img{max-width:100%}
 .hero-content .eyebrow,.hero-content .story-number,.hero-content h1{ text-shadow:0 2px 2px #000,0 0 5px #000,0 0 12px rgba(0,0,0,.98),0 0 24px rgba(0,0,0,.88),2px 3px 5px rgba(0,0,0,.95)!important }
 
 /* Contadores de la biblioteca: etiquetas realmente legibles. */
-.library-stats div{padding:14px 7px!important}
+.library-stats button{padding:14px 7px!important}
 .library-stats strong{font-size:clamp(31px,9.5vw,43px)!important}
 .library-stats span{font-size:clamp(9px,2.65vw,11px)!important;line-height:1.18!important;letter-spacing:.035em!important;color:#aaa!important;margin-top:8px!important}
 
@@ -307,7 +307,7 @@ body{background:#020507!important}
 .nav-btn.active small{color:#fff!important}
 
 /* Common Holo HUD objects */
-.library-stats div,.progress-dashboard,.personal-stats div,.home-progress,.home-continue,
+.library-stats button,.progress-dashboard,.personal-stats div,.home-progress,.home-continue,
 .story-card,.story-grid-card,.continue-card,.book-card,.book-detail-stats div,.player-summary,.player-console,
 .lock-screen,.story-select,.advanced-toggle,.my-filter,.view-mode,.book-story-filter,.player-track{
   border-color:#294c58!important;
@@ -532,7 +532,7 @@ body{background:#020507!important}
 .story-copy p,.story-grid-copy p,.results-count,.player-console-head span,.player-time,.player-volume,.player-note,.player-track span,.scanner-help{
   font-size:clamp(10px,2.75vw,12px)!important;line-height:1.35!important
 }
-.story-copy,.story-grid-copy,.book-copy,.player-console,.player-summary,.player-summary-row,.personal-stats>div,.library-stats>div,.book-detail-stats>div{min-width:0!important}
+.story-copy,.story-grid-copy,.book-copy,.player-console,.player-summary,.player-summary-row,.personal-stats>div,.library-stats>button,.book-detail-stats>div{min-width:0!important}
 .story-copy h3,.story-copy p,.story-grid-copy h3,.story-grid-copy p,.book-copy h2,.player-console-head strong,.player-note,.personal-stats span,.library-stats span,.book-detail-stats span{overflow-wrap:anywhere}
 
 /* PLAYER summary: labels left, numbers right, everything contained. */
@@ -627,7 +627,7 @@ body{background:#020507!important}
 .shelf-book.has-spine img{width:auto!important;height:var(--shelf-h,340px)!important;max-width:none!important;aspect-ratio:auto!important;object-fit:contain!important}
 
 /* Box-content safety across narrow phones. */
-.library-stats>div,.personal-stats>div,.book-detail-stats>div,.player-console,.progress-dashboard,.home-progress,.home-continue,.book-card,.continue-card,.lock-screen{
+.library-stats>button,.personal-stats>div,.book-detail-stats>div,.player-console,.progress-dashboard,.home-progress,.home-continue,.book-card,.continue-card,.lock-screen{
   min-width:0!important
 }
 .library-stats span,.personal-stats span,.book-detail-stats span,.progress-side p,.player-console-head strong{max-width:100%!important;overflow-wrap:anywhere!important}
@@ -691,7 +691,7 @@ body{background:#020507!important}
 .drawer-note{font-size:11px!important}
 
 /* Defensive wrapping: box contents should never escape horizontally. */
-.player-summary-row,.book-numbers-row,.book-feature-counts,.personal-stats>div,.library-stats>div,.progress-dashboard,.unread-callout{max-width:100%!important}
+.player-summary-row,.book-numbers-row,.book-feature-counts,.personal-stats>div,.library-stats>button,.progress-dashboard,.unread-callout{max-width:100%!important}
 .player-summary-row>*{min-width:0!important}
 .player-summary-row span,.player-summary-row small{overflow:hidden!important;text-overflow:ellipsis!important}
 
@@ -805,12 +805,12 @@ body{background:#020507!important}
 .book-detail-stats>div{padding:20px 5px!important;overflow:hidden!important}
 
 /* Library Holo corners: exact attachment to the 3 statistic boxes. */
-.library-stats>div{overflow:visible!important;isolation:isolate!important}
-.library-stats>div .hud-corner{width:15px!important;height:15px!important;box-sizing:border-box!important}
-.library-stats>div .hud-tl{left:-1px!important;top:-1px!important}
-.library-stats>div .hud-tr{right:-1px!important;top:-1px!important}
-.library-stats>div .hud-bl{left:-1px!important;bottom:-1px!important}
-.library-stats>div .hud-br{right:-1px!important;bottom:-1px!important}
+.library-stats>button{overflow:visible!important;isolation:isolate!important}
+.library-stats>button .hud-corner{width:15px!important;height:15px!important;box-sizing:border-box!important}
+.library-stats>button .hud-tl{left:-1px!important;top:-1px!important}
+.library-stats>button .hud-tr{right:-1px!important;top:-1px!important}
+.library-stats>button .hud-bl{left:-1px!important;bottom:-1px!important}
+.library-stats>button .hud-br{right:-1px!important;bottom:-1px!important}
 
 /* STORIES: status + more filters + 3 view icons stay on one line. */
 .story-control-strip{display:grid!important;grid-template-columns:minmax(104px,1fr) minmax(88px,auto) auto!important;gap:7px!important;align-items:center!important;margin-bottom:9px!important;min-width:0!important}
@@ -1714,10 +1714,10 @@ body{background:#020507!important}
 .story-featured>.story-media-badges.has-exclusive,.hero-story-media>.story-media-badges.has-exclusive{right:48px!important}
 .media-badge.media-audio{background:rgba(1,40,18,.92)!important;border-color:#18ff80!important;color:#9dffd0!important}
 .media-badge.media-video{background:rgba(3,25,48,.92)!important;border-color:#2bbdff!important;color:#bfeeff!important}
-.library-stats>div .hud-corner{transform:none!important}
-.library-stats>div .hud-tl,.library-stats>div .hud-tr{top:0!important}
-.library-stats>div .hud-bl,.library-stats>div .hud-br{bottom:0!important}
-.library-stats>div.hud-corners-live .hud-corner{animation-fill-mode:forwards!important}
+.library-stats>button .hud-corner{transform:none!important}
+.library-stats>button .hud-tl,.library-stats>button .hud-tr{top:0!important}
+.library-stats>button .hud-bl,.library-stats>button .hud-br{bottom:0!important}
+.library-stats>button.hud-corners-live .hud-corner{animation-fill-mode:forwards!important}
 .player-title-row{grid-template-columns:minmax(0,1fr) 126px!important;gap:12px!important;align-items:end!important}
 .player-summary{min-height:auto!important;padding:8px 10px!important;gap:3px 8px!important;align-content:center!important}
 .player-summary-row{margin:0!important;line-height:1.02!important}
@@ -1800,28 +1800,28 @@ body{background:#020507!important}
 
 /* ONLY the repeated groups of three Holo boxes: snap all four corners to the
    actual physical box after the center-out animation. Independent boxes are untouched. */
-.library-stats>div,.personal-stats>div,.book-detail-stats>div{overflow:visible!important;position:relative!important}
-.library-stats>div .hud-corner,.personal-stats>div .hud-corner,.book-detail-stats>div .hud-corner{
+.library-stats>button,.personal-stats>div,.book-detail-stats>div{overflow:visible!important;position:relative!important}
+.library-stats>button .hud-corner,.personal-stats>div .hud-corner,.book-detail-stats>div .hud-corner{
   width:15px!important;height:15px!important;box-sizing:border-box!important
 }
-.library-stats>div .hud-tl,.personal-stats>div .hud-tl,.book-detail-stats>div .hud-tl{left:-1px!important;top:-1px!important}
-.library-stats>div .hud-tr,.personal-stats>div .hud-tr,.book-detail-stats>div .hud-tr{right:-1px!important;top:-1px!important}
-.library-stats>div .hud-bl,.personal-stats>div .hud-bl,.book-detail-stats>div .hud-bl{left:-1px!important;bottom:-1px!important}
-.library-stats>div .hud-br,.personal-stats>div .hud-br,.book-detail-stats>div .hud-br{right:-1px!important;bottom:-1px!important}
-.library-stats>div.hud-motion-done .hud-corner,
+.library-stats>button .hud-tl,.personal-stats>div .hud-tl,.book-detail-stats>div .hud-tl{left:-1px!important;top:-1px!important}
+.library-stats>button .hud-tr,.personal-stats>div .hud-tr,.book-detail-stats>div .hud-tr{right:-1px!important;top:-1px!important}
+.library-stats>button .hud-bl,.personal-stats>div .hud-bl,.book-detail-stats>div .hud-bl{left:-1px!important;bottom:-1px!important}
+.library-stats>button .hud-br,.personal-stats>div .hud-br,.book-detail-stats>div .hud-br{right:-1px!important;bottom:-1px!important}
+.library-stats>button.hud-motion-done .hud-corner,
 .personal-stats>div.hud-motion-done .hud-corner,
 .book-detail-stats>div.hud-motion-done .hud-corner{transform:translate3d(0,0,0)!important;opacity:1!important}
 
 /* TODAS LAS STORIES: PUBLICADAS is the only golden statistics box. */
-.library-stats>div:nth-child(3){
+.library-stats>button:nth-child(3){
   border-color:#8b6b25!important;
   background:linear-gradient(180deg,rgba(255,207,87,.10),rgba(105,74,15,.025)),#151107!important;
   box-shadow:inset 0 1px 0 rgba(255,224,137,.12),0 0 18px rgba(181,129,26,.055)!important
 }
-.library-stats>div:nth-child(3) strong{color:#ffd86a!important;text-shadow:0 0 13px rgba(255,198,55,.14)!important}
-.library-stats>div:nth-child(3) span{color:#d4b866!important}
-.library-stats>div:nth-child(3) .hud-corner{border-color:#d5a936!important;filter:drop-shadow(0 0 6px rgba(222,172,48,.28))!important}
-.library-stats>div:nth-child(3).hud-box-pending.hud-frame-on{
+.library-stats>button:nth-child(3) strong{color:#ffd86a!important;text-shadow:0 0 13px rgba(255,198,55,.14)!important}
+.library-stats>button:nth-child(3) span{color:#d4b866!important}
+.library-stats>button:nth-child(3) .hud-corner{border-color:#d5a936!important;filter:drop-shadow(0 0 6px rgba(222,172,48,.28))!important}
+.library-stats>button:nth-child(3).hud-box-pending.hud-frame-on{
   border-color:#8b6b25!important;
   background:linear-gradient(180deg,rgba(255,207,87,.10),rgba(105,74,15,.025)),#151107!important;
   box-shadow:inset 0 1px 0 rgba(255,224,137,.12),0 0 18px rgba(181,129,26,.055)!important
@@ -1854,23 +1854,23 @@ body{background:#020507!important}
 
 /* ===== v1.16 · grupos de 3 cajas + badges de lectura ===== */
 /* Solo conjuntos de TRES cajas Holo HUD. Las cajas independientes no se modifican. */
-.library-stats>div .hud-tl,
-.library-stats>div .hud-tr,
+.library-stats>button .hud-tl,
+.library-stats>button .hud-tr,
 .personal-stats>div .hud-tl,
 .personal-stats>div .hud-tr,
 .book-detail-stats>div .hud-tl,
 .book-detail-stats>div .hud-tr{
   top:-7px!important;
 }
-.library-stats>div .hud-tl,
+.library-stats>button .hud-tl,
 .personal-stats>div .hud-tl,
 .book-detail-stats>div .hud-tl{left:-1px!important}
-.library-stats>div .hud-tr,
+.library-stats>button .hud-tr,
 .personal-stats>div .hud-tr,
 .book-detail-stats>div .hud-tr{right:-1px!important}
 /* Mantener las esquinas inferiores donde ya estaban. */
-.library-stats>div .hud-bl,.personal-stats>div .hud-bl,.book-detail-stats>div .hud-bl{left:-1px!important;bottom:-1px!important}
-.library-stats>div .hud-br,.personal-stats>div .hud-br,.book-detail-stats>div .hud-br{right:-1px!important;bottom:-1px!important}
+.library-stats>button .hud-bl,.personal-stats>div .hud-bl,.book-detail-stats>div .hud-bl{left:-1px!important;bottom:-1px!important}
+.library-stats>button .hud-br,.personal-stats>div .hud-br,.book-detail-stats>div .hud-br{right:-1px!important;bottom:-1px!important}
 
 /* La bubble LEÍDA vuelve a su posición original, superpuesta al triángulo verde. */
 .cover-read{left:6px!important;bottom:6px!important;z-index:9!important}
@@ -2110,20 +2110,20 @@ body{background:#020507!important}
 .story-card .story-read-time{color:#b5dce4!important}
 
 /* Entrada coreografiada de TODAS LAS STORIES. */
-.stories-v22-enter .section-title,.stories-v22-enter .library-stats>div,.stories-v22-enter .stories-portals-group,
+.stories-v22-enter .section-title,.stories-v22-enter .library-stats>button,.stories-v22-enter .stories-portals-group,
 .stories-v22-enter .portal-btn,.stories-v22-enter .library-controls,.stories-v22-enter .story-control-strip,
 .stories-v22-enter .results-count,.stories-v22-enter .story-cover-card,.stories-v22-enter .story-grid-card,.stories-v22-enter .story-card{
   opacity:0;transform:translateY(11px) scale(.985);filter:blur(3px);
 }
 .stories-v22-enter.stories-v22-on .section-title,
-.stories-v22-enter.stories-v22-on .library-stats>div,.stories-v22-enter.stories-v22-on .stories-portals-group,
+.stories-v22-enter.stories-v22-on .library-stats>button,.stories-v22-enter.stories-v22-on .stories-portals-group,
 .stories-v22-enter.stories-v22-on .portal-btn,.stories-v22-enter.stories-v22-on .library-controls,
 .stories-v22-enter.stories-v22-on .story-control-strip,.stories-v22-enter.stories-v22-on .results-count,
 .stories-v22-enter.stories-v22-on .story-cover-card,.stories-v22-enter.stories-v22-on .story-grid-card,.stories-v22-enter.stories-v22-on .story-card{
   animation:storiesV22Enter .54s cubic-bezier(.2,.72,.22,1) both;
 }
-.stories-v22-enter.stories-v22-on .library-stats>div:nth-child(2){animation-delay:.04s}
-.stories-v22-enter.stories-v22-on .library-stats>div:nth-child(3){animation-delay:.08s}
+.stories-v22-enter.stories-v22-on .library-stats>button:nth-child(2){animation-delay:.04s}
+.stories-v22-enter.stories-v22-on .library-stats>button:nth-child(3){animation-delay:.08s}
 .stories-v22-enter.stories-v22-on .stories-portals-group:nth-of-type(1){animation-delay:.10s}
 .stories-v22-enter.stories-v22-on .stories-portals-group:nth-of-type(2){animation-delay:.15s}
 .stories-v22-enter.stories-v22-on .portal-btn:nth-child(2){animation-delay:.05s}
@@ -2215,7 +2215,7 @@ body{background:#020507!important}
 
 /* Reduce motion. */
 @media(prefers-reduced-motion:reduce){
-  .stories-v22-enter .section-title,.stories-v22-enter .library-stats>div,.stories-v22-enter .stories-portals-group,
+  .stories-v22-enter .section-title,.stories-v22-enter .library-stats>button,.stories-v22-enter .stories-portals-group,
   .stories-v22-enter .portal-btn,.stories-v22-enter .library-controls,.stories-v22-enter .story-control-strip,
   .stories-v22-enter .results-count,.stories-v22-enter .story-cover-card,.stories-v22-enter .story-grid-card,.stories-v22-enter .story-card{
     opacity:1!important;transform:none!important;filter:none!important;animation:none!important
@@ -2387,3 +2387,98 @@ body{background:#020507!important}
   }
 }
 @media(prefers-reduced-motion:reduce){.badge-permission-panel{animation:none!important}.unlock-reward-poster{transition:none!important}}
+
+/* ============================================================
+   DISTURBING STORIES APP v2.5
+   Locked teaser · live QR · library stats · timeline · random · intro
+   ============================================================ */
+
+/* Todas las Stories: stats superiores realmente interactivos. */
+.library-stats>button{
+  appearance:none;border:1px solid #294c58;background:#071116;color:inherit;border-radius:12px;
+  min-width:0;padding:14px 6px;cursor:pointer;text-align:center;font:inherit;
+  transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease,filter .18s ease;
+}
+.library-stats>button:hover,.library-stats>button:focus-visible{border-color:#8ef4ff;box-shadow:0 0 18px rgba(142,244,255,.16);filter:brightness(1.12);outline:none}
+.library-stats>button:active{transform:scale(.98)}
+.library-stats>button strong,.library-stats>button span{display:block}
+.stories-portals .portal-label{text-align:center!important}
+.stories-portals-group.multimedia .portal-btn.nightmares{gap:2px!important}
+.stories-portals-group.multimedia .portal-btn.nightmares .nightmare-diamond{margin-bottom:0!important}
+
+/* QR v2.5: la cámara se abre por gesto directo del usuario y queda separada del teaser. */
+.unlock-panel .scanner-instruction{max-width:520px;margin:0 auto 14px;text-align:center;border:1px solid #493d20;background:#0d0b06;border-radius:12px;padding:13px 14px}
+.unlock-panel .scanner-instruction strong{display:block;color:#f0cf69;font:800 12px/1.15 Oxanium,sans-serif;letter-spacing:.08em;margin-bottom:8px}
+.unlock-panel .scanner-instruction p{margin:4px 0;color:#bdcbd0;font-size:12px;line-height:1.45}
+.unlock-panel .scan-zone{max-width:520px;margin:0 auto;border:1px solid #24454f;background:#050d10;border-radius:14px;padding:12px}
+.unlock-panel .qr-reader{width:min(72vw,310px)!important;min-height:190px!important;margin:0 auto 12px!important;overflow:hidden!important}
+.unlock-panel .qr-reader video{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important}
+.unlock-panel .locked-teaser{margin:20px auto 4px!important;max-width:320px!important;position:relative!important;z-index:1!important}
+.locked-teaser-video{position:relative;width:100%;aspect-ratio:9/16;border:1px solid #294a54;border-radius:12px;overflow:hidden;background:#000;box-shadow:0 12px 32px rgba(0,0,0,.36)}
+.locked-teaser-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+
+/* Desbloqueo: póster mayor, cierre manual y duración visual de ~5s. */
+.unlock-reward{pointer-events:auto!important;cursor:pointer!important}
+.unlock-reward-poster{width:min(48vw,190px)!important;max-height:48vh!important}
+.unlock-reward-poster img{max-height:48vh!important}
+.unlock-reward:after{content:'TOCA PARA CERRAR';position:absolute;bottom:max(22px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);color:#7f9ba2;font:700 8px/1 Oxanium,sans-serif;letter-spacing:.12em;z-index:4}
+
+/* TIMELINE v2.5: ocupa todo el ancho, años al borde, línea vertical y grupos por año. */
+.timeline-section{padding-left:8px!important;padding-right:8px!important}
+.timeline-title{margin-left:0!important;margin-right:0!important}
+.timeline-title .eyebrow{font-size:clamp(8px,2.5vw,11px)!important;letter-spacing:.06em!important}
+.timeline-list{width:100%!important;margin:0!important}
+.timeline-era-block{--era:#8ef4ff;margin:12px 0 18px}
+.timeline-era{width:100%!important;margin:0 0 8px!important;border:1px solid color-mix(in srgb,var(--era) 55%,#17272d)!important;border-left:4px solid var(--era)!important;background:linear-gradient(90deg,color-mix(in srgb,var(--era) 16%,transparent),rgba(4,10,12,.82) 62%)!important;color:#eefcff!important;border-radius:7px!important;padding:10px 12px!important;display:flex!important;justify-content:space-between!important;align-items:center!important;text-align:left!important;cursor:pointer!important}
+.timeline-era span{font:800 10px/1 Oxanium,sans-serif;letter-spacing:.1em;color:var(--era)}
+.timeline-era b{font:800 18px/1 Oxanium,sans-serif;color:var(--era)}
+.timeline-era-body{position:relative;overflow:hidden;max-height:12000px;opacity:1;transition:max-height .35s ease,opacity .24s ease}
+.timeline-era-body.collapsed{max-height:0;opacity:0}
+.era-prehistory{--era:#b28b55}.era-ancient{--era:#d2b65b}.era-medieval{--era:#a979b8}.era-modern{--era:#77a9cc}.era-contemporary{--era:#8ef4ff}.era-renaissance{--era:#75d491}.era-advances{--era:#f18b78}.era-space{--era:#8f89ff}.era-unknown{--era:#74848a}
+.timeline-year-group{display:grid!important;grid-template-columns:56px 18px minmax(0,1fr)!important;gap:0!important;align-items:stretch!important;width:100%!important;position:relative!important;margin:0!important}
+.timeline-year{grid-column:1!important;align-self:center!important;padding:0 6px 0 0!important;text-align:left!important;font:800 clamp(8px,2.4vw,11px)/1.15 Oxanium,sans-serif!important;color:#d8fbff!important;word-break:normal!important}
+.timeline-year-axis{grid-column:2!important;position:relative!important;min-height:100%!important}
+.timeline-year-axis:before{content:'';position:absolute;left:50%;top:0;bottom:0;border-left:1px solid #426570;transform:translateX(-50%)}
+.timeline-year-axis i{position:absolute;left:-9px;right:50%;top:50%;border-top:1px solid #426570}
+.timeline-items{grid-column:3!important;position:relative!important;border-left:0!important;padding:6px 0 6px 10px!important;display:grid!important;gap:9px!important;min-width:0!important}
+.timeline-item{position:relative!important;display:grid!important;grid-template-columns:70px minmax(0,1fr) auto!important;gap:10px!important;align-items:center!important;min-height:106px!important;width:100%!important;border:1px solid #213e47!important;border-radius:12px!important;background:#071116!important;padding:8px 9px!important}
+.timeline-item .timeline-node{position:absolute!important;left:-20px!important;top:50%!important;transform:translate(-50%,-50%)!important;width:9px!important;height:9px!important;border-radius:50%!important;background:#8ef4ff!important;box-shadow:0 0 9px rgba(142,244,255,.42)!important;z-index:2!important}
+.timeline-item:before{content:'';position:absolute;left:-16px;top:50%;width:16px;border-top:1px solid #426570}
+.timeline-poster{width:70px!important}
+.timeline-copy{min-width:0!important}
+.timeline-copy>span{font-size:8px!important}.timeline-copy>strong{font-size:clamp(12px,3.4vw,16px)!important;line-height:1.2!important;white-space:normal!important}.timeline-copy>small{display:block;color:#66848c;font:700 7px/1.2 Oxanium,sans-serif;margin-top:5px}.timeline-copy>em{margin-top:7px!important}
+.timeline-icons{justify-self:end!important;align-self:center!important}
+@media(max-width:390px){.timeline-year-group{grid-template-columns:48px 16px minmax(0,1fr)!important}.timeline-item{grid-template-columns:60px minmax(0,1fr) auto!important;gap:7px!important;padding:7px!important}.timeline-poster{width:60px!important}.timeline-icons{display:flex!important;flex-direction:column!important;grid-column:auto!important}.timeline-section{padding-left:4px!important;padding-right:4px!important}}
+
+/* RANDOM v2.5: carrusel rápido de pósters, sin ruleta circular y sin scroll necesario. */
+.random-section{min-height:calc(100svh - 152px)!important;display:grid!important;grid-template-rows:auto auto minmax(0,1fr) auto!important;align-content:stretch!important;gap:8px!important;padding-top:10px!important;padding-bottom:10px!important;text-align:center!important;overflow:hidden!important}
+.random-head h1{font-size:clamp(32px,9vw,44px)!important;margin:2px 0!important}
+.random-filters{margin:4px 0!important}
+.random-stage{min-height:0;display:grid;place-items:center;align-content:center;position:relative}
+.random-poster-roll{width:min(43vw,170px);position:relative;transition:filter .15s ease,transform .15s ease}
+.random-roll-card{position:relative;border:1px solid #355965;border-radius:11px;overflow:hidden;background:#071116;box-shadow:0 15px 38px rgba(0,0,0,.4)}
+.random-roll-card img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover}
+.random-roll-card>span{display:grid;place-items:center;aspect-ratio:2/3;font:800 34px Oxanium,sans-serif}
+.random-roll-card b{position:absolute;left:0;right:0;bottom:0;padding:7px 5px;background:linear-gradient(transparent,rgba(0,0,0,.9));font:800 8px/1 Oxanium,sans-serif;letter-spacing:.08em}
+.random-poster-roll.rolling{filter:blur(.55px) brightness(1.12)}
+.random-poster-roll.rolling .random-roll-card{animation:randomPosterTick .14s linear infinite}
+@keyframes randomPosterTick{0%{transform:translateY(-4px) scale(.985);opacity:.72}50%{transform:translateY(3px) scale(1.015);opacity:1}100%{transform:translateY(-4px) scale(.985);opacity:.72}}
+.random-poster-roll.winner{animation:randomWinnerV25 .72s cubic-bezier(.18,.9,.2,1) both}
+@keyframes randomWinnerV25{0%{transform:scale(.82);filter:brightness(2.1);box-shadow:0 0 0 rgba(142,244,255,0)}35%{transform:scale(1.17) rotate(-1deg);filter:brightness(1.35);box-shadow:0 0 36px rgba(142,244,255,.6)}70%{transform:scale(1.05) rotate(.6deg)}100%{transform:scale(1);filter:none}}
+.random-result-slot{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(94vw,520px);pointer-events:none}
+.random-result-v25{margin:0!important;max-width:none!important;border:1px solid #31535d;background:rgba(4,12,15,.96);border-radius:11px;padding:8px 10px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;text-align:left;pointer-events:auto}
+.random-result-v25 h2{font-size:clamp(10px,2.8vw,14px)!important;margin:2px 0!important}.random-result-v25 p{margin:2px 0!important;font-size:9px}.random-result-v25 .random-actions{display:flex!important;gap:5px!important}.random-result-v25 .random-actions button{padding:8px 9px!important;font-size:7px!important;white-space:nowrap}
+.random-result-slot.reward-in{animation:randomResultRewardV25 .7s cubic-bezier(.18,.9,.2,1) both}
+@keyframes randomResultRewardV25{0%{opacity:0;transform:translate(-50%,18px) scale(.92)}55%{opacity:1;transform:translate(-50%,-4px) scale(1.03)}100%{transform:translate(-50%,0) scale(1)}}
+.random-spin-btn{width:min(100%,420px)!important;margin:0 auto!important}
+
+/* Intro: nunca mostrar texto de fallback por encima del vídeo. */
+.intro-fallback{display:none!important}
+
+@media(prefers-reduced-motion:reduce){.random-poster-roll.rolling .random-roll-card,.random-poster-roll.winner,.random-result-slot.reward-in{animation:none!important}.timeline-era-body{transition:none!important}}
+.timeline-title h1{font-size:clamp(18px,5.6vw,28px)!important;line-height:1.08!important;max-width:100%!important}
+.locked-inline-unlock{width:100%!important;margin-top:14px!important;padding-left:0!important;padding-right:0!important}
+.locked-error-note{margin:10px auto;color:#ff9aa0;text-align:center;font-size:11px;max-width:520px}
+/* Todos los TEASERS del proyecto son 9:16. */
+.reader.teaser-reader .reader-media{width:min(100%,320px)!important;margin:24px auto!important}
+.reader.teaser-reader .reader-media iframe,.reader.teaser-reader .reader-media video{width:100%!important;aspect-ratio:9/16!important;height:auto!important;max-height:none!important;object-fit:contain!important;background:#000!important;border-radius:12px!important}
