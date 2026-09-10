@@ -2881,3 +2881,37 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 }
 @keyframes homeBackdropV210{from{transform:scale(1.025) translate3d(-.5%,.2%,0)}to{transform:scale(1.055) translate3d(.55%,-.3%,0)}}
 @media(prefers-reduced-motion:reduce){.hero.latest-storm .hero-media>.hero-main-image,.hero.latest-storm .hero-media>.hero-rgb-ghost,.hero.latest-storm .hero-media>.hero-backdrop{animation:none!important}.hero.latest-storm .hero-media>.hero-main-image{transform:scale(1.025)!important}.hero.latest-storm .hero-media>.hero-rgb-ghost{display:none!important}}
+
+/* ============================================================
+   DISTURBING STORIES APP v2.11
+   QR nativo iPhone/Safari · getUserMedia + AUTO-DETECT separado
+   ============================================================ */
+/* Safari ya no recibe un <video> creado/controlado por html5-qrcode.
+   Este visor pertenece exclusivamente a getUserMedia(). */
+.qr-reader,#qr-reader{
+  width:100%!important;
+  min-height:280px!important;
+  aspect-ratio:1/1!important;
+  position:relative!important;
+  display:block!important;
+  overflow:hidden!important;
+  background:#020506!important;
+  border:1px solid #315965!important;
+  border-radius:16px!important;
+  isolation:isolate!important;
+}
+.qr-native-stage{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;background:#000!important;overflow:hidden!important}
+.qr-native-stage .qr-live-video,#qrLiveVideo{
+  position:absolute!important;inset:0!important;z-index:1!important;
+  display:block!important;visibility:visible!important;opacity:1!important;
+  width:100%!important;height:100%!important;min-width:100%!important;min-height:100%!important;
+  max-width:none!important;max-height:none!important;object-fit:cover!important;object-position:center!important;
+  background:#000!important;transform:none!important;-webkit-transform:none!important;
+}
+.qr-native-stage .qr-live-canvas,#qrLiveCanvas{position:absolute!important;left:-4px!important;top:-4px!important;width:2px!important;height:2px!important;opacity:.001!important;pointer-events:none!important;z-index:0!important}
+.qr-native-stage .qr-live-overlay{position:absolute!important;inset:11%!important;z-index:3!important;pointer-events:none!important}
+.qr-native-stage .qr-live-overlay i{position:absolute;width:28px;height:28px;border-color:#b9f6ff;border-style:solid;filter:drop-shadow(0 0 6px rgba(142,244,255,.45))}
+.qr-native-stage .qr-live-overlay i:nth-child(1){left:0;top:0;border-width:2px 0 0 2px}.qr-native-stage .qr-live-overlay i:nth-child(2){right:0;top:0;border-width:2px 2px 0 0}.qr-native-stage .qr-live-overlay i:nth-child(3){left:0;bottom:0;border-width:0 0 2px 2px}.qr-native-stage .qr-live-overlay i:nth-child(4){right:0;bottom:0;border-width:0 2px 2px}
+.qr-native-stage .qr-live-overlay span{position:absolute;left:4%;right:4%;top:50%;height:1px;background:linear-gradient(90deg,transparent,#8ef4ff,transparent);box-shadow:0 0 8px rgba(142,244,255,.5);animation:qrScanLineV211 1.5s ease-in-out infinite alternate}
+@keyframes qrScanLineV211{from{transform:translateY(-74px);opacity:.42}to{transform:translateY(74px);opacity:1}}
+@media(prefers-reduced-motion:reduce){.qr-native-stage .qr-live-overlay span{animation:none!important}}
