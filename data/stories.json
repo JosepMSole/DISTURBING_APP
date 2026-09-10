@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-10T00:39:29.838211+00:00",
+  "updated": "2026-09-10T00:40:46.412619+00:00",
   "stories": [
     {
       "id": "277",
@@ -1848,7 +1848,9 @@
         "LEER",
         "TEASER"
       ],
-      "features": [],
+      "features": [
+        "audio"
+      ],
       "readTime": 5
     },
     {
