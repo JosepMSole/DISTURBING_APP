@@ -2482,3 +2482,81 @@ body{background:#020507!important}
 /* Todos los TEASERS del proyecto son 9:16. */
 .reader.teaser-reader .reader-media{width:min(100%,320px)!important;margin:24px auto!important}
 .reader.teaser-reader .reader-media iframe,.reader.teaser-reader .reader-media video{width:100%!important;aspect-ratio:9/16!important;height:auto!important;max-height:none!important;object-fit:contain!important;background:#000!important;border-radius:12px!important}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v2.6
+   QR directo + teaser locked + header section cue + NEW gold + Timeline/Random
+   ============================================================ */
+
+/* Header · icono contextual, puramente informativo. */
+.section-indicator{
+  flex:0 0 38px;width:38px;height:38px;display:grid;place-items:center;
+  border:1px solid #29444c;border-radius:9px;background:#081116;color:#b9eaf2;
+  box-shadow:inset 0 0 12px rgba(142,244,255,.035);pointer-events:none;overflow:hidden;
+}
+.section-indicator>span{display:grid;place-items:center;width:100%;height:100%}
+.section-indicator-home{font:700 28px/1 Arial,sans-serif;transform:translateY(-1px)}
+.section-indicator-player{font:700 24px/1 Arial,sans-serif}
+.section-indicator-grid{grid-template-columns:repeat(3,5px);grid-template-rows:repeat(3,5px);gap:2px}
+.section-indicator-grid i{display:block;width:5px;height:5px;border-radius:1px;background:currentColor}
+.section-indicator-books{display:flex!important;gap:2px!important;align-items:center!important;justify-content:center!important}
+.section-indicator-books i{display:block;width:4px;height:21px;border:1.4px solid currentColor;border-radius:1px}
+.section-indicator-watcher svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.section-indicator-watcher .watcher-pupil{fill:currentColor;stroke:none}
+.section-indicator-qr svg{width:24px;height:24px;fill:currentColor}
+@media(max-width:390px){.section-indicator{flex-basis:34px;width:34px;height:34px}.topbar-left{gap:3px!important}.back-nav-btn{min-width:64px!important;max-width:68px!important}}
+
+/* Stories bloqueadas · copy más grande y TEASER claramente fuera del scanner. */
+.unlock-panel .scanner-instruction{max-width:620px!important;padding:17px 18px!important;border-color:#806b2c!important;background:linear-gradient(180deg,#151005,#0b0905)!important;box-shadow:inset 0 0 20px rgba(211,171,58,.04)!important}
+.unlock-panel .scanner-instruction strong{font-size:clamp(15px,4.1vw,20px)!important;letter-spacing:.075em!important;margin-bottom:10px!important;color:#f4d46d!important;text-shadow:0 0 13px rgba(224,189,80,.16)}
+.unlock-panel .scanner-instruction p{margin:0!important;color:#d7e2e5!important;font-size:clamp(11.5px,3.15vw,14px)!important;line-height:1.5!important;font-weight:600!important}
+.unlock-panel .scanner-instruction.general-unlock p{font-size:clamp(14px,4vw,18px)!important;line-height:1.45!important;color:#f0d77e!important;font-family:Oxanium,sans-serif!important;font-weight:700!important}
+.unlock-panel .scan-zone{position:relative!important;z-index:2!important;margin-bottom:0!important}
+.unlock-panel .locked-teaser{display:block!important;clear:both!important;position:relative!important;z-index:1!important;margin:22px auto 0!important;width:min(100%,320px)!important;max-width:320px!important}
+.locked-teaser-video{width:100%!important;aspect-ratio:9/16!important}
+.locked-teaser-video iframe{width:100%!important;height:100%!important;aspect-ratio:9/16!important}
+
+/* QR v2.6 · vídeo live administrado directamente por getUserMedia. */
+.qr-reader-live{position:relative!important;aspect-ratio:1/1!important;min-height:0!important;background:#010506!important;overflow:hidden!important;border:1px solid #315965!important;box-shadow:inset 0 0 24px rgba(0,0,0,.65)!important}
+.qr-live-video{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;background:#000!important}
+.qr-live-overlay{position:absolute;inset:0;pointer-events:none;background:linear-gradient(transparent 49.6%,rgba(142,244,255,.2) 50%,transparent 50.4%);animation:qrSweepV26 2.1s linear infinite}
+.qr-live-overlay i{position:absolute;width:34px;height:34px;border-color:#8ef4ff;border-style:solid;filter:drop-shadow(0 0 5px rgba(142,244,255,.42))}
+.qr-live-overlay i:nth-child(1){left:13%;top:13%;border-width:2px 0 0 2px}.qr-live-overlay i:nth-child(2){right:13%;top:13%;border-width:2px 2px 0 0}.qr-live-overlay i:nth-child(3){left:13%;bottom:13%;border-width:0 0 2px 2px}.qr-live-overlay i:nth-child(4){right:13%;bottom:13%;border-width:0 2px 2px 0}
+.qr-live-overlay span{position:absolute;left:14%;right:14%;top:50%;height:1px;background:#8ef4ff;box-shadow:0 0 8px rgba(142,244,255,.7);animation:qrLineV26 1.8s ease-in-out infinite alternate}
+@keyframes qrLineV26{from{transform:translateY(-72px);opacity:.35}to{transform:translateY(72px);opacity:.95}}@keyframes qrSweepV26{from{background-position:0 -160px}to{background-position:0 160px}}
+
+/* NEW · un único lenguaje dorado en bubble + marco de póster. */
+.new-story-badge{background:#d7ad3a!important;color:#120e03!important;border:1px solid #ffe38a!important;box-shadow:0 0 12px rgba(224,181,63,.36)!important;text-shadow:none!important}
+.story-thumb-wrap:has(.new-story-badge),.story-cover-card:has(.new-story-badge),.story-grid-poster:has(.new-story-badge),.story-featured:has(.new-story-badge),.media-collection-poster:has(.new-story-badge),.saga-part-poster:has(.new-story-badge){outline:2px solid #d8b243!important;outline-offset:-2px!important;box-shadow:0 0 0 1px rgba(255,225,119,.18),0 0 13px rgba(216,178,67,.16)!important}
+.hero-story-media>.new-story-badge{left:50%!important;right:auto!important;top:9px!important;transform:translateX(-50%)!important;font-size:clamp(11px,3.3vw,15px)!important;padding:7px 13px!important;border-width:1px!important;box-shadow:0 0 14px rgba(224,181,63,.38)!important;animation:homeNewPulseV26 1.9s ease-in-out infinite!important}
+@keyframes homeNewPulseV26{0%,100%{transform:translateX(-50%) scale(1);filter:brightness(1)}50%{transform:translateX(-50%) scale(1.08);filter:brightness(1.2);box-shadow:0 0 22px rgba(239,199,77,.5)}}
+
+/* MULTIMEDIA · MICRO usa el mismo slot vertical del gamepad. */
+.portal-btn.nightmares{gap:4px!important}
+.nightmare-icon-slot{display:grid!important;place-items:center!important;width:35px!important;height:25px!important;flex:0 0 25px!important;margin:0!important}
+.portal-btn.nightmares .nightmare-diamond{display:block!important;width:8px!important;height:8px!important;margin:0!important;transform:rotate(45deg)!important;border:1.2px solid currentColor!important}
+
+/* Timeline v2.6 · años x2, copy mayor, sin repetir año y esquina verde en leídas. */
+.timeline-year-group{grid-template-columns:82px 20px minmax(0,1fr)!important}
+.timeline-year{font:800 clamp(16px,4.8vw,22px)/1 Oxanium,sans-serif!important;padding-right:7px!important;letter-spacing:-.035em!important}
+.timeline-item{min-height:112px!important;grid-template-columns:72px minmax(0,1fr) auto!important;overflow:hidden!important}
+.timeline-copy>span{font-size:10px!important;letter-spacing:.05em!important}.timeline-copy>strong{font-size:clamp(15px,4vw,19px)!important;line-height:1.18!important}.timeline-copy>small{display:none!important}.timeline-copy>em{display:block!important;font-size:9px!important;color:#91ffac!important;font-style:normal!important;font-weight:800!important;letter-spacing:.06em!important}
+.timeline-item.timeline-read:after{content:'';position:absolute;left:0;bottom:0;width:0;height:0;border-style:solid;border-width:0 0 25px 25px;border-color:transparent transparent #2fa85b transparent;filter:drop-shadow(0 0 5px rgba(47,168,91,.24));z-index:3}
+.timeline-order{font-size:clamp(10px,3vw,13px)!important;font-weight:800!important;letter-spacing:.1em!important}
+@media(max-width:390px){.timeline-year-group{grid-template-columns:70px 18px minmax(0,1fr)!important}.timeline-year{font-size:16px!important}.timeline-item{grid-template-columns:60px minmax(0,1fr) auto!important}.timeline-copy>strong{font-size:14px!important}}
+
+/* Ruleta Random v2.6 · filtros pegados al póster + FX + parada manual. */
+.random-section{gap:0!important;grid-template-rows:auto auto minmax(0,1fr) auto!important}
+.random-head h1{font-size:clamp(28px,8vw,42px)!important;margin:1px 0 4px!important}
+.random-filters{margin:0!important;padding:0!important;position:relative;z-index:4}
+.random-stage{align-content:start!important;padding-top:0!important;margin-top:0!important;overflow:visible!important}
+.random-poster-roll{margin-top:0!important;z-index:3}
+.random-energy{position:absolute;top:-7px;left:50%;width:min(60vw,230px);height:min(73vw,285px);transform:translateX(-50%);pointer-events:none;z-index:2;opacity:.72}
+.random-energy:before,.random-energy:after{content:'';position:absolute;inset:6%;border:1px solid rgba(142,244,255,.22);border-radius:20px;animation:randomEnergyTurnV26 8s linear infinite}.random-energy:after{inset:13%;border-style:dashed;animation-direction:reverse;animation-duration:5.5s}
+.random-energy i{position:absolute;width:5px;height:5px;border-radius:50%;background:#8ef4ff;box-shadow:0 0 9px rgba(142,244,255,.8);animation:randomSparkV26 2.4s ease-in-out infinite}.random-energy i:nth-child(1){left:3%;top:20%}.random-energy i:nth-child(2){right:4%;top:35%;animation-delay:.5s}.random-energy i:nth-child(3){left:8%;bottom:20%;animation-delay:1s}.random-energy i:nth-child(4){right:7%;bottom:9%;animation-delay:1.5s}.random-energy span,.random-energy b{position:absolute;left:0;right:0;top:50%;border-top:1px solid rgba(142,244,255,.22);transform:rotate(8deg)}.random-energy b{transform:rotate(-12deg);opacity:.5}
+.random-energy.active{opacity:1;filter:drop-shadow(0 0 8px rgba(142,244,255,.22))}
+.random-spin-btn.stop-mode{border-color:#e0bd50!important;color:#ffe598!important;background:#231a05!important;box-shadow:0 0 18px rgba(224,189,80,.18)!important}
+@keyframes randomEnergyTurnV26{to{transform:rotate(360deg)}}@keyframes randomSparkV26{0%,100%{opacity:.18;transform:scale(.6)}50%{opacity:1;transform:scale(1.65)}}
+
+@media(prefers-reduced-motion:reduce){.qr-live-overlay,.qr-live-overlay span,.hero-story-media>.new-story-badge,.random-energy:before,.random-energy:after,.random-energy i{animation:none!important}}
