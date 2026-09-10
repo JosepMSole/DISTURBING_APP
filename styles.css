@@ -3064,3 +3064,36 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
   0%,100%{transform:scale(1)}
   50%{transform:scale(1.025);box-shadow:0 0 0 3px rgba(243,214,117,.16),0 0 22px rgba(243,214,117,.18)}
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v2.15
+   QR definitivo · foto nativa + análisis automático
+   ============================================================ */
+.qr-photo-only .qr-reader,
+.qr-photo-only #qr-reader{
+  min-height:250px!important;
+  display:grid!important;
+  place-items:center!important;
+  aspect-ratio:auto!important;
+  background:radial-gradient(circle at 50% 40%,rgba(33,95,108,.18),transparent 55%),#030708!important;
+  border:1px solid #315965!important;
+  border-radius:16px!important;
+  overflow:hidden!important;
+}
+.qr-photo-mode{
+  width:min(88%,420px);
+  min-height:210px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-align:center;
+  padding:24px 20px;
+  color:#dce9ec;
+}
+.qr-photo-mode strong{font:800 15px/1.2 Oxanium,sans-serif;letter-spacing:.1em;color:#f3d675}
+.qr-photo-mode span{max-width:340px;font-size:12px;line-height:1.55;color:#b8c7cb;font-weight:600}
+.qr-photo-only #photoQr{min-height:52px}
+.qr-photo-only #unlockStatus{min-height:18px}
