@@ -2004,7 +2004,7 @@ body{background:#020507!important}
 @media(prefers-reduced-motion:reduce){.random-wheel.spin,.spotify-companion svg{animation:none!important}.intro-layer{transition:none!important}}
 
 /* ============================================================
-   DISTURBING STORIES APP v2.1 · polish / navigation / catalog
+   DISTURBING STORIES APP v2.2 · polish / navigation / catalog
    ============================================================ */
 
 /* Drawer: coherent icon language and definitive two-line footer. */
@@ -2066,9 +2066,158 @@ body{background:#020507!important}
 .media-collection-card{grid-template-columns:58px minmax(0,1fr)!important;min-height:102px!important;padding:8px 10px 8px 8px!important;cursor:pointer}.media-collection-copy{display:grid;align-content:center;gap:4px;min-width:0}.media-collection-card .media-collection-copy>span{font-size:8px!important;letter-spacing:.08em}.media-collection-card .media-collection-copy>strong{font-size:clamp(12px,3.4vw,15px)!important;line-height:1.15!important;margin:0!important}.media-collection-card .media-collection-copy>em{font-size:9px!important;margin-top:2px!important}.media-collection-card:active{filter:brightness(1.18)}
 
 @media(prefers-reduced-motion:reduce){.hero.latest-storm .hero-media>.hero-main-image,.hero.latest-storm .hero-media>.hero-backdrop,.book-card-flash,.book-card-opening,.my-continue-group .section-title,.my-stories-title .eyebrow,.collection-title .eyebrow{animation:none!important}.home-continue-v21 .home-continue-cover,.home-continue-v21 .home-continue-copy,.home-continue-v21 .continue-btn,.continue-card .continue-cover,.continue-card .continue-copy,.continue-card .resume-arrow{opacity:1!important;transform:none!important;transition:none!important}}
-/* v2.1 · Spotify CTA must outrank playlist titles while remaining single-line. */
+/* v2.2 · Spotify CTA must outrank playlist titles while remaining single-line. */
 .spotify-companion strong{font-size:clamp(14px,3.9vw,17px)!important;letter-spacing:-.01em!important}
 @media(max-width:360px){.spotify-companion{gap:8px!important;padding-inline:10px!important}.spotify-companion svg{width:30px!important;height:30px!important}.spotify-companion>b{font-size:17px!important}.spotify-companion strong{font-size:14px!important}}
 /* Lock/NEW keep the upper-left priority; sort bubbles stack below them. */
 .sort-badge.sort-has-lock,.sort-badge.sort-has-new{top:42px!important}
 .sort-badge.sort-has-lock.sort-has-new{top:77px!important}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v2.2
+   ============================================================ */
+
+/* HOME · la destacada llena el marco 9:16 sin deformarse. */
+.hero.latest-storm .hero-media>.hero-main-image{
+  inset:0!important;width:100%!important;height:100%!important;
+  object-fit:cover!important;object-position:center center!important;
+  animation:heroSafeZoomV21 9.2s ease-in-out infinite alternate!important;
+}
+.hero.latest-storm .hero-media>.hero-backdrop{opacity:.18!important;filter:blur(10px) brightness(.45)!important}
+
+/* El candado queda siempre superpuesto en la esquina superior izquierda del póster. */
+.story-thumb-wrap,.story-cover-card,.story-grid-poster,.continue-cover,.home-continue-cover,
+.hero-story-media,.story-featured,.media-collection-poster,.random-result-poster,.timeline-poster,.saga-part-poster{
+  position:relative!important;
+}
+.story-thumb-wrap>.ex-badge,.story-cover-card>.ex-badge,.story-grid-poster>.ex-badge,
+.continue-cover>.ex-badge,.home-continue-cover>.ex-badge,.hero-story-media>.ex-badge,.story-featured>.ex-badge,
+.media-collection-poster>.ex-badge,.random-result-poster>.ex-badge,.timeline-poster>.ex-badge,.saga-part-poster>.ex-badge{
+  position:absolute!important;left:6px!important;top:6px!important;right:auto!important;bottom:auto!important;
+  z-index:24!important;transform:none!important;
+}
+
+/* TODAS LAS STORIES · multimedia en una sola línea y nomenclatura compacta. */
+.portal-grid-4{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:5px!important}
+.stories-portals-group.multimedia .portal-btn{min-width:0!important;min-height:78px!important;padding:7px 2px!important;gap:4px!important}
+.stories-portals-group.multimedia .portal-btn strong{font-size:clamp(6.5px,2vw,8.5px)!important;letter-spacing:.015em!important;white-space:nowrap!important}
+.stories-portals-group.multimedia .portal-btn small{font-size:5.5px!important;white-space:nowrap!important}
+.portal-btn.games .gamepad-portal-svg{width:35px!important;height:25px!important;stroke-width:1.7!important}
+.portal-btn.nightmares .nightmare-diamond{width:8px!important;height:8px!important;border-width:1.2px!important}
+.story-read-time{font-family:Oxanium,sans-serif!important;color:#9fcbd5!important;font-size:8px!important;letter-spacing:.04em!important;white-space:nowrap}
+.story-grid-copy .story-read-time{display:inline-flex;margin-top:6px;padding:4px 6px;border:1px solid #294b55;border-radius:999px;background:#071217}
+.story-card .story-read-time{color:#b5dce4!important}
+
+/* Entrada coreografiada de TODAS LAS STORIES. */
+.stories-v22-enter .section-title,.stories-v22-enter .library-stats>div,.stories-v22-enter .stories-portals-group,
+.stories-v22-enter .portal-btn,.stories-v22-enter .library-controls,.stories-v22-enter .story-control-strip,
+.stories-v22-enter .results-count,.stories-v22-enter .story-cover-card,.stories-v22-enter .story-grid-card,.stories-v22-enter .story-card{
+  opacity:0;transform:translateY(11px) scale(.985);filter:blur(3px);
+}
+.stories-v22-enter.stories-v22-on .section-title,
+.stories-v22-enter.stories-v22-on .library-stats>div,.stories-v22-enter.stories-v22-on .stories-portals-group,
+.stories-v22-enter.stories-v22-on .portal-btn,.stories-v22-enter.stories-v22-on .library-controls,
+.stories-v22-enter.stories-v22-on .story-control-strip,.stories-v22-enter.stories-v22-on .results-count,
+.stories-v22-enter.stories-v22-on .story-cover-card,.stories-v22-enter.stories-v22-on .story-grid-card,.stories-v22-enter.stories-v22-on .story-card{
+  animation:storiesV22Enter .54s cubic-bezier(.2,.72,.22,1) both;
+}
+.stories-v22-enter.stories-v22-on .library-stats>div:nth-child(2){animation-delay:.04s}
+.stories-v22-enter.stories-v22-on .library-stats>div:nth-child(3){animation-delay:.08s}
+.stories-v22-enter.stories-v22-on .stories-portals-group:nth-of-type(1){animation-delay:.10s}
+.stories-v22-enter.stories-v22-on .stories-portals-group:nth-of-type(2){animation-delay:.15s}
+.stories-v22-enter.stories-v22-on .portal-btn:nth-child(2){animation-delay:.05s}
+.stories-v22-enter.stories-v22-on .portal-btn:nth-child(3){animation-delay:.09s}
+.stories-v22-enter.stories-v22-on .portal-btn:nth-child(4){animation-delay:.13s}
+.stories-v22-enter.stories-v22-on .library-controls{animation-delay:.18s}
+.stories-v22-enter.stories-v22-on .story-control-strip{animation-delay:.22s}
+.stories-v22-enter.stories-v22-on .results-count{animation-delay:.25s}
+.stories-v22-enter.stories-v22-on .story-cover-card:nth-child(2),
+.stories-v22-enter.stories-v22-on .story-grid-card:nth-child(2),
+.stories-v22-enter.stories-v22-on .story-card:nth-child(2){animation-delay:.035s}
+.stories-v22-enter.stories-v22-on .story-cover-card:nth-child(3),
+.stories-v22-enter.stories-v22-on .story-grid-card:nth-child(3),
+.stories-v22-enter.stories-v22-on .story-card:nth-child(3){animation-delay:.07s}
+@keyframes storiesV22Enter{to{opacity:1;transform:none;filter:none}}
+.stories-v22-enter.stories-v22-on::before,.stories-v22-enter.stories-v22-on::after{animation:v22CornerIn .65s ease both}
+@keyframes v22CornerIn{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+
+/* SAGAS · negro sólido a la izquierda + progreso publicado/leído. */
+.saga-card-shade{
+  background:linear-gradient(90deg,#000 0%,#000 43%,rgba(0,0,0,.96) 47%,rgba(0,0,0,.62) 51%,rgba(0,0,0,.18) 56%,rgba(0,0,0,0) 61%,rgba(0,0,0,0) 100%)!important;
+}
+.saga-card-copy{width:52%!important;padding:18px 14px!important}
+.saga-card-copy h2{font-size:clamp(18px,5.7vw,25px)!important}
+.saga-progress{position:relative!important;width:100%!important;height:7px!important;background:#10232b!important;border-radius:999px!important;overflow:hidden!important}
+.saga-progress>i{position:absolute!important;left:0!important;top:0!important;height:100%!important;border-radius:inherit!important}
+.saga-progress-published{background:#39aeea!important;z-index:1!important}
+.saga-progress-read{background:#d9ac42!important;z-index:2!important;box-shadow:0 0 9px rgba(217,172,66,.28)}
+.saga-card-copy>strong{color:#d5edf2!important;line-height:1.35!important}
+
+.saga-detail{position:relative!important;isolation:isolate!important;overflow:hidden!important;min-height:calc(100svh - var(--topbar-base) - var(--bottomnav-base))!important}
+.saga-page-bg{position:absolute;z-index:-2;left:calc(var(--reader-pad) * -1);right:calc(var(--reader-pad) * -1);top:202px;bottom:-24px;overflow:hidden;background:#020507}
+.saga-page-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,9,12,.38),rgba(3,9,12,.72) 80%,rgba(3,9,12,.92))}
+.saga-page-bg img{width:100%;height:100%;object-fit:cover;object-position:center;opacity:.42;filter:saturate(.8) contrast(1.08)}
+.saga-detail-content{position:relative;z-index:1}
+.saga-detail-banner{height:210px!important;background:#020507!important;position:relative!important;overflow:hidden!important}
+.saga-detail-banner img{position:absolute!important;left:0!important;top:0!important;width:200%!important;max-width:none!important;height:100%!important;object-fit:cover!important;object-position:left center!important}
+.saga-percent .saga-progress{margin-top:9px!important}
+.saga-percent>strong{color:#d9f6fb!important}
+.saga-percent>span{color:#9ab7be!important}
+
+.saga-parts{gap:12px!important}
+.saga-part{min-height:124px!important;grid-template-columns:86px minmax(0,1fr) auto!important;gap:13px!important;padding:14px 12px!important;border-radius:13px!important}
+.saga-part .saga-part-order{top:8px!important;left:11px!important;font-size:8px!important;letter-spacing:.08em!important}
+.saga-part-poster{width:78px!important;flex:0 0 78px!important;margin-top:16px!important;border-radius:8px!important}
+.saga-part-poster img{width:100%!important;aspect-ratio:2/3!important;object-fit:cover!important}
+.saga-part-copy{margin-top:15px!important;min-width:0!important}
+.saga-part-copy strong{font-size:clamp(13px,3.8vw,16px)!important;line-height:1.25!important}
+.saga-part-copy em{font-size:9px!important;margin-top:7px!important}
+.saga-read-mark{display:inline-block;margin-top:8px;color:#e0b34a;font-family:Oxanium,sans-serif;font-size:9px;letter-spacing:.06em}
+.saga-part.is-read{border-color:#6c5825!important;box-shadow:inset 3px 0 0 #d9ac42}
+.saga-part-icons{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;gap:8px!important;min-width:34px!important;margin-top:0!important}
+.saga-feature-icon{width:32px;height:32px;border:1px solid #335761;border-radius:50%;display:grid;place-items:center;background:rgba(4,13,17,.86)}
+.saga-feature-icon svg{width:18px!important;height:18px!important}
+.saga-feature-icon.audio{color:#6effa9;border-color:#238354}.saga-feature-icon.video{color:#79d8ff;border-color:#277fab}.saga-feature-icon.extra{color:#e1c06d;border-color:#806a30;font:900 20px/1 Oxanium,sans-serif}
+.future-part{min-height:100px!important}
+
+/* TIMELINE · mayor, centrado, año a la izquierda y agrupación con llave. */
+.timeline-section .section-title{text-align:center!important;justify-content:center!important}
+.timeline-order{max-width:620px!important;margin:0 auto 20px!important;display:block!important}
+.timeline-list{width:100%!important;max-width:720px!important;margin:0 auto!important}
+.timeline-era{margin:28px auto 12px!important;font-size:12px!important;padding:11px 14px!important}
+.timeline-year-group{
+  display:grid!important;grid-template-columns:minmax(78px,112px) 44px minmax(0,1fr)!important;
+  gap:8px!important;align-items:stretch!important;margin:10px auto 20px!important;
+}
+.timeline-year{font-size:clamp(14px,4vw,18px)!important;padding:0!important;display:flex!important;justify-content:flex-end!important;align-items:center!important;text-align:right!important}
+.timeline-axis-marker{position:relative;display:flex;align-items:center;justify-content:center;min-height:116px}
+.timeline-year-node{width:14px;height:14px;border-radius:50%;background:#58c8ff;border:2px solid #c7f1ff;box-shadow:0 0 14px rgba(88,200,255,.55);z-index:3}
+.timeline-brace{position:absolute;left:27px;top:50%;transform:translateY(-50%) scaleY(1.28);transform-origin:center;font-family:Georgia,serif;font-size:clamp(96px,26vw,150px);line-height:.7;color:#527985;font-weight:400;z-index:1}
+.timeline-items{border:0!important;padding:0 0 0 15px!important;display:grid!important;gap:11px!important}
+.timeline-item{min-height:116px!important;display:grid!important;grid-template-columns:76px minmax(0,1fr) auto!important;gap:13px!important;align-items:center!important;border:1px solid #213e47;border-radius:13px;background:#071116;padding:10px!important}
+.timeline-poster{width:76px!important;border-radius:8px!important}
+.timeline-copy{min-width:0}.timeline-copy>span{display:block;color:#72919a;font:700 8px/1.2 Oxanium,sans-serif;letter-spacing:.08em}.timeline-copy>strong{display:block;margin-top:5px;font-size:clamp(12px,3.6vw,15px);line-height:1.25}.timeline-copy>em{display:block;margin-top:7px;color:#e0b34a;font-style:normal;font:800 8px/1 Oxanium,sans-serif}
+.timeline-icons{display:flex!important;flex-direction:column!important;gap:7px!important}
+.timeline-icon{width:31px!important;height:31px!important}.timeline-icon svg{width:18px!important;height:18px!important}
+.timeline-break{margin:12px auto 18px!important}
+@media(max-width:390px){.timeline-year-group{grid-template-columns:76px 34px minmax(0,1fr)!important;gap:4px!important}.timeline-brace{left:21px!important}.timeline-item{grid-template-columns:64px minmax(0,1fr)!important}.timeline-poster{width:64px!important}.timeline-icons{grid-column:2;flex-direction:row!important}.saga-card-copy{width:58%!important}}
+
+/* PLAYER · duración por pista y modos más legibles. */
+.player-track{grid-template-columns:36px minmax(0,1fr) auto!important;align-items:center!important}
+.player-track>em{font-style:normal;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#8eabb3;font-size:11px;white-space:nowrap}
+.player-mode-controls{gap:9px!important}
+.player-mode{min-height:60px!important;font-size:clamp(13px,3.8vw,16px)!important;font-weight:900!important;letter-spacing:.02em!important}
+.player-mode.active{box-shadow:inset 0 0 18px rgba(210,35,42,.12),0 0 12px rgba(210,35,42,.08)!important}
+
+/* EXTRA · destino manual opcional. */
+.extra-destination{display:flex!important;width:100%!important;align-items:center!important;justify-content:center!important;text-decoration:none!important;margin-top:16px!important}
+
+/* Reduce motion. */
+@media(prefers-reduced-motion:reduce){
+  .stories-v22-enter .section-title,.stories-v22-enter .library-stats>div,.stories-v22-enter .stories-portals-group,
+  .stories-v22-enter .portal-btn,.stories-v22-enter .library-controls,.stories-v22-enter .story-control-strip,
+  .stories-v22-enter .results-count,.stories-v22-enter .story-cover-card,.stories-v22-enter .story-grid-card,.stories-v22-enter .story-card{
+    opacity:1!important;transform:none!important;filter:none!important;animation:none!important
+  }
+}
