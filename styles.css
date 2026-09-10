@@ -3067,7 +3067,7 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 
 
 /* ============================================================
-   DISTURBING STORIES APP v2.15
+   DISTURBING STORIES APP v2.16
    QR definitivo · foto nativa + análisis automático
    ============================================================ */
 .qr-photo-only .qr-reader,
@@ -3097,3 +3097,83 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .qr-photo-mode span{max-width:340px;font-size:12px;line-height:1.55;color:#b8c7cb;font-weight:600}
 .qr-photo-only #photoQr{min-height:52px}
 .qr-photo-only #unlockStatus{min-height:18px}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v2.16
+   Install prompt, HOME protection, saga banners and layout fixes
+   ============================================================ */
+.install-app-svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+#installBtn:not(.hidden){display:flex!important;align-items:center!important;gap:11px!important}
+.drawer-install{font-size:0!important}
+.install-app-panel{width:calc(100% - (var(--reader-pad) * 2))!important;margin:calc(var(--topbar-base) + var(--top-safe) + 10px) var(--reader-pad) 12px!important;cursor:pointer;grid-template-columns:minmax(0,1fr) auto!important;align-items:center!important;text-align:left!important}
+.install-app-panel-copy{display:grid;gap:4px;min-width:0}
+.install-app-panel-copy strong{font-family:Oxanium,sans-serif!important;color:#ffe394!important;font-size:11px!important;letter-spacing:.05em}
+.install-app-panel-copy span{font-size:10px!important;color:#98b2ba!important;line-height:1.4!important}
+.install-app-panel-cta{display:flex;align-items:center;gap:8px;color:#f6fbff}
+.install-app-panel-cta b{font-size:9px;letter-spacing:.05em}
+.install-guide-actions{margin-top:16px;display:flex;justify-content:center}
+.install-guide .cta{min-width:190px}
+.install-guide .install-steps{display:grid;gap:10px;margin:0 0 14px}
+.install-guide .install-steps div{display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:start;border:1px solid #28454e;background:#08151a;border-radius:12px;padding:10px}
+.install-guide .install-steps b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#10313a;color:#dffcff;font:700 14px/1 Oxanium,sans-serif}
+.install-guide .install-steps span{color:#d6e4e8;font-size:13px;line-height:1.45}
+.install-guide .install-steps em{font-style:normal;color:#8ef4ff}
+.view.home-view>.hero.latest-storm{min-height:calc(100svh - var(--bottomnav-base) - var(--bottom-safe) - 84px)!important;padding-top:18px!important;margin-top:0!important}
+.hero.latest-storm .hero-media{overflow:hidden!important;background:#010305!important}
+.hero.latest-storm .hero-media>.hero-main-image,
+.hero.latest-storm .hero-media>.hero-rgb-ghost{object-fit:cover!important;object-position:center center!important;transform-origin:center center!important}
+.hero.latest-storm .hero-media>.hero-main-image{animation:homeDynamicV216 .74s steps(1,end) infinite!important;filter:brightness(.98) contrast(1.16) saturate(1.08)!important;z-index:2!important;will-change:transform,filter}
+.hero.latest-storm .hero-media>.hero-rgb-red{opacity:.78!important;animation:rgbRedV216 .56s steps(1,end) infinite!important;filter:sepia(1) saturate(12) hue-rotate(312deg) brightness(.9) contrast(1.18)!important}
+.hero.latest-storm .hero-media>.hero-rgb-cyan{opacity:.7!important;animation:rgbCyanV216 .56s .018s steps(1,end) infinite!important;filter:sepia(1) saturate(10) hue-rotate(132deg) brightness(.95) contrast(1.15)!important}
+.hero.latest-storm .hero-media>.hero-backdrop{inset:-12%!important;width:124%!important;height:124%!important;object-fit:cover!important;opacity:.52!important;filter:blur(16px) brightness(.42) contrast(1.18)!important;animation:homeBackdropV216 2.6s ease-in-out infinite alternate!important}
+.section-indicator-home{font-size:46px!important;line-height:1!important;transform:none!important}
+.section-indicator-collection{display:flex!important;align-items:center!important;justify-content:center!important;gap:3px!important}
+.section-indicator-collection i{flex:0 0 auto!important}
+.my-stories{scroll-margin-top:calc(var(--topbar-base) + var(--top-safe) + 12px)!important}
+#myFilterBar{scroll-margin-top:calc(var(--topbar-base) + var(--top-safe) + 12px)!important;margin-top:2px!important;padding-top:4px!important}
+.progress-dashboard{grid-template-columns:auto minmax(0,1fr)!important;align-items:stretch!important}
+.progress-side{display:grid!important;grid-template-columns:minmax(92px,.72fr) minmax(0,1fr)!important;align-items:center!important;gap:10px!important}
+.progress-side .collection-progress.large{width:100%!important;max-width:none!important}
+.personal-stats .stat-action span{font-size:8px!important;line-height:1.08!important}
+.timeline-section{padding-left:18px!important;padding-right:10px!important}
+.timeline-list{padding-left:10px!important}
+.timeline-year{padding-left:6px!important}
+.saga-card{min-height:165px!important;border-color:#294852!important;background:#050b0e!important}
+.saga-card>img{object-fit:cover!important;object-position:center center!important}
+.saga-card-shade{display:none!important}
+.saga-card-copy{position:absolute!important;left:12px!important;right:12px!important;bottom:12px!important;width:auto!important;padding:10px 12px!important;background:rgba(4,12,15,.78)!important;border:1px solid rgba(82,120,131,.42)!important;border-radius:12px!important;backdrop-filter:blur(6px)!important;-webkit-backdrop-filter:blur(6px)!important}
+.saga-card-copy>span{display:block!important;color:#d0dde2!important;font-size:8px!important;letter-spacing:.08em!important}
+.saga-card-copy h2{margin:6px 0 10px!important;font-size:21px!important}
+.saga-card-copy>strong{display:block!important;margin-top:8px!important;font-size:10px!important;color:#fff!important}
+.saga-card-copy>strong em{font-style:normal;font-size:10px!important}
+.saga-card-copy>strong .read{color:#d9ac42!important}
+.saga-card-copy>strong .published{color:#66cfff!important}
+.saga-detail-banner{margin:calc(var(--topbar-base) + var(--top-safe) + 6px) calc(var(--reader-pad) * -1) 18px!important;height:auto!important;min-height:0!important;overflow:hidden!important}
+.saga-detail-banner img{display:block!important;width:100%!important;height:auto!important}
+.saga-detail-content{padding-top:4px!important}
+.saga-detail-bubbles{display:flex!important;justify-content:center!important;align-items:center!important;gap:8px!important;flex-wrap:wrap!important;margin:0 0 16px!important}
+.saga-info-bubble{display:inline-flex!important;align-items:center!important;justify-content:center!important;border:1px solid #3b5e67!important;background:#071217!important;color:#dffcff!important;border-radius:999px!important;padding:8px 12px!important;font-size:9px!important;font-weight:900!important;letter-spacing:.05em!important;text-align:center!important}
+.saga-synopsis{text-align:center!important;max-width:720px!important;margin:0 auto 14px!important}
+.saga-percent{padding:14px 14px 12px!important;text-align:center!important}
+.saga-percent-line{display:flex!important;justify-content:center!important;align-items:baseline!important;gap:6px!important;flex-wrap:wrap!important;font-size:clamp(15px,4.4vw,22px)!important;font-weight:900!important;color:#fff!important;line-height:1.1!important;margin-bottom:10px!important}
+.saga-percent-line .saga-percent-label,.saga-percent-line .saga-percent-divider{font-size:inherit!important;color:#fff!important}
+.saga-read-value{color:#d9ac42!important;font-size:inherit!important}
+.saga-published-value{color:#66cfff!important;font-size:inherit!important}
+.saga-extra-text{text-align:center!important}
+.saga-part-icons{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:8px!important}
+.saga-feature-icon.extra{font-family:Oxanium,sans-serif!important;font-weight:900!important;font-size:18px!important;color:#ffe394!important}
+.future-part{display:grid!important;place-items:center!important;min-height:118px!important;text-align:center!important;padding:14px!important}
+.future-part strong{display:block!important;margin:0!important;font-size:clamp(13px,4vw,16px)!important;color:#cfe4e9!important}
+@media(max-width:470px){
+  .install-app-panel{grid-template-columns:1fr!important;gap:10px!important}
+  .install-app-panel-cta{justify-content:flex-start!important}
+  .section-indicator-home{font-size:42px!important}
+  .timeline-section{padding-left:14px!important}.timeline-list{padding-left:6px!important}
+  .saga-detail-bubbles{gap:6px!important}.saga-info-bubble{font-size:8px!important;padding:7px 10px!important}
+}
+@keyframes homeDynamicV216{0%{transform:translate3d(0,0,0) scale(1.085)}10%{transform:translate3d(-.8%,.5%,0) scale(1.092)}18%{transform:translate3d(1.1%,-.6%,0) scale(1.087)}26%{transform:translate3d(-1.2%,.8%,0) scale(1.094)}34%{transform:translate3d(.9%,-.5%,0) scale(1.086)}42%{transform:translate3d(-.7%,.9%,0) scale(1.093)}50%{transform:translate3d(1.2%,-.7%,0) scale(1.088)}60%{transform:translate3d(-1.1%,.3%,0) scale(1.095)}70%{transform:translate3d(.7%,-.9%,0) scale(1.086)}80%{transform:translate3d(-.9%,.6%,0) scale(1.092)}90%{transform:translate3d(1%,-.4%,0) scale(1.088)}100%{transform:translate3d(0,0,0) scale(1.09)}}
+@keyframes rgbRedV216{0%,100%{opacity:.12;transform:translate3d(0,0,0) scale(1.09)}12%{opacity:.85;transform:translate3d(9px,-2px,0) scale(1.094)}22%{opacity:.18;transform:translate3d(-2px,1px,0) scale(1.088)}34%{opacity:.92;transform:translate3d(-11px,1px,0) scale(1.098)}46%{opacity:.12;transform:translate3d(1px,0,0) scale(1.09)}58%{opacity:.82;transform:translate3d(7px,2px,0) scale(1.094)}72%{opacity:.16;transform:translate3d(-1px,-1px,0) scale(1.088)}84%{opacity:.9;transform:translate3d(-8px,-2px,0) scale(1.096)}}
+@keyframes rgbCyanV216{0%,100%{opacity:.08;transform:translate3d(0,0,0) scale(1.09)}10%{opacity:.78;transform:translate3d(-9px,2px,0) scale(1.095)}20%{opacity:.14;transform:translate3d(2px,-1px,0) scale(1.088)}32%{opacity:.86;transform:translate3d(10px,-2px,0) scale(1.097)}44%{opacity:.08;transform:translate3d(0,0,0) scale(1.09)}56%{opacity:.74;transform:translate3d(-7px,-2px,0) scale(1.094)}70%{opacity:.14;transform:translate3d(2px,1px,0) scale(1.088)}82%{opacity:.88;transform:translate3d(8px,2px,0) scale(1.097)}}
+@keyframes homeBackdropV216{0%{transform:translate3d(-1.2%,-.8%,0) scale(1.03)}100%{transform:translate3d(1.3%,.9%,0) scale(1.08)}}
+@media(prefers-reduced-motion:reduce){.install-app-panel,.hero.latest-storm .hero-media>.hero-main-image,.hero.latest-storm .hero-media>.hero-rgb-ghost,.hero.latest-storm .hero-media>.hero-backdrop{animation:none!important}}
