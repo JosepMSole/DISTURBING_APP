@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-11T13:07:33.328248+00:00",
+  "updated": "2026-09-11T13:08:12.325009+00:00",
   "stories": [
     {
       "id": "277",
@@ -1868,16 +1868,15 @@
         "LEER",
         "TEASER"
       ],
-      "features": [
-        "audio"
-      ],
+      "features": [],
       "readTime": 5,
       "mediaDurations": {
         "audio": 628
       },
       "mediaDurationSources": {
         "audio": "youtube"
-      }
+      },
+      "publicTeaser": "https://www.youtube.com/embed/WYpdZXQj4nw"
     },
     {
       "id": "014",
