@@ -3177,3 +3177,187 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @keyframes rgbCyanV216{0%,100%{opacity:.08;transform:translate3d(0,0,0) scale(1.09)}10%{opacity:.78;transform:translate3d(-9px,2px,0) scale(1.095)}20%{opacity:.14;transform:translate3d(2px,-1px,0) scale(1.088)}32%{opacity:.86;transform:translate3d(10px,-2px,0) scale(1.097)}44%{opacity:.08;transform:translate3d(0,0,0) scale(1.09)}56%{opacity:.74;transform:translate3d(-7px,-2px,0) scale(1.094)}70%{opacity:.14;transform:translate3d(2px,1px,0) scale(1.088)}82%{opacity:.88;transform:translate3d(8px,2px,0) scale(1.097)}}
 @keyframes homeBackdropV216{0%{transform:translate3d(-1.2%,-.8%,0) scale(1.03)}100%{transform:translate3d(1.3%,.9%,0) scale(1.08)}}
 @media(prefers-reduced-motion:reduce){.install-app-panel,.hero.latest-storm .hero-media>.hero-main-image,.hero.latest-storm .hero-media>.hero-rgb-ghost,.hero.latest-storm .hero-media>.hero-backdrop{animation:none!important}}
+
+/* ============================================================
+   DISTURBING STORIES APP v2.17
+   HOME, dashboard, Timeline y SAGAS
+   ============================================================ */
+/* HOME install panel: the .view already reserves the fixed header. */
+.install-app-panel{
+  margin:8px var(--reader-pad) 12px!important;
+}
+
+/* HOME section indicator matches the physical app icon height. */
+.section-indicator-home{
+  width:50px!important;height:50px!important;
+  font-size:50px!important;line-height:50px!important;
+  display:grid!important;place-items:center!important;
+  transform:none!important;
+}
+@media(max-width:390px){.section-indicator-home{width:46px!important;height:46px!important;font-size:46px!important;line-height:46px!important}}
+@media(max-width:350px){.section-indicator-home{width:42px!important;height:42px!important;font-size:42px!important;line-height:42px!important}}
+
+/* HOME featured image: full-frame RGB split in intermittent bursts + slower wiggle. */
+.hero.latest-storm .hero-media>.hero-main-image,
+.hero.latest-storm .hero-media>.hero-rgb-ghost{
+  inset:-4%!important;width:108%!important;height:108%!important;
+  object-fit:cover!important;object-position:center center!important;
+  clip-path:none!important;
+  transform-origin:center center!important;
+}
+.hero.latest-storm .hero-media>.hero-main-image{
+  animation:homeWiggleV217 4.8s ease-in-out infinite!important;
+  filter:brightness(.97) contrast(1.14) saturate(1.08)!important;
+}
+.hero.latest-storm .hero-media>.hero-rgb-ghost{
+  mix-blend-mode:screen!important;
+  opacity:0;
+}
+.hero.latest-storm .hero-media>.hero-rgb-red{
+  animation:homeRgbRedV217 6.2s steps(1,end) infinite!important;
+  filter:sepia(1) saturate(12) hue-rotate(311deg) brightness(.82) contrast(1.18)!important;
+}
+.hero.latest-storm .hero-media>.hero-rgb-cyan{
+  animation:homeRgbCyanV217 6.2s .055s steps(1,end) infinite!important;
+  filter:sepia(1) saturate(10) hue-rotate(132deg) brightness(.9) contrast(1.16)!important;
+}
+@keyframes homeWiggleV217{
+  0%,100%{transform:translate3d(0,0,0) scale(1.035)}
+  20%{transform:translate3d(-.45%,.22%,0) scale(1.04)}
+  42%{transform:translate3d(.35%,-.32%,0) scale(1.038)}
+  65%{transform:translate3d(-.2%,-.12%,0) scale(1.042)}
+  82%{transform:translate3d(.42%,.26%,0) scale(1.037)}
+}
+@keyframes homeRgbRedV217{
+  0%,17%,39%,63%,83%,100%{opacity:0;transform:translate3d(0,0,0) scale(1.035)}
+  20%{opacity:.34;transform:translate3d(8px,-2px,0) scale(1.04)}
+  24%{opacity:.18;transform:translate3d(-5px,1px,0) scale(1.038)}
+  28%{opacity:.38;transform:translate3d(11px,0,0) scale(1.041)}
+  32%{opacity:.1;transform:translate3d(-3px,-1px,0) scale(1.036)}
+  66%{opacity:.28;transform:translate3d(-9px,2px,0) scale(1.041)}
+  71%{opacity:.4;transform:translate3d(7px,-1px,0) scale(1.038)}
+  76%{opacity:.16;transform:translate3d(-4px,1px,0) scale(1.04)}
+}
+@keyframes homeRgbCyanV217{
+  0%,18%,40%,64%,84%,100%{opacity:0;transform:translate3d(0,0,0) scale(1.035)}
+  21%{opacity:.3;transform:translate3d(-8px,2px,0) scale(1.04)}
+  25%{opacity:.16;transform:translate3d(6px,-1px,0) scale(1.038)}
+  29%{opacity:.36;transform:translate3d(-10px,0,0) scale(1.041)}
+  33%{opacity:.1;transform:translate3d(3px,1px,0) scale(1.036)}
+  67%{opacity:.27;transform:translate3d(9px,-2px,0) scale(1.041)}
+  72%{opacity:.37;transform:translate3d(-7px,1px,0) scale(1.038)}
+  77%{opacity:.14;transform:translate3d(4px,-1px,0) scale(1.04)}
+}
+
+/* MIS STORIES dashboard hierarchy. */
+.progress-dashboard{align-items:center!important}
+.progress-big{display:grid!important;gap:3px!important;align-content:center!important;justify-items:center!important}
+.progress-count-line{display:flex!important;align-items:flex-end!important;justify-content:center!important;gap:7px!important;width:max-content!important;max-width:100%!important}
+.progress-count-line strong{font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Arial Black",sans-serif!important;font-size:52px!important;font-weight:400!important;line-height:.82!important}
+.progress-count-line .progress-denom{font-size:clamp(22px,6vw,30px)!important;line-height:.9!important;color:#d9e2e5!important;font-weight:800!important;white-space:nowrap!important}
+.progress-big>em{display:block!important;width:100%!important;margin:0!important;text-align:center!important;font-style:normal!important;font-size:clamp(8px,2.4vw,11px)!important;letter-spacing:.055em!important;color:#82949a!important;font-weight:900!important;white-space:nowrap!important}
+.progress-side{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:stretch!important;gap:8px!important;min-width:0!important}
+.progress-side .collection-progress.large{order:1!important;width:100%!important;max-width:none!important;margin:0!important}
+.progress-side p{order:2!important;margin:0!important;width:100%!important;font-size:10px!important;line-height:1.45!important}
+.personal-stats .stat-action span{font-size:clamp(7.5px,2.15vw,9.5px)!important;line-height:1.05!important;font-weight:900!important;letter-spacing:.045em!important}
+@media(max-width:390px){
+  .progress-count-line strong{font-size:46px!important}
+  .progress-count-line .progress-denom{font-size:clamp(20px,6.2vw,26px)!important}
+  .progress-dashboard{grid-template-columns:auto minmax(0,1fr)!important;gap:12px!important;padding:15px!important}
+}
+
+/* TIMELINE: safer left margin, clearer same-year groups and scroll reveal. */
+.timeline-title h1{display:grid!important;gap:2px!important;text-align:center!important;line-height:.98!important}
+.timeline-title h1>span{display:block!important}
+.timeline-section{padding-left:26px!important;padding-right:10px!important;overflow:visible!important}
+.timeline-list{padding-left:12px!important;overflow:visible!important}
+.timeline-year-group{overflow:visible!important}
+.timeline-year{padding-left:8px!important;overflow:visible!important}
+.timeline-year-axis,.timeline-items,.timeline-item{overflow:visible!important}
+.timeline-multi .timeline-items{
+  position:relative!important;
+  padding-top:16px!important;padding-bottom:16px!important;
+  background:linear-gradient(90deg,rgba(61,148,174,.13),rgba(61,148,174,.035) 58%,transparent)!important;
+  border-top:1px solid rgba(92,189,218,.36)!important;
+  border-bottom:1px solid rgba(92,189,218,.36)!important;
+  border-radius:0 10px 10px 0!important;
+}
+.timeline-multi .timeline-items:before{
+  content:""!important;position:absolute!important;left:-34px!important;top:20px!important;bottom:20px!important;
+  border-left:3px solid #58b9d2!important;opacity:.82!important;
+}
+.timeline-multi .timeline-items:after{
+  content:""!important;position:absolute!important;left:-34px!important;top:20px!important;width:34px!important;
+  border-top:3px solid #58b9d2!important;opacity:.82!important;
+}
+.timeline-multi .timeline-item:before{border-top-color:#58b9d2!important;border-top-width:2px!important}
+.timeline-multi .timeline-item:last-child:after{
+  content:"";position:absolute;left:-34px;bottom:20px;width:34px;border-top:3px solid #58b9d2;opacity:.82;
+}
+/* reveal initial state */
+[data-timeline-reveal] .timeline-year{opacity:0;transform:translateX(-16px)}
+[data-timeline-reveal] .timeline-year-axis:before,[data-timeline-reveal] .timeline-year-axis i{transform:scaleY(0);transform-origin:top center;opacity:0}
+[data-timeline-reveal] .timeline-year-axis:after{opacity:0;transform:scale(.2)}
+[data-timeline-reveal] .timeline-item{opacity:0;transform:translateX(24px)}
+[data-timeline-reveal] .timeline-item .timeline-poster,
+[data-timeline-reveal] .timeline-item .timeline-copy,
+[data-timeline-reveal] .timeline-item .timeline-icons{opacity:0;transform:translateY(8px)}
+[data-timeline-reveal].timeline-reveal-in .timeline-year{opacity:1;transform:none;transition:opacity .48s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
+[data-timeline-reveal].timeline-reveal-in .timeline-year-axis:before,
+[data-timeline-reveal].timeline-reveal-in .timeline-year-axis i{transform:scaleY(1);opacity:1;transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .25s ease}
+[data-timeline-reveal].timeline-reveal-in .timeline-year-axis:after{opacity:1;transform:scale(1);transition:opacity .28s .16s ease,transform .42s .12s cubic-bezier(.18,.9,.22,1.25)}
+[data-timeline-reveal].timeline-reveal-in .timeline-item{opacity:1;transform:none;transition:opacity .5s ease,transform .55s cubic-bezier(.2,.8,.2,1)}
+[data-timeline-reveal].timeline-reveal-in .timeline-item:nth-child(2){transition-delay:.08s}
+[data-timeline-reveal].timeline-reveal-in .timeline-item:nth-child(3){transition-delay:.16s}
+[data-timeline-reveal].timeline-reveal-in .timeline-item:nth-child(4){transition-delay:.24s}
+[data-timeline-reveal].timeline-reveal-in .timeline-item .timeline-poster,
+[data-timeline-reveal].timeline-reveal-in .timeline-item .timeline-copy,
+[data-timeline-reveal].timeline-reveal-in .timeline-item .timeline-icons{opacity:1;transform:none;transition:opacity .45s .16s ease,transform .48s .12s cubic-bezier(.2,.8,.2,1)}
+@media(max-width:470px){
+  .timeline-section{padding-left:22px!important;padding-right:8px!important}
+  .timeline-list{padding-left:8px!important}
+  .timeline-year{padding-left:6px!important}
+  .timeline-multi .timeline-items:before{left:-28px!important}
+  .timeline-multi .timeline-items:after,.timeline-multi .timeline-item:last-child:after{left:-28px!important;width:28px!important}
+}
+
+/* SAGAS: banner is a real flow block. Nothing below can overlap it. */
+.saga-detail{overflow:visible!important}
+.saga-detail-banner{
+  position:relative!important;z-index:3!important;
+  margin:0 calc(var(--reader-pad) * -1) 20px!important;
+  height:auto!important;min-height:0!important;
+  overflow:hidden!important;background:#020507!important;
+}
+.saga-detail-banner img{
+  position:relative!important;left:auto!important;top:auto!important;inset:auto!important;
+  display:block!important;width:100%!important;max-width:100%!important;height:auto!important;
+  object-fit:contain!important;object-position:center center!important;
+}
+.saga-detail-content{position:relative!important;z-index:2!important;clear:both!important;padding-top:0!important}
+.saga-percent-line{margin-bottom:0!important}
+.saga-percent .saga-progress{position:relative!important;margin-top:18px!important;clear:both!important}
+.saga-part.future-part{grid-template-columns:1fr!important;place-items:center!important;align-content:center!important;justify-content:center!important}
+.saga-part.future-part strong{width:100%!important;text-align:center!important;justify-self:center!important;align-self:center!important;margin:0!important}
+
+@media(prefers-reduced-motion:reduce){
+  .hero.latest-storm .hero-media>.hero-main-image,.hero.latest-storm .hero-media>.hero-rgb-ghost{animation:none!important}
+  [data-timeline-reveal] .timeline-year,[data-timeline-reveal] .timeline-item,[data-timeline-reveal] .timeline-item .timeline-poster,[data-timeline-reveal] .timeline-item .timeline-copy,[data-timeline-reveal] .timeline-item .timeline-icons{opacity:1!important;transform:none!important}
+  [data-timeline-reveal] .timeline-year-axis:before,[data-timeline-reveal] .timeline-year-axis i{transform:none!important;opacity:1!important}
+  [data-timeline-reveal] .timeline-year-axis:after{opacity:1!important;transform:none!important}
+}
+
+/* v2.17 timeline line reveal corrections */
+[data-timeline-reveal] .timeline-year-axis:before{transform:scaleY(0)!important;transform-origin:top center!important;opacity:0!important}
+[data-timeline-reveal] .timeline-year-axis i{transform:scaleX(0)!important;transform-origin:left center!important;opacity:0!important}
+[data-timeline-reveal].timeline-reveal-in .timeline-year-axis:before{transform:scaleY(1)!important;opacity:1!important;transition:transform .72s cubic-bezier(.2,.8,.2,1),opacity .25s ease!important}
+[data-timeline-reveal].timeline-reveal-in .timeline-year-axis i{transform:scaleX(1)!important;opacity:1!important;transition:transform .58s .14s cubic-bezier(.2,.8,.2,1),opacity .25s .12s ease!important}
+[data-timeline-reveal].timeline-multi .timeline-items:before{transform:scaleY(0);transform-origin:top center;opacity:0!important}
+[data-timeline-reveal].timeline-multi .timeline-items:after{transform:scaleX(0);transform-origin:left center;opacity:0!important}
+[data-timeline-reveal].timeline-multi .timeline-item:before{transform:scaleX(0);transform-origin:left center;opacity:0}
+[data-timeline-reveal].timeline-multi .timeline-item:last-child:after{transform:scaleX(0);transform-origin:left center;opacity:0}
+[data-timeline-reveal].timeline-reveal-in.timeline-multi .timeline-items:before{transform:scaleY(1);opacity:.82!important;transition:transform .72s .18s cubic-bezier(.2,.8,.2,1),opacity .25s .16s ease}
+[data-timeline-reveal].timeline-reveal-in.timeline-multi .timeline-items:after{transform:scaleX(1);opacity:.82!important;transition:transform .48s .22s cubic-bezier(.2,.8,.2,1),opacity .2s .2s ease}
+[data-timeline-reveal].timeline-reveal-in.timeline-multi .timeline-item:before{transform:scaleX(1);opacity:1;transition:transform .42s .28s cubic-bezier(.2,.8,.2,1),opacity .2s .26s ease}
+[data-timeline-reveal].timeline-reveal-in.timeline-multi .timeline-item:last-child:after{transform:scaleX(1);opacity:.82;transition:transform .42s .34s cubic-bezier(.2,.8,.2,1),opacity .2s .32s ease}
+@media(prefers-reduced-motion:reduce){[data-timeline-reveal] .timeline-year-axis:before,[data-timeline-reveal] .timeline-year-axis i,[data-timeline-reveal].timeline-multi .timeline-items:before,[data-timeline-reveal].timeline-multi .timeline-items:after,[data-timeline-reveal].timeline-multi .timeline-item:before,[data-timeline-reveal].timeline-multi .timeline-item:last-child:after{transform:none!important;opacity:1!important}}
