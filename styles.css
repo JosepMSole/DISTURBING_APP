@@ -3463,3 +3463,79 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .extra-text,.physical-extra-notice{max-width:760px!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important}
 .extra-text{font-size:clamp(13px,3.4vw,16px)!important;line-height:1.75!important}
 @media(max-width:390px){.extras-grid{gap:8px!important}}
+
+/* ============================================================
+   DISTURBING STORIES APP v2.19
+   Pulido final del día
+   ============================================================ */
+
+/* HOME · VHS más evidente en toda la destacada. */
+.hero.latest-storm .hero-media::before{opacity:0!important;animation:heroSurfacePulseV219 4.8s steps(1,end) infinite!important}
+.hero.latest-storm .hero-media::after{opacity:0!important;animation:heroRgbSurfaceV219 4.9s steps(1,end) infinite!important}
+.hero.latest-storm .hero-media>.hero-main-image{filter:brightness(.98) contrast(1.16) saturate(1.07)!important}
+.hero.latest-storm .hero-media>.hero-rgb-red{animation:rgbRedV219 4.9s steps(1,end) infinite!important}
+.hero.latest-storm .hero-media>.hero-rgb-cyan{animation:rgbCyanV219 4.9s .06s steps(1,end) infinite!important}
+@keyframes heroSurfacePulseV219{0%,8%,14%,27%,35%,58%,67%,100%{opacity:0}9%,13%{opacity:.34}28%,34%{opacity:.28}59%,66%{opacity:.24}}
+@keyframes heroRgbSurfaceV219{0%,8%,14%,27%,35%,58%,67%,100%{opacity:0}9%,13%{opacity:.72}28%,34%{opacity:.56}59%,66%{opacity:.46}}
+@keyframes rgbRedV219{0%,8%,14%,27%,35%,58%,67%,100%{opacity:0;transform:translate3d(0,0,0) scale(1.036)}9%,13%{opacity:.92;transform:translate3d(9px,-3px,0) scale(1.05)}28%,34%{opacity:.64;transform:translate3d(6px,2px,0) scale(1.045)}59%,66%{opacity:.5;transform:translate3d(4px,-1px,0) scale(1.042)}}
+@keyframes rgbCyanV219{0%,8%,14%,27%,35%,58%,67%,100%{opacity:0;transform:translate3d(0,0,0) scale(1.036)}9%,13%{opacity:.9;transform:translate3d(-9px,3px,0) scale(1.05)}28%,34%{opacity:.62;transform:translate3d(-6px,-2px,0) scale(1.045)}59%,66%{opacity:.48;transform:translate3d(-4px,1px,0) scale(1.042)}}
+
+/* MIS STORIES · BLOQUEADAS en rojo. */
+.personal-stats [data-my-jump="blocked"]{border-color:#7f2229!important;background:linear-gradient(145deg,#25080c,#120406)!important;box-shadow:inset 0 0 0 1px rgba(255,83,97,.08),0 0 18px rgba(170,26,39,.12)!important}
+.personal-stats [data-my-jump="blocked"] strong{color:#ff7a84!important}
+.personal-stats [data-my-jump="blocked"] span{color:#ff9aa3!important}
+.personal-stats [data-my-jump="blocked"] .hud-corner{border-color:#d14755!important;filter:drop-shadow(0 0 7px rgba(255,94,108,.28))!important}
+
+/* TIMELINE · título nuevo, años más contenidos y conectores limpios. */
+.timeline-title h1{font-family:Oxanium,sans-serif!important;text-transform:uppercase!important;display:block!important;text-align:center!important}
+.timeline-title h1 span{display:block!important}
+.timeline-year-group{grid-template-columns:minmax(82px,96px) 22px minmax(0,1fr)!important;margin:12px 0 26px!important}
+.timeline-year{font-size:clamp(24px,7vw,32px)!important;letter-spacing:.08em!important;padding-left:10px!important;padding-right:10px!important}
+.timeline-list{padding-left:10px!important}
+.timeline-items{border-left:0!important;margin-left:18px!important;padding-left:34px!important;background:none!important;border-radius:0!important;box-shadow:none!important}
+.timeline-year-axis:before{border-left:2px solid #4d8190!important}
+.timeline-year-axis:after{width:18px!important;height:18px!important;background:#58c8ff!important;border:2px solid #cff3ff!important;box-shadow:0 0 12px rgba(88,200,255,.42)!important}
+.timeline-year-axis i{display:none!important}
+.timeline-item{background:#081217!important;border:1px solid #24414a!important;border-radius:12px!important;padding:9px!important}
+.timeline-item .timeline-node{display:none!important}
+.timeline-item:before{content:''!important;position:absolute!important;left:-34px!important;top:50%!important;width:34px!important;border-top:2px solid #5db7d1!important;transform:none!important;opacity:1!important}
+.timeline-multi .timeline-items{padding-top:10px!important;padding-bottom:10px!important}
+.timeline-multi .timeline-items:before{content:''!important;position:absolute!important;left:-34px!important;top:20px!important;bottom:20px!important;border-left:3px solid #63c0db!important;opacity:1!important}
+.timeline-multi .timeline-items:after{content:''!important;position:absolute!important;left:-34px!important;top:20px!important;width:34px!important;border-top:2px solid #63c0db!important;opacity:1!important}
+.timeline-multi .timeline-item:last-child:after{content:''!important;position:absolute!important;left:-34px!important;top:50%!important;width:34px!important;border-top:2px solid #63c0db!important;opacity:1!important}
+@media(max-width:470px){.timeline-year-group{grid-template-columns:84px 18px minmax(0,1fr)!important}.timeline-year{font-size:26px!important;padding-left:8px!important}.timeline-list{padding-left:6px!important}.timeline-items{margin-left:14px!important;padding-left:28px!important}.timeline-item:before,.timeline-multi .timeline-items:after,.timeline-multi .timeline-item:last-child:after{left:-28px!important;width:28px!important}.timeline-multi .timeline-items:before{left:-28px!important}}
+
+/* RULETA RANDOM · tipografía sci-fi y CTAs más grandes. */
+.random-head h1,.random-filters button,.random-spin-btn,.random-actions .cta,.random-actions .secondary-btn{font-family:Oxanium,sans-serif!important;text-transform:uppercase!important;letter-spacing:.06em!important}
+.random-head h1{font-size:clamp(24px,7vw,30px)!important}
+.random-filters button{font-size:clamp(10px,3vw,12px)!important}
+.random-spin-btn,.random-spin-btn.stop-mode{font-size:clamp(18px,5.2vw,24px)!important}
+.random-actions .cta,.random-actions .secondary-btn{min-height:86px!important;font-size:clamp(18px,5vw,24px)!important;line-height:1.02!important;padding:10px 8px!important}
+
+/* SAGA detail · aire real entre texto y barra, y elimina falsas barras superiores. */
+.saga-percent{padding:14px 14px 18px!important}
+.saga-percent-line{margin-bottom:14px!important;position:relative!important;z-index:2!important;height:auto!important;background:none!important}
+.saga-percent>div:not(.saga-percent-line):not(.saga-progress){display:none!important}
+.saga-progress{position:relative!important;z-index:1!important;margin-top:0!important}
+
+/* EXTRAS · póster individual un poco más pequeño. */
+.extra-main-poster{width:min(340px,82vw)!important;max-width:82vw!important}
+
+/* PLAYER · centrar iconos y nota móvil. */
+.player-controls-main button{display:grid!important;place-items:center!important;text-align:center!important;line-height:1!important;padding:0!important}
+#playerPrev,#playerNext{font-size:56px!important}
+#playerPlay{font-size:52px!important}
+#playerPlay.is-pause{font-size:42px!important}
+#playerPlay.is-play{font-size:52px!important}
+.player-mobile-volume-note{margin:14px 0 6px!important;text-align:center!important;color:#98b7bf!important;font-size:11px!important;line-height:1.45!important}
+
+/* INSTALAR APP · modal con vídeo y resumen por plataforma. */
+.install-guide-card{width:min(94vw,460px)!important;max-height:min(92svh,860px)!important;overflow:auto!important}
+.install-guide-video-wrap{position:relative!important;width:100%!important;aspect-ratio:9/16!important;max-height:44svh!important;border:1px solid #375a65!important;border-radius:14px!important;overflow:hidden!important;background:#000!important;margin:10px 0 16px!important;box-shadow:0 16px 38px rgba(0,0,0,.45)!important}
+.install-guide-video{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;background:#000!important}
+.install-guide-video-fallback{display:none!important;position:absolute!important;inset:0!important;place-items:center!important;text-align:center!important;padding:18px!important;background:rgba(0,0,0,.82)!important;color:#b9d0d7!important}
+.install-guide-video-wrap.video-unavailable .install-guide-video-fallback{display:grid!important}
+.install-platform-summary{margin:14px 0 10px!important;border:1px solid #28454e!important;background:#08151a!important;border-radius:12px!important;padding:12px 12px 10px!important}
+.install-platform-summary strong{display:block!important;margin-bottom:8px!important;color:#ffe394!important;font-family:Oxanium,sans-serif!important;font-size:12px!important;letter-spacing:.07em!important}
+.install-platform-summary ul{margin:0!important;padding-left:18px!important;color:#d6e4e8!important}
+.install-platform-summary li{margin:0 0 6px!important;line-height:1.45!important}
