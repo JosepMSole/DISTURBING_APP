@@ -295,9 +295,9 @@
       "name": "Dominus Doloris",
       "synopsis": "Cuando el sufrimiento supera sus límites, el miedo adquiere una nueva forma...",
       "totalParts": 4,
-      "banner": "",
-      "listBanner": "",
-      "detailBanner": "",
+      "banner": "assets/sagas/BANNERSAGA_DOLOR%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_DOLOR%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_DOLOR%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
       "parts": [
@@ -311,10 +311,6 @@
         },
         {
           "order": 3,
-          "storyId": ""
-        },
-        {
-          "order": 4,
           "storyId": ""
         }
       ]
@@ -371,5 +367,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:08:14.240973+00:00"
+  "updated": "2026-09-11T23:08:33.932212+00:00"
 }
