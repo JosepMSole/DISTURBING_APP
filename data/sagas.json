@@ -375,8 +375,33 @@
           "storyId": ""
         }
       ]
+    },
+    {
+      "id": "trilogia-del-coleccionista",
+      "name": "Trilogía del Coleccionista",
+      "synopsis": "¿Qué misterios acechan en el espacio lejano?",
+      "totalParts": 3,
+      "banner": "",
+      "listBanner": "",
+      "detailBanner": "",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": "036"
+        },
+        {
+          "order": 2,
+          "storyId": "136"
+        },
+        {
+          "order": 3,
+          "storyId": ""
+        }
+      ]
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T19:06:13.460745+00:00"
+  "updated": "2026-09-11T19:06:55.961631+00:00"
 }
