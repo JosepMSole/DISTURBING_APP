@@ -30,9 +30,9 @@
       "name": "The Delta Files",
       "synopsis": "La desconfianza puede llegar a escalar hasta cotas insospechadas...",
       "totalParts": 4,
-      "banner": "",
-      "listBanner": "",
-      "detailBanner": "",
+      "banner": "assets/sagas/BANNERSAGA_DELTAFILES%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_DELTAFILES%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_DELTAFILES%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
       "parts": [
@@ -403,5 +403,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:05:05.089872+00:00"
+  "updated": "2026-09-11T23:05:25.750718+00:00"
 }
