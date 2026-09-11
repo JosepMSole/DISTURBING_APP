@@ -320,9 +320,9 @@
       "name": "Detective McSuzan",
       "synopsis": "Algunos asuntos del pasado pueden llevarte a un inquietante mañana...",
       "totalParts": 6,
-      "banner": "",
-      "listBanner": "",
-      "detailBanner": "",
+      "banner": "assets/sagas/BANNERSAGA_McSUZAN%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_McSUZAN%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_McSUZAN%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
       "parts": [
@@ -367,5 +367,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:08:33.932212+00:00"
+  "updated": "2026-09-11T23:08:48.480870+00:00"
 }
