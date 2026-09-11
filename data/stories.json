@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-11T12:50:00.253662+00:00",
+  "updated": "2026-09-11T12:50:55.297873+00:00",
   "stories": [
     {
       "id": "277",
@@ -457,7 +457,8 @@
       "features": [
         "extra"
       ],
-      "readTime": 7
+      "readTime": 7,
+      "publicTeaser": "https://www.youtube.com/embed/eK0Tff8xtt8"
     },
     {
       "id": "041",
