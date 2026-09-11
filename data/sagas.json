@@ -216,9 +216,9 @@
       "name": "Distorsion",
       "synopsis": "Los grandes cambios tienen principios pequeños...",
       "totalParts": 4,
-      "banner": "assets/sagas/BANNERSAGA_DISTORSION%20-%20INT.jpg",
-      "listBanner": "assets/sagas/BANNERSAGA_DISTORSION%20-%20EXT.jpg",
-      "detailBanner": "assets/sagas/BANNERSAGA_DISTORSION%20-%20INT.jpg",
+      "banner": "assets/sagas/BANNERSAGA_RAVEN%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_RAVEN%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_RAVEN%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
       "parts": [
@@ -371,5 +371,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:07:16.124495+00:00"
+  "updated": "2026-09-11T23:07:27.447376+00:00"
 }
