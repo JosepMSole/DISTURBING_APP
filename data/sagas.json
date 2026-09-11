@@ -270,9 +270,9 @@
       "name": "Expediente Tarraco",
       "synopsis": "La curiosidad puede abrir las puertas a lo desconocido...",
       "totalParts": 3,
-      "banner": "",
-      "listBanner": "",
-      "detailBanner": "",
+      "banner": "assets/sagas/BANNERSAGA_TARRACO%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_TARRACOFILES%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_TARRACO%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
       "parts": [
@@ -371,5 +371,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:07:57.880184+00:00"
+  "updated": "2026-09-11T23:08:14.240973+00:00"
 }
