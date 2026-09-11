@@ -90,8 +90,37 @@
           "storyId": "105"
         }
       ]
+    },
+    {
+      "id": "dark-limits-prelude",
+      "name": "Dark Limits: Prelude",
+      "synopsis": "Sé testigo del oscuro preludio de unos terribles acontecimientos...",
+      "totalParts": 4,
+      "banner": "",
+      "listBanner": "",
+      "detailBanner": "",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": "046"
+        },
+        {
+          "order": 2,
+          "storyId": "004"
+        },
+        {
+          "order": 3,
+          "storyId": "153"
+        },
+        {
+          "order": 4,
+          "storyId": "023"
+        }
+      ]
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T18:49:57.800109+00:00"
+  "updated": "2026-09-11T18:51:54.854869+00:00"
 }
