@@ -125,9 +125,9 @@
       "name": "Una historia de Hermanos",
       "synopsis": "Un hermano siempre estará ahí, tenga la condición genética que tenga...",
       "totalParts": 4,
-      "banner": "",
-      "listBanner": "",
-      "detailBanner": "",
+      "banner": "assets/sagas/BANNERSAGA_HERMANOS%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_HERMANOS%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_HERMANOS%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
       "parts": [
@@ -403,5 +403,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:05:57.162337+00:00"
+  "updated": "2026-09-11T23:06:18.354025+00:00"
 }
