@@ -151,7 +151,7 @@
     },
     {
       "id": "el-legado-de-gideon",
-      "name": "El legado de Gideon",
+      "name": "El Legado de Gideon",
       "synopsis": "Conoce la cruzada de un hombre contra unas leyes injustas...",
       "totalParts": 4,
       "banner": "",
@@ -180,5 +180,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T18:56:16.513814+00:00"
+  "updated": "2026-09-11T18:56:30.163269+00:00"
 }
