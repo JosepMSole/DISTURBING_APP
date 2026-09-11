@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-11T12:56:35.809160+00:00",
+  "updated": "2026-09-11T12:58:50.035681+00:00",
   "stories": [
     {
       "id": "277",
@@ -897,7 +897,8 @@
       "features": [
         "extra"
       ],
-      "readTime": 6
+      "readTime": 6,
+      "publicTeaser": "https://www.youtube.com/embed/eVELK_alCic"
     },
     {
       "id": "046",
