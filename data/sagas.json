@@ -242,8 +242,37 @@
           "storyId": ""
         }
       ]
+    },
+    {
+      "id": "distorsion",
+      "name": "Distorsion",
+      "synopsis": "Los grandes cambios tienen principios pequeños...",
+      "totalParts": 4,
+      "banner": "",
+      "listBanner": "",
+      "detailBanner": "",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": "069"
+        },
+        {
+          "order": 2,
+          "storyId": "007"
+        },
+        {
+          "order": 3,
+          "storyId": "016"
+        },
+        {
+          "order": 4,
+          "storyId": "026"
+        }
+      ]
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T18:59:44.866514+00:00"
+  "updated": "2026-09-11T19:01:50.824783+00:00"
 }
