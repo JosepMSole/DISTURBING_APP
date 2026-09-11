@@ -59,9 +59,9 @@
       "name": "La Vida de Azel",
       "synopsis": "A veces, hay destinos imprevistos que marcan el futuro...",
       "totalParts": 6,
-      "banner": "",
-      "listBanner": "",
-      "detailBanner": "",
+      "banner": "assets/sagas/BANNERSAGA_AZEL%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_AZEL%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_AZEL%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
       "parts": [
@@ -403,5 +403,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:05:25.750718+00:00"
+  "updated": "2026-09-11T23:05:39.316526+00:00"
 }
