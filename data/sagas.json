@@ -96,9 +96,9 @@
       "name": "Dark Limits: Prelude",
       "synopsis": "Sé testigo del oscuro preludio de unos terribles acontecimientos...",
       "totalParts": 4,
-      "banner": "",
-      "listBanner": "",
-      "detailBanner": "",
+      "banner": "assets/sagas/BANNERSAGA_DARKLIMITSPRELUDE%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_DARKLIMITSPRELUDE%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_DARKLIMITSPRELUDE%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
       "parts": [
@@ -403,5 +403,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:05:39.316526+00:00"
+  "updated": "2026-09-11T23:05:57.162337+00:00"
 }
