@@ -53,8 +53,45 @@
           "storyId": "017"
         }
       ]
+    },
+    {
+      "id": "la-vida-de-azel",
+      "name": "La Vida de Azel",
+      "synopsis": "A veces, hay destinos imprevistos que marcan el futuro...",
+      "totalParts": 6,
+      "banner": "",
+      "listBanner": "",
+      "detailBanner": "",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": ""
+        },
+        {
+          "order": 2,
+          "storyId": "154"
+        },
+        {
+          "order": 3,
+          "storyId": "005"
+        },
+        {
+          "order": 4,
+          "storyId": "156"
+        },
+        {
+          "order": 5,
+          "storyId": "023"
+        },
+        {
+          "order": 6,
+          "storyId": "105"
+        }
+      ]
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T18:47:07.987333+00:00"
+  "updated": "2026-09-11T18:49:57.800109+00:00"
 }
