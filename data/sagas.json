@@ -345,9 +345,9 @@
       "name": "Trilogía del Coleccionista",
       "synopsis": "¿Qué misterios acechan en el espacio lejano?",
       "totalParts": 3,
-      "banner": "",
-      "listBanner": "",
-      "detailBanner": "",
+      "banner": "assets/sagas/BANNERSAGA_COLECCIONISTA%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_COLECCIONISTA%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_COLECCIONISTA%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
       "parts": [
@@ -367,5 +367,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:08:48.480870+00:00"
+  "updated": "2026-09-11T23:12:08.753332+00:00"
 }
