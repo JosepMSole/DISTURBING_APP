@@ -5,7 +5,9 @@
       "name": "La Trilogía de Atlas",
       "synopsis": "Descubre la inquietante presencia de Atlas...",
       "totalParts": 3,
-      "banner": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/editor/la-trilogia-de-atlas-3.jpg?1741824954",
+      "banner": "assets/sagas/BANNERSAGA_AZEL%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_AZEL%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_AZEL%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/interno-3_orig.jpg",
       "parts": [
@@ -25,5 +27,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-09T23:59:45.039313+00:00"
+  "updated": "2026-09-11T00:17:38.662049+00:00"
 }
