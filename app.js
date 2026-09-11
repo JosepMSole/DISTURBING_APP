@@ -1,4 +1,4 @@
-const APP_VERSION = '2.19.0';
+const APP_VERSION = '2.20.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -64,7 +64,7 @@ function installIconSvg(){
 }
 function homeInstallPanelHtml(){
   if(isStandaloneInstall())return '';
-  return `<button id="homeInstallPanel" class="badge-permission-panel install-app-panel" type="button" aria-label="Instala esta app"><span class="install-app-panel-copy"><strong>INSTALA ESTA APP</strong><span>Instálala en tu móvil para abrir Disturbing Stories App como una app real y acceder más rápido.</span></span><span class="install-app-panel-cta">${installIconSvg()}<b>GUÍA DE INSTALACIÓN</b></span></button>`;
+  return `<button id="homeInstallPanel" class="badge-permission-panel install-app-panel" type="button" aria-label="Instala esta app"><span class="install-app-panel-copy"><strong>INSTALA ESTA APP</strong></span><span class="install-app-panel-cta">${installIconSvg()}<b>GUÍA DE INSTALACIÓN</b></span></button>`;
 }
 function updateInstallButton(){
   const standalone=isStandaloneInstall();
@@ -80,6 +80,8 @@ function showInstallGuide(kind='ios'){
   const modal=document.createElement('div');
   modal.className='install-guide';
   const videoSrc='./assets/tutorials/tutorial_instalar.webm';
+  const showVideo=ios;
+  const videoHtml=showVideo?`<div class="install-guide-video-wrap"><video class="install-guide-video" src="${videoSrc}" playsinline muted controls preload="metadata" onerror="this.closest('div').classList.add('video-unavailable')"></video><div class="install-guide-video-fallback">No se pudo cargar el vídeo tutorial.</div></div>`:'';
   const title=windows?'Windows':mac?'Mac':ios?'iPhone / iPad':android?'Android':'Tu dispositivo';
   const steps=ios
     ? [`<div><b>1</b><span>Abre esta app en <strong>Safari</strong>.</span></div>`,`<div><b>2</b><span>Pulsa el botón <strong>COMPARTIR</strong> <em>↥</em>.</span></div>`,`<div><b>3</b><span>Toca <strong>Añadir a pantalla de inicio</strong>.</span></div>`,`<div><b>4</b><span>Confirma con <strong>Añadir</strong> y abre la app desde su icono.</span></div>`]
@@ -104,7 +106,7 @@ function showInstallGuide(kind='ios'){
     : canPrompt
       ? 'Tu navegador parece compatible con instalación directa. Puedes hacerlo también desde este cuadro.'
       : 'Si el nombre de la opción cambia un poco, revisa el menú principal del navegador.';
-  modal.innerHTML=`<div class="install-guide-scrim" data-install-close></div><section class="install-guide-card hud-static" role="dialog" aria-modal="true" aria-label="Instalar Disturbing Stories APP"><button class="install-guide-close" data-install-close aria-label="Cerrar">×</button><div class="eyebrow">INSTALAR APP</div><h2>Cómo instalar Disturbing Stories App</h2><div class="install-guide-video-wrap"><video class="install-guide-video" src="${videoSrc}" playsinline muted controls preload="metadata" onerror="this.closest('div').classList.add('video-unavailable')"></video><div class="install-guide-video-fallback">No se pudo cargar el vídeo tutorial.</div></div><p>Guía rápida para <strong>${title}</strong>.</p><div class="install-steps">${steps.join('')}</div><div class="install-platform-summary"><strong>RESUMEN · ${title.toUpperCase()}</strong><ul>${summary.map(x=>`<li>${x}</li>`).join('')}</ul></div><small>${helper}</small>${canPrompt?`<div class="install-guide-actions"><button id="installGuideNow" class="cta">INSTALAR AHORA</button></div>`:''}</section>`;
+  modal.innerHTML=`<div class="install-guide-scrim" data-install-close></div><section class="install-guide-card hud-static" role="dialog" aria-modal="true" aria-label="Instalar Disturbing Stories APP"><button class="install-guide-close" data-install-close aria-label="Cerrar">×</button><div class="eyebrow">INSTALAR APP</div><h2>Cómo instalar Disturbing Stories App</h2>${videoHtml}<p>Guía rápida para <strong>${title}</strong>.</p><div class="install-steps">${steps.join('')}</div><div class="install-platform-summary"><strong>RESUMEN · ${title.toUpperCase()}</strong><ul>${summary.map(x=>`<li>${x}</li>`).join('')}</ul></div><small>${helper}</small>${canPrompt?`<div class="install-guide-actions"><button id="installGuideNow" class="cta">INSTALAR AHORA</button></div>`:''}</section>`;
   document.body.append(modal);
   modal.querySelectorAll('[data-install-close]').forEach(el=>el.onclick=closeInstallGuide);
   const video=modal.querySelector('.install-guide-video');
@@ -114,20 +116,11 @@ function showInstallGuide(kind='ios'){
 }
 
 async function handleInstallApp(){
-  const btn=$('#installBtn');if(!btn)return;
-  if(isStandaloneInstall()){btn.classList.add('hidden');return}
-  if(installPrompt){
-    try{
-      installPrompt.prompt();
-      await installPrompt.userChoice;
-      installPrompt=null;
-      updateInstallButton();
-      return;
-    }catch{}
-  }
+  const btn=$('#installBtn');
+  if(isStandaloneInstall()){if(btn)btn.classList.add('hidden');return}
+  closeDrawer();
   showInstallGuide(detectInstallGuideKind());
 }
-
 
 function goHomeTop(){persistCurrentReadingPosition();if(currentHash()==='#/home'){scrollTo({top:0,behavior:'smooth'});return}navigateHash('#/home');requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}))}
 function bindShell(){$('#brandBtn').onclick=goHomeTop;$('#backBtn').onclick=navigateBack;$('#toTopHeaderBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('#menuBtn').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;$$('.nav-btn').forEach(b=>b.onclick=()=>footerGo(b.dataset.route));$$('[data-drawer-route]').forEach(b=>b.onclick=()=>{closeDrawer();if(b.dataset.drawerRoute==='home')goHomeTop();else go(b.dataset.drawerRoute)});$('#miniPlayerOpen').onclick=()=>go('player');$('#miniPrev').onclick=()=>playerStep(-1,true);$('#miniPlay').onclick=()=>playerToggle();$('#miniNext').onclick=()=>playerStep(1,true);$('#scanBtn').onclick=()=>{closeDrawer();showUnlock()};$('#installBtn').onclick=handleInstallApp;updateInstallButton();addEventListener('hashchange',routeFromHash);addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;updateInstallButton()});addEventListener('appinstalled',()=>{installPrompt=null;updateInstallButton()});addEventListener('scroll',updateProgress,{passive:true});addEventListener('pagehide',persistCurrentReadingPosition);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persistCurrentReadingPosition()});addEventListener('blur',()=>setTimeout(()=>{if(currentStory&&document.activeElement?.tagName==='IFRAME')playerPauseForStoryMedia()},0));addEventListener('resize',()=>{updateInstallButton();if(routeName()==='collection')requestAnimationFrame(fitCollectionShelf)},{passive:true});}
@@ -756,7 +749,7 @@ function spinRandom(pool){
 }
 function stopRandomSpin(showResult=true){clearTimeout(randomSpinTimer);randomSpinTimer=0;if(!randomSpinRunning&&!showResult)return;const wasRunning=randomSpinRunning;randomSpinRunning=false;const stage=$('#randomPosterRoll'),btn=$('#spinRandom');if(btn){btn.textContent='GIRAR';btn.classList.remove('stop-mode');btn.disabled=showResult||!randomSpinPool.length}document.querySelector('.random-energy')?.classList.remove('active');if(!wasRunning||!showResult||!randomSpinCurrent||!stage)return;lastRandomStoryId=randomSpinCurrent.id;stage.innerHTML=randomPosterOnly(randomSpinCurrent);stage.classList.remove('rolling');stage.classList.add('winner');setTimeout(()=>{stage.classList.remove('winner');showRandomResult(randomSpinCurrent);if(btn)btn.disabled=false},720)}
 function randomResultHaptic(){try{if('vibrate' in navigator)navigator.vibrate(1000)}catch{}}
-function showRandomResult(s){const el=$('#randomResult');if(!el)return;const rt=Number(s?.readTime||0),cover=displayCover(s);el.innerHTML=`<article class="random-result random-result-v25">${cover?`<div class="random-result-poster"><img src="${escAttr(cover)}" alt="Story ${escAttr(s.id)}">${exclusiveBadge(s,'cover')}</div>`:''}<div class="random-result-copy"><div class="eyebrow">RESULTADO</div><h2>${escapeHtml(s.id)} - ${escapeHtml(s.title||'')}</h2><p><span>${escapeHtml(timelineYearLabel(parseStoryYear(s)))}</span>${rt?`<span>${rt} MIN LECTURA</span>`:''}</p></div><div class="random-actions"><button class="cta" id="randomRead">LEER<br>STORY</button><button class="secondary-btn" id="randomAgain">VOLVER A<br>GIRAR</button></div></article>`;el.classList.remove('reward-in');void el.offsetWidth;el.classList.add('reward-in');randomResultHaptic();$('#randomRead').onclick=()=>storyGo(s.id);$('#randomAgain').onclick=()=>$('#spinRandom').click()}
+function showRandomResult(s){const el=$('#randomResult');if(!el)return;const rt=Number(s?.readTime||0),cover=displayCover(s);el.innerHTML=`<article class="random-result random-result-v25">${cover?`<div class="random-result-poster"><img src="${escAttr(cover)}" alt="Story ${escAttr(s.id)}">${exclusiveBadge(s,'cover')}</div>`:''}<div class="random-result-copy"><div class="eyebrow">RESULTADO</div><h2>${escapeHtml(s.id)} - ${escapeHtml(s.title||'')}</h2><p><span>${escapeHtml(timelineYearLabel(parseStoryYear(s)))}</span>${rt?`<span>${rt} MIN LECTURA</span>`:''}</p></div><div class="random-actions"><button class="cta" id="randomRead">LEER STORY</button><button class="secondary-btn" id="randomAgain">VOLVER A GIRAR</button></div></article>`;el.classList.remove('reward-in');void el.offsetWidth;el.classList.add('reward-in');randomResultHaptic();$('#randomRead').onclick=()=>storyGo(s.id);$('#randomAgain').onclick=()=>$('#spinRandom').click()}
 
 function mediaDuration(s,type){return Number(s?.mediaDurations?.[type]||0)}
 function fmtLong(seconds){seconds=Math.max(0,Math.round(Number(seconds)||0));const h=Math.floor(seconds/3600),m=Math.floor((seconds%3600)/60),sec=seconds%60;return h?`${h}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`:`${m}:${String(sec).padStart(2,'0')}`}
@@ -777,5 +770,5 @@ function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<
 
 async function playEntryIntro(){const onceKey='disturbing_intro_played_session_v26';if(introPlayed||sessionStorage.getItem(onceKey)==='1')return;introPlayed=true;sessionStorage.setItem(onceKey,'1');const layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return;layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0}catch{}return new Promise(resolve=>{const done=()=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}layer.classList.add('intro-out');setTimeout(()=>{layer.classList.add('hidden');layer.classList.remove('intro-out');layer.setAttribute('aria-hidden','true');resolve()},220)};const start=()=>{clearTimeout(fallback);const p=video.play();if(p&&typeof p.catch==='function')p.catch(done)};const fallback=setTimeout(done,2500);layer.onclick=done;video.addEventListener('ended',done,{once:true});video.addEventListener('error',done,{once:true});if(video.readyState>=3)start();else video.addEventListener('canplay',start,{once:true})})}
 
-async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.19.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.20.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
