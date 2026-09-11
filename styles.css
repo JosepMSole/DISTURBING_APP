@@ -3746,3 +3746,25 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 /* GAMES / MICRO · la caja solo comunica PRÓXIMAMENTE. */
 .future-placeholder-box{display:grid!important;place-items:center!important;text-align:center!important;min-height:120px!important}
 .future-placeholder-box strong{margin:0!important}
+
+/* ============================================================
+   DISTURBING STORIES APP v2.22 · CIERRE 2.x
+   ============================================================ */
+
+/* Story exclusiva bloqueada sin teaser público: mostrar el póster en el mismo marco 9:16. */
+.locked-story-page>.locked-hero-teaser.locked-poster-fallback{display:block!important;width:min(100%,520px)!important;max-width:520px!important;margin:0 auto 16px!important;padding:0!important}
+.locked-story-page>.locked-hero-teaser.locked-poster-fallback .locked-teaser-video{position:relative!important;width:min(100%,calc(68svh * 9 / 16))!important;max-width:100%!important;aspect-ratio:9/16!important;margin:0 auto!important;overflow:hidden!important;background:#000!important}
+.locked-story-page>.locked-hero-teaser .locked-teaser-poster{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important;background:#000!important;visibility:visible!important}
+.locked-story-page>.locked-hero-teaser .locked-poster-empty{position:absolute!important;inset:0!important;background:#030709!important}
+
+/* CASSETTES / TAPES: el icono de tipo vive en el HEADER, no se repite junto al título. */
+.media-section-head>.media-title-no-icon{display:block!important}
+.media-section-head>.media-title-no-icon>div{display:block!important}
+.media-section-head>.media-title-no-icon svg{display:none!important}
+
+/* GAMES / MICRO-PESADILLAS: la caja central contiene exclusivamente PRÓXIMAMENTE. */
+.future-placeholder-box>*:not(strong){display:none!important}
+.future-placeholder-box strong{display:block!important;margin:0!important}
+
+/* La opción de instalación nunca debe ocupar espacio en modo PWA instalada. */
+#installBtn.hidden,#installBtn[aria-hidden="true"]{display:none!important}
