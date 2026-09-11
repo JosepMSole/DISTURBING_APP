@@ -321,8 +321,37 @@
           "storyId": ""
         }
       ]
+    },
+    {
+      "id": "dominus-doloris",
+      "name": "Dominus Doloris",
+      "synopsis": "Cuando el sufrimiento supera sus límites, el miedo adquiere una nueva forma...",
+      "totalParts": 4,
+      "banner": "",
+      "listBanner": "",
+      "detailBanner": "",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": "137"
+        },
+        {
+          "order": 2,
+          "storyId": "180"
+        },
+        {
+          "order": 3,
+          "storyId": ""
+        },
+        {
+          "order": 4,
+          "storyId": ""
+        }
+      ]
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T19:03:50.707663+00:00"
+  "updated": "2026-09-11T19:04:40.600541+00:00"
 }
