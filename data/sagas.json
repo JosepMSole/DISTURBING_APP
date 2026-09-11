@@ -177,8 +177,73 @@
           "storyId": ""
         }
       ]
+    },
+    {
+      "id": "black-zodiak",
+      "name": "Black Zodiak",
+      "synopsis": "El reloj final se ha puesto en marcha...",
+      "totalParts": 13,
+      "banner": "",
+      "listBanner": "",
+      "detailBanner": "",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": "274"
+        },
+        {
+          "order": 2,
+          "storyId": "275"
+        },
+        {
+          "order": 3,
+          "storyId": "276"
+        },
+        {
+          "order": 4,
+          "storyId": "277"
+        },
+        {
+          "order": 5,
+          "storyId": ""
+        },
+        {
+          "order": 6,
+          "storyId": ""
+        },
+        {
+          "order": 7,
+          "storyId": ""
+        },
+        {
+          "order": 8,
+          "storyId": ""
+        },
+        {
+          "order": 9,
+          "storyId": ""
+        },
+        {
+          "order": 10,
+          "storyId": ""
+        },
+        {
+          "order": 11,
+          "storyId": ""
+        },
+        {
+          "order": 12,
+          "storyId": ""
+        },
+        {
+          "order": 13,
+          "storyId": ""
+        }
+      ]
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T18:56:30.163269+00:00"
+  "updated": "2026-09-11T18:59:44.866514+00:00"
 }
