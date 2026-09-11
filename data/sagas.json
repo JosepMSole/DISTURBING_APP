@@ -154,9 +154,9 @@
       "name": "El Legado de Gideon",
       "synopsis": "Conoce la cruzada de un hombre contra unas leyes injustas...",
       "totalParts": 4,
-      "banner": "",
-      "listBanner": "",
-      "detailBanner": "",
+      "banner": "assets/sagas/BANNERSAGA_GIDEON%20-%20INT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_GIDEON%20-%20EXT.jpg",
+      "detailBanner": "assets/sagas/BANNERSAGA_GIDEON%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
       "parts": [
@@ -403,5 +403,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:06:18.354025+00:00"
+  "updated": "2026-09-11T23:06:31.064009+00:00"
 }
