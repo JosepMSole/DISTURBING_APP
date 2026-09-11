@@ -3768,3 +3768,65 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 
 /* La opción de instalación nunca debe ocupar espacio en modo PWA instalada. */
 #installBtn.hidden,#installBtn[aria-hidden="true"]{display:none!important}
+
+/* ============================================================
+   DISTURBING STORIES APP v2.23
+   Fallback póster · Media locked · YouTube /videos · Intro
+   ============================================================ */
+
+/* Story bloqueada sin teaser: el póster se muestra limpio, sin caja 9:16 artificial. */
+.locked-story-page>.locked-hero-teaser.locked-poster-fallback{
+  display:block!important;
+  width:min(100%,calc(68svh * 9 / 16))!important;
+  max-width:520px!important;
+  margin:0 auto 16px!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+.locked-story-page>.locked-hero-teaser.locked-poster-fallback .locked-teaser-poster{
+  position:static!important;
+  inset:auto!important;
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  margin:0 auto!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  visibility:visible!important;
+}
+.locked-story-page>.locked-hero-teaser.locked-poster-fallback.locked-poster-empty{min-height:0!important;height:0!important;margin-bottom:0!important}
+
+/* CASSETTES / TAPES: también aparecen exclusivas bloqueadas y todos sus iconos a la derecha. */
+.media-collection-card{
+  grid-template-columns:58px minmax(0,1fr) auto!important;
+  min-height:102px!important;
+  padding:8px 9px 8px 8px!important;
+}
+.media-collection-card.is-locked{background:linear-gradient(90deg,#071116,#120709)!important}
+.media-collection-icons{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:6px!important;min-width:30px!important}
+.media-list-icon{width:28px!important;height:28px!important;border:1px solid #31535c!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:#071116!important}
+.media-list-icon .media-feature-svg,.media-list-icon .lock-svg{width:16px!important;height:16px!important;fill:none!important;stroke:currentColor!important;stroke-width:1.9!important}
+.media-list-icon.audio{color:#72ffad!important;border-color:#267d50!important}
+.media-list-icon.video{color:#7bd7ff!important;border-color:#2d7eaa!important}
+.media-list-icon.lock.open{color:#75ff9b!important;border-color:#287b43!important;background:#06190d!important}
+.media-list-icon.lock.closed{color:#ff686d!important;border-color:#8d272d!important;background:#230507!important}
+
+/* Resumen superior en una sola línea por caja, usando el color de cada subsección. */
+.media-summary{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.media-summary>div{display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;min-width:0!important;padding:11px 8px!important;white-space:nowrap!important;overflow:hidden!important}
+.media-summary span,.media-summary strong,.media-summary em{display:inline!important;margin:0!important;font-family:Oxanium,sans-serif!important;font-size:clamp(9px,2.7vw,12px)!important;line-height:1!important;font-style:normal!important;font-weight:800!important;letter-spacing:.035em!important;white-space:nowrap!important}
+.cassettes .media-summary span,.cassettes .media-summary strong,.cassettes .media-summary em{color:#7dffb3!important}
+.tapes .media-summary span,.tapes .media-summary strong,.tapes .media-summary em{color:#8bdcff!important}
+@media(max-width:360px){.media-summary>div{gap:4px!important;padding-inline:5px!important}.media-summary span,.media-summary strong,.media-summary em{font-size:8px!important;letter-spacing:.01em!important}}
+
+/* MICRO-PESADILLAS: icono ligeramente menor tanto en portal como en subsección/header. */
+.portal-btn.nightmares .nightmare-diamond{width:12px!important;height:12px!important;border-width:1.2px!important}
+.section-indicator-micro .nightmare-diamond{width:24px!important;height:24px!important;border-width:1.8px!important}
