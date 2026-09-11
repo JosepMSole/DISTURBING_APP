@@ -350,8 +350,33 @@
           "storyId": ""
         }
       ]
+    },
+    {
+      "id": "detective-mcsuzan",
+      "name": "Detective McSuzan",
+      "synopsis": "Algunos asuntos del pasado pueden llevarte a un inquietante mañana...",
+      "totalParts": 6,
+      "banner": "",
+      "listBanner": "",
+      "detailBanner": "",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": "160"
+        },
+        {
+          "order": 2,
+          "storyId": "174"
+        },
+        {
+          "order": 3,
+          "storyId": ""
+        }
+      ]
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T19:04:40.600541+00:00"
+  "updated": "2026-09-11T19:06:13.460745+00:00"
 }
