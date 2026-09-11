@@ -3996,3 +3996,39 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @media(max-width:370px){.timeline-era-right{gap:7px!important}.timeline-era-right em{font-size:8px!important}}
 /* v3.1 fine tune · Spotify subtitle must remain fully readable. */
 .spotify-companion small{white-space:normal!important;overflow:visible!important;text-overflow:clip!important}
+
+/* ============================================================
+   DISTURBING STORIES APP v3.2
+   Instalación desktop · SAGAS · Continuar leyendo · RANDOM
+   ============================================================ */
+
+/* MIS STORIES · toda la tarjeta de CONTINUAR LEYENDO es interactiva. */
+.continue-card-link{cursor:pointer!important;transition:transform .18s ease,filter .18s ease,border-color .18s ease!important;outline:none!important}
+.continue-card-link:hover,.continue-card-link:focus-visible{filter:brightness(1.12)!important;border-color:#426976!important}
+.continue-card-link:active{transform:scale(.992)!important}
+.continue-card-link .continue-cover,.continue-card-link .resume-arrow{pointer-events:none!important}
+.continue-card-link .resume-arrow{display:grid!important;place-items:center!important}
+
+/* SAGAS · estado de la saga en la esquina superior izquierda. */
+.saga-card{position:relative!important}
+.saga-status-bubble{position:absolute!important;top:10px!important;left:10px!important;z-index:6!important;padding:6px 9px!important;border-radius:999px!important;font:900 9px/1 Oxanium,sans-serif!important;letter-spacing:.08em!important;text-transform:uppercase!important;box-shadow:0 4px 14px rgba(0,0,0,.36)!important;backdrop-filter:blur(6px)!important;-webkit-backdrop-filter:blur(6px)!important}
+.saga-status-complete{color:#c9f5ff!important;background:rgba(8,45,64,.88)!important;border:1px solid #3eb8e8!important;box-shadow:0 0 16px rgba(62,184,232,.20),0 4px 14px rgba(0,0,0,.36)!important}
+.saga-status-read{color:#ffe79a!important;background:rgba(58,42,5,.90)!important;border:1px solid #d9ad42!important;box-shadow:0 0 17px rgba(217,173,66,.22),0 4px 14px rgba(0,0,0,.36)!important}
+.saga-feature-icon.extra{font-family:Oxanium,sans-serif!important;font-weight:900!important}
+
+/* RULETA RANDOM · resultado inmediato, luminoso y dinámico. */
+.random-result-slot.reward-in{animation:none!important;overflow:visible!important}
+.random-result-slot.reward-in .random-result-v25{position:relative!important;isolation:isolate!important;animation:randomResultCardV32 .58s cubic-bezier(.12,.88,.18,1.08) both!important;box-shadow:0 0 0 1px rgba(110,222,255,.18),0 0 32px rgba(76,190,235,.24),0 14px 38px rgba(0,0,0,.46)!important}
+.random-result-slot.reward-in .random-result-v25::before{content:'';position:absolute;inset:-2px;z-index:-1;border-radius:13px;background:linear-gradient(105deg,transparent 10%,rgba(116,231,255,.34) 35%,rgba(255,226,132,.22) 50%,rgba(116,231,255,.34) 65%,transparent 90%);filter:blur(7px);opacity:0;animation:randomResultGlowV32 .8s ease-out both!important;pointer-events:none}
+.random-result-slot.reward-in .random-result-poster{animation:randomResultPosterV32 .72s cubic-bezier(.18,.92,.22,1.08) both!important}
+.random-result-slot.reward-in .random-result-copy{animation:randomResultCopyV32 .5s .05s ease-out both!important}
+.random-result-slot.reward-in .random-read-tile{animation:randomResultActionV32 .5s .10s cubic-bezier(.18,.9,.22,1.08) both!important}
+@keyframes randomResultCardV32{0%{opacity:0;transform:translate3d(0,18px,0) scale(.94);filter:brightness(1.8) blur(3px)}38%{opacity:1;transform:translate3d(0,-5px,0) scale(1.025);filter:brightness(1.28) blur(0)}70%{transform:translate3d(2px,2px,0) scale(.995)}100%{opacity:1;transform:none;filter:none}}
+@keyframes randomResultGlowV32{0%{opacity:0;transform:scale(.94)}28%{opacity:1;transform:scale(1.035)}100%{opacity:0;transform:scale(1.08)}}
+@keyframes randomResultPosterV32{0%{opacity:0;transform:translateX(-14px) rotate(-1.5deg) scale(.94)}55%{opacity:1;transform:translateX(3px) rotate(.5deg) scale(1.035)}100%{opacity:1;transform:none}}
+@keyframes randomResultCopyV32{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:none}}
+@keyframes randomResultActionV32{0%{opacity:0;transform:translateX(12px) scale(.94)}65%{opacity:1;transform:translateX(-2px) scale(1.025)}100%{opacity:1;transform:none}}
+/* El efecto de entrada en Story no debe tapar la tarjeta elegida. */
+.random-result-poster.story-enter-target{position:relative!important;z-index:1600!important;isolation:isolate!important;filter:brightness(1.14) contrast(1.14) saturate(1.12)!important}
+.random-result-poster.story-enter-target::after{content:'';position:absolute;inset:-7px;z-index:-1;border-radius:16px;box-shadow:0 0 22px 7px rgba(107,224,239,.72),0 0 46px 16px rgba(45,125,194,.42)!important;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.random-result-slot.reward-in .random-result-v25,.random-result-slot.reward-in .random-result-v25::before,.random-result-slot.reward-in .random-result-poster,.random-result-slot.reward-in .random-result-copy,.random-result-slot.reward-in .random-read-tile{animation:none!important}}
