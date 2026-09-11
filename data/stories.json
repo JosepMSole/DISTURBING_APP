@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-11T13:08:12.325009+00:00",
+  "updated": "2026-09-11T13:08:55.920326+00:00",
   "stories": [
     {
       "id": "277",
@@ -1884,7 +1884,7 @@
       "published": "2025-04-19",
       "access": "exclusive",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/014.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/selena-5.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/selena-6.jpg",
       "data": "./data/stories/014.json",
       "source": "https://www.disturbingstories.com/014.html",
       "protected": true,
@@ -1900,7 +1900,8 @@
         "TEASER"
       ],
       "features": [],
-      "readTime": 5
+      "readTime": 5,
+      "publicTeaser": "https://www.youtube.com/embed/YVGZVsyDjZE"
     },
     {
       "id": "154",
