@@ -271,8 +271,33 @@
           "storyId": "026"
         }
       ]
+    },
+    {
+      "id": "la-trilogia-de-raven",
+      "name": "La Trilogía de Raven",
+      "synopsis": "No es la típica historia de una bruja...",
+      "totalParts": 3,
+      "banner": "",
+      "listBanner": "",
+      "detailBanner": "",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": "163"
+        },
+        {
+          "order": 2,
+          "storyId": "001"
+        },
+        {
+          "order": 3,
+          "storyId": "025"
+        }
+      ]
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T19:01:50.824783+00:00"
+  "updated": "2026-09-11T19:03:07.807367+00:00"
 }
