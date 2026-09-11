@@ -24,8 +24,37 @@
           "storyId": ""
         }
       ]
+    },
+    {
+      "id": "the-delta-files",
+      "name": "The Delta Files",
+      "synopsis": "La desconfianza puede llegar a escalar hasta cotas insospechadas...",
+      "totalParts": 4,
+      "banner": "",
+      "listBanner": "",
+      "detailBanner": "",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": "159"
+        },
+        {
+          "order": 2,
+          "storyId": "009"
+        },
+        {
+          "order": 3,
+          "storyId": "003"
+        },
+        {
+          "order": 4,
+          "storyId": "017"
+        }
+      ]
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T18:45:30.702280+00:00"
+  "updated": "2026-09-11T18:47:07.987333+00:00"
 }
