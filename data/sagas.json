@@ -119,8 +119,37 @@
           "storyId": "023"
         }
       ]
+    },
+    {
+      "id": "una-historia-de-hermanos",
+      "name": "Una historia de Hermanos",
+      "synopsis": "Un hermano siempre estará ahí, tenga la condición genética que tenga...",
+      "totalParts": 4,
+      "banner": "",
+      "listBanner": "",
+      "detailBanner": "",
+      "extraText": "",
+      "extraImage": "",
+      "parts": [
+        {
+          "order": 1,
+          "storyId": "018"
+        },
+        {
+          "order": 2,
+          "storyId": "028"
+        },
+        {
+          "order": 3,
+          "storyId": "029"
+        },
+        {
+          "order": 4,
+          "storyId": "041"
+        }
+      ]
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T18:51:54.854869+00:00"
+  "updated": "2026-09-11T18:53:24.871772+00:00"
 }
