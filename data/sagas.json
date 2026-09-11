@@ -208,38 +208,6 @@
         {
           "order": 5,
           "storyId": ""
-        },
-        {
-          "order": 6,
-          "storyId": ""
-        },
-        {
-          "order": 7,
-          "storyId": ""
-        },
-        {
-          "order": 8,
-          "storyId": ""
-        },
-        {
-          "order": 9,
-          "storyId": ""
-        },
-        {
-          "order": 10,
-          "storyId": ""
-        },
-        {
-          "order": 11,
-          "storyId": ""
-        },
-        {
-          "order": 12,
-          "storyId": ""
-        },
-        {
-          "order": 13,
-          "storyId": ""
         }
       ]
     },
@@ -403,5 +371,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:06:43.959198+00:00"
+  "updated": "2026-09-11T23:06:55.118265+00:00"
 }
