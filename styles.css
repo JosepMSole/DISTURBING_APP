@@ -3671,3 +3671,78 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .timeline-multi .timeline-items:after{display:none!important;content:none!important}
 [data-timeline-reveal].timeline-multi .timeline-items:after{display:none!important;content:none!important}
 @media(max-width:470px){.timeline-year-axis i{right:-14px!important}.timeline-multi .timeline-items:after{display:none!important}}
+
+/* ============================================================
+   DISTURBING STORIES APP v2.21
+   Timeline final + install alignment
+   ============================================================ */
+
+/* HOME · título + icono/guía juntos, una sola línea y centrados. */
+.view.home-view>.install-app-panel{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:14px!important;
+  min-height:58px!important;
+  padding:11px 14px!important;
+  text-align:center!important;
+}
+.install-app-panel-copy,.install-app-panel-cta{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:0!important;
+}
+.install-app-panel-copy strong{font-size:clamp(13px,3.7vw,16px)!important;white-space:nowrap!important}
+.install-app-panel-cta{gap:7px!important}
+.install-app-panel-cta b{font-size:clamp(9px,2.6vw,11px)!important;white-space:nowrap!important}
+@media(max-width:370px){.view.home-view>.install-app-panel{gap:8px!important;padding-inline:8px!important}.install-app-panel-copy strong{font-size:11px!important}.install-app-panel-cta b{font-size:7.5px!important}.install-app-panel-cta .install-app-svg{width:19px!important;height:19px!important}}
+
+/* TIMELINE · rama exacta entre el centro de la primera y última caja. */
+.timeline-multi .timeline-items{
+  position:relative!important;
+  background:none!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding-top:10px!important;
+  padding-bottom:10px!important;
+}
+.timeline-multi .timeline-items:before{
+  content:''!important;
+  position:absolute!important;
+  left:6px!important;
+  top:var(--timeline-branch-top,50px)!important;
+  bottom:var(--timeline-branch-bottom,50px)!important;
+  border-left:3px solid #63c0db!important;
+  opacity:.95!important;
+  z-index:0!important;
+}
+.timeline-multi .timeline-items:after{display:none!important;content:none!important}
+.timeline-multi .timeline-item:before{
+  content:''!important;
+  position:absolute!important;
+  left:-18px!important;
+  top:50%!important;
+  width:18px!important;
+  border-top:2px solid #63c0db!important;
+  opacity:1!important;
+  z-index:1!important;
+}
+.timeline-multi .timeline-item:last-child:after{display:none!important;content:none!important}
+.timeline-multi .timeline-year-axis i{right:-53px!important}
+[data-timeline-reveal].timeline-multi .timeline-items:before{transform:scaleY(0)!important;transform-origin:top center!important;opacity:0!important}
+[data-timeline-reveal].timeline-reveal-in.timeline-multi .timeline-items:before{transform:scaleY(1)!important;opacity:.95!important;transition:transform .72s .18s cubic-bezier(.2,.8,.2,1),opacity .25s .16s ease!important}
+[data-timeline-reveal].timeline-multi .timeline-item:before{transform:scaleX(0)!important;transform-origin:left center!important;opacity:0!important}
+[data-timeline-reveal].timeline-reveal-in.timeline-multi .timeline-item:before{transform:scaleX(1)!important;opacity:1!important;transition:transform .42s .28s cubic-bezier(.2,.8,.2,1),opacity .2s .26s ease!important}
+@media(max-width:470px){
+  .timeline-multi .timeline-items:before{left:5px!important}
+  .timeline-multi .timeline-item:before{left:-15px!important;width:15px!important}
+  .timeline-multi .timeline-year-axis i{right:-43px!important}
+}
+
+/* GAMES / MICRO · la caja solo comunica PRÓXIMAMENTE. */
+.future-placeholder-box{display:grid!important;place-items:center!important;text-align:center!important;min-height:120px!important}
+.future-placeholder-box strong{margin:0!important}

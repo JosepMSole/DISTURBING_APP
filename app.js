@@ -1,4 +1,4 @@
-const APP_VERSION = '2.20.0';
+const APP_VERSION = '2.21.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -123,7 +123,7 @@ async function handleInstallApp(){
 }
 
 function goHomeTop(){persistCurrentReadingPosition();if(currentHash()==='#/home'){scrollTo({top:0,behavior:'smooth'});return}navigateHash('#/home');requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}))}
-function bindShell(){$('#brandBtn').onclick=goHomeTop;$('#backBtn').onclick=navigateBack;$('#toTopHeaderBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('#menuBtn').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;$$('.nav-btn').forEach(b=>b.onclick=()=>footerGo(b.dataset.route));$$('[data-drawer-route]').forEach(b=>b.onclick=()=>{closeDrawer();if(b.dataset.drawerRoute==='home')goHomeTop();else go(b.dataset.drawerRoute)});$('#miniPlayerOpen').onclick=()=>go('player');$('#miniPrev').onclick=()=>playerStep(-1,true);$('#miniPlay').onclick=()=>playerToggle();$('#miniNext').onclick=()=>playerStep(1,true);$('#scanBtn').onclick=()=>{closeDrawer();showUnlock()};$('#installBtn').onclick=handleInstallApp;updateInstallButton();addEventListener('hashchange',routeFromHash);addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;updateInstallButton()});addEventListener('appinstalled',()=>{installPrompt=null;updateInstallButton()});addEventListener('scroll',updateProgress,{passive:true});addEventListener('pagehide',persistCurrentReadingPosition);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persistCurrentReadingPosition()});addEventListener('blur',()=>setTimeout(()=>{if(currentStory&&document.activeElement?.tagName==='IFRAME')playerPauseForStoryMedia()},0));addEventListener('resize',()=>{updateInstallButton();if(routeName()==='collection')requestAnimationFrame(fitCollectionShelf)},{passive:true});}
+function bindShell(){$('#brandBtn').onclick=goHomeTop;$('#backBtn').onclick=navigateBack;$('#toTopHeaderBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('#menuBtn').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;$$('.nav-btn').forEach(b=>b.onclick=()=>footerGo(b.dataset.route));$$('[data-drawer-route]').forEach(b=>b.onclick=()=>{closeDrawer();if(b.dataset.drawerRoute==='home')goHomeTop();else go(b.dataset.drawerRoute)});$('#miniPlayerOpen').onclick=()=>go('player');$('#miniPrev').onclick=()=>playerStep(-1,true);$('#miniPlay').onclick=()=>playerToggle();$('#miniNext').onclick=()=>playerStep(1,true);$('#scanBtn').onclick=()=>{closeDrawer();showUnlock()};$('#installBtn').onclick=handleInstallApp;updateInstallButton();addEventListener('hashchange',routeFromHash);addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;updateInstallButton()});addEventListener('appinstalled',()=>{installPrompt=null;updateInstallButton()});addEventListener('scroll',updateProgress,{passive:true});addEventListener('pagehide',persistCurrentReadingPosition);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persistCurrentReadingPosition()});addEventListener('blur',()=>setTimeout(()=>{if(currentStory&&document.activeElement?.tagName==='IFRAME')playerPauseForStoryMedia()},0));addEventListener('resize',()=>{updateInstallButton();if(routeName()==='collection')requestAnimationFrame(fitCollectionShelf);if(routeName()==='timeline')requestAnimationFrame(alignTimelineBranches)},{passive:true});}
 function currentHash(){return location.hash||'#/home'}
 function navigateHash(target){const cur=currentHash();if(cur===target)return;navHistory.push(cur);if(navHistory.length>5)navHistory=navHistory.slice(-5);location.hash=target}
 function go(r){navigateHash(`#/${r}`)}
@@ -729,8 +729,17 @@ function renderTimeline(desc=false){
   $$('[data-era-toggle]').forEach(btn=>btn.onclick=()=>{const block=btn.closest('[data-era-block]'),body=block?.querySelector('.timeline-era-body'),open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));btn.querySelector('b').textContent=open?'+':'−';body?.classList.toggle('collapsed',open)});
   bindTimelineReveal();bindStoryCards();bindBrokenImages();
 }
+function alignTimelineBranches(){
+  $$('.timeline-multi .timeline-items').forEach(items=>{
+    const rows=[...items.querySelectorAll(':scope > .timeline-item')];if(rows.length<2)return;
+    const host=items.getBoundingClientRect(),first=rows[0].getBoundingClientRect(),last=rows[rows.length-1].getBoundingClientRect();
+    const top=Math.max(0,first.top-host.top+first.height/2),bottom=Math.max(0,host.bottom-(last.top+last.height/2));
+    items.style.setProperty('--timeline-branch-top',`${top}px`);items.style.setProperty('--timeline-branch-bottom',`${bottom}px`)
+  })
+}
 function bindTimelineReveal(){
   const groups=$$('[data-timeline-reveal]');if(!groups.length)return;
+  const align=()=>{requestAnimationFrame(()=>{alignTimelineBranches();setTimeout(alignTimelineBranches,120)})};align();
   if(motionReduced()){groups.forEach(g=>g.classList.add('timeline-reveal-in'));return}
   const io=new IntersectionObserver(entries=>{for(const e of entries){if(!e.isIntersecting)continue;e.target.classList.add('timeline-reveal-in');io.unobserve(e.target)}},{rootMargin:'0px 0px -8% 0px',threshold:.08});
   groups.forEach(g=>io.observe(g));
@@ -751,7 +760,12 @@ function stopRandomSpin(showResult=true){clearTimeout(randomSpinTimer);randomSpi
 function randomResultHaptic(){try{if('vibrate' in navigator)navigator.vibrate(1000)}catch{}}
 function showRandomResult(s){const el=$('#randomResult');if(!el)return;const rt=Number(s?.readTime||0),cover=displayCover(s);el.innerHTML=`<article class="random-result random-result-v25">${cover?`<div class="random-result-poster"><img src="${escAttr(cover)}" alt="Story ${escAttr(s.id)}">${exclusiveBadge(s,'cover')}</div>`:''}<div class="random-result-copy"><div class="eyebrow">RESULTADO</div><h2>${escapeHtml(s.id)} - ${escapeHtml(s.title||'')}</h2><p><span>${escapeHtml(timelineYearLabel(parseStoryYear(s)))}</span>${rt?`<span>${rt} MIN LECTURA</span>`:''}</p></div><div class="random-actions"><button class="cta" id="randomRead">LEER STORY</button><button class="secondary-btn" id="randomAgain">VOLVER A GIRAR</button></div></article>`;el.classList.remove('reward-in');void el.offsetWidth;el.classList.add('reward-in');randomResultHaptic();$('#randomRead').onclick=()=>storyGo(s.id);$('#randomAgain').onclick=()=>$('#spinRandom').click()}
 
-function mediaDuration(s,type){return Number(s?.mediaDurations?.[type]||0)}
+function mediaDuration(s,type){
+  const entries=Array.isArray(s?.mediaYoutube?.[type])?s.mediaYoutube[type]:[];
+  if(entries.length){const secs=entries.map(x=>Number(x?.durationSeconds)||0);if(secs.every(x=>x>0))return secs.reduce((a,b)=>a+b,0)}
+  if(String(s?.mediaDurationSources?.[type]||'').toLowerCase()==='youtube')return Math.max(0,Number(s?.mediaDurations?.[type])||0);
+  return 0
+}
 function fmtLong(seconds){seconds=Math.max(0,Math.round(Number(seconds)||0));const h=Math.floor(seconds/3600),m=Math.floor((seconds%3600)/60),sec=seconds%60;return h?`${h}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`:`${m}:${String(sec).padStart(2,'0')}`}
 function fmtTotalDuration(seconds){seconds=Math.max(0,Math.round(Number(seconds)||0));const h=Math.floor(seconds/3600),m=Math.floor((seconds%3600)/60),sec=seconds%60;return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`}
 function renderMediaCollection(type){currentStory=null;const isAudio=type==='audio',items=(indexData.stories||[]).filter(s=>accessibleStory(s)&&storyHasFeature(s,type)),durations=items.map(s=>mediaDuration(s,type)),complete=items.length>0&&durations.every(x=>x>0),total=complete?durations.reduce((a,b)=>a+b,0):0;view.innerHTML=`<section class="section v2-section media-collection ${isAudio?'cassettes':'tapes'}"><div class="media-section-head"><div>${mediaIconSvg(type)}<div><div class="eyebrow">DISTURBING STORIES</div><h1>${isAudio?'Disturbing Cassettes':'Disturbing Tapes'}</h1></div></div><div class="media-summary"><div><span>TOTAL</span><strong>${items.length}</strong><em>${isAudio?'CASSETTES':'TAPES'}</em></div><div><span>DURACIÓN TOTAL</span><strong>${complete?fmtTotalDuration(total):'PENDIENTE'}</strong></div></div></div><div class="media-catalog">${items.length?items.map(s=>mediaCollectionItem(s,type)).join(''):'<div class="empty">No hay contenido disponible en esta sección.</div>'}</div></section>`;$$('[data-media-story]').forEach(el=>el.onclick=()=>navigateHash(`#/story/${encodeURIComponent(el.dataset.mediaStory)}/${encodeURIComponent(el.dataset.mediaTab)}`));bindBrokenImages()}
@@ -766,9 +780,9 @@ function spotifyCompanionHtml(){return `<a class="spotify-companion" href="https
 
 function maybeAutoTutorial(){return}
 
-function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><div class="eyebrow">PREPARADO PARA FUTURA ITERACIÓN</div><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong><p>La entrada visual ya forma parte de Disturbing Stories App v2.17. Su contenido se desarrollará en una iteración posterior.</p></div></section>`}
+function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><div class="eyebrow">DISTURBING STORIES</div><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong></div></section>`}
 
 async function playEntryIntro(){const onceKey='disturbing_intro_played_session_v26';if(introPlayed||sessionStorage.getItem(onceKey)==='1')return;introPlayed=true;sessionStorage.setItem(onceKey,'1');const layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return;layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0}catch{}return new Promise(resolve=>{const done=()=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}layer.classList.add('intro-out');setTimeout(()=>{layer.classList.add('hidden');layer.classList.remove('intro-out');layer.setAttribute('aria-hidden','true');resolve()},220)};const start=()=>{clearTimeout(fallback);const p=video.play();if(p&&typeof p.catch==='function')p.catch(done)};const fallback=setTimeout(done,2500);layer.onclick=done;video.addEventListener('ended',done,{once:true});video.addEventListener('error',done,{once:true});if(video.readyState>=3)start();else video.addEventListener('canplay',start,{once:true})})}
 
-async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.20.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=2.21.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
