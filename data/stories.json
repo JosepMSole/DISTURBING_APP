@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-11T13:16:13.597636+00:00",
+  "updated": "2026-09-11T13:18:15.263302+00:00",
   "stories": [
     {
       "id": "277",
@@ -1140,7 +1140,7 @@
       ],
       "readTime": 4,
       "mediaDurations": {
-        "audio": 1065
+        "audio": 355
       },
       "mediaYoutube": {
         "audio": [
@@ -1148,18 +1148,11 @@
             "videoId": "ktWej50QHdQ",
             "url": "https://www.youtube.com/watch?v=ktWej50QHdQ",
             "durationSeconds": 355
-          },
-          {
-            "videoId": "ukUOlqqsWKU",
-            "url": "https://www.youtube.com/watch?v=ukUOlqqsWKU",
-            "durationSeconds": 355
-          },
-          {
-            "videoId": "QP6K1tL5Dl4",
-            "url": "https://www.youtube.com/watch?v=QP6K1tL5Dl4",
-            "durationSeconds": 355
           }
         ]
+      },
+      "mediaDurationSources": {
+        "audio": "youtube"
       }
     },
     {
@@ -1572,7 +1565,7 @@
       ],
       "readTime": 3,
       "mediaDurations": {
-        "audio": 912
+        "audio": 304
       },
       "mediaYoutube": {
         "audio": [
@@ -1580,18 +1573,11 @@
             "videoId": "ikRtpP0ID1o",
             "url": "https://www.youtube.com/watch?v=ikRtpP0ID1o",
             "durationSeconds": 304
-          },
-          {
-            "videoId": "UDleEikyuhY",
-            "url": "https://www.youtube.com/watch?v=UDleEikyuhY",
-            "durationSeconds": 304
-          },
-          {
-            "videoId": "oRVkSR6YJqI",
-            "url": "https://www.youtube.com/watch?v=oRVkSR6YJqI",
-            "durationSeconds": 304
           }
         ]
+      },
+      "mediaDurationSources": {
+        "audio": "youtube"
       }
     },
     {
@@ -2079,7 +2065,7 @@
       ],
       "readTime": 4,
       "mediaDurations": {
-        "audio": 900
+        "audio": 300
       },
       "mediaYoutube": {
         "audio": [
@@ -2087,18 +2073,11 @@
             "videoId": "EhIbBEnXL5s",
             "url": "https://www.youtube.com/watch?v=EhIbBEnXL5s",
             "durationSeconds": 300
-          },
-          {
-            "videoId": "Ca0YdD_szV0",
-            "url": "https://www.youtube.com/watch?v=Ca0YdD_szV0",
-            "durationSeconds": 300
-          },
-          {
-            "videoId": "GlWsJUxDidY",
-            "url": "https://www.youtube.com/watch?v=GlWsJUxDidY",
-            "durationSeconds": 300
           }
         ]
+      },
+      "mediaDurationSources": {
+        "audio": "youtube"
       }
     },
     {
