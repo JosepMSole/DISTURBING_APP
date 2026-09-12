@@ -4777,3 +4777,85 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @media(prefers-reduced-motion:reduce){
   .player-playlist-chevron svg{transition:none!important}
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.21 · PLAYER / HOME / USER MOTION
+   ============================================================ */
+
+/* PLAYER · volumen reconstruido desde cero. No usa span, input, pista auxiliar,
+   pseudo-elementos ni elementos secundarios que WebKit pueda materializar. */
+.player-console .player-volume{
+  display:grid!important;grid-template-columns:34px minmax(0,1fr)!important;
+  align-items:center!important;gap:10px!important;min-height:28px!important;
+  margin-top:16px!important;padding:0!important;overflow:visible!important;
+}
+.player-console .player-volume-label{
+  display:block!important;position:static!important;width:auto!important;height:auto!important;
+  margin:0!important;padding:0!important;overflow:visible!important;background:none!important;
+  border:0!important;box-shadow:none!important;line-height:1!important;color:#72c2ff!important;
+}
+.player-console .player-volume-control{
+  position:relative!important;display:block!important;height:6px!important;min-height:6px!important;
+  max-height:6px!important;margin:0!important;padding:0!important;overflow:visible!important;
+  border:1px solid #24506c!important;border-radius:999px!important;
+  background:linear-gradient(90deg,#168ad8 0%,#54c6ff var(--volume-pct),#17242d var(--volume-pct),#17242d 100%)!important;
+  box-shadow:none!important;isolation:auto!important;cursor:pointer!important;
+}
+.player-console .player-volume-control::before,.player-console .player-volume-control::after,
+.player-console .player-volume-label::before,.player-console .player-volume-label::after{
+  content:none!important;display:none!important;
+}
+.player-console .player-volume-track{display:none!important}
+.player-console .player-volume-thumb{
+  position:absolute!important;left:var(--volume-pct)!important;top:50%!important;
+  width:18px!important;height:18px!important;transform:translate(-50%,-50%)!important;
+  border-radius:50%!important;background:#e8f7ff!important;border:2px solid #33a8ff!important;
+  box-shadow:0 0 0 2px rgba(51,168,255,.12),0 2px 8px rgba(0,0,0,.55)!important;
+  pointer-events:none!important;z-index:2!important;
+}
+.player-console .player-volume>*:not(.player-volume-label):not(.player-volume-control){display:none!important}
+
+/* PLAYER · las imágenes de pista se leen mucho mejor: capa oscura reducida a la mitad. */
+.player-artwork-bg::after{
+  background:linear-gradient(180deg,rgba(8,8,8,.125),rgba(8,8,8,.24) 44%,rgba(8,8,8,.36)),
+             radial-gradient(circle at 50% 40%,rgba(8,8,8,.04),rgba(8,8,8,.34) 92%)!important;
+}
+
+/* Spotify · flecha mayor, centrada y texto definitivo. */
+.spotify-companion>b{
+  width:34px!important;height:34px!important;display:grid!important;place-items:center!important;
+  align-self:center!important;font-size:30px!important;line-height:1!important;transform:translateY(-1px)!important;
+}
+
+/* HOME · shimmer mucho más evidente, siempre restringido al progreso dorado. */
+.home-progress.home-progress-reveal-in .collection-progress>span::after{
+  background:linear-gradient(105deg,transparent 0 22%,rgba(255,249,207,.16) 34%,rgba(255,255,232,.96) 49%,rgba(255,219,96,.70) 56%,rgba(255,247,201,.18) 68%,transparent 80% 100%)!important;
+  filter:drop-shadow(0 0 5px rgba(255,226,105,.72))!important;
+  animation:homeProgressShimmerV421 1.12s .34s ease-in-out infinite!important;
+}
+@keyframes homeProgressShimmerV421{0%{transform:translateX(-125%)}72%,100%{transform:translateX(125%)}}
+
+/* USER · secuencia superior específica: círculos nacen desde 0; textos se escriben
+   por JS; nivel cuenta 0→X; EDITAR NOMBRE aparece al final. */
+.user-page.user-page-reveal-in>.user-hero.user-hero-v421>.user-avatar-current{
+  opacity:0!important;transform:scale(0)!important;
+  animation:userHeroCircleInV421 .62s .08s cubic-bezier(.12,.9,.22,1.18) forwards!important;
+}
+.user-page.user-page-reveal-in>.user-hero.user-hero-v421>.user-hero-level{
+  opacity:0!important;transform:scale(0)!important;
+  animation:userHeroCircleInV421 .66s .34s cubic-bezier(.12,.9,.22,1.18) forwards!important;
+}
+.user-hero-v421 .user-hero-copy{opacity:1!important;transform:none!important}
+.user-hero-v421 .user-hero-name,.user-hero-v421 .user-hero-status,.user-hero-v421 .user-email{
+  min-height:1em;
+}
+.user-edit-name-v421-wait{opacity:0!important;transform:translateY(7px)!important;pointer-events:none!important}
+.user-edit-name-v421-show{animation:userEditFadeV421 .44s cubic-bezier(.2,.8,.2,1) both!important;pointer-events:auto!important}
+@keyframes userHeroCircleInV421{0%{opacity:0;transform:scale(0)}68%{opacity:1;transform:scale(1.09)}100%{opacity:1;transform:scale(1)}}
+@keyframes userEditFadeV421{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .user-page.user-page-reveal-in>.user-hero.user-hero-v421>.user-avatar-current,
+  .user-page.user-page-reveal-in>.user-hero.user-hero-v421>.user-hero-level,
+  .user-edit-name-v421-show{animation:none!important;opacity:1!important;transform:none!important}
+}
