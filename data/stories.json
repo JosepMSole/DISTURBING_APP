@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:40:18.024368+00:00",
+  "updated": "2026-09-12T21:42:19.517496+00:00",
   "stories": [
     {
       "id": "277",
@@ -1131,7 +1131,7 @@
       "published": "2025-12-07",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/003.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-4.gif",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-9.gif",
       "data": "./data/stories/003.json",
       "source": "https://www.disturbingstories.com/003.html",
       "protected": false,
@@ -1212,7 +1212,8 @@
           "en": "Prisoner 93 Delta",
           "ca": "Reclús 93 Delta"
         }
-      }
+      },
+      "publicTeaser": "https://www.youtube.com/embed/hMHcaoyp8sY"
     },
     {
       "id": "238",
