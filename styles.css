@@ -4432,3 +4432,50 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @media(prefers-reduced-motion:reduce){
   .home-next-story,.home-next-story *{animation:none!important;opacity:1!important;transform:none!important}
 }
+
+
+/* =========================================================
+   DISTURBING STORIES APP v4.14 · PLAYER / HOME / USER / MIS STORIES
+   ========================================================= */
+/* PLAYER · imágenes configurables por pista, siempre detrás de los controles. */
+.player-console{position:relative!important;overflow:hidden!important;isolation:isolate!important;background:#080808!important}
+.player-console>*:not(.player-artwork-bg){position:relative;z-index:3}
+.player-artwork-bg{position:absolute!important;inset:0!important;z-index:0!important;overflow:hidden!important;pointer-events:none!important;background:radial-gradient(circle at 28% 22%,rgba(31,17,19,.9),rgba(8,8,8,.96) 68%)!important}
+.player-artwork-bg::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(8,8,8,.25),rgba(8,8,8,.48) 44%,rgba(8,8,8,.72)),radial-gradient(circle at 50% 40%,rgba(8,8,8,.08),rgba(8,8,8,.68) 92%);pointer-events:none}
+.player-artwork-slide{position:absolute;inset:-2%;opacity:0;transition:opacity 5s ease-in-out;z-index:0;overflow:hidden;will-change:opacity}
+.player-artwork-slide.active{opacity:.62;z-index:1}
+.player-artwork-slide img{display:block;width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(.76) contrast(1.13) saturate(.92);will-change:object-position,transform,filter}
+.player-artwork-slide.active img.pan-y{animation:playerArtworkPanY 20s ease-in-out infinite alternate}
+.player-artwork-slide.active img.pan-x{animation:playerArtworkPanX 20s ease-in-out infinite alternate}
+.player-artwork-slide.active img.pan-soft{animation:playerArtworkPanSoft 20s ease-in-out infinite alternate}
+.player-artwork-signal{position:absolute;inset:0;z-index:2;opacity:.22;mix-blend-mode:screen;background:repeating-linear-gradient(180deg,rgba(255,255,255,.035) 0 1px,transparent 1px 5px),linear-gradient(90deg,rgba(255,34,48,.07),transparent 34%,rgba(110,225,255,.055) 68%,transparent);animation:playerArtworkSignal 5.6s steps(1,end) infinite;pointer-events:none}
+@keyframes playerArtworkPanY{0%{object-position:50% 0%;transform:scale(1.03)}100%{object-position:50% 100%;transform:scale(1.07)}}
+@keyframes playerArtworkPanX{0%{object-position:0% 50%;transform:scale(1.03)}100%{object-position:100% 50%;transform:scale(1.07)}}
+@keyframes playerArtworkPanSoft{0%{object-position:48% 46%;transform:scale(1.02)}100%{object-position:52% 54%;transform:scale(1.075)}}
+@keyframes playerArtworkSignal{0%,88%,100%{opacity:.13;transform:none}89%{opacity:.31;transform:translateX(2px)}90%{opacity:.08;transform:translateX(-1px)}91%{opacity:.22;transform:none}}
+
+/* HOME · barra estándar de izquierda a derecha + actividad en loop solo en lo completado. */
+.home-progress .collection-progress{position:relative;overflow:hidden!important}
+.home-progress .collection-progress>span{position:relative;overflow:hidden!important}
+.home-progress.home-progress-reveal-in .collection-progress>span::after{content:"";position:absolute;inset:0;transform:translateX(-115%);background:linear-gradient(105deg,transparent 0 28%,rgba(255,247,201,.08) 40%,rgba(255,247,201,.58) 50%,rgba(255,247,201,.10) 60%,transparent 72% 100%);animation:homeProgressShimmer 1.55s .55s ease-in-out infinite;pointer-events:none}
+@keyframes homeProgressShimmer{0%{transform:translateX(-115%)}68%,100%{transform:translateX(115%)}}
+/* La cuenta atrás se crea de nuevo cada segundo: tras la primera entrada anulamos sus animaciones. */
+.home-next-story.home-next-story-steady,.home-next-story.home-next-story-steady .home-next-story-label,.home-next-story.home-next-story-steady .home-next-story-countdown,.home-next-story.home-next-story-steady .home-next-story-countdown>*{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+
+/* USER · trazo interior más grueso del indicador grande X★. */
+.user-hero-level{box-shadow:inset 0 0 0 7px rgba(215,181,95,.34),0 0 22px rgba(215,181,95,.15)!important}
+
+/* MIS STORIES · recuperar los iconos y centrar su eje con la flecha de la derecha. */
+.continue-card{overflow:visible!important}
+.continue-copy{overflow:visible!important;padding-right:0!important}
+.continue-inline-icons{position:absolute!important;right:-52px!important;top:calc(100% - 50px)!important;width:40px!important;height:28px!important;margin:0!important;padding:0!important;display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;gap:3px!important;z-index:6!important;overflow:visible!important}
+.continue-inline-icons:empty{display:none!important}
+.continue-inline-icons>.ex-badge,.continue-inline-icons>.story-media-badges{position:static!important;transform:none!important;margin:0!important}
+.continue-inline-icons>.story-media-badges{display:flex!important;flex-direction:row!important;gap:3px!important;align-items:center!important}
+.continue-inline-icons .ex-badge,.continue-inline-icons .media-badge{width:23px!important;height:23px!important;min-width:23px!important;min-height:23px!important}
+.resume-arrow{align-self:end!important;margin-bottom:22px!important;justify-self:center!important}
+
+@media(prefers-reduced-motion:reduce){
+  .player-artwork-slide,.player-artwork-slide img,.player-artwork-signal,.home-progress .collection-progress>span::after{animation:none!important;transition:none!important}
+  .player-artwork-slide.active{opacity:.56!important}
+}
