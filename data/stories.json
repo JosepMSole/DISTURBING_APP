@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:50:36.216243+00:00",
+  "updated": "2026-09-12T21:51:38.611198+00:00",
   "stories": [
     {
       "id": "277",
@@ -1980,23 +1980,13 @@
       ],
       "readTime": 6,
       "mediaDurations": {
-        "video": 1122
+        "video": 374
       },
       "mediaYoutube": {
         "video": [
           {
             "videoId": "0sEKsil_z0Q",
             "url": "https://www.youtube.com/watch?v=0sEKsil_z0Q",
-            "durationSeconds": 374
-          },
-          {
-            "videoId": "be4XSESSA2A",
-            "url": "https://www.youtube.com/watch?v=be4XSESSA2A",
-            "durationSeconds": 374
-          },
-          {
-            "videoId": "-cGDOr4I6r0",
-            "url": "https://www.youtube.com/watch?v=-cGDOr4I6r0",
             "durationSeconds": 374
           }
         ]
@@ -2037,7 +2027,8 @@
       "mediaTitleLocales": {
         "video": {
           "en": "The Pilot",
-          "ca": "El Pilot"
+          "ca": "El Pilot",
+          "es": "El Piloto"
         }
       }
     },
@@ -2391,23 +2382,13 @@
       ],
       "readTime": 3,
       "mediaDurations": {
-        "video": 930
+        "video": 310
       },
       "mediaYoutube": {
         "video": [
           {
             "videoId": "vdP_EBOUZH0",
             "url": "https://www.youtube.com/watch?v=vdP_EBOUZH0",
-            "durationSeconds": 310
-          },
-          {
-            "videoId": "h_wBe7hP3sU",
-            "url": "https://www.youtube.com/watch?v=h_wBe7hP3sU",
-            "durationSeconds": 310
-          },
-          {
-            "videoId": "LS_sSYiBKMc",
-            "url": "https://www.youtube.com/watch?v=LS_sSYiBKMc",
             "durationSeconds": 310
           }
         ]
@@ -2448,7 +2429,8 @@
       "mediaTitleLocales": {
         "video": {
           "ca": "Un Conte de Nadal Dissonant",
-          "en": "A Dissonant Christmas Tale"
+          "en": "A Dissonant Christmas Tale",
+          "es": "Un Cuento de Navidad Disonante"
         }
       }
     },
