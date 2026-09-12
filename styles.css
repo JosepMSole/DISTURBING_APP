@@ -4385,3 +4385,50 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @media(prefers-reduced-motion:reduce){
   .home-progress.home-progress-reveal-ready,.home-progress.home-progress-reveal-ready *{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
 }
+
+
+/* =========================================================
+   DISTURBING STORIES APP v4.13 · ESTANTERÍA / HOME / USER / MIS STORIES
+   ========================================================= */
+/* ESTANTERÍA · fundir el WebM opaco con la caja y aprovechar al máximo el hueco. */
+.book-shelf-wrap{background:#090d14!important}
+.shelf-reading-loop{left:50%!important;right:0!important;top:22px!important;bottom:12px!important;padding:0!important;background:#090d14!important}
+.shelf-reading-loop video{height:100%!important;width:auto!important;max-height:100%!important;max-width:100%!important;object-fit:contain!important;background:#090d14!important}
+.shelf-reading-loop::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 10px 0 14px -12px #090d14,inset -7px 0 12px -12px #090d14}
+
+/* HOME · TU PROGRESO más rápido, manteniendo la secuencia completa. */
+.home-progress.home-progress-reveal-in{transition:opacity .26s ease,transform .34s cubic-bezier(.2,.8,.2,1),filter .26s ease!important}
+.home-progress.home-progress-reveal-in .home-progress-copy{transition:opacity .23s .04s ease,transform .28s .03s cubic-bezier(.2,.8,.2,1),filter .22s .03s ease!important}
+.home-progress.home-progress-reveal-in .home-progress-copy .eyebrow{transition:opacity .21s .07s ease,transform .25s .06s cubic-bezier(.2,.8,.2,1),filter .20s .06s ease!important}
+.home-progress.home-progress-reveal-in .home-progress-copy strong{transition:opacity .21s .10s ease,transform .25s .09s cubic-bezier(.2,.8,.2,1),filter .20s .09s ease!important}
+.home-progress.home-progress-reveal-in .collection-progress{transition:opacity .20s .13s ease,transform .24s .12s cubic-bezier(.2,.8,.2,1),filter .20s .12s ease!important}
+.home-progress.home-progress-reveal-in .collection-progress>span{transition:transform .42s .15s cubic-bezier(.18,.86,.22,1),opacity .18s .14s ease!important}
+.home-progress.home-progress-reveal-in .link-btn{transition:opacity .21s .20s ease,transform .25s .18s cubic-bezier(.2,.8,.2,1),filter .20s .18s ease!important}
+
+/* PRÓXIMA STORY · animar también sus elementos internos con entrada estándar. */
+.home-next-story{opacity:1!important;transform:none!important;filter:none!important;animation:v413NextBox .46s cubic-bezier(.2,.82,.2,1) both!important}
+.home-next-story .home-next-story-label{opacity:0;animation:v413NextItem .34s ease .08s both!important}
+.home-next-story .home-next-story-countdown{opacity:0;animation:v413NextItem .36s ease .13s both!important}
+.home-next-story .home-next-story-countdown>span,.home-next-story .home-next-story-countdown>i{opacity:0;animation:v413NextUnit .30s ease both!important}
+.home-next-story .home-next-story-countdown>span:nth-child(1){animation-delay:.16s!important}.home-next-story .home-next-story-countdown>i:nth-child(2){animation-delay:.18s!important}.home-next-story .home-next-story-countdown>span:nth-child(3){animation-delay:.20s!important}.home-next-story .home-next-story-countdown>i:nth-child(4){animation-delay:.22s!important}.home-next-story .home-next-story-countdown>span:nth-child(5){animation-delay:.24s!important}.home-next-story .home-next-story-countdown>i:nth-child(6){animation-delay:.26s!important}.home-next-story .home-next-story-countdown>span:nth-child(7){animation-delay:.28s!important}
+@keyframes v413NextBox{from{opacity:0;transform:translateY(14px) scale(.99)}to{opacity:1;transform:none}}
+@keyframes v413NextItem{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes v413NextUnit{from{opacity:0;transform:translateY(5px) scale(.96)}to{opacity:1;transform:none}}
+
+/* USER · v4.12=10, v4.13=7: reducir el número al 70% manteniendo ★ en superíndice. */
+.user-hero-level-number{font-size:73px!important;line-height:.82!important;letter-spacing:-.06em!important;transform:translateX(-2px)!important}
+.user-hero-level-star{font-size:12px!important;transform:translate(23px,-34px)!important}
+
+/* MIS STORIES · el extremo derecho de los iconos queda centrado sobre la flecha. */
+.continue-copy{position:relative!important}
+.continue-inline-icons{width:calc(100% + 40px)!important;margin-right:-40px!important;box-sizing:border-box!important;padding-right:0!important}
+.resume-arrow{justify-self:end!important}
+
+@media(max-width:460px){
+  .user-hero-level-number{font-size:59px!important;transform:translateX(-1px)!important}
+  .user-hero-level-star{font-size:10px!important;transform:translate(19px,-28px)!important}
+  .shelf-reading-loop{top:22px!important;padding:0!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-next-story,.home-next-story *{animation:none!important;opacity:1!important;transform:none!important}
+}
