@@ -4041,3 +4041,28 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 
 /* La instalación desktop sigue siendo directa; el CTA de HOME lo refleja. */
 @media (pointer:fine){.install-app-panel-cta b{letter-spacing:.055em!important}}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v3.4
+   Intro estable · Extras · Multimedia multidioma · Booktrailers
+   ============================================================ */
+
+/* El candado de EXTRAS queda visualmente centrado en su círculo. */
+.extra-card.poster-only .ex-badge{display:grid!important;place-items:center!important;line-height:0!important}
+.extra-card.poster-only .ex-badge .lock-svg{display:block!important;margin:0!important;transform:translateY(1px)!important}
+
+/* CASSETTES / TAPES: título compacto + selector de idioma a la derecha. */
+.media-heading-row{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;flex-wrap:wrap!important;width:100%!important}
+.media-title-no-icon h1{font-family:Oxanium,Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif!important;font-weight:900!important;letter-spacing:.045em!important;text-transform:uppercase!important;margin:0!important}
+.media-language-switch{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:5px!important;flex-wrap:wrap!important}
+.media-language-switch button{border:1px solid #314249!important;background:#071014!important;color:#71858b!important;border-radius:999px!important;padding:7px 9px!important;font:800 7px/1 Oxanium,sans-serif!important;letter-spacing:.045em!important;white-space:nowrap!important}
+.cassettes .media-language-switch button.active{border-color:#2f8f59!important;background:#092016!important;color:#8effb5!important;box-shadow:0 0 12px rgba(72,224,132,.14)!important}
+.tapes .media-language-switch button.active{border-color:#2b7ea8!important;background:#091923!important;color:#92dcff!important;box-shadow:0 0 12px rgba(77,181,235,.14)!important}
+@media(max-width:430px){.media-heading-row{align-items:flex-start!important}.media-language-switch{width:100%!important;justify-content:flex-start!important}.media-language-switch button{padding:7px 8px!important;font-size:6.5px!important}}
+
+/* BOOKTRAILER dentro de cada libro: Amazon -> trailer -> estadísticas. */
+.book-trailer{margin:14px 0 12px!important}
+.book-trailer-label{font:900 9px/1 Oxanium,sans-serif!important;letter-spacing:.12em!important;color:#8fa4aa!important;margin:0 0 7px!important}
+.book-trailer-video{position:relative!important;width:100%!important;aspect-ratio:16/9!important;border:1px solid #26373d!important;border-radius:12px!important;overflow:hidden!important;background:#020405!important;box-shadow:0 0 22px rgba(86,190,220,.06)!important}
+.book-trailer-video iframe{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;border:0!important}
