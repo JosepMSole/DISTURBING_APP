@@ -170,47 +170,58 @@
         "mediaRefs": [
           {
             "storyId": "001",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "002",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "003",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "004",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "005",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "006",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "007",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "008",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "012",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "013",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "018",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           }
         ]
       }
@@ -225,23 +236,28 @@
         "mediaRefs": [
           {
             "storyId": "009",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "010",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "029",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "049",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           },
           {
             "storyId": "211",
-            "locale": "es"
+            "locale": "es",
+            "mediaId": ""
           }
         ]
       }
@@ -256,16 +272,18 @@
         "mediaRefs": [
           {
             "storyId": "009",
-            "locale": "ca"
+            "locale": "ca",
+            "mediaId": ""
           },
           {
             "storyId": "010",
-            "locale": "ca"
+            "locale": "ca",
+            "mediaId": ""
           }
         ]
       }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T17:36:28.484702+00:00"
+  "updated": "2026-09-12T21:54:31.640125+00:00"
 }
