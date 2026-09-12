@@ -4296,3 +4296,33 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .book-card.book-complete-read{border-color:rgba(65,170,98,.68)!important;box-shadow:0 0 0 1px rgba(65,170,98,.14),0 0 18px rgba(53,158,83,.10)!important}
 .book-card.book-complete-read .book-numbers strong,.book-card.book-complete-read .book-numbers span{color:#86d69f!important}
 .book-card.book-complete-read .collection-progress>span{background:#4eaf70!important}
+
+
+/* =========================================================
+   DISTURBING STORIES APP v4.11 · HOME / COLECCIÓN / USER
+   ========================================================= */
+/* HOME · TU PROGRESO: identidad dorada en contorno y barra. */
+.home-progress.home-progress-link{
+  border-color:rgba(215,181,95,.72)!important;
+  box-shadow:0 0 0 1px rgba(215,181,95,.08),0 0 18px rgba(215,181,95,.07)!important;
+}
+.home-progress.home-progress-link .collection-progress>span{background:#d7b55f!important}
+.home-progress.home-progress-link:hover,.home-progress.home-progress-link:focus-visible{border-color:#e3c66f!important}
+
+/* COLECCIÓN · libro leído: bubble en la misma línea que BOOK#X. */
+.book-card-title-row{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0;margin:0 0 10px}
+.book-card-title-row h2{margin:0!important;min-width:0}
+.book-read-bubble{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(78,175,112,.76);background:rgba(28,102,53,.23);color:#a7e7b9;border-radius:999px;padding:6px 8px;font:900 7px/1 Oxanium,sans-serif;letter-spacing:.06em;white-space:nowrap;box-shadow:0 0 12px rgba(78,175,112,.08)}
+.book-card.book-complete-read .book-read-bubble{border-color:rgba(92,193,126,.86);color:#c7ffd6}
+
+/* USER · indicador de nivel de la caja: estrella como superíndice real. */
+.user-hero-level{position:relative!important;display:grid!important;place-items:center!important;gap:0!important}
+.user-hero-level-number{display:inline-block;font:800 26px/1 Oxanium,sans-serif;color:#fff1ad}
+.user-hero-level-star{position:absolute;left:50%;top:50%;font:900 9px/1 Oxanium,sans-serif;color:#f0cc68;transform:translate(9px,-19px)}
+/* El nombre manda visualmente: bajar ligeramente el bloque nombre + estado. */
+.user-hero.registered>.user-hero-copy{transform:translateY(5px)!important}
+@media(max-width:460px){
+  .book-card-title-row{gap:6px}.book-read-bubble{font-size:6px;padding:5px 6px}
+  .user-hero-level-number{font-size:21px}.user-hero-level-star{font-size:7px;transform:translate(8px,-16px)}
+  .user-hero.registered>.user-hero-copy{transform:translateY(4px)!important}
+}
