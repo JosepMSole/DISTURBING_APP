@@ -245,8 +245,27 @@
           }
         ]
       }
+    },
+    {
+      "id": "achievement1789233924395",
+      "number": 18,
+      "name": "Tapes en Català",
+      "description": "Has vist tots els Tapes disponibles en Català",
+      "requirement": {
+        "type": "watch_tapes",
+        "mediaRefs": [
+          {
+            "storyId": "009",
+            "locale": "ca"
+          },
+          {
+            "storyId": "010",
+            "locale": "ca"
+          }
+        ]
+      }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T17:11:56.037087+00:00"
+  "updated": "2026-09-12T17:25:48.715597+00:00"
 }
