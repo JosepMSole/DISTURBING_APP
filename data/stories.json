@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T02:22:39.033119+00:00",
+  "updated": "2026-09-12T02:28:46.459385+00:00",
   "stories": [
     {
       "id": "277",
@@ -249,6 +249,12 @@
         "audio": {
           "en": "youtube",
           "ca": "youtube"
+        }
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "en": "Roars in the Rain",
+          "ca": "Rugits dins la Pluja"
         }
       }
     },
@@ -1011,7 +1017,13 @@
       "mediaDurationSources": {
         "audio": "youtube"
       },
-      "publicTeaser": "https://www.youtube.com/embed/DWSxTQWFcbs"
+      "publicTeaser": "https://www.youtube.com/embed/DWSxTQWFcbs",
+      "mediaTitleLocales": {
+        "audio": {
+          "en": "My First Tape",
+          "ca": "La meva Primera Cinta"
+        }
+      }
     },
     {
       "id": "003",
@@ -1083,6 +1095,12 @@
         "audio": {
           "en": "youtube",
           "ca": "youtube"
+        }
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "en": "Prisoner 93 Delta",
+          "ca": "Reclús 93 Delta"
         }
       }
     },
@@ -1235,6 +1253,12 @@
         "audio": {
           "en": "youtube",
           "ca": "youtube"
+        }
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "en": "Infection",
+          "ca": "Infection"
         }
       }
     },
@@ -1491,7 +1515,13 @@
       "mediaDurationSources": {
         "audio": "youtube"
       },
-      "publicTeaser": "https://www.youtube.com/embed/yOoztMOcA38"
+      "publicTeaser": "https://www.youtube.com/embed/yOoztMOcA38",
+      "mediaTitleLocales": {
+        "audio": {
+          "en": "Neuromadness",
+          "ca": "Neuromadness"
+        }
+      }
     },
     {
       "id": "033",
@@ -1691,6 +1721,12 @@
           "en": "youtube",
           "ca": "youtube"
         }
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "ca": "La Màquina d'Escriure",
+          "en": "The Typewriter"
+        }
       }
     },
     {
@@ -1813,6 +1849,12 @@
         "video": {
           "en": "youtube",
           "ca": "youtube"
+        }
+      },
+      "mediaTitleLocales": {
+        "video": {
+          "en": "The Pilot",
+          "ca": "El Pilot"
         }
       }
     },
@@ -2206,6 +2248,12 @@
           "en": "youtube",
           "ca": "youtube"
         }
+      },
+      "mediaTitleLocales": {
+        "video": {
+          "ca": "Un Conte de Nadal Dissonant",
+          "en": "A Dissonant Christmas Tale"
+        }
       }
     },
     {
@@ -2280,6 +2328,12 @@
         "audio": {
           "en": "youtube",
           "ca": "youtube"
+        }
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "ca": "Dark Limits: Moment Zero",
+          "en": "Dark Limits: Zero Moment"
         }
       }
     },
@@ -2374,6 +2428,12 @@
         "audio": {
           "en": "youtube",
           "ca": "youtube"
+        }
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "en": "Characters",
+          "ca": "Caràcters"
         }
       }
     }
