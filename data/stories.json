@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T01:51:24.033059+00:00",
+  "updated": "2026-09-12T01:53:10.015759+00:00",
   "stories": [
     {
       "id": "277",
@@ -229,17 +229,26 @@
               "url": "https://www.youtube.com/watch?v=aeBbp4u0yvw",
               "durationSeconds": 268
             }
+          ],
+          "ca": [
+            {
+              "videoId": "Y6dwsOl3v5I",
+              "url": "https://www.youtube.com/watch?v=Y6dwsOl3v5I",
+              "durationSeconds": 268
+            }
           ]
         }
       },
       "mediaDurationLocales": {
         "audio": {
-          "en": 268
+          "en": 268,
+          "ca": 268
         }
       },
       "mediaDurationSourceLocales": {
         "audio": {
-          "en": "youtube"
+          "en": "youtube",
+          "ca": "youtube"
         }
       }
     },
@@ -1054,17 +1063,26 @@
               "url": "https://www.youtube.com/watch?v=wAxQyw7V0pg",
               "durationSeconds": 366
             }
+          ],
+          "ca": [
+            {
+              "videoId": "N5fbsqMpAgE",
+              "url": "https://www.youtube.com/watch?v=N5fbsqMpAgE",
+              "durationSeconds": 366
+            }
           ]
         }
       },
       "mediaDurationLocales": {
         "audio": {
-          "en": 366
+          "en": 366,
+          "ca": 366
         }
       },
       "mediaDurationSourceLocales": {
         "audio": {
-          "en": "youtube"
+          "en": "youtube",
+          "ca": "youtube"
         }
       }
     },
@@ -1197,17 +1215,26 @@
               "url": "https://www.youtube.com/watch?v=ukUOlqqsWKU",
               "durationSeconds": 355
             }
+          ],
+          "ca": [
+            {
+              "videoId": "QP6K1tL5Dl4",
+              "url": "https://www.youtube.com/watch?v=QP6K1tL5Dl4",
+              "durationSeconds": 355
+            }
           ]
         }
       },
       "mediaDurationLocales": {
         "audio": {
-          "en": 355
+          "en": 355,
+          "ca": 355
         }
       },
       "mediaDurationSourceLocales": {
         "audio": {
-          "en": "youtube"
+          "en": "youtube",
+          "ca": "youtube"
         }
       }
     },
@@ -1643,17 +1670,26 @@
               "url": "https://www.youtube.com/watch?v=UDleEikyuhY",
               "durationSeconds": 304
             }
+          ],
+          "ca": [
+            {
+              "videoId": "oRVkSR6YJqI",
+              "url": "https://www.youtube.com/watch?v=oRVkSR6YJqI",
+              "durationSeconds": 304
+            }
           ]
         }
       },
       "mediaDurationLocales": {
         "audio": {
-          "en": 304
+          "en": 304,
+          "ca": 304
         }
       },
       "mediaDurationSourceLocales": {
         "audio": {
-          "en": "youtube"
+          "en": "youtube",
+          "ca": "youtube"
         }
       }
     },
@@ -1757,17 +1793,26 @@
               "url": "https://www.youtube.com/watch?v=be4XSESSA2A",
               "durationSeconds": 374
             }
+          ],
+          "ca": [
+            {
+              "videoId": "-cGDOr4I6r0",
+              "url": "https://www.youtube.com/watch?v=-cGDOr4I6r0",
+              "durationSeconds": 374
+            }
           ]
         }
       },
       "mediaDurationLocales": {
         "video": {
-          "en": 374
+          "en": 374,
+          "ca": 374
         }
       },
       "mediaDurationSourceLocales": {
         "video": {
-          "en": "youtube"
+          "en": "youtube",
+          "ca": "youtube"
         }
       }
     },
@@ -2140,17 +2185,26 @@
               "url": "https://www.youtube.com/watch?v=h_wBe7hP3sU",
               "durationSeconds": 310
             }
+          ],
+          "ca": [
+            {
+              "videoId": "LS_sSYiBKMc",
+              "url": "https://www.youtube.com/watch?v=LS_sSYiBKMc",
+              "durationSeconds": 310
+            }
           ]
         }
       },
       "mediaDurationLocales": {
         "video": {
-          "en": 310
+          "en": 310,
+          "ca": 310
         }
       },
       "mediaDurationSourceLocales": {
         "video": {
-          "en": "youtube"
+          "en": "youtube",
+          "ca": "youtube"
         }
       }
     },
@@ -2206,17 +2260,26 @@
               "url": "https://www.youtube.com/watch?v=Ca0YdD_szV0",
               "durationSeconds": 300
             }
+          ],
+          "ca": [
+            {
+              "videoId": "GlWsJUxDidY",
+              "url": "https://www.youtube.com/watch?v=GlWsJUxDidY",
+              "durationSeconds": 300
+            }
           ]
         }
       },
       "mediaDurationLocales": {
         "audio": {
-          "en": 300
+          "en": 300,
+          "ca": 300
         }
       },
       "mediaDurationSourceLocales": {
         "audio": {
-          "en": "youtube"
+          "en": "youtube",
+          "ca": "youtube"
         }
       }
     },
@@ -2291,17 +2354,26 @@
               "url": "https://www.youtube.com/watch?v=SkrMQmvkxNM",
               "durationSeconds": 276
             }
+          ],
+          "ca": [
+            {
+              "videoId": "XuH7IHYdZWM",
+              "url": "https://www.youtube.com/watch?v=XuH7IHYdZWM",
+              "durationSeconds": 267
+            }
           ]
         }
       },
       "mediaDurationLocales": {
         "audio": {
-          "en": 276
+          "en": 276,
+          "ca": 267
         }
       },
       "mediaDurationSourceLocales": {
         "audio": {
-          "en": "youtube"
+          "en": "youtube",
+          "ca": "youtube"
         }
       }
     }
