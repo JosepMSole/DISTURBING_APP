@@ -299,7 +299,7 @@
       "listBanner": "assets/sagas/BANNERSAGA_DOLOR%20-%20EXT.jpg",
       "detailBanner": "assets/sagas/BANNERSAGA_DOLOR%20-%20INT.jpg",
       "extraText": "",
-      "extraImage": "",
+      "extraImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/180-dolor-por-caida-frame-3_orig.jpg",
       "parts": [
         {
           "order": 1,
@@ -367,5 +367,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T22:09:16.253403+00:00"
+  "updated": "2026-09-12T22:09:40.796787+00:00"
 }
