@@ -1,13 +1,10 @@
-const APP_VERSION = '3.6.0';
+const APP_VERSION = '3.7.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
 let sagasData={schema:1,sagas:[]},timelineData={schema:1,orders:{}},extrasData={schema:1,extras:[]},playerCatalogData={schema:1,tracks:[]},homeData={schema:1,nextStoryDate:''};
 let lastRandomStoryId='',randomSpinTimer=0,randomSpinRunning=false,randomSpinCurrent=null,randomSpinPool=[],randomHasSpun=false,tutorialActive=null,introPlayed=false,suppressNewClearOnceId='';
 let mediaLocaleState={audio:'es',video:'es'},homeCountdownTimer=0;
-let sectionTransitionActive=false,sectionTransitionLastAt=0,sectionTransitionEligibleCount=0;
-const SECTION_TRANSITION_VIDEO='./assets/TRANSI 1.webm';
-const SECTION_TRANSITION_CHANCE=.28;
 const unlockSecretsKey='disturbing_unlock_secrets_v2';
 const readKey='disturbing_read_v2';
 const coverCacheKey='disturbing_cover_cache_v1';
@@ -52,7 +49,7 @@ async function boot(){
     bindShell();initMotionSystem();initPlayer();
     await playEntryIntro();
     if(currentHash()!=='#/home'){location.hash='#/home'}else routeFromHash();
-    updateAppBadge();registerSW();setTimeout(preloadSectionTransitionFx,900);
+    updateAppBadge();registerSW();
   }catch(e){view.innerHTML=`<div class="empty"><h2>No se pudieron cargar las Stories</h2><p>${escapeHtml(e.message)}</p><p>Usa el lanzador local incluido en el paquete.</p></div>`;}
 }
 
@@ -146,30 +143,7 @@ async function handleInstallApp(){
 function goHomeTop(){persistCurrentReadingPosition();if(currentHash()==='#/home'){scrollTo({top:0,behavior:'smooth'});return}navigateHash('#/home');requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}))}
 function bindShell(){$('#brandBtn').onclick=goHomeTop;$('#backBtn').onclick=navigateBack;$('#toTopHeaderBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('#menuBtn').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;$$('.nav-btn').forEach(b=>b.onclick=()=>footerGo(b.dataset.route));$$('[data-drawer-route]').forEach(b=>b.onclick=()=>{closeDrawer();if(b.dataset.drawerRoute==='home')goHomeTop();else go(b.dataset.drawerRoute)});$('#miniPlayerOpen').onclick=()=>go('player');$('#miniPrev').onclick=()=>playerStep(-1,true);$('#miniPlay').onclick=()=>playerToggle();$('#miniNext').onclick=()=>playerStep(1,true);$('#scanBtn').onclick=()=>{closeDrawer();showUnlock()};$('#installBtn').onclick=handleInstallApp;updateInstallButton();addEventListener('hashchange',routeFromHash);addEventListener('scroll',updateProgress,{passive:true});addEventListener('pagehide',persistCurrentReadingPosition);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persistCurrentReadingPosition()});addEventListener('blur',()=>setTimeout(()=>{if(currentStory&&document.activeElement?.tagName==='IFRAME')playerPauseForStoryMedia()},0));addEventListener('resize',()=>{updateInstallButton();if(routeName()==='collection')requestAnimationFrame(fitCollectionShelf);if(routeName()==='timeline')requestAnimationFrame(alignTimelineBranches)},{passive:true});}
 function currentHash(){return location.hash||'#/home'}
-function isMajorSectionTarget(target){return /^#\/(?:home|stories|unlocked|collection|player)$/.test(String(target||''))}
-function shouldPlaySectionTransition(target){
-  if(sectionTransitionActive||!isMajorSectionTarget(target))return false;
-  const now=Date.now();if(now-sectionTransitionLastAt<6500)return false;
-  sectionTransitionEligibleCount++;
-  // Probabilidad suficientemente visible para probar el primer FX, sin convertirlo en algo constante.
-  return Math.random()<SECTION_TRANSITION_CHANCE;
-}
-function preloadSectionTransitionFx(){
-  try{const v=document.createElement('video');v.preload='auto';v.src=SECTION_TRANSITION_VIDEO;v.playsInline=true;v.load()}catch{}
-}
-function playSectionTransitionFx(){
-  if(sectionTransitionActive)return false;
-  sectionTransitionActive=true;sectionTransitionLastAt=Date.now();
-  const layer=document.createElement('div');layer.className='section-transition-fx';layer.setAttribute('aria-hidden','true');
-  const video=document.createElement('video');video.className='section-transition-video';video.src=SECTION_TRANSITION_VIDEO;video.autoplay=true;video.playsInline=true;video.preload='auto';video.controls=false;video.muted=false;video.volume=1;video.disablePictureInPicture=true;video.setAttribute('playsinline','');video.setAttribute('webkit-playsinline','');
-  layer.append(video);document.body.append(layer);
-  let done=false;const cleanup=()=>{if(done)return;done=true;clearTimeout(timer);layer.remove();sectionTransitionActive=false};
-  const timer=setTimeout(cleanup,5400);video.addEventListener('ended',cleanup,{once:true});video.addEventListener('error',cleanup,{once:true});
-  // play() se invoca dentro del gesto del usuario para que el audio pueda sonar cuando el dispositivo lo permita.
-  try{const promise=video.play();if(promise&&typeof promise.catch==='function')promise.catch(()=>{video.muted=true;video.play().catch(cleanup)})}catch{video.muted=true;try{video.play().catch(cleanup)}catch{cleanup()}}
-  return true;
-}
-function navigateHash(target){const cur=currentHash();if(cur===target)return;if(shouldPlaySectionTransition(target))playSectionTransitionFx();navHistory.push(cur);if(navHistory.length>5)navHistory=navHistory.slice(-5);location.hash=target}
+function navigateHash(target){const cur=currentHash();if(cur===target)return;navHistory.push(cur);if(navHistory.length>5)navHistory=navHistory.slice(-5);location.hash=target}
 function go(r){navigateHash(`#/${r}`)}
 function footerGo(r){const target=`#/${r}`;persistCurrentReadingPosition();scrollTo({top:0,behavior:'auto'});if(currentHash()===target){routeFromHash();requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}));return}navigateHash(target);requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}))}
 function routeFallback(){const p=currentHash().replace(/^#\//,'').split('/'),route=p[0]||'home';if(route==='story')return '#/stories';if(route==='saga')return '#/sagas';if(route==='extra')return '#/extras';if(route==='collection'&&p[1])return '#/collection';if(['sagas','timeline','random','cassettes','tapes','extras','games','micro-pesadillas'].includes(route))return '#/stories';if(route!=='home')return '#/home';return ''}
@@ -275,13 +249,13 @@ function renderHome(){
   const latest=indexData.stories[0];
   if(!latest){view.innerHTML='<div class="empty">Todavía no hay Stories publicadas.</div>';return}
   const reading=latestInProgress(),readCount=publishedReadCount(),total=indexData.stories.length,global=total?readCount/total:0;
-  const continueCover=reading?displayCover(reading):'',continueHtml=reading?`<section class="home-continue home-continue-v21"><div class="home-continue-cover story-thumb-wrap">${continueCover?`<img src="${escAttr(continueCover)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:`<span>${escapeHtml(reading.id)}</span>`}${exclusiveBadge(reading,'cover')}${storyMediaBadges(reading)}</div><div class="home-continue-copy"><div class="eyebrow">Continuar leyendo</div><strong>STORY ${escapeHtml(reading.id)} · ${escapeHtml(reading.title)}</strong><div class="mini-progress"><span style="width:${pct(storyProgress(reading.id))}"></span></div><small>${pct(storyProgress(reading.id))}</small></div><button id="continueReading" class="continue-btn">CONTINUAR</button></section>`:'';
+  const continueCover=reading?displayCover(reading):'',continueHtml=reading?`<section class="home-continue home-continue-v21 home-continue-link" data-home-continue role="button" tabindex="0" aria-label="Continuar leyendo ${escAttr(reading.title||'Story')}"><div class="home-continue-cover story-thumb-wrap">${continueCover?`<img src="${escAttr(continueCover)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:`<span>${escapeHtml(reading.id)}</span>`}${exclusiveBadge(reading,'cover')}${storyMediaBadges(reading)}</div><div class="home-continue-copy"><div class="eyebrow">Continuar leyendo</div><strong>STORY ${escapeHtml(reading.id)} · ${escapeHtml(reading.title)}</strong><div class="mini-progress"><span style="width:${pct(storyProgress(reading.id))}"></span></div><small>${pct(storyProgress(reading.id))}</small></div><button id="continueReading" class="continue-btn">CONTINUAR</button></section>`:'';
   const installPanel=homeInstallPanelHtml();
   view.innerHTML=`${installPanel}<section class="hero latest-storm">${heroMedia(latest)}<div class="home-signal-fx" aria-hidden="true"><span class="signal-darken"></span><span class="signal-scanlines"></span><span class="signal-noise"></span><span class="signal-tracking"></span><span class="signal-ghost signal-ghost-red"></span><span class="signal-ghost signal-ghost-cold"></span><span class="signal-slice signal-slice-a"></span><span class="signal-slice signal-slice-b"></span><span class="signal-red-pulse"></span><span class="signal-vignette"></span></div><div class="hero-content"><div class="eyebrow">ÚLTIMA PUBLICACIÓN · ${formatDate(latest.published)} · #${escapeHtml(latest.id)}</div><h1>${escapeHtml(latest.title)}</h1><div class="meta-row">${latest.access==='exclusive'?'<span class="pill red">EXCLUSIVA</span>':'<span class="pill">GRATIS</span>'}${latest.readTime?`<span class="pill">${escapeHtml(latest.readTime)} min</span>`:''}${isRead(latest.id)?'<span class="pill read-pill">✓ LEÍDA</span>':''}</div><button class="cta" id="openLatest">${isLocked(latest)?'VER STORY':'ENTRAR'}</button></div></section>${continueHtml}<section class="home-progress"><div class="home-progress-copy"><div class="eyebrow">Tu progreso</div><strong>${readCount} / ${total} STORIES LEÍDAS</strong></div><div class="collection-progress"><span style="width:${pct(global)}"></span></div><button id="openMyStories" class="link-btn">VER MIS STORIES ›</button></section>${homeNextStoryHtml()}<section class="section home-previous"><div class="section-title"><h2>Publicadas anteriormente</h2></div><div class="story-list">${indexData.stories.slice(1,3).map(storyCard).join('')}</div><button id="openAllStories" class="cta secondary-home-cta">ACCEDE A TODAS LAS STORIES</button></section>`;
   $('#openLatest').onclick=e=>storyGo(latest.id,false,$('.hero.latest-storm')||e.currentTarget);
   $('#openMyStories').onclick=()=>go('unlocked');
   const allBtn=$('#openAllStories');if(allBtn)allBtn.onclick=()=>go('stories');
-  if(reading)$('#continueReading').onclick=()=>storyGo(reading.id,true);
+  if(reading){const continueCard=$('[data-home-continue]');if(continueCard){const openContinue=()=>storyGo(reading.id,true);continueCard.onclick=openContinue;continueCard.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openContinue()}}}}
   const installPanelBtn=$('#homeInstallPanel');if(installPanelBtn)installPanelBtn.onclick=handleInstallApp;
   bindStoryCards();bindBrokenImages();updateInstallButton();startHomeNextStoryCountdown();
 }
@@ -874,5 +848,5 @@ function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<
 
 async function playEntryIntro(){if(introPlayed)return;introPlayed=true;const layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return;layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0}catch{}return new Promise(resolve=>{const done=()=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}layer.classList.add('intro-out');setTimeout(()=>{layer.classList.add('hidden');layer.classList.remove('intro-out');layer.setAttribute('aria-hidden','true');resolve()},220)};const start=()=>{clearTimeout(fallback);const p=video.play();if(p&&typeof p.catch==='function')p.catch(done)};const fallback=setTimeout(done,8000);layer.onclick=done;video.addEventListener('ended',done,{once:true});video.addEventListener('error',done,{once:true});if(video.readyState>=3)start();else video.addEventListener('canplay',start,{once:true})})}
 
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=3.6.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=3.7.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();

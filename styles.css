@@ -4094,29 +4094,29 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @media(max-width:370px){.home-next-story-countdown{gap:4px!important}.home-next-story-countdown>span{min-width:42px!important}.home-next-story-countdown b{font-size:22px!important}.home-next-story-countdown i{font-size:17px!important}}
 
 /* ============================================================
-   DISTURBING STORIES APP v3.6
-   Transición fantasma entre secciones principales
+   DISTURBING STORIES APP v3.7
+   HOME · countdown + continuar leyendo
    ============================================================ */
-.section-transition-fx{
-  position:fixed!important;
-  inset:0!important;
-  z-index:2147483000!important;
-  pointer-events:none!important;
-  overflow:hidden!important;
-  background:transparent!important;
-  display:block!important;
-  user-select:none!important;
-  -webkit-user-select:none!important;
+
+/* PRÓXIMA STORY: mismo ancho que el resto de cajas de HOME y nueva identidad dorada. */
+.home-next-story{
+  margin:12px var(--reader-pad) 18px!important;
+  border-color:#6f5a24!important;
+  background:linear-gradient(145deg,#151005,#0d0a04)!important;
+  box-shadow:0 10px 26px rgba(0,0,0,.28),inset 0 0 24px rgba(224,179,74,.055),0 0 18px rgba(211,164,54,.035)!important;
 }
-.section-transition-video{
-  position:absolute!important;
-  inset:0!important;
-  width:100vw!important;
-  height:100vh!important;
-  max-width:none!important;
-  max-height:none!important;
-  object-fit:cover!important;
-  object-position:center center!important;
-  background:transparent!important;
-  pointer-events:none!important;
+.home-next-story-label{
+  text-align:center!important;
+  color:#e4c56d!important;
+  text-shadow:0 0 11px rgba(224,179,74,.16)!important;
 }
+.home-next-story-countdown b{color:#fff!important;text-shadow:0 0 14px rgba(224,179,74,.20)!important}
+.home-next-story-countdown small{color:#b59a57!important}
+.home-next-story-countdown i{color:#806b37!important}
+.home-next-pending{color:#d7ba68!important}
+
+/* CONTINUAR LEYENDO: toda la caja funciona como destino, manteniendo el botón como pista visual. */
+.home-continue-link{cursor:pointer!important;outline:none!important;transition:border-color .18s ease,box-shadow .18s ease,transform .18s ease!important}
+.home-continue-link:hover,.home-continue-link:focus-visible{border-color:#405b64!important;box-shadow:0 0 18px rgba(113,206,230,.08)!important}
+.home-continue-link:active{transform:scale(.992)!important}
+
