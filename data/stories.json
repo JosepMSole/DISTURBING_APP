@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:42:19.517496+00:00",
+  "updated": "2026-09-12T21:42:24.530945+00:00",
   "stories": [
     {
       "id": "277",
@@ -1213,7 +1213,34 @@
           "ca": "Reclús 93 Delta"
         }
       },
-      "publicTeaser": "https://www.youtube.com/embed/hMHcaoyp8sY"
+      "publicTeaser": "https://www.youtube.com/watch?v=hMHcaoyp8sY",
+      "mediaAssetTags": [
+        {
+          "mediaId": "H0WxiH87NIs",
+          "kind": "audio",
+          "locale": "es"
+        },
+        {
+          "mediaId": "wAxQyw7V0pg",
+          "kind": "audio",
+          "locale": "es"
+        },
+        {
+          "mediaId": "N5fbsqMpAgE",
+          "kind": "audio",
+          "locale": "es"
+        },
+        {
+          "mediaId": "rDvXp8iwjMo",
+          "kind": "other",
+          "locale": "es"
+        },
+        {
+          "mediaId": "hMHcaoyp8sY",
+          "kind": "teaser",
+          "locale": "es"
+        }
+      ]
     },
     {
       "id": "238",
