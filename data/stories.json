@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T01:43:02.590859+00:00",
+  "updated": "2026-09-12T01:51:24.033059+00:00",
   "stories": [
     {
       "id": "277",
@@ -220,6 +220,27 @@
       },
       "mediaDurationSources": {
         "audio": "youtube"
+      },
+      "mediaYoutubeLocales": {
+        "audio": {
+          "en": [
+            {
+              "videoId": "aeBbp4u0yvw",
+              "url": "https://www.youtube.com/watch?v=aeBbp4u0yvw",
+              "durationSeconds": 268
+            }
+          ]
+        }
+      },
+      "mediaDurationLocales": {
+        "audio": {
+          "en": 268
+        }
+      },
+      "mediaDurationSourceLocales": {
+        "audio": {
+          "en": "youtube"
+        }
       }
     },
     {
@@ -1024,6 +1045,27 @@
       },
       "mediaDurationSources": {
         "audio": "youtube"
+      },
+      "mediaYoutubeLocales": {
+        "audio": {
+          "en": [
+            {
+              "videoId": "wAxQyw7V0pg",
+              "url": "https://www.youtube.com/watch?v=wAxQyw7V0pg",
+              "durationSeconds": 366
+            }
+          ]
+        }
+      },
+      "mediaDurationLocales": {
+        "audio": {
+          "en": 366
+        }
+      },
+      "mediaDurationSourceLocales": {
+        "audio": {
+          "en": "youtube"
+        }
       }
     },
     {
@@ -1146,6 +1188,27 @@
       },
       "mediaDurationSources": {
         "audio": "youtube"
+      },
+      "mediaYoutubeLocales": {
+        "audio": {
+          "en": [
+            {
+              "videoId": "ukUOlqqsWKU",
+              "url": "https://www.youtube.com/watch?v=ukUOlqqsWKU",
+              "durationSeconds": 355
+            }
+          ]
+        }
+      },
+      "mediaDurationLocales": {
+        "audio": {
+          "en": 355
+        }
+      },
+      "mediaDurationSourceLocales": {
+        "audio": {
+          "en": "youtube"
+        }
       }
     },
     {
@@ -1571,6 +1634,27 @@
       },
       "mediaDurationSources": {
         "audio": "youtube"
+      },
+      "mediaYoutubeLocales": {
+        "audio": {
+          "en": [
+            {
+              "videoId": "UDleEikyuhY",
+              "url": "https://www.youtube.com/watch?v=UDleEikyuhY",
+              "durationSeconds": 304
+            }
+          ]
+        }
+      },
+      "mediaDurationLocales": {
+        "audio": {
+          "en": 304
+        }
+      },
+      "mediaDurationSourceLocales": {
+        "audio": {
+          "en": "youtube"
+        }
       }
     },
     {
@@ -1664,6 +1748,27 @@
       },
       "mediaDurationSources": {
         "video": "youtube"
+      },
+      "mediaYoutubeLocales": {
+        "video": {
+          "en": [
+            {
+              "videoId": "be4XSESSA2A",
+              "url": "https://www.youtube.com/watch?v=be4XSESSA2A",
+              "durationSeconds": 374
+            }
+          ]
+        }
+      },
+      "mediaDurationLocales": {
+        "video": {
+          "en": 374
+        }
+      },
+      "mediaDurationSourceLocales": {
+        "video": {
+          "en": "youtube"
+        }
       }
     },
     {
@@ -2026,6 +2131,27 @@
       },
       "mediaDurationSources": {
         "video": "youtube"
+      },
+      "mediaYoutubeLocales": {
+        "video": {
+          "en": [
+            {
+              "videoId": "h_wBe7hP3sU",
+              "url": "https://www.youtube.com/watch?v=h_wBe7hP3sU",
+              "durationSeconds": 310
+            }
+          ]
+        }
+      },
+      "mediaDurationLocales": {
+        "video": {
+          "en": 310
+        }
+      },
+      "mediaDurationSourceLocales": {
+        "video": {
+          "en": "youtube"
+        }
       }
     },
     {
@@ -2071,6 +2197,27 @@
       },
       "mediaDurationSources": {
         "audio": "youtube"
+      },
+      "mediaYoutubeLocales": {
+        "audio": {
+          "en": [
+            {
+              "videoId": "Ca0YdD_szV0",
+              "url": "https://www.youtube.com/watch?v=Ca0YdD_szV0",
+              "durationSeconds": 300
+            }
+          ]
+        }
+      },
+      "mediaDurationLocales": {
+        "audio": {
+          "en": 300
+        }
+      },
+      "mediaDurationSourceLocales": {
+        "audio": {
+          "en": "youtube"
+        }
       }
     },
     {
@@ -2135,6 +2282,27 @@
       },
       "mediaDurationSources": {
         "audio": "youtube"
+      },
+      "mediaYoutubeLocales": {
+        "audio": {
+          "en": [
+            {
+              "videoId": "SkrMQmvkxNM",
+              "url": "https://www.youtube.com/watch?v=SkrMQmvkxNM",
+              "durationSeconds": 276
+            }
+          ]
+        }
+      },
+      "mediaDurationLocales": {
+        "audio": {
+          "en": 276
+        }
+      },
+      "mediaDurationSourceLocales": {
+        "audio": {
+          "en": "youtube"
+        }
       }
     }
   ]
