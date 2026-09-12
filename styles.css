@@ -4736,3 +4736,44 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
   .player-artwork-slide.active img.pan-y,.player-artwork-slide.active img.pan-x,.player-artwork-slide.active img.pan-soft{animation:none!important}
   .player-playlist-toggle>b{transition:none!important}
 }
+
+/* ============================================================
+   DISTURBING STORIES APP v4.20 · PLAYER FINAL POLISH
+   ============================================================ */
+
+/* PLAYER · volumen: el progreso se pinta directamente en el track.
+   No existe ningún <i>, pseudo-elemento ni input nativo que pueda dibujar
+   el artefacto vertical observado bajo VOL en iPhone/WebKit. */
+.player-console .player-volume{overflow:hidden!important}
+.player-volume-track{
+  background:linear-gradient(90deg,#168ad8 0%,#54c6ff var(--volume-pct),#17242d var(--volume-pct),#17242d 100%)!important;
+  overflow:hidden!important;
+}
+.player-volume-track>i{display:none!important;width:0!important;height:0!important;background:none!important}
+.player-volume-label{position:relative!important;overflow:hidden!important}
+.player-volume-label::before,.player-volume-label::after{content:none!important;display:none!important}
+
+/* PLAYER · anterior / siguiente: SVG centrado y ligeramente elevado. */
+#playerPrev,#playerNext{display:grid!important;place-items:center!important;line-height:0!important;padding:0!important}
+.player-skip-svg{display:block;width:31px;height:31px;transform:translateY(-2px);fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* PLAYER · PLAYLIST: mismo tamaño exterior que Spotify, pictograma más pequeño
+   y flecha final verdaderamente centrada. */
+.player-playlist-mark{width:34px!important;height:34px!important;flex:0 0 34px!important;padding:0!important;line-height:0!important}
+.player-playlist-icon{display:block;width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.player-playlist-icon circle{fill:currentColor;stroke:none}
+.player-playlist-chevron{width:34px;height:34px;flex:0 0 34px;display:grid!important;place-items:center!important;align-self:center!important;line-height:0!important;color:#9ad5df;transform:none!important}
+.player-playlist-chevron svg{display:block;width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transform:translateY(-1px);transition:transform .2s ease}
+.player-playlist-toggle.open .player-playlist-chevron{transform:none!important}
+.player-playlist-toggle.open .player-playlist-chevron svg{transform:translateY(1px) rotate(180deg)}
+
+@media(max-width:360px){
+  .player-playlist-mark{width:30px!important;height:30px!important;flex-basis:30px!important}
+  .player-playlist-icon{width:15px;height:15px}
+  .player-playlist-chevron{width:30px;height:30px;flex-basis:30px}
+  .player-playlist-chevron svg{width:25px;height:25px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .player-playlist-chevron svg{transition:none!important}
+}
