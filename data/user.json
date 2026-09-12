@@ -9,8 +9,44 @@
         "type": "read_stories",
         "count": 1
       }
+    },
+    {
+      "id": "achievement1789217584867",
+      "name": "Esto acaba de empezar…",
+      "description": "Leer 5 Stories.",
+      "requirement": {
+        "type": "read_stories",
+        "count": 5
+      }
+    },
+    {
+      "id": "achievement1789217608853",
+      "name": "Algo te hace volver…",
+      "description": "Leer 10 Stories.",
+      "requirement": {
+        "type": "read_stories",
+        "count": 10
+      }
+    },
+    {
+      "id": "achievement1789217623943",
+      "name": "Interés Creciente",
+      "description": "Leer 25 Stories.",
+      "requirement": {
+        "type": "read_stories",
+        "count": 25
+      }
+    },
+    {
+      "id": "achievement1789217641256",
+      "name": "LOGRO 5",
+      "description": "",
+      "requirement": {
+        "type": "read_stories",
+        "count": 1
+      }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T12:52:59.143401+00:00"
+  "updated": "2026-09-12T12:55:25.700172+00:00"
 }
