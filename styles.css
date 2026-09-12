@@ -4648,3 +4648,91 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .user-hero-level-number{transform:translate(-2px,5px)!important}
 .user-hero-level-star{transform:translate(20px,-27px)!important}
 @media(max-width:460px){.user-hero-level-number{transform:translate(-1px,4px)!important}.user-hero-level-star{transform:translate(17px,-22px)!important}}
+
+/* ============================================================
+   DISTURBING STORIES APP v4.19 · PLAYER / HEADER / USER / SAGAS
+   ============================================================ */
+
+/* PLAYER · el control de volumen ya no contiene ningún input range nativo.
+   Toda la interacción se resuelve por pointer/teclado sobre este contenedor. */
+.player-console .player-volume{
+  display:grid!important;grid-template-columns:34px minmax(0,1fr)!important;
+  align-items:center!important;gap:10px!important;overflow:hidden!important;
+  min-height:30px!important;margin-bottom:0!important;padding-bottom:0!important;
+}
+.player-volume-control{
+  position:relative!important;height:30px!important;min-width:0!important;
+  --volume-pct:85%;isolation:isolate!important;overflow:hidden!important;
+  border-radius:15px!important;cursor:pointer!important;touch-action:none!important;
+  outline:none!important;
+}
+.player-volume-control:focus-visible{box-shadow:0 0 0 1px #54c6ff,0 0 10px rgba(84,198,255,.18)!important}
+.player-volume-track{left:0!important;right:0!important;top:50%!important;height:6px!important;transform:translateY(-50%)!important}
+.player-volume-thumb{left:var(--volume-pct)!important;top:50%!important}
+.player-volume-control input,.player-console .player-volume input{display:none!important}
+.player-console .player-mobile-volume-note,.player-console .player-volume-note,.player-console [data-player-volume-note],.player-console .volume-output,.player-console output{display:none!important}
+
+/* PLAYER · imágenes con un recorrido más evidente y más frecuente. */
+.player-artwork-slide{inset:-7%!important}
+.player-artwork-slide.active img.pan-y{animation:playerArtworkPanY419 8s ease-in-out infinite alternate!important}
+.player-artwork-slide.active img.pan-x{animation:playerArtworkPanX419 8s ease-in-out infinite alternate!important}
+.player-artwork-slide.active img.pan-soft{animation:playerArtworkPanSoft419 7s ease-in-out infinite alternate!important}
+.player-artwork-signal{animation-duration:3.1s!important}
+@keyframes playerArtworkPanY419{
+  0%{object-position:50% 0%;transform:scale(1.02) translate3d(0,-1.5%,0)}
+  100%{object-position:50% 100%;transform:scale(1.13) translate3d(0,1.5%,0)}
+}
+@keyframes playerArtworkPanX419{
+  0%{object-position:0% 50%;transform:scale(1.02) translate3d(-1.8%,0,0)}
+  100%{object-position:100% 50%;transform:scale(1.13) translate3d(1.8%,0,0)}
+}
+@keyframes playerArtworkPanSoft419{
+  0%{object-position:40% 40%;transform:scale(1.02) translate3d(-2%,-1%,0)}
+  100%{object-position:60% 60%;transform:scale(1.14) translate3d(2%,1%,0)}
+}
+
+/* PLAYER · símbolos de los tres modos con aproximadamente el doble de escala. */
+.player-mode{display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;padding:5px 7px!important}
+.player-mode .player-mode-icon{display:inline-grid!important;place-items:center!important;font-size:30px!important;line-height:.72!important;font-weight:800!important;flex:0 0 auto!important}
+.player-mode>span:last-child{font-size:clamp(10px,2.9vw,13px)!important;line-height:1!important}
+
+/* PLAYER · visualizador largo. Se mantiene anclado a la derecha, pero añade
+   suficientes barras para llenar todo el espacio hasta el tiempo de pista. */
+.player-progress-meta{grid-template-columns:auto minmax(0,1fr)!important;gap:7px!important}
+.player-wave{width:100%!important;min-width:0!important;justify-content:flex-end!important;gap:2px!important;height:35px!important;overflow:hidden!important}
+.player-wave i{width:3px!important;flex:0 0 3px!important;animation:none!important;transition:opacity .07s linear!important;will-change:transform,opacity!important}
+.player-wave.playing i{animation:none!important}
+
+/* PLAYER · playlist inicialmente colapsada, con CTA del mismo peso visual que Spotify. */
+.player-playlist-toggle{
+  width:100%!important;display:flex!important;align-items:center!important;gap:11px!important;
+  border:1px solid #315965!important;background:#071217!important;color:#e7fbff!important;
+  border-radius:13px!important;padding:12px 13px!important;margin:12px 0!important;
+  text-align:left!important;cursor:pointer!important;
+}
+.player-playlist-mark{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border:1px solid #4ca4ba;border-radius:50%;color:#8ef4ff;font:900 23px/1 Oxanium,sans-serif;background:#061015}
+.player-playlist-toggle>span:nth-child(2){display:grid;gap:4px;min-width:0;flex:1}
+.player-playlist-toggle strong{display:block;font-family:Oxanium,sans-serif;font-size:clamp(14px,3.9vw,17px)!important;line-height:1.1;letter-spacing:-.01em}
+.player-playlist-toggle small{display:block;color:#789da6;font-size:clamp(8px,2.35vw,10px);line-height:1.2}
+.player-playlist-toggle>b{font-size:22px;line-height:1;transition:transform .2s ease;color:#9ad5df}
+.player-playlist-toggle.open>b{transform:rotate(180deg)}
+.player-playlist-toggle.open{border-color:#4f8f9e!important;background:#091a20!important}
+.player-playlist-panel{margin-top:0!important;overflow:hidden!important}
+.player-playlist-panel.hidden{display:none!important}
+.player-playlist-panel .player-list{margin-top:0!important}
+.player-playlist-panel .player-note{margin-bottom:0!important}
+
+/* HEADER · flecha SVG perfectamente centrada en ambos ejes. */
+.back-nav-btn{display:grid!important;place-items:center!important;line-height:0!important}
+.back-nav-btn svg{display:block!important;width:27px!important;height:27px!important;margin:0!important;padding:0!important;overflow:visible!important}
+.back-nav-btn svg path{fill:none!important;stroke:currentColor!important;stroke-width:2.15!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+@media(max-width:390px){.back-nav-btn svg{width:25px!important;height:25px!important}}
+
+/* USER en su propia página: al estar registrado, el avatar + Hola ocupan el lugar
+   del icono genérico porque el indicador contextual se oculta por JS. */
+.topbar-left .section-indicator.hidden{display:none!important}
+
+@media(prefers-reduced-motion:reduce){
+  .player-artwork-slide.active img.pan-y,.player-artwork-slide.active img.pan-x,.player-artwork-slide.active img.pan-soft{animation:none!important}
+  .player-playlist-toggle>b{transition:none!important}
+}
