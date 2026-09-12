@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:42:30.571887+00:00",
+  "updated": "2026-09-12T21:43:18.266968+00:00",
   "stories": [
     {
       "id": "277",
@@ -2547,7 +2547,8 @@
           "ca": "Dark Limits: Moment Zero",
           "en": "Dark Limits: Zero Moment"
         }
-      }
+      },
+      "publicTeaser": "https://www.youtube.com/embed/dR7ZlDOQh4A"
     },
     {
       "id": "036",
