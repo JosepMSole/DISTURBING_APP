@@ -77,10 +77,41 @@
       "description": "Completar al 100 % tu primera Saga",
       "requirement": {
         "type": "complete_sagas",
-        "count": 1
+        "sagaIds": [
+          "la-trilogia-de-atlas"
+        ]
+      }
+    },
+    {
+      "id": "achievement1789227906903",
+      "number": 9,
+      "name": "Turista Temporal",
+      "description": "Leer Stories pertenecientes a 3 épocas diferentes del Timeline",
+      "requirement": {
+        "type": "read_timeline_eras",
+        "count": 3
+      }
+    },
+    {
+      "id": "achievement1789227943644",
+      "number": 10,
+      "name": "El Archivo Crece",
+      "description": "Leer 25 Stories y haber desbloqueado al menos 1 Story exclusiva",
+      "requirement": {
+        "type": "all",
+        "items": [
+          {
+            "type": "read_stories",
+            "count": 25
+          },
+          {
+            "type": "unlock_qr",
+            "count": 1
+          }
+        ]
       }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T15:10:17.669446+00:00"
+  "updated": "2026-09-12T15:46:32.035895+00:00"
 }
