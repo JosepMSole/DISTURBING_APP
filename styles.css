@@ -4435,7 +4435,7 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 
 
 /* =========================================================
-   DISTURBING STORIES APP v4.14 · PLAYER / HOME / USER / MIS STORIES
+   DISTURBING STORIES APP v4.15 · PLAYER / HOME / USER / MIS STORIES
    ========================================================= */
 /* PLAYER · imágenes configurables por pista, siempre detrás de los controles. */
 .player-console{position:relative!important;overflow:hidden!important;isolation:isolate!important;background:#080808!important}
@@ -4478,4 +4478,56 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @media(prefers-reduced-motion:reduce){
   .player-artwork-slide,.player-artwork-slide img,.player-artwork-signal,.home-progress .collection-progress>span::after{animation:none!important;transition:none!important}
   .player-artwork-slide.active{opacity:.56!important}
+}
+
+
+/* =========================================================
+   DISTURBING STORIES APP v4.15 · HOME / USER / MIS STORIES
+   ========================================================= */
+/* HOME · la barra carga visiblemente de 0 al progreso real; después mantiene shimmer solo dentro del tramo dorado. */
+.home-progress.home-progress-reveal-ready .collection-progress>span{transform:none!important;width:0;transition:none!important}
+.home-progress.home-progress-reveal-in .collection-progress>span{transform:none!important;transition:width .68s .14s cubic-bezier(.18,.86,.22,1),opacity .18s .12s ease!important}
+.home-progress.home-progress-reveal-in .collection-progress>span::after{animation-delay:.88s!important}
+
+/* USER · entrada gradual de cajas y elementos. */
+.user-page.user-page-reveal-ready>.user-hero,
+.user-page.user-page-reveal-ready>.user-achievements-section,
+.user-page.user-page-reveal-ready>.user-avatar-section,
+.user-page.user-page-reveal-ready>.user-account-panel{opacity:0;transform:translateY(16px);filter:blur(3px)}
+.user-page.user-page-reveal-in>.user-hero,
+.user-page.user-page-reveal-in>.user-achievements-section,
+.user-page.user-page-reveal-in>.user-avatar-section,
+.user-page.user-page-reveal-in>.user-account-panel{animation:userBoxInV415 .42s cubic-bezier(.2,.82,.2,1) both;animation-delay:calc(var(--user-box-i,0) * .09s)}
+.user-page.user-page-reveal-ready>.user-hero>*:not(.user-hero-media):not(.user-hero-shade),
+.user-page.user-page-reveal-ready>.user-achievements-section>* ,
+.user-page.user-page-reveal-ready>.user-avatar-section>* ,
+.user-page.user-page-reveal-ready>.user-account-panel>*,
+.user-page.user-page-reveal-ready .achievement-earned-card,
+.user-page.user-page-reveal-ready .avatar-choice{opacity:0;transform:translateY(8px)}
+.user-page.user-page-reveal-in>.user-hero>*:not(.user-hero-media):not(.user-hero-shade),
+.user-page.user-page-reveal-in>.user-achievements-section>* ,
+.user-page.user-page-reveal-in>.user-avatar-section>* ,
+.user-page.user-page-reveal-in>.user-account-panel>*,
+.user-page.user-page-reveal-in .achievement-earned-card,
+.user-page.user-page-reveal-in .avatar-choice{animation:userItemInV415 .32s ease both;animation-delay:calc(.12s + (var(--user-box-i,0) * .09s) + (var(--user-item-i,0) * .035s))}
+@keyframes userBoxInV415{from{opacity:0;transform:translateY(16px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+@keyframes userItemInV415{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* Avatares: exactamente cuatro por fila. */
+.user-avatar-section .avatar-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important}
+
+/* USER · indicador grande: trazo interior dorado y 8 px. */
+.user-hero-level{box-shadow:inset 0 0 0 8px rgba(240,204,104,.88),0 0 22px rgba(215,181,95,.15)!important}
+
+/* MIS STORIES · los badges se sitúan por encima de la flecha, nunca detrás de ella. */
+.continue-card{position:relative!important}
+.continue-inline-icons{right:-52px!important;top:auto!important;bottom:38px!important;width:42px!important;height:auto!important;min-height:22px!important;z-index:8!important;justify-content:center!important;align-items:flex-end!important}
+.resume-arrow{position:relative!important;z-index:5!important;align-self:end!important;margin-bottom:4px!important}
+
+@media(max-width:460px){
+  .user-avatar-section .avatar-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important}
+  .continue-inline-icons{right:-48px!important;bottom:36px!important;width:38px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .user-page.user-page-reveal-ready>* , .user-page.user-page-reveal-ready *{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+  .home-progress.home-progress-reveal-ready .collection-progress>span{transition:none!important}
 }
