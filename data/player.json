@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated": "2026-09-12T22:42:13.735697+00:00",
+  "updated": "2026-09-12T22:45:11.316884+00:00",
   "tracks": [
     {
       "file": "93DELTA - BSO 2007.mp3",
@@ -163,7 +163,9 @@
     {
       "file": "DISTURBING THEME - BOOK 5.mp3",
       "durationSeconds": 121,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/book-5-wideimage1_orig.jpg"
+      ]
     },
     {
       "file": "DISTURBING THEME - EPIC LUX OPENING.mp3",
@@ -183,7 +185,13 @@
     {
       "file": "FAR FAR WEST - Complete Score 2025.mp3",
       "durationSeconds": 647,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/far-far-west-gif-1_orig.gif",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/far-far-west-gif-2_orig.gif",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-2_1_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-5_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-6_orig.jpg"
+      ]
     }
   ]
 }
