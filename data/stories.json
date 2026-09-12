@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:36:58.894175+00:00",
+  "updated": "2026-09-12T21:40:07.309433+00:00",
   "stories": [
     {
       "id": "277",
@@ -186,7 +186,7 @@
       "published": "2026-07-26",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/008.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/008-rugidos-en-la-lluvia-frame-01.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/008-rugidos-en-la-lluvia-frame-04.jpg",
       "data": "./data/stories/008.json",
       "source": "https://www.disturbingstories.com/008.html",
       "protected": false,
@@ -261,7 +261,7 @@
           "ca": "youtube"
         }
       },
-      "publicTeaser": "https://www.youtube.com/watch?v=2Fn9shvEYkY",
+      "publicTeaser": "https://www.youtube.com/embed/2Fn9shvEYkY",
       "mediaAssetTags": [
         {
           "mediaId": "S7d2YBa6Iw8",
