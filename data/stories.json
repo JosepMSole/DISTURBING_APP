@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T19:43:46.834153+00:00",
+  "updated": "2026-09-12T19:43:51.937563+00:00",
   "stories": [
     {
       "id": "277",
@@ -2630,7 +2630,29 @@
           "ca": "Caràcters"
         }
       },
-      "publicTeaser": "https://www.youtube.com/embed/75-yvBiiFfA"
+      "publicTeaser": "https://www.youtube.com/watch?v=75-yvBiiFfA",
+      "mediaAssetTags": [
+        {
+          "mediaId": "wt5eCSZ3XTc",
+          "kind": "audio",
+          "locale": "es"
+        },
+        {
+          "mediaId": "SkrMQmvkxNM",
+          "kind": "audio",
+          "locale": "en"
+        },
+        {
+          "mediaId": "XuH7IHYdZWM",
+          "kind": "audio",
+          "locale": "ca"
+        },
+        {
+          "mediaId": "75-yvBiiFfA",
+          "kind": "teaser",
+          "locale": "es"
+        }
+      ]
     }
   ]
 }
