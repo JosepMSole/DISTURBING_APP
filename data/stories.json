@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T19:42:50.465025+00:00",
+  "updated": "2026-09-12T19:42:55.761639+00:00",
   "stories": [
     {
       "id": "277",
@@ -1051,18 +1051,12 @@
       ],
       "readTime": 3,
       "mediaDurations": {
-        "audio": 1081
+        "audio": 364
       },
       "mediaDurationSources": {
         "audio": "youtube"
       },
       "publicTeaser": "https://www.youtube.com/watch?v=DWSxTQWFcbs",
-      "mediaTitleLocales": {
-        "audio": {
-          "en": "My First Tape",
-          "ca": "La meva Primera Cinta"
-        }
-      },
       "mediaDurationLocales": {
         "audio": {
           "en": 360,
@@ -1102,7 +1096,34 @@
           "kind": "teaser",
           "locale": "es"
         }
-      ]
+      ],
+      "mediaYoutube": {
+        "audio": [
+          {
+            "videoId": "lop1MMBkRB0",
+            "url": "https://www.youtube.com/watch?v=lop1MMBkRB0",
+            "durationSeconds": 364
+          }
+        ]
+      },
+      "mediaYoutubeLocales": {
+        "audio": {
+          "en": [
+            {
+              "videoId": "z6ZcPvT0a2U",
+              "url": "https://www.youtube.com/watch?v=z6ZcPvT0a2U",
+              "durationSeconds": 360
+            }
+          ],
+          "ca": [
+            {
+              "videoId": "EbI1gZzA-z0",
+              "url": "https://www.youtube.com/watch?v=EbI1gZzA-z0",
+              "durationSeconds": 357
+            }
+          ]
+        }
+      }
     },
     {
       "id": "003",
