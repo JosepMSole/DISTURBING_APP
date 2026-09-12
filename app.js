@@ -1,4 +1,4 @@
-const APP_VERSION = '3.2.0';
+const APP_VERSION = '3.3.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -21,6 +21,13 @@ const PLAYER_MANIFEST='https://raw.githubusercontent.com/JosepMSole/DisturbingPl
 const PLAYER_MUSIC_BASE='https://josepmsole.github.io/DisturbingPlayer/music/';
 let playerTracks=[],playerIndex=0,playerShuffle=false,playerRepeatMode='off',playerActivated=false,playerManifestLoading=null,playerDurationLoading=null,playerWasPlayingBeforeMedia=false;
 let navHistory=[],navGoingBack=false,storyTransitionBusy=false;
+
+// Captura temprana del instalador PWA. En escritorio el evento puede llegar
+// antes de que termine el boot/intro; guardarlo aquí evita perderlo en Windows/Mac.
+function captureInstallPrompt(e){e.preventDefault();installPrompt=e;updateInstallButton()}
+function clearCapturedInstallPrompt(){installPrompt=null;updateInstallButton()}
+addEventListener('beforeinstallprompt',captureInstallPrompt);
+addEventListener('appinstalled',clearCapturedInstallPrompt);
 
 const store={get(k,f){try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}},set(k,v){localStorage.setItem(k,JSON.stringify(v))}};
 
@@ -64,7 +71,8 @@ function installIconSvg(){
 }
 function homeInstallPanelHtml(){
   if(isStandaloneInstall())return '';
-  return `<button id="homeInstallPanel" class="badge-permission-panel install-app-panel" type="button" aria-label="Instala esta app"><span class="install-app-panel-copy"><strong>INSTALA ESTA APP</strong></span><span class="install-app-panel-cta">${installIconSvg()}<b>GUÍA DE INSTALACIÓN</b></span></button>`;
+  const kind=detectInstallGuideKind(),direct=kind==='windows'||kind==='mac';
+  return `<button id="homeInstallPanel" class="badge-permission-panel install-app-panel" type="button" aria-label="Instala esta app"><span class="install-app-panel-copy"><strong>INSTALA ESTA APP</strong></span><span class="install-app-panel-cta">${installIconSvg()}<b>${direct?'INSTALAR AHORA':'GUÍA DE INSTALACIÓN'}</b></span></button>`;
 }
 function updateInstallButton(){
   const standalone=isStandaloneInstall();
@@ -100,15 +108,26 @@ function showInstallGuide(kind='ios'){
   if(directBtn)directBtn.onclick=async()=>{try{installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;updateInstallButton();closeInstallGuide()}catch{}};
 }
 
+async function waitForNativeInstallPrompt(timeout=1800){
+  if(installPrompt)return installPrompt;
+  return await new Promise(resolve=>{
+    let done=false,timer=0;
+    const finish=value=>{if(done)return;done=true;clearTimeout(timer);removeEventListener('beforeinstallprompt',onPrompt);resolve(value||installPrompt||null)};
+    const onPrompt=e=>{e.preventDefault();installPrompt=e;finish(e)};
+    addEventListener('beforeinstallprompt',onPrompt,{once:true});
+    timer=setTimeout(()=>finish(installPrompt),timeout);
+  });
+}
 async function requestNativeInstall(){
-  if(!installPrompt){toast('La instalación directa no está disponible en este navegador.');return false}
+  const prompt=installPrompt||await waitForNativeInstallPrompt();
+  if(!prompt){toast('El navegador aún está preparando la instalación. Prueba de nuevo en un momento.');return false}
   try{
-    installPrompt.prompt();
-    const choice=await installPrompt.userChoice;
-    installPrompt=null;
+    prompt.prompt();
+    const choice=await prompt.userChoice;
+    if(installPrompt===prompt)installPrompt=null;
     updateInstallButton();
     return choice?.outcome==='accepted';
-  }catch{toast('No se pudo abrir el instalador del navegador.');return false}
+  }catch{toast('El instalador no se pudo abrir. Prueba de nuevo en un momento.');return false}
 }
 async function handleInstallApp(){
   const btn=$('#installBtn');
@@ -120,7 +139,7 @@ async function handleInstallApp(){
 }
 
 function goHomeTop(){persistCurrentReadingPosition();if(currentHash()==='#/home'){scrollTo({top:0,behavior:'smooth'});return}navigateHash('#/home');requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}))}
-function bindShell(){$('#brandBtn').onclick=goHomeTop;$('#backBtn').onclick=navigateBack;$('#toTopHeaderBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('#menuBtn').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;$$('.nav-btn').forEach(b=>b.onclick=()=>footerGo(b.dataset.route));$$('[data-drawer-route]').forEach(b=>b.onclick=()=>{closeDrawer();if(b.dataset.drawerRoute==='home')goHomeTop();else go(b.dataset.drawerRoute)});$('#miniPlayerOpen').onclick=()=>go('player');$('#miniPrev').onclick=()=>playerStep(-1,true);$('#miniPlay').onclick=()=>playerToggle();$('#miniNext').onclick=()=>playerStep(1,true);$('#scanBtn').onclick=()=>{closeDrawer();showUnlock()};$('#installBtn').onclick=handleInstallApp;updateInstallButton();addEventListener('hashchange',routeFromHash);addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;updateInstallButton()});addEventListener('appinstalled',()=>{installPrompt=null;updateInstallButton()});addEventListener('scroll',updateProgress,{passive:true});addEventListener('pagehide',persistCurrentReadingPosition);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persistCurrentReadingPosition()});addEventListener('blur',()=>setTimeout(()=>{if(currentStory&&document.activeElement?.tagName==='IFRAME')playerPauseForStoryMedia()},0));addEventListener('resize',()=>{updateInstallButton();if(routeName()==='collection')requestAnimationFrame(fitCollectionShelf);if(routeName()==='timeline')requestAnimationFrame(alignTimelineBranches)},{passive:true});}
+function bindShell(){$('#brandBtn').onclick=goHomeTop;$('#backBtn').onclick=navigateBack;$('#toTopHeaderBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('#menuBtn').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;$$('.nav-btn').forEach(b=>b.onclick=()=>footerGo(b.dataset.route));$$('[data-drawer-route]').forEach(b=>b.onclick=()=>{closeDrawer();if(b.dataset.drawerRoute==='home')goHomeTop();else go(b.dataset.drawerRoute)});$('#miniPlayerOpen').onclick=()=>go('player');$('#miniPrev').onclick=()=>playerStep(-1,true);$('#miniPlay').onclick=()=>playerToggle();$('#miniNext').onclick=()=>playerStep(1,true);$('#scanBtn').onclick=()=>{closeDrawer();showUnlock()};$('#installBtn').onclick=handleInstallApp;updateInstallButton();addEventListener('hashchange',routeFromHash);addEventListener('scroll',updateProgress,{passive:true});addEventListener('pagehide',persistCurrentReadingPosition);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persistCurrentReadingPosition()});addEventListener('blur',()=>setTimeout(()=>{if(currentStory&&document.activeElement?.tagName==='IFRAME')playerPauseForStoryMedia()},0));addEventListener('resize',()=>{updateInstallButton();if(routeName()==='collection')requestAnimationFrame(fitCollectionShelf);if(routeName()==='timeline')requestAnimationFrame(alignTimelineBranches)},{passive:true});}
 function currentHash(){return location.hash||'#/home'}
 function navigateHash(target){const cur=currentHash();if(cur===target)return;navHistory.push(cur);if(navHistory.length>5)navHistory=navHistory.slice(-5);location.hash=target}
 function go(r){navigateHash(`#/${r}`)}
@@ -221,7 +240,7 @@ function renderHome(){
   $('#openMyStories').onclick=()=>go('unlocked');
   const allBtn=$('#openAllStories');if(allBtn)allBtn.onclick=()=>go('stories');
   if(reading)$('#continueReading').onclick=()=>storyGo(reading.id,true);
-  const installPanelBtn=$('#homeInstallPanel');if(installPanelBtn)installPanelBtn.onclick=async()=>{const kind=detectInstallGuideKind();if(kind==='windows'||kind==='mac'){await requestNativeInstall();return}showInstallGuide(kind)};
+  const installPanelBtn=$('#homeInstallPanel');if(installPanelBtn)installPanelBtn.onclick=handleInstallApp;
   bindStoryCards();bindBrokenImages();updateInstallButton();
 }
 function renderStories(initial='all'){
@@ -721,7 +740,7 @@ function sagaPartRow(part,n,total){const st=part.storyId?indexData.stories.find(
 function parseStoryYear(s){const n=Number(String(s?.year??'').replace(',','.'));return Number.isFinite(n)?n:null}
 function eraForYear(y){if(y===null)return'FECHA DESCONOCIDA';if(y<-3300)return'PREHISTORIA';if(y<476)return'EDAD ANTIGUA';if(y<1453)return'EDAD MEDIA';if(y<1789)return'EDAD MODERNA';if(y<2100)return'EDAD CONTEMPORÁNEA';if(y<2150)return'NUEVO RENACIMIENTO';if(y<2400)return'NUEVOS AVANCES';return'EDAD ESPACIAL'}
 function timelineYearLabel(y){if(y===null)return'—';return y<0?`${Math.abs(y)} a. C.`:`${y}`}
-function timelineOrderedStories(desc=false){const groups=new Map();for(const st of (indexData.stories||[]).filter(accessibleStory)){const y=parseStoryYear(st),k=y===null?'unknown':String(y);if(!groups.has(k))groups.set(k,{year:y,stories:[]});groups.get(k).stories.push(st)}for(const g of groups.values()){const manual=(timelineData?.orders||{})[String(g.year)]||[];const pos=new Map(manual.map((id,i)=>[String(id),i]));g.stories.sort((a,b)=>{const pa=pos.has(a.id)?pos.get(a.id):9999,pb=pos.has(b.id)?pos.get(b.id):9999;return pa-pb||new Date(a.published)-new Date(b.published)})}return [...groups.values()].sort((a,b)=>{if(a.year===null)return 1;if(b.year===null)return-1;return desc?b.year-a.year:a.year-b.year})}
+function timelineOrderedStories(desc=false){const groups=new Map();for(const st of (indexData.stories||[]).filter(accessibleStory)){const y=parseStoryYear(st),k=y===null?'unknown':String(y);if(!groups.has(k))groups.set(k,{year:y,stories:[]});groups.get(k).stories.push(st)}for(const g of groups.values()){const manual=(timelineData?.orders||{})[String(g.year)]||[];const pos=new Map(manual.map((id,i)=>[String(id),i]));g.stories.sort((a,b)=>{const pa=pos.has(a.id)?pos.get(a.id):9999,pb=pos.has(b.id)?pos.get(b.id):9999;return pa-pb||new Date(a.published)-new Date(b.published)});if(desc)g.stories.reverse()}return [...groups.values()].sort((a,b)=>{if(a.year===null)return 1;if(b.year===null)return-1;return desc?b.year-a.year:a.year-b.year})}
 const timelineEraClasses={'PREHISTORIA':'era-prehistory','EDAD ANTIGUA':'era-ancient','EDAD MEDIA':'era-medieval','EDAD MODERNA':'era-modern','EDAD CONTEMPORÁNEA':'era-contemporary','NUEVO RENACIMIENTO':'era-renaissance','NUEVOS AVANCES':'era-advances','EDAD ESPACIAL':'era-space','FECHA DESCONOCIDA':'era-unknown'};
 function renderTimeline(desc=false){
   currentStory=null;const groups=timelineOrderedStories(desc),total=(indexData.stories||[]).length,eras=[];
@@ -788,5 +807,5 @@ function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<
 
 async function playEntryIntro(){if(introPlayed)return;introPlayed=true;const layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return;layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0}catch{}return new Promise(resolve=>{const done=()=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}layer.classList.add('intro-out');setTimeout(()=>{layer.classList.add('hidden');layer.classList.remove('intro-out');layer.setAttribute('aria-hidden','true');resolve()},220)};const start=()=>{clearTimeout(fallback);const p=video.play();if(p&&typeof p.catch==='function')p.catch(done)};const fallback=setTimeout(done,8000);layer.onclick=done;video.addEventListener('ended',done,{once:true});video.addEventListener('error',done,{once:true});if(video.readyState>=3)start();else video.addEventListener('canplay',start,{once:true})})}
 
-async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=3.2.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{let reloading=false;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(reloading)return;reloading=true;location.reload()});const reg=await navigator.serviceWorker.register('./sw.js?v=3.3.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();

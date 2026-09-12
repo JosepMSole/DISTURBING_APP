@@ -4032,3 +4032,12 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .random-result-poster.story-enter-target{position:relative!important;z-index:1600!important;isolation:isolate!important;filter:brightness(1.14) contrast(1.14) saturate(1.12)!important}
 .random-result-poster.story-enter-target::after{content:'';position:absolute;inset:-7px;z-index:-1;border-radius:16px;box-shadow:0 0 22px 7px rgba(107,224,239,.72),0 0 46px 16px rgba(45,125,194,.42)!important;pointer-events:none}
 @media(prefers-reduced-motion:reduce){.random-result-slot.reward-in .random-result-v25,.random-result-slot.reward-in .random-result-v25::before,.random-result-slot.reward-in .random-result-poster,.random-result-slot.reward-in .random-result-copy,.random-result-slot.reward-in .random-read-tile{animation:none!important}}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v3.3
+   TIMELINE invertido · instalación desktop reforzada
+   ============================================================ */
+
+/* La instalación desktop sigue siendo directa; el CTA de HOME lo refleja. */
+@media (pointer:fine){.install-app-panel-cta b{letter-spacing:.055em!important}}
