@@ -60,8 +60,58 @@
       "requirement": {
         "type": "external"
       }
+    },
+    {
+      "id": "avatar8",
+      "name": "Book#1",
+      "file": "assets/avatar/avatar8.jpg",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/book-1-wideimage1_orig.jpg",
+      "free": false,
+      "requirement": {
+        "type": "external"
+      }
+    },
+    {
+      "id": "avatar9",
+      "name": "Book#2",
+      "file": "assets/avatar/avatar9.jpg",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/book-2-wideimage1_orig.jpg",
+      "free": false,
+      "requirement": {
+        "type": "external"
+      }
+    },
+    {
+      "id": "avatar10",
+      "name": "Book#3",
+      "file": "assets/avatar/avatar10.jpg",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/book-3-wideimage1_orig.jpg",
+      "free": false,
+      "requirement": {
+        "type": "external"
+      }
+    },
+    {
+      "id": "avatar11",
+      "name": "Book#4",
+      "file": "assets/avatar/avatar11.jpg",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/book-4-wideimage1_orig.jpg",
+      "free": false,
+      "requirement": {
+        "type": "external"
+      }
+    },
+    {
+      "id": "avatar12",
+      "name": "Book#5",
+      "file": "assets/avatar/avatar12.jpg",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/book-5-wideimage1_orig.jpg",
+      "free": false,
+      "requirement": {
+        "type": "external"
+      }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T13:42:40.693221+00:00"
+  "updated": "2026-09-12T14:04:27.868470+00:00"
 }
