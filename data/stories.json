@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T19:42:45.073781+00:00",
+  "updated": "2026-09-12T19:42:50.465025+00:00",
   "stories": [
     {
       "id": "277",
@@ -1056,7 +1056,7 @@
       "mediaDurationSources": {
         "audio": "youtube"
       },
-      "publicTeaser": "https://www.youtube.com/embed/DWSxTQWFcbs",
+      "publicTeaser": "https://www.youtube.com/watch?v=DWSxTQWFcbs",
       "mediaTitleLocales": {
         "audio": {
           "en": "My First Tape",
@@ -1080,7 +1080,29 @@
           "en": true,
           "ca": true
         }
-      }
+      },
+      "mediaAssetTags": [
+        {
+          "mediaId": "lop1MMBkRB0",
+          "kind": "audio",
+          "locale": "es"
+        },
+        {
+          "mediaId": "z6ZcPvT0a2U",
+          "kind": "audio",
+          "locale": "en"
+        },
+        {
+          "mediaId": "EbI1gZzA-z0",
+          "kind": "audio",
+          "locale": "ca"
+        },
+        {
+          "mediaId": "DWSxTQWFcbs",
+          "kind": "teaser",
+          "locale": "es"
+        }
+      ]
     },
     {
       "id": "003",
