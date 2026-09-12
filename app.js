@@ -1,10 +1,13 @@
-const APP_VERSION = '3.5.0';
+const APP_VERSION = '3.6.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
 let sagasData={schema:1,sagas:[]},timelineData={schema:1,orders:{}},extrasData={schema:1,extras:[]},playerCatalogData={schema:1,tracks:[]},homeData={schema:1,nextStoryDate:''};
 let lastRandomStoryId='',randomSpinTimer=0,randomSpinRunning=false,randomSpinCurrent=null,randomSpinPool=[],randomHasSpun=false,tutorialActive=null,introPlayed=false,suppressNewClearOnceId='';
 let mediaLocaleState={audio:'es',video:'es'},homeCountdownTimer=0;
+let sectionTransitionActive=false,sectionTransitionLastAt=0,sectionTransitionEligibleCount=0;
+const SECTION_TRANSITION_VIDEO='./assets/TRANSI 1.webm';
+const SECTION_TRANSITION_CHANCE=.28;
 const unlockSecretsKey='disturbing_unlock_secrets_v2';
 const readKey='disturbing_read_v2';
 const coverCacheKey='disturbing_cover_cache_v1';
@@ -49,7 +52,7 @@ async function boot(){
     bindShell();initMotionSystem();initPlayer();
     await playEntryIntro();
     if(currentHash()!=='#/home'){location.hash='#/home'}else routeFromHash();
-    updateAppBadge();registerSW();
+    updateAppBadge();registerSW();setTimeout(preloadSectionTransitionFx,900);
   }catch(e){view.innerHTML=`<div class="empty"><h2>No se pudieron cargar las Stories</h2><p>${escapeHtml(e.message)}</p><p>Usa el lanzador local incluido en el paquete.</p></div>`;}
 }
 
@@ -143,7 +146,30 @@ async function handleInstallApp(){
 function goHomeTop(){persistCurrentReadingPosition();if(currentHash()==='#/home'){scrollTo({top:0,behavior:'smooth'});return}navigateHash('#/home');requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}))}
 function bindShell(){$('#brandBtn').onclick=goHomeTop;$('#backBtn').onclick=navigateBack;$('#toTopHeaderBtn').onclick=()=>scrollTo({top:0,behavior:'smooth'});$('#menuBtn').onclick=openDrawer;$('#closeDrawer').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;$$('.nav-btn').forEach(b=>b.onclick=()=>footerGo(b.dataset.route));$$('[data-drawer-route]').forEach(b=>b.onclick=()=>{closeDrawer();if(b.dataset.drawerRoute==='home')goHomeTop();else go(b.dataset.drawerRoute)});$('#miniPlayerOpen').onclick=()=>go('player');$('#miniPrev').onclick=()=>playerStep(-1,true);$('#miniPlay').onclick=()=>playerToggle();$('#miniNext').onclick=()=>playerStep(1,true);$('#scanBtn').onclick=()=>{closeDrawer();showUnlock()};$('#installBtn').onclick=handleInstallApp;updateInstallButton();addEventListener('hashchange',routeFromHash);addEventListener('scroll',updateProgress,{passive:true});addEventListener('pagehide',persistCurrentReadingPosition);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')persistCurrentReadingPosition()});addEventListener('blur',()=>setTimeout(()=>{if(currentStory&&document.activeElement?.tagName==='IFRAME')playerPauseForStoryMedia()},0));addEventListener('resize',()=>{updateInstallButton();if(routeName()==='collection')requestAnimationFrame(fitCollectionShelf);if(routeName()==='timeline')requestAnimationFrame(alignTimelineBranches)},{passive:true});}
 function currentHash(){return location.hash||'#/home'}
-function navigateHash(target){const cur=currentHash();if(cur===target)return;navHistory.push(cur);if(navHistory.length>5)navHistory=navHistory.slice(-5);location.hash=target}
+function isMajorSectionTarget(target){return /^#\/(?:home|stories|unlocked|collection|player)$/.test(String(target||''))}
+function shouldPlaySectionTransition(target){
+  if(sectionTransitionActive||!isMajorSectionTarget(target))return false;
+  const now=Date.now();if(now-sectionTransitionLastAt<6500)return false;
+  sectionTransitionEligibleCount++;
+  // Probabilidad suficientemente visible para probar el primer FX, sin convertirlo en algo constante.
+  return Math.random()<SECTION_TRANSITION_CHANCE;
+}
+function preloadSectionTransitionFx(){
+  try{const v=document.createElement('video');v.preload='auto';v.src=SECTION_TRANSITION_VIDEO;v.playsInline=true;v.load()}catch{}
+}
+function playSectionTransitionFx(){
+  if(sectionTransitionActive)return false;
+  sectionTransitionActive=true;sectionTransitionLastAt=Date.now();
+  const layer=document.createElement('div');layer.className='section-transition-fx';layer.setAttribute('aria-hidden','true');
+  const video=document.createElement('video');video.className='section-transition-video';video.src=SECTION_TRANSITION_VIDEO;video.autoplay=true;video.playsInline=true;video.preload='auto';video.controls=false;video.muted=false;video.volume=1;video.disablePictureInPicture=true;video.setAttribute('playsinline','');video.setAttribute('webkit-playsinline','');
+  layer.append(video);document.body.append(layer);
+  let done=false;const cleanup=()=>{if(done)return;done=true;clearTimeout(timer);layer.remove();sectionTransitionActive=false};
+  const timer=setTimeout(cleanup,5400);video.addEventListener('ended',cleanup,{once:true});video.addEventListener('error',cleanup,{once:true});
+  // play() se invoca dentro del gesto del usuario para que el audio pueda sonar cuando el dispositivo lo permita.
+  try{const promise=video.play();if(promise&&typeof promise.catch==='function')promise.catch(()=>{video.muted=true;video.play().catch(cleanup)})}catch{video.muted=true;try{video.play().catch(cleanup)}catch{cleanup()}}
+  return true;
+}
+function navigateHash(target){const cur=currentHash();if(cur===target)return;if(shouldPlaySectionTransition(target))playSectionTransitionFx();navHistory.push(cur);if(navHistory.length>5)navHistory=navHistory.slice(-5);location.hash=target}
 function go(r){navigateHash(`#/${r}`)}
 function footerGo(r){const target=`#/${r}`;persistCurrentReadingPosition();scrollTo({top:0,behavior:'auto'});if(currentHash()===target){routeFromHash();requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}));return}navigateHash(target);requestAnimationFrame(()=>scrollTo({top:0,behavior:'auto'}))}
 function routeFallback(){const p=currentHash().replace(/^#\//,'').split('/'),route=p[0]||'home';if(route==='story')return '#/stories';if(route==='saga')return '#/sagas';if(route==='extra')return '#/extras';if(route==='collection'&&p[1])return '#/collection';if(['sagas','timeline','random','cassettes','tapes','extras','games','micro-pesadillas'].includes(route))return '#/stories';if(route!=='home')return '#/home';return ''}
@@ -211,8 +237,8 @@ function storyFeatures(s){
   const set=new Set(s?.features||[]),labels=(s?.tabLabels||[]).map(x=>String(x).toLowerCase());
   if(labels.some(x=>/(audio|escuchar|listen)/.test(x)))set.add('audio');
   if(labels.some(x=>/(video|vídeo|corto|film)/.test(x)))set.add('video');
-  const my=s?.mediaYoutube||{},md=s?.mediaDurations||{},sources=s?.mediaDurationSources||{},myl=s?.mediaYoutubeLocales||{},mdl=s?.mediaDurationLocales||{},sl=s?.mediaDurationSourceLocales||{};
-  const localeHas=kind=>Object.values(myl?.[kind]||{}).some(a=>Array.isArray(a)&&a.length)||Object.values(mdl?.[kind]||{}).some(v=>Number(v)>0)||Object.values(sl?.[kind]||{}).some(v=>String(v||'').toLowerCase()==='youtube');
+  const my=s?.mediaYoutube||{},md=s?.mediaDurations||{},sources=s?.mediaDurationSources||{},myl=s?.mediaYoutubeLocales||{},mdl=s?.mediaDurationLocales||{},sl=s?.mediaDurationSourceLocales||{},mal=s?.mediaLocaleAvailability||{};
+  const localeHas=kind=>Object.values(myl?.[kind]||{}).some(a=>Array.isArray(a)&&a.length)||Object.values(mdl?.[kind]||{}).some(v=>Number(v)>0)||Object.values(sl?.[kind]||{}).some(v=>String(v||'').toLowerCase()==='youtube')||Object.values(mal?.[kind]||{}).some(Boolean);
   if((Array.isArray(my.audio)&&my.audio.length)||Number(md.audio)>0||String(sources.audio||'').toLowerCase()==='youtube'||localeHas('audio'))set.add('audio');
   if((Array.isArray(my.video)&&my.video.length)||Number(md.video)>0||String(sources.video||'').toLowerCase()==='youtube'||localeHas('video'))set.add('video');
   if(s?.audio===true||s?.audioUrl||s?.audioSrc)set.add('audio');
@@ -818,11 +844,14 @@ function mediaAvailableInLocale(s,type,locale='es'){
     const entries=s?.mediaYoutube?.[type],duration=Number(s?.mediaDurations?.[type])||0,source=String(s?.mediaDurationSources?.[type]||'').toLowerCase(),labels=(s?.tabLabels||[]).map(x=>String(x).toLowerCase());
     const tabMatch=type==='audio'?labels.some(x=>/(audio|escuchar|listen)/.test(x)):labels.some(x=>/(video|vídeo|corto|film)/.test(x));
     const direct=type==='audio'?(s?.audio===true||s?.audioUrl||s?.audioSrc):(s?.video===true||s?.videoUrl||s?.videoSrc);
-    const hasAlt=Object.values(s?.mediaYoutubeLocales?.[type]||{}).some(a=>Array.isArray(a)&&a.length)||Object.values(s?.mediaDurationLocales?.[type]||{}).some(v=>Number(v)>0);
+    const hasAlt=Object.values(s?.mediaYoutubeLocales?.[type]||{}).some(a=>Array.isArray(a)&&a.length)||Object.values(s?.mediaDurationLocales?.[type]||{}).some(v=>Number(v)>0)||Object.values(s?.mediaLocaleAvailability?.[type]||{}).some(Boolean);
     return (Array.isArray(entries)&&entries.length>0)||duration>0||source==='youtube'||tabMatch||!!direct||(!hasAlt&&(s?.features||[]).includes(type))
   }
-  const entries=s?.mediaYoutubeLocales?.[type]?.[locale],duration=Number(s?.mediaDurationLocales?.[type]?.[locale])||0,source=String(s?.mediaDurationSourceLocales?.[type]?.[locale]||'').toLowerCase();
-  return (Array.isArray(entries)&&entries.length>0)||duration>0||source==='youtube'
+  const entries=s?.mediaYoutubeLocales?.[type]?.[locale],duration=Number(s?.mediaDurationLocales?.[type]?.[locale])||0,source=String(s?.mediaDurationSourceLocales?.[type]?.[locale]||'').toLowerCase(),declared=!!s?.mediaLocaleAvailability?.[type]?.[locale],translatedTitle=String(s?.mediaTitleLocales?.[type]?.[locale]||'').trim();
+  // declared permite listar también las exclusivas/bloqueadas configuradas mediante URL oculta,
+  // aunque la URL no se publique en stories.json. El título traducido sirve además de compatibilidad
+  // con asociaciones ocultas guardadas por v3.5 antes de existir el marcador explícito.
+  return declared||!!translatedTitle||(Array.isArray(entries)&&entries.length>0)||duration>0||source==='youtube'
 }
 function fmtLong(seconds){seconds=Math.max(0,Math.round(Number(seconds)||0));const h=Math.floor(seconds/3600),m=Math.floor((seconds%3600)/60),sec=seconds%60;return h?`${h}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`:`${m}:${String(sec).padStart(2,'0')}`}
 function fmtTotalDuration(seconds){seconds=Math.max(0,Math.round(Number(seconds)||0));const h=Math.floor(seconds/3600),m=Math.floor((seconds%3600)/60),sec=seconds%60;return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`}
@@ -845,5 +874,5 @@ function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<
 
 async function playEntryIntro(){if(introPlayed)return;introPlayed=true;const layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return;layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0}catch{}return new Promise(resolve=>{const done=()=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}layer.classList.add('intro-out');setTimeout(()=>{layer.classList.add('hidden');layer.classList.remove('intro-out');layer.setAttribute('aria-hidden','true');resolve()},220)};const start=()=>{clearTimeout(fallback);const p=video.play();if(p&&typeof p.catch==='function')p.catch(done)};const fallback=setTimeout(done,8000);layer.onclick=done;video.addEventListener('ended',done,{once:true});video.addEventListener('error',done,{once:true});if(video.readyState>=3)start();else video.addEventListener('canplay',start,{once:true})})}
 
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=3.5.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=3.6.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();

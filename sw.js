@@ -1,6 +1,6 @@
-// v3.5: el Service Worker nuevo espera al próximo arranque; nunca toma el control a mitad de sesión.
-const CACHE='disturbing-pwa-v3.5';
-const CORE=['./','./index.html','./styles.css?v=3.5.0','./app.js?v=3.5.0','./manifest.webmanifest','./data/stories.json','./data/books.json','./data/sagas.json','./data/timeline.json','./data/extras.json','./data/player.json','./data/home.json','./assets/app-icon.png','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-180.png','./favicon.ico','https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js','https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js','https://unpkg.com/jsqr@1.4.0/dist/jsQR.js'];
+// v3.6: el Service Worker nuevo espera al próximo arranque; nunca toma el control a mitad de sesión.
+const CACHE='disturbing-pwa-v3.6';
+const CORE=['./','./index.html','./styles.css?v=3.6.0','./app.js?v=3.6.0','./manifest.webmanifest','./data/stories.json','./data/books.json','./data/sagas.json','./data/timeline.json','./data/extras.json','./data/player.json','./data/home.json','./assets/TRANSI%201.webm','./assets/app-icon.png','./icons/icon-192.png','./icons/icon-512.png','./icons/icon-180.png','./favicon.ico','https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js','https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js','https://unpkg.com/jsqr@1.4.0/dist/jsQR.js'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>Promise.allSettled(CORE.map(x=>c.add(x)))))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))))});
 function networkFirst(req){return fetch(req,{cache:'no-store'}).then(r=>{if(r.ok||r.type==='opaque'){const c=r.clone();caches.open(CACHE).then(x=>x.put(req,c))}return r}).catch(()=>caches.match(req))}
