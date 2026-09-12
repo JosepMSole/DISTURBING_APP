@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:43:22.332076+00:00",
+  "updated": "2026-09-12T21:43:27.531747+00:00",
   "stories": [
     {
       "id": "277",
@@ -2488,23 +2488,13 @@
       ],
       "readTime": 4,
       "mediaDurations": {
-        "audio": 900
+        "audio": 300
       },
       "mediaYoutube": {
         "audio": [
           {
             "videoId": "EhIbBEnXL5s",
             "url": "https://www.youtube.com/watch?v=EhIbBEnXL5s",
-            "durationSeconds": 300
-          },
-          {
-            "videoId": "Ca0YdD_szV0",
-            "url": "https://www.youtube.com/watch?v=Ca0YdD_szV0",
-            "durationSeconds": 300
-          },
-          {
-            "videoId": "GlWsJUxDidY",
-            "url": "https://www.youtube.com/watch?v=GlWsJUxDidY",
             "durationSeconds": 300
           }
         ]
@@ -2542,12 +2532,6 @@
           "ca": "youtube"
         }
       },
-      "mediaTitleLocales": {
-        "audio": {
-          "ca": "Dark Limits: Moment Zero",
-          "en": "Dark Limits: Zero Moment"
-        }
-      },
       "publicTeaser": "https://www.youtube.com/watch?v=dR7ZlDOQh4A",
       "mediaAssetTags": [
         {
@@ -2575,7 +2559,13 @@
           "kind": "teaser",
           "locale": "es"
         }
-      ]
+      ],
+      "mediaLocaleAvailability": {
+        "audio": {
+          "en": true,
+          "ca": true
+        }
+      }
     },
     {
       "id": "036",
