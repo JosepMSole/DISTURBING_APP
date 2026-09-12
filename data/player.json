@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated": "2026-09-12T22:45:30.750235+00:00",
+  "updated": "2026-09-12T23:16:30.213146+00:00",
   "tracks": [
     {
       "file": "93DELTA - BSO 2007.mp3",
@@ -170,17 +170,23 @@
     {
       "file": "DISTURBING THEME - EPIC LUX OPENING.mp3",
       "durationSeconds": 140,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/chatgpt-image-13-sept-2026-00-54-13_orig.png"
+      ]
     },
     {
       "file": "DISTURBING THEME - FORGOTTEN ISLAND.mp3",
       "durationSeconds": 130,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/chatgpt-image-13-sept-2026-00-51-08_3.png"
+      ]
     },
     {
       "file": "DISTURBING THEME - NIHILIST.mp3",
       "durationSeconds": 93,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/chatgpt-image-13-sept-2026-01-11-42_orig.png"
+      ]
     },
     {
       "file": "FAR FAR WEST - Complete Score 2025.mp3",
