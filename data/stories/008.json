@@ -6,7 +6,7 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/008.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/008.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/008-rugidos-en-la-lluvia-frame-04.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/008-rugidos-en-la-lluvia-frame-01.jpg",
   "book": "05",
   "year": "1997",
   "categories": [
@@ -211,8 +211,8 @@
       "blocks": [
         {
           "type": "iframe",
-          "src": "https://www.youtube.com/embed/2Fn9shvEYkY",
-          "title": "Teaser"
+          "src": "about:blank",
+          "title": "Contenido multimedia"
         }
       ]
     }
