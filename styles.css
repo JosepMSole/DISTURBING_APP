@@ -4134,7 +4134,7 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @media(max-width:350px){.user-greeting{max-width:82px;font-size:9px}}
 
 
-/* v4.2 · USER hero, header avatar and achievements */
+/* v4.3 · USER hero, header avatar and achievements */
 .user-hero{position:relative!important;isolation:isolate!important;overflow:hidden!important}
 .user-hero-background{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:.85!important;z-index:-2!important;pointer-events:none!important}
 .user-hero.registered::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(2,5,7,.78),rgba(2,5,7,.45));pointer-events:none}
@@ -4150,3 +4150,26 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .sync-active-title{display:block;text-align:center!important;font-family:Oxanium,sans-serif;letter-spacing:.06em}
 @media(max-width:460px){.user-header-avatar{width:30px;height:30px;flex-basis:30px}.user-achievements-section{padding:12px}.user-hero.registered::after{background:rgba(2,5,7,.48)}}
 @media(max-width:370px){.user-header-avatar{width:27px;height:27px;flex-basis:27px}.user-greeting{max-width:70px!important}}
+
+
+/* v4.3 · USER / LOGROS / AVATARES */
+.user-hero-copy h1{font-size:clamp(28px,7.2vw,42px)!important;line-height:.98!important;margin:.12em 0 .18em!important;letter-spacing:-.025em!important}
+.achievement-earned-list{display:flex!important;flex-wrap:wrap!important;gap:9px!important;align-items:flex-start!important;justify-content:flex-start!important}
+.achievement-earned-card{display:inline-flex!important;flex:0 1 auto!important;width:auto!important;max-width:100%!important;min-width:0!important;align-self:flex-start!important}
+.achievement-earned-card>div{min-width:0}.achievement-earned-card .achievement-number{color:#a88c49!important;opacity:1!important;font-size:8px!important;letter-spacing:.08em!important;margin:0 0 3px!important}
+.user-sync-copy{text-align:center!important;color:#7f8a90!important;font-size:10px!important;line-height:1.45!important;max-width:390px!important;margin:10px auto 12px!important}
+.user-logout-btn{display:block!important;margin:10px auto 0!important;border-color:#8e2831!important;color:#ff939a!important;background:rgba(117,18,29,.2)!important;box-shadow:0 0 16px rgba(142,40,49,.08)!important}
+.user-logout-btn:hover,.user-logout-btn:focus-visible{border-color:#d24c58!important;color:#fff!important;background:rgba(139,25,37,.38)!important}
+.achievement-reward{position:fixed;z-index:1300;inset:0;display:grid;place-items:center;background:rgba(0,2,3,.88);opacity:0;transition:opacity .18s ease;cursor:pointer}
+.achievement-reward.show{opacity:1}.achievement-reward-flash{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,#fff 0 3%,rgba(255,218,104,.95) 7%,rgba(215,181,95,.42) 25%,transparent 60%);opacity:0}
+.achievement-reward.show .achievement-reward-flash{animation:achievementFlashV43 .75s .2s ease-out both}
+.achievement-reward-card{position:relative;width:min(88vw,420px);padding:28px 24px 26px;text-align:center;border:1px solid #d7b55f;background:linear-gradient(180deg,rgba(27,22,10,.98),rgba(7,9,10,.99));box-shadow:0 0 0 1px rgba(255,231,158,.06),0 24px 90px rgba(0,0,0,.78),0 0 54px rgba(215,181,95,.2);transform:scale(.9)}
+.achievement-reward.show .achievement-reward-card{animation:achievementCardV43 .62s .16s cubic-bezier(.2,.85,.2,1) both}
+.achievement-reward-medal{width:96px;height:96px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;border:2px solid #e1c56e;color:#ffe493;background:radial-gradient(circle,rgba(215,181,95,.3),rgba(215,181,95,.05) 65%);font-size:42px;box-shadow:0 0 34px rgba(215,181,95,.26)}
+.achievement-reward-card small{display:block;color:#bfa761;font:700 9px/1 Oxanium,sans-serif;letter-spacing:.12em}.achievement-reward-card strong{display:block;margin-top:8px;color:#ffe899;font:700 22px/1 Oxanium,sans-serif;letter-spacing:.035em;text-shadow:0 0 18px rgba(255,217,96,.24)}
+.achievement-reward-card h3{margin:14px 0 0;color:#fff;font:700 18px/1.15 Oxanium,sans-serif}.achievement-reward-card em{display:block;margin-top:8px;color:#a9b2b6;font:500 11px/1.4 Exo 2,sans-serif;font-style:normal}
+.achievement-reward-close{position:absolute;right:8px;top:8px}.achievement-reward:after{content:'TOCA PARA CERRAR';position:absolute;bottom:max(22px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);color:#8e8058;font:700 8px/1 Oxanium,sans-serif;letter-spacing:.12em}
+@keyframes achievementFlashV43{0%{opacity:0;transform:scale(.6)}20%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.5)}}
+@keyframes achievementCardV43{0%{opacity:0;transform:translateY(22px) scale(.86)}60%{opacity:1;transform:translateY(-3px) scale(1.025)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.achievement-reward-card,.achievement-reward-flash{animation:none!important}.achievement-reward.show .achievement-reward-card{transform:none!important;opacity:1!important}}
+@media(max-width:460px){.user-greeting{max-width:108px!important}.achievement-earned-card{max-width:100%!important}.user-hero-copy h1{font-size:clamp(25px,7vw,34px)!important}}
