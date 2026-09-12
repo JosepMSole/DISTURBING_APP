@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:43:27.531747+00:00",
+  "updated": "2026-09-12T21:46:35.269001+00:00",
   "stories": [
     {
       "id": "277",
@@ -1153,23 +1153,13 @@
       ],
       "readTime": 4,
       "mediaDurations": {
-        "audio": 1098
+        "audio": 366
       },
       "mediaYoutube": {
         "audio": [
           {
             "videoId": "H0WxiH87NIs",
             "url": "https://www.youtube.com/watch?v=H0WxiH87NIs",
-            "durationSeconds": 366
-          },
-          {
-            "videoId": "wAxQyw7V0pg",
-            "url": "https://www.youtube.com/watch?v=wAxQyw7V0pg",
-            "durationSeconds": 366
-          },
-          {
-            "videoId": "N5fbsqMpAgE",
-            "url": "https://www.youtube.com/watch?v=N5fbsqMpAgE",
             "durationSeconds": 366
           }
         ]
@@ -1210,7 +1200,8 @@
       "mediaTitleLocales": {
         "audio": {
           "en": "Prisoner 93 Delta",
-          "ca": "Reclús 93 Delta"
+          "ca": "Reclús 93 Delta",
+          "es": "Recluso 93 Delta"
         }
       },
       "publicTeaser": "https://www.youtube.com/watch?v=hMHcaoyp8sY",
