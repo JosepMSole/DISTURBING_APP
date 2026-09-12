@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:49:37.225609+00:00",
+  "updated": "2026-09-12T21:50:36.216243+00:00",
   "stories": [
     {
       "id": "277",
@@ -288,6 +288,12 @@
         "audio": {
           "en": true,
           "ca": true
+        }
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "en": "Roars in the Rain",
+          "ca": "Rugits dins la Pluja"
         }
       }
     },
@@ -1346,23 +1352,13 @@
       ],
       "readTime": 4,
       "mediaDurations": {
-        "audio": 1065
+        "audio": 355
       },
       "mediaYoutube": {
         "audio": [
           {
             "videoId": "ktWej50QHdQ",
             "url": "https://www.youtube.com/watch?v=ktWej50QHdQ",
-            "durationSeconds": 355
-          },
-          {
-            "videoId": "ukUOlqqsWKU",
-            "url": "https://www.youtube.com/watch?v=ukUOlqqsWKU",
-            "durationSeconds": 355
-          },
-          {
-            "videoId": "QP6K1tL5Dl4",
-            "url": "https://www.youtube.com/watch?v=QP6K1tL5Dl4",
             "durationSeconds": 355
           }
         ]
@@ -1403,7 +1399,8 @@
       "mediaTitleLocales": {
         "audio": {
           "en": "Infection",
-          "ca": "Infection"
+          "ca": "Infection",
+          "es": "Infection"
         }
       }
     },
