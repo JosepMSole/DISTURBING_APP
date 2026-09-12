@@ -69,8 +69,18 @@
         "type": "read_stories",
         "count": 2
       }
+    },
+    {
+      "id": "achievement1789225612074",
+      "number": 8,
+      "name": "Piezas de un mismo Puzzle",
+      "description": "Completar al 100 % tu primera Saga",
+      "requirement": {
+        "type": "complete_sagas",
+        "count": 1
+      }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T14:13:34.510191+00:00"
+  "updated": "2026-09-12T15:09:35.495086+00:00"
 }
