@@ -35,10 +35,10 @@
     },
     {
       "id": "extra-04",
-      "number": 4,
-      "title": "Disturbing Timeline: Primer Fragmento",
-      "book": "4",
-      "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-04-disturbing-timeline-1-v3_orig.jpg",
+      "number": 5,
+      "title": "Distorsion: CODA",
+      "book": "5",
+      "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-05-distorsion-coda-v4_orig.jpg",
       "image": "",
       "text": "",
       "link": "",
@@ -57,5 +57,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T00:30:20.149015+00:00"
+  "updated": "2026-09-12T00:31:57.187940+00:00"
 }
