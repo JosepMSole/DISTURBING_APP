@@ -13,14 +13,14 @@
     },
     {
       "id": "extra-02",
-      "number": 2,
-      "title": "Los Supuestos de Virgilius",
-      "book": "2",
-      "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-02-los-supuestos-de-virgilius-v2_orig.jpg",
+      "number": 3,
+      "title": "AB INITIO: The Disturbing Origin",
+      "book": "3",
+      "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-03-333-ab-initio-the-disturbing-origin-v9_orig.jpg",
       "image": "",
       "text": "",
-      "link": "",
-      "availability": "physical"
+      "link": "https://www.disturbingstories.com/extra-03.html",
+      "availability": "digital"
     },
     {
       "id": "extra-02",
@@ -57,5 +57,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T00:31:57.187940+00:00"
+  "updated": "2026-09-12T00:33:38.501489+00:00"
 }
