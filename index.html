@@ -8,16 +8,16 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Disturbing Stories APP" />
   <meta name="application-name" content="Disturbing Stories APP" />
-  <link rel="manifest" href="manifest.webmanifest?v=4.1.0" />
-  <link rel="icon" type="image/png" href="assets/app-icon.png?v=4.1.0" />
-  <link rel="shortcut icon" type="image/png" href="assets/app-icon.png?v=4.1.0" />
-  <link rel="icon" href="favicon.ico?v=4.1.0" sizes="any" />
-  <link rel="icon" type="image/png" href="icons/icon-192.png?v=4.1.0" />
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png?v=4.1.0" />
+  <link rel="manifest" href="manifest.webmanifest?v=4.2.0" />
+  <link rel="icon" type="image/png" href="assets/app-icon.png?v=4.2.0" />
+  <link rel="shortcut icon" type="image/png" href="assets/app-icon.png?v=4.2.0" />
+  <link rel="icon" href="favicon.ico?v=4.2.0" sizes="any" />
+  <link rel="icon" type="image/png" href="icons/icon-192.png?v=4.2.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png?v=4.2.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Oxanium:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4.1.0" />
+  <link rel="stylesheet" href="styles.css?v=4.2.0" />
   <title>Disturbing Stories APP</title>
 </head>
 <body>
@@ -30,6 +30,7 @@
         </button>
         <button id="backBtn" class="back-nav-btn hidden" aria-label="Atrás">‹ ATRÁS</button>
         <span id="sectionIndicator" class="section-indicator" aria-label="Sección actual"></span>
+        <span id="userHeaderAvatar" class="user-header-avatar hidden" aria-hidden="true"><img id="userHeaderAvatarImg" src="" alt=""></span>
         <span id="userGreeting" class="user-greeting hidden" aria-live="polite"></span>
       </div>
       <div class="topbar-actions">
@@ -75,7 +76,7 @@
       <button id="scanBtn"><span class="drawer-menu-icon drawer-qr" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h2v2h-2zM18 14h2v2h-2zM14 18h2v2h-2zM17 17h3v3h-3z"/></svg></span><span>Desbloquear Story</span></button>
       <button id="installBtn" class="hidden"><span class="drawer-menu-icon drawer-install" aria-hidden="true"><svg class="install-app-svg" viewBox="0 0 24 24"><path d="M12 3v10"/><path d="m8 10 4 4 4-4"/><path d="M5 16.5v1.2A2.3 2.3 0 0 0 7.3 20h9.4A2.3 2.3 0 0 0 19 17.7v-1.2"/></svg></span><span>Instalar App</span></button>
       <button id="userMenuBtn"><span class="drawer-menu-icon drawer-user" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.7" r="3.3"/><path d="M5.4 20c.45-4.45 2.9-7 6.6-7s6.15 2.55 6.6 7"/></svg></span><span id="userMenuLabel">Usuario No Registrado</span></button>
-      <p class="drawer-note"><span>v4.1 © All rights reserved</span><a href="https://www.disturbingstories.com/contact.html" target="_blank" rel="noopener">Vianda Visual 2026</a></p>
+      <p class="drawer-note"><span>v4.2 © All rights reserved</span><a href="https://www.disturbingstories.com/contact.html" target="_blank" rel="noopener">Vianda Visual 2026</a></p>
     </aside>
     <div id="scrim" class="scrim hidden"></div>
     <div id="introLayer" class="intro-layer hidden" aria-hidden="true">
@@ -85,7 +86,7 @@
 
   <template id="loadingTemplate"><div class="loading"><div class="spinner"></div><p>Cargando Stories…</p></div></template>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js" defer></script>
-  <script src="supabase-config.js?v=4.1.0" defer></script>
-  <script src="app.js?v=4.1.0" defer></script>
+  <script src="supabase-config.js?v=4.2.0" defer></script>
+  <script src="app.js?v=4.2.0" defer></script>
 </body>
 </html>
