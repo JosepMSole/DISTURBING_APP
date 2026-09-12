@@ -129,7 +129,7 @@
       "listBanner": "assets/sagas/BANNERSAGA_HERMANOS%20-%20EXT.jpg",
       "detailBanner": "assets/sagas/BANNERSAGA_HERMANOS%20-%20INT.jpg",
       "extraText": "",
-      "extraImage": "",
+      "extraImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/028-frames-1_orig.jpg",
       "parts": [
         {
           "order": 1,
@@ -367,5 +367,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T22:12:13.865723+00:00"
+  "updated": "2026-09-12T22:12:50.447715+00:00"
 }
