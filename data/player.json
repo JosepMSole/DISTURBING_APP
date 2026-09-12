@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "updated": "2026-09-12T19:06:55.224457+00:00",
+  "updated": "2026-09-12T19:39:53.802402+00:00",
   "tracks": [
     {
       "file": "93DELTA - BSO 2007.mp3",
@@ -19,32 +19,57 @@
     {
       "file": "95DELTA - Special Theme 2026.mp3",
       "durationSeconds": 160,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/017-plan-95-delta-frame-1_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/017-plan-95-delta-frame-4_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/017-plan-95-delta-frame-3_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/017-plan-95-delta-frame-5_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/plano-93d-final-spaceship-gif_orig.gif"
+      ]
     },
     {
       "file": "DARK LIMITS - ACTIVATION - 1.mp3",
       "durationSeconds": 133,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/046-dark-limits-activation-frame-1_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/046-dark-limits-activation-frame-3_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/046-dark-limits-activation-frame-4_orig.jpg"
+      ]
     },
     {
       "file": "DARK LIMITS - ACTIVATION - 2.mp3",
       "durationSeconds": 60,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/046-dark-limits-activation-frame-5-gif_orig.gif",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/046-dark-limits-activation-frame-6_orig.jpg"
+      ]
     },
     {
       "file": "DARK LIMITS - COAST STORM.mp3",
       "durationSeconds": 215,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/153-frame-3_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/153-frame-2_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/153-frame-1_orig.jpg"
+      ]
     },
     {
       "file": "DARK LIMITS - OTHER SIDE - 1.mp3",
       "durationSeconds": 133,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-02_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-03_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-04_orig.jpg"
+      ]
     },
     {
       "file": "DARK LIMITS - OTHER SIDE - 2.mp3",
       "durationSeconds": 190,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-06_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-08_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-09_orig.jpg"
+      ]
     },
     {
       "file": "DARK LIMITS - PUZZLES - Main Theme.mp3",
