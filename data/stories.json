@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T22:25:55.689085+00:00",
+  "updated": "2026-09-12T22:26:00.824409+00:00",
   "stories": [
     {
       "id": "277",
@@ -288,12 +288,6 @@
         "audio": {
           "en": true,
           "ca": true
-        }
-      },
-      "mediaTitleLocales": {
-        "audio": {
-          "en": "Roars in the Rain",
-          "ca": "Rugits dins la Pluja"
         }
       }
     },
