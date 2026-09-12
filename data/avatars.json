@@ -1,0 +1,45 @@
+{
+  "avatars": [
+    {
+      "id": "avatar1",
+      "file": "assets/avatar/avatar1.jpg",
+      "free": true,
+      "requirement": null
+    },
+    {
+      "id": "avatar2",
+      "file": "assets/avatar/avatar2.jpg",
+      "free": true,
+      "requirement": null
+    },
+    {
+      "id": "avatar3",
+      "file": "assets/avatar/avatar3.jpg",
+      "free": true,
+      "requirement": null
+    },
+    {
+      "id": "avatar4",
+      "file": "assets/avatar/avatar4.jpg",
+      "free": true,
+      "requirement": null
+    },
+    {
+      "id": "avatar5",
+      "file": "assets/avatar/avatar5.jpg",
+      "free": true,
+      "requirement": null
+    },
+    {
+      "id": "avatar6",
+      "file": "assets/avatar/avatar6.jpg",
+      "free": false,
+      "requirement": {
+        "type": "read_story",
+        "storyId": "025"
+      }
+    }
+  ],
+  "schema": 1,
+  "updated": "2026-09-12T11:35:04.209343+00:00"
+}
