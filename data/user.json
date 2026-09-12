@@ -109,8 +109,28 @@
           }
         ]
       }
+    },
+    {
+      "id": "achievement1789229468981",
+      "number": 11,
+      "name": "Book#1 completado",
+      "description": "Haber leído el Libro 1",
+      "requirement": {
+        "type": "read_book",
+        "book": "1"
+      }
+    },
+    {
+      "id": "achievement1789229489630",
+      "number": 12,
+      "name": "Book#2 completado",
+      "description": "Haber leído el Libro 2",
+      "requirement": {
+        "type": "read_book",
+        "book": "2"
+      }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T16:11:00.129590+00:00"
+  "updated": "2026-09-12T16:21:16.262117+00:00"
 }
