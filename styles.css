@@ -4066,3 +4066,29 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .book-trailer-label{font:900 9px/1 Oxanium,sans-serif!important;letter-spacing:.12em!important;color:#8fa4aa!important;margin:0 0 7px!important}
 .book-trailer-video{position:relative!important;width:100%!important;aspect-ratio:16/9!important;border:1px solid #26373d!important;border-radius:12px!important;overflow:hidden!important;background:#020405!important;box-shadow:0 0 22px rgba(86,190,220,.06)!important}
 .book-trailer-video iframe{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;border:0!important}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v3.5
+   Extras · idiomas multimedia · próxima Story
+   ============================================================ */
+
+/* EXTRAS · texto manual inmediatamente debajo del póster. */
+.extra-detail>.extra-main-poster+.extra-text{margin-top:-2px!important;margin-bottom:14px!important}
+.extra-detail>.extra-text+.physical-extra-notice{margin-top:0!important}
+
+/* CASSETTES / TAPES · selector de idioma aproximadamente al doble de tamaño. */
+.media-language-switch{gap:8px!important}
+.media-language-switch button{min-height:38px!important;padding:11px 15px!important;font-size:10px!important;letter-spacing:.05em!important}
+@media(max-width:430px){.media-language-switch{gap:7px!important}.media-language-switch button{min-height:35px!important;padding:10px 12px!important;font-size:9px!important}}
+
+/* HOME · cuenta atrás de la próxima Story. */
+.home-next-story{margin:12px 0 18px!important;border:1px solid #334951!important;background:linear-gradient(145deg,#071014,#0b171b)!important;border-radius:15px!important;padding:15px 14px!important;box-shadow:0 10px 26px rgba(0,0,0,.24),inset 0 0 22px rgba(98,211,231,.025)!important}
+.home-next-story-label{font:900 9px/1 Oxanium,sans-serif!important;letter-spacing:.13em!important;color:#8ea7ad!important;margin-bottom:11px!important}
+.home-next-story-countdown{display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;min-height:48px!important;color:#fff!important}
+.home-next-story-countdown>span{display:grid!important;justify-items:center!important;gap:4px!important;min-width:48px!important}
+.home-next-story-countdown b{font:900 clamp(24px,7vw,35px)/.9 Oxanium,sans-serif!important;letter-spacing:.02em!important;color:#fff!important;text-shadow:0 0 14px rgba(136,230,244,.15)!important}
+.home-next-story-countdown small{font:800 6.5px/1 Oxanium,sans-serif!important;letter-spacing:.10em!important;color:#6f8d94!important}
+.home-next-story-countdown i{font-style:normal!important;font:800 20px/1 Oxanium,sans-serif!important;color:#34535b!important;transform:translateY(-6px)!important}
+.home-next-pending{font:900 13px/1 Oxanium,sans-serif!important;letter-spacing:.10em!important;color:#7d969c!important}
+@media(max-width:370px){.home-next-story-countdown{gap:4px!important}.home-next-story-countdown>span{min-width:42px!important}.home-next-story-countdown b{font-size:22px!important}.home-next-story-countdown i{font-size:17px!important}}
