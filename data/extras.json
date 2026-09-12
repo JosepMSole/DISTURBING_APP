@@ -40,7 +40,7 @@
       "book": "4",
       "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-04-disturbing-timeline-1-v3_orig.jpg",
       "image": "",
-      "text": "",
+      "text": "Explora la línea de tiempo y ubica las primeras 50 stories publicadas.",
       "link": "",
       "availability": "physical"
     },
@@ -57,5 +57,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T00:55:41.455681+00:00"
+  "updated": "2026-09-12T00:56:02.186207+00:00"
 }
