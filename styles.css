@@ -4134,7 +4134,7 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @media(max-width:350px){.user-greeting{max-width:82px;font-size:9px}}
 
 
-/* v4.3 · USER hero, header avatar and achievements */
+/* v4.4 · USER hero, header avatar and achievements */
 .user-hero{position:relative!important;isolation:isolate!important;overflow:hidden!important}
 .user-hero-background{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;opacity:.85!important;z-index:-2!important;pointer-events:none!important}
 .user-hero.registered::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(2,5,7,.78),rgba(2,5,7,.45));pointer-events:none}
@@ -4152,10 +4152,10 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @media(max-width:370px){.user-header-avatar{width:27px;height:27px;flex-basis:27px}.user-greeting{max-width:70px!important}}
 
 
-/* v4.3 · USER / LOGROS / AVATARES */
+/* v4.4 · USER / LOGROS / AVATARES */
 .user-hero-copy h1{font-size:clamp(28px,7.2vw,42px)!important;line-height:.98!important;margin:.12em 0 .18em!important;letter-spacing:-.025em!important}
 .achievement-earned-list{display:flex!important;flex-wrap:wrap!important;gap:9px!important;align-items:flex-start!important;justify-content:flex-start!important}
-.achievement-earned-card{display:inline-flex!important;flex:0 1 auto!important;width:auto!important;max-width:100%!important;min-width:0!important;align-self:flex-start!important}
+.achievement-earned-card{display:inline-flex!important;flex:1 1 auto!important;width:max-content!important;max-width:100%!important;min-width:min(160px,100%)!important;align-self:stretch!important;box-sizing:border-box!important}
 .achievement-earned-card>div{min-width:0}.achievement-earned-card .achievement-number{color:#a88c49!important;opacity:1!important;font-size:8px!important;letter-spacing:.08em!important;margin:0 0 3px!important}
 .user-sync-copy{text-align:center!important;color:#7f8a90!important;font-size:10px!important;line-height:1.45!important;max-width:390px!important;margin:10px auto 12px!important}
 .user-logout-btn{display:block!important;margin:10px auto 0!important;border-color:#8e2831!important;color:#ff939a!important;background:rgba(117,18,29,.2)!important;box-shadow:0 0 16px rgba(142,40,49,.08)!important}
@@ -4173,3 +4173,9 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 @keyframes achievementCardV43{0%{opacity:0;transform:translateY(22px) scale(.86)}60%{opacity:1;transform:translateY(-3px) scale(1.025)}100%{opacity:1;transform:translateY(0) scale(1)}}
 @media(prefers-reduced-motion:reduce){.achievement-reward-card,.achievement-reward-flash{animation:none!important}.achievement-reward.show .achievement-reward-card{transform:none!important;opacity:1!important}}
 @media(max-width:460px){.user-greeting{max-width:108px!important}.achievement-earned-card{max-width:100%!important}.user-hero-copy h1{font-size:clamp(25px,7vw,34px)!important}}
+
+/* v4.4 · cada fila de logros ocupa todo el ancho y el acceso USER del header es pulsable */
+.achievement-earned-list{width:100%!important;align-content:stretch!important}
+.achievement-earned-card{justify-content:flex-start!important}
+.user-header-avatar,.user-greeting{cursor:pointer!important}
+.user-header-avatar:focus-visible,.user-greeting:focus-visible{outline:1px solid rgba(215,181,95,.9)!important;outline-offset:3px!important}
