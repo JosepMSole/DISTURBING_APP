@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:46:35.269001+00:00",
+  "updated": "2026-09-12T21:47:39.982415+00:00",
   "stories": [
     {
       "id": "277",
@@ -1122,6 +1122,12 @@
               "durationSeconds": 357
             }
           ]
+        }
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "en": "My First Tape",
+          "ca": "La meva Primera Cinta"
         }
       }
     },
