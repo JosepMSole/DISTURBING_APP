@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T19:28:59.279495+00:00",
+  "updated": "2026-09-12T19:29:04.692409+00:00",
   "stories": [
     {
       "id": "277",
@@ -203,11 +203,13 @@
         "TEASER"
       ],
       "features": [
-        "audio"
+        "audio",
+        "video"
       ],
       "readTime": 7,
       "mediaDurations": {
-        "audio": 802
+        "audio": 266,
+        "video": 20
       },
       "mediaYoutube": {
         "audio": [
@@ -215,21 +217,19 @@
             "videoId": "S7d2YBa6Iw8",
             "url": "https://www.youtube.com/watch?v=S7d2YBa6Iw8",
             "durationSeconds": 266
-          },
+          }
+        ],
+        "video": [
           {
-            "videoId": "aeBbp4u0yvw",
-            "url": "https://www.youtube.com/watch?v=aeBbp4u0yvw",
-            "durationSeconds": 268
-          },
-          {
-            "videoId": "Y6dwsOl3v5I",
-            "url": "https://www.youtube.com/watch?v=Y6dwsOl3v5I",
-            "durationSeconds": 268
+            "videoId": "2Fn9shvEYkY",
+            "url": "https://www.youtube.com/watch?v=2Fn9shvEYkY",
+            "durationSeconds": 20
           }
         ]
       },
       "mediaDurationSources": {
-        "audio": "youtube"
+        "audio": "youtube",
+        "video": "youtube"
       },
       "mediaYoutubeLocales": {
         "audio": {
