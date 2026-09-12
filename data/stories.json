@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:43:18.266968+00:00",
+  "updated": "2026-09-12T21:43:22.332076+00:00",
   "stories": [
     {
       "id": "277",
@@ -2548,7 +2548,34 @@
           "en": "Dark Limits: Zero Moment"
         }
       },
-      "publicTeaser": "https://www.youtube.com/embed/dR7ZlDOQh4A"
+      "publicTeaser": "https://www.youtube.com/watch?v=dR7ZlDOQh4A",
+      "mediaAssetTags": [
+        {
+          "mediaId": "EhIbBEnXL5s",
+          "kind": "audio",
+          "locale": "es"
+        },
+        {
+          "mediaId": "Ca0YdD_szV0",
+          "kind": "audio",
+          "locale": "en"
+        },
+        {
+          "mediaId": "GlWsJUxDidY",
+          "kind": "audio",
+          "locale": "ca"
+        },
+        {
+          "mediaId": "DAwJC_jPzPY",
+          "kind": "other",
+          "locale": "es"
+        },
+        {
+          "mediaId": "dR7ZlDOQh4A",
+          "kind": "teaser",
+          "locale": "es"
+        }
+      ]
     },
     {
       "id": "036",
