@@ -249,7 +249,7 @@
       "listBanner": "assets/sagas/BANNERSAGA_RAVEN%20-%20EXT.jpg",
       "detailBanner": "assets/sagas/BANNERSAGA_RAVEN%20-%20INT.jpg",
       "extraText": "",
-      "extraImage": "",
+      "extraImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/163-frame-2_orig.jpg",
       "parts": [
         {
           "order": 1,
@@ -367,5 +367,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T22:10:05.984777+00:00"
+  "updated": "2026-09-12T22:10:31.394766+00:00"
 }
