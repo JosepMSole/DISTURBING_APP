@@ -187,7 +187,7 @@
       "listBanner": "assets/sagas/BANNERSAGA_BLACKZODIAK%20-%20EXT.jpg",
       "detailBanner": "assets/sagas/BANNERSAGA_BLACKZODIAK%20-%20INT.jpg",
       "extraText": "",
-      "extraImage": "",
+      "extraImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/274-frame-1_orig.jpg",
       "parts": [
         {
           "order": 1,
@@ -367,5 +367,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T22:10:59.767626+00:00"
+  "updated": "2026-09-12T22:11:40.736703+00:00"
 }
