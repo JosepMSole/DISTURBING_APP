@@ -167,18 +167,51 @@
       "description": "Haber esuchado todos los Cassettes disponibles",
       "requirement": {
         "type": "listen_cassettes",
-        "storyIds": [
-          "001",
-          "002",
-          "003",
-          "004",
-          "005",
-          "006",
-          "007",
-          "008",
-          "012",
-          "013",
-          "018"
+        "mediaRefs": [
+          {
+            "storyId": "001",
+            "locale": "es"
+          },
+          {
+            "storyId": "002",
+            "locale": "es"
+          },
+          {
+            "storyId": "003",
+            "locale": "es"
+          },
+          {
+            "storyId": "004",
+            "locale": "es"
+          },
+          {
+            "storyId": "005",
+            "locale": "es"
+          },
+          {
+            "storyId": "006",
+            "locale": "es"
+          },
+          {
+            "storyId": "007",
+            "locale": "es"
+          },
+          {
+            "storyId": "008",
+            "locale": "es"
+          },
+          {
+            "storyId": "012",
+            "locale": "es"
+          },
+          {
+            "storyId": "013",
+            "locale": "es"
+          },
+          {
+            "storyId": "018",
+            "locale": "es"
+          }
         ]
       }
     },
@@ -189,16 +222,31 @@
       "description": "Haber visto todos los Tapes disponibles",
       "requirement": {
         "type": "watch_tapes",
-        "storyIds": [
-          "009",
-          "010",
-          "029",
-          "049",
-          "211"
+        "mediaRefs": [
+          {
+            "storyId": "009",
+            "locale": "es"
+          },
+          {
+            "storyId": "010",
+            "locale": "es"
+          },
+          {
+            "storyId": "029",
+            "locale": "es"
+          },
+          {
+            "storyId": "049",
+            "locale": "es"
+          },
+          {
+            "storyId": "211",
+            "locale": "es"
+          }
         ]
       }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T16:28:11.236160+00:00"
+  "updated": "2026-09-12T17:11:56.037087+00:00"
 }
