@@ -1,43 +1,76 @@
 {
-  "registeredHeroBackground": "",
   "achievements": [
     {
       "id": "achievement1",
       "name": "Primer Contacto",
-      "description": "Leer 1 Story completa.",
+      "description": "Leer 1 Story completa",
       "requirement": {
         "type": "read_stories",
         "count": 1
-      }
+      },
+      "number": 1
     },
     {
       "id": "achievement1789217584867",
       "name": "Esto acaba de empezar…",
-      "description": "Leer 5 Stories.",
+      "description": "Leer 5 Stories",
       "requirement": {
         "type": "read_stories",
         "count": 5
-      }
+      },
+      "number": 2
     },
     {
       "id": "achievement1789217608853",
       "name": "Algo te hace volver…",
-      "description": "Leer 10 Stories.",
+      "description": "Leer 10 Stories",
       "requirement": {
         "type": "read_stories",
         "count": 10
-      }
+      },
+      "number": 3
     },
     {
       "id": "achievement1789217623943",
       "name": "Interés Creciente",
-      "description": "Leer 25 Stories.",
+      "description": "Leer 25 Stories",
       "requirement": {
         "type": "read_stories",
         "count": 25
+      },
+      "number": 4
+    },
+    {
+      "id": "achievement1789221963757",
+      "number": 5,
+      "name": "Habitante de Disturbing Stories",
+      "description": "Leer 50 Stories",
+      "requirement": {
+        "type": "read_stories",
+        "count": 50
+      }
+    },
+    {
+      "id": "achievement1789221992017",
+      "number": 6,
+      "name": "Has visto todo… por ahora…",
+      "description": "Leer las 75 Stories publicadas",
+      "requirement": {
+        "type": "read_stories",
+        "count": 75
+      }
+    },
+    {
+      "id": "achievement1789222023068",
+      "number": 7,
+      "name": "Becario de Cerrajero…",
+      "description": "Desbloquear mediante QR tu primera Story exclusiva",
+      "requirement": {
+        "type": "read_stories",
+        "count": 2
       }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T13:00:52.533242+00:00"
+  "updated": "2026-09-12T14:13:34.510191+00:00"
 }
