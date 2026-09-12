@@ -97,7 +97,7 @@
       "synopsis": "Sé testigo del oscuro preludio de unos terribles acontecimientos...",
       "totalParts": 4,
       "banner": "assets/sagas/BANNERSAGA_DARKLIMITSPRELUDE%20-%20INT.jpg",
-      "listBanner": "assets/sagas/BANNERSAGA_DARKLIMITSPRELUDE%20-%20EXT.jpg",
+      "listBanner": "assets/sagas/BANNERSAGA_DARKLIMITSPRELUDE%20-%20EXT2.jpg",
       "detailBanner": "assets/sagas/BANNERSAGA_DARKLIMITSPRELUDE%20-%20INT.jpg",
       "extraText": "",
       "extraImage": "",
@@ -367,5 +367,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-11T23:12:08.753332+00:00"
+  "updated": "2026-09-12T00:04:45.247614+00:00"
 }
