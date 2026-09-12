@@ -14,7 +14,7 @@
       "free": true,
       "requirement": null,
       "name": "Eve",
-      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/184-frame-0_orig.jpg"
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/184-frame-1_orig.jpg"
     },
     {
       "id": "avatar3",
@@ -22,7 +22,7 @@
       "free": true,
       "requirement": null,
       "name": "Virgilius",
-      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-1_orig.jpg"
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-2.jpg"
     },
     {
       "id": "avatar4",
@@ -38,7 +38,7 @@
       "free": true,
       "requirement": null,
       "name": "Raven",
-      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/025-raven-frame-06_orig.jpg"
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/163-frame-1.jpg"
     },
     {
       "id": "avatar6",
@@ -63,5 +63,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T13:39:09.373858+00:00"
+  "updated": "2026-09-12T13:42:40.693221+00:00"
 }
