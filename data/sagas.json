@@ -100,7 +100,7 @@
       "listBanner": "assets/sagas/BANNERSAGA_DARKLIMITSPRELUDE%20-%20EXT2.jpg",
       "detailBanner": "assets/sagas/BANNERSAGA_DARKLIMITSPRELUDE%20-%20INT.jpg",
       "extraText": "",
-      "extraImage": "",
+      "extraImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-04_orig.jpg",
       "parts": [
         {
           "order": 1,
@@ -367,5 +367,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T22:12:50.447715+00:00"
+  "updated": "2026-09-12T22:13:15.371651+00:00"
 }
