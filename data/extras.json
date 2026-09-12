@@ -12,28 +12,6 @@
       "availability": "digital"
     },
     {
-      "id": "extra-02",
-      "number": 3,
-      "title": "AB INITIO: The Disturbing Origin",
-      "book": "3",
-      "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-03-333-ab-initio-the-disturbing-origin-v9_orig.jpg",
-      "image": "",
-      "text": "",
-      "link": "https://www.disturbingstories.com/extra-03.html",
-      "availability": "digital"
-    },
-    {
-      "id": "extra-02",
-      "number": 3,
-      "title": "Ab Initio: The Disturbing Origin",
-      "book": "3",
-      "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-03-333-ab-initio-the-disturbing-origin-v9_orig.jpg",
-      "image": "",
-      "text": "",
-      "link": "https://www.disturbingstories.com/extra-03.html",
-      "availability": "digital"
-    },
-    {
       "id": "extra-04",
       "number": 5,
       "title": "Distorsion: CODA",
@@ -57,5 +35,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T00:33:38.501489+00:00"
+  "updated": "2026-09-12T00:52:08.789546+00:00"
 }
