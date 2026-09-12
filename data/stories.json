@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T03:18:23.565146+00:00",
+  "updated": "2026-09-12T03:20:20.112620+00:00",
   "stories": [
     {
       "id": "277",
@@ -1023,6 +1023,24 @@
           "en": "My First Tape",
           "ca": "La meva Primera Cinta"
         }
+      },
+      "mediaDurationLocales": {
+        "audio": {
+          "en": 360,
+          "ca": 357
+        }
+      },
+      "mediaDurationSourceLocales": {
+        "audio": {
+          "en": "youtube",
+          "ca": "youtube"
+        }
+      },
+      "mediaLocaleAvailability": {
+        "audio": {
+          "en": true,
+          "ca": true
+        }
       }
     },
     {
@@ -1520,6 +1538,24 @@
         "audio": {
           "en": "Neuromadness",
           "ca": "Neuromadness"
+        }
+      },
+      "mediaDurationLocales": {
+        "audio": {
+          "ca": 286,
+          "en": 286
+        }
+      },
+      "mediaDurationSourceLocales": {
+        "audio": {
+          "ca": "youtube",
+          "en": "youtube"
+        }
+      },
+      "mediaLocaleAvailability": {
+        "audio": {
+          "ca": true,
+          "en": true
         }
       }
     },
