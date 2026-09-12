@@ -4935,3 +4935,91 @@ body .user-page>.user-hero.user-hero-v422.user-hero-v422-complete>.user-hero-lev
   100%{transform:scale(1.19) translate3d(4.2%,-3.2%,0)}
 }
 @media(prefers-reduced-motion:reduce){.user-hero-bg-main,.user-hero-bg-backdrop{animation:none!important}body .user-page>.user-hero.user-hero-v422>.user-avatar-current,body .user-page>.user-hero.user-hero-v422>.user-hero-level{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}}
+
+/* ============================================================
+   DISTURBING STORIES APP v4.23 · MULTIMEDIA / INTRO / USER / SAGAS
+   ============================================================ */
+
+/* Intro: el último fotograma blanco continúa sobre HOME y desaparece en 1 segundo. */
+.intro-white-handoff{
+  position:fixed;inset:0;z-index:1999;background:#fff;opacity:1;pointer-events:none;
+  transition:opacity 1s linear;will-change:opacity;
+}
+.intro-white-handoff.hidden{display:none!important}
+.intro-white-handoff.fade-out{opacity:0}
+
+/* PLAYER: en secuencias de varias imágenes cada imagen vuelve suavemente a su
+   posición inicial antes del fundido. Así al perder .active no existe salto. */
+.player-artwork-bg:not(.single) .player-artwork-slide img.pan-y{
+  object-position:50% 0%!important;transform:scale(1.02) translate3d(0,-1.5%,0)!important;
+}
+.player-artwork-bg:not(.single) .player-artwork-slide img.pan-x{
+  object-position:0% 50%!important;transform:scale(1.02) translate3d(-1.8%,0,0)!important;
+}
+.player-artwork-bg:not(.single) .player-artwork-slide img.pan-soft{
+  object-position:40% 40%!important;transform:scale(1.02) translate3d(-2%,-1%,0)!important;
+}
+body .player-artwork-bg:not(.single) .player-artwork-slide.active img.motion-run.pan-y{
+  animation:playerArtworkPanY423 9.4s cubic-bezier(.45,.02,.55,.98) 1 both!important;
+}
+body .player-artwork-bg:not(.single) .player-artwork-slide.active img.motion-run.pan-x{
+  animation:playerArtworkPanX423 9.4s cubic-bezier(.45,.02,.55,.98) 1 both!important;
+}
+body .player-artwork-bg:not(.single) .player-artwork-slide.active img.motion-run.pan-soft{
+  animation:playerArtworkPanSoft423 9.4s cubic-bezier(.45,.02,.55,.98) 1 both!important;
+}
+@keyframes playerArtworkPanY423{
+  0%{object-position:50% 0%;transform:scale(1.02) translate3d(0,-1.5%,0)}
+  48%{object-position:50% 100%;transform:scale(1.13) translate3d(0,1.5%,0)}
+  100%{object-position:50% 0%;transform:scale(1.02) translate3d(0,-1.5%,0)}
+}
+@keyframes playerArtworkPanX423{
+  0%{object-position:0% 50%;transform:scale(1.02) translate3d(-1.8%,0,0)}
+  48%{object-position:100% 50%;transform:scale(1.13) translate3d(1.8%,0,0)}
+  100%{object-position:0% 50%;transform:scale(1.02) translate3d(-1.8%,0,0)}
+}
+@keyframes playerArtworkPanSoft423{
+  0%{object-position:40% 40%;transform:scale(1.02) translate3d(-2%,-1%,0)}
+  48%{object-position:60% 60%;transform:scale(1.14) translate3d(2%,1%,0)}
+  100%{object-position:40% 40%;transform:scale(1.02) translate3d(-2%,-1%,0)}
+}
+
+/* USER: avatar y nivel empiezan a formarse desde el primer instante y nunca
+   pasan por un estado completamente desaparecido. */
+body .user-page.user-page-reveal-ready>.user-hero.user-hero-v423,
+body .user-page.user-page-reveal-in>.user-hero.user-hero-v423{
+  opacity:1!important;transform:none!important;filter:none!important;animation:none!important;
+}
+body .user-page.user-page-reveal-ready>.user-hero.user-hero-v423>.user-avatar-current,
+body .user-page.user-page-reveal-ready>.user-hero.user-hero-v423>.user-hero-level{
+  visibility:visible!important;opacity:.22!important;filter:none!important;transform:scale(.34)!important;animation:none!important;
+}
+body .user-page.user-page-reveal-in>.user-hero.user-hero-v423>.user-avatar-current{
+  visibility:visible!important;opacity:.22!important;transform:scale(.34)!important;
+  animation:userHeroAvatarInV423 .44s 0s cubic-bezier(.15,.88,.2,1.14) forwards!important;
+}
+body .user-page.user-page-reveal-in>.user-hero.user-hero-v423>.user-hero-level{
+  visibility:visible!important;opacity:.22!important;transform:scale(.34)!important;
+  animation:userHeroLevelInV423 .48s .02s cubic-bezier(.15,.88,.2,1.14) forwards!important;
+}
+body .user-page>.user-hero.user-hero-v423.user-hero-v423-complete>.user-avatar-current,
+body .user-page>.user-hero.user-hero-v423.user-hero-v423-complete>.user-hero-level{
+  opacity:1!important;visibility:visible!important;transform:none!important;filter:none!important;animation:none!important;
+}
+.user-hero-v423 .user-hero-copy{opacity:1!important;transform:none!important}
+.user-hero-v423 .user-hero-name,.user-hero-v423 .user-hero-status,.user-hero-v423 .user-email{min-height:1em}
+@keyframes userHeroAvatarInV423{0%{opacity:.22;transform:scale(.34)}68%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@keyframes userHeroLevelInV423{0%{opacity:.22;transform:scale(.34)}68%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+
+/* SAGAS: si toda la saga está publicada y leída, el trazo se vuelve dorado. */
+.saga-card.saga-card-read-complete{
+  border-color:#d7b55f!important;
+  box-shadow:0 0 0 1px rgba(215,181,95,.34),0 0 24px rgba(215,181,95,.16)!important;
+}
+
+@media(prefers-reduced-motion:reduce){
+  .intro-white-handoff{transition:none!important}
+  body .player-artwork-bg:not(.single) .player-artwork-slide img{animation:none!important}
+  body .user-page>.user-hero.user-hero-v423>.user-avatar-current,
+  body .user-page>.user-hero.user-hero-v423>.user-hero-level{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}
+}
