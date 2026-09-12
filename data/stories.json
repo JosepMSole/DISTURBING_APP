@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:47:39.982415+00:00",
+  "updated": "2026-09-12T21:48:39.013234+00:00",
   "stories": [
     {
       "id": "277",
@@ -2561,6 +2561,12 @@
         "audio": {
           "en": true,
           "ca": true
+        }
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "ca": "Dark Limits: Moment Zero",
+          "en": "Dark Limits: Zero Moment"
         }
       }
     },
