@@ -32,8 +32,19 @@
       "text": "",
       "link": "https://www.disturbingstories.com/extra-03.html",
       "availability": "digital"
+    },
+    {
+      "id": "extra-04",
+      "number": 4,
+      "title": "Disturbing Timeline: Primer Fragmento",
+      "book": "4",
+      "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-04-disturbing-timeline-1-v3_orig.jpg",
+      "image": "",
+      "text": "",
+      "link": "",
+      "availability": "physical"
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T00:53:31.765683+00:00"
+  "updated": "2026-09-12T00:54:19.950445+00:00"
 }
