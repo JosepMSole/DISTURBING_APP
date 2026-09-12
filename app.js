@@ -1,4 +1,4 @@
-const APP_VERSION = '4.11.0';
+const APP_VERSION = '4.12.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -25,6 +25,7 @@ let navHistory=[],navGoingBack=false,storyTransitionBusy=false;
 let supabaseClient=null,registeredUser=null,userProfile=null,userSyncBusy=false;
 const localAvatarKey='disturbing_user_avatar_v1', unlockedAvatarsKey='disturbing_unlocked_avatars_v1', avatarRewardSeenKey='disturbing_avatar_reward_seen_v1', userNameCacheKey='disturbing_user_name_v1', achievementEarnedKey='disturbing_achievements_v1', achievementActiveKey='disturbing_achievements_active_v1', consumedMediaKey='disturbing_consumed_story_media_v1';
 const AVATAR_ASSET_BASE='https://josepmsole.github.io/DISTURBING_APP/assets/avatar/';
+const PUBLIC_APP_ASSET_BASE='https://josepmsole.github.io/DISTURBING_APP/assets/';
 
 // Captura temprana del instalador PWA. En escritorio el evento puede llegar
 // antes de que termine el boot/intro; guardarlo aquí evita perderlo en Windows/Mac.
@@ -252,6 +253,7 @@ function updateHomeNextStoryCountdown(){
 }
 function startHomeNextStoryCountdown(){clearInterval(homeCountdownTimer);homeCountdownTimer=0;updateHomeNextStoryCountdown();if(nextStoryTargetDate())homeCountdownTimer=setInterval(updateHomeNextStoryCountdown,1000)}
 function setupHomeNextStoryReveal(){const box=$('.home-next-story');if(!box)return;if(motionReduced()||!('IntersectionObserver'in window)){box.classList.add('home-next-story-visible');return}box.classList.remove('home-next-story-visible');const io=new IntersectionObserver(entries=>{for(const e of entries){if(!e.isIntersecting)continue;e.target.classList.add('home-next-story-visible');io.unobserve(e.target)}},{rootMargin:'0px 0px -10% 0px',threshold:.22});io.observe(box)}
+function setupHomeProgressReveal(){const box=$('.home-progress');if(!box)return;box.classList.add('home-progress-reveal-ready');if(motionReduced()||!('IntersectionObserver'in window)){box.classList.add('home-progress-reveal-in');return}const io=new IntersectionObserver(entries=>{for(const e of entries){if(!e.isIntersecting)continue;e.target.classList.add('home-progress-reveal-in');io.unobserve(e.target)}},{rootMargin:'0px 0px -8% 0px',threshold:.22});io.observe(box)}
 
 function renderHome(){
   currentStory=null;
@@ -266,7 +268,7 @@ function renderHome(){
   const allBtn=$('#openAllStories');if(allBtn)allBtn.onclick=()=>go('stories');
   if(reading){const continueCard=$('[data-home-continue]');if(continueCard){const openContinue=()=>storyGo(reading.id,true);continueCard.onclick=openContinue;continueCard.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openContinue()}}}}
   const installPanelBtn=$('#homeInstallPanel');if(installPanelBtn)installPanelBtn.onclick=handleInstallApp;
-  bindStoryCards();bindBrokenImages();updateInstallButton();startHomeNextStoryCountdown();setupHomeNextStoryReveal();
+  bindStoryCards();bindBrokenImages();updateInstallButton();startHomeNextStoryCountdown();setupHomeNextStoryReveal();setupHomeProgressReveal();
 }
 function renderStories(initial='all'){
   currentStory=null;
@@ -377,7 +379,7 @@ function renderCollection(bookId=''){
   }
   const shelf=ordered.map(([book])=>{const a=bookAsset(book),has=!!a.spine;return `<button class="shelf-book ${has?'has-spine':'fallback-spine'}" data-book-scroll="${escAttr(book)}" aria-label="Ir a ${escAttr(bookLabel(book))}">${has?`<img src="${escAttr(a.spine)}" alt="${escAttr(bookLabel(book))}">`:`<span>${escapeHtml(bookLabel(book))}</span>`}</button>`}).join('');
   const cards=ordered.map(([book,stories])=>{stories.sort((a,b)=>new Date(b.published)-new Date(a.published));const read=stories.filter(s=>readIds.has(s.id)).length,asset=bookAsset(book),thumbs=stories.slice(0,3).map(s=>displayCover(s)).filter(Boolean);const visual=asset.front?`<div class="book-front"><img src="${escAttr(asset.front)}" alt="${escAttr(bookLabel(book))}" loading="lazy"></div>`:`<div class="book-thumbs">${thumbs.length?thumbs.map(src=>`<img src="${escAttr(src)}" alt="" loading="lazy" referrerpolicy="no-referrer">`).join(''):`<div class="book-placeholder">${escapeHtml(book)}</div>`}</div>`;return `<article id="book-${escAttr(book)}" class="book-card ${read>=15?'book-complete-read':''}" data-book-id="${escAttr(book)}">${visual}<div class="book-copy"><div class="book-card-title-row"><h2>${escapeHtml(bookLabel(book))}</h2>${read>=15?'<span class="book-read-bubble">LIBRO LEÍDO</span>':''}</div><div class="book-numbers-row"><div class="book-numbers"><strong>${read}/15</strong><span>LEÍDAS</span></div>${bookFeatureSummary(stories)}</div>${asset.pages?`<div class="book-pages"><strong>${escapeHtml(asset.pages)}</strong><span>PÁGINAS</span></div>`:''}<div class="collection-progress"><span style="width:${pct(read/15)}"></span></div><span class="book-open">VER STORIES ›</span></div></article>`}).join('');
-  view.innerHTML=`<section class="section collection-section"><div class="section-title collection-title"><div><div class="eyebrow collection-eyebrow">BIBLIOTECA DE LA</div><h1>Colección</h1></div></div>${shelf?`<div class="book-shelf-wrap"><div class="book-shelf-title">ESTANTERÍA</div><div class="book-shelf">${shelf}</div><div class="shelf-board"></div></div>`:''}<div class="books-grid">${cards||'<div class="empty">Todavía no hay libros con Stories publicadas.</div>'}</div></section>`;
+  view.innerHTML=`<section class="section collection-section"><div class="section-title collection-title"><div><div class="eyebrow collection-eyebrow">BIBLIOTECA DE LA</div><h1>Colección</h1></div></div>${shelf?`<div class="book-shelf-wrap"><div class="book-shelf-title">ESTANTERÍA</div><div class="book-shelf">${shelf}</div><div class="shelf-reading-loop" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" tabindex="-1"><source src="${escAttr(PUBLIC_APP_ASSET_BASE+'biblioloop.webm')}" type="video/webm"></video></div><div class="shelf-board"></div></div>`:''}<div class="books-grid">${cards||'<div class="empty">Todavía no hay libros con Stories publicadas.</div>'}</div></section>`;
   $$('[data-book-id]').forEach(el=>el.onclick=()=>{if(el.classList.contains('book-card-opening'))return;el.classList.add('book-card-opening');setTimeout(()=>go(`collection/${el.dataset.bookId}`),motionReduced()?20:360)});
   $$('[data-book-scroll]').forEach(el=>el.onclick=()=>{const target=document.getElementById(`book-${el.dataset.bookScroll}`);if(!target)return;target.scrollIntoView({behavior:'smooth',block:'center'});const delay=motionReduced()?20:360;setTimeout(()=>{target.classList.remove('book-card-flash');void target.offsetWidth;target.classList.add('book-card-flash');setTimeout(()=>target.classList.remove('book-card-flash'),1000)},delay)});
   bindBrokenImages();requestAnimationFrame(fitCollectionShelf);
@@ -940,5 +942,5 @@ function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<
 
 async function playEntryIntro(){if(introPlayed)return;introPlayed=true;const layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return;layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0}catch{}return new Promise(resolve=>{const done=()=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}layer.classList.add('intro-out');setTimeout(()=>{layer.classList.add('hidden');layer.classList.remove('intro-out');layer.setAttribute('aria-hidden','true');resolve()},220)};const start=()=>{clearTimeout(fallback);const p=video.play();if(p&&typeof p.catch==='function')p.catch(done)};const fallback=setTimeout(done,8000);layer.onclick=done;video.addEventListener('ended',done,{once:true});video.addEventListener('error',done,{once:true});if(video.readyState>=3)start();else video.addEventListener('canplay',start,{once:true})})}
 
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=4.11.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=4.12.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();

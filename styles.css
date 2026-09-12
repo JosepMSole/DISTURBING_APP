@@ -4326,3 +4326,62 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
   .user-hero-level-number{font-size:21px}.user-hero-level-star{font-size:7px;transform:translate(8px,-16px)}
   .user-hero.registered>.user-hero-copy{transform:translateY(4px)!important}
 }
+
+
+/* =========================================================
+   DISTURBING STORIES APP v4.12 · HOME / USER / ESTANTERÍA
+   ========================================================= */
+/* HOME · TU PROGRESO: entrada completa y escalonada de todos sus elementos. */
+.home-progress.home-progress-reveal-ready{
+  opacity:0;transform:translateY(18px) scale(.985);filter:blur(4px);
+}
+.home-progress.home-progress-reveal-ready .home-progress-copy,
+.home-progress.home-progress-reveal-ready .home-progress-copy .eyebrow,
+.home-progress.home-progress-reveal-ready .home-progress-copy strong,
+.home-progress.home-progress-reveal-ready .collection-progress,
+.home-progress.home-progress-reveal-ready .collection-progress>span,
+.home-progress.home-progress-reveal-ready .link-btn{
+  opacity:0;transform:translateY(10px);filter:blur(2px);
+}
+.home-progress.home-progress-reveal-in{
+  opacity:1;transform:none;filter:none;
+  transition:opacity .48s ease,transform .58s cubic-bezier(.2,.8,.2,1),filter .48s ease;
+}
+.home-progress.home-progress-reveal-in .home-progress-copy{opacity:1;transform:none;filter:none;transition:opacity .42s .10s ease,transform .48s .08s cubic-bezier(.2,.8,.2,1),filter .4s .08s ease}
+.home-progress.home-progress-reveal-in .home-progress-copy .eyebrow{opacity:1;transform:none;filter:none;transition:opacity .38s .16s ease,transform .44s .14s cubic-bezier(.2,.8,.2,1),filter .36s .14s ease}
+.home-progress.home-progress-reveal-in .home-progress-copy strong{opacity:1;transform:none;filter:none;transition:opacity .38s .22s ease,transform .44s .20s cubic-bezier(.2,.8,.2,1),filter .36s .20s ease}
+.home-progress.home-progress-reveal-in .collection-progress{opacity:1;transform:none;filter:none;transition:opacity .36s .28s ease,transform .42s .26s cubic-bezier(.2,.8,.2,1),filter .34s .26s ease}
+.home-progress.home-progress-reveal-ready .collection-progress>span{transform:scaleX(0);transform-origin:left center}
+.home-progress.home-progress-reveal-in .collection-progress>span{opacity:1;transform:scaleX(1);filter:none;transition:transform .72s .34s cubic-bezier(.18,.86,.22,1),opacity .25s .32s ease}
+.home-progress.home-progress-reveal-in .link-btn{opacity:1;transform:none;filter:none;transition:opacity .38s .46s ease,transform .44s .43s cubic-bezier(.2,.8,.2,1),filter .36s .43s ease}
+
+/* USER · el número del nivel en la caja registrada crece x4 respecto a v4.11. */
+.user-hero-level{min-width:112px!important;width:112px!important;height:112px!important;flex:0 0 112px!important}
+.user-hero-level-number{font-size:104px!important;line-height:.78!important;letter-spacing:-.08em!important;transform:translateX(-3px)}
+.user-hero-level-star{font-size:15px!important;transform:translate(31px,-46px)!important}
+
+/* COLECCIÓN · monstruo lector dentro de la mitad derecha libre de la ESTANTERÍA. */
+.book-shelf-wrap{position:relative!important;isolation:isolate!important}
+.book-shelf-title{position:relative;z-index:5}
+.book-shelf{position:relative;z-index:3}
+.shelf-reading-loop{
+  position:absolute;z-index:2;left:50%;right:0;top:28px;bottom:12px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  pointer-events:none;padding:6px 10px 0;
+}
+.shelf-reading-loop video{
+  display:block;width:auto;height:auto;max-width:96%;max-height:96%;object-fit:contain;
+  pointer-events:none;user-select:none;-webkit-user-select:none;
+}
+.shelf-board{position:relative;z-index:4}
+
+@media(max-width:460px){
+  .user-hero{gap:12px!important}
+  .user-hero-level{min-width:88px!important;width:88px!important;height:88px!important;flex-basis:88px!important}
+  .user-hero-level-number{font-size:84px!important;transform:translateX(-2px)}
+  .user-hero-level-star{font-size:12px!important;transform:translate(25px,-38px)!important}
+  .shelf-reading-loop{top:26px;padding:5px 6px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-progress.home-progress-reveal-ready,.home-progress.home-progress-reveal-ready *{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+}
