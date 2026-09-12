@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T22:49:59.940475+00:00",
+  "updated": "2026-09-12T22:58:02.843344+00:00",
   "stories": [
     {
       "id": "277",
@@ -203,13 +203,11 @@
         "TEASER"
       ],
       "features": [
-        "audio",
-        "video"
+        "audio"
       ],
       "readTime": 7,
       "mediaDurations": {
-        "audio": 266,
-        "video": 20
+        "audio": 266
       },
       "mediaYoutube": {
         "audio": [
@@ -218,18 +216,10 @@
             "url": "https://www.youtube.com/watch?v=S7d2YBa6Iw8",
             "durationSeconds": 266
           }
-        ],
-        "video": [
-          {
-            "videoId": "2Fn9shvEYkY",
-            "url": "https://www.youtube.com/watch?v=2Fn9shvEYkY",
-            "durationSeconds": 20
-          }
         ]
       },
       "mediaDurationSources": {
-        "audio": "youtube",
-        "video": "youtube"
+        "audio": "youtube"
       },
       "mediaYoutubeLocales": {
         "audio": {
@@ -288,6 +278,11 @@
         "audio": {
           "en": true,
           "ca": true
+        }
+      },
+      "mediaTitleLocales": {
+        "video": {
+          "es": "Rugidos en la Lluvia"
         }
       }
     },
