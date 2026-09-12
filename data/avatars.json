@@ -4,31 +4,36 @@
       "id": "avatar1",
       "file": "assets/avatar/avatar1.jpg",
       "free": true,
-      "requirement": null
+      "requirement": null,
+      "name": "Charcharodon"
     },
     {
       "id": "avatar2",
       "file": "assets/avatar/avatar2.jpg",
       "free": true,
-      "requirement": null
+      "requirement": null,
+      "name": "Eve"
     },
     {
       "id": "avatar3",
       "file": "assets/avatar/avatar3.jpg",
       "free": true,
-      "requirement": null
+      "requirement": null,
+      "name": "Virgilius"
     },
     {
       "id": "avatar4",
       "file": "assets/avatar/avatar4.jpg",
       "free": true,
-      "requirement": null
+      "requirement": null,
+      "name": "Gideon"
     },
     {
       "id": "avatar5",
       "file": "assets/avatar/avatar5.jpg",
       "free": true,
-      "requirement": null
+      "requirement": null,
+      "name": "Raven"
     },
     {
       "id": "avatar6",
@@ -37,9 +42,10 @@
       "requirement": {
         "type": "read_story",
         "storyId": "025"
-      }
+      },
+      "name": "Organismo 419"
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T11:35:04.209343+00:00"
+  "updated": "2026-09-12T12:20:18.848240+00:00"
 }
