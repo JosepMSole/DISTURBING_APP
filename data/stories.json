@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T18:44:28.187802+00:00",
+  "updated": "2026-09-12T18:44:33.395397+00:00",
   "stories": [
     {
       "id": "277",
@@ -251,12 +251,6 @@
           "ca": "youtube"
         }
       },
-      "mediaTitleLocales": {
-        "audio": {
-          "en": "Roars in the Rain",
-          "ca": "Rugits dins la Pluja"
-        }
-      },
       "publicTeaser": "about:blank",
       "mediaAssetTags": [
         {
@@ -274,7 +268,13 @@
           "kind": "audio",
           "locale": "ca"
         }
-      ]
+      ],
+      "mediaLocaleAvailability": {
+        "audio": {
+          "en": true,
+          "ca": true
+        }
+      }
     },
     {
       "id": "180",
