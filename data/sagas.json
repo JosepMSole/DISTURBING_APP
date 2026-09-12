@@ -182,7 +182,7 @@
       "id": "black-zodiak",
       "name": "Black Zodiak",
       "synopsis": "El reloj final se ha puesto en marcha...",
-      "totalParts": 5,
+      "totalParts": 13,
       "banner": "assets/sagas/BANNERSAGA_BLACKZODIAK%20-%20INT.jpg",
       "listBanner": "assets/sagas/BANNERSAGA_BLACKZODIAK%20-%20EXT.jpg",
       "detailBanner": "assets/sagas/BANNERSAGA_BLACKZODIAK%20-%20INT.jpg",
@@ -367,5 +367,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T15:34:15.157787+00:00"
+  "updated": "2026-09-12T15:34:30.016479+00:00"
 }
