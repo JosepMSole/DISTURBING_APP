@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T19:43:51.937563+00:00",
+  "updated": "2026-09-12T19:43:57.551539+00:00",
   "stories": [
     {
       "id": "277",
@@ -2570,7 +2570,7 @@
       ],
       "readTime": 2,
       "mediaDurations": {
-        "audio": 822
+        "audio": 279
       },
       "mediaYoutube": {
         "audio": [
@@ -2578,16 +2578,6 @@
             "videoId": "wt5eCSZ3XTc",
             "url": "https://www.youtube.com/watch?v=wt5eCSZ3XTc",
             "durationSeconds": 279
-          },
-          {
-            "videoId": "SkrMQmvkxNM",
-            "url": "https://www.youtube.com/watch?v=SkrMQmvkxNM",
-            "durationSeconds": 276
-          },
-          {
-            "videoId": "XuH7IHYdZWM",
-            "url": "https://www.youtube.com/watch?v=XuH7IHYdZWM",
-            "durationSeconds": 267
           }
         ]
       },
@@ -2624,12 +2614,6 @@
           "ca": "youtube"
         }
       },
-      "mediaTitleLocales": {
-        "audio": {
-          "en": "Characters",
-          "ca": "Caràcters"
-        }
-      },
       "publicTeaser": "https://www.youtube.com/watch?v=75-yvBiiFfA",
       "mediaAssetTags": [
         {
@@ -2652,7 +2636,13 @@
           "kind": "teaser",
           "locale": "es"
         }
-      ]
+      ],
+      "mediaLocaleAvailability": {
+        "audio": {
+          "en": true,
+          "ca": true
+        }
+      }
     }
   ]
 }
