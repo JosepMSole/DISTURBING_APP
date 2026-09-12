@@ -10,30 +10,8 @@
       "text": "Descubre qué es Disturbing Stories",
       "link": "https://www.disturbingstories.com/extra-01.html",
       "availability": "digital"
-    },
-    {
-      "id": "extra-04",
-      "number": 5,
-      "title": "Distorsion: CODA",
-      "book": "5",
-      "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-05-distorsion-coda-v4_orig.jpg",
-      "image": "",
-      "text": "",
-      "link": "",
-      "availability": "physical"
-    },
-    {
-      "id": "extra-04",
-      "number": 5,
-      "title": "Distorsion: CODA",
-      "book": "5",
-      "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-05-distorsion-coda-v4_orig.jpg",
-      "image": "",
-      "text": "",
-      "link": "",
-      "availability": "physical"
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T00:52:08.789546+00:00"
+  "updated": "2026-09-12T00:52:18.169466+00:00"
 }
