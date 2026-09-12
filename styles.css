@@ -4239,3 +4239,34 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .continue-more-btn,.continue-collapse-btn{width:100%;min-height:46px;border:1px solid #36515a;background:rgba(31,59,66,.17);color:#b9d9df;font:800 10px/1 Oxanium,sans-serif;letter-spacing:.12em;cursor:pointer}.continue-more-btn:hover,.continue-collapse-btn:hover{border-color:#5d8792;color:#fff}.continue-extra:not(.hidden){display:contents}.continue-more-btn.hidden,.continue-collapse-btn.hidden,.continue-extra.hidden{display:none!important}.continue-collapse-btn{width:auto!important;min-height:28px!important;justify-self:center!important;margin:2px auto 0!important;padding:7px 13px!important;border-color:#2d383d;background:#0b0f11;color:#7f9298;font-size:8px!important}
 .book-trailer{margin:4px 0 12px!important}.book-trailer-label{display:none!important}
 @media(prefers-reduced-motion:reduce){.home-next-story,.home-next-story-label,.home-next-story-countdown,.home-next-story-countdown>span{animation:none!important}}
+
+
+/* =========================================================
+   DISTURBING STORIES APP v4.9 · USER / LOGROS / HOME
+   ========================================================= */
+/* Nivel sobre avatar: círculo más pequeño, trazo + relleno al 15%; texto algo mayor. */
+.user-level-badge,.drawer-level-badge{
+  width:19px!important;min-width:19px!important;height:19px!important;padding:0!important;
+  right:-5px!important;top:-5px!important;
+  background:rgba(7,10,13,.15)!important;
+  border-color:rgba(215,181,95,.15)!important;
+  box-shadow:0 2px 7px rgba(0,0,0,.38)!important;
+  color:#f7e7ad!important;font-size:9.5px!important;font-weight:900!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+}
+.drawer-level-badge{right:-6px!important;top:-6px!important}
+
+/* HOME · PRÓXIMA STORY: la animación solo se inicia al entrar en viewport. */
+.home-next-story{opacity:0!important;transform:translateY(28px) scale(.975)!important;filter:blur(7px)!important;animation:none!important;transition:none!important}
+.home-next-story .home-next-story-label,.home-next-story .home-next-story-countdown{opacity:0!important;transform:translateY(12px)!important;animation:none!important}
+.home-next-story.home-next-story-visible{animation:nextStoryBoxInV49 .86s cubic-bezier(.16,.86,.22,1) both!important}
+.home-next-story.home-next-story-visible .home-next-story-label{animation:nextStoryItemInV49 .62s ease .24s both!important}
+.home-next-story.home-next-story-visible .home-next-story-countdown{animation:nextStoryItemInV49 .68s ease .38s both!important}
+@keyframes nextStoryBoxInV49{0%{opacity:0;transform:translateY(28px) scale(.975);filter:blur(7px)}65%{opacity:1;transform:translateY(-3px) scale(1.006);filter:blur(0)}100%{opacity:1;transform:none;filter:none}}
+@keyframes nextStoryItemInV49{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.home-next-story,.home-next-story .home-next-story-label,.home-next-story .home-next-story-countdown{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}}
+
+/* USER registrado: nombre primero; estado debajo y más discreto. */
+.user-hero-copy .user-hero-name{margin:0!important;color:#fff!important;font-size:clamp(25px,7vw,36px)!important;line-height:1!important}
+.user-hero-status{margin-top:6px;color:#d7b55f;font:700 8px/1 Oxanium,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.user-hero-copy .user-email{margin-top:7px!important}
