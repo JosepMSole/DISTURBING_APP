@@ -5,35 +5,40 @@
       "file": "assets/avatar/avatar1.jpg",
       "free": true,
       "requirement": null,
-      "name": "Charcharodon"
+      "name": "Charcharodon",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/aquatika-3_orig.jpg"
     },
     {
       "id": "avatar2",
       "file": "assets/avatar/avatar2.jpg",
       "free": true,
       "requirement": null,
-      "name": "Eve"
+      "name": "Eve",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/184-frame-0_orig.jpg"
     },
     {
       "id": "avatar3",
       "file": "assets/avatar/avatar3.jpg",
       "free": true,
       "requirement": null,
-      "name": "Virgilius"
+      "name": "Virgilius",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/021-frame-1_orig.jpg"
     },
     {
       "id": "avatar4",
       "file": "assets/avatar/avatar4.jpg",
       "free": true,
       "requirement": null,
-      "name": "Gideon"
+      "name": "Gideon",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/168-jason-gideon-frame-8_orig.jpg"
     },
     {
       "id": "avatar5",
       "file": "assets/avatar/avatar5.jpg",
       "free": true,
       "requirement": null,
-      "name": "Raven"
+      "name": "Raven",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/025-raven-frame-06_orig.jpg"
     },
     {
       "id": "avatar6",
@@ -43,9 +48,20 @@
         "type": "read_story",
         "storyId": "025"
       },
-      "name": "Organismo 419"
+      "name": "Organismo 419",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/025-raven-frame-08_orig.jpg"
+    },
+    {
+      "id": "avatar7",
+      "name": "Zenito",
+      "file": "assets/avatar/avatar7.jpg",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/178-zenito-frame-4_orig.jpg",
+      "free": false,
+      "requirement": {
+        "type": "external"
+      }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T12:20:18.848240+00:00"
+  "updated": "2026-09-12T13:28:26.824573+00:00"
 }
