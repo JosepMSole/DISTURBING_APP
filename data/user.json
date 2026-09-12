@@ -36,17 +36,8 @@
         "type": "read_stories",
         "count": 25
       }
-    },
-    {
-      "id": "achievement1789217641256",
-      "name": "LOGRO 5",
-      "description": "",
-      "requirement": {
-        "type": "read_stories",
-        "count": 1
-      }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T12:55:25.700172+00:00"
+  "updated": "2026-09-12T12:55:35.463197+00:00"
 }
