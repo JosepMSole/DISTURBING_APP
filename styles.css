@@ -4859,3 +4859,79 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
   .user-page.user-page-reveal-in>.user-hero.user-hero-v421>.user-hero-level,
   .user-edit-name-v421-show{animation:none!important;opacity:1!important;transform:none!important}
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.22 · PLAYER VOLUME CLEAN ROOM / USER
+   ============================================================ */
+
+/* PLAYER · volumen aislado de TODO el CSS histórico del componente.
+   Las clases son nuevas y únicas para impedir que reglas antiguas de .player-volume,
+   input[type=range], <i> o pseudo-elementos puedan volver a renderizar artefactos. */
+.ds-volume-v422{
+  display:grid!important;grid-template-columns:34px minmax(0,1fr)!important;
+  align-items:center!important;gap:10px!important;min-height:28px!important;
+  margin-top:16px!important;padding:0!important;overflow:visible!important;
+  color:#72c2ff!important;font:1000 8px/1 Oxanium,sans-serif!important;
+}
+.ds-volume-v422::before,.ds-volume-v422::after,
+.ds-volume-label-v422::before,.ds-volume-label-v422::after,
+.ds-volume-control-v422::before,.ds-volume-control-v422::after,
+.ds-volume-thumb-v422::before,.ds-volume-thumb-v422::after{content:none!important;display:none!important}
+.ds-volume-label-v422{
+  display:block!important;position:static!important;width:auto!important;height:auto!important;
+  margin:0!important;padding:0!important;border:0!important;background:transparent!important;
+  box-shadow:none!important;overflow:visible!important;color:#72c2ff!important;line-height:1!important;
+}
+.ds-volume-control-v422{
+  position:relative!important;display:block!important;height:6px!important;min-height:6px!important;max-height:6px!important;
+  margin:0!important;padding:0!important;border:1px solid #24506c!important;border-radius:999px!important;
+  background:linear-gradient(90deg,#168ad8 0%,#54c6ff var(--volume-pct),#17242d var(--volume-pct),#17242d 100%)!important;
+  box-shadow:none!important;overflow:visible!important;isolation:auto!important;cursor:pointer!important;touch-action:none!important;outline:none!important;
+}
+.ds-volume-control-v422:focus-visible{box-shadow:0 0 0 1px #54c6ff,0 0 10px rgba(84,198,255,.18)!important}
+.ds-volume-thumb-v422{
+  position:absolute!important;left:var(--volume-pct)!important;top:50%!important;width:18px!important;height:18px!important;
+  transform:translate(-50%,-50%)!important;border-radius:50%!important;background:#e8f7ff!important;border:2px solid #33a8ff!important;
+  box-shadow:0 0 0 2px rgba(51,168,255,.12),0 2px 8px rgba(0,0,0,.55)!important;pointer-events:none!important;z-index:2!important;
+}
+
+/* PLAYER · imagen de pista: la capa oscura vuelve a reducirse aproximadamente a la mitad. */
+.player-artwork-bg::after{
+  background:linear-gradient(180deg,rgba(8,8,8,.06),rgba(8,8,8,.12) 44%,rgba(8,8,8,.18)),
+             radial-gradient(circle at 50% 40%,rgba(8,8,8,.015),rgba(8,8,8,.17) 92%)!important;
+}
+
+/* USER · avatar y nivel recuperados y con entrada segura.
+   La clase final garantiza que nunca puedan quedarse ocultos si se interrumpe una animación. */
+body .user-page.user-page-reveal-in>.user-hero.user-hero-v422>.user-avatar-current{
+  visibility:visible!important;filter:none!important;opacity:0!important;transform:scale(.05)!important;
+  animation:userHeroAvatarInV422 .40s 0s cubic-bezier(.16,.88,.22,1.12) forwards!important;
+}
+body .user-page.user-page-reveal-in>.user-hero.user-hero-v422>.user-hero-level{
+  visibility:visible!important;filter:none!important;opacity:0!important;transform:scale(.05)!important;
+  animation:userHeroLevelInV422 .42s .15s cubic-bezier(.16,.88,.22,1.12) forwards!important;
+}
+body .user-page>.user-hero.user-hero-v422.user-hero-v422-complete>.user-avatar-current,
+body .user-page>.user-hero.user-hero-v422.user-hero-v422-complete>.user-hero-level{
+  opacity:1!important;visibility:visible!important;transform:none!important;filter:none!important;animation:none!important;
+}
+.user-hero-v422 .user-hero-copy{opacity:1!important;transform:none!important}
+.user-hero-v422 .user-hero-name,.user-hero-v422 .user-hero-status,.user-hero-v422 .user-email{min-height:1em}
+@keyframes userHeroAvatarInV422{0%{opacity:0;transform:scale(.05)}72%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@keyframes userHeroLevelInV422{0%{opacity:0;transform:scale(.05)}72%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+
+/* USER · mayor recorrido horizontal/vertical del fondo, sin cambiar la estética RGB. */
+.user-hero-bg-main{animation:userHeroDynamicV422 5.7s ease-in-out infinite!important}
+.user-hero-bg-backdrop{animation:userHeroBackdropV422 7.2s ease-in-out infinite alternate!important}
+@keyframes userHeroDynamicV422{
+  0%,100%{transform:translate3d(-2.8%,-2.0%,0) scale(1.115)}
+  24%{transform:translate3d(3.2%,1.9%,0) scale(1.14)}
+  50%{transform:translate3d(-1.8%,3.0%,0) scale(1.125)}
+  76%{transform:translate3d(2.7%,-2.7%,0) scale(1.145)}
+}
+@keyframes userHeroBackdropV422{
+  0%{transform:scale(1.12) translate3d(-4.0%,2.1%,0)}
+  100%{transform:scale(1.19) translate3d(4.2%,-3.2%,0)}
+}
+@media(prefers-reduced-motion:reduce){.user-hero-bg-main,.user-hero-bg-backdrop{animation:none!important}body .user-page>.user-hero.user-hero-v422>.user-avatar-current,body .user-page>.user-hero.user-hero-v422>.user-hero-level{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}}
