@@ -4179,3 +4179,24 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
 .achievement-earned-card{justify-content:flex-start!important}
 .user-header-avatar,.user-greeting{cursor:pointer!important}
 .user-header-avatar:focus-visible,.user-greeting:focus-visible{outline:1px solid rgba(215,181,95,.9)!important;outline-offset:3px!important}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.5 · USER / AVATARES / LOGROS
+   ============================================================ */
+.user-hero.registered{isolation:isolate!important}
+.user-hero-media{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#010305}
+.user-hero-media::before,.user-hero-media::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:4;opacity:0}
+.user-hero-media::before{background:repeating-linear-gradient(180deg,rgba(255,255,255,.045) 0 1px,transparent 1px 4px);mix-blend-mode:soft-light;animation:heroSurfacePulseV219 4.8s steps(1,end) infinite}
+.user-hero-media::after{background:linear-gradient(90deg,rgba(255,46,64,.12),transparent 26%,rgba(120,224,255,.10) 52%,transparent 78%,rgba(255,46,64,.12));mix-blend-mode:screen;animation:heroRgbSurfaceV219 4.9s steps(1,end) infinite}
+.user-hero-background{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important;transform-origin:center center!important;pointer-events:none!important}
+.user-hero-bg-main{z-index:2!important;opacity:.85!important;animation:homeDynamicV218 6.4s ease-in-out infinite!important;filter:brightness(.98) contrast(1.16) saturate(1.07)!important}
+.user-hero-bg-backdrop{z-index:0!important;inset:-12%!important;width:124%!important;height:124%!important;opacity:.30!important;filter:blur(16px) brightness(.42) contrast(1.18)!important;animation:homeBackdropV218 8.6s ease-in-out infinite alternate!important}
+.user-hero-bg-ghost{z-index:1!important;opacity:0!important;mix-blend-mode:screen!important}
+.user-hero-bg-red{animation:rgbRedV219 4.9s steps(1,end) infinite!important;filter:sepia(1) saturate(10) hue-rotate(312deg) brightness(.94) contrast(1.14)!important}
+.user-hero-bg-cyan{animation:rgbCyanV219 4.9s .06s steps(1,end) infinite!important;filter:sepia(1) saturate(9) hue-rotate(132deg) brightness(.98) contrast(1.12)!important}
+.user-hero-shade{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(2,5,7,.78),rgba(2,5,7,.45))}
+.user-hero.registered::after{display:none!important}
+.user-hero>.user-avatar-current,.user-hero>.user-hero-copy{z-index:3!important}
+@media(max-width:460px){.user-hero-shade{background:rgba(2,5,7,.48)}}
+@media(prefers-reduced-motion:reduce){.user-hero-media::before,.user-hero-media::after,.user-hero-bg-main,.user-hero-bg-backdrop,.user-hero-bg-ghost{animation:none!important}.user-hero-bg-ghost{display:none!important}}
