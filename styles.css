@@ -4531,3 +4531,35 @@ html{scroll-padding-top:calc(var(--topbar-base) + var(--top-safe) + 8px)!importa
   .user-page.user-page-reveal-ready>* , .user-page.user-page-reveal-ready *{animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
   .home-progress.home-progress-reveal-ready .collection-progress>span{transition:none!important}
 }
+
+
+/* =========================================================
+   DISTURBING STORIES APP v4.16 · USER / PLAYER / MIS STORIES / UNLOCK
+   ========================================================= */
+/* USER · login existente claramente accesible. */
+.user-existing-login-cta{width:100%;min-height:58px;border-radius:13px;border:1px solid #d6b659;background:linear-gradient(180deg,#2b220b,#171004);color:#f3d77a;font:900 12px/1.15 Oxanium,sans-serif;letter-spacing:.06em;box-shadow:inset 0 0 22px rgba(229,191,72,.08),0 6px 20px rgba(0,0,0,.28);cursor:pointer}
+.user-existing-login-cta.active{background:linear-gradient(180deg,#40320d,#1b1304);box-shadow:inset 0 0 28px rgba(229,191,72,.14),0 0 20px rgba(215,181,95,.09)}
+.user-existing-login-panel{margin-top:10px;padding:12px;border:1px solid #3c3420;border-radius:12px;background:#090804}
+.user-register-divider{display:flex;align-items:center;gap:10px;margin:18px 0 12px;color:#626262;font:800 8px/1 Oxanium,sans-serif;letter-spacing:.12em}.user-register-divider:before,.user-register-divider:after{content:"";height:1px;flex:1;background:#242424}
+
+/* PLAYER · ninguna nota/artefacto auxiliar debajo del volumen. */
+.player-mobile-volume-note{display:none!important}
+
+/* USER · estrella más próxima al número y algo mayor. */
+.user-hero-level-star{font-size:15px!important;transform:translate(22px,-34px)!important}
+@media(max-width:460px){.user-hero-level-star{font-size:12px!important;transform:translate(18px,-28px)!important}}
+
+/* MIS STORIES · flecha alineada con la barra; badges siempre apilados encima y separados. */
+.continue-card{position:relative!important;grid-template-columns:56px minmax(0,1fr) 38px!important}
+.continue-copy{position:relative!important;overflow:visible!important}
+.resume-arrow{position:absolute!important;right:8px!important;bottom:18px!important;margin:0!important;align-self:auto!important;justify-self:auto!important;z-index:6!important}
+.continue-inline-icons{position:absolute!important;right:7px!important;bottom:57px!important;width:36px!important;min-height:0!important;height:auto!important;margin:0!important;display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:flex-end!important;gap:6px!important;z-index:7!important}
+.continue-inline-icons>.story-media-badges{display:flex!important;flex-direction:column!important;gap:6px!important;align-items:center!important}
+.continue-inline-icons .ex-badge,.continue-inline-icons .media-badge{margin:0!important;flex:none!important}
+@media(max-width:460px){.resume-arrow{right:7px!important;bottom:17px!important}.continue-inline-icons{right:6px!important;bottom:55px!important;width:34px!important}}
+
+/* DESBLOQUEAR STORY · entrada gradual, sin interferir con clicks/navegación. */
+.unlock-page-reveal-ready>*{opacity:0;transform:translateY(12px);filter:blur(2px)}
+.unlock-page-reveal-in>*{animation:unlockItemInV416 .34s cubic-bezier(.2,.82,.2,1) both;animation-delay:calc(var(--unlock-item-i,0) * .055s)}
+@keyframes unlockItemInV416{from{opacity:0;transform:translateY(12px);filter:blur(2px)}to{opacity:1;transform:none;filter:none}}
+@media(prefers-reduced-motion:reduce){.unlock-page-reveal-ready>*{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}}
