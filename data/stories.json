@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T21:40:07.309433+00:00",
+  "updated": "2026-09-12T21:40:12.340811+00:00",
   "stories": [
     {
       "id": "277",
@@ -261,7 +261,7 @@
           "ca": "youtube"
         }
       },
-      "publicTeaser": "https://www.youtube.com/embed/2Fn9shvEYkY",
+      "publicTeaser": "https://www.youtube.com/watch?v=2Fn9shvEYkY",
       "mediaAssetTags": [
         {
           "mediaId": "S7d2YBa6Iw8",
