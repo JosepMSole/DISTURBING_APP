@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-12T18:44:23.372316+00:00",
+  "updated": "2026-09-12T18:44:28.187802+00:00",
   "stories": [
     {
       "id": "277",
@@ -257,7 +257,24 @@
           "ca": "Rugits dins la Pluja"
         }
       },
-      "publicTeaser": "about:blank"
+      "publicTeaser": "about:blank",
+      "mediaAssetTags": [
+        {
+          "mediaId": "S7d2YBa6Iw8",
+          "kind": "audio",
+          "locale": "es"
+        },
+        {
+          "mediaId": "aeBbp4u0yvw",
+          "kind": "audio",
+          "locale": "en"
+        },
+        {
+          "mediaId": "Y6dwsOl3v5I",
+          "kind": "audio",
+          "locale": "ca"
+        }
+      ]
     },
     {
       "id": "180",
