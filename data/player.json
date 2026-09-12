@@ -1,11 +1,20 @@
 {
   "schema": 2,
-  "updated": "2026-09-12T19:04:52.119468+00:00",
+  "updated": "2026-09-12T19:06:55.224457+00:00",
   "tracks": [
     {
       "file": "93DELTA - BSO 2007.mp3",
       "durationSeconds": 637,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-2_orig.gif",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-3_orig.gif",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-4_orig.gif",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-5_orig.gif",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-6_orig.gif",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-7_orig.gif",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-8_orig.gif",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/003-93d-gif-9_orig.gif"
+      ]
     },
     {
       "file": "95DELTA - Special Theme 2026.mp3",
