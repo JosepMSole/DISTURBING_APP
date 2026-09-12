@@ -29,7 +29,7 @@
       "book": "3",
       "poster": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/extra-03-333-ab-initio-the-disturbing-origin-v9_orig.jpg",
       "image": "",
-      "text": "",
+      "text": "Disturbing Stories es un proyecto que se ha fraguado a lo largo de más de 25 años hasta llegar a su actual versión, y tuvo algunas iteraciones previas que vale la pena explicar.",
       "link": "https://www.disturbingstories.com/extra-03.html",
       "availability": "digital"
     },
@@ -57,5 +57,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T00:55:11.276224+00:00"
+  "updated": "2026-09-12T00:55:41.455681+00:00"
 }
