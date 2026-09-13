@@ -5539,3 +5539,35 @@ body .player-artwork-bg .player-artwork-slide.leaving img.motion-run{
   .entry-gate-stack,.entry-gate-button .entry-gate-layer{animation:none!important}
   body .player-artwork-bg .player-artwork-slide img.motion-run{animation:none!important;transform:scale(1)!important}
 }
+
+/* ============================================================
+   DISTURBING STORIES APP v4.31 · PLAYER ARTWORK / START
+   ============================================================ */
+/* PLAYER: el ciclo se calcula en JS según el tiempo real de exposición de cada
+   imagen. El zoom termina siempre en escala/posición inicial antes del crossfade. */
+body .player-artwork-bg .player-artwork-slide img.motion-run{
+  animation:none!important;
+  transition:none!important;
+  scale:1;
+  object-position:center center!important;
+  transform-origin:50% 50%!important;
+  will-change:scale!important;
+}
+.player-artwork-slide{transition-duration:var(--art-fade,3s)}
+
+/* START: mismo parallax/movimiento, pero casi sin rotación para conservar la
+   geometría percibida de las dos capas. */
+.entry-gate-button .entry-gate-splatter{animation:entryParallaxSplatterV431 4.2s ease-in-out infinite alternate!important}
+.entry-gate-button .entry-gate-title{animation:entryParallaxTitleV431 4.2s ease-in-out infinite alternate!important}
+.entry-gate-button.entry-confirm .entry-gate-splatter{animation:entryParallaxSplatterV431 4.2s ease-in-out infinite alternate!important}
+.entry-gate-button.entry-confirm .entry-gate-title{animation:entryParallaxTitleV431 4.2s ease-in-out infinite alternate!important}
+@keyframes entryParallaxSplatterV431{
+  0%{transform:translate3d(-1.7%,-1.1%,0) scale(1.012) rotate(-.06deg)}
+  50%{transform:translate3d(1.5%,1.2%,0) scale(1.025) rotate(.05deg)}
+  100%{transform:translate3d(-.6%,1.8%,0) scale(1.015) rotate(-.03deg)}
+}
+@keyframes entryParallaxTitleV431{
+  0%{transform:translate3d(1.5%,1%,0) scale(.995) rotate(.04deg)}
+  50%{transform:translate3d(-1.4%,-1.2%,0) scale(1.01) rotate(-.04deg)}
+  100%{transform:translate3d(.7%,-1.7%,0) scale(1.004) rotate(.03deg)}
+}
