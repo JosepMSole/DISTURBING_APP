@@ -5882,3 +5882,112 @@ body .player-artwork-bg .player-artwork-slide img.motion-run{
   .ds435-player-artwork-slide{transition:none!important}
   .ds435-player-artwork-slide img{animation:none!important;transition:none!important}
 }
+
+/* ============================================================
+   DISTURBING STORIES APP v4.36 · FULL SCREEN LAYOUT REFINEMENT
+   ============================================================
+   Full Screen conserva la composición y proporciones del NOW PLAYING normal.
+   Solo el artwork ocupa el viewport completo.
+   ============================================================ */
+.player-fullscreen-layer .ds435-player-console>*:not(.ds435-player-artwork){
+  width:min(var(--ds435-normal-console-width,900px),calc(100vw - clamp(36px,10vw,128px)))!important;
+  max-width:100%!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* Cabecera: misma escala y posición relativa que en la vista normal. */
+.player-fullscreen-layer .ds435-player-head span{font-size:8px!important}
+.player-fullscreen-layer .ds435-player-head strong{
+  margin-top:8px!important;
+  min-height:46px!important;
+  font-size:19px!important;
+  line-height:1.18!important;
+  text-shadow:0 3px 18px rgba(0,0,0,.72)!important;
+}
+
+/* Duración + visualizador: recuperan exactamente la estructura horizontal normal. */
+.player-fullscreen-layer .ds435-player-progress-meta{
+  position:relative!important;
+  display:grid!important;
+  grid-template-columns:auto minmax(0,1fr)!important;
+  align-items:end!important;
+  gap:7px!important;
+  margin:12px auto 7px!important;
+  min-width:0!important;
+}
+.player-fullscreen-layer .ds435-player-time-box{
+  display:inline-flex!important;
+  width:max-content!important;
+  min-width:0!important;
+  max-width:100%!important;
+  min-height:28px!important;
+  padding:5px 8px!important;
+  border-width:1px!important;
+  border-radius:7px!important;
+  background:rgba(0,0,0,.50)!important;
+  justify-self:start!important;
+  align-self:end!important;
+}
+.player-fullscreen-layer .ds435-player-time-box .ds435-player-time,
+.player-fullscreen-layer .ds435-player-time{
+  font-size:10px!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  white-space:nowrap!important;
+}
+.player-fullscreen-layer .ds435-player-wave{
+  position:static!important;
+  inset:auto!important;
+  width:100%!important;
+  max-width:none!important;
+  height:35px!important;
+  margin:0!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:flex-end!important;
+  justify-content:flex-end!important;
+  gap:2px!important;
+  overflow:hidden!important;
+  z-index:auto!important;
+  opacity:.42!important;
+}
+.player-fullscreen-layer .ds435-player-wave.playing{opacity:1!important}
+.player-fullscreen-layer .ds435-player-wave i{
+  display:block!important;
+  width:3px!important;
+  max-width:3px!important;
+  min-width:3px!important;
+  height:5px!important;
+  flex:0 0 3px!important;
+  border-radius:3px 3px 1px 1px!important;
+  transform-origin:center bottom!important;
+}
+
+/* Barra de progreso y volumen mantienen su tamaño normal. */
+.player-fullscreen-layer .ds435-player-progress{height:12px!important}
+.player-fullscreen-layer .ds435-player-volume{margin-top:16px!important}
+
+/* Los seis botones se reducen ligeramente, sin alterar su estructura 3 + 3. */
+.player-fullscreen-layer .ds435-player-controls-main,
+.player-fullscreen-layer .ds435-player-mode-controls{
+  width:min(calc(var(--ds435-normal-console-width,900px) - 28px),calc(100vw - clamp(44px,12vw,150px)))!important;
+  max-width:calc(100% - 28px)!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+.player-fullscreen-layer .ds435-player-controls-main{margin-top:15px!important;gap:8px!important}
+.player-fullscreen-layer .ds435-player-controls-main button{height:54px!important;border-radius:11px!important}
+.player-fullscreen-layer .ds435-player-controls-main .ds435-player-main-play{font-size:46px!important}
+.player-fullscreen-layer .ds435-player-skip-svg{width:27px!important;height:27px!important}
+.player-fullscreen-layer .ds435-player-mode-controls{margin-top:11px!important;gap:8px!important}
+.player-fullscreen-layer .ds435-player-mode{min-height:54px!important;padding:5px 6px!important}
+.player-fullscreen-layer .ds435-player-mode-icon{font-size:27px!important}
+
+@media(max-height:720px){
+  .player-fullscreen-layer .ds435-player-progress-meta{margin-top:12px!important}
+  .player-fullscreen-layer .ds435-player-wave{height:35px!important}
+  .player-fullscreen-layer .ds435-player-time-box{min-height:28px!important;padding:5px 8px!important}
+  .player-fullscreen-layer .ds435-player-time-box .ds435-player-time,
+  .player-fullscreen-layer .ds435-player-time{font-size:10px!important}
+}
