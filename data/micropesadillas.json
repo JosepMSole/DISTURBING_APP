@@ -10,7 +10,20 @@
       "access": "public",
       "cover": "assets/micropesadillas/001/cover.webp",
       "data": "./data/micropesadillas/001.json"
+    },
+    {
+      "id": "002",
+      "number": 2,
+      "title": "Sub-Aquatika",
+      "publicationDate": "2026-10-31",
+      "fictionYear": "",
+      "access": "public",
+      "cover": "assets/micropesadillas/002/cover.webp",
+      "data": "./data/micropesadillas/002.json",
+      "relatedStoryId": "083",
+      "relation": "sequel",
+      "relationVisibility": "always"
     }
   ],
-  "updated": "2026-09-13T23:04:48.345822+00:00"
+  "updated": "2026-09-13T23:09:41.004037+00:00"
 }

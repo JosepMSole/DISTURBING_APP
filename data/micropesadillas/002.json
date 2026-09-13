@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "id": "002",
+  "number": 2,
+  "title": "Sub-Aquatika",
+  "publicationDate": "2026-10-31",
+  "fictionYear": "",
+  "access": "public",
+  "cover": "assets/micropesadillas/002/cover.webp",
+  "contentBlocks": [
+    {
+      "id": "txt-mu0fawvc-scz90",
+      "type": "text",
+      "text": "Meses después de la destrucción de Aquatika, el controvertido acuario gigante que se construyó en Marte, el antiguo director del parque descendió personalmente en un submarino hacia los niveles inferiores inundados. Las investigaciones, las indemnizaciones y las deudas estaban a punto de arruinarlo, pero aún conservaba una última esperanza: seis muestras extraídas del Cefalolusco adulto antes de su fuga. Sus células podían regenerar órganos dañados, frenar enfermedades degenerativas y proteger el cuerpo humano de la radiación. Recuperarlas no solo salvaría millones de vidas; también salvaría su empresa y limpiaría su nombre. \n\nEl submarino atravesó los restos silenciosos del parque y llegó al laboratorio principal, sepultado bajo toneladas de agua marciana. Allí encontraron los recipientes intactos, cubiertos por una sustancia blanquecina que parecía moverse cuando nadie la observaba directamente. Una científica aseguró haber visto algo nadando dentro de una de las muestras, pero el director se negó a perder más tiempo y ordenó trasladarlas. Durante el ascenso, varios miembros del equipo comenzaron a sentir náuseas, presión en el pecho y pequeños golpes bajo las costillas. Los escáneres no detectaron ninguna infección, así que continuaron su viaje hacia la Tierra.\n\nCuando la nave aterrizó, el director salió sonriendo ante las cámaras y anunció que aquellas seis muestras cambiarían para siempre la medicina. Nadie reparó en que los recipientes estaban vacíos. Durante el viaje, las células del Cefalolusco habían abandonado los contenedores y penetrado en los seis expedicionarios. Allí comenzaron a multiplicarse por mitosis, copiando las células humanas que las rodeaban. Una parte de su ADN, heredada de los pulpos, les permitía imitar tejidos, señales químicas y hasta su comportamiento ante los escáneres. Para cualquier médico, aquellos cuerpos seguían siendo completamente humanos.\nEsa misma noche, uno de los expedicionarios salió de su hotel y caminó durante horas sin saber por qué. Cruzó la ciudad, llegó hasta la costa y entró en el agua vestido. Permaneció inmóvil mientras las olas le golpeaban la cintura. Entonces abrió la boca como si quisiera respirar… y un pequeño tentáculo húmedo salió lentamente de su garganta.\nDespués dio otro paso hacia el mar..."
+    },
+    {
+      "id": "img-mu0fd3q5-stp3y",
+      "type": "image",
+      "src": "assets/micropesadillas/002/img-mu0fd3q5-stp3y.webp",
+      "alt": ""
+    }
+  ],
+  "relatedStory": {
+    "storyId": "083",
+    "relation": "sequel",
+    "visibility": "always"
+  }
+}
