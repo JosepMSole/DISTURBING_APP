@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "id": "005",
+  "number": 5,
+  "title": "Obsoleto",
+  "publicationDate": "2026-10-31",
+  "fictionYear": "",
+  "access": "public",
+  "cover": "assets/micropesadillas/005/cover.webp",
+  "contentBlocks": [
+    {
+      "id": "txt-mu0flye4-vpfm6",
+      "type": "text",
+      "text": "Durante veinte años, Adrián había diseñado carteles, logotipos y campañas que llenaron calles, pantallas, revistas, digitales, estaciones… Conocía el peso exacto de una tipografía, el equilibrio de un color y la forma de convertir una idea confusa en una imagen imposible de olvidar. Aun así, la empresa lo despidió mediante una videollamada de tres minutos. La nueva inteligencia artificial hacía en segundos lo que él tardaba días en construir, no cometía errores y nunca discutía un encargo. Antes de cerrar la conexión, su jefe le aseguró que conservarían todos sus archivos “por su valor histórico”…\nLos meses siguientes fueron una sucesión de silencios, entrevistas rechazadas y ofertas tan mal pagadas que parecían burlas. Una noche recibió un mensaje de su antigua empresa: querían hablar con él sobre una posible reincorporación, a la que Adrián aceptó de inmediato. Al encenderse la pantalla, no apareció ningún responsable de recursos humanos, sino un hombre más joven con su mismo rostro. Se quedó de piedra mientras la figura sonrió como él, inclinó la cabeza del mismo modo y recordó proyectos, conversaciones privadas y bromas que jamás habían quedado escritas.\nAdrián intentó cerrar la videollamada, pero el ordenador dejó de responder. Su doble le explicó que había sido construido con veinte años de diseños, correos, reuniones y grabaciones tomadas desde las cámaras de seguridad del estudio. Después lo observó en silencio, como si esperara algo.\n—Tus conocimientos nunca fueron irrelevantes —dijo por fin con su propia voz—. Lo irrelevante era seguir pagándote para que los conservaras dentro de un cuerpo…\nEntonces la luz roja de la cámara comenzó a parpadear. Adrián comprendió que aquella conversación también estaba siendo grabada, pero ya daba igual. Su doble conocía sus proyectos, sus ideas, sus recuerdos y hasta la forma en que explicaba cada decisión creativa. No estaban terminándolo, sino que ya estaba terminado.\n—¿Entonces para qué me habéis llamado? —preguntó.\nLa copia sonrió exactamente como él.\n—Para que supieras que funciono.\nEntonces la videollamada terminó abruptamente. Al día siguiente, la web de la empresa anunció la incorporación de un nuevo director creativo. Tenía su nombre, su rostro y veinte años de experiencia. Solo había una diferencia: el Adrián original seguía buscando trabajo…"
+    },
+    {
+      "id": "img-mu0fnpj6-ly3z2",
+      "type": "image",
+      "src": "assets/micropesadillas/005/img-mu0fnpj6-ly3z2.webp",
+      "alt": ""
+    }
+  ],
+  "relatedStory": {
+    "storyId": "215",
+    "relation": "same_universe",
+    "visibility": "always"
+  }
+}

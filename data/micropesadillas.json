@@ -49,7 +49,20 @@
       "relatedStoryId": "033",
       "relation": "prequel",
       "relationVisibility": "always"
+    },
+    {
+      "id": "005",
+      "number": 5,
+      "title": "Obsoleto",
+      "publicationDate": "2026-10-31",
+      "fictionYear": "",
+      "access": "public",
+      "cover": "assets/micropesadillas/005/cover.webp",
+      "data": "./data/micropesadillas/005.json",
+      "relatedStoryId": "215",
+      "relation": "same_universe",
+      "relationVisibility": "always"
     }
   ],
-  "updated": "2026-09-13T23:14:29.111626+00:00"
+  "updated": "2026-09-13T23:16:27.394802+00:00"
 }
