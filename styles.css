@@ -6128,3 +6128,31 @@ body:not(.player-fullscreen-open) .ds435-player-time-box{
 /* HOME · loop inferior con el mismo patrón de colocación que BIBLIOFOOTER. */
 .home-bottom-loop{width:100%;margin:18px 0 0;overflow:hidden;line-height:0;background:transparent;pointer-events:none}
 .home-bottom-loop video{display:block;width:100%;height:auto;max-width:100%;margin:0 auto;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-select:none}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v5.2 · PLAYER / START RESPONSIVE
+   ============================================================ */
+
+/* PLAYER Full Screen · conservar el ancho v4.38 y ceñir la altura a las cifras. */
+.player-fullscreen-layer .ds435-player-time-box{
+  height:auto!important;min-height:0!important;
+  padding-top:4px!important;padding-bottom:4px!important;
+}
+
+/* PLAYER · aviso discreto bajo el control de volumen. */
+.ds435-player-volume-note{
+  display:block;margin:5px 0 0;padding:0;border:0;background:none;
+  color:rgba(205,221,226,.58);font:500 8px/1.35 Oxanium,sans-serif;
+  letter-spacing:.015em;text-align:center;
+}
+.player-fullscreen-layer .ds435-player-volume-note{font-size:8px!important;margin-top:5px!important}
+
+/* START · el conjunto title + splatter escala siempre de forma proporcional y
+   conserva margen horizontal incluso durante viscosidad/parallax/confirmación. */
+.entry-gate-button{width:min(96vw,720px)!important;max-width:96vw!important}
+.entry-gate-stack{
+  width:min(82vw,84svh,660px)!important;height:auto!important;
+  max-width:82vw!important;max-height:84svh!important;aspect-ratio:1/1!important;
+}
+.entry-gate-button .entry-gate-layer{width:100%!important;height:100%!important;object-fit:contain!important}
