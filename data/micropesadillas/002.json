@@ -22,7 +22,7 @@
   ],
   "relatedStory": {
     "storyId": "083",
-    "relation": "sequel",
+    "relation": "prequel",
     "visibility": "always"
   }
 }

@@ -21,7 +21,7 @@
       "cover": "assets/micropesadillas/002/cover.webp",
       "data": "./data/micropesadillas/002.json",
       "relatedStoryId": "083",
-      "relation": "sequel",
+      "relation": "prequel",
       "relationVisibility": "always"
     },
     {
@@ -51,5 +51,5 @@
       "relationVisibility": "always"
     }
   ],
-  "updated": "2026-09-13T23:13:57.084013+00:00"
+  "updated": "2026-09-13T23:14:29.111626+00:00"
 }
