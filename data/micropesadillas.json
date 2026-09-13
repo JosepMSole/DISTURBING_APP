@@ -23,7 +23,20 @@
       "relatedStoryId": "083",
       "relation": "sequel",
       "relationVisibility": "always"
+    },
+    {
+      "id": "003",
+      "number": 3,
+      "title": "Sentencia Adecuada",
+      "publicationDate": "2026-10-31",
+      "fictionYear": "",
+      "access": "public",
+      "cover": "assets/micropesadillas/003/cover.webp",
+      "data": "./data/micropesadillas/003.json",
+      "relatedStoryId": "021",
+      "relation": "character",
+      "relationVisibility": "always"
     }
   ],
-  "updated": "2026-09-13T23:09:41.004037+00:00"
+  "updated": "2026-09-13T23:11:07.126899+00:00"
 }

@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "id": "003",
+  "number": 3,
+  "title": "Sentencia Adecuada",
+  "publicationDate": "2026-10-31",
+  "fictionYear": "",
+  "access": "public",
+  "cover": "assets/micropesadillas/003/cover.webp",
+  "contentBlocks": [
+    {
+      "id": "txt-mu0ffd2e-1ukr1",
+      "type": "text",
+      "text": "El juicio del doctor Steven Bishop fue retransmitido por todo el planeta. Doce pacientes habían muerto durante un experimento destinado a transferir la mente humana a cuerpos artificiales, pero Bishop sostenía que no había asesinado a nadie: las copias conservaban los recuerdos, reconocían a sus seres queridos y juraban ser las mismas personas que habían entrado en el laboratorio. Frente a él, el mecano-juez Virgilius permanecía inmóvil, estudiando una cuestión clave que había dividido a la sociedad: si una copia recuerda toda tu vida y cree ser tú, ¿puede considerarse que has sobrevivido? \n\nLa sala quedó en silencio cuando el mecano-juez anunció su veredicto. Los cuerpos originales habían muerto y las conciencias creadas después eran seres distintos, aunque ignorasen su verdadera naturaleza. Por ello, declaró a Bishop culpable de doce asesinatos y lo condenó a doce cadenas perpetuas. El científico sonrió con nerviosismo y afirmó que ningún hombre podía cumplir doce condenas. Entonces las puertas del tribunal se abrieron y doce cuerpos artificiales idénticos al suyo entraron escoltados, cada uno recordando el mismo nacimiento, la misma infancia y el mismo crimen.\n\nBishop gritó que él era el original, pero Virgilius proyectó el informe oculto del primer experimento. El verdadero doctor Steven Bishop había muerto tres años atrás, y el acusado era solo la primera copia. Los trece hombres comenzaron a suplicar al mismo tiempo, cada uno convencido de ser inocente. Virgilius los observó sin emoción y pronunció la sentencia definitiva: cada copia cumpliría una condena perpetua, y todas conservarían el recuerdo de haber sido el hombre que las había provocado…"
+    },
+    {
+      "id": "img-mu0fgroa-nwt2m",
+      "type": "image",
+      "src": "assets/micropesadillas/003/img-mu0fgroa-nwt2m.webp",
+      "alt": ""
+    }
+  ],
+  "relatedStory": {
+    "storyId": "021",
+    "relation": "character",
+    "visibility": "always"
+  }
+}
