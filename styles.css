@@ -5134,3 +5134,74 @@ body .player-artwork-bg .player-artwork-slide.leaving img.motion-run.pan-soft{
   .entry-gate-button.entry-confirm img,.entry-gate-button.entry-confirm::after{animation:none!important}
   body .player-artwork-bg .player-artwork-slide img.motion-run{animation:none!important}
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.26 · PLAYER MOTION / STORM / USER / HOME / LOGROS
+   ============================================================ */
+/* PLAYER: el movimiento de artwork lo controla JS (rAF), no CSS. Esto evita
+   conflictos acumulados entre generaciones de @keyframes y funciona durante
+   todo el crossfade: entrante y saliente continúan moviéndose a la vez. */
+body .player-artwork-bg .player-artwork-slide img.motion-run{
+  animation:none!important;
+  transition:none!important;
+  transform-origin:50% 50%!important;
+  will-change:transform!important;
+}
+.player-artwork-slide{inset:-9%!important}
+
+/* STORM: icono de tormenta contenido completamente dentro de su caja. */
+.storm-toggle{
+  width:40px!important;min-width:40px!important;height:40px!important;min-height:40px!important;
+  padding:4px!important;border-radius:10px!important;overflow:hidden!important;display:grid!important;place-items:center!important;
+}
+.storm-toggle svg{width:27px!important;height:34px!important;max-width:27px!important;max-height:34px!important;overflow:hidden!important}
+.storm-toggle .storm-cloud{fill:none!important;stroke:#9fc7cf!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.storm-toggle .storm-bolt{fill:#e0bd57!important;stroke:#f3da82!important;stroke-width:.65!important;stroke-linejoin:round!important;filter:drop-shadow(0 0 4px rgba(224,189,87,.28))}
+.storm-toggle.inactive .storm-cloud{stroke:#778286!important}.storm-toggle.inactive .storm-bolt{fill:#778286!important;stroke:#98a1a4!important;filter:none!important}
+.storm-toggle::after{inset:4px!important;border-radius:7px!important;background:linear-gradient(to bottom right,transparent 43%,#f04452 43%,#f04452 57%,transparent 57%)!important}
+
+/* Nivel del avatar: vuelve a la posición inferior-derecha; multi-dígito sigue
+   creciendo horizontalmente sin que la estrella pise la cifra. */
+.user-level-badge,.drawer-level-badge{top:auto!important;bottom:-7px!important;right:-7px!important}
+.drawer-level-badge{bottom:-8px!important;right:-8px!important}
+
+/* USER hero: recorrer de verdad el máximo encuadre útil de la foto. Reducimos
+   zoom y animamos object-position por casi toda la superficie. */
+.user-hero-bg-main{animation:userHeroExploreV426 12.8s cubic-bezier(.45,.03,.55,.97) infinite!important;transform:scale(1.045)!important}
+.user-hero-bg-backdrop{animation:userHeroBackdropExploreV426 15.6s ease-in-out infinite alternate!important}
+@keyframes userHeroExploreV426{
+  0%,100%{object-position:4% 8%;transform:scale(1.045) translate3d(-1.5%,-1%,0)}
+  22%{object-position:96% 18%;transform:scale(1.055) translate3d(1.4%,-.4%,0)}
+  45%{object-position:84% 94%;transform:scale(1.04) translate3d(1.1%,1.3%,0)}
+  68%{object-position:7% 88%;transform:scale(1.052) translate3d(-1.4%,1.1%,0)}
+  84%{object-position:42% 38%;transform:scale(1.043) translate3d(.2%,-.3%,0)}
+}
+@keyframes userHeroBackdropExploreV426{
+  0%{object-position:0% 100%;transform:scale(1.08) translate3d(-2%,1%,0)}
+  35%{object-position:100% 72%;transform:scale(1.1) translate3d(2%,.6%,0)}
+  70%{object-position:82% 0%;transform:scale(1.085) translate3d(1.4%,-1.2%,0)}
+  100%{object-position:8% 24%;transform:scale(1.095) translate3d(-1.6%,-.4%,0)}
+}
+
+/* HOME · última publicación: drift lento e irregular adicional al glitch/breath. */
+.hero.latest-storm .hero-media>.hero-main-image{
+  animation:homeDynamicV218 6.4s ease-in-out infinite,homeLatestDriftV426 21s cubic-bezier(.45,.02,.55,.98) infinite!important;
+}
+@keyframes homeLatestDriftV426{
+  0%,100%{object-position:47% 45%}
+  18%{object-position:54% 43%}
+  37%{object-position:57% 52%}
+  59%{object-position:44% 56%}
+  78%{object-position:41% 47%}
+  91%{object-position:50% 42%}
+}
+
+/* LOGROS: al desplegar, como máximo se ven 5,5 filas y el resto hace scroll. */
+.achievement-earned-list.achievement-expanded-scroll{
+  overflow-y:auto!important;overflow-x:hidden!important;overscroll-behavior:contain;scrollbar-gutter:stable;
+  scrollbar-width:thin;scrollbar-color:rgba(215,181,95,.42) rgba(255,255,255,.035);
+}
+.achievement-earned-list.achievement-expanded-scroll::-webkit-scrollbar{width:5px}
+.achievement-earned-list.achievement-expanded-scroll::-webkit-scrollbar-thumb{background:rgba(215,181,95,.42);border-radius:99px}
+.achievement-earned-list.achievement-expanded-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.035)}
