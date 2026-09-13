@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "id": "004",
+  "number": 4,
+  "title": "Antiguas Maldiciones",
+  "publicationDate": "2026-10-31",
+  "fictionYear": "2099",
+  "access": "public",
+  "cover": "assets/micropesadillas/004/cover.webp",
+  "contentBlocks": [
+    {
+      "id": "txt-mu0fikgj-g1ap9",
+      "type": "text",
+      "text": "En 2099 hubo un terrible ataque extraterrestre que convirtió medio planeta en un territorio muerto y peligroso. Allí donde cayeron las esporas alienígenas, la carne, las raíces y los huesos comenzaron a mezclarse hasta formar criaturas imposibles. La misteriosa pirámide de Alguerius quedó atrapada dentro de una de aquellas zonas negras, oculta bajo un desierto que ya no parecía terrestre. Durante meses, nada logró encontrar su entrada… hasta que una noche, algo comenzó a excavar desde fuera…\n\nLas criaturas deformes descendieron por los pasillos arrastrando cuerpos translúcidos, extremidades torcidas y antiguos rostros humanos hundidos en su carne. En el interior de la pirámide, el monstruo escarabajo que la guardaba las recibió entre las sombras, y las fue destrozando una tras otra… pero la última no murió. Cada golpe la hacía cambiar: su piel se endureció, sus huesos se reorganizaron y nuevas patas brotaron para imitar los movimientos del guardián. Cuando alcanzaron la cámara sagrada, la criatura deforme ya sabía cómo vencerlo: partió su coraza y lo dejó caer frente al altar, donde tantos hombres habían heredado la maldición del escarabajo.\n\nEl espíritu de Alguerius surgió de la oscuridad y se lanzó sobre el monstruo deforme para convertirlo en el nuevo escarabajo guardián... sin embargo, la maldición atravesó aquella carne sin encontrar alma, memoria ni miedo al que aferrarse. La criatura abrió la boca y absorbió el fantasma del sacerdote hasta borrar su voz de la pirámide. Después siguió avanzando, indiferente, mientras las antiguas reliquias se apagaban a su paso. Durante siglos, Alguerius había creído que su mal sobreviviría para siempre… pero nunca imaginó que llegaría un tiempo en que hasta los monstruos del pasado quedarían obsoletos..."
+    },
+    {
+      "id": "img-mu0fjk74-a0e6n",
+      "type": "image",
+      "src": "assets/micropesadillas/004/img-mu0fjk74-a0e6n.webp",
+      "alt": ""
+    }
+  ],
+  "relatedStory": {
+    "storyId": "033",
+    "relation": "prequel",
+    "visibility": "always"
+  }
+}

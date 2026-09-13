@@ -36,7 +36,20 @@
       "relatedStoryId": "021",
       "relation": "character",
       "relationVisibility": "always"
+    },
+    {
+      "id": "004",
+      "number": 4,
+      "title": "Antiguas Maldiciones",
+      "publicationDate": "2026-10-31",
+      "fictionYear": "2099",
+      "access": "public",
+      "cover": "assets/micropesadillas/004/cover.webp",
+      "data": "./data/micropesadillas/004.json",
+      "relatedStoryId": "033",
+      "relation": "prequel",
+      "relationVisibility": "always"
     }
   ],
-  "updated": "2026-09-13T23:11:07.126899+00:00"
+  "updated": "2026-09-13T23:13:57.084013+00:00"
 }
