@@ -5253,3 +5253,122 @@ body .player-artwork-bg .player-artwork-slide img.motion-run{
 .collection-bibliofooter video{
   display:block;width:100%;height:auto;max-width:100%;margin:0 auto;object-fit:contain;
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.28 · ICONOS DEFINITIVOS / COLECCIÓN / STORM
+   Referencia: ICON ANIMATION TEST · 7.00 s · v3
+   ============================================================ */
+:root{--ds-icon-cycle:7s;--collection-video-bg:#121418}
+
+/* COLECCIÓN: mismo fondo que biblioloop/bibliofooter para eliminar cualquier corte visual. */
+.view.collection-view,.view.collection-view>.collection-section,.collection-section{background:var(--collection-video-bg)!important}
+.collection-section{min-height:calc(100svh - var(--topbar-base) - var(--top-safe))!important}
+.book-shelf-wrap{background:var(--collection-video-bg)!important}
+.shelf-reading-loop{background:var(--collection-video-bg)!important;align-items:flex-end!important}
+.shelf-reading-loop video{background:var(--collection-video-bg)!important;align-self:flex-end!important;object-position:center bottom!important}
+.shelf-reading-loop::after{box-shadow:inset 10px 0 14px -12px var(--collection-video-bg),inset -7px 0 12px -12px var(--collection-video-bg)!important}
+.collection-bibliofooter,.collection-bibliofooter video{background:var(--collection-video-bg)!important}
+
+/* STORM: un único rayo de tormenta, grande, centrado y sin deformación. */
+.storm-toggle{display:grid!important;place-items:center!important;padding:2px!important;overflow:hidden!important}
+.storm-toggle svg{width:92%!important;height:92%!important;max-width:92%!important;max-height:92%!important;overflow:visible!important;display:block!important;margin:auto!important}
+.storm-toggle .storm-bolt{fill:#e0bd57!important;stroke:#f3da82!important;stroke-width:.7!important;stroke-linejoin:round!important;filter:drop-shadow(0 0 5px rgba(224,189,87,.34))}
+.storm-toggle.inactive .storm-bolt{fill:#778286!important;stroke:#9aa4a7!important;filter:none!important}
+
+/* Nivel sobre avatar: solo cifra + estrella; sin caja, borde ni relleno. */
+.user-level-badge,.drawer-level-badge{
+  top:-4px!important;bottom:auto!important;right:-8px!important;
+  width:auto!important;min-width:0!important;height:auto!important;min-height:0!important;padding:0!important;
+  background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;overflow:visible!important;
+  gap:1px!important;text-shadow:0 1px 2px #000,0 0 4px rgba(0,0,0,.95),0 0 5px rgba(215,181,95,.35)!important;
+}
+.drawer-level-badge{top:-5px!important;right:-9px!important}
+.user-level-badge.level-multi,.drawer-level-badge.level-multi,.user-level-badge.level-3plus,.drawer-level-badge.level-3plus{min-width:0!important;border-radius:0!important}
+.user-level-badge .user-level-number,.drawer-level-badge .user-level-number{font:900 10px/1 Oxanium,sans-serif!important;color:#f7e7ad!important}
+.user-level-badge .user-level-star,.drawer-level-badge .user-level-star{font:900 6px/1 Oxanium,sans-serif!important;color:#f0cf70!important;transform:translateY(-4px)!important}
+
+/* ----- Sistema de iconos animados definitivo: ciclo exacto 7 s ----- */
+.ds-ani-icon{position:relative;display:grid;place-items:center;width:36px;height:36px;color:#d8faff;overflow:visible;flex:none;line-height:1;--ds-run:12px;--ds-pulse:3.3px}
+.ds-ani-icon *{box-sizing:border-box}
+.ds-ani-svg{width:70%;height:70%;overflow:visible;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ds-ani-game .ds-ani-svg{width:80%;height:58%;stroke-width:1.9}.ds-ani-timeline .ds-ani-svg{width:85%;height:48%;stroke-width:2}
+.ds-ani-cassette{color:#baffd6}.ds-ani-tape{color:#caedff}.ds-ani-game{color:#ff8de9}.ds-ani-micro{color:#ffd7d9}.ds-ani-saga,.ds-ani-timeline,.ds-ani-random,.ds-ani-extras{color:#d8faff}
+.ds-ani-glyph{font-family:'Oxanium',ui-sans-serif,sans-serif;font-weight:700;font-size:28px;line-height:1;color:currentColor;display:block;font-style:normal}
+.ds-ani-extras .ds-ani-glyph{font-size:26px}
+.ds-form-piece,.ds-form-glyph,.ds-micro-diamond{animation-duration:var(--ds-icon-cycle);animation-timing-function:linear;animation-iteration-count:infinite;animation-name:dsPieceLife}
+@keyframes dsPieceLife{0%{opacity:0;transform:var(--enter,scale(.2));filter:blur(5px)}9%{opacity:1;filter:blur(0)}14.2857%{opacity:1;transform:var(--base,none);filter:blur(0)}85.7142%{opacity:1;transform:var(--base,none);filter:blur(0)}93%{opacity:.7;filter:blur(1px)}100%{opacity:0;transform:var(--exit,scale(1.7));filter:blur(7px)}}
+.ds-stroke{stroke-dasharray:120;stroke-dashoffset:120;animation:dsStrokeLife var(--ds-icon-cycle) linear infinite}.ds-stroke-short{stroke-dasharray:24;stroke-dashoffset:24;animation:dsStrokeLifeShort var(--ds-icon-cycle) linear infinite}.ds-stroke-mid{stroke-dasharray:36;stroke-dashoffset:36;animation:dsStrokeLifeMid var(--ds-icon-cycle) linear infinite}
+@keyframes dsStrokeLife{0%{stroke-dashoffset:120;opacity:0}3%{opacity:1}14.2857%{stroke-dashoffset:0;opacity:1}85.7142%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:-120;opacity:0}}
+@keyframes dsStrokeLifeShort{0%{stroke-dashoffset:24;opacity:0}5%{opacity:1}14.2857%{stroke-dashoffset:0;opacity:1}85.7142%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:-24;opacity:0}}
+@keyframes dsStrokeLifeMid{0%{stroke-dashoffset:36;opacity:0}5%{opacity:1}14.2857%{stroke-dashoffset:0;opacity:1}85.7142%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:-36;opacity:0}}
+.ds-loop-shell{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;animation:dsLoopGate var(--ds-icon-cycle) linear infinite}
+@keyframes dsLoopGate{0%,13.9%{opacity:0}14.2857%,85.7142%{opacity:1}86%,100%{opacity:0}}
+
+/* CASSETTES — geometría/animación de la referencia v3. */
+.ds-ani-cassette .ds-cassette-arc{--enter:translateY(-22px) scale(.4);--base:translateY(0) scale(1);--exit:translateY(-18px) scale(.45)}
+.ds-ani-cassette .ds-ear-l{--enter:translateX(-26px) translateY(8px) scale(.25) rotate(-25deg);--base:translateX(0) translateY(0) scale(1) rotate(0);--exit:translateX(-16px) translateY(8px) scale(.35) rotate(-20deg)}
+.ds-ani-cassette .ds-ear-r{--enter:translateX(26px) translateY(8px) scale(.25) rotate(25deg);--base:translateX(0) translateY(0) scale(1) rotate(0);--exit:translateX(16px) translateY(8px) scale(.35) rotate(20deg)}
+.ds-ani-cassette .ds-ear-l,.ds-ani-cassette .ds-ear-r{transform-box:fill-box;transform-origin:center}
+.ds-cassette-eq{position:absolute;display:flex;align-items:flex-end;gap:3%;width:28%;height:28%;transform:translateY(11%)}
+.ds-cassette-eq i{display:block;width:12%;border-radius:99px;background:currentColor;box-shadow:0 0 3px currentColor;animation:dsCassetteEq 1s steps(4,end) infinite;opacity:.9;transform-origin:center bottom}
+.ds-cassette-eq i:nth-child(1){height:38%;animation-delay:0s}.ds-cassette-eq i:nth-child(2){height:69%;animation-delay:.12s}.ds-cassette-eq i:nth-child(3){height:100%;animation-delay:.24s}.ds-cassette-eq i:nth-child(4){height:58%;animation-delay:.36s}.ds-cassette-eq i:nth-child(5){height:85%;animation-delay:.48s}
+@keyframes dsCassetteEq{0%{transform:scaleY(.35);opacity:.28}25%{transform:scaleY(.95);opacity:.85}50%{transform:scaleY(.55);opacity:.56}75%{transform:scaleY(1.18);opacity:1}100%{transform:scaleY(.35);opacity:.28}}
+
+/* TAPES — geometría/animación de la referencia v3. */
+.ds-ani-tape .ds-tape-body{--enter:translateX(-18px) scaleX(.2);--base:translateX(0) scaleX(1);--exit:translateX(-16px) scaleX(.25)}
+.ds-ani-tape .ds-tape-cone{--enter:translateX(24px) scale(.08) rotate(38deg);--base:translateX(0) scale(1) rotate(0);--exit:translateX(18px) scale(.16) rotate(-24deg);transform-box:fill-box;transform-origin:left center}
+.ds-screen-glow{position:absolute;width:34%;height:20%;border-radius:5px;background:linear-gradient(90deg,transparent 0%,rgba(202,237,255,.08) 25%,rgba(202,237,255,.42) 50%,rgba(202,237,255,.08) 75%,transparent 100%);animation:dsTapeSweep 1s linear infinite;mix-blend-mode:screen;filter:blur(.3px)}
+.ds-play-spark{position:absolute;width:17%;height:17%;border-right:1px solid currentColor;border-top:1px solid currentColor;opacity:.2;animation:dsTapeBlink 1s ease-in-out infinite}
+@keyframes dsTapeSweep{0%{opacity:0;transform:translate(-65%,-4%) skewX(-20deg) scaleX(.4)}15%{opacity:.22}50%{opacity:.68;transform:translate(-30%,-4%) skewX(-20deg) scaleX(1)}85%{opacity:.22}100%{opacity:0;transform:translate(3%,-4%) skewX(-20deg) scaleX(.4)}}
+@keyframes dsTapeBlink{0%,100%{opacity:.12;transform:translate(100%,0) rotate(45deg) scale(.84)}50%{opacity:.65;transform:translate(100%,0) rotate(45deg) scale(1.08)}}
+
+/* GAMES. */
+.ds-ani-game .ds-game-outline{--enter:translateY(16px) scale(.55);--base:translateY(0) scale(1);--exit:translateY(17px) scale(.45)}
+.ds-ani-game .ds-plus-v{--enter:translateY(-12px) scaleY(.1);--base:translateY(0) scaleY(1);--exit:translateY(12px) scaleY(.1)}
+.ds-ani-game .ds-plus-h{--enter:translateX(-12px) scaleX(.1);--base:translateX(0) scaleX(1);--exit:translateX(12px) scaleX(.1)}
+.ds-ani-game .ds-btn-a{--enter:scale(.06) translate(0,0);--base:scale(1) translate(0,0);--exit:scale(.06) translate(10px,-8px)}
+.ds-ani-game .ds-btn-b{--enter:scale(.06) translate(0,0);--base:scale(1) translate(0,0);--exit:scale(.06) translate(10px,8px)}
+.ds-ani-game .ds-game-topline{--enter:translateY(-12px) scale(.2);--base:translateY(0) scale(1);--exit:translateY(-15px) scale(.2)}
+.ds-ani-game .ds-plus-v,.ds-ani-game .ds-plus-h,.ds-ani-game .ds-btn-a,.ds-ani-game .ds-btn-b,.ds-ani-game .ds-game-topline{transform-box:fill-box;transform-origin:center}
+.ds-ani-game .ds-plus-v{animation-delay:.08s}.ds-ani-game .ds-plus-h{animation-delay:.18s}.ds-ani-game .ds-btn-a{animation-delay:.27s}.ds-ani-game .ds-btn-b{animation-delay:.35s}
+.ds-pulse-dot{position:absolute;width:6.5%;height:6.5%;border-radius:50%;border:1px solid currentColor;animation:dsGamePulse 1s ease-out infinite}.ds-pulse-a{transform:translate(80%,-8%)}.ds-pulse-b{transform:translate(102%,28%);animation-delay:.16s}
+.ds-cross-glow{position:absolute;width:19%;height:19%;transform:translate(-50%,3%)}.ds-cross-glow:before,.ds-cross-glow:after{content:"";position:absolute;left:50%;top:50%;background:currentColor;box-shadow:0 0 8px currentColor;opacity:.45;animation:dsGameCrossBlink 1s ease-in-out infinite}.ds-cross-glow:before{width:2px;height:80%;transform:translate(-50%,-50%)}.ds-cross-glow:after{width:80%;height:2px;transform:translate(-50%,-50%)}
+@keyframes dsGamePulse{0%{opacity:1;box-shadow:0 0 0 0 currentColor}65%,100%{opacity:0;box-shadow:0 0 0 var(--ds-pulse) transparent}}@keyframes dsGameCrossBlink{0%,100%{opacity:.14;transform:translate(-50%,-50%) scale(.84)}50%{opacity:.52;transform:translate(-50%,-50%) scale(1.08)}}
+
+/* MICRO. */
+.ds-micro-diamond{width:18%;height:18%;border:1px solid currentColor;--enter:rotate(-135deg) scale(.05);--base:rotate(45deg) scale(1);--exit:rotate(225deg) scale(.05);box-shadow:0 0 0 currentColor}
+.ds-ani-micro .ds-loop-shell:before,.ds-ani-micro .ds-loop-shell:after{content:"";position:absolute;width:18%;height:18%;border:.7px solid currentColor;transform:rotate(45deg);animation:dsMicroEcho 1s ease-out infinite}.ds-ani-micro .ds-loop-shell:after{animation-delay:.5s}
+@keyframes dsMicroEcho{0%{opacity:.3;transform:rotate(45deg) scale(.82)}100%{opacity:0;transform:rotate(45deg) scale(1.65)}}
+
+/* SAGAS. */
+.ds-ani-saga .ds-form-glyph{--enter:rotate(-90deg) scale(.05);--base:rotate(0) scale(1);--exit:rotate(90deg) scale(.05)}
+.ds-ani-saga .ds-ghost{animation:dsSagaBreath 1s ease-in-out infinite}@keyframes dsSagaBreath{0%,100%{transform:scale(.96);opacity:.22;filter:blur(2px)}50%{transform:scale(1.09);opacity:.05;filter:blur(5px)}}
+
+/* TIMELINE. */
+.ds-ani-timeline .ds-timeline-line{--enter:scaleX(.02);--base:scaleX(1);--exit:scaleX(.02);transform-box:fill-box;transform-origin:center}.ds-ani-timeline .ds-timeline-node{transform-box:fill-box;transform-origin:center;--enter:scale(.02);--base:scale(1);--exit:scale(.02)}.ds-ani-timeline .ds-n1{animation-delay:0s}.ds-ani-timeline .ds-n2{animation-delay:.10s}.ds-ani-timeline .ds-n3{animation-delay:.20s}
+.ds-timeline-runner{width:8%;height:8%;border-radius:50%;background:currentColor;box-shadow:0 0 11px currentColor;animation:dsTimelineRun 1s linear infinite}@keyframes dsTimelineRun{0%{transform:translateX(calc(-1 * var(--ds-run))) scale(.45);opacity:0}10%{opacity:.85}50%{transform:translateX(0) scale(1)}90%{opacity:.85}100%{transform:translateX(var(--ds-run)) scale(.45);opacity:0}}
+
+/* RANDOM. */
+.ds-ani-random .ds-form-glyph{--enter:rotate(-270deg) scale(.03);--base:rotate(0deg) scale(1);--exit:rotate(270deg) scale(.03)}.ds-ani-random .ds-ghost{animation:dsRandomSpin 1s cubic-bezier(.34,.02,.28,1) infinite}@keyframes dsRandomSpin{0%{transform:rotate(0) scale(.92);opacity:.11}65%{opacity:.22}100%{transform:rotate(360deg) scale(.92);opacity:.11}}
+
+/* EXTRAS. */
+.ds-ani-extras .ds-form-glyph{--enter:rotate(-180deg) scale(.02);--base:rotate(0deg) scale(1);--exit:rotate(180deg) scale(.02)}.ds-ani-extras .ds-ghost{animation:dsExtraLoop 1s ease-in-out infinite}@keyframes dsExtraLoop{0%,100%{transform:rotate(0) scale(.84);opacity:.04}50%{transform:rotate(90deg) scale(1.10);opacity:.20;filter:drop-shadow(0 0 7px currentColor)}}
+
+/* Adaptación proporcional a cada lugar de la App. */
+.portal-btn>.ds-ani-icon{width:36px!important;height:36px!important}.portal-btn>.ds-ani-icon .ds-ani-glyph{font-size:28px!important}
+.section-indicator .ds-ani-icon{width:42px!important;height:42px!important;--ds-run:14px;--ds-pulse:3.9px}.section-indicator .ds-ani-icon .ds-ani-glyph{font-size:34px!important}
+.section-indicator-cassette .ds-ani-icon,.section-indicator-tape .ds-ani-icon{width:39px!important;height:39px!important}
+.media-feature-svg.ds-ani-icon{display:grid!important;fill:none!important;stroke:none!important}
+.story-thumb-wrap .media-feature-svg.ds-ani-icon{width:14px!important;height:14px!important}.story-thumb-wrap .media-feature-svg.ds-ani-icon .ds-ani-glyph{font-size:10px!important}
+.book-feature-count .media-feature-svg.ds-ani-icon{width:18px!important;height:18px!important}
+.saga-feature-icon .ds-ani-icon{width:18px!important;height:18px!important}.saga-feature-icon .ds-ani-icon .ds-ani-glyph{font-size:14px!important}
+.media-list-icon .ds-ani-icon{width:16px!important;height:16px!important}.media-list-icon .ds-ani-icon .ds-ani-glyph{font-size:12px!important}
+.continue-inline-icons .ds-ani-icon{width:12px!important;height:12px!important}
+.saga-feature-icon.extra,.media-list-icon.extra{font-size:0!important}
+.portal-btn.nightmares .ds-ani-icon{width:36px!important;height:36px!important}
+
+@media(prefers-reduced-motion:reduce){.ds-ani-icon,.ds-ani-icon *{animation-play-state:paused!important}}
+/* v4.28 · biblioloop ocupa todo su hueco pero alinea el contenido al estante inferior. */
+.shelf-reading-loop video{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center bottom!important}
