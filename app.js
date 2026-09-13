@@ -1,4 +1,4 @@
-const APP_VERSION = '4.32.0';
+const APP_VERSION = '4.33.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -435,25 +435,36 @@ function playerArtworkTiming(track,count){
   return{slotMs,fadeMs,motionMs:Math.max(6000,slotMs-fadeMs)};
 }
 function animatePlayerArtworkImage(img,{delayMs=0,motionMs=8800,loop=false}={}){
-  if(!img)return;try{img.getAnimations().forEach(a=>a.cancel())}catch{}
-  img.style.scale='1';img.style.translate='0 0';
+  if(!img)return;
+  try{img.getAnimations().forEach(a=>a.cancel())}catch{}
+  // v4.33: una sola propiedad transform. Evita saltos de WebKit al mezclar
+  // scale/translate individuales justo cuando empieza el crossfade.
+  img.style.scale='';img.style.translate='';img.style.transform='translate3d(0,0,0) scale(1)';
   if(motionReduced())return;
-  const d=Math.max(5200,Number(motionMs)||8800),returnMs=Math.min(3000,Math.max(2200,d*.34)),returnStart=Math.max(.58,Math.min(.82,(d-returnMs)/d));
+  const raw=Math.max(5200,Number(motionMs)||8800);
+  const settleSafety=loop?0:220; // queda realmente quieta antes de empezar el fundido siguiente
+  const d=Math.max(4800,raw-settleSafety);
+  const returnMs=loop?Math.min(3000,Math.max(2200,d*.34)):Math.min(3000,Math.max(2600,d*.38));
+  const returnStart=Math.max(.52,Math.min(.80,(d-returnMs)/d));
   const idx=Number((String(img.className).match(/motion-v(\d+)/)||[])[1]||0)%4;
   const paths=[[4.2,-2.4],[-4.4,2.2],[3.2,3.1],[-3.5,-3.0]],p=paths[idx];
-  const hold=Math.min(.18,Math.max(.08,900/d)),peak=Math.min(returnStart-.10,hold+(returnStart-hold)*.52);
+  const hold=Math.min(.18,Math.max(.07,900/d));
+  const peak=Math.min(returnStart-.09,hold+(returnStart-hold)*.54);
+  const maxScale=d<7200?1.15:(d<10500?1.18:1.20);
+  const midScale=1+(maxScale-1)*.68;
+  const t=(x,y,sc)=>`translate3d(${x}%,${y}%,0) scale(${sc})`;
   try{
     const anim=img.animate([
-      {scale:'1',translate:'0 0',offset:0,easing:'linear'},
-      {scale:'1',translate:'0 0',offset:hold,easing:'ease-in-out'},
-      {scale:'1.2',translate:`${p[0]}% ${p[1]}%`,offset:peak,easing:'ease-in-out'},
-      {scale:'1.13',translate:`${(p[0]*.72).toFixed(2)}% ${(p[1]*.72).toFixed(2)}%`,offset:returnStart,easing:'ease-in-out'},
-      {scale:'1',translate:'0 0',offset:1,easing:'ease-in-out'}
+      {transform:t(0,0,1),offset:0,easing:'linear'},
+      {transform:t(0,0,1),offset:hold,easing:'ease-in-out'},
+      {transform:t(p[0],p[1],maxScale),offset:peak,easing:'ease-in-out'},
+      {transform:t(p[0]*.68,p[1]*.68,midScale),offset:returnStart,easing:'ease-in-out'},
+      {transform:t(0,0,1),offset:1,easing:'cubic-bezier(.32,.02,.18,1)'}
     ],{duration:d,delay:Math.max(0,delayMs),iterations:loop?Infinity:1,fill:'forwards'});
-    if(!loop)anim.finished.then(()=>{img.style.scale='1';img.style.translate='0 0'}).catch(()=>{});
-  }catch{img.style.scale='1';img.style.translate='0 0'}
+    if(!loop)anim.finished.then(()=>{img.style.transform='translate3d(0,0,0) scale(1)'}).catch(()=>{});
+  }catch{img.style.transform='translate3d(0,0,0) scale(1)'}
 }
-function activatePlayerArtwork(index,initial=false,timing=null){const box=$('#playerArtwork');if(!box)return;const slides=$$('.player-artwork-slide',box);if(!slides.length)return;const cfg=timing||playerArtworkTiming(playerTracks[playerIndex],slides.length),previous=slides[playerArtworkIndex];playerArtworkIndex=((index%slides.length)+slides.length)%slides.length;const next=slides[playerArtworkIndex];slides.forEach(el=>{el.style.transitionDuration=`${cfg.fadeMs||0}ms`;if(el!==next&&el!==previous){el.classList.remove('active','leaving','artwork-initial','artwork-cycle-incoming','artwork-cycle-single')}});if(previous&&previous!==next){previous.classList.add('active','leaving');previous.classList.remove('artwork-initial','artwork-cycle-incoming','artwork-cycle-single')}next.classList.remove('leaving','artwork-cycle-incoming','artwork-cycle-single');next.classList.toggle('artwork-initial',!!initial);next.classList.remove('active');void next.offsetWidth;next.classList.add('active');box.classList.toggle('single',slides.length===1);const img=next.querySelector('img');if(img){img.classList.add('motion-run');animatePlayerArtworkImage(img,{delayMs:slides.length===1||initial?0:cfg.fadeMs,motionMs:slides.length===1?cfg.motionMs:Math.max(5200,cfg.slotMs-(initial?0:cfg.fadeMs)),loop:slides.length===1})}if(slides.length===1)next.classList.add('artwork-cycle-single');else if(!initial)next.classList.add('artwork-cycle-incoming');if(previous&&previous!==next)setTimeout(()=>{previous.classList.remove('leaving','active','artwork-initial','artwork-cycle-incoming','artwork-cycle-single');const oldImg=previous.querySelector('img');if(oldImg){try{oldImg.getAnimations().forEach(a=>a.cancel())}catch{}oldImg.style.scale='1';oldImg.style.translate='0 0'}},(cfg.fadeMs||0)+120)}
+function activatePlayerArtwork(index,initial=false,timing=null){const box=$('#playerArtwork');if(!box)return;const slides=$$('.player-artwork-slide',box);if(!slides.length)return;const cfg=timing||playerArtworkTiming(playerTracks[playerIndex],slides.length),previous=slides[playerArtworkIndex];playerArtworkIndex=((index%slides.length)+slides.length)%slides.length;const next=slides[playerArtworkIndex];slides.forEach(el=>{el.style.transitionDuration=`${cfg.fadeMs||0}ms`;if(el!==next&&el!==previous){el.classList.remove('active','leaving','artwork-initial','artwork-cycle-incoming','artwork-cycle-single')}});if(previous&&previous!==next){previous.classList.add('active','leaving');previous.classList.remove('artwork-initial','artwork-cycle-incoming','artwork-cycle-single')}next.classList.remove('leaving','artwork-cycle-incoming','artwork-cycle-single');next.classList.toggle('artwork-initial',!!initial);next.classList.remove('active');void next.offsetWidth;next.classList.add('active');box.classList.toggle('single',slides.length===1);const img=next.querySelector('img');if(img){img.classList.add('motion-run');animatePlayerArtworkImage(img,{delayMs:slides.length===1||initial?0:cfg.fadeMs,motionMs:slides.length===1?cfg.motionMs:Math.max(5200,cfg.slotMs-(initial?0:cfg.fadeMs)),loop:slides.length===1})}if(slides.length===1)next.classList.add('artwork-cycle-single');else if(!initial)next.classList.add('artwork-cycle-incoming');if(previous&&previous!==next)setTimeout(()=>{previous.classList.remove('leaving','active','artwork-initial','artwork-cycle-incoming','artwork-cycle-single');const oldImg=previous.querySelector('img');if(oldImg){try{oldImg.getAnimations().forEach(a=>a.cancel())}catch{}oldImg.style.scale='';oldImg.style.translate='';oldImg.style.transform='translate3d(0,0,0) scale(1)'}},(cfg.fadeMs||0)+120)}
 function cleanupPlayerVolumeArtifacts(){const box=$('.player-console');if(!box)return;$$('.player-console .player-volume,.player-console .player-volume-label,.player-console .player-volume-control:not(.ds-volume-control-v422),.player-console .player-volume-track,.player-console .player-volume-thumb:not(.ds-volume-thumb-v422),.player-console .player-mobile-volume-note,.player-console .player-volume-note,.player-console [data-player-volume-note],.player-console .volume-output,.player-console output').forEach(n=>n.remove())}
 function setPlayerVolumeFromPointer(ev){const a=$('#globalPlayerAudio'),ctl=$('#playerVolumeControl');if(!a||!ctl)return;const r=ctl.getBoundingClientRect(),x=Math.max(0,Math.min(r.width,(ev.clientX??r.left)-r.left)),v=r.width?x/r.width:0;a.volume=Math.max(0,Math.min(1,v));playerActivated=true;savePlayerState();syncPlayerUI()}
 function bindPlayerVolumeControl(){const ctl=$('#playerVolumeControl');if(!ctl)return;let dragging=false;ctl.addEventListener('pointerdown',e=>{dragging=true;try{ctl.setPointerCapture(e.pointerId)}catch{}setPlayerVolumeFromPointer(e);e.preventDefault()});ctl.addEventListener('pointermove',e=>{if(!dragging)return;setPlayerVolumeFromPointer(e);e.preventDefault()});const stop=e=>{if(!dragging)return;dragging=false;try{ctl.releasePointerCapture(e.pointerId)}catch{}};ctl.addEventListener('pointerup',stop);ctl.addEventListener('pointercancel',stop);ctl.addEventListener('keydown',e=>{const a=$('#globalPlayerAudio');if(!a)return;let v=a.volume;if(e.key==='ArrowLeft'||e.key==='ArrowDown')v-=.05;else if(e.key==='ArrowRight'||e.key==='ArrowUp')v+=.05;else if(e.key==='Home')v=0;else if(e.key==='End')v=1;else return;e.preventDefault();a.volume=Math.max(0,Math.min(1,v));playerActivated=true;savePlayerState();syncPlayerUI()})}
@@ -1169,5 +1180,5 @@ async function playEntryIntro(){if(introPlayed)return false;introPlayed=true;con
 function playEntryIntroDirect(layer,video){return new Promise(resolve=>startIntroMedia(layer,video,resolve))}
 function startIntroMedia(layer,video,resolve){layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0;video.muted=false;video.volume=1}catch{}const done=(withWhite=true)=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}if(withWhite)prepareIntroWhiteHandoff();layer.classList.add('hidden');layer.setAttribute('aria-hidden','true');resolve(!!withWhite)};const fallback=setTimeout(()=>done(false),10000);layer.onclick=()=>done(true);video.addEventListener('ended',()=>done(true),{once:true});video.addEventListener('error',()=>done(false),{once:true});const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))}
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=4.32.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=4.33.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();

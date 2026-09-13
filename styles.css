@@ -5653,3 +5653,68 @@ body .player-artwork-bg .player-artwork-slide img.motion-run{
   50%{transform:translate3d(-1.4%,-1.2%,0) scale(1.01) rotate(-.008deg)}
   100%{transform:translate3d(.7%,-1.7%,0) scale(1.004) rotate(.005deg)}
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.33 · PLAYER FULLSCREEN / ARTWORK / AUDIO CLEANUP
+   ============================================================ */
+
+/* Los dos motores de audio globales nunca deben generar superficie visual.
+   En iOS/WebKit podían aparecer como pequeños rectángulos vacíos. */
+#globalPlayerAudio,#stormAudio{
+  display:none!important;visibility:hidden!important;opacity:0!important;
+  position:fixed!important;left:-99999px!important;top:-99999px!important;
+  width:0!important;height:0!important;min-width:0!important;min-height:0!important;
+  max-width:0!important;max-height:0!important;margin:0!important;padding:0!important;
+  border:0!important;outline:0!important;box-shadow:none!important;pointer-events:none!important;
+  overflow:hidden!important;appearance:none!important;-webkit-appearance:none!important;
+}
+#globalPlayerAudio::-webkit-media-controls,#stormAudio::-webkit-media-controls,
+#globalPlayerAudio::-webkit-media-controls-enclosure,#stormAudio::-webkit-media-controls-enclosure{
+  display:none!important;width:0!important;height:0!important;opacity:0!important;
+}
+
+/* Fullscreen: visualizador pegado al borde inferior y extendido a todo el ancho. */
+.player-fullscreen-layer .player-console{
+  padding-bottom:clamp(104px,16vh,150px)!important;
+}
+.player-fullscreen-layer .player-progress-meta{
+  display:block!important;width:min(100%,900px)!important;
+  margin-top:clamp(24px,6vh,60px)!important;
+}
+.player-fullscreen-layer .player-time-box{
+  min-height:56px!important;padding:10px 18px!important;border-radius:12px!important;
+  border-width:2px!important;background:rgba(0,0,0,.50)!important;
+}
+.player-fullscreen-layer .player-time-box .player-time{
+  font-size:clamp(18px,4vw,28px)!important;line-height:1!important;letter-spacing:.025em!important;
+}
+.player-fullscreen-layer .player-wave{
+  position:absolute!important;left:0!important;right:0!important;bottom:0!important;
+  width:100%!important;max-width:none!important;height:clamp(72px,13vh,126px)!important;
+  margin:0!important;padding:0 4px max(2px,env(safe-area-inset-bottom))!important;
+  display:grid!important;grid-template-columns:repeat(46,minmax(0,1fr))!important;
+  align-items:end!important;justify-content:stretch!important;gap:clamp(1px,.45vw,5px)!important;
+  overflow:hidden!important;z-index:5!important;pointer-events:none!important;opacity:.60!important;
+}
+.player-fullscreen-layer .player-wave.playing{opacity:1!important}
+.player-fullscreen-layer .player-wave i{
+  width:100%!important;max-width:none!important;min-width:0!important;flex:none!important;
+  transform-origin:center bottom!important;border-radius:4px 4px 1px 1px!important;
+}
+@media(max-height:720px){
+  .player-fullscreen-layer .player-console{padding-bottom:92px!important}
+  .player-fullscreen-layer .player-wave{height:70px!important}
+  .player-fullscreen-layer .player-time-box{min-height:48px!important;padding:8px 15px!important}
+  .player-fullscreen-layer .player-time-box .player-time{font-size:17px!important}
+}
+
+/* Artwork v4.33: solo transform compuesto. El estado final queda en identidad
+   antes de que empiece el crossfade, evitando el frame de salto de Safari. */
+body .player-artwork-bg .player-artwork-slide img.motion-run{
+  animation:none!important;transition:none!important;
+  scale:unset!important;translate:unset!important;
+  transform:translate3d(0,0,0) scale(1);
+  object-position:center center!important;transform-origin:50% 50%!important;
+  will-change:transform!important;backface-visibility:hidden!important;-webkit-backface-visibility:hidden!important;
+}
