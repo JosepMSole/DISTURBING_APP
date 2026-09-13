@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-13T12:09:17.295974+00:00",
+  "updated": "2026-09-13T12:11:15.504457+00:00",
   "stories": [
     {
       "id": "277",
@@ -2662,6 +2662,12 @@
         "audio": {
           "en": true,
           "ca": true
+        }
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "ca": "Caràcters",
+          "en": "Characters"
         }
       }
     }
