@@ -5375,7 +5375,7 @@ body .player-artwork-bg .player-artwork-slide img.motion-run{
 
 
 /* ============================================================
-   DISTURBING STORIES APP v4.29 · STORM / COLECCIÓN / PORTALES / PLAYER
+   DISTURBING STORIES APP v4.29.1 · STORM / COLECCIÓN / PORTALES / PLAYER
    ============================================================ */
 /* STORM: rayo algo más pequeño y perfectamente centrado dentro de su caja. */
 .storm-toggle{
@@ -5401,7 +5401,7 @@ body .player-artwork-bg .player-artwork-slide img.motion-run{
   animation-delay:calc(.12s + (var(--portal-i,0) * .05s))!important;
 }
 
-/* PLAYER · artwork v4.29
+/* PLAYER · artwork v4.29.1
    - entrada/crossfade 5 s en escala 100%
    - después 100 -> 120% en 5 s
    - después 120 -> 100% en 5 s
