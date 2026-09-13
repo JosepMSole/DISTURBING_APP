@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "id": "006",
+  "number": 6,
+  "title": "Aves Negras",
+  "publicationDate": "2026-10-31",
+  "fictionYear": "",
+  "access": "public",
+  "cover": "assets/micropesadillas/006/cover.webp",
+  "contentBlocks": [
+    {
+      "id": "txt-mu0fopil-hi07m",
+      "type": "text",
+      "text": "Aiko siempre había sido distinta. De niña respondía preguntas antes de que su madre terminara de formularlas, y años después evitó un accidente porque escuchó en su cabeza el grito de un conductor situado todavía a varias calles. Nunca habló de aquello, porque prefería llamarlo intuición y fingir que esas rarezas no significaban nada. Por eso se inquietó cuando las aves negras aparecieron frente a su apartamento de Tokio. Cada mañana había más, alineadas sobre los cables, inmóviles bajo la lluvia y con todos sus ojos dirigidos hacia ella.\n\nAl principio perdió recuerdos pequeños, como una contraseña, el camino más corto al trabajo o el nombre de una vecina. Después desaparecieron conversaciones completas, rostros queridos y días enteros de su vida. Aiko comenzó a escribirlo todo en cuadernos, pero aquellas frases pronto dejaron de significar algo para ella. Mientras su identidad se deshacía, empezó a escuchar voces encerradas dentro de la bandada: hombres, mujeres y niños que suplicaban desde decenas de mentes rotas. Entonces comprendió que aquellas criaturas no eran verdaderas aves, aunque habían sido diseñadas para parecerlo. Bajo las plumas escondían sensores, fibras metálicas y pequeños cerebros artificiales conectados entre sí. Habían sido creadas para detectar telépatas y vaciarlos lentamente hasta enterrar sus capacidades bajo una mente dócil y silenciosa.\n\nCuando Aiko olvidó su propio nombre, las aves alzaron el vuelo y abandonaron Tokio antes del amanecer. Horas después descendieron por una compuerta oculta en una montaña, donde varios técnicos descargaron todos los recuerdos robados en los servidores de la base. El informe registró la operación como un éxito absoluto, mientras la bandada conservaba además una copia encriptada dentro de su mente colectiva. Entre los recuerdos de Aiko encontraron una voz escuchada por accidente en el metro, perteneciente a un adolescente que todavía ignoraba lo que era: un telépata. El sistema localizó a ese chico, fijó su domicilio, abrió las compuertas y transmitió la nueva ruta. Entonces, sin emitir un solo graznido, las aves emprendieron el vuelo hacia su siguiente objetivo..."
+    },
+    {
+      "id": "img-mu0fpinp-39pms",
+      "type": "image",
+      "src": "assets/micropesadillas/006/img-mu0fpinp-39pms.webp",
+      "alt": ""
+    }
+  ],
+  "relatedStory": null
+}

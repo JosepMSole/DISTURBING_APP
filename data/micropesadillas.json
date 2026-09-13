@@ -62,7 +62,17 @@
       "relatedStoryId": "215",
       "relation": "same_universe",
       "relationVisibility": "always"
+    },
+    {
+      "id": "006",
+      "number": 6,
+      "title": "Aves Negras",
+      "publicationDate": "2026-10-31",
+      "fictionYear": "",
+      "access": "public",
+      "cover": "assets/micropesadillas/006/cover.webp",
+      "data": "./data/micropesadillas/006.json"
     }
   ],
-  "updated": "2026-09-13T23:16:27.394802+00:00"
+  "updated": "2026-09-13T23:18:19.235152+00:00"
 }
