@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "id": "001",
+  "number": 1,
+  "title": "EL Catalejo",
+  "publicationDate": "2026-10-31",
+  "fictionYear": "",
+  "access": "public",
+  "cover": "assets/micropesadillas/001/cover.webp",
+  "contentBlocks": [
+    {
+      "id": "txt-mu0eit50-0xdsd",
+      "type": "text",
+      "text": "Laia encontró el catalejo en el desván de su abuelo. Estaba cubierto de polvo y tenía el cristal completamente negro. Sin embargo, cuando miró por él, vio el jardín con claridad. Al fondo, junto al muro, había una figura alta y delgada, sin rostro.\n\nCada vez que volvía a mirar, la figura aparecía más cerca. Primero estaba junto al muro, después bajo la ventana y, finalmente, en medio del desván. Laia bajó el catalejo, pero allí no había nadie. Solo escuchó una respiración lenta detrás de ella.\n\nMiró una última vez y vio el desván completamente vacío. Al apartarse del catalejo, descubrió que ya no estaba en su casa, sino en un lugar gris, infinito y sin puertas, donde aquella figura caminaba hacia ella desde todos los lados. Entonces comprendió que el catalejo no mostraba pesadillas: directamente te atrapaba dentro de una…"
+    },
+    {
+      "id": "img-mu0eyn9x-f2orl",
+      "type": "image",
+      "src": "assets/micropesadillas/001/img-mu0eyn9x-f2orl.webp",
+      "alt": ""
+    }
+  ],
+  "relatedStory": null
+}

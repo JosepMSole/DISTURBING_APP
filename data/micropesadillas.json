@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "items": [
+    {
+      "id": "001",
+      "number": 1,
+      "title": "EL Catalejo",
+      "publicationDate": "2026-10-31",
+      "fictionYear": "",
+      "access": "public",
+      "cover": "assets/micropesadillas/001/cover.webp",
+      "data": "./data/micropesadillas/001.json"
+    }
+  ],
+  "updated": "2026-09-13T23:04:48.345822+00:00"
+}
