@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-13T12:01:40.652229+00:00",
+  "updated": "2026-09-13T12:09:17.295974+00:00",
   "stories": [
     {
       "id": "277",
@@ -283,6 +283,10 @@
       "mediaTitleLocales": {
         "video": {
           "es": "Rugidos en la Lluvia"
+        },
+        "audio": {
+          "en": "Roars in the Rain",
+          "ca": "Rugits dins la Pluja"
         }
       }
     },
