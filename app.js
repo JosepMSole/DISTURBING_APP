@@ -1,5 +1,10 @@
-const APP_VERSION = '4.33.0';
-const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const APP_VERSION = '4.34.0';
+let globalPlayerAudioEngine=null,stormAudioEngine=null;
+const $=(s,r=document)=>{
+  if(r===document&&s==='#globalPlayerAudio')return globalPlayerAudioEngine;
+  if(r===document&&s==='#stormAudio')return stormAudioEngine;
+  return r.querySelector(s);
+}, $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
 let sagasData={schema:1,sagas:[]},timelineData={schema:1,orders:{}},extrasData={schema:1,extras:[]},playerCatalogData={schema:1,tracks:[]},homeData={schema:1,nextStoryDate:''},avatarsData={schema:1,avatars:[]},userConfigData={schema:1,achievements:[{id:'achievement1',number:1,name:'PRIMERA STORY',description:'Lee tu primera Story.',requirement:{type:'read_stories',count:1}}]};
@@ -30,6 +35,19 @@ let supabaseClient=null,registeredUser=null,userProfile=null,userSyncBusy=false;
 const localAvatarKey='disturbing_user_avatar_v1', unlockedAvatarsKey='disturbing_unlocked_avatars_v1', avatarRewardSeenKey='disturbing_avatar_reward_seen_v1', userNameCacheKey='disturbing_user_name_v1', achievementEarnedKey='disturbing_achievements_v1', achievementActiveKey='disturbing_achievements_active_v1', consumedMediaKey='disturbing_consumed_story_media_v1';
 const AVATAR_ASSET_BASE='https://josepmsole.github.io/DISTURBING_APP/assets/avatar/';
 const PUBLIC_APP_ASSET_BASE='https://josepmsole.github.io/DISTURBING_APP/assets/';
+
+// v4.34 · Motores de audio deliberadamente FUERA del DOM.
+// Algunas combinaciones Chromium/WebKit podían materializar superficies visuales vacías
+// para <audio> persistentes aunque estuvieran hidden. Al no insertarlos nunca en document,
+// no existe ninguna caja/control nativo capaz de dibujarse en NOW PLAYING o Full Screen.
+globalPlayerAudioEngine=document.createElement('audio');
+globalPlayerAudioEngine.preload='auto';
+globalPlayerAudioEngine.setAttribute('aria-hidden','true');
+stormAudioEngine=document.createElement('audio');
+stormAudioEngine.preload='auto';
+stormAudioEngine.loop=true;
+stormAudioEngine.src=PUBLIC_APP_ASSET_BASE+'storm.mp3';
+stormAudioEngine.setAttribute('aria-hidden','true');
 
 // Captura temprana del instalador PWA. En escritorio el evento puede llegar
 // antes de que termine el boot/intro; guardarlo aquí evita perderlo en Windows/Mac.
@@ -1180,5 +1198,5 @@ async function playEntryIntro(){if(introPlayed)return false;introPlayed=true;con
 function playEntryIntroDirect(layer,video){return new Promise(resolve=>startIntroMedia(layer,video,resolve))}
 function startIntroMedia(layer,video,resolve){layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0;video.muted=false;video.volume=1}catch{}const done=(withWhite=true)=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}if(withWhite)prepareIntroWhiteHandoff();layer.classList.add('hidden');layer.setAttribute('aria-hidden','true');resolve(!!withWhite)};const fallback=setTimeout(()=>done(false),10000);layer.onclick=()=>done(true);video.addEventListener('ended',()=>done(true),{once:true});video.addEventListener('error',()=>done(false),{once:true});const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))}
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=4.33.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=4.34.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();

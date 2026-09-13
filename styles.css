@@ -5718,3 +5718,35 @@ body .player-artwork-bg .player-artwork-slide img.motion-run{
   object-position:center center!important;transform-origin:50% 50%!important;
   will-change:transform!important;backface-visibility:hidden!important;-webkit-backface-visibility:hidden!important;
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.34 · PLAYER GHOST BOX CLEANUP
+   ============================================================ */
+/* El volumen vigente es EXCLUSIVAMENTE .ds-volume-v422. Cualquier resto de las
+   generaciones antiguas queda neutralizado para que no pueda crear contornos vacíos. */
+.player-console .player-volume,
+.player-console .player-volume-label,
+.player-console .player-volume-control:not(.ds-volume-control-v422),
+.player-console .player-volume-track,
+.player-console .player-volume-thumb:not(.ds-volume-thumb-v422),
+.player-console .player-mobile-volume-note,
+.player-console .player-volume-note,
+.player-console [data-player-volume-note],
+.player-console .volume-output,
+.player-console output{
+  display:none!important;visibility:hidden!important;opacity:0!important;
+  width:0!important;height:0!important;min-width:0!important;min-height:0!important;
+  margin:0!important;padding:0!important;border:0!important;outline:0!important;
+  box-shadow:none!important;overflow:hidden!important;pointer-events:none!important;
+}
+/* Ningún motor global de audio existe ya en el DOM en v4.34. Estas reglas son solo
+   una defensa extra si una copia antigua/cacheada llegara a inyectarlos. */
+#globalPlayerAudio,#stormAudio{
+  display:none!important;visibility:hidden!important;opacity:0!important;
+  position:absolute!important;left:-100000px!important;top:-100000px!important;
+  width:0!important;height:0!important;min-width:0!important;min-height:0!important;
+  max-width:0!important;max-height:0!important;margin:0!important;padding:0!important;
+  border:0!important;outline:0!important;box-shadow:none!important;pointer-events:none!important;
+  overflow:hidden!important;appearance:none!important;-webkit-appearance:none!important;
+}
