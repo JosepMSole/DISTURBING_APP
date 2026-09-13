@@ -5023,3 +5023,40 @@ body .user-page>.user-hero.user-hero-v423.user-hero-v423-complete>.user-hero-lev
   body .user-page>.user-hero.user-hero-v423>.user-avatar-current,
   body .user-page>.user-hero.user-hero-v423>.user-hero-level{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.24 · ENTRY / STORM / PLAYER / USER
+   ============================================================ */
+.entry-gate{position:fixed;inset:0;z-index:2200;display:grid;place-items:center;background:#03080b;overflow:hidden;transition:opacity .2s ease;}
+.entry-gate.hidden{display:none!important}.entry-gate.leaving{opacity:0;pointer-events:none}
+.entry-gate-button{position:relative;width:min(54vw,280px);aspect-ratio:1;border:0;background:transparent;padding:0;display:grid;place-items:center;cursor:pointer;isolation:isolate}
+.entry-gate-button img{position:relative;z-index:2;display:block;width:78%;height:78%;object-fit:contain;filter:drop-shadow(0 0 26px rgba(82,220,236,.18));animation:entryViscousV424 3.2s ease-in-out infinite;transform-origin:center}
+.entry-gate-ripples{position:absolute;inset:4%;z-index:1;display:block;pointer-events:none}.entry-gate-ripples i{position:absolute;inset:19%;border:1px solid rgba(95,222,236,.2);border-radius:50%;animation:entryRippleV424 2.6s ease-out infinite}.entry-gate-ripples i:nth-child(2){animation-delay:.8s}.entry-gate-ripples i:nth-child(3){animation-delay:1.6s}
+@keyframes entryViscousV424{0%,100%{transform:scale(1) scaleX(1) scaleY(1)}25%{transform:scale(1.055) scaleX(1.025) scaleY(.985)}52%{transform:scale(.985) scaleX(.975) scaleY(1.035)}76%{transform:scale(1.04) scaleX(1.035) scaleY(.98)}}
+@keyframes entryRippleV424{0%{opacity:.55;transform:scale(.68)}75%{opacity:.12}100%{opacity:0;transform:scale(1.52)}}
+.intro-white-handoff{transition:none!important}
+.storm-toggle{width:36px!important;height:36px!important;min-width:36px!important;border-radius:50%!important;padding:7px!important;opacity:.96}
+.storm-toggle svg{width:21px;height:21px;display:block;overflow:visible}.storm-toggle path{fill:none;stroke:#b9d7dc;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}.storm-toggle .storm-bolt{fill:#d7b55f;stroke:#d7b55f;stroke-width:.8}.storm-toggle .storm-off-slash{display:none;stroke:#e24d55;stroke-width:2.1}.storm-toggle.inactive{opacity:.5}.storm-toggle.inactive .storm-bolt{fill:none;stroke:#87979b}.storm-toggle.inactive .storm-off-slash{display:block}
+/* Player: el movimiento continúa durante el fundido; la imagen saliente nunca salta a su origen. */
+body .player-artwork-bg:not(.single) .player-artwork-slide.active img.motion-run.pan-y,
+body .player-artwork-bg:not(.single) .player-artwork-slide.leaving img.motion-run.pan-y{animation:playerArtworkPanY424 8s ease-in-out infinite alternate!important}
+body .player-artwork-bg:not(.single) .player-artwork-slide.active img.motion-run.pan-x,
+body .player-artwork-bg:not(.single) .player-artwork-slide.leaving img.motion-run.pan-x{animation:playerArtworkPanX424 8s ease-in-out infinite alternate!important}
+body .player-artwork-bg:not(.single) .player-artwork-slide.active img.motion-run.pan-soft,
+body .player-artwork-bg:not(.single) .player-artwork-slide.leaving img.motion-run.pan-soft{animation:playerArtworkPanSoft424 7.2s ease-in-out infinite alternate!important}
+.player-artwork-slide.active.leaving{opacity:0!important;z-index:1!important}
+@keyframes playerArtworkPanY424{0%{object-position:50% 4%;transform:scale(1.05) translate3d(0,-3.5%,0)}100%{object-position:50% 96%;transform:scale(1.16) translate3d(0,3.5%,0)}}
+@keyframes playerArtworkPanX424{0%{object-position:4% 50%;transform:scale(1.05) translate3d(-4.5%,0,0)}100%{object-position:96% 50%;transform:scale(1.16) translate3d(4.5%,0,0)}}
+@keyframes playerArtworkPanSoft424{0%{object-position:34% 34%;transform:scale(1.05) translate3d(-3.5%,-2.4%,0)}100%{object-position:66% 66%;transform:scale(1.16) translate3d(3.5%,2.4%,0)}}
+/* USER: avatar y nivel ya están en su posición final; solo hacen fade. */
+body .user-page.user-page-reveal-ready>.user-hero.user-hero-v424>.user-avatar-current,
+body .user-page.user-page-reveal-ready>.user-hero.user-hero-v424>.user-hero-level{visibility:visible!important;transform:none!important;opacity:0;animation:none!important}
+body .user-page.user-page-reveal-in>.user-hero.user-hero-v424>.user-avatar-current,
+body .user-page.user-page-reveal-in>.user-hero.user-hero-v424>.user-hero-level{visibility:visible!important;transform:none!important;animation:userHeroCircleFadeV424 .36s ease-out both!important}
+body .user-page>.user-hero.user-hero-v424.user-hero-v424-complete>.user-avatar-current,
+body .user-page>.user-hero.user-hero-v424.user-hero-v424-complete>.user-hero-level{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}
+@keyframes userHeroCircleFadeV424{from{opacity:0;transform:none}to{opacity:1;transform:none}}
+.user-hero-v424 .user-hero-level-star{opacity:0}
+.user-hero-v424.user-hero-v424-complete .user-hero-level-star{opacity:1}
+@media(prefers-reduced-motion:reduce){.entry-gate-button img,.entry-gate-ripples i,.player-artwork-slide img{animation:none!important}.user-hero-v424 .user-hero-level-star{opacity:1!important}}
