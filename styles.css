@@ -5259,7 +5259,7 @@ body .player-artwork-bg .player-artwork-slide img.motion-run{
    DISTURBING STORIES APP v4.28 · ICONOS DEFINITIVOS / COLECCIÓN / STORM
    Referencia: ICON ANIMATION TEST · 7.00 s · v3
    ============================================================ */
-:root{--ds-icon-cycle:7s;--collection-video-bg:#121418}
+:root{--ds-icon-cycle:7s;--collection-video-bg:#090D14}
 
 /* COLECCIÓN: mismo fondo que biblioloop/bibliofooter para eliminar cualquier corte visual. */
 .view.collection-view,.view.collection-view>.collection-section,.collection-section{background:var(--collection-video-bg)!important}
@@ -5372,3 +5372,60 @@ body .player-artwork-bg .player-artwork-slide img.motion-run{
 @media(prefers-reduced-motion:reduce){.ds-ani-icon,.ds-ani-icon *{animation-play-state:paused!important}}
 /* v4.28 · biblioloop ocupa todo su hueco pero alinea el contenido al estante inferior. */
 .shelf-reading-loop video{width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center bottom!important}
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.29 · STORM / COLECCIÓN / PORTALES / PLAYER
+   ============================================================ */
+/* STORM: rayo algo más pequeño y perfectamente centrado dentro de su caja. */
+.storm-toggle{
+  width:42px!important;min-width:42px!important;height:42px!important;min-height:42px!important;
+  display:grid!important;place-items:center!important;padding:6px!important;overflow:hidden!important;
+}
+.storm-toggle svg{
+  width:24px!important;height:30px!important;max-width:24px!important;max-height:30px!important;
+  display:block!important;margin:0!important;overflow:visible!important;align-self:center!important;justify-self:center!important;
+  transform:none!important;
+}
+.storm-toggle::after{inset:4px!important}
+
+/* COLECCIÓN: tono real del fondo de biblioloop/bibliofooter, tomado de la referencia visual. */
+:root{--collection-video-bg:#090D14}
+.view.collection-view,.view.collection-view>.collection-section,.collection-section,
+.book-shelf-wrap,.shelf-reading-loop,.shelf-reading-loop video,
+.collection-bibliofooter,.collection-bibliofooter video{background:var(--collection-video-bg)!important}
+
+/* TODAS LAS STORIES: los 8 botones aparecen en secuencia global con 3 frames (~50 ms) entre inicios. */
+.stories-v22-enter.stories-v22-on .stories-portals-group{animation-delay:.08s!important}
+.stories-v22-enter.stories-v22-on .portal-btn{
+  animation-delay:calc(.12s + (var(--portal-i,0) * .05s))!important;
+}
+
+/* PLAYER · artwork v4.29
+   - entrada/crossfade 5 s en escala 100%
+   - después 100 -> 120% en 5 s
+   - después 120 -> 100% en 5 s
+   - entonces comienza el fundido a la siguiente imagen. */
+body .player-artwork-bg .player-artwork-slide img.motion-run{
+  animation:none!important;transition:none!important;transform:scale(1)!important;
+  object-position:center center!important;transform-origin:50% 50%!important;will-change:transform!important;
+}
+body .player-artwork-bg .player-artwork-slide.active img.motion-run{
+  animation:playerArtworkZoomV429 10s ease-in-out 5s 1 both!important;
+}
+body .player-artwork-bg .player-artwork-slide.active.artwork-initial img.motion-run{
+  animation-delay:0s!important;
+}
+body .player-artwork-bg .player-artwork-slide.leaving img.motion-run{
+  animation:none!important;transform:scale(1)!important;
+}
+@keyframes playerArtworkZoomV429{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.2)}
+  100%{transform:scale(1)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .stories-v22-enter.stories-v22-on .portal-btn{animation-delay:0s!important}
+  body .player-artwork-bg .player-artwork-slide img.motion-run{animation:none!important;transform:scale(1)!important}
+}
