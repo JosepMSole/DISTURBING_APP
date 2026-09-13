@@ -230,7 +230,7 @@
       "id": "achievement1789230403785",
       "number": 17,
       "name": "Tapes Visionados",
-      "description": "Haber visto todos los Tapes disponibles",
+      "description": "Haber visto todos los Tapes disponibles en Castellano",
       "requirement": {
         "type": "watch_tapes",
         "mediaRefs": [
@@ -306,5 +306,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-13T00:12:45.327405+00:00"
+  "updated": "2026-09-13T00:26:45.753432+00:00"
 }
