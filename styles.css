@@ -6093,3 +6093,38 @@ body .player-artwork-bg .player-artwork-slide img.motion-run{
   .stories-title-with-loop{gap:8px!important;min-height:92px}
   .stories-title-loop{flex-basis:112px;width:112px;height:92px}
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v5.1 · IMPORTER / USER / PLAYER / HOME
+   ============================================================ */
+
+/* USER · indicador de nivel de la caja registrada al 70% de la escala v4.38. */
+.user-hero-level{
+  min-width:78px!important;width:78px!important;height:78px!important;flex:0 0 78px!important;
+  padding:0 8px!important;
+}
+.user-hero-level-number{font-size:51px!important;transform:translateY(4px)!important}
+.user-hero-level-star{font-size:13px!important;transform:translateY(-14px)!important}
+.user-hero-level.level-multi{width:99px!important;min-width:99px!important;border-radius:24px!important;padding:0 10px!important}
+.user-hero-level.level-multi .user-hero-level-number{font-size:43px!important}
+.user-hero-level.level-3plus{width:115px!important;min-width:115px!important;border-radius:21px!important;padding:0 10px!important}
+.user-hero-level.level-3plus .user-hero-level-number{font-size:34px!important}
+@media(max-width:460px){
+  .user-hero-level{min-width:62px!important;width:62px!important;height:62px!important;flex-basis:62px!important;padding:0 6px!important}
+  .user-hero-level-number{font-size:41px!important;transform:translateY(3px)!important}
+  .user-hero-level-star{font-size:12px!important;transform:translateY(-11px)!important}
+  .user-hero-level.level-multi{width:99px!important;min-width:99px!important;padding:0 9px!important}
+  .user-hero-level.level-multi .user-hero-level-number{font-size:43px!important}
+  .user-hero-level.level-3plus{width:115px!important;min-width:115px!important;padding:0 9px!important}
+  .user-hero-level.level-3plus .user-hero-level-number{font-size:34px!important}
+}
+
+/* PLAYER normal · misma anchura de la duración, menos altura. Full Screen conserva v4.38. */
+body:not(.player-fullscreen-open) .ds435-player-time-box{
+  min-height:20px!important;padding-top:2px!important;padding-bottom:2px!important;
+}
+
+/* HOME · loop inferior con el mismo patrón de colocación que BIBLIOFOOTER. */
+.home-bottom-loop{width:100%;margin:18px 0 0;overflow:hidden;line-height:0;background:transparent;pointer-events:none}
+.home-bottom-loop video{display:block;width:100%;height:auto;max-width:100%;margin:0 auto;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-select:none}
