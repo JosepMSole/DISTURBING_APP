@@ -1,4 +1,4 @@
-const APP_VERSION = '4.26.0';
+const APP_VERSION = '4.27.0';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const view=$('#view');
 let indexData=null,currentStory=null,currentTab='read',installPrompt=null,resumeOnOpen=false,storyInitialOpen=false,lastReadingSaveAt=0,bookAssets={};
@@ -24,6 +24,7 @@ let playerTracks=[],playerIndex=0,playerShuffle=false,playerRepeatMode='off',pla
 let youtubeIframeApiPromise=null,storyYoutubePlayers=[];
 let stormEnabled=true,stormPrimed=false,stormStarted=false;
 const STORM_VOLUME=.42;
+let stormAudioCtx=null,stormGainNode=null,stormBuffer=null,stormBufferPromise=null,stormBufferSource=null,stormLoopStart=0,stormLoopEnd=0,userHeroBgMotionRaf=0;
 let navHistory=[],navGoingBack=false,storyTransitionBusy=false;
 let supabaseClient=null,registeredUser=null,userProfile=null,userSyncBusy=false;
 const localAvatarKey='disturbing_user_avatar_v1', unlockedAvatarsKey='disturbing_unlocked_avatars_v1', avatarRewardSeenKey='disturbing_avatar_reward_seen_v1', userNameCacheKey='disturbing_user_name_v1', achievementEarnedKey='disturbing_achievements_v1', achievementActiveKey='disturbing_achievements_active_v1', consumedMediaKey='disturbing_consumed_story_media_v1';
@@ -390,7 +391,7 @@ function renderCollection(bookId=''){
   }
   const shelf=ordered.map(([book])=>{const a=bookAsset(book),has=!!a.spine;return `<button class="shelf-book ${has?'has-spine':'fallback-spine'}" data-book-scroll="${escAttr(book)}" aria-label="Ir a ${escAttr(bookLabel(book))}">${has?`<img src="${escAttr(a.spine)}" alt="${escAttr(bookLabel(book))}">`:`<span>${escapeHtml(bookLabel(book))}</span>`}</button>`}).join('');
   const cards=ordered.map(([book,stories])=>{stories.sort((a,b)=>new Date(b.published)-new Date(a.published));const read=stories.filter(s=>readIds.has(s.id)).length,asset=bookAsset(book),thumbs=stories.slice(0,3).map(s=>displayCover(s)).filter(Boolean);const visual=asset.front?`<div class="book-front"><img src="${escAttr(asset.front)}" alt="${escAttr(bookLabel(book))}" loading="lazy"></div>`:`<div class="book-thumbs">${thumbs.length?thumbs.map(src=>`<img src="${escAttr(src)}" alt="" loading="lazy" referrerpolicy="no-referrer">`).join(''):`<div class="book-placeholder">${escapeHtml(book)}</div>`}</div>`;return `<article id="book-${escAttr(book)}" class="book-card ${read>=15?'book-complete-read':''}" data-book-id="${escAttr(book)}">${visual}<div class="book-copy"><div class="book-card-title-row"><h2>${escapeHtml(bookLabel(book))}</h2>${read>=15?'<span class="book-read-bubble">LIBRO LEÍDO</span>':''}</div><div class="book-numbers-row"><div class="book-numbers"><strong>${read}/15</strong><span>LEÍDAS</span></div>${bookFeatureSummary(stories)}</div>${asset.pages?`<div class="book-pages"><strong>${escapeHtml(asset.pages)}</strong><span>PÁGINAS</span></div>`:''}<div class="collection-progress"><span style="width:${pct(read/15)}"></span></div><span class="book-open">VER STORIES ›</span></div></article>`}).join('');
-  view.innerHTML=`<section class="section collection-section"><div class="section-title collection-title"><div><div class="eyebrow collection-eyebrow">BIBLIOTECA DE LA</div><h1>Colección</h1></div></div>${shelf?`<div class="book-shelf-wrap"><div class="book-shelf-title">ESTANTERÍA</div><div class="book-shelf">${shelf}</div><div class="shelf-reading-loop" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" tabindex="-1"><source src="${escAttr(PUBLIC_APP_ASSET_BASE+'biblioloop.webm')}" type="video/webm"></video></div><div class="shelf-board"></div></div>`:''}<div class="books-grid">${cards||'<div class="empty">Todavía no hay libros con Stories publicadas.</div>'}</div></section>`;
+  view.innerHTML=`<section class="section collection-section"><div class="section-title collection-title"><div><div class="eyebrow collection-eyebrow">BIBLIOTECA DE LA</div><h1>Colección</h1></div></div>${shelf?`<div class="book-shelf-wrap"><div class="book-shelf-title">ESTANTERÍA</div><div class="book-shelf">${shelf}</div><div class="shelf-reading-loop" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" tabindex="-1"><source src="${escAttr(PUBLIC_APP_ASSET_BASE+'biblioloop.webm')}" type="video/webm"></video></div><div class="shelf-board"></div></div>`:''}<div class="books-grid">${cards||'<div class="empty">Todavía no hay libros con Stories publicadas.</div>'}</div><div class="collection-bibliofooter" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" tabindex="-1"><source src="${escAttr(PUBLIC_APP_ASSET_BASE+'bibliofooter.webm')}" type="video/webm"></video></div></section>`;
   $$('[data-book-id]').forEach(el=>el.onclick=()=>{if(el.classList.contains('book-card-opening'))return;el.classList.add('book-card-opening');setTimeout(()=>go(`collection/${el.dataset.bookId}`),motionReduced()?20:360)});
   $$('[data-book-scroll]').forEach(el=>el.onclick=()=>{const target=document.getElementById(`book-${el.dataset.bookScroll}`);if(!target)return;target.scrollIntoView({behavior:'smooth',block:'center'});const delay=motionReduced()?20:360;setTimeout(()=>{target.classList.remove('book-card-flash');void target.offsetWidth;target.classList.add('book-card-flash');setTimeout(()=>target.classList.remove('book-card-flash'),1000)},delay)});
   bindBrokenImages();requestAnimationFrame(fitCollectionShelf);
@@ -1037,7 +1038,34 @@ function animateRegisteredUserHero(){
   setTimeout(()=>{if(edit){edit.animate([{opacity:0,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:220,easing:'ease-out',fill:'both'})}},1080);
   setTimeout(()=>{if(avatar)avatar.style.opacity='1';if(level)level.style.opacity='1';hero.classList.add('user-hero-v424-complete')},1380);
 }
-function renderUser(){currentStory=null;ensureFreeAvatars();evaluateAchievements(false);const registered=!!registeredUser,avatar=avatarById(selectedAvatarId())||avatarRows()[0],name=registeredDisplayName(),heroBg=registered?registeredHeroBackground():'',levelCount=registered?earnedAchievementCount():0,levelShape=levelCount>=100?'level-3plus':levelCount>=10?'level-multi':'';view.innerHTML=`<section class="section user-page"><div class="user-hero ${registered?'registered':''}">${heroBg?`<div class="user-hero-media" aria-hidden="true"><img class="user-hero-background user-hero-bg-backdrop" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-ghost user-hero-bg-red" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-ghost user-hero-bg-cyan" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-main" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"></div><span class="user-hero-shade" aria-hidden="true"></span>`:''}<div class="user-avatar-current">${avatar?avatarImg(avatar,'user-avatar-img'):'<span>?</span>'}</div><div class="user-hero-copy">${registered?`<h1 class="user-hero-name">${escapeHtml(name||'Usuario Registrado')}</h1><div class="user-hero-status">USUARIO REGISTRADO</div><p class="user-email">${escapeHtml(registered.email||'')}</p><button id="userEditName" class="user-edit-name-btn" type="button">EDITAR NOMBRE</button><div id="userNameEditor" class="user-name-editor hidden"><input id="userNameEditInput" type="text" maxlength="30" autocomplete="name" value="${escAttr(name)}" aria-label="Nuevo nombre"><div class="user-name-editor-actions"><button id="userNameSave" type="button">GUARDAR</button><button id="userNameCancel" type="button">CANCELAR</button></div><small id="userNameEditStatus"></small></div>`:`<div class="eyebrow">Usuario No Registrado</div><h1>Usuario No Registrado</h1><p>Tu progreso permanece en este dispositivo. Regístrate para guardarlo y sincronizarlo con tu cuenta.</p>`}</div>${registered?`<div class="user-hero-level ${levelShape}" title="Nivel según logros conseguidos"><span class="user-hero-level-number">${levelCount}</span><span class="user-hero-level-star">★</span></div>`:''}</div>${registered?achievementsPanelHtml():''}<div class="user-avatar-section"><h2>AVATARES DISPONIBLES</h2><div class="avatar-grid">${avatarRows().map(avatarChoiceHtml).join('')||'<div class="empty">Los avatares se cargan desde GitHub y se configuran desde el Importer.</div>'}</div></div>${registered?`<div class="user-account-panel user-sync-panel"><strong class="sync-active-title">SINCRONIZACIÓN ACTIVA</strong><p class="user-sync-copy">Tu progreso, desbloqueos y preferencias se sincronizan automáticamente con tu cuenta cada vez que cambian. Un mismo usuario en todos tus dispositivos.</p><button id="userLogout" class="secondary-btn user-logout-btn" type="button">CERRAR SESIÓN</button><p id="userStatus" class="note"></p></div>`:registrationPanelHtml()}</section>`;$$('[data-avatar-id]').forEach(b=>b.onclick=()=>chooseAvatar(b.dataset.avatarId));if(registered){$('#userLogout').onclick=logoutUser;bindUserNameEditor();setupAchievementCollapser()}else bindRegistrationPanel();bindBrokenImages();updateUserChrome();setupUserPageReveal();if(registered)animateRegisteredUserHero()}
+function renderUser(){currentStory=null;ensureFreeAvatars();evaluateAchievements(false);const registered=!!registeredUser,avatar=avatarById(selectedAvatarId())||avatarRows()[0],name=registeredDisplayName(),heroBg=registered?registeredHeroBackground():'',levelCount=registered?earnedAchievementCount():0,levelShape=levelCount>=100?'level-3plus':levelCount>=10?'level-multi':'';view.innerHTML=`<section class="section user-page"><div class="user-hero ${registered?'registered':''}">${heroBg?`<div class="user-hero-media" aria-hidden="true"><img class="user-hero-background user-hero-bg-backdrop" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-ghost user-hero-bg-red" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-ghost user-hero-bg-cyan" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-main" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"></div><span class="user-hero-shade" aria-hidden="true"></span>`:''}<div class="user-avatar-current">${avatar?avatarImg(avatar,'user-avatar-img'):'<span>?</span>'}</div><div class="user-hero-copy">${registered?`<h1 class="user-hero-name">${escapeHtml(name||'Usuario Registrado')}</h1><div class="user-hero-status">USUARIO REGISTRADO</div><p class="user-email">${escapeHtml(registered.email||'')}</p><button id="userEditName" class="user-edit-name-btn" type="button">EDITAR NOMBRE</button><div id="userNameEditor" class="user-name-editor hidden"><input id="userNameEditInput" type="text" maxlength="30" autocomplete="name" value="${escAttr(name)}" aria-label="Nuevo nombre"><div class="user-name-editor-actions"><button id="userNameSave" type="button">GUARDAR</button><button id="userNameCancel" type="button">CANCELAR</button></div><small id="userNameEditStatus"></small></div>`:`<div class="eyebrow">Usuario No Registrado</div><h1>Usuario No Registrado</h1><p>Tu progreso permanece en este dispositivo. Regístrate para guardarlo y sincronizarlo con tu cuenta.</p>`}</div>${registered?`<div class="user-hero-level ${levelShape}" title="Nivel según logros conseguidos"><span class="user-hero-level-number">${levelCount}</span><span class="user-hero-level-star">★</span></div>`:''}</div>${registered?achievementsPanelHtml():''}<div class="user-avatar-section"><h2>AVATARES DISPONIBLES</h2><div class="avatar-grid">${avatarRows().map(avatarChoiceHtml).join('')||'<div class="empty">Los avatares se cargan desde GitHub y se configuran desde el Importer.</div>'}</div></div>${registered?`<div class="user-account-panel user-sync-panel"><strong class="sync-active-title">SINCRONIZACIÓN ACTIVA</strong><p class="user-sync-copy">Tu progreso, desbloqueos y preferencias se sincronizan automáticamente con tu cuenta cada vez que cambian. Un mismo usuario en todos tus dispositivos.</p><button id="userLogout" class="secondary-btn user-logout-btn" type="button">CERRAR SESIÓN</button><p id="userStatus" class="note"></p></div>`:registrationPanelHtml()}</section>`;$$('[data-avatar-id]').forEach(b=>b.onclick=()=>chooseAvatar(b.dataset.avatarId));if(registered){$('#userLogout').onclick=logoutUser;bindUserNameEditor();setupAchievementCollapser()}else bindRegistrationPanel();bindBrokenImages();updateUserChrome();setupUserPageReveal();if(registered){animateRegisteredUserHero();startUserHeroBackgroundMotion()}}
+
+
+function startUserHeroBackgroundMotion(){
+  if(userHeroBgMotionRaf){cancelAnimationFrame(userHeroBgMotionRaf);userHeroBgMotionRaf=0}
+  const media=$('.user-hero-media');
+  if(!media)return;
+  const imgs=[...media.querySelectorAll('.user-hero-background')];
+  if(!imgs.length)return;
+  const t0=performance.now();
+  const tick=now=>{
+    if(routeName()!=='user'||!media.isConnected){userHeroBgMotionRaf=0;return}
+    const t=(now-t0)/1000;
+    // Trayectoria lenta, amplia y no repetitiva: dos frecuencias por eje.
+    const x=Math.sin(t*.37)*2.5 + Math.sin(t*.113+1.7)*1.35;
+    const y=Math.cos(t*.29+.6)*2.7 + Math.sin(t*.151+2.1)*1.45;
+    const sc=1.055 + (Math.sin(t*.19-.8)+1)*.006;
+    const ox=50 + Math.sin(t*.21+.3)*42;
+    const oy=50 + Math.cos(t*.17+1.1)*41;
+    for(const img of imgs){
+      img.style.translate=`${x.toFixed(3)}% ${y.toFixed(3)}%`;
+      img.style.scale=sc.toFixed(4);
+      img.style.objectPosition=`${Math.max(4,Math.min(96,ox)).toFixed(2)}% ${Math.max(5,Math.min(95,oy)).toFixed(2)}%`;
+    }
+    userHeroBgMotionRaf=requestAnimationFrame(tick);
+  };
+  userHeroBgMotionRaf=requestAnimationFrame(tick);
+}
 
 function bindUserNameEditor(){const open=$('#userEditName'),panel=$('#userNameEditor'),input=$('#userNameEditInput'),save=$('#userNameSave'),cancel=$('#userNameCancel');if(!open||!panel||!input||!save||!cancel)return;const close=()=>{panel.classList.add('hidden');open.setAttribute('aria-expanded','false');input.value=registeredDisplayName()};open.setAttribute('aria-expanded','false');open.onclick=()=>{const willOpen=panel.classList.contains('hidden');panel.classList.toggle('hidden',!willOpen);open.setAttribute('aria-expanded',willOpen?'true':'false');if(willOpen){input.value=registeredDisplayName();requestAnimationFrame(()=>{input.focus();input.select()})}};cancel.onclick=close;save.onclick=async()=>{const next=String(input.value||'').trim().replace(/\s+/g,' '),status=$('#userNameEditStatus');if(next.length<1||next.length>30){if(status){status.textContent='Usa un nombre de entre 1 y 30 caracteres.';status.className='bad'}return}save.disabled=true;if(status){status.textContent='Guardando…';status.className=''}try{const {error}=await supabaseClient.from('profiles').update({display_name:next,updated_at:new Date().toISOString()}).eq('id',registeredUser.id);if(error)throw error;try{await supabaseClient.auth.updateUser({data:{display_name:next}})}catch{}userProfile={...(userProfile||{}),display_name:next};store.set(userNameCacheKey,next);updateUserChrome();renderUser();forcePageTop()}catch(e){if(status){status.textContent=e?.message||'No se pudo cambiar el nombre.';status.className='bad'}}finally{save.disabled=false}};input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();save.click()}else if(e.key==='Escape'){e.preventDefault();close()}})}
 function registrationPanelHtml(){return `<div class="user-account-panel"><button id="openExistingLogin" class="user-existing-login-cta" type="button" aria-expanded="false">YA TENGO CUENTA · INICIAR SESIÓN</button><div id="existingLoginPanel" class="user-existing-login-panel hidden"><div class="user-form"><label>EMAIL<input id="loginEmail" type="email" autocomplete="email"></label><label>PASSWORD<input id="loginPassword" type="password" autocomplete="current-password"></label><button id="loginUser" class="cta" type="button">INICIAR SESIÓN</button></div></div><div class="user-register-divider"><span>O CREA TU CUENTA</span></div><h2>REGISTRAR</h2><p>Crea tu usuario registrado sin perder el progreso que ya tienes.</p><div class="user-form"><label>NOMBRE<input id="regName" autocomplete="name" maxlength="50"></label><label>EMAIL<input id="regEmail" type="email" autocomplete="email"></label><label>PASSWORD<input id="regPassword" type="password" autocomplete="new-password" minlength="6"></label><button id="registerUser" class="cta" type="button">REGISTRAR</button></div><p id="userStatus" class="note"></p></div>`}
@@ -1063,11 +1091,51 @@ function maybeAutoTutorial(){return}
 function renderFuturePlaceholder(title,tone){currentStory=null;view.innerHTML=`<section class="section v2-section future-placeholder ${escAttr(tone)}"><h1>${escapeHtml(title)}</h1><div class="future-placeholder-box"><strong>PRÓXIMAMENTE</strong></div></section>`}
 
 function updateStormButton(){const btn=$('#stormHeaderBtn');if(!btn)return;btn.classList.toggle('active',stormEnabled);btn.classList.toggle('inactive',!stormEnabled);btn.setAttribute('aria-pressed',stormEnabled?'true':'false');btn.setAttribute('aria-label',stormEnabled?'Tormenta activada':'Tormenta desactivada');btn.title=stormEnabled?'Tormenta activada':'Tormenta desactivada'}
-function primeStormAudio(){const a=$('#stormAudio');if(!a||stormPrimed)return;stormPrimed=true;try{a.volume=STORM_VOLUME;const p=a.play();if(p&&typeof p.then==='function')p.then(()=>{a.pause();try{a.currentTime=0}catch{}}).catch(()=>{stormPrimed=false})}catch{stormPrimed=false}}
-function startStormAmbient(){const a=$('#stormAudio');if(!a||!stormEnabled)return;try{a.volume=STORM_VOLUME;const p=a.play();if(p&&typeof p.then==='function')p.then(()=>{stormStarted=true;updateStormButton()}).catch(()=>{stormStarted=false;updateStormButton()})}catch{stormStarted=false}}
-function stopStormAmbient(disable=true){const a=$('#stormAudio');if(a){try{a.pause()}catch{} }stormStarted=false;if(disable)stormEnabled=false;updateStormButton()}
-function stopStormForOtherMedia(){if(stormStarted||!$('#stormAudio')?.paused)stopStormAmbient(true)}
+function ensureStormAudioContext(){
+  if(stormAudioCtx)return stormAudioCtx;
+  const Ctx=window.AudioContext||window.webkitAudioContext;if(!Ctx)return null;
+  try{stormAudioCtx=new Ctx();stormGainNode=stormAudioCtx.createGain();stormGainNode.gain.value=STORM_VOLUME;stormGainNode.connect(stormAudioCtx.destination);return stormAudioCtx}catch{return null}
+}
+function analyseStormLoopBounds(buffer){
+  const sr=buffer.sampleRate||44100,maxTrim=Math.min(buffer.length-2,Math.floor(sr*.28)),threshold=.0018;
+  let first=0,last=buffer.length-1;
+  const activeAt=i=>{let m=0;for(let c=0;c<buffer.numberOfChannels;c++){const a=Math.abs(buffer.getChannelData(c)[i]||0);if(a>m)m=a}return m>threshold};
+  for(let i=0;i<maxTrim;i++){if(activeAt(i)){first=Math.max(0,i-Math.floor(sr*.004));break}}
+  for(let j=0;j<maxTrim;j++){const i=buffer.length-1-j;if(activeAt(i)){last=Math.min(buffer.length-1,i+Math.floor(sr*.004));break}}
+  if(last-first<sr*.5){first=0;last=buffer.length-1}
+  return {start:first/sr,end:Math.max((first+1)/sr,last/sr)};
+}
+async function prepareStormBuffer(){
+  if(stormBuffer)return stormBuffer;
+  if(stormBufferPromise)return stormBufferPromise;
+  const ctx=ensureStormAudioContext();if(!ctx)return null;
+  stormBufferPromise=(async()=>{try{const r=await fetch(PUBLIC_APP_ASSET_BASE+'storm.mp3',{cache:'force-cache'});if(!r.ok)throw new Error(`storm HTTP ${r.status}`);const ab=await r.arrayBuffer();const buf=await ctx.decodeAudioData(ab.slice(0));stormBuffer=buf;const bounds=analyseStormLoopBounds(buf);stormLoopStart=bounds.start;stormLoopEnd=bounds.end;return buf}catch(e){console.warn('STORM WebAudio',e);return null}})();
+  return stormBufferPromise;
+}
+function stopStormBufferSource(){if(stormBufferSource){try{stormBufferSource.onended=null;stormBufferSource.stop()}catch{}try{stormBufferSource.disconnect()}catch{}stormBufferSource=null}}
+function primeStormAudio(){
+  if(stormPrimed)return;stormPrimed=true;
+  const ctx=ensureStormAudioContext();
+  if(ctx){try{const p=ctx.resume();if(p&&typeof p.catch==='function')p.catch(()=>{})}catch{}prepareStormBuffer().catch(()=>{})}
+  const a=$('#stormAudio');if(a){try{a.volume=STORM_VOLUME;a.preload='auto';a.load()}catch{}}
+}
+async function startStormAmbient(){
+  if(!stormEnabled)return;
+  const ctx=ensureStormAudioContext();
+  if(ctx){
+    try{await ctx.resume();const buf=await prepareStormBuffer();if(buf&&stormEnabled){stopStormBufferSource();const src=ctx.createBufferSource();src.buffer=buf;src.loop=true;src.loopStart=Math.max(0,stormLoopStart||0);src.loopEnd=Math.min(buf.duration,stormLoopEnd||buf.duration);src.connect(stormGainNode);stormGainNode.gain.setValueAtTime(STORM_VOLUME,ctx.currentTime);src.start(0,src.loopStart);stormBufferSource=src;stormStarted=true;const a=$('#stormAudio');if(a){try{a.pause()}catch{}}updateStormButton();return}}catch(e){console.warn('STORM start WebAudio',e)}
+  }
+  // Fallback para navegadores donde Web Audio no esté disponible.
+  const a=$('#stormAudio');if(!a||!stormEnabled)return;try{a.volume=STORM_VOLUME;const p=a.play();if(p&&typeof p.then==='function')p.then(()=>{stormStarted=true;updateStormButton()}).catch(()=>{stormStarted=false;updateStormButton()})}catch{stormStarted=false}
+}
+function stopStormAmbient(disable=true){
+  stopStormBufferSource();
+  const a=$('#stormAudio');if(a){try{a.pause()}catch{}}
+  stormStarted=false;if(disable)stormEnabled=false;updateStormButton()
+}
+function stopStormForOtherMedia(){if(stormStarted||stormBufferSource||!$('#stormAudio')?.paused)stopStormAmbient(true)}
 function toggleStormAmbient(){stormEnabled=!stormEnabled;if(stormEnabled)startStormAmbient();else stopStormAmbient(false);updateStormButton()}
+
 function bindGlobalStormMediaStop(){document.addEventListener('play',e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;if(t.id==='stormAudio'||t.id==='introVideo')return;if(t.muted||Number(t.volume)===0)return;stopStormForOtherMedia()},true)}
 function prepareIntroWhiteHandoff(){const layer=$('#introWhiteHandoff');if(!layer)return;layer.classList.remove('hidden','fade-out');layer.setAttribute('aria-hidden','false');layer.style.opacity='1'}
 function startIntroWhiteHandoff(){const layer=$('#introWhiteHandoff');if(!layer||layer.classList.contains('hidden'))return;let frame=0;const tick=()=>{frame++;if(frame<=15){layer.style.opacity='1'}else if(frame<=30){const p=(frame-15)/15;layer.style.opacity=String(Math.max(0,1-p))}else{layer.style.opacity='0';layer.classList.add('hidden');layer.setAttribute('aria-hidden','true');return}requestAnimationFrame(tick)};requestAnimationFrame(tick)}
@@ -1075,5 +1143,5 @@ async function playEntryIntro(){if(introPlayed)return false;introPlayed=true;con
 function playEntryIntroDirect(layer,video){return new Promise(resolve=>startIntroMedia(layer,video,resolve))}
 function startIntroMedia(layer,video,resolve){layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0;video.muted=false;video.volume=1}catch{}const done=(withWhite=true)=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}if(withWhite)prepareIntroWhiteHandoff();layer.classList.add('hidden');layer.setAttribute('aria-hidden','true');resolve(!!withWhite)};const fallback=setTimeout(()=>done(false),10000);layer.onclick=()=>done(true);video.addEventListener('ended',()=>done(true),{once:true});video.addEventListener('error',()=>done(false),{once:true});const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))}
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=4.26.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=4.27.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
