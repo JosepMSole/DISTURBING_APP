@@ -5429,3 +5429,113 @@ body .player-artwork-bg .player-artwork-slide.leaving img.motion-run{
   .stories-v22-enter.stories-v22-on .portal-btn{animation-delay:0s!important}
   body .player-artwork-bg .player-artwork-slide img.motion-run{animation:none!important;transform:scale(1)!important}
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.30 · COLECCIÓN / PORTALES / PLAYER / ENTRY
+   ============================================================ */
+/* COLECCIÓN: la página conserva su background normal. Solo la caja de la
+   ESTANTERÍA toma el tono real de biblioloop (#121418). */
+.view.collection-view,.view.collection-view>.collection-section,.collection-section{
+  background:transparent!important;
+}
+.book-shelf-wrap,.shelf-reading-loop,.shelf-reading-loop video{
+  background:#121418!important;
+}
+.shelf-reading-loop::after{
+  box-shadow:inset 10px 0 14px -12px #121418,inset -7px 0 12px -12px #121418!important;
+}
+.collection-bibliofooter{background:transparent!important}
+
+/* TODAS LAS STORIES: secuencia global con 6 frames (~100 ms a 60 fps). */
+.stories-v22-enter.stories-v22-on .portal-btn{
+  animation-delay:calc(.12s + (var(--portal-i,0) * .10s))!important;
+}
+
+/* PLAYER: bloque de duración en una caja translúcida al 50%. */
+.player-progress-meta{align-items:end!important}
+.player-time-box{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:28px;padding:5px 9px;border:1px solid rgba(129,207,219,.20);
+  border-radius:7px;background:rgba(0,0,0,.50);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+}
+.player-time-box .player-time{margin:0!important;white-space:nowrap}
+
+/* PLAYER artwork v4.30:
+   tras el fundido: 2 s quieta -> 5 s 100→120 -> 5 s 120→100 -> 1 s quieta -> siguiente fundido.
+   La imagen que entra permanece a 100% durante el crossfade de 5 s. */
+body .player-artwork-bg .player-artwork-slide img.motion-run{
+  animation:none!important;transform:scale(1)!important;object-position:center center!important;
+  transform-origin:50% 50%!important;will-change:transform!important;
+}
+body .player-artwork-bg .player-artwork-slide.active.artwork-initial img.motion-run{
+  animation:playerArtworkCycleV430 13s linear 0s 1 both!important;
+}
+body .player-artwork-bg .player-artwork-slide.active.artwork-cycle-incoming img.motion-run{
+  animation:playerArtworkCycleV430 13s linear 5s 1 both!important;
+}
+body .player-artwork-bg.single .player-artwork-slide.active.artwork-cycle-single img.motion-run{
+  animation:playerArtworkCycleV430 13s linear 0s infinite both!important;
+}
+body .player-artwork-bg .player-artwork-slide.leaving img.motion-run{
+  animation:none!important;transform:scale(1)!important;object-position:center center!important;
+}
+@keyframes playerArtworkCycleV430{
+  0%,15.3846%{transform:scale(1)}
+  53.8462%{transform:scale(1.2)}
+  92.3077%,100%{transform:scale(1)}
+}
+
+/* ENTRY: start_splatter + start_title son un único objeto interactivo de dos capas.
+   Conservan la viscosidad/ripples y añaden parallax opuesto y suave. */
+.entry-gate-button{width:min(96vw,720px)!important;max-height:92svh!important;aspect-ratio:1/1!important}
+.entry-gate-stack{
+  position:relative;z-index:2;display:block;width:min(100%,660px);height:min(88svh,660px);
+  max-width:100%;max-height:88svh;aspect-ratio:1/1;transform-origin:center;
+  animation:entryViscousStackV430 3.2s ease-in-out infinite;
+  filter:drop-shadow(0 0 26px rgba(82,220,236,.18));
+}
+.entry-gate-button .entry-gate-layer{
+  position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;
+  max-width:none!important;max-height:none!important;object-fit:contain!important;transform-origin:center!important;
+  filter:none!important;pointer-events:none!important;
+}
+.entry-gate-button .entry-gate-splatter{
+  z-index:1!important;animation:entryParallaxSplatterV430 4.2s ease-in-out infinite alternate!important;
+}
+.entry-gate-button .entry-gate-title{
+  z-index:2!important;animation:entryParallaxTitleV430 4.2s ease-in-out infinite alternate!important;
+}
+.entry-gate-button.entry-confirm .entry-gate-stack{
+  animation:entryConfirmV430 .33s cubic-bezier(.25,.85,.2,1) both!important;
+  filter:drop-shadow(0 0 40px rgba(119,255,96,.58)) brightness(1.28)!important;
+}
+.entry-gate-button.entry-confirm .entry-gate-splatter{
+  animation:entryParallaxSplatterV430 4.2s ease-in-out infinite alternate!important;
+}
+.entry-gate-button.entry-confirm .entry-gate-title{
+  animation:entryParallaxTitleV430 4.2s ease-in-out infinite alternate!important;
+}
+@keyframes entryViscousStackV430{
+  0%,100%{transform:scale(1) scaleX(1) scaleY(1)}
+  25%{transform:scale(1.045) scaleX(1.025) scaleY(.99)}
+  52%{transform:scale(.992) scaleX(.982) scaleY(1.028)}
+  76%{transform:scale(1.034) scaleX(1.028) scaleY(.988)}
+}
+@keyframes entryParallaxSplatterV430{
+  0%{transform:translate3d(-1.7%,-1.1%,0) scale(1.012) rotate(-.35deg)}
+  50%{transform:translate3d(1.5%,1.2%,0) scale(1.025) rotate(.28deg)}
+  100%{transform:translate3d(-.6%,1.8%,0) scale(1.015) rotate(-.18deg)}
+}
+@keyframes entryParallaxTitleV430{
+  0%{transform:translate3d(1.5%,1%,0) scale(.995) rotate(.22deg)}
+  50%{transform:translate3d(-1.4%,-1.2%,0) scale(1.01) rotate(-.2deg)}
+  100%{transform:translate3d(.7%,-1.7%,0) scale(1.004) rotate(.16deg)}
+}
+@keyframes entryConfirmV430{0%{transform:scale(1)}36%{transform:scale(1.13)}70%{transform:scale(.95)}100%{transform:scale(1.025)}}
+
+@media(prefers-reduced-motion:reduce){
+  .stories-v22-enter.stories-v22-on .portal-btn{animation-delay:0s!important}
+  .entry-gate-stack,.entry-gate-button .entry-gate-layer{animation:none!important}
+  body .player-artwork-bg .player-artwork-slide img.motion-run{animation:none!important;transform:scale(1)!important}
+}
