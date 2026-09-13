@@ -5991,3 +5991,54 @@ body .player-artwork-bg .player-artwork-slide img.motion-run{
   .player-fullscreen-layer .ds435-player-time-box .ds435-player-time,
   .player-fullscreen-layer .ds435-player-time{font-size:10px!important}
 }
+
+
+/* ============================================================
+   DISTURBING STORIES APP v4.37 · FULL SCREEN / START / HEADER
+   ============================================================ */
+
+/* Full Screen: X de cierre y caja al doble de escala. */
+.player-fullscreen-close{
+  width:104px!important;height:104px!important;border-radius:22px!important;
+  font-size:72px!important;line-height:1!important;
+}
+
+/* NOW PLAYING y título ligeramente mayores exclusivamente en Full Screen. */
+.player-fullscreen-layer .ds435-player-head span{font-size:11px!important;letter-spacing:.15em!important}
+.player-fullscreen-layer .ds435-player-head strong{font-size:24px!important;line-height:1.16!important}
+
+/* Duración: tres veces la escala de la vista normal, sin poder expandirse a lo ancho. */
+.player-fullscreen-layer .ds435-player-time-box{
+  display:inline-flex!important;width:max-content!important;min-width:0!important;max-width:max-content!important;
+  min-height:84px!important;padding:15px 24px!important;border-width:2px!important;border-radius:15px!important;
+  justify-self:start!important;align-self:end!important;flex:0 0 auto!important;
+}
+.player-fullscreen-layer .ds435-player-time-box .ds435-player-time,
+.player-fullscreen-layer .ds435-player-time{
+  font-size:30px!important;line-height:1!important;letter-spacing:.01em!important;white-space:nowrap!important;
+}
+
+/* Visualizador: misma posición horizontal, pero barras más altas. */
+.player-fullscreen-layer .ds435-player-wave{height:52px!important;align-items:flex-end!important}
+.player-fullscreen-layer .ds435-player-wave i{
+  width:3px!important;min-width:3px!important;max-width:3px!important;flex:0 0 3px!important;
+  height:10px!important;transform-origin:center bottom!important;
+}
+
+/* Barra de progreso: doble de altura en Full Screen, misma anchura que v4.36.
+   touch-action:none hace fiable el seek por arrastre en iPhone/iPad. */
+.ds435-player-progress{touch-action:none!important;-webkit-user-select:none!important;user-select:none!important}
+.player-fullscreen-layer .ds435-player-progress{
+  height:24px!important;min-height:24px!important;cursor:pointer!important;touch-action:none!important;
+}
+.player-fullscreen-layer .ds435-player-progress>span{height:100%!important;min-height:100%!important}
+
+/* START: sin círculo/ripples ni halo exterior permanente alrededor del splatter.
+   Se conservan parallax, viscosidad y la confirmación de pulsación. */
+.entry-gate-ripples{display:none!important}
+.entry-gate-stack{filter:none!important}
+.entry-gate-button.entry-confirm .entry-gate-stack{filter:brightness(1.28)!important}
+
+/* HEADER: el usuario registrado ocupa solo el avatar + nivel; sin HOLA/NOMBRE. */
+.user-greeting{display:none!important}
+
