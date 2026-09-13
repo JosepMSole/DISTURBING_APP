@@ -282,8 +282,29 @@
           }
         ]
       }
+    },
+    {
+      "id": "achievement1789258346345",
+      "number": 19,
+      "name": "Tapes in English",
+      "description": "You’ve seen all available Tapes in English",
+      "requirement": {
+        "type": "watch_tapes",
+        "mediaRefs": [
+          {
+            "storyId": "009",
+            "locale": "en",
+            "mediaId": "be4XSESSA2A"
+          },
+          {
+            "storyId": "010",
+            "locale": "en",
+            "mediaId": "h_wBe7hP3sU"
+          }
+        ]
+      }
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T23:27:14.698217+00:00"
+  "updated": "2026-09-13T00:12:45.327405+00:00"
 }
