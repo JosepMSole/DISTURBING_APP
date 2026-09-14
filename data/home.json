@@ -2,8 +2,8 @@
   "nextStoryDate": "2026-10-18",
   "portals": {
     "micro": true,
-    "games": false
+    "games": true
   },
   "schema": 1,
-  "updated": "2026-09-14T00:51:39.522005+00:00"
+  "updated": "2026-09-14T01:45:59.576278+00:00"
 }
