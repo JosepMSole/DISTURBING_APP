@@ -6206,3 +6206,40 @@ body.micro-preview-mode .entry-gate{display:none!important}
 .read-celebration.micro-read-celebration strong{color:#fff0f1;text-shadow:0 0 18px rgba(221,59,76,.18)}
 .read-celebration.micro-read-celebration small{color:#b37b81}
 @media(prefers-reduced-motion:reduce){.micro-intro-more,.micro-intro-toggle span{transition:none!important}}
+
+
+/* ============================================================
+   v5.5 · MICRO-PESADILLAS · cabecera centrada y feedback positivo
+   ============================================================ */
+.micro-intro-panel{text-align:center!important}
+.micro-intro-lead{display:block!important;width:100%!important;max-width:560px!important;margin:0 auto!important;text-align:center!important}
+.micro-intro-more,.micro-intro-more p,.micro-intro-more strong{text-align:center!important}
+.micro-intro-toggle{width:38px!important;height:34px!important;margin:6px auto 0!important;display:grid!important;place-items:center!important;line-height:0!important;color:#d98a92!important}
+.micro-intro-chevron{width:34px!important;height:34px!important;display:grid!important;place-items:center!important;line-height:0!important;transform:none!important}
+.micro-intro-chevron svg{display:block;width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transform:translateY(-1px);transition:transform .2s ease}
+.micro-intro-panel.expanded .micro-intro-toggle span{transform:none!important}
+.micro-intro-panel.expanded .micro-intro-chevron svg{transform:translateY(1px) rotate(180deg)!important}
+
+/* LEÍDA MICRO: conserva rojo corporativo pero añade luz, barridos y destellos
+   para que se perciba inequívocamente como recompensa positiva. */
+.read-celebration.micro-read-celebration{overflow:visible!important;isolation:isolate;border-color:#a6424d!important;background:radial-gradient(circle at 50% 22%,rgba(112,21,34,.32),rgba(8,8,8,.97) 55%)!important;box-shadow:0 24px 80px rgba(0,0,0,.78),0 0 20px rgba(255,91,110,.24),0 0 64px rgba(210,48,67,.28)!important}
+.micro-read-light-flash{position:absolute;inset:-18px;border-radius:28px;pointer-events:none;z-index:-1;opacity:0;background:radial-gradient(circle,rgba(255,230,233,.38) 0%,rgba(255,80,104,.22) 25%,rgba(148,15,33,.08) 48%,transparent 72%)}
+.micro-read-celebration.show .micro-read-light-flash{animation:microReadFlashV55 1.05s .05s ease-out both,microReadAuraV55 1.25s 1.05s ease-in-out infinite alternate}
+.micro-read-icon-stage{position:relative;width:112px;height:104px;margin:-2px auto 7px;display:grid;place-items:center;isolation:isolate}
+.micro-read-icon-stage .read-check{position:relative;z-index:4;margin:0!important;overflow:hidden!important;background:radial-gradient(circle at 38% 28%,#8f3440,#4b1119 66%,#22090e)!important;border:2px solid #f08c99!important;color:#fff5f6!important;box-shadow:0 0 0 2px rgba(255,174,184,.08),0 0 20px rgba(255,83,104,.56),0 0 50px rgba(255,255,255,.12),inset 0 0 16px rgba(255,220,225,.14)!important;transform:scale(.72);opacity:.25}
+.micro-read-celebration.show .micro-read-icon-stage .read-check{animation:microReadCheckPopV55 .72s .08s cubic-bezier(.16,.92,.22,1.16) forwards,microReadCheckGlowV55 1.25s .9s ease-in-out infinite alternate}
+.micro-read-sweep{position:absolute;z-index:5;top:-30%;bottom:-30%;left:-70%;width:42%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.9) 48%,rgba(255,170,181,.82) 58%,transparent);transform:skewX(-18deg);opacity:0;filter:blur(.5px)}
+.micro-read-celebration.show .micro-read-sweep{animation:microReadSweepV55 1.05s .52s ease-out forwards}
+.micro-read-ring{position:absolute;inset:20px;border-radius:50%;border:1px solid rgba(255,139,153,.78);z-index:1;opacity:0;box-shadow:0 0 16px rgba(255,87,108,.25)}
+.micro-read-celebration.show .micro-read-ring.ring-a{animation:microReadRingV55 1.0s .12s ease-out forwards}
+.micro-read-celebration.show .micro-read-ring.ring-b{animation:microReadRingV55 1.15s .36s ease-out forwards}
+.micro-read-spark{position:absolute;z-index:6;left:50%;top:50%;width:4px;height:15px;border-radius:999px;background:linear-gradient(#fff,#ff9dab 45%,#d83f56);transform-origin:50% 55px;transform:translate(-50%,-50%) rotate(calc(var(--micro-spark) * 30deg)) translateY(-29px) scaleY(.15);opacity:0;box-shadow:0 0 7px rgba(255,126,144,.9)}
+.micro-read-celebration.show .micro-read-spark{animation:microReadSparkV55 .78s calc(.16s + var(--micro-spark) * .024s) cubic-bezier(.15,.72,.15,1) both}
+@keyframes microReadFlashV55{0%{opacity:0;transform:scale(.75)}28%{opacity:1;transform:scale(1.04)}100%{opacity:.2;transform:scale(1.18)}}
+@keyframes microReadAuraV55{from{opacity:.18;filter:blur(0)}to{opacity:.5;filter:blur(2px)}}
+@keyframes microReadCheckPopV55{0%{opacity:.15;transform:scale(.55) rotate(-12deg)}72%{opacity:1;transform:scale(1.09) rotate(2deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes microReadCheckGlowV55{from{box-shadow:0 0 20px rgba(255,83,104,.42),0 0 42px rgba(255,255,255,.08),inset 0 0 16px rgba(255,220,225,.12)}to{box-shadow:0 0 28px rgba(255,83,104,.72),0 0 62px rgba(255,215,221,.2),inset 0 0 22px rgba(255,230,234,.2)}}
+@keyframes microReadSweepV55{0%{left:-70%;opacity:0}20%{opacity:.9}100%{left:135%;opacity:0}}
+@keyframes microReadRingV55{0%{opacity:.8;transform:scale(.56)}100%{opacity:0;transform:scale(1.62)}}
+@keyframes microReadSparkV55{0%{opacity:0;transform:translate(-50%,-50%) rotate(calc(var(--micro-spark) * 30deg)) translateY(-26px) scaleY(.1)}35%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) rotate(calc(var(--micro-spark) * 30deg)) translateY(-53px) scaleY(1)}}
+@media(prefers-reduced-motion:reduce){.micro-intro-chevron svg{transition:none!important}.micro-read-celebration *{animation:none!important}.micro-read-light-flash{opacity:.32!important}.micro-read-icon-stage .read-check{opacity:1!important;transform:none!important}}
