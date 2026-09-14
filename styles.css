@@ -6467,3 +6467,44 @@ body.micro-preview-mode .entry-gate{display:none!important}
 .games-intro-rich p,.games-intro-rich div{margin:0 0 .55em}.games-intro-rich p:last-child,.games-intro-rich div:last-child{margin-bottom:0}
 @media(max-width:430px){.micro-card-copy h3{font-size:22px!important}.hero.latest-storm #openLatest{font-size:22px!important}}
 @media(prefers-reduced-motion:reduce){.game-card.is-selecting,.micro-card.is-selecting{transform:none!important}.game-card.is-selecting::after,.micro-card.is-selecting::after{animation:none!important;display:none!important}}
+
+/* ========================================================================
+   v5.16 · MICRO typography + selección STORY estable (sin tocar layout)
+   ======================================================================== */
+.micro-card-copy h3{font-size:22px!important;line-height:1.04!important}
+@media(max-width:430px){.micro-card-copy h3{font-size:19px!important}}
+
+/* La transición ya no transforma el app-shell ni eleva/recoloca la tarjeta real. */
+.app-shell.story-entering{
+  animation:none!important;
+  transform:none!important;
+  filter:none!important;
+  will-change:auto!important;
+}
+.app-shell.story-entering::after{
+  content:"";
+  position:fixed;
+  z-index:19990;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 50% 44%,rgba(255,255,255,.88) 0 3%,rgba(142,244,255,.68) 11%,rgba(72,184,224,.46) 25%,rgba(22,72,118,.28) 47%,transparent 72%)!important;
+  mix-blend-mode:screen;
+  animation:storySelectionFlashV516 .27s steps(5,end) 1!important;
+}
+.story-enter-focus{
+  position:fixed;
+  z-index:19991;
+  pointer-events:none;
+  box-sizing:border-box;
+  border:2px solid rgba(237,253,255,.98);
+  outline:1px solid rgba(91,214,235,.58);
+  box-shadow:0 0 14px 5px rgba(91,214,235,.82),0 0 34px 12px rgba(45,125,194,.52),inset 0 0 16px rgba(255,255,255,.16);
+  animation:storySelectionFocusV516 .27s steps(5,end) 1;
+  contain:layout paint style;
+}
+.story-enter-target:not(.random-result-poster){position:static!important;z-index:auto!important;box-shadow:inherit!important;filter:none!important}
+@keyframes storySelectionFlashV516{0%{opacity:0}20%{opacity:.9}40%{opacity:.16}60%{opacity:.7}80%{opacity:.13}100%{opacity:0}}
+@keyframes storySelectionFocusV516{0%{opacity:0;filter:brightness(1)}20%{opacity:1;filter:brightness(1.7)}40%{opacity:.45;filter:brightness(1.1)}60%{opacity:1;filter:brightness(1.55)}80%{opacity:.55;filter:brightness(1.12)}100%{opacity:0;filter:brightness(1)}}
+@media(prefers-reduced-motion:reduce){
+  .app-shell.story-entering::after,.story-enter-focus{animation:none!important;display:none!important}
+}

@@ -1,5 +1,5 @@
-const APP_VERSION = '5.15.0';
-let globalPlayerAudioEngine=null,stormAudioEngine=null;
+const APP_VERSION = '5.16.0';
+let globalPlayerAudioEngine=null,stormAudioEngine=null,stormIntroAudioEngine=null;
 const $=(s,r=document)=>{
   if(r===document&&s==='#globalPlayerAudio')return globalPlayerAudioEngine;
   if(r===document&&s==='#stormAudio')return stormAudioEngine;
@@ -30,7 +30,7 @@ let playerTracks=[],playerIndex=0,playerShuffle=false,playerRepeatMode='off',pla
 let youtubeIframeApiPromise=null,storyYoutubePlayers=[];
 let stormEnabled=true,stormPrimed=false,stormStarted=false;
 const STORM_VOLUME=.42;
-let stormAudioCtx=null,stormGainNode=null,stormBuffer=null,stormBufferPromise=null,stormBufferSource=null,stormLoopStart=0,stormLoopEnd=0,userHeroBgMotionRaf=0;
+let stormAudioCtx=null,stormGainNode=null,stormBuffer=null,stormBufferPromise=null,stormBufferSource=null,stormLoopStart=0,stormLoopEnd=0,stormIntroBuffer=null,stormIntroBufferPromise=null,stormIntroBufferSource=null,stormIntroEnd=0,stormIntroTransitionStarted=false,stormIntroFallbackTimer=0,userHeroBgMotionRaf=0;
 let navHistory=[],navGoingBack=false,storyTransitionBusy=false;
 let supabaseClient=null,registeredUser=null,userProfile=null,userSyncBusy=false;
 const localAvatarKey='disturbing_user_avatar_v1', unlockedAvatarsKey='disturbing_unlocked_avatars_v1', avatarRewardSeenKey='disturbing_avatar_reward_seen_v1', userNameCacheKey='disturbing_user_name_v1', achievementEarnedKey='disturbing_achievements_v1', achievementActiveKey='disturbing_achievements_active_v1', consumedMediaKey='disturbing_consumed_story_media_v1';
@@ -49,6 +49,11 @@ stormAudioEngine.preload='auto';
 stormAudioEngine.loop=true;
 stormAudioEngine.src=PUBLIC_APP_ASSET_BASE+'storm.mp3';
 stormAudioEngine.setAttribute('aria-hidden','true');
+stormIntroAudioEngine=document.createElement('audio');
+stormIntroAudioEngine.preload='auto';
+stormIntroAudioEngine.loop=false;
+stormIntroAudioEngine.src=PUBLIC_APP_ASSET_BASE+'stormintro.mp3';
+stormIntroAudioEngine.setAttribute('aria-hidden','true');
 
 // Captura temprana del instalador PWA. En escritorio el evento puede llegar
 // antes de que termine el boot/intro; guardarlo aquí evita perderlo en Windows/Mac.
@@ -90,7 +95,7 @@ async function boot(){
       routeFromHash();
       if(introDidPlay)requestAnimationFrame(()=>requestAnimationFrame(startIntroWhiteHandoff));
     }
-    if(introDidPlay)setTimeout(()=>startStormAmbient(),120);
+    if(!introDidPlay)setTimeout(()=>startStormAmbient(),120);
     updateStormButton();updateAppBadge();registerSW();
   }catch(e){const gate=$('#entryGate');if(gate){gate.classList.add('hidden');gate.setAttribute('aria-hidden','true')}view.innerHTML=`<div class="empty"><h2>No se pudieron cargar las Stories</h2><p>${escapeHtml(e.message)}</p><p>Usa el lanzador local incluido en el paquete.</p></div>`;}
 }
@@ -192,7 +197,27 @@ function routeFallback(){const p=currentHash().replace(/^#\//,'').split('/'),rou
 function updateBackButton(){const btn=$('#backBtn'),fallback=routeFallback();if(!btn)return;const can=navHistory.length>0||!!fallback;btn.classList.toggle('hidden',!can);btn.disabled=!can}
 function navigateBack(){if(navHistory.length){const target=navHistory.pop();navGoingBack=true;location.hash=target;return}const fallback=routeFallback();if(fallback){navGoingBack=true;location.hash=fallback}}
 function fiveFrameHaptic(){try{if('vibrate' in navigator)navigator.vibrate([24,26,24,26,24,26,24,26,24])}catch{}}
-function playStoryEnterTransition(id,sourceEl=null){if(storyTransitionBusy){return}const target=`#/story/${encodeURIComponent(id)}`;if(matchMedia('(prefers-reduced-motion: reduce)').matches){navigateHash(target);return}storyTransitionBusy=true;fiveFrameHaptic();const shell=$('#app');let card=sourceEl&&sourceEl.nodeType===1?sourceEl:null;if(!card)card=document.querySelector(`[data-story-id="${CSS.escape(id)}"]`);if(!card&&routeName()==='home')card=$('.hero.latest-storm');card?.classList.add('story-enter-target');shell?.classList.add('story-entering');setTimeout(()=>{card?.classList.remove('story-enter-target');shell?.classList.remove('story-entering');storyTransitionBusy=false;navigateHash(target)},270)}
+function playStoryEnterTransition(id,sourceEl=null){
+  if(storyTransitionBusy)return;
+  const target=`#/story/${encodeURIComponent(id)}`;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){navigateHash(target);return}
+  storyTransitionBusy=true;fiveFrameHaptic();
+  const shell=$('#app');let card=sourceEl&&sourceEl.nodeType===1?sourceEl:null;
+  if(!card)card=document.querySelector(`[data-story-id="${CSS.escape(id)}"]`);
+  if(!card&&routeName()==='home')card=$('.hero.latest-storm');
+  document.querySelector('.story-enter-focus')?.remove();
+  let focus=null;
+  if(card){
+    const r=card.getBoundingClientRect(),pad=3;
+    focus=document.createElement('div');focus.className='story-enter-focus';focus.setAttribute('aria-hidden','true');
+    focus.style.left=`${Math.max(0,r.left-pad)}px`;focus.style.top=`${Math.max(0,r.top-pad)}px`;
+    focus.style.width=`${Math.max(1,Math.min(innerWidth, r.right+pad)-Math.max(0,r.left-pad))}px`;
+    focus.style.height=`${Math.max(1,Math.min(innerHeight, r.bottom+pad)-Math.max(0,r.top-pad))}px`;
+    const radius=getComputedStyle(card).borderRadius||'14px';focus.style.borderRadius=radius;document.body.appendChild(focus);
+  }
+  shell?.classList.add('story-entering');
+  setTimeout(()=>{focus?.remove();shell?.classList.remove('story-entering');storyTransitionBusy=false;navigateHash(target)},270)
+}
 function storyGo(id,resume=false,sourceEl=null){if(resume){navigateHash(`#/story/${encodeURIComponent(id)}/resume`);return}playStoryEnterTransition(id,sourceEl)}
 function routeFromHash(){closePlayerFullscreen(true);persistCurrentReadingPosition();destroyStoryYoutubePlayers();stopQrScanner();stopRandomSpin(false);clearInterval(homeCountdownTimer);homeCountdownTimer=0;const p=currentHash().replace(/^#\//,'').split('/'),route=p[0]||'home',storyMode=route==='story'?(p[2]||''):'',isResume=storyMode==='resume',storyTab=(!isResume&&storyMode)?decodeURIComponent(storyMode):'';if(route!=='player'){stopPlayerArtwork();stopPlayerWaveVisualizer()}if(!isResume)scrollTo({top:0,behavior:'auto'});view.classList.toggle('home-view',route==='home');view.classList.toggle('collection-view',route==='collection');setNav(route);updateBackButton();$('#toTopHeaderBtn').classList.remove('hidden');if(route==='home')return renderHome();if(route==='stories')return renderStories('all');if(route==='unlocked')return renderMyStories();if(route==='collection')return renderCollection(decodeURIComponent(p[1]||''));if(route==='player')return renderPlayer();if(route==='user')return renderUser();if(route==='unlock')return renderUnlockRoute();if(route==='story')return renderStory(decodeURIComponent(p[1]||''),isResume,storyTab);if(route==='sagas')return renderSagas();if(route==='saga')return renderSaga(decodeURIComponent(p[1]||''));if(route==='timeline')return renderTimeline();if(route==='random')return renderRandom();if(route==='cassettes')return renderMediaCollection('audio');if(route==='tapes')return renderMediaCollection('video');if(route==='extras')return renderExtras();if(route==='extra')return renderExtra(decodeURIComponent(p[1]||''));if(route==='games')return renderGamesCatalog();if(route==='game')return (p[2]==='play'?renderGamePlayer(decodeURIComponent(p[1]||'')):renderGameDetail(decodeURIComponent(p[1]||'')));if(route==='micro-pesadillas')return renderMicroCatalog();if(route==='micro')return renderMicroDetail(decodeURIComponent(p[1]||''));if(route==='micro-preview')return renderMicroPreview();renderHome()}
 function userSilhouetteSvg(){return `<svg class="user-silhouette-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.7" r="3.3"/><path d="M5.4 20c.45-4.45 2.9-7 6.6-7s6.15 2.55 6.6 7"/></svg>`}
@@ -1298,12 +1323,65 @@ async function prepareStormBuffer(){
   stormBufferPromise=(async()=>{try{const r=await fetch(PUBLIC_APP_ASSET_BASE+'storm.mp3',{cache:'force-cache'});if(!r.ok)throw new Error(`storm HTTP ${r.status}`);const ab=await r.arrayBuffer();const buf=await ctx.decodeAudioData(ab.slice(0));stormBuffer=buf;const bounds=analyseStormLoopBounds(buf);stormLoopStart=bounds.start;stormLoopEnd=bounds.end;return buf}catch(e){console.warn('STORM WebAudio',e);return null}})();
   return stormBufferPromise;
 }
+function analyseStormIntroEnd(buffer){
+  const sr=buffer.sampleRate||44100,maxTrim=Math.min(buffer.length-2,Math.floor(sr*.30)),threshold=.0009;
+  let last=buffer.length-1;
+  const activeAt=i=>{let m=0;for(let c=0;c<buffer.numberOfChannels;c++){const a=Math.abs(buffer.getChannelData(c)[i]||0);if(a>m)m=a}return m>threshold};
+  for(let j=0;j<maxTrim;j++){const i=buffer.length-1-j;if(activeAt(i)){last=Math.min(buffer.length-1,i+Math.floor(sr*.004));break}}
+  const effective=Math.max(.05,last/sr);return Math.min(buffer.duration,effective);
+}
+async function prepareStormIntroBuffer(){
+  if(stormIntroBuffer)return stormIntroBuffer;
+  if(stormIntroBufferPromise)return stormIntroBufferPromise;
+  const ctx=ensureStormAudioContext();if(!ctx)return null;
+  stormIntroBufferPromise=(async()=>{try{const r=await fetch(PUBLIC_APP_ASSET_BASE+'stormintro.mp3',{cache:'force-cache'});if(!r.ok)throw new Error(`stormintro HTTP ${r.status}`);const ab=await r.arrayBuffer();stormIntroBuffer=await ctx.decodeAudioData(ab.slice(0));stormIntroEnd=analyseStormIntroEnd(stormIntroBuffer);return stormIntroBuffer}catch(e){console.warn('STORM INTRO WebAudio',e);return null}})();
+  return stormIntroBufferPromise;
+}
+function stopStormIntroSource(){
+  if(stormIntroFallbackTimer){clearTimeout(stormIntroFallbackTimer);stormIntroFallbackTimer=0}
+  if(stormIntroBufferSource){try{stormIntroBufferSource.onended=null;stormIntroBufferSource.stop()}catch{}try{stormIntroBufferSource.disconnect()}catch{}stormIntroBufferSource=null}
+  if(stormIntroAudioEngine){try{stormIntroAudioEngine.onended=null;stormIntroAudioEngine.pause()}catch{}}
+}
+async function startStormIntroTransition(){
+  if(stormIntroTransitionStarted||!stormEnabled)return false;
+  stormIntroTransitionStarted=true;
+  const ctx=ensureStormAudioContext();
+  if(ctx){
+    try{
+      await ctx.resume();
+      const [introBuf,loopBuf]=await Promise.all([prepareStormIntroBuffer(),prepareStormBuffer()]);
+      if(introBuf&&loopBuf&&stormEnabled){
+        stopStormIntroSource();stopStormBufferSource();
+        const introSrc=ctx.createBufferSource(),loopSrc=ctx.createBufferSource();
+        introSrc.buffer=introBuf;introSrc.connect(stormGainNode);
+        loopSrc.buffer=loopBuf;loopSrc.loop=true;loopSrc.loopStart=Math.max(0,stormLoopStart||0);loopSrc.loopEnd=Math.min(loopBuf.duration,stormLoopEnd||loopBuf.duration);loopSrc.connect(stormGainNode);
+        const startAt=ctx.currentTime+.018,endAt=startAt+(stormIntroEnd||introBuf.duration);
+        stormGainNode.gain.setValueAtTime(STORM_VOLUME,ctx.currentTime);
+        introSrc.start(startAt);
+        loopSrc.start(endAt,loopSrc.loopStart);
+        stormIntroBufferSource=introSrc;stormBufferSource=loopSrc;
+        introSrc.onended=()=>{stormIntroBufferSource=null;stormStarted=true;updateStormButton()};
+        stormIntroFallbackTimer=setTimeout(()=>{stormIntroFallbackTimer=0;if(stormEnabled){stormStarted=true;updateStormButton()}},Math.max(0,(endAt-ctx.currentTime)*1000+30));
+        return true;
+      }
+    }catch(e){console.warn('STORM INTRO transition WebAudio',e)}
+  }
+  // Fallback HTMLAudio: mantiene el orden stormintro -> storm cuando Web Audio no está disponible.
+  try{
+    const a=stormIntroAudioEngine;if(!a)throw new Error('stormintro audio unavailable');
+    a.pause();a.currentTime=0;a.volume=STORM_VOLUME;
+    a.onended=()=>{a.onended=null;startStormAmbient()};
+    const playPromise=a.play();if(playPromise&&typeof playPromise.catch==='function')playPromise.catch(()=>startStormAmbient());
+    return true;
+  }catch(e){console.warn('STORM INTRO fallback',e);startStormAmbient();return false}
+}
 function stopStormBufferSource(){if(stormBufferSource){try{stormBufferSource.onended=null;stormBufferSource.stop()}catch{}try{stormBufferSource.disconnect()}catch{}stormBufferSource=null}}
 function primeStormAudio(){
   if(stormPrimed)return;stormPrimed=true;
   const ctx=ensureStormAudioContext();
-  if(ctx){try{const p=ctx.resume();if(p&&typeof p.catch==='function')p.catch(()=>{})}catch{}prepareStormBuffer().catch(()=>{})}
+  if(ctx){try{const p=ctx.resume();if(p&&typeof p.catch==='function')p.catch(()=>{})}catch{}prepareStormBuffer().catch(()=>{});prepareStormIntroBuffer().catch(()=>{})}
   const a=$('#stormAudio');if(a){try{a.volume=STORM_VOLUME;a.preload='auto';a.load()}catch{}}
+  if(stormIntroAudioEngine){try{stormIntroAudioEngine.volume=STORM_VOLUME;stormIntroAudioEngine.preload='auto';stormIntroAudioEngine.load()}catch{}}
 }
 async function startStormAmbient(){
   if(!stormEnabled)return;
@@ -1315,7 +1393,7 @@ async function startStormAmbient(){
   const a=$('#stormAudio');if(!a||!stormEnabled)return;try{a.volume=STORM_VOLUME;const p=a.play();if(p&&typeof p.then==='function')p.then(()=>{stormStarted=true;updateStormButton()}).catch(()=>{stormStarted=false;updateStormButton()})}catch{stormStarted=false}
 }
 function stopStormAmbient(disable=true){
-  stopStormBufferSource();
+  stopStormIntroSource();stopStormBufferSource();
   const a=$('#stormAudio');if(a){try{a.pause()}catch{}}
   stormStarted=false;if(disable)stormEnabled=false;updateStormButton()
 }
@@ -1327,7 +1405,32 @@ function prepareIntroWhiteHandoff(){const layer=$('#introWhiteHandoff');if(!laye
 function startIntroWhiteHandoff(){const layer=$('#introWhiteHandoff');if(!layer||layer.classList.contains('hidden'))return;let frame=0;const tick=()=>{frame++;if(frame<=15){layer.style.opacity='1'}else if(frame<=30){const p=(frame-15)/15;layer.style.opacity=String(Math.max(0,1-p))}else{layer.style.opacity='0';layer.classList.add('hidden');layer.setAttribute('aria-hidden','true');return}requestAnimationFrame(tick)};requestAnimationFrame(tick)}
 async function playEntryIntro(){if(introPlayed)return false;introPlayed=true;const gate=$('#entryGate'),gateBtn=$('#entryGateButton'),layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return false;if(!gate||!gateBtn)return playEntryIntroDirect(layer,video);gate.classList.remove('hidden');gate.setAttribute('aria-hidden','false');return new Promise(resolve=>{let started=false;const enter=()=>{if(started)return;started=true;primeStormAudio();gateBtn.disabled=true;gateBtn.classList.add('entry-confirm');startIntroMedia(layer,video,resolve);setTimeout(()=>{gate.classList.add('leaving');setTimeout(()=>{gate.classList.add('hidden');gate.classList.remove('leaving');gate.setAttribute('aria-hidden','true')},190)},330)};gateBtn.addEventListener('click',enter,{once:true})})}
 function playEntryIntroDirect(layer,video){return new Promise(resolve=>startIntroMedia(layer,video,resolve))}
-function startIntroMedia(layer,video,resolve){layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0;video.muted=false;video.volume=1}catch{}const done=(withWhite=true)=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}if(withWhite)prepareIntroWhiteHandoff();layer.classList.add('hidden');layer.setAttribute('aria-hidden','true');resolve(!!withWhite)};const fallback=setTimeout(()=>done(false),10000);layer.onclick=()=>done(true);video.addEventListener('ended',()=>done(true),{once:true});video.addEventListener('error',()=>done(false),{once:true});const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))}
+function startIntroMedia(layer,video,resolve){
+  layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');
+  let finished=false,bridgeStarted=false,bridgeRaf=0;
+  const leadSeconds=60/60;
+  try{video.currentTime=0;video.muted=false;video.volume=1}catch{}
+  const triggerBridge=()=>{if(bridgeStarted)return;bridgeStarted=true;startStormIntroTransition().catch(()=>startStormAmbient())};
+  const watchBridge=()=>{
+    if(finished)return;
+    const duration=Number(video.duration),current=Number(video.currentTime);
+    if(Number.isFinite(duration)&&duration>0&&Number.isFinite(current)&&current>=Math.max(0,duration-leadSeconds)){triggerBridge();return}
+    bridgeRaf=requestAnimationFrame(watchBridge);
+  };
+  const done=(withWhite=true)=>{
+    if(finished)return;finished=true;clearTimeout(fallback);if(bridgeRaf)cancelAnimationFrame(bridgeRaf);
+    if(withWhite&&!bridgeStarted)triggerBridge();
+    try{video.pause()}catch{}
+    if(withWhite)prepareIntroWhiteHandoff();
+    layer.classList.add('hidden');layer.setAttribute('aria-hidden','true');resolve(!!withWhite)
+  };
+  const fallback=setTimeout(()=>done(false),10000);
+  layer.onclick=()=>done(true);
+  video.addEventListener('ended',()=>done(true),{once:true});
+  video.addEventListener('error',()=>done(false),{once:true});
+  bridgeRaf=requestAnimationFrame(watchBridge);
+  const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))
+}
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=5.15.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=5.16.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
