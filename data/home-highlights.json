@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-14T21:38:36.986675+00:00",
+  "updated": "2026-09-14T22:03:13.828701+00:00",
   "items": [
     {
       "id": "highlight-001",
@@ -8,8 +8,8 @@
       "status": "active",
       "enabled": true,
       "badge": "NEW",
-      "title": "aa",
-      "text": "tat?",
+      "title": "aaa",
+      "text": "",
       "targetType": "micro",
       "targetId": "002",
       "buttonText": "DESCUBRIR",
@@ -19,9 +19,11 @@
       "image": "assets/home-highlights/001/image.webp",
       "video": "",
       "createdAt": "2026-09-14T14:21:31.203384+00:00",
-      "updatedAt": "2026-09-14T21:38:36.562148+00:00",
+      "updatedAt": "2026-09-14T22:03:13.438744+00:00",
       "mediaVersion": "1789421916986",
-      "imageBytes": 241326
+      "imageBytes": 241326,
+      "showBadge": true,
+      "showTitle": false
     }
   ]
 }
