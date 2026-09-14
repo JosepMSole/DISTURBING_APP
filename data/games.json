@@ -4,7 +4,7 @@
     {
       "id": "los-enigmas-del-guardian",
       "number": 4,
-      "version": "",
+      "version": "5.0",
       "title": "Los Enigmas del Guardián",
       "publicationDate": "2026-06-20",
       "url": "https://josepmsole.github.io/Tarraco/app.html",
@@ -77,7 +77,7 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-14T17:24:00.852001+00:00",
+  "updated": "2026-09-14T17:24:59.646657+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118"
 }
