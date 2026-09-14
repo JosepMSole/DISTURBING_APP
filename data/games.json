@@ -2,6 +2,24 @@
   "schema": 1,
   "games": [
     {
+      "id": "memory50",
+      "number": 1,
+      "title": "Memory50",
+      "publicationDate": "2026-03-14",
+      "url": "https://josepmsole.github.io/Memory50/",
+      "type": "game",
+      "description": "El clásico juego memory de parejas, pero con las 50 primeras stories de la colección. ​\n\nTambién se convierte en un mural donde las verás todas juntas y serán accesibles.\n\nComplétalo y puede que tengas alguna recompensa, por insistente...\n​\n¡Consigue el mejor tiempo total!",
+      "instructions": "",
+      "relatedStoryId": "050",
+      "relatedSagaId": "",
+      "compatibility": "desktop_only",
+      "orientation": "landscape",
+      "fullscreen": true,
+      "published": true,
+      "cover": "assets/games/memory50/cover.webp",
+      "tracking": "none"
+    },
+    {
       "id": "los-enigmas-del-guardian",
       "title": "Los Enigmas del Guardián",
       "publicationDate": "2026-06-20",
@@ -15,22 +33,6 @@
       "fullscreen": true,
       "published": true,
       "cover": "assets/games/los-enigmas-del-guardian/cover.webp",
-      "tracking": "none"
-    },
-    {
-      "id": "memory50",
-      "title": "Memory50",
-      "publicationDate": "2026-03-14",
-      "url": "https://josepmsole.github.io/Memory50/",
-      "type": "game",
-      "description": "El clásico juego memory de parejas, pero con las 50 primeras stories de la colección. ​\n\nTambién se convierte en un mural donde las verás todas juntas y serán accesibles.\n\nComplétalo y puede que tengas alguna recompensa, por insistente...\n​\n¡Consigue el mejor tiempo total!",
-      "instructions": "",
-      "relatedStoryId": "050",
-      "compatibility": "desktop_only",
-      "orientation": "landscape",
-      "fullscreen": true,
-      "published": true,
-      "cover": "assets/games/memory50/cover.webp",
       "tracking": "none"
     },
     {
@@ -66,5 +68,5 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-14T02:16:48.521970+00:00"
+  "updated": "2026-09-14T02:44:42.330364+00:00"
 }
