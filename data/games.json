@@ -2,6 +2,24 @@
   "schema": 1,
   "games": [
     {
+      "id": "dark-limits-puzzles",
+      "number": 2,
+      "title": "Dark Limits: Puzzles",
+      "publicationDate": "2026-03-14",
+      "url": "https://josepmsole.github.io/DarkLimitsPuzzles/",
+      "type": "game",
+      "description": "¡Cuidado con los límites oscuros!\n​\nCompleta estos 5 puzzles, que cada vez serán más difíciles, y obtén un resumen de los hechos acontecidos hasta la fecha durante los eventos de Dark Limits...\n​\n...puede que puedas echar una miradita al futuro, mientras escuchas una banda sonora hecha a medida...\n\n¡Completa el desafío!",
+      "instructions": "",
+      "relatedStoryId": "",
+      "relatedSagaId": "dark-limits-prelude",
+      "compatibility": "desktop_only",
+      "orientation": "landscape",
+      "fullscreen": true,
+      "published": true,
+      "cover": "assets/games/dark-limits-puzzles/cover.webp",
+      "tracking": "none"
+    },
+    {
       "id": "memory50",
       "number": 1,
       "title": "Memory50",
@@ -50,23 +68,7 @@
       "published": true,
       "cover": "assets/games/icarus-racers/cover.webp",
       "tracking": "none"
-    },
-    {
-      "id": "dark-limits-puzzles",
-      "title": "Dark Limits: Puzzles",
-      "publicationDate": "2026-03-14",
-      "url": "https://josepmsole.github.io/DarkLimitsPuzzles/",
-      "type": "game",
-      "description": "¡Cuidado con los límites oscuros!\n​\nCompleta estos 5 puzzles, que cada vez serán más difíciles, y obtén un resumen de los hechos acontecidos hasta la fecha durante los eventos de Dark Limits...\n​\n...puede que puedas echar una miradita al futuro, mientras escuchas una banda sonora hecha a medida...\n\n¡Completa el desafío!",
-      "instructions": "",
-      "relatedStoryId": "",
-      "compatibility": "desktop_only",
-      "orientation": "landscape",
-      "fullscreen": true,
-      "published": true,
-      "cover": "assets/games/dark-limits-puzzles/cover.webp",
-      "tracking": "none"
     }
   ],
-  "updated": "2026-09-14T02:44:42.330364+00:00"
+  "updated": "2026-09-14T02:45:03.952590+00:00"
 }
