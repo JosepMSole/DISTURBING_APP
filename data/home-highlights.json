@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-14T18:06:32.003949+00:00",
+  "updated": "2026-09-14T21:38:36.986675+00:00",
   "items": [
     {
       "id": "highlight-001",
@@ -8,7 +8,7 @@
       "status": "active",
       "enabled": true,
       "badge": "NEW",
-      "title": "Proba 1 ylosabess",
+      "title": "aa",
       "text": "tat?",
       "targetType": "micro",
       "targetId": "002",
@@ -19,9 +19,9 @@
       "image": "assets/home-highlights/001/image.webp",
       "video": "",
       "createdAt": "2026-09-14T14:21:31.203384+00:00",
-      "updatedAt": "2026-09-14T18:06:31.584545+00:00",
-      "mediaVersion": "1789409192003",
-      "imageBytes": 165012
+      "updatedAt": "2026-09-14T21:38:36.562148+00:00",
+      "mediaVersion": "1789421916986",
+      "imageBytes": 241326
     }
   ]
 }
