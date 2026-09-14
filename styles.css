@@ -6329,3 +6329,64 @@ body.micro-preview-mode .entry-gate{display:none!important}
 @media (prefers-reduced-motion:reduce){.game-back-btn-top .game-back-sweep{animation:none;display:none}}
 .micro-home-highlight{position:relative;outline:2px solid rgba(255,74,74,.8);box-shadow:0 0 24px rgba(255,45,45,.35)}
 .micro-home-new{position:absolute;top:7px;left:7px;z-index:5;padding:4px 7px;border-radius:999px;background:#ff2a2a;color:#fff;font-size:10px;font-weight:900;letter-spacing:.08em;box-shadow:0 0 13px rgba(255,42,42,.55)}
+
+
+/* ============================================================
+   v5.11 · HOME highlight + GAMES visual refinement
+   ============================================================ */
+.home-highlight{
+  width:calc(100% - (var(--reader-pad) * 2))!important;
+  max-width:calc(100% - (var(--reader-pad) * 2))!important;
+  margin:16px var(--reader-pad) 18px!important;
+  box-sizing:border-box!important;
+}
+.home-highlight-copy h2{font-size:clamp(17px,5vw,25px)!important;line-height:1.05!important;margin-top:0!important}
+.home-highlight-badge{
+  overflow:hidden;transform-origin:center;will-change:transform,filter,box-shadow;
+  animation:homeHighlightBadgePulseV511 2s ease-in-out infinite;
+}
+.home-highlight-badge::after{content:"";position:absolute;inset:-35% auto -35% -65%;width:46%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.18),rgba(255,255,255,.96),rgba(255,255,255,.18),transparent);transform:skewX(-18deg);animation:homeHighlightBadgeSweepV511 1.35s ease-in-out infinite;pointer-events:none}
+@keyframes homeHighlightBadgePulseV511{0%,100%{transform:scale(1);filter:brightness(1);box-shadow:0 0 12px rgba(255,255,255,.26)}50%{transform:scale(1.2);filter:brightness(1.32);box-shadow:0 0 8px #fff,0 0 24px rgba(255,255,255,.72),0 0 40px rgba(255,221,132,.32)}}
+@keyframes homeHighlightBadgeSweepV511{0%,14%{left:-65%;opacity:0}25%{opacity:1}68%{left:130%;opacity:.95}76%,100%{left:130%;opacity:0}}
+
+/* GAMES catalog: two columns with custom cartridge/list image. */
+.games-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+.game-card>img{width:100%!important;aspect-ratio:1470/1635!important;object-fit:contain!important;object-position:center!important;background:#050405!important}
+
+/* Compatibility indicators: approximately x2 versus v5.10. */
+.game-device-badge{gap:18px!important;padding:17px 18px!important;border-radius:14px!important;flex-wrap:nowrap!important}
+.game-device-icons{gap:9px!important}
+.game-device-icons svg{width:48px!important;height:48px!important;stroke-width:1.7!important}
+.game-device-phone svg{width:30px!important;height:48px!important}
+.game-device-phone b{font-size:26px!important;right:-5px!important;bottom:-3px!important}
+.game-device-copy strong{font-size:18px!important;line-height:1.12!important}
+.game-device-copy small{font-size:14px!important;line-height:1.28!important;margin-top:3px!important}
+.game-device-badge.compact{gap:8px!important;padding:9px 10px!important;border-radius:10px!important;margin:0!important;width:100%!important;box-sizing:border-box!important;min-width:0!important}.game-device-badge.compact .game-device-copy{min-width:0!important}.game-device-badge.compact .game-device-copy strong{overflow-wrap:anywhere!important}
+.game-device-badge.compact .game-device-icons{gap:5px!important}
+.game-device-badge.compact .game-device-icons svg{width:30px!important;height:30px!important}
+.game-device-badge.compact .game-device-phone svg{width:20px!important;height:32px!important}
+.game-device-badge.compact .game-device-phone b{font-size:18px!important}
+.game-device-badge.compact .game-device-copy strong{font-size:11.5px!important;line-height:1.12!important}
+.game-device-badge.compact .game-device-copy small{display:none!important}
+
+/* GAME detail scale / spacing. */
+.game-detail{padding-top:12px!important}
+.game-back-btn-top{margin-top:0!important;margin-bottom:12px!important}
+.game-detail-topline>span{font-size:16px!important;line-height:1.1!important}
+.game-detail-topline>small{font-size:9px!important}
+.game-detail-info .game-badges{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin-top:11px!important}
+.game-detail-info .game-badges b{font:900 13px/1.15 Oxanium,sans-serif!important;padding:10px 12px!important;border-radius:999px!important}
+.game-orientation-badge{border-color:#b85aa7!important;background:#281020!important;color:#ffd7f7!important;box-shadow:0 0 17px rgba(255,112,226,.16)!important}
+.game-version-badge{border-color:#46505a!important;background:#10151a!important;color:#d9e4eb!important}
+.game-description{font-size:13px!important;line-height:1.62!important}
+.game-play-btn{font-size:24px!important;min-height:62px!important;letter-spacing:.075em!important}
+
+@media(max-width:430px){
+  .game-device-badge{padding:15px 14px!important;gap:13px!important}
+  .game-device-copy strong{font-size:16px!important}
+  .game-device-copy small{font-size:12px!important}
+  .game-device-badge.compact{padding:8px!important;gap:6px!important}
+  .game-device-badge.compact .game-device-copy strong{font-size:10.5px!important}
+  .games-grid{gap:8px!important}
+}
+@media(prefers-reduced-motion:reduce){.home-highlight-badge{animation:none!important}.home-highlight-badge::after{display:none!important}}
