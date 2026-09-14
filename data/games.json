@@ -18,6 +18,22 @@
       "tracking": "none"
     },
     {
+      "id": "icarus-racers",
+      "title": "Icarus Racers",
+      "publicationDate": "2026-03-14",
+      "url": "https://josepmsole.github.io/IcarusRacers/",
+      "type": "game",
+      "description": "¡Bienvenidos pilotos!\n​\nAbróchense bien los cinturones y prepárense para demostrar sus habilidades en este simulador de carreras con la tecnología de hipermotores ICARUS.\n\nLa Confederación del Pacífico se enorgullece de presentarles la nueva línea de modelos ICARUS 3, con los que podrá correr y testear su velocidad por el exterior de la atmósfera terrestre.\n\n¡Conviértete en el más rápido!\n​3,2,1... ¡GO!",
+      "instructions": "",
+      "relatedStoryId": "012",
+      "compatibility": "desktop_recommended",
+      "orientation": "landscape",
+      "fullscreen": true,
+      "published": true,
+      "cover": "assets/games/icarus-racers/cover.webp",
+      "tracking": "none"
+    },
+    {
       "id": "dark-limits-puzzles",
       "title": "Dark Limits: Puzzles",
       "publicationDate": "2026-03-14",
@@ -34,5 +50,5 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-14T01:51:43.130389+00:00"
+  "updated": "2026-09-14T01:59:41.152506+00:00"
 }
