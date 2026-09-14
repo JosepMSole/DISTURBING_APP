@@ -1,4 +1,4 @@
-const APP_VERSION = '5.13.0';
+const APP_VERSION = '5.14.0';
 let globalPlayerAudioEngine=null,stormAudioEngine=null;
 const $=(s,r=document)=>{
   if(r===document&&s==='#globalPlayerAudio')return globalPlayerAudioEngine;
@@ -321,7 +321,7 @@ function homeHighlightMediaHtml(h){
 }
 function homeHighlightHtml(){
   const h=activeHomeHighlight();if(!h)return'';
-  return `<section class="home-highlight" data-home-highlight role="button" tabindex="0" aria-label="${escAttr(h.title||'Destacado temporal')}">${homeHighlightMediaHtml(h)}<div class="home-highlight-shade"></div><div class="home-highlight-copy">${h.badge?`<span class="home-highlight-badge">${escapeHtml(h.badge)}</span>`:''}${h.title?`<h2>${escapeHtml(h.title)}</h2>`:''}${h.text?`<p>${escapeHtml(h.text).replace(/\n/g,'<br>')}</p>`:''}<span class="home-highlight-cta">${escapeHtml(h.buttonText||'DESCUBRIR')} ›</span></div></section>`;
+  return `<section class="home-highlight" data-home-highlight role="button" tabindex="0" aria-label="${escAttr(h.title||'Destacado temporal')}">${homeHighlightMediaHtml(h)}<div class="home-highlight-shade"></div><div class="home-highlight-copy">${h.badge&&h.showBadge!==false?`<span class="home-highlight-badge">${escapeHtml(h.badge)}</span>`:''}${h.title&&h.showTitle!==false?`<h2>${escapeHtml(h.title)}</h2>`:''}${h.text?`<p>${escapeHtml(h.text).replace(/\n/g,'<br>')}</p>`:''}<span class="home-highlight-cta">${escapeHtml(h.buttonText||'DESCUBRIR')} ›</span></div></section>`;
 }
 function openHomeHighlight(h=activeHomeHighlight()){
   if(!h)return;const type=String(h.targetType||'').toLowerCase(),id=String(h.targetId||'').trim();
@@ -1318,5 +1318,5 @@ async function playEntryIntro(){if(introPlayed)return false;introPlayed=true;con
 function playEntryIntroDirect(layer,video){return new Promise(resolve=>startIntroMedia(layer,video,resolve))}
 function startIntroMedia(layer,video,resolve){layer.classList.remove('hidden');layer.setAttribute('aria-hidden','false');let finished=false;try{video.currentTime=0;video.muted=false;video.volume=1}catch{}const done=(withWhite=true)=>{if(finished)return;finished=true;clearTimeout(fallback);try{video.pause()}catch{}if(withWhite)prepareIntroWhiteHandoff();layer.classList.add('hidden');layer.setAttribute('aria-hidden','true');resolve(!!withWhite)};const fallback=setTimeout(()=>done(false),10000);layer.onclick=()=>done(true);video.addEventListener('ended',()=>done(true),{once:true});video.addEventListener('error',()=>done(false),{once:true});const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))}
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=5.13.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=5.14.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
