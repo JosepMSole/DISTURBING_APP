@@ -11,7 +11,7 @@
       "instructions": "",
       "relatedStoryId": "209",
       "compatibility": "mobile_desktop",
-      "orientation": "landscape",
+      "orientation": "portrait",
       "fullscreen": true,
       "published": true,
       "cover": "assets/games/los-enigmas-del-guardian/cover.webp",
@@ -66,5 +66,5 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-14T02:10:10.433913+00:00"
+  "updated": "2026-09-14T02:16:48.521970+00:00"
 }
