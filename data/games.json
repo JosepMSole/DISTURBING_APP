@@ -42,7 +42,7 @@
       "description": "¡Cuidado con los límites oscuros!\n​\nCompleta estos 5 puzzles, que cada vez serán más difíciles, y obtén un resumen de los hechos acontecidos hasta la fecha durante los eventos de Dark Limits...\n​\n...puede que puedas echar una miradita al futuro, mientras escuchas una banda sonora hecha a medida...\n\n¡Completa el desafío!",
       "instructions": "",
       "relatedStoryId": "",
-      "compatibility": "desktop_recommended",
+      "compatibility": "desktop_only",
       "orientation": "landscape",
       "fullscreen": true,
       "published": true,
@@ -50,5 +50,5 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-14T01:59:41.152506+00:00"
+  "updated": "2026-09-14T02:00:30.644513+00:00"
 }
