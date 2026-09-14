@@ -30,7 +30,7 @@
       "instructions": "",
       "relatedStoryId": "012",
       "relatedSagaId": "",
-      "compatibility": "desktop_recommended",
+      "compatibility": "desktop_only",
       "orientation": "landscape",
       "fullscreen": true,
       "published": true,
@@ -74,7 +74,7 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-14T03:01:18.442487+00:00",
+  "updated": "2026-09-14T13:39:04.470853+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118"
 }
