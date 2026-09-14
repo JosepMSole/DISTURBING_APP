@@ -6441,3 +6441,29 @@ body.micro-preview-mode .entry-gate{display:none!important}
 .user-page.user-page-reveal-in>.user-avatar-loop{animation:userBoxInV415 .42s cubic-bezier(.2,.82,.2,1) both;animation-delay:calc(var(--user-box-i,0) * .09s)}
 @media(max-width:460px){.user-avatar-section .avatar-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important}.avatar-expand-row{min-height:46px}.avatar-expand-toggle{min-height:44px}.avatar-expand-toggle svg{width:30px;height:30px}}
 @media(prefers-reduced-motion:reduce){.avatar-expand-toggle svg{transition:none!important}.user-page.user-page-reveal-ready>.user-avatar-loop{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}}
+
+
+/* ============================================================
+   v5.15 · HOME CTA + selección catálogo + MICRO typography
+   ============================================================ */
+/* HOME · última publicación: LEER con presencia x2. */
+.hero.latest-storm #openLatest{font-size:24px!important;line-height:1!important;min-height:62px!important}
+/* HOME · TU PROGRESO: acceso centrado dentro de la caja. */
+.home-progress .link-btn{width:100%!important;margin:10px auto 0!important;text-align:center!important;justify-content:center!important}
+/* HOME · DESTACADO TEMPORAL: CTA anclado visualmente a la esquina inferior derecha. */
+.home-highlight-copy{padding-bottom:56px!important}.home-highlight-cta{position:absolute!important;right:18px!important;bottom:14px!important;display:flex!important;width:max-content!important;margin:0!important;justify-content:flex-end!important;text-align:right!important}
+/* MICRO · catálogo: solo #XXX y título x2. */
+.micro-card-copy .story-number{font-size:9px!important;line-height:1!important;color:#c45c67!important}
+.micro-card-copy h3{font-size:26px!important;line-height:1.02!important;margin:5px 0 4px!important;overflow-wrap:anywhere}
+/* Selección inequívoca antes de entrar en GAME/MICRO. */
+.game-card,.micro-card{position:relative;isolation:isolate;transition:transform .18s ease,filter .18s ease,border-color .18s ease,box-shadow .18s ease}
+.game-card::after,.micro-card::after{content:"";position:absolute;z-index:12;inset:-1px;pointer-events:none;opacity:0;transform:translateX(-120%);background:linear-gradient(100deg,transparent 0 28%,rgba(255,255,255,.10) 39%,rgba(255,255,255,.88) 50%,rgba(255,255,255,.12) 61%,transparent 72% 100%)}
+.game-card.is-selecting{transform:scale(.965)!important;filter:brightness(1.28)!important;border-color:#ff9bea!important;box-shadow:0 0 0 2px rgba(255,141,233,.20),0 0 30px rgba(255,71,216,.55)!important}
+.micro-card.is-selecting{transform:scale(.965)!important;filter:brightness(1.25)!important;border-color:#ef6d79!important;box-shadow:0 0 0 2px rgba(239,109,121,.20),0 0 30px rgba(221,53,70,.55)!important}
+.game-card.is-selecting::after,.micro-card.is-selecting::after{animation:catalogSelectSweepV515 .32s ease-out forwards}
+@keyframes catalogSelectSweepV515{0%{opacity:0;transform:translateX(-120%)}22%{opacity:1}100%{opacity:0;transform:translateX(120%)}}
+/* GAMES · texto rico de cabecera. */
+.games-intro-rich{width:100%;font-size:10px;line-height:1.55;color:#bca3b5;white-space:normal}
+.games-intro-rich p,.games-intro-rich div{margin:0 0 .55em}.games-intro-rich p:last-child,.games-intro-rich div:last-child{margin-bottom:0}
+@media(max-width:430px){.micro-card-copy h3{font-size:22px!important}.hero.latest-storm #openLatest{font-size:22px!important}}
+@media(prefers-reduced-motion:reduce){.game-card.is-selecting,.micro-card.is-selecting{transform:none!important}.game-card.is-selecting::after,.micro-card.is-selecting::after{animation:none!important;display:none!important}}
