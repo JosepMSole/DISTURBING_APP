@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-14T14:21:31.617890+00:00",
+  "updated": "2026-09-14T14:47:33.268311+00:00",
   "items": [
     {
       "id": "highlight-001",
@@ -14,12 +14,12 @@
       "targetId": "002",
       "buttonText": "DESCUBRIR",
       "url": "",
-      "startAt": "",
-      "endAt": "",
+      "startAt": "2026-09-14T14:47:00.000Z",
+      "endAt": "2026-09-14T14:47:00.000Z",
       "image": "assets/home-highlights/001/image.webp",
       "video": "",
       "createdAt": "2026-09-14T14:21:31.203384+00:00",
-      "updatedAt": "2026-09-14T14:21:31.203384+00:00",
+      "updatedAt": "2026-09-14T14:47:32.891023+00:00",
       "mediaVersion": "1789395691617",
       "imageBytes": 146288
     }
