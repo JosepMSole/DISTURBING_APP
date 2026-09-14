@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "updated": "2026-09-14T16:37:06.096051+00:00",
+  "updated": "2026-09-14T16:37:19.670308+00:00",
   "items": [
     {
       "id": "highlight-001",
       "number": 1,
-      "status": "draft",
-      "enabled": false,
+      "status": "active",
+      "enabled": true,
       "badge": "NEW",
       "title": "Proba 1 ylosabess",
       "text": "tat?",
@@ -19,7 +19,7 @@
       "image": "assets/home-highlights/001/image.webp",
       "video": "",
       "createdAt": "2026-09-14T14:21:31.203384+00:00",
-      "updatedAt": "2026-09-14T16:37:05.721941+00:00",
+      "updatedAt": "2026-09-14T16:37:19.111801+00:00",
       "mediaVersion": "1789395691617",
       "imageBytes": 146288
     }
