@@ -9,6 +9,7 @@
       "url": "https://josepmsole.github.io/Tarraco/",
       "type": "game",
       "description": "¿Te atreves a desafiar al Guardián?\n​\nPonte en la piel de Marc, Laia o Eric y adéntrate en las profundidades del Pretorio para demostrar tus conocimientos sobre la Tarraco Romana.\n\nApto para 1-3 jugadores, con 100 preguntas\ndisponibles en: Castellano + English + Català\n\n¡Supera al Guardián y escapa!",
+      "descriptionHtml": "¿Te atreves a desafiar al <b>Guardián</b>?<br>​<br>Ponte en la piel de Marc, Laia o Eric y adéntrate en las profundidades del <b>Pretorio</b> para demostrar tus conocimientos sobre la <b>Tarraco Romana</b>.<br><br>Apto para<b> 1-3</b> jugadores, con <b>100 preguntas</b><div>disponibles en: <b>Castellano + English + Català<br></b><br>¡Supera al Guardián y escapa!</div>",
       "instructions": "",
       "relatedStoryId": "209",
       "relatedSagaId": "",
@@ -74,7 +75,7 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-14T13:39:04.470853+00:00",
+  "updated": "2026-09-14T14:46:27.040595+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118"
 }
