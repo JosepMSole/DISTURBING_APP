@@ -6246,7 +6246,7 @@ body.micro-preview-mode .entry-gate{display:none!important}
 
 
 /* ============================================================
-   v5.6 · MICRO / PORTALES / USER
+   v5.7 · MICRO / PORTALES / USER
    ============================================================ */
 .micro-intro-panel{cursor:pointer!important;user-select:none;outline:none}
 .micro-intro-panel:focus-visible{box-shadow:inset 0 0 0 1px rgba(226,111,124,.6),0 0 0 2px rgba(226,111,124,.12)}
@@ -6260,3 +6260,9 @@ body.micro-preview-mode .entry-gate{display:none!important}
 .user-hero-readcount{margin-top:4px;color:#fff;font:700 8px/1.1 Oxanium,sans-serif;letter-spacing:.065em;text-transform:none;white-space:nowrap}
 .user-hero-readcount strong{font:inherit;color:#fff;font-variant-numeric:tabular-nums}
 @media(max-width:390px){.micro-exclusive-lead{font-size:7.7px!important}.user-hero-readcount{font-size:7.5px}}
+
+/* v5.7 · MICRO icon highlight + USER read counter */
+.micro-app-icon{animation:microAppIconHighlight 2.8s ease-in-out infinite;will-change:transform,filter}
+@keyframes microAppIconHighlight{0%,100%{transform:scale(1);filter:drop-shadow(0 0 10px rgba(220,54,72,.18)) brightness(1)}45%{transform:scale(1.045);filter:drop-shadow(0 0 12px rgba(255,255,255,.20)) drop-shadow(0 0 22px rgba(238,55,76,.62)) brightness(1.2)}58%{transform:scale(1.025);filter:drop-shadow(0 0 9px rgba(255,180,190,.22)) drop-shadow(0 0 15px rgba(238,55,76,.40)) brightness(1.1)}}
+.user-hero-readcount strong{font-size:17px!important;line-height:.92!important;font-weight:900!important;letter-spacing:0!important;vertical-align:-1px}
+@media(prefers-reduced-motion:reduce){.micro-app-icon{animation:none!important}}
