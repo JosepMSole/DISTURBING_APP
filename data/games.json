@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "games": [
+    {
+      "id": "memory50",
+      "title": "Memory50",
+      "publicationDate": "2026-03-14",
+      "url": "https://josepmsole.github.io/Memory50/",
+      "type": "game",
+      "description": "El clásico juego memory de parejas, pero con las 50 primeras stories de la colección. ​\n\nTambién se convierte en un mural donde las verás todas juntas y serán accesibles.\n\nComplétalo y puede que tengas alguna recompensa, por insistente...\n​\n¡Consigue el mejor tiempo total!",
+      "instructions": "",
+      "relatedStoryId": "050",
+      "compatibility": "desktop_recommended",
+      "orientation": "landscape",
+      "fullscreen": true,
+      "published": true,
+      "cover": "assets/games/memory50/cover.webp",
+      "tracking": "none"
+    }
+  ],
+  "updated": "2026-09-14T01:45:01.166034+00:00"
+}
