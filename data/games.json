@@ -10,7 +10,7 @@
       "description": "El clásico juego memory de parejas, pero con las 50 primeras stories de la colección. ​\n\nTambién se convierte en un mural donde las verás todas juntas y serán accesibles.\n\nComplétalo y puede que tengas alguna recompensa, por insistente...\n​\n¡Consigue el mejor tiempo total!",
       "instructions": "",
       "relatedStoryId": "050",
-      "compatibility": "desktop_recommended",
+      "compatibility": "desktop_only",
       "orientation": "landscape",
       "fullscreen": true,
       "published": true,
@@ -18,5 +18,5 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-14T01:45:01.166034+00:00"
+  "updated": "2026-09-14T01:49:54.359111+00:00"
 }
