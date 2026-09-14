@@ -6416,3 +6416,28 @@ body.micro-preview-mode .entry-gate{display:none!important}
 .games-filter-empty{grid-column:1/-1}
 @media(max-width:430px){.games-summary{grid-template-columns:minmax(0,1fr) auto!important;gap:6px!important;padding:8px!important}.games-summary-count{gap:5px!important;flex-direction:column}.games-filter-icons{gap:3px}.games-filter-icons button{width:38px;min-height:48px}.games-filter-icons button svg{width:20px;height:20px}.games-filter-icons button small{font-size:5px}.home-previous-grid{gap:5px}.home-prev-readtime{font-size:7px;padding:6px 2px}}
 @media(prefers-reduced-motion:reduce){.games-hero-image,.games-hero::after,.games-hero-pixel-fx{animation:none!important}}
+
+
+/* =========================================================
+   DISTURBING STORIES APP v5.13 · HOME / GAMES / SAGAS / USER
+   ========================================================= */
+/* DESTACADO TEMPORAL: imagen 100% visible y velo negro máximo 20%. */
+.home-highlight-media{opacity:1!important}
+.home-highlight-shade{background:linear-gradient(180deg,rgba(0,0,0,.015),rgba(0,0,0,.07) 42%,rgba(0,0,0,.20) 100%)!important}
+/* HOME · CONTINUAR LEYENDO: título ligeramente más compacto que v5.12. */
+.home-continue-copy strong{font-size:clamp(21px,5.8vw,26px)!important;line-height:1.04!important}
+/* GAMES · texto de cabecera respeta exactamente saltos introducidos en Importer. */
+.games-intro-box p{white-space:pre-wrap!important}
+/* USER · avatares siempre 4 columnas; con 9+ se muestran dos filas + tercera fila de apertura. */
+.user-avatar-section .avatar-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important}
+.user-avatar-section:not(.avatars-expanded) .avatar-choice.avatar-collapse-extra{display:none!important}
+.avatar-expand-row{grid-column:1/-1;min-height:52px;display:grid;place-items:center;border:1px solid rgba(216,250,255,.16);border-radius:10px;background:rgba(216,250,255,.025);margin-top:2px;overflow:hidden}
+.avatar-expand-toggle{width:100%;min-height:48px;border:0;background:transparent;color:#d8faff;display:grid;place-items:center;cursor:pointer}
+.avatar-expand-toggle svg{width:34px;height:34px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .22s ease,filter .22s ease;filter:drop-shadow(0 0 7px rgba(216,250,255,.16))}
+.user-avatar-section.avatars-expanded .avatar-expand-toggle svg{transform:rotate(180deg)}
+.user-avatar-loop{width:100%;margin:14px 0 16px;overflow:hidden;position:relative;z-index:1;pointer-events:none}
+.user-avatar-loop video{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+.user-page.user-page-reveal-ready>.user-avatar-loop{opacity:0;transform:translateY(16px);filter:blur(3px)}
+.user-page.user-page-reveal-in>.user-avatar-loop{animation:userBoxInV415 .42s cubic-bezier(.2,.82,.2,1) both;animation-delay:calc(var(--user-box-i,0) * .09s)}
+@media(max-width:460px){.user-avatar-section .avatar-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:6px!important}.avatar-expand-row{min-height:46px}.avatar-expand-toggle{min-height:44px}.avatar-expand-toggle svg{width:30px;height:30px}}
+@media(prefers-reduced-motion:reduce){.avatar-expand-toggle svg{transition:none!important}.user-page.user-page-reveal-ready>.user-avatar-loop{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}}
