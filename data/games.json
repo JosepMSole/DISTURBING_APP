@@ -87,8 +87,9 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-14T20:37:36.097433+00:00",
+  "updated": "2026-09-14T23:16:41.496114+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118",
-  "heroText": "¿Te atreves a JUGAR en el universo\nde Disturbing Stories?\n\n¡Demuéstralo y entra en uno!\n\nConsulta la compatibilidad antes de jugar."
+  "heroText": "¿Te atreves a JUGAR en el universo\nde Disturbing Stories?\n\n¡Demuéstralo y entra en uno de los minigames!\n\nConsulta la compatibilidad antes de jugar",
+  "heroHtml": "¿Te atreves a <b>JUGAR</b> en el universo<br>de <b>Disturbing Stories</b>?<br><br>¡Demuéstralo y entra en uno de los minigames!<br><br><i>Consulta la compatibilidad antes de jugar</i>"
 }
