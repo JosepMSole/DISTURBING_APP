@@ -76,8 +76,8 @@
       "publicationDate": "2026-03-14",
       "url": "https://josepmsole.github.io/Memory50/app.html",
       "type": "game",
-      "description": "El clásico juego memory de parejas, pero con las 50 primeras stories de la colección. ​\n\nTambién se convierte en un mural donde las verás todas juntas.\n\nComplétalo y puede que tengas alguna recompensa, por insistente...\n​\n¡Consigue el mejor tiempo total!",
-      "descriptionHtml": "El clásico juego memory de parejas, pero con las <b>50 primeras stories de la colección</b>. ​<br><br>También se convierte en un <b>mural</b> donde las verás todas juntas.<br><br>Complétalo y puede que tengas alguna recompensa, por insistente...<br>​<br>¡Consigue el <b>mejor tiempo</b> total!",
+      "description": "El clásico juego memory de parejas, pero con las 50 primeras stories publicadas de la colección. ​\n\nTambién se convierte en un mural donde las verás todas juntas. Complétalo y puede que tengas alguna recompensa, por insistente...\n​\n¡Consigue el mejor tiempo total!",
+      "descriptionHtml": "El clásico juego memory de parejas, pero con las <b>50 primeras stories publicadas de la colección</b>. ​<br><br>También se convierte en un <b>mural</b> donde las verás todas juntas. Complétalo y puede que tengas alguna recompensa, por insistente...<br>​<br>¡Consigue el <b>mejor tiempo</b> total!",
       "instructions": "",
       "relatedStoryId": "050",
       "relatedSagaId": "",
@@ -95,7 +95,7 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-15T13:00:50.878674+00:00",
+  "updated": "2026-09-15T13:03:23.817477+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118",
   "heroText": "¿Te atreves a JUGAR en el universo\nde Disturbing Stories?\n\n¡Demuéstralo y entra en uno de los minigames!\n\nConsulta la compatibilidad antes de jugar",
