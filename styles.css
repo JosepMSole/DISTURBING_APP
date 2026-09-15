@@ -6827,3 +6827,120 @@ body.micro-preview-mode .entry-gate{display:none!important}
 @media(prefers-reduced-motion:reduce){
   .micro-header-custom-badge{animation:none!important;box-shadow:0 0 7px rgba(255,255,255,.6),0 0 14px rgba(255,255,255,.25),inset 0 0 0 1px rgba(255,255,255,.06)!important}
 }
+
+/* ========================================================================
+   v5.29 · MICRO badge / MIS STORIES level / COLLECTION + SAGAS 16:9 loops
+   ======================================================================== */
+/* MICRO-PESADILLAS · badge realmente destacado: recupera el pulso de escala
+   original, mantiene el reflejo interior y suma halo/contraste pulsante. */
+.micro-header-custom-badge{
+  top:14px!important;right:14px!important;
+  background:#050505!important;color:#fff!important;
+  border:1px solid rgba(255,255,255,.92)!important;
+  overflow:hidden!important;isolation:isolate!important;
+  transform-origin:center center!important;
+  will-change:transform,filter,box-shadow!important;
+  animation:microHeaderBadgeSpotV529 2s cubic-bezier(.4,0,.2,1) infinite!important;
+}
+.micro-header-custom-badge::after{
+  display:block!important;
+  animation:homeHighlightBadgeSweepV511 1.35s ease-in-out infinite!important;
+}
+@keyframes microHeaderBadgeSpotV529{
+  0%,100%{
+    transform:scale(1);
+    filter:brightness(1) saturate(1);
+    border-color:rgba(255,255,255,.76);
+    box-shadow:0 0 5px rgba(255,255,255,.48),0 0 12px rgba(255,255,255,.18),inset 0 0 10px rgba(255,255,255,.06);
+  }
+  44%,56%{
+    transform:scale(1.20);
+    filter:brightness(1.38) saturate(1.08);
+    border-color:#fff;
+    box-shadow:0 0 8px rgba(255,255,255,1),0 0 20px rgba(255,255,255,.82),0 0 34px rgba(224,236,255,.48),inset 0 0 13px rgba(255,255,255,.18);
+  }
+}
+
+/* MIS STORIES · el nivel deja de ser una caja: solo cifra + estrella,
+   ambas al doble de tamaño y en la diagonal superior-derecha del avatar. */
+.my-stories-avatar>.my-stories-level-badge,
+.my-stories-avatar>.my-stories-level-badge.level-multi,
+.my-stories-avatar>.my-stories-level-badge.level-3plus{
+  position:absolute!important;display:flex!important;align-items:flex-start!important;justify-content:center!important;gap:1px!important;
+  top:-12px!important;right:-18px!important;bottom:auto!important;
+  width:auto!important;min-width:0!important;height:auto!important;min-height:0!important;
+  padding:0!important;margin:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  line-height:1!important;overflow:visible!important;transform:none!important;
+  text-shadow:0 2px 4px #000,0 0 7px rgba(215,181,95,.62)!important;
+}
+.my-stories-avatar>.my-stories-level-badge .user-level-number{
+  position:static!important;display:block!important;
+  font:900 20px/1 Oxanium,sans-serif!important;color:#f7e7ad!important;
+  transform:none!important;margin:0!important;padding:0!important;
+}
+.my-stories-avatar>.my-stories-level-badge .user-level-star{
+  position:static!important;display:block!important;
+  font:900 12px/1 Oxanium,sans-serif!important;color:#f0cf70!important;
+  transform:translateY(-5px)!important;margin:0!important;padding:0!important;
+}
+@media(max-width:390px){
+  .my-stories-avatar>.my-stories-level-badge,
+  .my-stories-avatar>.my-stories-level-badge.level-multi,
+  .my-stories-avatar>.my-stories-level-badge.level-3plus{top:-10px!important;right:-15px!important}
+  .my-stories-avatar>.my-stories-level-badge .user-level-number{font-size:18px!important}
+  .my-stories-avatar>.my-stories-level-badge .user-level-star{font-size:11px!important;transform:translateY(-4px)!important}
+}
+
+/* COLLECTION + SAGAS · loops 16:9 reales, sin bandas laterales y anclados
+   al extremo derecho del viewport/contenido, sin depender del typewriter. */
+.collection-title-with-loop,.sagas-title-with-loop{
+  position:relative!important;
+  align-items:center!important;
+  overflow:visible!important;
+}
+.collection-title-with-loop{min-height:96px!important;padding-right:clamp(142px,45vw,202px)!important}
+.sagas-title-with-loop{min-height:112px!important;padding-right:clamp(164px,50vw,226px)!important}
+.collection-title-copy,.sagas-title-copy{position:relative!important;z-index:2!important;min-width:0!important}
+.collection-header-loop,.sagas-header-loop{
+  position:absolute!important;
+  z-index:1!important;
+  right:calc(-1 * var(--reader-pad))!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  height:auto!important;
+  aspect-ratio:16/9!important;
+  flex:none!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin:0!important;
+  overflow:hidden!important;
+  background:#000!important;
+  border-radius:10px!important;
+  pointer-events:none!important;
+}
+.collection-header-loop{width:clamp(132px,42vw,188px)!important}
+.sagas-header-loop{width:clamp(154px,48vw,218px)!important}
+.collection-header-loop video,.sagas-header-loop video{
+  display:block!important;width:100%!important;height:100%!important;
+  aspect-ratio:16/9!important;object-fit:cover!important;object-position:center!important;
+  transform:none!important;margin:0!important;background:#000!important;
+}
+@media(max-width:390px){
+  .collection-title-with-loop{min-height:82px!important;padding-right:132px!important}
+  .sagas-title-with-loop{min-height:94px!important;padding-right:148px!important}
+  .collection-header-loop{width:136px!important}
+  .sagas-header-loop{width:152px!important}
+}
+@media(max-width:350px){
+  .collection-title-with-loop{padding-right:118px!important}
+  .sagas-title-with-loop{padding-right:132px!important}
+  .collection-header-loop{width:122px!important}
+  .sagas-header-loop{width:136px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .micro-header-custom-badge{animation:none!important;transform:none!important;filter:none!important;box-shadow:0 0 8px rgba(255,255,255,.72),0 0 18px rgba(255,255,255,.28)!important}
+  .micro-header-custom-badge::after{animation:none!important;display:none!important}
+}
