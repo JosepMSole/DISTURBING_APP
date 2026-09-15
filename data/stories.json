@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-15T15:01:42.994795+00:00",
+  "updated": "2026-09-15T15:06:23.830495+00:00",
   "stories": [
     {
       "id": "277",
@@ -2134,6 +2134,12 @@
           "mediaId": "b-tY8aeXmVo",
           "kind": "audio",
           "locale": "es"
+        }
+      ],
+      "contentRelations": [
+        {
+          "src": "https://www.youtube.com/embed/b-tY8aeXmVo",
+          "gameId": "icarus-racers"
         }
       ]
     },

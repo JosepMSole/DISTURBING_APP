@@ -185,7 +185,8 @@
         {
           "type": "iframe",
           "src": "https://www.youtube.com/embed/b-tY8aeXmVo",
-          "title": "Contenido multimedia"
+          "title": "Contenido multimedia",
+          "gameId": "icarus-racers"
         }
       ]
     },
