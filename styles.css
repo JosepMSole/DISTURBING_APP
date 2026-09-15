@@ -6672,3 +6672,40 @@ body.micro-preview-mode .entry-gate{display:none!important}
   .extra-card.is-selecting::after,.saga-part.published-part.is-selecting::after,.extra-custom-badge,.extra-custom-badge::after{animation:none!important}
   .achievement-earned-card[data-achievement-card]{transition:none!important}
 }
+
+
+/* ========================================================================
+   v5.26 · MICRO badge / MIS STORIES / SAGAS / TODAS LAS STORIES
+   ======================================================================== */
+/* MICRO-PESADILLAS · badge configurable de cabecera, misma familia que HOME. */
+.micro-header-custom-badge{
+  position:absolute;z-index:12;top:12px;right:12px;
+  display:inline-flex!important;align-items:center;justify-content:center;
+  width:max-content!important;max-width:calc(100% - 24px)!important;box-sizing:border-box;
+  padding:6px 9px;border-radius:999px;background:#fff;color:#080808;
+  font:900 11px/1 Oxanium,sans-serif;letter-spacing:.09em;white-space:nowrap;
+  overflow:visible;text-overflow:clip;box-shadow:0 0 18px rgba(255,255,255,.28);
+  animation:homeHighlightBadgePulseV511 2s ease-in-out infinite;pointer-events:none
+}
+.micro-header-custom-badge::after{content:"";position:absolute;inset:-35% auto -35% -65%;width:46%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.18),rgba(255,255,255,.96),rgba(255,255,255,.18),transparent);transform:skewX(-18deg);animation:homeHighlightBadgeSweepV511 1.35s ease-in-out infinite;pointer-events:none}
+
+/* MIS STORIES · avatar a media escala con el nivel por encima, como en menú lateral. */
+.my-stories-avatar{position:relative!important;width:32px!important;height:32px!important;min-width:0!important;flex-basis:32px!important;overflow:visible!important;border-radius:50%!important;padding:0!important;align-self:center!important;justify-self:center!important}
+.my-stories-avatar>img{width:100%!important;height:100%!important;display:block!important;object-fit:cover!important;border-radius:50%!important}
+.my-stories-avatar>.my-stories-level-badge{right:-8px!important;top:-8px!important;bottom:auto!important;transform:none!important;display:flex!important}
+@media(max-width:390px){.my-stories-avatar{width:28px!important;height:28px!important;flex-basis:28px!important}}
+@media(max-width:350px){.my-stories-avatar{width:26px!important;height:26px!important;flex-basis:26px!important}}
+
+/* SAGAS · feedback visual al elegir una saga, sin mover el layout. */
+.saga-card::after{content:"";position:absolute;z-index:45;inset:-25% auto -25% -65%;width:40%;pointer-events:none;opacity:0;background:linear-gradient(105deg,transparent,rgba(255,255,255,.08),rgba(134,224,255,.88),rgba(255,255,255,.08),transparent);transform:skewX(-18deg)}
+.saga-card.is-selecting{filter:brightness(1.22)!important;border-color:#78d9ff!important;box-shadow:0 0 0 2px rgba(120,217,255,.16),0 0 30px rgba(75,184,229,.34)!important}
+.saga-card.is-selecting::after{opacity:1;animation:catalogSelectSweepV515 .32s ease-out forwards}
+
+/* TODAS LAS STORIES · respuesta breve en cada caja interactiva importante. */
+.stories-section [data-story-id],.stories-section .portal-btn,.stories-section .library-stats button,.stories-section .advanced-toggle,.stories-section .view-mode{transition:filter .11s ease,outline-color .11s ease,box-shadow .11s ease!important}
+.stories-section .stories-quick-press{filter:brightness(1.28) saturate(1.08)!important;outline:2px solid rgba(255,255,255,.42)!important;outline-offset:-2px!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 0 16px rgba(255,255,255,.16)!important}
+
+@media(prefers-reduced-motion:reduce){
+  .micro-header-custom-badge{animation:none!important}.micro-header-custom-badge::after{display:none!important}
+  .saga-card.is-selecting::after{animation:none!important}.stories-section .stories-quick-press{transition:none!important}
+}
