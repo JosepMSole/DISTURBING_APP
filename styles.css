@@ -6578,7 +6578,7 @@ body.micro-preview-mode .entry-gate{display:none!important}
 }
 
 /* ========================================================================
-   v5.19 · GAMES → LOGROS → RECOMPENSAS funcionales
+   v5.20 · GAMES → LOGROS → RECOMPENSAS funcionales
    ======================================================================== */
 /* Los modales de logro/recompensa deben quedar por encima del GAME PLAYER. */
 .achievement-reward{z-index:2147483500!important}
