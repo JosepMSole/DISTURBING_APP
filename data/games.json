@@ -47,7 +47,11 @@
       "cover": "assets/games/icarus-racers/cover.webp",
       "listUsesCover": true,
       "listImage": "",
-      "screenshots": [],
+      "screenshots": [
+        "assets/games/icarus-racers/screenshots/20260915144126080884-01.webp",
+        "assets/games/icarus-racers/screenshots/20260915144126080884-02.webp",
+        "assets/games/icarus-racers/screenshots/20260915144126080884-03.webp"
+      ],
       "tracking": "none"
     },
     {
@@ -104,7 +108,7 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-15T13:46:39.014436+00:00",
+  "updated": "2026-09-15T14:41:26.509344+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118",
   "heroText": "¿Te atreves a JUGAR en el universo\nde Disturbing Stories?\n\n¡Demuéstralo y entra en uno de los minigames!\n\nConsulta la compatibilidad antes de jugar",
