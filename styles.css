@@ -6944,3 +6944,69 @@ body.micro-preview-mode .entry-gate{display:none!important}
   .micro-header-custom-badge{animation:none!important;transform:none!important;filter:none!important;box-shadow:0 0 8px rgba(255,255,255,.72),0 0 18px rgba(255,255,255,.28)!important}
   .micro-header-custom-badge::after{animation:none!important;display:none!important}
 }
+
+
+/* ========================================================================
+   v5.30 · MIS STORIES level cleanup + COLLECTION/SAGAS bg match
+   ======================================================================== */
+/* MICRO-PESADILLAS · badge vuelve a tener presencia real: pulso de escala,
+   barrido interior y halo exterior respirando sin verse cortado. */
+.micro-header-custom-badge{
+  animation:microHeaderBadgePulseV530 2s cubic-bezier(.4,0,.2,1) infinite!important;
+  box-shadow:0 0 6px rgba(255,255,255,.32),0 0 14px rgba(255,255,255,.14),inset 0 0 0 1px rgba(255,255,255,.08)!important;
+}
+.micro-header-custom-badge::before{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;z-index:-1;box-shadow:0 0 0 1px rgba(255,255,255,.25),0 0 10px rgba(255,255,255,.28),0 0 22px rgba(255,255,255,.10);animation:microHeaderBadgeHaloV530 1.3s ease-in-out infinite!important}
+.micro-header-custom-badge::after{display:block!important;animation:homeHighlightBadgeSweepV511 1.2s ease-in-out infinite!important}
+@keyframes microHeaderBadgePulseV530{
+  0%,100%{transform:scale(1);filter:brightness(1) saturate(1)}
+  46%,54%{transform:scale(1.18);filter:brightness(1.28) saturate(1.06)}
+}
+@keyframes microHeaderBadgeHaloV530{
+  0%,100%{opacity:1}
+  50%{opacity:0}
+}
+
+/* MIS STORIES · avatar: solo cifra + estrella visibles, sin ninguna caja
+   ni círculo detrás, y aproximadamente al doble del tamaño previo. */
+.my-stories-avatar>.my-stories-level-badge,
+.my-stories-avatar>.my-stories-level-badge.level-multi,
+.my-stories-avatar>.my-stories-level-badge.level-3plus,
+.my-stories-avatar>.my-stories-level-badge .user-level-number,
+.my-stories-avatar>.my-stories-level-badge .user-level-star{
+  background:transparent!important;border:0!important;box-shadow:none!important;outline:0!important;border-radius:0!important;
+  width:auto!important;height:auto!important;min-width:0!important;min-height:0!important;padding:0!important;margin:0!important;
+}
+.my-stories-avatar>.my-stories-level-badge,
+.my-stories-avatar>.my-stories-level-badge.level-multi,
+.my-stories-avatar>.my-stories-level-badge.level-3plus{
+  top:-14px!important;right:-22px!important;gap:1px!important;
+}
+.my-stories-avatar>.my-stories-level-badge .user-level-number{font:900 40px/1 Oxanium,sans-serif!important;color:#f7e7ad!important;text-shadow:0 2px 5px #000,0 0 8px rgba(215,181,95,.65)!important}
+.my-stories-avatar>.my-stories-level-badge .user-level-star{font:900 24px/1 Oxanium,sans-serif!important;color:#f0cf70!important;transform:translateY(-10px)!important;text-shadow:0 2px 5px #000,0 0 8px rgba(215,181,95,.65)!important}
+@media(max-width:390px){
+  .my-stories-avatar>.my-stories-level-badge,.my-stories-avatar>.my-stories-level-badge.level-multi,.my-stories-avatar>.my-stories-level-badge.level-3plus{top:-12px!important;right:-19px!important}
+  .my-stories-avatar>.my-stories-level-badge .user-level-number{font-size:34px!important}
+  .my-stories-avatar>.my-stories-level-badge .user-level-star{font-size:20px!important;transform:translateY(-9px)!important}
+}
+@media(max-width:350px){
+  .my-stories-avatar>.my-stories-level-badge .user-level-number{font-size:31px!important}
+  .my-stories-avatar>.my-stories-level-badge .user-level-star{font-size:18px!important;transform:translateY(-8px)!important}
+}
+
+/* COLECCIÓN + SAGAS · el fondo de toda la sección se iguala exactamente al
+   tono dominante de los loops 16:9 para evitar saltos visibles. */
+:root{--collection-loop-surface:#070f14;--sagas-loop-surface:#070f14}
+.view.collection-view,.view.collection-view>.collection-section,.collection-section,
+.collection-header-loop,.collection-header-loop video,.collection-title-with-loop{
+  background:var(--collection-loop-surface)!important;
+}
+.view.sagas-view,.view.sagas-view>.sagas-section,.sagas-section,
+.sagas-header-loop,.sagas-header-loop video,.sagas-title-with-loop{
+  background:var(--sagas-loop-surface)!important;
+}
+.collection-header-loop,.sagas-header-loop{border-radius:10px!important}
+
+@media(prefers-reduced-motion:reduce){
+  .micro-header-custom-badge{animation:none!important;transform:none!important;filter:none!important}
+  .micro-header-custom-badge::before,.micro-header-custom-badge::after{animation:none!important;opacity:1!important}
+}
