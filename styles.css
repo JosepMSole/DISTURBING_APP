@@ -6709,3 +6709,69 @@ body.micro-preview-mode .entry-gate{display:none!important}
   .micro-header-custom-badge{animation:none!important}.micro-header-custom-badge::after{display:none!important}
   .saga-card.is-selecting::after{animation:none!important}.stories-section .stories-quick-press{transition:none!important}
 }
+
+
+/* ========================================================================
+   v5.27 · MICRO badge / MIS STORIES / SAGAS LOOP
+   ======================================================================== */
+/* MICRO-PESADILLAS · badge negro, texto blanco y reflejo estrictamente recortado al interior. */
+.micro-header-custom-badge{
+  background:#050505!important;color:#fff!important;
+  border:1px solid rgba(255,255,255,.48)!important;
+  overflow:hidden!important;isolation:isolate!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),inset 0 0 12px rgba(255,255,255,.06)!important;
+}
+.micro-header-custom-badge::after{
+  z-index:2!important;inset:-35% auto -35% -65%!important;
+  border-radius:inherit!important;pointer-events:none!important;
+}
+
+/* MIS STORIES · cabecera título + avatar; las cuatro estadísticas ocupan una única fila equivalente. */
+.my-stories-title{
+  grid-template-columns:minmax(0,1fr) minmax(118px,38%)!important;
+  gap:10px!important;align-items:stretch!important;
+}
+.my-stories-heading{min-width:0!important;align-self:stretch!important;justify-content:center!important}
+.my-stories-avatar-slot{display:grid;place-items:center;min-width:0;align-self:stretch}
+.my-stories-avatar{
+  width:56px!important;height:56px!important;flex-basis:56px!important;
+  align-self:center!important;justify-self:center!important;overflow:visible!important;
+}
+.my-stories-avatar>img{border-radius:50%!important;overflow:hidden!important}
+.my-stories-avatar>.my-stories-level-badge{right:-8px!important;top:-8px!important;bottom:auto!important}
+.personal-stats{grid-template-columns:repeat(4,minmax(0,1fr))!important;align-items:stretch!important;gap:7px!important}
+.personal-stats>.stat-action{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:center!important;min-width:0!important;height:100%!important}
+.personal-stats .my-unread-stat{border-color:#6e3e1b!important;background:linear-gradient(145deg,#1b1007,#100a06)!important;box-shadow:inset 0 0 0 1px rgba(255,156,66,.06),0 0 18px rgba(180,93,24,.08)!important}
+.personal-stats .my-unread-stat strong{color:#ff9c42!important}
+.personal-stats .my-unread-stat span{color:#d7a06f!important;font-size:clamp(7px,1.95vw,9.5px)!important;line-height:1.05!important;letter-spacing:.015em!important}
+@media(max-width:390px){
+  .my-stories-title{grid-template-columns:minmax(0,1fr) minmax(94px,34%)!important;gap:7px!important}
+  .my-stories-avatar{width:48px!important;height:48px!important;flex-basis:48px!important}
+  .personal-stats{gap:5px!important}
+  .personal-stats>.stat-action{padding-left:2px!important;padding-right:2px!important}
+}
+@media(max-width:350px){
+  .my-stories-title{grid-template-columns:minmax(0,1fr) 86px!important;gap:6px!important}
+  .personal-stats{gap:4px!important}
+  .personal-stats .my-unread-stat span{font-size:6.8px!important}
+}
+
+/* SAGAS · el loop conserva su caja pero el contenido visual se escala al 140%. */
+.sagas-header-loop video{transform:scale(1.4)!important;transform-origin:center center!important;will-change:transform}
+
+@media(prefers-reduced-motion:reduce){
+  .micro-header-custom-badge{animation:none!important}
+  .micro-header-custom-badge::after{display:none!important}
+}
+/* v5.27 · normalización final de etiquetas para la nueva fila de 4 estadísticas. */
+.personal-stats span{
+  font-size:clamp(7px,2vw,9.5px)!important;
+  line-height:1.05!important;
+  letter-spacing:-.01em!important;
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  text-align:center!important;
+}
+.personal-stats>div:nth-child(3) span{font-size:clamp(7px,2vw,9.5px)!important;line-height:1.05!important}
+.personal-stats .my-unread-stat span{font-size:clamp(7px,1.95vw,9.5px)!important;white-space:normal!important}
