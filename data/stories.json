@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-15T03:04:30.279230+00:00",
+  "updated": "2026-09-15T14:24:42.447184+00:00",
   "stories": [
     {
       "id": "277",
@@ -2095,7 +2095,7 @@
       "published": "2025-04-20",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/012.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-gif.gif",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/icarus-1_1.jpg",
       "data": "./data/stories/012.json",
       "source": "https://www.disturbingstories.com/012.html",
       "protected": false,
