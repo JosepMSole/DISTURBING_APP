@@ -30,7 +30,7 @@
     {
       "id": "icarus-racers",
       "number": 3,
-      "version": "",
+      "version": "2.4",
       "title": "Icarus Racers",
       "publicationDate": "2026-03-14",
       "url": "https://josepmsole.github.io/IcarusRacers/app.html",
@@ -108,7 +108,7 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-15T14:50:24.553617+00:00",
+  "updated": "2026-09-15T14:50:51.700437+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118",
   "heroText": "¿Te atreves a JUGAR en el universo\nde Disturbing Stories?\n\n¡Demuéstralo y entra en uno de los minigames!\n\nConsulta la compatibilidad antes de jugar",
