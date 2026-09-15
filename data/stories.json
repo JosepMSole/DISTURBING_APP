@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-09-15T15:46:51.339091+00:00",
+  "updated": "2026-09-15T15:49:01.616998+00:00",
   "stories": [
     {
       "id": "277",
@@ -2138,10 +2138,6 @@
         }
       ],
       "contentRelations": [
-        {
-          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/editor/nave-30.png?1768014693",
-          "gameId": "icarus-racers"
-        },
         {
           "src": "https://www.youtube.com/embed/b-tY8aeXmVo",
           "gameId": "icarus-racers"
