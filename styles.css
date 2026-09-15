@@ -6775,3 +6775,55 @@ body.micro-preview-mode .entry-gate{display:none!important}
 }
 .personal-stats>div:nth-child(3) span{font-size:clamp(7px,2vw,9.5px)!important;line-height:1.05!important}
 .personal-stats .my-unread-stat span{font-size:clamp(7px,1.95vw,9.5px)!important;white-space:normal!important}
+
+/* ========================================================================
+   v5.28 · MICRO badge / MIS STORIES avatar / COLLECTION loop / SAGAS loop
+   ======================================================================== */
+/* MICRO-PESADILLAS · halo exterior pulsante 100→0→100 en 1,3 s.
+   El reflejo ::after sigue estrictamente recortado dentro del badge. */
+.micro-header-custom-badge{
+  background:#050505!important;color:#fff!important;
+  border:1px solid rgba(255,255,255,.78)!important;
+  overflow:hidden!important;isolation:isolate!important;
+  animation:microHeaderBadgeHaloV528 1.3s ease-in-out infinite!important;
+}
+@keyframes microHeaderBadgeHaloV528{
+  0%,100%{box-shadow:0 0 5px rgba(255,255,255,.95),0 0 13px rgba(255,255,255,.48),0 0 23px rgba(255,255,255,.16),inset 0 0 0 1px rgba(255,255,255,.08),inset 0 0 10px rgba(255,255,255,.07)}
+  50%{box-shadow:0 0 0 rgba(255,255,255,0),0 0 0 rgba(255,255,255,0),0 0 0 rgba(255,255,255,0),inset 0 0 0 1px rgba(255,255,255,.03),inset 0 0 4px rgba(255,255,255,.02)}
+}
+
+/* MIS STORIES · avatar x2, círculo recuperado y nivel en diagonal superior-derecha. */
+.my-stories-avatar{
+  width:112px!important;height:112px!important;flex-basis:112px!important;
+  border:2px solid rgba(215,181,95,.88)!important;
+  border-radius:50%!important;background:#07090b!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.06),0 0 18px rgba(215,181,95,.18)!important;
+  overflow:visible!important;
+}
+.my-stories-avatar>img{
+  width:100%!important;height:100%!important;display:block!important;
+  object-fit:cover!important;border-radius:50%!important;overflow:hidden!important;
+}
+.my-stories-avatar>.my-stories-level-badge{
+  right:-10px!important;top:-8px!important;bottom:auto!important;
+  transform:none!important;z-index:4!important;
+}
+@media(max-width:390px){.my-stories-avatar{width:96px!important;height:96px!important;flex-basis:96px!important}.my-stories-avatar>.my-stories-level-badge{right:-8px!important;top:-7px!important}}
+@media(max-width:350px){.my-stories-avatar{width:88px!important;height:88px!important;flex-basis:88px!important}}
+
+/* COLECCIÓN · nuevo collectionloop.webm en el hueco derecho del encabezado. */
+.collection-title-with-loop{align-items:stretch!important;min-height:72px}
+.collection-title-copy{display:flex;flex-direction:column;justify-content:flex-end;flex:0 1 auto;min-width:max-content}
+.collection-header-loop{flex:1 1 auto;min-width:0;max-width:62%;height:clamp(58px,15vw,88px);align-self:center;overflow:hidden;border-radius:10px;background:#030405;pointer-events:none}
+.collection-header-loop video{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+@media(max-width:390px){.collection-header-loop{max-width:56%;height:60px}.collection-title-copy{min-width:0}}
+
+/* SAGAS · caja ampliada al 130%; el vídeo completo permanece siempre dentro. */
+.sagas-title-with-loop{min-height:94px!important}
+.sagas-header-loop{max-width:80.6%!important;height:clamp(75px,19.5vw,114px)!important;overflow:hidden!important}
+.sagas-header-loop video{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;transform:none!important;will-change:auto!important}
+@media(max-width:390px){.sagas-header-loop{max-width:72.8%!important;height:78px!important}}
+
+@media(prefers-reduced-motion:reduce){
+  .micro-header-custom-badge{animation:none!important;box-shadow:0 0 7px rgba(255,255,255,.6),0 0 14px rgba(255,255,255,.25),inset 0 0 0 1px rgba(255,255,255,.06)!important}
+}
