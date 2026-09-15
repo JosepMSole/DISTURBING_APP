@@ -1,4 +1,4 @@
-const APP_VERSION = '5.22.0';
+const APP_VERSION = '5.23.0';
 let globalPlayerAudioEngine=null,stormAudioEngine=null,stormIntroAudioEngine=null;
 const $=(s,r=document)=>{
   if(r===document&&s==='#globalPlayerAudio')return globalPlayerAudioEngine;
@@ -68,8 +68,8 @@ addEventListener('appinstalled',clearCapturedInstallPrompt);
 const store={get(k,f){try{return JSON.parse(localStorage.getItem(k))??f}catch{return f}},set(k,v){localStorage.setItem(k,JSON.stringify(v));if(String(k).startsWith('disturbing_'))queueUserVaultSync();if(k===unlockSecretsKey)setTimeout(()=>evaluateAchievements(true),450)}};
 
 // v5.17 · SFX de interfaz. Motores fuera del DOM para no interferir con STORM/Player.
-const UI_SOUND_FILES={open:'open.mp3',back:'back.mp3',tap:'tap.mp3',expand:'expand.mp3',collapse:'collapse.mp3',confirm:'confirm.mp3',blocked:'blocked.mp3',home:'home.mp3'};
-const UI_SOUND_VOLUME={open:.32,back:.32,tap:.24,expand:.28,collapse:.28,confirm:.34,blocked:.31,home:.34};
+const UI_SOUND_FILES={open:'open.mp3',openb:'openb.mp3',back:'back.mp3',tap:'tap.mp3',expand:'expand.mp3',collapse:'collapse.mp3',confirm:'confirm.mp3',blocked:'blocked.mp3',home:'home.mp3'};
+const UI_SOUND_VOLUME={open:.32,openb:.32,back:.32,tap:.24,expand:.28,collapse:.28,confirm:.34,blocked:.31,home:.34};
 const uiSoundEngines=new Map();
 function uiSoundsEnabled(){return store.get(uiSoundsKey,true)!==false}
 function uiSoundEngine(name){
@@ -92,7 +92,10 @@ function uiSoundForControl(el){
   if(id==='brandBtn')return'home';
   if(el.closest?.('#drawer')&&id!=='closeDrawer')return'confirm';
   if(id==='menuBtn')return'expand';if(id==='closeDrawer')return'collapse';
-  if(['miniPlayerOpen','userMenuBtn','scanBtn','openLatest','openAllStories','continueReading','gamePlayBtn'].includes(id))return'open';
+  // v5.23 · OPEN B es una variante reservada EXCLUSIVAMENTE a entrar en
+  // GAMES, MICRO-PESADILLAS y EXTRAS (desde cualquier acceso interno).
+  if(id==='gamePlayBtn'||el.matches?.('[data-game-id],[data-micro-id],[data-extra-id],[data-story-media-game],[data-story-media-micro],[data-related-game],[data-related-micro],.extra-card'))return'openb';
+  if(['miniPlayerOpen','userMenuBtn','scanBtn','openLatest','openAllStories','continueReading'].includes(id))return'open';
   if(/^(GUARDAR|CONFIRMAR|REGISTRAR)\b/.test(txt))return'confirm';
   if(el.matches?.('summary,.micro-intro-panel,.avatar-expand-toggle,[aria-expanded]')){
     const details=el.closest?.('details'),open=details?details.open:(el.classList?.contains('micro-intro-panel')?el.classList.contains('expanded'):el.getAttribute?.('aria-expanded')==='true');
@@ -1437,8 +1440,31 @@ function stopStormForOtherMedia(){if(stormStarted||stormBufferSource||!$('#storm
 function toggleStormAmbient(){stormEnabled=!stormEnabled;if(stormEnabled)startStormAmbient();else stopStormAmbient(false);updateStormButton()}
 
 function bindGlobalStormMediaStop(){document.addEventListener('play',e=>{const t=e.target;if(!(t instanceof HTMLMediaElement))return;if(t.id==='stormAudio'||t.id==='introVideo')return;if(t.muted||Number(t.volume)===0)return;stopStormForOtherMedia()},true)}
-function prepareIntroWhiteHandoff(){const layer=$('#introWhiteHandoff');if(!layer)return;layer.classList.remove('hidden','fade-out');layer.setAttribute('aria-hidden','false');layer.style.opacity='1'}
-function startIntroWhiteHandoff(){const layer=$('#introWhiteHandoff');if(!layer||layer.classList.contains('hidden'))return;let frame=0;const tick=()=>{frame++;if(frame<=15){layer.style.opacity='1'}else if(frame<=30){const p=(frame-15)/15;layer.style.opacity=String(Math.max(0,1-p))}else{layer.style.opacity='0';layer.classList.add('hidden');layer.setAttribute('aria-hidden','true');return}requestAnimationFrame(tick)};requestAnimationFrame(tick)}
+let introWhiteHandoffSafetyTimer=0;
+function hideIntroWhiteHandoff(){
+  const layer=$('#introWhiteHandoff');
+  clearTimeout(introWhiteHandoffSafetyTimer);introWhiteHandoffSafetyTimer=0;
+  if(!layer)return;
+  layer.style.opacity='0';layer.classList.add('hidden');layer.classList.remove('fade-out');layer.setAttribute('aria-hidden','true');
+}
+function prepareIntroWhiteHandoff(){
+  const layer=$('#introWhiteHandoff');if(!layer)return;
+  clearTimeout(introWhiteHandoffSafetyTimer);
+  layer.classList.remove('hidden','fade-out');layer.setAttribute('aria-hidden','false');layer.style.opacity='1';
+  // v5.23 · FAILSAFE crítico: aunque una animación/rAF quede interrumpida por
+  // cambio de hash, WebKit, suspensión de pestaña o error posterior, el flash
+  // jamás puede permanecer tapando la App.
+  introWhiteHandoffSafetyTimer=setTimeout(hideIntroWhiteHandoff,1400);
+}
+function startIntroWhiteHandoff(){
+  const layer=$('#introWhiteHandoff');if(!layer||layer.classList.contains('hidden'))return;
+  clearTimeout(introWhiteHandoffSafetyTimer);
+  let frame=0,raf=0,finished=false;
+  const finish=()=>{if(finished)return;finished=true;if(raf)cancelAnimationFrame(raf);hideIntroWhiteHandoff()};
+  introWhiteHandoffSafetyTimer=setTimeout(finish,900);
+  const tick=()=>{if(finished)return;frame++;if(frame<=15){layer.style.opacity='1'}else if(frame<=30){const p=(frame-15)/15;layer.style.opacity=String(Math.max(0,1-p))}else{return finish()}raf=requestAnimationFrame(tick)};
+  raf=requestAnimationFrame(tick);
+}
 async function playEntryIntro(){if(introPlayed)return false;introPlayed=true;const gate=$('#entryGate'),gateBtn=$('#entryGateButton'),layer=$('#introLayer'),video=$('#introVideo');if(!layer||!video)return false;if(!gate||!gateBtn)return playEntryIntroDirect(layer,video);gate.classList.remove('hidden');gate.setAttribute('aria-hidden','false');return new Promise(resolve=>{let started=false;const enter=()=>{if(started)return;started=true;primeStormAudio();primeUiSounds();gateBtn.disabled=true;gateBtn.classList.add('entry-confirm');startIntroMedia(layer,video,resolve);setTimeout(()=>{gate.classList.add('leaving');setTimeout(()=>{gate.classList.add('hidden');gate.classList.remove('leaving');gate.setAttribute('aria-hidden','true')},190)},330)};gateBtn.addEventListener('click',enter,{once:true})})}
 function playEntryIntroDirect(layer,video){return new Promise(resolve=>startIntroMedia(layer,video,resolve))}
 function startIntroMedia(layer,video,resolve){
@@ -1468,5 +1494,5 @@ function startIntroMedia(layer,video,resolve){
   const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))
 }
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=5.22.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=5.23.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
