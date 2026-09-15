@@ -48,13 +48,13 @@
     {
       "id": "dark-limits-puzzles",
       "number": 2,
-      "version": "",
+      "version": "2.4",
       "title": "Dark Limits: Puzzles",
       "publicationDate": "2026-03-14",
       "url": "https://josepmsole.github.io/DarkLimitsPuzzles/app.html",
       "type": "game",
-      "description": "¡Cuidado con los límites oscuros!\n​\nCompleta estos 5 puzzles, que cada vez serán más difíciles, y obtén un resumen de los hechos acontecidos hasta la fecha durante los eventos de Dark Limits...\n​\n...puede que puedas echar una miradita al futuro, mientras escuchas una banda sonora hecha a medida...\n\n¡Completa el desafío!",
-      "descriptionHtml": "¡Cuidado con los límites oscuros!<br>​<br>Completa estos 5 puzzles, que cada vez serán más difíciles, y obtén un resumen de los hechos acontecidos hasta la fecha durante los eventos de Dark Limits...<br>​<br>...puede que puedas echar una miradita al futuro, mientras escuchas una banda sonora hecha a medida...<br><br>¡Completa el desafío!",
+      "description": "¡Cuidado con los límites oscuros!\n​\nCompleta estos puzzles, que cada vez serán más difíciles, y obtén un resumen de los hechos acontecidos hasta la fecha durante los eventos de Dark Limits...\n​\n...puede que puedas echar una miradita al futuro, mientras escuchas una banda sonora hecha a medida...\n\n¡Completa el desafío!",
+      "descriptionHtml": "¡Cuidado con los <b>límites oscuros</b>!<br>​<br>Completa estos<b>&nbsp;puzzles</b>, que cada vez serán más difíciles, y obtén un resumen de los hechos acontecidos hasta la fecha durante los eventos de <b>Dark Limits</b>...<br>​<br>...puede que puedas echar una miradita al futuro, mientras escuchas una banda sonora hecha a medida...<br><br><b>¡Completa el desafío!</b>",
       "instructions": "",
       "relatedStoryId": "",
       "relatedSagaId": "dark-limits-prelude",
@@ -65,7 +65,11 @@
       "cover": "assets/games/dark-limits-puzzles/cover.webp",
       "listUsesCover": true,
       "listImage": "",
-      "screenshots": [],
+      "screenshots": [
+        "assets/games/dark-limits-puzzles/screenshots/20260915131023604685-01.webp",
+        "assets/games/dark-limits-puzzles/screenshots/20260915131023604685-02.webp",
+        "assets/games/dark-limits-puzzles/screenshots/20260915131023604685-03.webp"
+      ],
       "tracking": "none"
     },
     {
@@ -95,7 +99,7 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-15T13:03:23.817477+00:00",
+  "updated": "2026-09-15T13:10:24.094930+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118",
   "heroText": "¿Te atreves a JUGAR en el universo\nde Disturbing Stories?\n\n¡Demuéstralo y entra en uno de los minigames!\n\nConsulta la compatibilidad antes de jugar",
