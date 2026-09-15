@@ -4,7 +4,7 @@
     {
       "id": "los-enigmas-del-guardian",
       "number": 4,
-      "version": "5.0",
+      "version": "5.1",
       "title": "Los Enigmas del Guardián",
       "publicationDate": "2026-06-20",
       "url": "https://josepmsole.github.io/Tarraco/app.html",
@@ -108,7 +108,7 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-15T14:41:26.509344+00:00",
+  "updated": "2026-09-15T14:50:24.553617+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118",
   "heroText": "¿Te atreves a JUGAR en el universo\nde Disturbing Stories?\n\n¡Demuéstralo y entra en uno de los minigames!\n\nConsulta la compatibilidad antes de jugar",
