@@ -88,11 +88,14 @@
       "cover": "assets/games/memory50/cover.webp",
       "listUsesCover": true,
       "listImage": "",
-      "screenshots": [],
+      "screenshots": [
+        "assets/games/memory50/screenshots/20260915130027677913-01.webp",
+        "assets/games/memory50/screenshots/20260915130027677913-02.webp"
+      ],
       "tracking": "none"
     }
   ],
-  "updated": "2026-09-15T01:36:40.611090+00:00",
+  "updated": "2026-09-15T13:00:28.670495+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118",
   "heroText": "¿Te atreves a JUGAR en el universo\nde Disturbing Stories?\n\n¡Demuéstralo y entra en uno de los minigames!\n\nConsulta la compatibilidad antes de jugar",
