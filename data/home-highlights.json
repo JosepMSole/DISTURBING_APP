@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-16T02:14:48.000414+00:00",
+  "updated": "2026-09-16T02:26:53.602385+00:00",
   "items": [
     {
       "id": "highlight-001",
@@ -19,9 +19,9 @@
       "image": "assets/home-highlights/001/image.webp",
       "video": "",
       "createdAt": "2026-09-14T14:21:31.203384+00:00",
-      "updatedAt": "2026-09-16T02:14:47.589514+00:00",
-      "mediaVersion": "1789524888000",
-      "imageBytes": 274494,
+      "updatedAt": "2026-09-16T02:26:53.212811+00:00",
+      "mediaVersion": "1789525613602",
+      "imageBytes": 286146,
       "showBadge": true,
       "showTitle": false
     }
