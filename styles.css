@@ -7257,3 +7257,43 @@ body.micro-preview-mode .entry-gate{display:none!important}
 .qr-photo-only #photoQr{font-size:150%!important;line-height:1.05!important;min-height:58px!important}
 .qr-photo-only #galleryQr{min-height:48px!important}
 @media(prefers-reduced-motion:reduce){.qr-app-demo-wrap{animation:none!important;transform:none!important}}
+
+/* ======================================================================
+   v6.7 · navegación superior + HOME/EXTRAS/QR/USER
+   ====================================================================== */
+/* DESBLOQUEAR QR · barrido luminoso continuo en la acción principal. */
+.qr-photo-only #photoQr{
+  position:relative!important;isolation:isolate;overflow:hidden!important;
+  box-shadow:0 0 12px rgba(210,35,42,.16)!important;
+}
+.qr-photo-only #photoQr::after{
+  content:"";position:absolute;inset:-35% auto -35% -55%;width:34%;pointer-events:none;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.10),rgba(255,255,255,.90),rgba(255,255,255,.12),transparent);
+  transform:skewX(-18deg);animation:qrPhotoButtonSweepV67 2.15s ease-in-out infinite;
+}
+@keyframes qrPhotoButtonSweepV67{0%,18%{left:-55%;opacity:0}30%{opacity:.9}68%{left:122%;opacity:.76}100%{left:122%;opacity:0}}
+
+/* EXTRA · descripción y aviso físico exactamente al ancho visual del póster. */
+.extra-detail>.extra-text,.extra-detail>.physical-extra-notice{
+  box-sizing:border-box!important;width:min(340px,82vw)!important;max-width:82vw!important;
+  margin-left:auto!important;margin-right:auto!important;
+}
+.extra-detail>.physical-extra-notice{padding:12px 11px!important}
+.extra-detail>.physical-extra-notice strong{display:block!important;line-height:1.32!important}
+.extra-detail>.physical-extra-notice p{margin:7px 0 0!important;line-height:1.45!important}
+
+/* HOME · jerarquía/alineación final. */
+.home-previous>.section-title{justify-content:center!important;text-align:center!important}
+.home-previous>.section-title>h2,.home-previous>.section-title>div{margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+.secondary-home-cta{font-size:130%!important}
+.home-progress .link-btn{margin-left:0!important;margin-right:auto!important;text-align:left!important;justify-content:flex-start!important}
+
+/* USER · contador secundario de MICRO-PESADILLAS leídas. */
+.user-hero-microcount{
+  margin-top:5px;color:#d96c76;font:750 7px/1.12 Oxanium,sans-serif;
+  letter-spacing:.055em;white-space:nowrap;text-shadow:0 0 10px rgba(220,54,72,.18);
+}
+.user-hero-microcount strong{font:900 13px/.95 Oxanium,sans-serif;color:#ff8a94;font-variant-numeric:tabular-nums;vertical-align:-1px}
+@media(max-width:390px){.user-hero-microcount{font-size:6.6px}.user-hero-microcount strong{font-size:12px}}
+
+@media(prefers-reduced-motion:reduce){.qr-photo-only #photoQr::after{animation:none!important;display:none!important}}
