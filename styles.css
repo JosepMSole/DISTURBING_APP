@@ -7083,3 +7083,68 @@ body.micro-preview-mode .entry-gate{display:none!important}
   .tutorial-step-4 .tutorial-micro-rule,.tutorial-step-4 .tutorial-micro-rule::before,.tutorial-step-4 .tutorial-micro-rule::after{animation:none!important}
   .tutorial-lock-locked .tutorial-lock-red,.tutorial-lock-unlock:not(.is-unlocked) .tutorial-lock-red{opacity:1!important;transform:none!important}
 }
+
+/* ======================================================================
+   v6.3 · TUTORIAL 1 · microajustes de foco, timing e interacción
+   ====================================================================== */
+/* HEADER TUTORIALES: ? más grande, perfectamente centrado dentro del círculo. */
+.section-indicator-tutorials{
+  display:grid!important;place-items:center!important;
+  padding:0!important;box-sizing:border-box!important;
+  font-size:20px!important;font-weight:700!important;line-height:1!important;
+  text-align:center!important;text-indent:0!important;
+}
+
+/* Todos los controles principales comparten exactamente la altura de EMPEZAR. */
+.tutorial-bubble-v61 .tutorial-controls button,
+.tutorial-controls-first .tutorial-next,
+.tutorial-controls-nav .tutorial-nav-box,
+.tutorial-controls-final>.tutorial-back,
+.tutorial-final-actions button{
+  height:48px!important;min-height:48px!important;max-height:48px!important;
+  aspect-ratio:auto!important;
+}
+
+/* PASO 2: el icono real permanece limpio desde el inicio; el halo llega después. */
+.tutorial-target-clone-v62{
+  background:transparent!important;border-color:transparent!important;
+  border-radius:0!important;box-shadow:none!important;
+  overflow:visible!important;color:#f2fdff!important;
+  filter:drop-shadow(0 0 8px rgba(142,244,255,.18))!important;
+}
+.tutorial-target-clone-v62.is-signaled{
+  filter:brightness(1.18) drop-shadow(0 0 10px rgba(142,244,255,.82)) drop-shadow(0 0 22px rgba(142,244,255,.48))!important;
+}
+.tutorial-target-clone-v62.nav-icon{display:grid!important;place-items:center!important}
+.tutorial-target-clone-v62.nav-grid9{grid-template-columns:repeat(3,1fr)!important;grid-template-rows:repeat(3,1fr)!important}
+
+/* PASO 3: 2 s adicionales de espera antes de la entrada de 2 s del candado. */
+.tutorial-step-3 .tutorial-lock-locked .tutorial-lock-red{
+  animation:tutorialLockEnterV62 2s var(--tutorial-lock-entry-delay,2120ms) cubic-bezier(.16,.8,.2,1) forwards!important;
+}
+
+/* PASO 4: TK cuadrado más contenido + badge QR mayor y alineado a la derecha. */
+.tutorial-step-4 .tutorial-micro-rule{
+  display:flex!important;width:max-content!important;max-width:100%!important;
+  margin:13px 0 0 auto!important;padding:8px 13px!important;
+  font-size:11px!important;line-height:1!important;letter-spacing:.085em!important;
+}
+
+/* Microfeedback luminoso al pulsar cualquier control/caja interactiva del tutorial. */
+.tutorial-interaction-flash{animation:tutorialInteractionGlowV63 .44s cubic-bezier(.2,.8,.2,1)!important}
+@keyframes tutorialInteractionGlowV63{
+  0%{filter:brightness(1);box-shadow:0 0 0 rgba(142,244,255,0)}
+  38%{filter:brightness(1.35);box-shadow:0 0 0 1px rgba(234,255,255,.92),0 0 16px 5px rgba(142,244,255,.72),0 0 34px 10px rgba(142,244,255,.28)}
+  100%{filter:brightness(1);box-shadow:0 0 0 rgba(142,244,255,0)}
+}
+
+@media(max-width:600px){
+  .section-indicator-tutorials{font-size:19px!important}
+  .tutorial-bubble-v61 .tutorial-controls button,
+  .tutorial-controls-first .tutorial-next,
+  .tutorial-controls-nav .tutorial-nav-box,
+  .tutorial-controls-final>.tutorial-back,
+  .tutorial-final-actions button{height:48px!important;min-height:48px!important;max-height:48px!important}
+  .tutorial-step-4 .tutorial-micro-rule{font-size:10px!important;padding:8px 12px!important}
+}
+@media(prefers-reduced-motion:reduce){.tutorial-interaction-flash{animation:none!important}}
