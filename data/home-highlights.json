@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-14T22:03:13.828701+00:00",
+  "updated": "2026-09-16T02:14:48.000414+00:00",
   "items": [
     {
       "id": "highlight-001",
@@ -8,20 +8,20 @@
       "status": "active",
       "enabled": true,
       "badge": "NEW",
-      "title": "aaa",
-      "text": "",
+      "title": "¡CUIDADO!",
+      "text": "Se acercan nuevas criaturas...",
       "targetType": "micro",
       "targetId": "002",
       "buttonText": "DESCUBRIR",
       "url": "",
       "startAt": "2026-09-14T14:47:00.000Z",
-      "endAt": "2026-09-15T14:47:00.000Z",
+      "endAt": "2026-09-17T14:47:00.000Z",
       "image": "assets/home-highlights/001/image.webp",
       "video": "",
       "createdAt": "2026-09-14T14:21:31.203384+00:00",
-      "updatedAt": "2026-09-14T22:03:13.438744+00:00",
-      "mediaVersion": "1789421916986",
-      "imageBytes": 241326,
+      "updatedAt": "2026-09-16T02:14:47.589514+00:00",
+      "mediaVersion": "1789524888000",
+      "imageBytes": 274494,
       "showBadge": true,
       "showTitle": false
     }
