@@ -7013,7 +7013,7 @@ body.micro-preview-mode .entry-gate{display:none!important}
 
 
 /* ======================================================================
-   v6.1 · TUTORIAL 1 / PRIMER CONTACTO
+   v6.2 · TUTORIAL 1 / PRIMER CONTACTO
    Motor visual independiente. No transforma el layout de la PWA.
    ====================================================================== */
 .section-indicator-tutorials{width:24px;height:24px;border:1px solid #8ef4ff;border-radius:50%;display:grid;place-items:center;color:#8ef4ff;font-family:Oxanium,sans-serif;font-size:12px;font-weight:700;box-shadow:0 0 10px rgba(142,244,255,.15)}
@@ -7025,3 +7025,61 @@ body.micro-preview-mode .entry-gate{display:none!important}
 @keyframes tutorialBubbleIn{from{opacity:0;transform:translateY(12px) scale(.985)}to{opacity:1;transform:none}}@keyframes tutorialTextReveal{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}@keyframes tutorialFocusBreathe{0%,100%{box-shadow:0 0 0 9999px rgba(0,0,0,.08),0 0 15px 3px rgba(142,244,255,.2),inset 0 0 10px rgba(142,244,255,.06)}50%{box-shadow:0 0 0 9999px rgba(0,0,0,.08),0 0 24px 6px rgba(142,244,255,.32),inset 0 0 16px rgba(142,244,255,.1)}}@keyframes tutorialTkBreath{0%,100%{box-shadow:0 14px 36px rgba(0,0,0,.45),0 0 18px rgba(142,244,255,.05)}50%{box-shadow:0 14px 36px rgba(0,0,0,.45),0 0 29px rgba(142,244,255,.12)}}@keyframes tutorialTkSweep{0%,68%{left:-35%;opacity:0}74%{opacity:1}88%{left:118%;opacity:.8}100%{left:118%;opacity:0}}@keyframes tutorialStepDot{0%,100%{opacity:.5;transform:scale(.8)}50%{opacity:1;transform:scale(1.18)}}@keyframes tutorialLockRedOut{0%{opacity:1;transform:scale(1)}55%{opacity:1;transform:scale(1.09)}100%{opacity:0;transform:scale(.55)}}@keyframes tutorialLockGreenIn{0%{opacity:0;transform:scale(.5) rotate(-7deg)}68%{opacity:1;transform:scale(1.08) rotate(2deg)}100%{opacity:1;transform:scale(1) rotate(0)}}@keyframes tutorialLockFlash{0%{opacity:0;transform:scale(.3)}35%{opacity:.85;transform:scale(1.45)}100%{opacity:0;transform:scale(2.4)}}
 @media(max-width:600px){.tutorial-bubble-v61{padding:15px 15px 14px}.tutorial-main-text{font-size:12px;line-height:1.45}.tutorial-secondary-text{font-size:10px}.tutorial-controls{margin-top:12px}.tutorial-controls-final{display:block}.tutorial-controls-final>.tutorial-back{margin-bottom:8px}.tutorial-final-actions{display:grid;grid-template-columns:1fr 1.35fr}.tutorial-final-actions button{padding:0 8px;font-size:8px}.tutorial-list-v61>button{grid-template-columns:40px minmax(0,1fr) auto;padding:12px 10px;gap:9px}.tutorial-list-number{width:36px;height:36px}}
 @media(prefers-reduced-motion:reduce){.tutorial-focus-ring-v61,.tutorial-tk-card,.tutorial-tk-card:after,.tutorial-step-label i{animation:none!important}.tutorial-bubble-v61,.tutorial-main-text,.tutorial-secondary-text,.tutorial-micro-rule{animation-duration:.01ms!important}.tutorial-lock-stage.is-unlocked .tutorial-lock-red{opacity:0!important;animation:none!important}.tutorial-lock-stage.is-unlocked .tutorial-lock-green{opacity:1!important;transform:scale(1)!important;animation:none!important}.tutorial-lock-stage.is-unlocked .tutorial-lock-flash{display:none!important}}
+
+/* ======================================================================
+   v6.2 · TUTORIAL 1 · refinamiento visual / composición por pasos
+   ====================================================================== */
+.drawer-help{width:22px!important;height:22px!important;min-width:22px!important;min-height:22px!important;flex:0 0 22px!important;aspect-ratio:1/1!important;box-sizing:border-box!important;border-radius:50%!important;padding:0!important;line-height:1!important}
+
+/* Navegación: cajas equivalentes y limpias. */
+.tutorial-controls-first{display:block!important}
+.tutorial-controls-first .tutorial-next{width:100%!important;min-height:46px!important;border-radius:8px!important;padding:0 14px!important}
+.tutorial-controls-nav{display:grid!important;grid-template-columns:1fr 1fr!important;gap:10px!important;align-items:stretch!important}
+.tutorial-controls-nav .tutorial-nav-box{width:100%!important;min-height:48px!important;border-radius:8px!important;padding:0 8px!important;text-align:center!important}
+.tutorial-controls-final{display:block!important}
+.tutorial-controls-final>.tutorial-back{width:calc(50% - 5px)!important;min-height:48px!important;border-radius:8px!important;margin:0 0 10px!important;padding:0 8px!important;text-align:center!important}
+.tutorial-final-actions{display:grid!important;grid-template-columns:1fr!important;gap:8px!important;width:100%!important}
+.tutorial-final-actions button{width:100%!important;min-height:48px!important;border-radius:8px!important;padding:0 12px!important}
+
+/* Paso 5: el cierre debe leerse de un vistazo. */
+.tutorial-step-5 .tutorial-bubble-v61 h2{display:inline-block!important;color:#fff!important;font-size:clamp(20px,5vw,25px)!important;letter-spacing:.04em!important;padding-bottom:5px!important;border-bottom:2px solid #d2232a!important;text-shadow:0 0 16px rgba(210,35,42,.26)!important}
+
+/* El icono real de TODAS LAS STORIES se replica por encima del dim para no oscurecerlo. */
+.tutorial-target-clone-v62{position:fixed!important;z-index:5203!important;pointer-events:none!important;margin:0!important;opacity:1!important;color:#fff!important;background:rgba(8,8,8,.97)!important;border:1px solid rgba(142,244,255,.48)!important;border-radius:12px!important;box-shadow:0 0 12px rgba(142,244,255,.42),0 0 30px rgba(142,244,255,.28),0 0 54px rgba(255,255,255,.10)!important;filter:none!important;transform:none!important}
+.tutorial-target-clone-v62 span,.tutorial-target-clone-v62 small{color:#fff!important;opacity:1!important;filter:none!important}
+.tutorial-focus-ring-v61.is-strong{z-index:5203;border-color:#eaffff!important;box-shadow:0 0 0 1px rgba(142,244,255,.68),0 0 16px 5px rgba(142,244,255,.62),0 0 42px 13px rgba(142,244,255,.26)!important;animation:tutorialTargetSignalV62 1.15s ease-in-out infinite!important}
+.tutorial-focus-ring-v61.is-strong::before,.tutorial-focus-ring-v61.is-strong::after{content:"";position:absolute;pointer-events:none;border-radius:inherit}
+.tutorial-focus-ring-v61.is-strong::before{inset:-9px;border:1px solid rgba(142,244,255,.58);animation:tutorialTargetOuterV62 1.15s ease-out infinite}
+.tutorial-focus-ring-v61.is-strong::after{inset:-17px;border:1px solid rgba(255,255,255,.22);animation:tutorialTargetOuterV62 1.15s .28s ease-out infinite}
+@keyframes tutorialTargetSignalV62{0%,100%{filter:brightness(.9);box-shadow:0 0 0 1px rgba(142,244,255,.45),0 0 12px 4px rgba(142,244,255,.42),0 0 28px 9px rgba(142,244,255,.18)}50%{filter:brightness(1.35);box-shadow:0 0 0 2px rgba(255,255,255,.86),0 0 24px 8px rgba(142,244,255,.82),0 0 55px 18px rgba(142,244,255,.32)}}
+@keyframes tutorialTargetOuterV62{0%{opacity:.95;transform:scale(.92)}75%,100%{opacity:0;transform:scale(1.12)}}
+
+/* Candados del Tutorial 1: entrada narrativa + transformación posterior. */
+.tutorial-lock-locked .tutorial-lock-red{opacity:0;transform:scale(.48) translateY(9px);animation:tutorialLockEnterV62 2s .12s cubic-bezier(.16,.8,.2,1) forwards!important}
+.tutorial-lock-unlock:not(.is-unlocked) .tutorial-lock-red{opacity:0;transform:scale(.62) translateY(7px);animation:tutorialLockEnterV62 .65s .70s cubic-bezier(.16,.8,.2,1) forwards!important}
+@keyframes tutorialLockEnterV62{0%{opacity:0;transform:scale(.48) translateY(10px);filter:drop-shadow(0 0 0 currentColor)}55%{opacity:.78;transform:scale(1.06) translateY(0);filter:drop-shadow(0 0 25px currentColor)}100%{opacity:1;transform:scale(1) translateY(0);filter:drop-shadow(0 0 14px currentColor)}}
+
+/* 1 QR = 1 STORY toma el lenguaje de los badges NEW: pulso, halo y barrido. */
+.tutorial-step-4 .tutorial-micro-rule{position:relative!important;isolation:isolate;overflow:hidden!important;border-color:#6aa7b5!important;color:#d9fcff!important;box-shadow:0 0 10px rgba(142,244,255,.20),0 0 22px rgba(142,244,255,.08)!important;animation:tutorialMicroPulseV62 1.65s ease-in-out infinite!important}
+.tutorial-step-4 .tutorial-micro-rule::before{content:"";position:absolute;inset:-1px;border-radius:inherit;z-index:-1;box-shadow:0 0 0 1px rgba(142,244,255,.24),0 0 12px rgba(142,244,255,.35),0 0 26px rgba(142,244,255,.14);animation:tutorialMicroHaloV62 1.65s ease-in-out infinite}
+.tutorial-step-4 .tutorial-micro-rule::after{content:"";position:absolute;inset:-40% auto -40% -65%;width:46%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.12),rgba(255,255,255,.95),rgba(255,255,255,.14),transparent);transform:skewX(-18deg);animation:tutorialMicroSweepV62 1.25s ease-in-out infinite;pointer-events:none}
+@keyframes tutorialMicroPulseV62{0%,100%{transform:scale(1);filter:brightness(.94)}50%{transform:scale(1.055);filter:brightness(1.18)}}
+@keyframes tutorialMicroHaloV62{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes tutorialMicroSweepV62{0%{left:-65%;opacity:0}18%{opacity:1}62%{left:118%;opacity:.9}100%{left:118%;opacity:0}}
+
+/* La composición se calcula en JS; evitamos transiciones que puedan desplazar los stacks. */
+.tutorial-step-1 .tutorial-tk-stage-v61,.tutorial-step-2 .tutorial-tk-stage-v61,.tutorial-step-3 .tutorial-tk-stage-v61,.tutorial-step-4 .tutorial-tk-stage-v61,.tutorial-step-5 .tutorial-tk-stage-v61{max-width:calc(100vw - 24px)}
+.tutorial-step-3 .tutorial-bubble-v61,.tutorial-step-4 .tutorial-bubble-v61{max-width:calc(100vw - 32px)}
+
+@media(max-width:600px){
+  .tutorial-controls-nav .tutorial-nav-box{min-height:46px!important;font-size:8px!important}
+  .tutorial-controls-final>.tutorial-back{min-height:46px!important}
+  .tutorial-final-actions button{min-height:46px!important;font-size:8px!important}
+  .tutorial-step-5 .tutorial-bubble-v61 h2{font-size:20px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .tutorial-focus-ring-v61.is-strong,.tutorial-focus-ring-v61.is-strong::before,.tutorial-focus-ring-v61.is-strong::after,
+  .tutorial-lock-locked .tutorial-lock-red,.tutorial-lock-unlock:not(.is-unlocked) .tutorial-lock-red,
+  .tutorial-step-4 .tutorial-micro-rule,.tutorial-step-4 .tutorial-micro-rule::before,.tutorial-step-4 .tutorial-micro-rule::after{animation:none!important}
+  .tutorial-lock-locked .tutorial-lock-red,.tutorial-lock-unlock:not(.is-unlocked) .tutorial-lock-red{opacity:1!important;transform:none!important}
+}
