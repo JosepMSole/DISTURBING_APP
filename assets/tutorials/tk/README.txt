@@ -1,4 +1,4 @@
-DISTURBING STORIES APP v6.1 · T.K.
+DISTURBING STORIES APP v6.6 · T.K.
 
 Copia aquí los WebM del TUTORIAL 1 con estos nombres:
 - tk_t01_p01.webm

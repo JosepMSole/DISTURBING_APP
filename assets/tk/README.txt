@@ -1,1 +1,1 @@
-T.K. queda temporalmente desactivado en v2.7. Conserva aquí los WebM cuando se retome el sistema de tutoriales.
+T.K. para TUTORIALES v6.X se carga ahora desde assets/tutorials/tk/. Esta carpeta se conserva por compatibilidad histórica.
