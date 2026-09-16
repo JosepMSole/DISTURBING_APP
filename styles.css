@@ -7195,3 +7195,19 @@ body.micro-preview-mode .entry-gate{display:none!important}
 @keyframes tutorialStartPulseV64{0%,100%{filter:brightness(.96);box-shadow:0 0 10px rgba(210,35,42,.18)}50%{filter:brightness(1.16);box-shadow:0 0 0 1px rgba(255,99,107,.52),0 0 22px rgba(210,35,42,.48),0 0 38px rgba(210,35,42,.18)}}
 @keyframes tutorialStartSweepV64{0%{left:-60%;opacity:0}18%{opacity:.9}62%{left:118%;opacity:.8}100%{left:118%;opacity:0}}
 @media(prefers-reduced-motion:reduce){.tutorial-step-5 .tutorial-start,.tutorial-step-5 .tutorial-start::after{animation:none!important}}
+
+/* ======================================================================
+   v6.5 · TUTORIAL 1 · typewriter + microajustes finales de sesión
+   ====================================================================== */
+/* Typewriter real: el alto de cada bloque se reserva desde JS para evitar saltos. */
+[data-tutorial-typewrite].tutorial-typewrite-pending{color:transparent!important;text-shadow:none!important}
+[data-tutorial-typewrite].tutorial-typewrite-writing{visibility:visible}
+.tutorial-step-label [data-tutorial-typewrite]{display:inline-block}
+
+/* PASO 5: CTA finales con mayor presencia tipográfica. */
+.tutorial-step-5 .tutorial-final-actions button{
+  font-size:13px!important;font-weight:750!important;letter-spacing:.065em!important;
+}
+@media(max-width:600px){
+  .tutorial-step-5 .tutorial-final-actions button{font-size:11px!important;letter-spacing:.055em!important}
+}
