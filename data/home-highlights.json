@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-09-16T02:26:53.602385+00:00",
+  "updated": "2026-09-16T02:28:15.798065+00:00",
   "items": [
     {
       "id": "highlight-001",
@@ -9,9 +9,9 @@
       "enabled": true,
       "badge": "NEW",
       "title": "¡CUIDADO!",
-      "text": "Se acercan nuevas criaturas...",
-      "targetType": "micro",
-      "targetId": "002",
+      "text": "Halloween está a la vuelta de la esquina y se acercan nuevas criaturas... unas MICRO-criaturas inquietantes...",
+      "targetType": "other",
+      "targetId": "",
       "buttonText": "DESCUBRIR",
       "url": "",
       "startAt": "2026-09-14T14:47:00.000Z",
@@ -19,7 +19,7 @@
       "image": "assets/home-highlights/001/image.webp",
       "video": "",
       "createdAt": "2026-09-14T14:21:31.203384+00:00",
-      "updatedAt": "2026-09-16T02:26:53.212811+00:00",
+      "updatedAt": "2026-09-16T02:28:15.434061+00:00",
       "mediaVersion": "1789525613602",
       "imageBytes": 286146,
       "showBadge": true,
