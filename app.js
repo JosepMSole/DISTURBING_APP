@@ -1,4 +1,4 @@
-const APP_VERSION = '6.8.0';
+const APP_VERSION = '6.9.0';
 let globalPlayerAudioEngine=null,stormAudioEngine=null,stormIntroAudioEngine=null;
 const $=(s,r=document)=>{
   if(r===document&&s==='#globalPlayerAudio')return globalPlayerAudioEngine;
@@ -36,6 +36,10 @@ let stormEnabled=true,stormPrimed=false,stormStarted=false;
 const STORM_VOLUME=.42;
 let stormAudioCtx=null,stormGainNode=null,stormBuffer=null,stormBufferPromise=null,stormBufferSource=null,stormLoopStart=0,stormLoopEnd=0,stormIntroBuffer=null,stormIntroBufferPromise=null,stormIntroBufferSource=null,stormIntroEnd=0,stormIntroTransitionStarted=false,stormIntroFallbackTimer=0,userHeroBgMotionRaf=0;
 let navHistory=[],navGoingBack=false,storyTransitionBusy=false;
+// v6.9 · Deep link de entrada para PUBLISHER / enlaces externos. Se captura antes
+// del boot para que sobreviva START + intro y se resuelve solo cuando stories.json
+// ya está disponible. Es navegación, nunca concede acceso a una Story exclusiva.
+let pendingDeepLinkStoryRequest=captureStartupStoryDeepLink();
 let supabaseClient=null,registeredUser=null,userProfile=null,userSyncBusy=false;
 const localAvatarKey='disturbing_user_avatar_v1', unlockedAvatarsKey='disturbing_unlocked_avatars_v1', avatarRewardSeenKey='disturbing_avatar_reward_seen_v1', userNameCacheKey='disturbing_user_name_v1', achievementEarnedKey='disturbing_achievements_v1', achievementActiveKey='disturbing_achievements_active_v1', consumedMediaKey='disturbing_consumed_story_media_v1';
 const AVATAR_ASSET_BASE='https://josepmsole.github.io/DISTURBING_APP/assets/avatar/';
@@ -123,6 +127,32 @@ function uiSoundPreferenceHtml(){const on=uiSoundsEnabled();return `<div class="
 function bindUiSoundPreference(){const b=$('#userUiSoundToggle');if(!b)return;b.onclick=()=>{const next=!uiSoundsEnabled();if(!next)playUiSound('tap',{force:true});store.set(uiSoundsKey,next);b.classList.toggle('is-on',next);b.classList.toggle('is-off',!next);b.setAttribute('aria-pressed',String(next));const span=b.querySelector('span');if(span)span.textContent=next?'ON':'OFF';if(next){primeUiSounds();playUiSound('confirm',{force:true})}}}
 addEventListener('message',e=>{if(e.origin!==location.origin||e.data?.type!=='ds-micro-preview')return;applyMicroPreviewDraft(e.data.micro)});
 
+function captureStartupStoryDeepLink(){
+  try{const params=new URLSearchParams(location.search);return params.has('s')?String(params.get('s')??'').trim():null}catch{return null}
+}
+function numericStoryIdKey(value){
+  const raw=String(value??'').trim();if(!/^\d+$/.test(raw))return'';return raw.replace(/^0+(?=\d)/,'')
+}
+function resolvePendingDeepLinkStoryId(){
+  if(pendingDeepLinkStoryRequest===null)return'';
+  const raw=String(pendingDeepLinkStoryRequest||'').trim(),wanted=numericStoryIdKey(raw);if(!wanted)return'';
+  const stories=indexData?.stories||[];
+  const exact=stories.find(st=>String(st?.id??'').trim()===raw);if(exact)return String(exact.id);
+  const numeric=stories.find(st=>numericStoryIdKey(st?.id)===wanted);return numeric?String(numeric.id):''
+}
+function consumeStartupStoryDeepLink(){
+  if(pendingDeepLinkStoryRequest===null)return;
+  pendingDeepLinkStoryRequest=null;
+  try{const url=new URL(location.href);url.searchParams.delete('s');const next=url.pathname+(url.search||'')+(url.hash||'');history.replaceState(history.state,'',next)}catch{}
+}
+function startupDeepLinkTarget(){
+  if(pendingDeepLinkStoryRequest===null)return'';
+  const requested=String(pendingDeepLinkStoryRequest||''),storyId=resolvePendingDeepLinkStoryId();
+  consumeStartupStoryDeepLink();
+  if(!storyId){console.warn('[Disturbing Stories] Deep link de Story no válido o inexistente:',requested);return''}
+  return `#/story/${encodeURIComponent(storyId)}`
+}
+
 async function boot(){
   showLoading();
   try{
@@ -146,8 +176,10 @@ async function boot(){
     bindShell();bindUiSoundSystem();bindGameEventBridge();initMotionSystem();initPlayer();
     if(currentHash().startsWith('#/micro-preview')){const gate=$('#entryGate');if(gate){gate.classList.add('hidden');gate.setAttribute('aria-hidden','true')}document.body.classList.add('micro-preview-mode');routeFromHash();updateStormButton();return}
     const introDidPlay=await playEntryIntro();
-    if(currentHash()!=='#/home'){
-      location.hash='#/home';
+    const deepLinkTarget=startupDeepLinkTarget();
+    const startupTarget=deepLinkTarget||'#/home';
+    if(currentHash()!==startupTarget){
+      location.hash=startupTarget;
       if(introDidPlay)setTimeout(startIntroWhiteHandoff,50);
     }else{
       routeFromHash();
@@ -1646,5 +1678,5 @@ function startIntroMedia(layer,video,resolve){
   const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))
 }
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=6.8.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=6.9.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
