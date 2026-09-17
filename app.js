@@ -1,4 +1,4 @@
-const APP_VERSION = '6.9.0';
+const APP_VERSION = '6.10.0';
 let globalPlayerAudioEngine=null,stormAudioEngine=null,stormIntroAudioEngine=null;
 const $=(s,r=document)=>{
   if(r===document&&s==='#globalPlayerAudio')return globalPlayerAudioEngine;
@@ -1678,5 +1678,5 @@ function startIntroMedia(layer,video,resolve){
   const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))
 }
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=6.9.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=6.10.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
