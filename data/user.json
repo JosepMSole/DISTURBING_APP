@@ -53,7 +53,10 @@
         "type": "read_stories",
         "count": 50
       },
-      "reward": null
+      "reward": {
+        "type": "unlock_avatar",
+        "avatarId": "avatar7"
+      }
     },
     {
       "id": "achievement1789221992017",
@@ -339,5 +342,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-18T18:04:30.523072+00:00"
+  "updated": "2026-09-18T18:23:13.979583+00:00"
 }
