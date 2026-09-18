@@ -7372,8 +7372,7 @@ body.micro-preview-mode .entry-gate{display:none!important}
 .player-playlist-panel{scroll-margin-top:84px!important}
 
 
-/* v6.13 · email visible de la sesión registrada */
+/* v6.14 · email visible de la sesión registrada */
 .user-email-box{display:inline-flex;flex-direction:column;align-items:flex-start;gap:3px;width:max-content;max-width:min(100%,430px);margin-top:9px;padding:7px 10px;border:1px solid rgba(255,255,255,.16);border-radius:8px;background:rgba(0,0,0,.48);box-shadow:inset 0 0 16px rgba(255,255,255,.025)}
-.user-email-box span{font:700 7px/1 Oxanium,sans-serif;letter-spacing:.13em;color:#7f8b91;text-transform:uppercase}
 .user-email-box strong{max-width:100%;font:600 10px/1.25 'Exo 2',system-ui,sans-serif;color:#dfe8eb;overflow-wrap:anywhere}
 @media(max-width:390px){.user-email-box{padding:6px 8px}.user-email-box strong{font-size:9px}}
