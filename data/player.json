@@ -167,9 +167,14 @@
       "file": "DISTURBING THEME - FORGOTTEN ISLAND.mp3",
       "durationSeconds": 0,
       "images": []
+    },
+    {
+      "file": "DISTURBING THEME - NIHILIST.mp3",
+      "durationSeconds": 0,
+      "images": []
     }
   ],
   "schema": 3,
   "source": "assets/player/audio",
-  "updated": "2026-09-18T17:40:54.441369+00:00"
+  "updated": "2026-09-18T17:41:15.614554+00:00"
 }
