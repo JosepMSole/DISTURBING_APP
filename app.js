@@ -1,4 +1,4 @@
-const APP_VERSION = '6.14.0';
+const APP_VERSION = '6.15.0';
 let globalPlayerAudioEngine=null,stormAudioEngine=null,stormIntroAudioEngine=null;
 const $=(s,r=document)=>{
   if(r===document&&s==='#globalPlayerAudio')return globalPlayerAudioEngine;
@@ -32,6 +32,7 @@ const newBaselineKey='disturbing_new_baseline_v2';
 const newV21InitKey='disturbing_new_v21_init';
 const PLAYER_MANIFEST='https://raw.githubusercontent.com/JosepMSole/DisturbingPlayer/main/music/manifest.json';
 const PLAYER_MUSIC_BASE='https://josepmsole.github.io/DisturbingPlayer/music/';
+const PLAYER_LOCAL_BASE='https://josepmsole.github.io/DISTURBING_APP/assets/player/audio/';
 let playerTracks=[],playerIndex=0,playerShuffle=false,playerRepeatMode='off',playerActivated=false,playerManifestLoading=null,playerDurationLoading=null,playerWasPlayingBeforeMedia=false,playerArtworkTimer=0,playerArtworkTrack='',playerArtworkIndex=0,playerWaveRaf=0,playerWaveCtx=null,playerWaveAnalyser=null,playerWaveSource=null,playerWaveData=null,playerArtworkMotionRaf=0;
 let youtubeIframeApiPromise=null,storyYoutubePlayers=[];
 let stormEnabled=true,stormPrimed=false,stormStarted=false;
@@ -617,7 +618,23 @@ function renderCollection(bookId=''){
 function playerState(){return store.get(playerStateKey,{index:0,shuffle:false,repeatMode:'off',volume:.85})}
 function savePlayerState(){const a=$('#globalPlayerAudio');store.set(playerStateKey,{index:playerIndex,shuffle:playerShuffle,repeatMode:playerRepeatMode,volume:a?Number(a.volume):.85})}
 function trackNameFromFile(name=''){try{return decodeURIComponent(String(name)).replace(/\.mp3$/i,'')}catch{return String(name).replace(/\.mp3$/i,'')}}
-async function ensurePlayerManifest(){if(playerTracks.length)return playerTracks;if(playerManifestLoading)return playerManifestLoading;playerManifestLoading=(async()=>{const r=await fetch(`${PLAYER_MANIFEST}?t=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error(`PLAYER manifest HTTP ${r.status}`);const j=await r.json(),list=Array.isArray(j)?j:(j.tracks||[]),saved=Array.isArray(playerCatalogData?.tracks)?playerCatalogData.tracks:[],byFile=new Map(saved.map(x=>[String(x.file||''),x]));playerTracks=list.filter(x=>typeof x==='string'&&/\.mp3$/i.test(x)).map(file=>{const cfg=byFile.get(String(file))||{};return{file,name:trackNameFromFile(file),src:PLAYER_MUSIC_BASE+String(file).split('/').map(encodeURIComponent).join('/'),images:Array.isArray(cfg.images)?cfg.images.map(String).map(x=>x.trim()).filter(Boolean):[]}});const st=playerState();playerIndex=Math.min(Math.max(0,Number(st.index)||0),Math.max(0,playerTracks.length-1));playerShuffle=!!st.shuffle;playerRepeatMode=['off','one','all'].includes(st.repeatMode)?st.repeatMode:'off';playerActivated=false;return playerTracks})().finally(()=>playerManifestLoading=null);return playerManifestLoading}
+async function ensurePlayerManifest(){
+  if(playerTracks.length)return playerTracks;
+  if(playerManifestLoading)return playerManifestLoading;
+  playerManifestLoading=(async()=>{
+    const saved=Array.isArray(playerCatalogData?.tracks)?playerCatalogData.tracks:[];
+    const managed=Number(playerCatalogData?.schema||0)>=3||String(playerCatalogData?.source||'')==='assets/player/audio';
+    if(managed){
+      playerTracks=saved.filter(x=>x&&/\.mp3$/i.test(String(x.file||''))).map(cfg=>{const file=String(cfg.file||'').trim(),encoded=file.split('/').map(encodeURIComponent).join('/');return{file,name:String(cfg.name||trackNameFromFile(file)),src:PLAYER_LOCAL_BASE+encoded,images:Array.isArray(cfg.images)?cfg.images.map(String).map(x=>x.trim()).filter(Boolean):[]}});
+    }else{
+      const r=await fetch(`${PLAYER_MANIFEST}?t=${Date.now()}`,{cache:'no-store'});if(!r.ok)throw new Error(`PLAYER manifest HTTP ${r.status}`);
+      const j=await r.json(),list=Array.isArray(j)?j:(j.tracks||[]),byFile=new Map(saved.map(x=>[String(x.file||''),x]));
+      playerTracks=list.filter(x=>typeof x==='string'&&/\.mp3$/i.test(x)).map(file=>{const cfg=byFile.get(String(file))||{};return{file,name:trackNameFromFile(file),src:PLAYER_MUSIC_BASE+String(file).split('/').map(encodeURIComponent).join('/'),images:Array.isArray(cfg.images)?cfg.images.map(String).map(x=>x.trim()).filter(Boolean):[]}});
+    }
+    const st=playerState();playerIndex=Math.min(Math.max(0,Number(st.index)||0),Math.max(0,playerTracks.length-1));playerShuffle=!!st.shuffle;playerRepeatMode=['off','one','all'].includes(st.repeatMode)?st.repeatMode:'off';playerActivated=false;return playerTracks;
+  })().finally(()=>playerManifestLoading=null);
+  return playerManifestLoading;
+}
 
 function playerTrackImages(track=playerTracks[playerIndex]){return [...new Set((track?.images||[]).map(String).map(x=>x.trim()).filter(x=>/^https?:\/\//i.test(x)))]}
 function ensurePlayerFullscreenLayer(){let layer=$('#playerFullscreenLayer');if(layer)return layer;layer=document.createElement('div');layer.id='playerFullscreenLayer';layer.className='player-fullscreen-layer hidden';layer.setAttribute('role','dialog');layer.setAttribute('aria-modal','true');layer.setAttribute('aria-hidden','true');layer.setAttribute('aria-label','Disturbing Player a pantalla completa');layer.innerHTML=`<button id="playerFullscreenClose" class="player-fullscreen-close" type="button" aria-label="Cerrar pantalla completa" title="Cerrar"><svg class="player-fullscreen-close-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5 19 19M19 5 5 19"/></svg></button><div id="playerFullscreenStage" class="player-fullscreen-stage"></div>`;document.body.append(layer);$('#playerFullscreenClose',layer).onclick=()=>closePlayerFullscreen();layer.addEventListener('click',e=>{if(e.target===layer)closePlayerFullscreen()});return layer}
@@ -1739,5 +1756,5 @@ function startIntroMedia(layer,video,resolve){
   const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))
 }
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=6.14.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=6.15.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
