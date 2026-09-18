@@ -139,6 +139,13 @@
       ]
     },
     {
+      "file": "DISTURBING THEME - BOOK 5.mp3",
+      "durationSeconds": 121,
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/book-5-wideimage1_orig.jpg"
+      ]
+    },
+    {
       "file": "FAR FAR WEST - Complete Score 2025.mp3",
       "durationSeconds": 647,
       "images": [
@@ -148,16 +155,9 @@
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-5_orig.jpg",
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-6_orig.jpg"
       ]
-    },
-    {
-      "file": "DISTURBING THEME - BOOK 5.mp3",
-      "durationSeconds": 121,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/book-5-wideimage1_orig.jpg"
-      ]
     }
   ],
   "schema": 3,
   "source": "assets/player/audio",
-  "updated": "2026-09-18T17:36:08.371597+00:00"
+  "updated": "2026-09-18T17:37:22.446436+00:00"
 }
