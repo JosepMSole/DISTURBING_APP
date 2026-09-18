@@ -153,6 +153,20 @@
       ]
     },
     {
+      "file": "DISTURBING THEME - FORGOTTEN ISLAND.mp3",
+      "durationSeconds": 130,
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/chatgpt-image-13-sept-2026-00-51-08_3.png"
+      ]
+    },
+    {
+      "file": "DISTURBING THEME - NIHILIST.mp3",
+      "durationSeconds": 93,
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/chatgpt-image-13-sept-2026-01-11-42_orig.png"
+      ]
+    },
+    {
       "file": "FAR FAR WEST - Complete Score 2025.mp3",
       "durationSeconds": 647,
       "images": [
@@ -162,19 +176,9 @@
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-5_orig.jpg",
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-6_orig.jpg"
       ]
-    },
-    {
-      "file": "DISTURBING THEME - FORGOTTEN ISLAND.mp3",
-      "durationSeconds": 130,
-      "images": []
-    },
-    {
-      "file": "DISTURBING THEME - NIHILIST.mp3",
-      "durationSeconds": 93,
-      "images": []
     }
   ],
   "schema": 3,
   "source": "assets/player/audio",
-  "updated": "2026-09-18T17:41:24.162269+00:00"
+  "updated": "2026-09-18T17:42:05.293959+00:00"
 }
