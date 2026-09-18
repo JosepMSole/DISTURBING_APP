@@ -1,6 +1,4 @@
 {
-  "schema": 2,
-  "updated": "2026-09-13T22:42:03.288243+00:00",
   "tracks": [
     {
       "file": "93DELTA - BSO 2007.mp3",
@@ -28,21 +26,14 @@
       ]
     },
     {
-      "file": "DARK LIMITS - ACTIVATION - 1.mp3",
-      "durationSeconds": 133,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/046-dark-limits-activation-frame-1_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/046-dark-limits-activation-frame-3_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/046-dark-limits-activation-frame-4_orig.jpg"
-      ]
+      "file": "DARK LIMITS - ACTIVATION - A.mp3",
+      "durationSeconds": 0,
+      "images": []
     },
     {
-      "file": "DARK LIMITS - ACTIVATION - 2.mp3",
-      "durationSeconds": 60,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/046-dark-limits-activation-frame-5-gif_orig.gif",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/046-dark-limits-activation-frame-6_orig.jpg"
-      ]
+      "file": "DARK LIMITS - ACTIVATION - B.mp3",
+      "durationSeconds": 0,
+      "images": []
     },
     {
       "file": "DARK LIMITS - COAST STORM.mp3",
@@ -54,22 +45,9 @@
       ]
     },
     {
-      "file": "DARK LIMITS - OTHER SIDE - 1.mp3",
-      "durationSeconds": 133,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-02_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-03_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-04_orig.jpg"
-      ]
-    },
-    {
-      "file": "DARK LIMITS - OTHER SIDE - 2.mp3",
-      "durationSeconds": 190,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-06_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-08_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/023-dark-limits-otro-lado-frame-09_orig.jpg"
-      ]
+      "file": "DARK LIMITS - OTHER SIDE.mp3",
+      "durationSeconds": 0,
+      "images": []
     },
     {
       "file": "DARK LIMITS - PUZZLES - Main Theme.mp3",
@@ -89,6 +67,36 @@
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dark-limits-momento-cero-gif-2_orig.gif",
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/dark-limits-momento-cero-gif-3.gif?1742572887",
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/momento-cero-5_orig.jpg"
+      ]
+    },
+    {
+      "file": "DISTORSION VENDETTA 1 - Owen Phelps.mp3",
+      "durationSeconds": 183,
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-1_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-6_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-19_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-21_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-07_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-08_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-10_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-22_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-23_orig.jpg"
+      ]
+    },
+    {
+      "file": "DISTORSION VENDETTA 2 - CODA Finale.mp3",
+      "durationSeconds": 123,
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-02_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-05_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-07_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-08_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-13_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-16_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-18_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-24_orig.jpg",
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-31_orig.jpg"
       ]
     },
     {
@@ -131,64 +139,6 @@
       ]
     },
     {
-      "file": "DISTORSION VENDETTA 1 - Owen Phelps.mp3",
-      "durationSeconds": 183,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-1_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-6_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-19_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/069-frame-21_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-07_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-08_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/016-distorsion-virus-frame-10_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-22_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-23_orig.jpg"
-      ]
-    },
-    {
-      "file": "DISTORSION VENDETTA 2 - CODA Finale.mp3",
-      "durationSeconds": 123,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-02_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-05_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-07_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-08_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-13_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-16_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-18_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-24_orig.jpg",
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/026-distorsion-vendetta-frame-31_orig.jpg"
-      ]
-    },
-    {
-      "file": "DISTURBING THEME - BOOK 5.mp3",
-      "durationSeconds": 121,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/book-5-wideimage1_orig.jpg"
-      ]
-    },
-    {
-      "file": "DISTURBING THEME - EPIC LUX OPENING.mp3",
-      "durationSeconds": 140,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/chatgpt-image-13-sept-2026-00-54-13_orig.png"
-      ]
-    },
-    {
-      "file": "DISTURBING THEME - FORGOTTEN ISLAND.mp3",
-      "durationSeconds": 130,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/chatgpt-image-13-sept-2026-00-51-08_3.png"
-      ]
-    },
-    {
-      "file": "DISTURBING THEME - NIHILIST.mp3",
-      "durationSeconds": 93,
-      "images": [
-        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/chatgpt-image-13-sept-2026-01-11-42_orig.png"
-      ]
-    },
-    {
       "file": "FAR FAR WEST - Complete Score 2025.mp3",
       "durationSeconds": 647,
       "images": [
@@ -198,6 +148,16 @@
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-5_orig.jpg",
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-6_orig.jpg"
       ]
+    },
+    {
+      "file": "DISTURBING THEME - BOOK 5.mp3",
+      "durationSeconds": 121,
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/book-5-wideimage1_orig.jpg"
+      ]
     }
-  ]
+  ],
+  "schema": 3,
+  "source": "assets/player/audio",
+  "updated": "2026-09-18T17:36:08.371597+00:00"
 }
