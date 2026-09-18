@@ -27,12 +27,12 @@
     },
     {
       "file": "DARK LIMITS - ACTIVATION - A.mp3",
-      "durationSeconds": 0,
+      "durationSeconds": 133,
       "images": []
     },
     {
       "file": "DARK LIMITS - ACTIVATION - B.mp3",
-      "durationSeconds": 0,
+      "durationSeconds": 60,
       "images": []
     },
     {
@@ -46,7 +46,7 @@
     },
     {
       "file": "DARK LIMITS - OTHER SIDE.mp3",
-      "durationSeconds": 0,
+      "durationSeconds": 133,
       "images": []
     },
     {
@@ -147,7 +147,7 @@
     },
     {
       "file": "DISTURBING THEME - EPIC LUX OPENING.mp3",
-      "durationSeconds": 0,
+      "durationSeconds": 140,
       "images": [
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/chatgpt-image-13-sept-2026-00-54-13_orig.png"
       ]
@@ -166,5 +166,5 @@
   ],
   "schema": 3,
   "source": "assets/player/audio",
-  "updated": "2026-09-18T17:40:07.790469+00:00"
+  "updated": "2026-09-18T17:40:20.344297+00:00"
 }
