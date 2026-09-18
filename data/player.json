@@ -146,6 +146,11 @@
       ]
     },
     {
+      "file": "DISTURBING THEME - EPIC LUX OPENING.mp3",
+      "durationSeconds": 0,
+      "images": []
+    },
+    {
       "file": "FAR FAR WEST - Complete Score 2025.mp3",
       "durationSeconds": 647,
       "images": [
@@ -155,14 +160,9 @@
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-5_orig.jpg",
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-6_orig.jpg"
       ]
-    },
-    {
-      "file": "DISTURBING THEME - EPIC LUX OPENING.mp3",
-      "durationSeconds": 0,
-      "images": []
     }
   ],
   "schema": 3,
   "source": "assets/player/audio",
-  "updated": "2026-09-18T17:38:49.780883+00:00"
+  "updated": "2026-09-18T17:39:01.117167+00:00"
 }
