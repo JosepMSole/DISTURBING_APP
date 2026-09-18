@@ -148,7 +148,9 @@
     {
       "file": "DISTURBING THEME - EPIC LUX OPENING.mp3",
       "durationSeconds": 0,
-      "images": []
+      "images": [
+        "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/chatgpt-image-13-sept-2026-00-54-13_orig.png"
+      ]
     },
     {
       "file": "FAR FAR WEST - Complete Score 2025.mp3",
@@ -164,5 +166,5 @@
   ],
   "schema": 3,
   "source": "assets/player/audio",
-  "updated": "2026-09-18T17:39:01.117167+00:00"
+  "updated": "2026-09-18T17:39:55.211850+00:00"
 }
