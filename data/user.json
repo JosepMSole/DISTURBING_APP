@@ -58,11 +58,10 @@
     {
       "id": "achievement1789221992017",
       "number": 6,
-      "name": "Has visto todo… por ahora…",
-      "description": "Leer las 75 Stories publicadas",
+      "name": "Estás al día… por ahora…",
+      "description": "Completaste la \"DisturbingDEX\" con todas las stories publicadas hasta la fecha",
       "requirement": {
-        "type": "read_stories",
-        "count": 75
+        "type": "read_all_published"
       },
       "reward": null
     },
@@ -340,5 +339,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-15T03:06:21.507341+00:00"
+  "updated": "2026-09-18T18:04:30.523072+00:00"
 }
