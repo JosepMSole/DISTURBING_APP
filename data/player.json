@@ -162,9 +162,14 @@
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-5_orig.jpg",
         "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/049-far-far-west-frame-6_orig.jpg"
       ]
+    },
+    {
+      "file": "DISTURBING THEME - FORGOTTEN ISLAND.mp3",
+      "durationSeconds": 0,
+      "images": []
     }
   ],
   "schema": 3,
   "source": "assets/player/audio",
-  "updated": "2026-09-18T17:40:20.344297+00:00"
+  "updated": "2026-09-18T17:40:54.441369+00:00"
 }
