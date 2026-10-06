@@ -7418,3 +7418,14 @@ body.micro-preview-mode .entry-gate{display:none!important}
   .password-recovery-page{padding-top:14px}.password-recovery-card{padding:22px 16px;border-radius:14px}
   .user-forgot-password-btn{font-size:10px}
 }
+
+
+/* ======================================================================
+   v6.20 · LOGIN robusto + feedback visible
+   ====================================================================== */
+.user-login-status{min-height:0;margin:0;padding:0;text-align:center;font:600 11px/1.45 'Exo 2',system-ui,sans-serif;color:#aeb4ba;transition:color .16s,background .16s,border-color .16s,padding .16s}
+.user-login-status:empty{display:none}
+.user-login-status:not(:empty){display:block;padding:9px 10px;border:1px solid rgba(255,255,255,.11);border-radius:9px;background:rgba(255,255,255,.035)}
+.user-login-status.bad{color:#ff9a9a;border-color:rgba(212,58,70,.34);background:rgba(95,13,21,.22)}
+.user-login-status.ok{color:#a9e6bd;border-color:rgba(58,176,102,.32);background:rgba(18,83,43,.22)}
+#loginUser[disabled]{cursor:wait;opacity:.72;filter:saturate(.78)}
