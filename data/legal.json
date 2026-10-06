@@ -1,0 +1,119 @@
+{
+  "informationEyebrow": "DISTURBING STORIES APP",
+  "informationTitle": "INFORMACIÓN",
+  "informationIntro": "Información útil sobre Disturbing Stories App, su contenido, privacidad y condiciones de uso.",
+  "faq": {
+    "eyebrow": "INFORMACIÓN",
+    "title": "FAQ",
+    "subtitle": "PREGUNTAS FRECUENTES",
+    "items": [
+      {
+        "question": "¿QUÉ ES DISTURBING STORIES APP?",
+        "answer": "Disturbing Stories App es la aplicación oficial del universo Disturbing Stories. Permite leer Stories, descubrir contenido adicional, escuchar música, acceder a material multimedia, juegos, Micro-Pesadillas y otras funciones relacionadas con el proyecto."
+      },
+      {
+        "question": "¿NECESITO CREAR UNA CUENTA?",
+        "answer": "No. Puedes utilizar Disturbing Stories App sin registrarte. Crear una cuenta es opcional y permite sincronizar tu progreso para recuperarlo posteriormente."
+      },
+      {
+        "question": "¿QUÉ DIFERENCIA HAY ENTRE UNA STORY PÚBLICA Y UNA EXCLUSIVA?",
+        "answer": "Las Stories públicas pueden leerse directamente. Las exclusivas deben desbloquearse mediante su código QR correspondiente."
+      },
+      {
+        "question": "¿DÓNDE ENCUENTRO LOS CÓDIGOS QR?",
+        "answer": "Cada Story exclusiva tiene su propio código QR impreso junto a ella en uno de los libros físicos de Disturbing Stories. Un QR desbloquea una única Story."
+      },
+      {
+        "question": "¿QUÉ PASA CUANDO DESBLOQUEO UNA STORY?",
+        "answer": "Queda disponible en la App para que puedas volver a abrirla posteriormente."
+      },
+      {
+        "question": "¿CÓMO SABE LA APP QUÉ STORIES HE LEÍDO?",
+        "answer": "La App registra tu progreso de lectura y marca una Story como LEÍDA cuando has completado correctamente su lectura."
+      },
+      {
+        "question": "¿PUEDO CONTINUAR UNA STORY QUE HE DEJADO A MEDIAS?",
+        "answer": "Sí. Las Stories empezadas aparecen en CONTINUAR LEYENDO y la App conserva tu progreso."
+      },
+      {
+        "question": "¿QUÉ SON LAS MICRO-PESADILLAS?",
+        "answer": "Son relatos de terror y ciencia ficción mucho más breves, creados específicamente para Disturbing Stories App."
+      },
+      {
+        "question": "¿QUÉ ES DISTURBING PLAYER?",
+        "answer": "Es el reproductor musical integrado de Disturbing Stories. Su música puede continuar reproduciéndose mientras navegas por la App o lees una Story."
+      },
+      {
+        "question": "¿PUEDO REPETIR LOS TUTORIALES?",
+        "answer": "Sí. Todos los tutoriales pueden repetirse tantas veces como quieras desde la sección TUTORIALES."
+      },
+      {
+        "question": "¿QUÉ OCURRE SI CAMBIO DE DISPOSITIVO?",
+        "answer": "Si utilizas la App sin cuenta, el progreso permanece almacenado en ese navegador o dispositivo. Si utilizas una cuenta registrada, tu User Vault permite sincronizar el progreso asociado a esa cuenta."
+      },
+      {
+        "question": "HE OLVIDADO MI CONTRASEÑA. ¿QUÉ HAGO?",
+        "answer": "Desde INICIAR SESIÓN pulsa «¿HAS OLVIDADO TU CONTRASEÑA?» y recibirás un email para establecer una nueva."
+      }
+    ]
+  },
+  "age": {
+    "eyebrow": "INFORMACIÓN DE CONTENIDO",
+    "subtitle": "CONTENIDO Y EDAD RECOMENDADA",
+    "title": "+13",
+    "badge": "+13",
+    "heading": "CONTENIDO RECOMENDADO PARA MAYORES DE 13 AÑOS",
+    "body": "Disturbing Stories es un proyecto de ficción de terror y ciencia ficción.\n\nSus relatos y contenidos pueden incluir situaciones inquietantes, violencia ficticia, muerte, criaturas, elementos sobrenaturales, horror corporal, imágenes perturbadoras y otras temáticas que pueden no resultar adecuadas para niños.\n\nLa indicación +13 es una recomendación orientativa sobre el contenido y no una clasificación oficial emitida por un organismo externo.\n\nDisturbing Stories App no está concebida como una aplicación infantil.",
+    "accountHeading": "CUENTAS DE USUARIO",
+    "accountText": "La clasificación +13 se refiere únicamente al contenido. Si tienes menos de 14 años, no debes crear una cuenta de usuario sin la autorización de tu padre, madre o tutor legal."
+  },
+  "legal": {
+    "eyebrow": "DISTURBING STORIES APP",
+    "subtitle": "PRIVACIDAD Y CONDICIONES",
+    "title": "LEGAL",
+    "owner": "Josep M. Solé",
+    "email": "info@disturbingstories.com",
+    "address": "",
+    "taxId": "",
+    "sections": [
+      {
+        "title": "AVISO LEGAL",
+        "body": "Disturbing Stories App es una aplicación vinculada al proyecto Disturbing Stories. El responsable del proyecto es Josep M. Solé y el correo de contacto es info@disturbingstories.com.\n\nEl acceso y uso de la App implica la aceptación de estas condiciones de uso. La información legal podrá actualizarse cuando resulte necesario para adaptarse a cambios del servicio, técnicos o normativos."
+      },
+      {
+        "title": "PRIVACIDAD Y DATOS DE USUARIO",
+        "body": "Disturbing Stories App puede utilizarse sin crear una cuenta. Si decides registrarte, se utilizan los datos necesarios para gestionar la autenticación, la sesión y la sincronización del User Vault asociado a tu cuenta.\n\nLa App no incorpora publicidad comportamental ni utiliza los datos de la cuenta para vender información personal a terceros. La base jurídica aplicable dependerá del tratamiento realizado: la prestación de las funciones solicitadas por el USER y, cuando corresponda, su consentimiento."
+      },
+      {
+        "title": "ALMACENAMIENTO LOCAL Y USER VAULT",
+        "body": "La App utiliza almacenamiento local del navegador o dispositivo para conservar datos funcionales como progreso de lectura, Stories leídas, desbloqueos mediante QR, preferencias, estado de tutoriales, logros, avatares y otros ajustes necesarios para su funcionamiento.\n\nSi utilizas la App sin cuenta, estos datos permanecen vinculados a ese navegador o dispositivo y pueden desaparecer si borras sus datos. Si utilizas una cuenta registrada, el User Vault permite sincronizar el estado asociado a esa cuenta."
+      },
+      {
+        "title": "SERVICIOS EXTERNOS",
+        "body": "Disturbing Stories App utiliza servicios externos para determinadas funciones: Supabase para autenticación y sincronización de cuentas; GitHub Pages para alojamiento; YouTube para contenido audiovisual mediante el modo de privacidad mejorada cuando se incrustan vídeos; Spotify mediante enlaces externos; y servicios CDN o tipográficos necesarios para cargar determinadas librerías y fuentes.\n\nAl abrir o reproducir contenido de servicios externos, dichos proveedores pueden tratar datos técnicos de acuerdo con sus propias políticas y condiciones."
+      },
+      {
+        "title": "COOKIES Y TECNOLOGÍAS SIMILARES",
+        "body": "La App utiliza almacenamiento local, almacenamiento de sesión y caché PWA con finalidades técnicas y funcionales. Disturbing Stories App no instala deliberadamente cookies publicitarias propias.\n\nLos servicios externos integrados o enlazados pueden utilizar sus propias tecnologías de almacenamiento cuando el USER interactúa con ellos."
+      },
+      {
+        "title": "CONSERVACIÓN Y DERECHOS",
+        "body": "Los datos asociados a una cuenta se conservan mientras resulten necesarios para prestar las funciones vinculadas a dicha cuenta o mientras exista una base legítima para su conservación. Los datos locales permanecen en el dispositivo hasta que el USER los elimina o borra los datos del navegador.\n\nPuedes solicitar, cuando corresponda, acceso, rectificación, supresión, limitación, portabilidad u oposición respecto a tus datos personales, así como retirar un consentimiento previamente otorgado. Para cualquier solicitud relacionada con privacidad puedes escribir a info@disturbingstories.com. También puedes presentar una reclamación ante la autoridad de protección de datos competente."
+      },
+      {
+        "title": "MENORES",
+        "body": "Disturbing Stories App contiene ficción de terror y ciencia ficción recomendada para mayores de 13 años y no está concebida como una aplicación infantil.\n\nLa recomendación +13 se refiere al contenido. Los menores de 14 años no deben crear una cuenta de usuario sin la autorización de su padre, madre o tutor legal."
+      },
+      {
+        "title": "PROPIEDAD INTELECTUAL",
+        "body": "Los textos, ilustraciones, diseños, logotipos, música, contenidos audiovisuales y demás materiales originales de Disturbing Stories están protegidos por la normativa de propiedad intelectual y pertenecen a sus respectivos titulares.\n\nNo está permitida su reproducción, distribución, transformación o explotación comercial sin autorización, salvo en los casos expresamente permitidos por la ley."
+      },
+      {
+        "title": "CONTENIDO DE FICCIÓN",
+        "body": "Disturbing Stories es una obra de ficción. Los personajes, criaturas, organizaciones, acontecimientos y situaciones narrativas forman parte de un universo ficticio, salvo cuando se indique expresamente lo contrario."
+      }
+    ]
+  },
+  "schema": 1,
+  "updated": "2026-10-06T10:28:27.340783+00:00"
+}
