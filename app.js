@@ -1,4 +1,4 @@
-const APP_VERSION = '6.18.0';
+const APP_VERSION = '6.19.0';
 let globalPlayerAudioEngine=null,stormAudioEngine=null,stormIntroAudioEngine=null;
 const $=(s,r=document)=>{
   if(r===document&&s==='#globalPlayerAudio')return globalPlayerAudioEngine;
@@ -44,6 +44,8 @@ let navHistory=[],navGoingBack=false,storyTransitionBusy=false;
 // ya está disponible. Es navegación, nunca concede acceso a una Story exclusiva.
 let pendingDeepLinkStoryRequest=captureStartupStoryDeepLink();
 let supabaseClient=null,registeredUser=null,userProfile=null,userSyncBusy=false,userVaultLoadPromise=null,userVaultLoadUserId='',registeredVaultRowExists=false;
+let passwordRecoveryMode=false,passwordRecoveryEmail='',passwordRecoveryRequestedAtBoot=detectPasswordRecoveryIntentFromUrl();
+const PASSWORD_RECOVERY_REDIRECT='https://josepmsole.github.io/DISTURBING_APP/';
 const vaultOwnerKey='ds_vault_owner_v1',anonymousVaultBackupKey='ds_anonymous_vault_v1',pendingAnonMergeKey='ds_pending_anon_merge_v1';
 const localAvatarKey='disturbing_user_avatar_v1', unlockedAvatarsKey='disturbing_unlocked_avatars_v1', avatarRewardSeenKey='disturbing_avatar_reward_seen_v1', userNameCacheKey='disturbing_user_name_v1', achievementEarnedKey='disturbing_achievements_v1', achievementActiveKey='disturbing_achievements_active_v1', consumedMediaKey='disturbing_consumed_story_media_v1';
 const AVATAR_ASSET_BASE='https://josepmsole.github.io/DISTURBING_APP/assets/avatar/';
@@ -131,6 +133,27 @@ function uiSoundPreferenceHtml(){const on=uiSoundsEnabled();return `<div class="
 function bindUiSoundPreference(){const b=$('#userUiSoundToggle');if(!b)return;b.onclick=()=>{const next=!uiSoundsEnabled();if(!next)playUiSound('tap',{force:true});store.set(uiSoundsKey,next);b.classList.toggle('is-on',next);b.classList.toggle('is-off',!next);b.setAttribute('aria-pressed',String(next));const span=b.querySelector('span');if(span)span.textContent=next?'ON':'OFF';if(next){primeUiSounds();playUiSound('confirm',{force:true})}}}
 addEventListener('message',e=>{if(e.origin!==location.origin||e.data?.type!=='ds-micro-preview')return;applyMicroPreviewDraft(e.data.micro)});
 
+function detectPasswordRecoveryIntentFromUrl(){
+  try{
+    const search=new URLSearchParams(location.search),hash=String(location.hash||'');
+    if(String(search.get('type')||'').toLowerCase()==='recovery')return true;
+    return /(?:^|[&#])type=recovery(?:&|$)/i.test(hash);
+  }catch{return false}
+}
+function cleanPasswordRecoveryUrl(){
+  try{
+    const url=new URL(location.href);url.searchParams.delete('type');
+    const next=url.pathname+(url.search||'')+'#/user';history.replaceState(history.state,'',next)
+  }catch{}
+}
+function enterPasswordRecoveryMode(session){
+  passwordRecoveryMode=true;passwordRecoveryEmail=String(session?.user?.email||registeredUser?.email||'').trim();
+  const gate=$('#entryGate');if(gate){gate.classList.add('hidden');gate.setAttribute('aria-hidden','true')}
+  if(indexData){
+    if(currentHash()!=='#/user')location.hash='#/user';else renderUser();
+    requestAnimationFrame(forcePageTop)
+  }
+}
 function captureStartupStoryDeepLink(){
   try{const params=new URLSearchParams(location.search);return params.has('s')?String(params.get('s')??'').trim():null}catch{return null}
 }
@@ -179,9 +202,11 @@ async function boot(){
     await initUserSystem();
     bindShell();bindUiSoundSystem();bindGameEventBridge();initMotionSystem();initPlayer();
     if(currentHash().startsWith('#/micro-preview')){const gate=$('#entryGate');if(gate){gate.classList.add('hidden');gate.setAttribute('aria-hidden','true')}document.body.classList.add('micro-preview-mode');routeFromHash();updateStormButton();return}
-    const introDidPlay=await playEntryIntro();
-    const deepLinkTarget=startupDeepLinkTarget();
-    const startupTarget=deepLinkTarget||'#/home';
+    const recovering=passwordRecoveryMode||passwordRecoveryRequestedAtBoot;
+    let introDidPlay=false;
+    if(recovering){const gate=$('#entryGate');if(gate){gate.classList.add('hidden');gate.setAttribute('aria-hidden','true')}}else introDidPlay=await playEntryIntro();
+    const deepLinkTarget=recovering?'':startupDeepLinkTarget();
+    const startupTarget=recovering?'#/user':(deepLinkTarget||'#/home');
     if(currentHash()!==startupTarget){
       location.hash=startupTarget;
       if(introDidPlay)setTimeout(startIntroWhiteHandoff,50);
@@ -1250,8 +1275,34 @@ function spotifyCompanionHtml(){return `<a class="spotify-companion" href="https
 
 /* ===== v4.7 · USER / AVATARES / LOGROS / NIVEL / SINCRONIZACIÓN ===== */
 async function initUserSystem(){
-  try{const cfg=window.DS_SUPABASE_CONFIG;if(window.supabase?.createClient&&cfg?.url&&cfg?.publishableKey){supabaseClient=window.supabase.createClient(cfg.url,cfg.publishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});supabaseClient.auth.onAuthStateChange((_event,session)=>{const previousId=registeredUser?.id||'';registeredUser=session?.user||null;if(registeredUser){updateUserChrome();setTimeout(()=>loadRegisteredProfileAndMerge(),0)}else{userProfile=null;registeredVaultRowExists=false;if(previousId)restoreAnonymousVault();updateUserChrome();if(routeName()==='user')renderUser()}});const {data}=await supabaseClient.auth.getSession();registeredUser=data?.session?.user||null;updateUserChrome();if(registeredUser)await loadRegisteredProfileAndMerge();else if(!vaultOwnerId())setVaultOwnerId('anon')}}
-  catch(e){console.warn('USER/Supabase',e)}
+  try{
+    const cfg=window.DS_SUPABASE_CONFIG;
+    if(window.supabase?.createClient&&cfg?.url&&cfg?.publishableKey){
+      supabaseClient=window.supabase.createClient(cfg.url,cfg.publishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+      supabaseClient.auth.onAuthStateChange((event,session)=>{
+        const previousId=registeredUser?.id||'';
+        registeredUser=session?.user||null;
+        if(event==='PASSWORD_RECOVERY'){
+          passwordRecoveryRequestedAtBoot=false;
+          enterPasswordRecoveryMode(session);
+        }
+        if(registeredUser){
+          updateUserChrome();
+          setTimeout(()=>loadRegisteredProfileAndMerge(),0)
+        }else{
+          userProfile=null;registeredVaultRowExists=false;
+          if(previousId)restoreAnonymousVault();
+          updateUserChrome();
+          if(routeName()==='user')renderUser()
+        }
+      });
+      const {data}=await supabaseClient.auth.getSession();
+      registeredUser=data?.session?.user||null;
+      if(passwordRecoveryRequestedAtBoot&&registeredUser){passwordRecoveryMode=true;passwordRecoveryEmail=String(registeredUser.email||'').trim()}
+      updateUserChrome();
+      if(registeredUser)await loadRegisteredProfileAndMerge();else if(!vaultOwnerId())setVaultOwnerId('anon')
+    }
+  }catch(e){console.warn('USER/Supabase',e)}
   ensureFreeAvatars();setTimeout(()=>{evaluateAvatarUnlocks(false);evaluateAchievements(false)},700)
 }
 function avatarRows(){return Array.isArray(avatarsData?.avatars)?avatarsData.avatars:[]}
@@ -1363,7 +1414,7 @@ function animateRegisteredUserHero(){
 }
 function animateUserHeroReadCount(target){const el=$('#userHeroReadCount');if(!el)return;target=Math.max(0,Number(target)||0);if(motionReduced()){el.textContent=String(target);return}const t0=performance.now(),duration=2000;el.textContent='0';const frame=now=>{const p=Math.min(1,(now-t0)/duration),ease=1-Math.pow(1-p,3);el.textContent=String(Math.round(target*ease));if(p<1)requestAnimationFrame(frame);else el.textContent=String(target)};requestAnimationFrame(frame)}
 function setupUserAvatarCollapser(){const section=$('.user-avatar-section'),grid=section?.querySelector('.avatar-grid');if(!section||!grid)return;const cards=[...grid.querySelectorAll('.avatar-choice')];grid.querySelector('.avatar-expand-row')?.remove();section.classList.remove('avatars-expanded');cards.forEach((card,i)=>card.classList.toggle('avatar-collapse-extra',i>=8));if(cards.length<=8)return;const row=document.createElement('div');row.className='avatar-expand-row';row.innerHTML='<button class="avatar-expand-toggle" type="button" aria-expanded="false" aria-label="Descolapsar avatares"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>';grid.appendChild(row);const btn=row.querySelector('button');btn.onclick=()=>{const open=!section.classList.contains('avatars-expanded');section.classList.toggle('avatars-expanded',open);btn.setAttribute('aria-expanded',String(open));btn.setAttribute('aria-label',open?'Colapsar avatares':'Descolapsar avatares')}}
-function renderUser(){currentStory=null;ensureFreeAvatars();evaluateAchievements(false);const registered=!!registeredUser,avatar=avatarById(selectedAvatarId())||avatarRows()[0],name=registeredDisplayName(),heroBg=registered?registeredHeroBackground():'',levelCount=registered?earnedAchievementCount():0,levelShape=levelCount>=100?'level-3plus':levelCount>=10?'level-multi':'',microReadCount=microReadList().filter(x=>(microsData?.items||[]).some(m=>String(m.id||m.number||'').padStart(3,'0')===String(x).padStart(3,'0'))).length;view.innerHTML=`<section class="section user-page"><div class="user-hero ${registered?'registered':''}">${heroBg?`<div class="user-hero-media" aria-hidden="true"><img class="user-hero-background user-hero-bg-backdrop" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-ghost user-hero-bg-red" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-ghost user-hero-bg-cyan" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-main" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"></div><span class="user-hero-shade" aria-hidden="true"></span>`:''}<div class="user-avatar-current">${avatar?avatarImg(avatar,'user-avatar-img'):'<span>?</span>'}</div><div class="user-hero-copy">${registered?`<h1 class="user-hero-name">${escapeHtml(name||'Usuario Registrado')}</h1><div class="user-hero-status">USUARIO REGISTRADO</div><div class="user-hero-readcount"><strong id="userHeroReadCount">0</strong> Stories leídas</div><div class="user-hero-microcount"><strong>${microReadCount}</strong> Micro-Pesadillas leídas</div><div class="user-email-box"><strong>${escapeHtml(registeredUser?.email||'')}</strong></div><button id="userEditName" class="user-edit-name-btn" type="button">EDITAR NOMBRE</button><div id="userNameEditor" class="user-name-editor hidden"><input id="userNameEditInput" type="text" maxlength="30" autocomplete="name" value="${escAttr(name)}" aria-label="Nuevo nombre"><div class="user-name-editor-actions"><button id="userNameSave" type="button">GUARDAR</button><button id="userNameCancel" type="button">CANCELAR</button></div><small id="userNameEditStatus"></small></div>`:`<div class="eyebrow">Usuario No Registrado</div><h1>Usuario No Registrado</h1><p>Tu progreso permanece en este dispositivo. Regístrate para guardarlo y sincronizarlo con tu cuenta.</p>`}</div>${registered?`<div class="user-hero-level ${levelShape}" title="Nivel según logros conseguidos"><span class="user-hero-level-number">${levelCount}</span><span class="user-hero-level-star">★</span></div>`:''}</div>${registered?achievementsPanelHtml():''}<div class="user-avatar-section"><h2>AVATARES DISPONIBLES</h2><div class="avatar-grid">${avatarRows().map(avatarChoiceHtml).join('')||'<div class="empty">Los avatares se cargan desde GitHub y se configuran desde el Importer.</div>'}</div></div>${uiSoundPreferenceHtml()}<div class="user-avatar-loop" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" tabindex="-1"><source src="${escAttr(PUBLIC_APP_ASSET_BASE+'todasloop.webm')}" type="video/webm"></video></div>${registered?`<div class="user-account-panel user-sync-panel"><strong class="sync-active-title">SINCRONIZACIÓN ACTIVA</strong><p class="user-sync-copy">Tu progreso, desbloqueos y preferencias se sincronizan automáticamente con tu cuenta cada vez que cambian. Un mismo usuario en todos tus dispositivos.</p><button id="userLogout" class="secondary-btn user-logout-btn" type="button">CERRAR SESIÓN</button><p id="userStatus" class="note"></p></div>`:registrationPanelHtml()}</section>`;$$('[data-avatar-id]').forEach(b=>b.onclick=()=>chooseAvatar(b.dataset.avatarId));setupUserAvatarCollapser();bindUiSoundPreference();if(registered){$('#userLogout').onclick=logoutUser;bindUserNameEditor();setupAchievementCollapser();setupAchievementCardInteractions()}else bindRegistrationPanel();bindBrokenImages();updateUserChrome();setupUserPageReveal();if(registered){animateRegisteredUserHero();animateUserHeroReadCount(publishedReadCount());startUserHeroBackgroundMotion()}}
+function renderUser(){currentStory=null;if(passwordRecoveryMode)return renderPasswordRecovery();ensureFreeAvatars();evaluateAchievements(false);const registered=!!registeredUser,avatar=avatarById(selectedAvatarId())||avatarRows()[0],name=registeredDisplayName(),heroBg=registered?registeredHeroBackground():'',levelCount=registered?earnedAchievementCount():0,levelShape=levelCount>=100?'level-3plus':levelCount>=10?'level-multi':'',microReadCount=microReadList().filter(x=>(microsData?.items||[]).some(m=>String(m.id||m.number||'').padStart(3,'0')===String(x).padStart(3,'0'))).length;view.innerHTML=`<section class="section user-page"><div class="user-hero ${registered?'registered':''}">${heroBg?`<div class="user-hero-media" aria-hidden="true"><img class="user-hero-background user-hero-bg-backdrop" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-ghost user-hero-bg-red" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-ghost user-hero-bg-cyan" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"><img class="user-hero-background user-hero-bg-main" src="${escAttr(heroBg)}" alt="" referrerpolicy="no-referrer"></div><span class="user-hero-shade" aria-hidden="true"></span>`:''}<div class="user-avatar-current">${avatar?avatarImg(avatar,'user-avatar-img'):'<span>?</span>'}</div><div class="user-hero-copy">${registered?`<h1 class="user-hero-name">${escapeHtml(name||'Usuario Registrado')}</h1><div class="user-hero-status">USUARIO REGISTRADO</div><div class="user-hero-readcount"><strong id="userHeroReadCount">0</strong> Stories leídas</div><div class="user-hero-microcount"><strong>${microReadCount}</strong> Micro-Pesadillas leídas</div><div class="user-email-box"><strong>${escapeHtml(registeredUser?.email||'')}</strong></div><button id="userEditName" class="user-edit-name-btn" type="button">EDITAR NOMBRE</button><div id="userNameEditor" class="user-name-editor hidden"><input id="userNameEditInput" type="text" maxlength="30" autocomplete="name" value="${escAttr(name)}" aria-label="Nuevo nombre"><div class="user-name-editor-actions"><button id="userNameSave" type="button">GUARDAR</button><button id="userNameCancel" type="button">CANCELAR</button></div><small id="userNameEditStatus"></small></div>`:`<div class="eyebrow">Usuario No Registrado</div><h1>Usuario No Registrado</h1><p>Tu progreso permanece en este dispositivo. Regístrate para guardarlo y sincronizarlo con tu cuenta.</p>`}</div>${registered?`<div class="user-hero-level ${levelShape}" title="Nivel según logros conseguidos"><span class="user-hero-level-number">${levelCount}</span><span class="user-hero-level-star">★</span></div>`:''}</div>${registered?achievementsPanelHtml():''}<div class="user-avatar-section"><h2>AVATARES DISPONIBLES</h2><div class="avatar-grid">${avatarRows().map(avatarChoiceHtml).join('')||'<div class="empty">Los avatares se cargan desde GitHub y se configuran desde el Importer.</div>'}</div></div>${uiSoundPreferenceHtml()}<div class="user-avatar-loop" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" tabindex="-1"><source src="${escAttr(PUBLIC_APP_ASSET_BASE+'todasloop.webm')}" type="video/webm"></video></div>${registered?`<div class="user-account-panel user-sync-panel"><strong class="sync-active-title">SINCRONIZACIÓN ACTIVA</strong><p class="user-sync-copy">Tu progreso, desbloqueos y preferencias se sincronizan automáticamente con tu cuenta cada vez que cambian. Un mismo usuario en todos tus dispositivos.</p><button id="userLogout" class="secondary-btn user-logout-btn" type="button">CERRAR SESIÓN</button><p id="userStatus" class="note"></p></div>`:registrationPanelHtml()}</section>`;$$('[data-avatar-id]').forEach(b=>b.onclick=()=>chooseAvatar(b.dataset.avatarId));setupUserAvatarCollapser();bindUiSoundPreference();if(registered){$('#userLogout').onclick=logoutUser;bindUserNameEditor();setupAchievementCollapser();setupAchievementCardInteractions()}else bindRegistrationPanel();bindBrokenImages();updateUserChrome();setupUserPageReveal();if(registered){animateRegisteredUserHero();animateUserHeroReadCount(publishedReadCount());startUserHeroBackgroundMotion()}}
 
 
 function startUserHeroBackgroundMotion(){
@@ -1393,9 +1444,48 @@ function startUserHeroBackgroundMotion(){
 }
 
 function bindUserNameEditor(){const open=$('#userEditName'),panel=$('#userNameEditor'),input=$('#userNameEditInput'),save=$('#userNameSave'),cancel=$('#userNameCancel');if(!open||!panel||!input||!save||!cancel)return;const close=()=>{panel.classList.add('hidden');open.setAttribute('aria-expanded','false');input.value=registeredDisplayName()};open.setAttribute('aria-expanded','false');open.onclick=()=>{const willOpen=panel.classList.contains('hidden');panel.classList.toggle('hidden',!willOpen);open.setAttribute('aria-expanded',willOpen?'true':'false');if(willOpen){input.value=registeredDisplayName();requestAnimationFrame(()=>{input.focus();input.select()})}};cancel.onclick=close;save.onclick=async()=>{const next=String(input.value||'').trim().replace(/\s+/g,' '),status=$('#userNameEditStatus');if(next.length<1||next.length>30){if(status){status.textContent='Usa un nombre de entre 1 y 30 caracteres.';status.className='bad'}return}save.disabled=true;if(status){status.textContent='Guardando…';status.className=''}try{const {error}=await supabaseClient.from('profiles').update({display_name:next,updated_at:new Date().toISOString()}).eq('id',registeredUser.id);if(error)throw error;try{await supabaseClient.auth.updateUser({data:{display_name:next}})}catch{}userProfile={...(userProfile||{}),display_name:next};store.set(userNameCacheKey,next);updateUserChrome();renderUser();forcePageTop()}catch(e){if(status){status.textContent=e?.message||'No se pudo cambiar el nombre.';status.className='bad'}}finally{save.disabled=false}};input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();save.click()}else if(e.key==='Escape'){e.preventDefault();close()}})}
-function registrationPanelHtml(){return `<div class="user-account-panel"><button id="openExistingLogin" class="user-existing-login-cta" type="button" aria-expanded="false">YA TENGO CUENTA · INICIAR SESIÓN</button><div id="existingLoginPanel" class="user-existing-login-panel hidden"><div class="user-form"><label>EMAIL<input id="loginEmail" type="email" autocomplete="email"></label><label>PASSWORD<input id="loginPassword" type="password" autocomplete="current-password"></label><button id="loginUser" class="cta" type="button">INICIAR SESIÓN</button></div></div><div class="user-register-divider"><span>O CREA TU CUENTA</span></div><h2>REGISTRAR</h2><p>Crea tu usuario registrado sin perder el progreso que ya tienes.</p><div class="user-form"><label>NOMBRE<input id="regName" autocomplete="name" maxlength="50"></label><label>EMAIL<input id="regEmail" type="email" autocomplete="email"></label><label>PASSWORD<input id="regPassword" type="password" autocomplete="new-password" minlength="6"></label><button id="registerUser" class="cta" type="button">REGISTRAR</button></div><p id="userStatus" class="note"></p></div>`}
-function bindRegistrationPanel(){const r=$('#registerUser'),l=$('#loginUser'),o=$('#openExistingLogin'),p=$('#existingLoginPanel');if(r)r.onclick=registerUser;if(l)l.onclick=loginUser;if(o&&p)o.onclick=()=>{const willOpen=p.classList.contains('hidden');p.classList.toggle('hidden',!willOpen);o.setAttribute('aria-expanded',String(willOpen));o.classList.toggle('active',willOpen);if(willOpen)setTimeout(()=>$('#loginEmail')?.focus(),50)}}
-function userStatus(msg,bad=false){const e=$('#userStatus');if(e){e.textContent=msg;e.classList.toggle('bad',!!bad)}}
+function registrationPanelHtml(){return `<div class="user-account-panel"><button id="openExistingLogin" class="user-existing-login-cta" type="button" aria-expanded="false">YA TENGO CUENTA · INICIAR SESIÓN</button><div id="existingLoginPanel" class="user-existing-login-panel hidden"><div id="existingLoginForm" class="user-form"><label>EMAIL<input id="loginEmail" type="email" autocomplete="email"></label><label>PASSWORD<input id="loginPassword" type="password" autocomplete="current-password"></label><button id="loginUser" class="cta" type="button">INICIAR SESIÓN</button><button id="openForgotPassword" class="user-forgot-password-btn" type="button">¿HAS OLVIDADO TU CONTRASEÑA?</button></div><div id="forgotPasswordPanel" class="user-forgot-password-panel hidden"><div class="user-forgot-password-head"><strong>RECUPERAR CONTRASEÑA</strong><span>Te enviaremos un enlace para elegir una nueva contraseña.</span></div><div class="user-form"><label>EMAIL<input id="resetEmail" type="email" autocomplete="email"></label><button id="sendPasswordReset" class="cta" type="button">ENVIAR ENLACE DE RECUPERACIÓN</button><button id="cancelPasswordReset" class="secondary-btn" type="button">VOLVER</button></div><p id="passwordResetStatus" class="note"></p></div></div><div class="user-register-divider"><span>O CREA TU CUENTA</span></div><h2>REGISTRAR</h2><p>Crea tu usuario registrado sin perder el progreso que ya tienes.</p><div class="user-form"><label>NOMBRE<input id="regName" autocomplete="name" maxlength="50"></label><label>EMAIL<input id="regEmail" type="email" autocomplete="email"></label><label>PASSWORD<input id="regPassword" type="password" autocomplete="new-password" minlength="6"></label><button id="registerUser" class="cta" type="button">REGISTRAR</button></div><p id="userStatus" class="note"></p></div>`}
+function passwordResetStatus(msg,bad=false){const el=$('#passwordResetStatus');if(!el)return;el.textContent=msg;el.className='note'+(bad?' bad':'')}
+function bindRegistrationPanel(){
+  const r=$('#registerUser'),l=$('#loginUser'),o=$('#openExistingLogin'),p=$('#existingLoginPanel'),loginForm=$('#existingLoginForm'),forgot=$('#openForgotPassword'),fp=$('#forgotPasswordPanel'),send=$('#sendPasswordReset'),cancel=$('#cancelPasswordReset');
+  if(r)r.onclick=registerUser;if(l)l.onclick=loginUser;
+  if(o&&p)o.onclick=()=>{const willOpen=p.classList.contains('hidden');p.classList.toggle('hidden',!willOpen);o.setAttribute('aria-expanded',String(willOpen));o.classList.toggle('active',willOpen);if(willOpen)setTimeout(()=>$('#loginEmail')?.focus(),50)};
+  if(forgot&&fp)forgot.onclick=()=>{const email=String($('#loginEmail')?.value||'').trim();const input=$('#resetEmail');if(input&&!input.value)input.value=email;if(loginForm)loginForm.classList.add('hidden');fp.classList.remove('hidden');setTimeout(()=>input?.focus(),50)};
+  if(cancel&&fp)cancel.onclick=()=>{fp.classList.add('hidden');if(loginForm)loginForm.classList.remove('hidden');passwordResetStatus('');setTimeout(()=>$('#loginEmail')?.focus(),50)};
+  if(send)send.onclick=requestPasswordReset
+}
+async function requestPasswordReset(){
+  if(!supabaseClient)return passwordResetStatus('Supabase no está disponible.',true);
+  const email=String($('#resetEmail')?.value||'').trim();if(!email||!/^\S+@\S+\.\S+$/.test(email))return passwordResetStatus('Introduce un email válido.',true);
+  const btn=$('#sendPasswordReset');if(btn)btn.disabled=true;passwordResetStatus('Enviando enlace de recuperación…');
+  try{
+    const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{redirectTo:PASSWORD_RECOVERY_REDIRECT});if(error)throw error;
+    passwordResetStatus('Si existe una cuenta asociada a este correo, recibirás un enlace para restablecer tu contraseña.')
+  }catch(e){passwordResetStatus(e?.message||'No se pudo enviar el enlace de recuperación.',true)}finally{if(btn)btn.disabled=false}
+}
+function renderPasswordRecovery(){
+  currentStory=null;const email=passwordRecoveryEmail||registeredUser?.email||'';
+  view.innerHTML=`<section class="section user-page password-recovery-page"><div class="password-recovery-card"><div class="eyebrow">RECUPERACIÓN DE ACCESO</div><h1>NUEVA CONTRASEÑA</h1><p>Introduce una nueva contraseña para tu cuenta de Disturbing Stories App.</p>${email?`<div class="password-recovery-email">${escapeHtml(email)}</div>`:''}<div class="user-form"><label>NUEVA CONTRASEÑA<input id="recoveryPassword" type="password" autocomplete="new-password" minlength="6"></label><label>REPETIR CONTRASEÑA<input id="recoveryPasswordRepeat" type="password" autocomplete="new-password" minlength="6"></label><button id="saveRecoveryPassword" class="cta" type="button">GUARDAR NUEVA CONTRASEÑA</button><button id="cancelRecoveryPassword" class="secondary-btn" type="button">CANCELAR</button></div><p id="recoveryPasswordStatus" class="note"></p></div></section>`;
+  $('#saveRecoveryPassword').onclick=saveRecoveredPassword;$('#cancelRecoveryPassword').onclick=cancelPasswordRecovery;setTimeout(()=>$('#recoveryPassword')?.focus(),80);forcePageTop()
+}
+function recoveryPasswordStatus(msg,bad=false){const el=$('#recoveryPasswordStatus');if(!el)return;el.textContent=msg;el.className='note'+(bad?' bad':'')}
+async function saveRecoveredPassword(){
+  if(!supabaseClient||!registeredUser)return recoveryPasswordStatus('El enlace de recuperación no es válido o ha caducado.',true);
+  const p1=$('#recoveryPassword')?.value||'',p2=$('#recoveryPasswordRepeat')?.value||'';
+  if(p1.length<6)return recoveryPasswordStatus('La contraseña debe tener al menos 6 caracteres.',true);
+  if(p1!==p2)return recoveryPasswordStatus('Las contraseñas no coinciden.',true);
+  const btn=$('#saveRecoveryPassword');if(btn)btn.disabled=true;recoveryPasswordStatus('Actualizando contraseña…');
+  try{
+    const {data,error}=await supabaseClient.auth.updateUser({password:p1});if(error)throw error;
+    registeredUser=data?.user||registeredUser;passwordRecoveryMode=false;passwordRecoveryRequestedAtBoot=false;passwordRecoveryEmail='';cleanPasswordRecoveryUrl();
+    await loadRegisteredProfileAndMerge();renderUser();forcePageTop();requestAnimationFrame(forcePageTop);setTimeout(()=>userStatus('Contraseña actualizada correctamente.'),80)
+  }catch(e){recoveryPasswordStatus(e?.message||'No se pudo actualizar la contraseña.',true)}finally{if(btn)btn.disabled=false}
+}
+async function cancelPasswordRecovery(){
+  passwordRecoveryMode=false;passwordRecoveryRequestedAtBoot=false;passwordRecoveryEmail='';
+  try{if(supabaseClient)await supabaseClient.auth.signOut()}catch{}
+  registeredUser=null;userProfile=null;registeredVaultRowExists=false;restoreAnonymousVault();cleanPasswordRecoveryUrl();updateUserChrome();renderUser();forcePageTop()
+}
 async function registerUser(){if(!supabaseClient)return userStatus('Supabase no está disponible.',true);const name=$('#regName')?.value.trim(),email=$('#regEmail')?.value.trim(),password=$('#regPassword')?.value||'';if(!name||!email||password.length<6)return userStatus('Completa nombre, email y una contraseña de al menos 6 caracteres.',true);store.set(userNameCacheKey,name);const anonSnapshot=localVaultSnapshot();setPendingAnonMerge({userId:'',email:String(email).trim().toLowerCase(),vault:anonSnapshot,createdAt:Date.now()});userStatus('Creando usuario…');const {data,error}=await supabaseClient.auth.signUp({email,password,options:{data:{display_name:name,avatar_id:selectedAvatarId()},emailRedirectTo:location.origin+location.pathname+'#/user'}});if(error){clearPendingAnonMerge();return userStatus(error.message,true)}if(data?.user){const pending=pendingAnonMerge();if(pending)setPendingAnonMerge({...pending,userId:String(data.user.id||'')})}else clearPendingAnonMerge();if(data?.session){registeredUser=data.user;await loadRegisteredProfileAndMerge();renderUser()}else userStatus('Cuenta creada. Confirma el email recibido y después inicia sesión aquí.')}
 async function loginUser(){if(!supabaseClient)return userStatus('Supabase no está disponible.',true);const email=$('#loginEmail')?.value.trim(),password=$('#loginPassword')?.value||'';if(!email||!password)return userStatus('Introduce email y password.',true);if(registeredUser&&vaultOwnerId()===String(registeredUser.id))await syncUserVault();userStatus('Iniciando sesión…');const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});if(error)return userStatus(error.message,true);registeredUser=data.user;await loadRegisteredProfileAndMerge();renderUser();forcePageTop();requestAnimationFrame(forcePageTop)}
 async function logoutUser(){if(!supabaseClient)return;await syncUserVault();await supabaseClient.auth.signOut();registeredUser=null;userProfile=null;registeredVaultRowExists=false;restoreAnonymousVault();updateUserChrome();renderUser()}
@@ -1758,5 +1848,5 @@ function startIntroMedia(layer,video,resolve){
   const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))
 }
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=6.18.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=6.19.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();

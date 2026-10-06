@@ -7382,3 +7382,39 @@ body.micro-preview-mode .entry-gate{display:none!important}
    v6.18 · Tutorial: contador de pasos reforzado visualmente
    ====================================================================== */
 @media(max-width:390px){.tutorial-step-label{font-size:11px;padding:5px 8px;letter-spacing:.09em}}
+
+/* ======================================================================
+   v6.19 · Recuperación de contraseña / Supabase Auth
+   ====================================================================== */
+.user-forgot-password-btn{
+  width:100%;min-height:46px;margin-top:2px;padding:10px 14px;border:1px solid rgba(214,182,89,.34);
+  border-radius:10px;background:rgba(22,17,5,.72);color:#e1c96f;cursor:pointer;
+  font:800 11px/1.2 Oxanium,sans-serif;letter-spacing:.055em;text-align:center;
+  box-shadow:inset 0 0 18px rgba(229,191,72,.035);transition:border-color .18s,box-shadow .18s,background .18s,color .18s
+}
+.user-forgot-password-btn:hover,.user-forgot-password-btn:focus-visible{
+  border-color:#d6b659;background:rgba(42,32,7,.9);color:#ffe18b;
+  box-shadow:inset 0 0 24px rgba(229,191,72,.09),0 0 18px rgba(215,181,95,.1);outline:none
+}
+.user-forgot-password-panel{margin-top:12px;padding:15px;border:1px solid #3b3420;border-radius:12px;background:#080805}
+.user-forgot-password-head{display:grid;gap:5px;margin-bottom:8px;text-align:center}
+.user-forgot-password-head strong{font:900 15px/1.15 Oxanium,sans-serif;letter-spacing:.07em;color:#f2d676}
+.user-forgot-password-head span{font:500 12px/1.45 'Exo 2',system-ui,sans-serif;color:#aeb0b4}
+.user-forgot-password-panel .secondary-btn{width:100%;margin-top:0}
+#passwordResetStatus{margin:12px 0 0;text-align:center;line-height:1.45}
+.password-recovery-page{min-height:calc(100vh - 170px);display:grid;place-items:center;padding-top:26px;padding-bottom:110px}
+.password-recovery-card{
+  width:min(100%,560px);padding:28px 24px;border:1px solid rgba(169,13,29,.46);border-radius:18px;
+  background:linear-gradient(180deg,rgba(10,10,12,.97),rgba(4,5,7,.98));text-align:center;
+  box-shadow:0 0 0 1px rgba(169,13,29,.08),0 24px 65px rgba(0,0,0,.48),inset 0 0 30px rgba(169,13,29,.025)
+}
+.password-recovery-card h1{margin:7px 0 12px;font-size:clamp(24px,6vw,34px);letter-spacing:.04em}
+.password-recovery-card>p{max-width:430px;margin:0 auto 18px;color:#c8cbd0;font:500 14px/1.6 'Exo 2',system-ui,sans-serif}
+.password-recovery-email{display:inline-block;max-width:100%;margin:0 auto 8px;padding:8px 11px;border:1px solid rgba(255,255,255,.15);border-radius:8px;background:rgba(0,0,0,.5);color:#dfe8eb;font:600 11px/1.25 'Exo 2',system-ui,sans-serif;overflow-wrap:anywhere}
+.password-recovery-card .user-form{text-align:left;margin-top:18px}
+.password-recovery-card .cta,.password-recovery-card .secondary-btn{width:100%}
+#recoveryPasswordStatus{margin:14px 0 0;text-align:center;line-height:1.45}
+@media(max-width:460px){
+  .password-recovery-page{padding-top:14px}.password-recovery-card{padding:22px 16px;border-radius:14px}
+  .user-forgot-password-btn{font-size:10px}
+}
