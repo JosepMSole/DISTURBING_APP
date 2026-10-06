@@ -7490,3 +7490,59 @@ body.micro-preview-mode .entry-gate{display:none!important}
 @media(prefers-reduced-motion:reduce){
   .tutorial-guided-overlay .tutorial-focus-ring-v61,.tutorial-guided-overlay .tutorial-target-clone-v62,.tutorial-guided-tk .tutorial-tk-card{animation:none!important}
 }
+
+
+/* ======================================================================
+   v6.22 · PULIDO TUTORIALES 2, 3 y 4
+   ====================================================================== */
+/* Tutorial 2: el título ya no necesita numeración secundaria. */
+.tutorial-about-head-v621{padding-top:2px}
+
+/* Tutoriales 3/4: TK duplica su tamaño respecto a v6.21 y queda centrado. */
+.tutorial-guided-tk{max-width:none!important;max-height:none!important}
+
+/* Último paso: ATRÁS y FINALIZAR comparten siempre la misma línea. */
+.tutorial-guided-final{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+  align-items:stretch!important;
+  gap:10px!important;
+}
+.tutorial-guided-final>.tutorial-back{
+  width:100%!important;
+  min-height:44px!important;
+  height:44px!important;
+  margin:0!important;
+  padding:0 10px!important;
+}
+.tutorial-guided-final>.tutorial-final-actions{
+  display:block!important;
+  width:100%!important;
+  margin:0!important;
+}
+.tutorial-guided-final .tutorial-start{
+  width:100%!important;
+  min-width:0!important;
+  min-height:44px!important;
+  height:44px!important;
+  margin:0!important;
+}
+
+/* Tutorial 4: las cuatro cajas de estado conservan exactamente su aspecto real;
+   el tutorial añade halo/borde sin sustituir sus colores ni su tipografía. */
+.tutorial-guided-tutorial4 .tutorial-target-clone-v62.tutorial-preserve-original-v622{
+  opacity:1!important;
+  filter:none!important;
+  outline:1px solid rgba(234,255,255,.84)!important;
+  outline-offset:2px!important;
+  box-shadow:0 0 20px rgba(142,244,255,.52),0 0 44px rgba(142,244,255,.18)!important;
+}
+.tutorial-guided-tutorial4 .tutorial-target-clone-v62.tutorial-preserve-original-v622 strong,
+.tutorial-guided-tutorial4 .tutorial-target-clone-v62.tutorial-preserve-original-v622 span{
+  opacity:1!important;
+  filter:none!important;
+}
+@media(max-width:430px){
+  .tutorial-guided-final{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:8px!important}
+  .tutorial-guided-final>.tutorial-back,.tutorial-guided-final .tutorial-start{height:42px!important;min-height:42px!important}
+}

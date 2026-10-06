@@ -1,4 +1,4 @@
-const APP_VERSION = '6.21.0';
+const APP_VERSION = '6.22.0';
 let globalPlayerAudioEngine=null,stormAudioEngine=null,stormIntroAudioEngine=null;
 const $=(s,r=document)=>{
   if(r===document&&s==='#globalPlayerAudio')return globalPlayerAudioEngine;
@@ -1558,21 +1558,21 @@ const TUTORIAL1_STEPS=[
   {step:5,route:'stories',title:'YA PUEDES EMPEZAR',text:'Eso es todo lo que necesitas para empezar.',secondary:'Puedes descubrir el resto cuando quieras.',tk:'tk_t01_p05.webm',voice:'tk_t01_p05.mp3',tkLayout:'horizontal',composition:'center-tk-text-final',tkPlacement:{desktop:{width:'450px',height:'238px'},mobile:{width:'calc(100vw - 28px)',height:'190px'}},bubblePlacement:{desktop:{width:'450px'},mobile:{width:'calc(100vw - 28px)'}},ambientScroll:'finish',dim:.62}
 ];
 
-// v6.21 · Tutoriales 3 y 4. Cada paso reserva un asset propio y cae sobre un loop ya existente
+// v6.22 · Tutoriales 2–4 afinados. Cada paso reserva un asset propio y cae sobre un loop ya existente
 // del Tutorial 1 hasta que el fichero definitivo sea subido al repositorio.
 const TUTORIAL3_STEPS=[
-  {step:1,route:'stories',title:'SAGAS',text:'En SAGAS descubre las Stories que forman parte de una misma historia más grande.',target:'.portal-btn[data-portal="sagas"]',tk:'tk_t03_p01.webm',fallbackTk:'tk_t01_p04.webm',voice:'tk_t03_p01.mp3',tkLayout:'square'},
+  {step:1,route:'stories',title:'SAGAS',text:'En SAGAS descubre las Stories que forman parte de una misma historia más grande.',target:'.portal-btn[data-portal="sagas"]',tk:'tk_t03_p01.webm',fallbackTk:'tk_t01_p05.webm',voice:'tk_t03_p01.mp3',tkLayout:'horizontal'},
   {step:2,route:'stories',title:'TIMELINE',text:'En el TIMELINE explóralas según el momento en que ocurren.',target:'.portal-btn[data-portal="timeline"]',tk:'tk_t03_p02.webm',fallbackTk:'tk_t01_p03.webm',voice:'tk_t03_p02.mp3',tkLayout:'horizontal'},
   {step:3,route:'stories',title:'RANDOM',text:'Con RANDOM dejas que Disturbing Stories elija tu próxima lectura por ti.',target:'.portal-btn[data-portal="random"]',tk:'tk_t03_p03.webm',fallbackTk:'tk_t01_p05.webm',voice:'tk_t03_p03.mp3',tkLayout:'horizontal'},
-  {step:4,route:'stories',title:'EXTRAS',text:'En los EXTRAS encontrarás contenido adicional del universo Disturbing Stories.',target:'.portal-btn[data-portal="extras"]',tk:'tk_t03_p04.webm',fallbackTk:'tk_t01_p04.webm',voice:'tk_t03_p04.mp3',tkLayout:'square'},
+  {step:4,route:'stories',title:'EXTRAS',text:'En los EXTRAS encontrarás contenido adicional del universo Disturbing Stories.',target:'.portal-btn[data-portal="extras"]',tk:'tk_t03_p04.webm',fallbackTk:'tk_t01_p01.webm',voice:'tk_t03_p04.mp3',tkLayout:'square'},
   {step:5,route:'stories',title:'CASSETTES',text:'Los CASSETTES reúnen todos los relatos que puedes escuchar.',target:'.portal-btn[data-portal="cassettes"]',tk:'tk_t03_p05.webm',fallbackTk:'tk_t01_p03.webm',voice:'tk_t03_p05.mp3',tkLayout:'horizontal'},
   {step:6,route:'stories',title:'TAPES',text:'En los TAPES encontrarás todas las Stories que incluyen un cortometraje.',target:'.portal-btn[data-portal="tapes"]',tk:'tk_t03_p06.webm',fallbackTk:'tk_t01_p05.webm',voice:'tk_t03_p06.mp3',tkLayout:'horizontal'},
-  {step:7,route:'stories',title:'GAMES',text:'Con los GAMES accede a minijuegos relacionados con las stories.',target:'.portal-btn[data-portal="games"]',tk:'tk_t03_p07.webm',fallbackTk:'tk_t01_p04.webm',voice:'tk_t03_p07.mp3',tkLayout:'square'},
+  {step:7,route:'stories',title:'GAMES',text:'Con los GAMES accede a minijuegos relacionados con las stories.',target:'.portal-btn[data-portal="games"]',tk:'tk_t03_p07.webm',fallbackTk:'tk_t01_p01.webm',voice:'tk_t03_p07.mp3',tkLayout:'square'},
   {step:8,route:'stories',title:'MICRO',text:'Descubre las Micro-Pesadillas: historias muy breves exclusivas de la APP.',target:'.portal-btn[data-portal="micro-pesadillas"]',tk:'tk_t03_p08.webm',fallbackTk:'tk_t01_p03.webm',voice:'tk_t03_p08.mp3',tkLayout:'horizontal'},
   {step:9,route:'stories',title:'FILTROS',text:'Por último, usa los FILTROS para encontrar exactamente las Stories que buscas.',target:'#storyFilterZone',tk:'tk_t03_p09.webm',fallbackTk:'tk_t01_p05.webm',voice:'tk_t03_p09.mp3',tkLayout:'horizontal',liftTarget:false,focusPad:5}
 ];
 const TUTORIAL4_STEPS=[
-  {step:1,route:'unlocked',title:'DISPONIBLES LEÍDAS',text:'Aquí puedes ver cuánto has avanzado entre las Stories que tienes disponibles.',target:'.progress-dashboard',tk:'tk_t04_p01.webm',fallbackTk:'tk_t01_p04.webm',voice:'tk_t04_p01.mp3',tkLayout:'square'},
+  {step:1,route:'unlocked',title:'DISPONIBLES LEÍDAS',text:'Aquí puedes ver cuánto has avanzado entre las Stories que tienes disponibles.',target:'.progress-dashboard',tk:'tk_t04_p01.webm',fallbackTk:'tk_t01_p01.webm',voice:'tk_t04_p01.mp3',tkLayout:'square'},
   {step:2,route:'unlocked',title:'EN PROGRESO',text:'Estas son las que has empezado pero todavía no has terminado.',target:'.personal-stats [data-my-jump="progress"]',tk:'tk_t04_p02.webm',fallbackTk:'tk_t01_p03.webm',voice:'tk_t04_p02.mp3',tkLayout:'horizontal'},
   {step:3,route:'unlocked',title:'TODAVÍA POR LEER',text:'Aquí puedes ver todas las Stories disponibles que aún te esperan.',target:'.personal-stats [data-my-jump="unread"]',tk:'tk_t04_p03.webm',fallbackTk:'tk_t01_p05.webm',voice:'tk_t04_p03.mp3',tkLayout:'horizontal'},
   {step:4,route:'unlocked',title:'DESBLOQUEADAS',text:'Estas son las exclusivas que ya has desbloqueado mediante QR.',target:'.personal-stats [data-my-jump="unlocked"]',tk:'tk_t04_p04.webm',fallbackTk:'tk_t01_p04.webm',voice:'tk_t04_p04.mp3',tkLayout:'square'},
@@ -1604,7 +1604,37 @@ function finishTutorialStoryScroll(){if(tutorialReducedMotion()){stopTutorialSto
 function tutorialLockMarkup(mode,cfg={}){if(!mode)return'';const delay=Math.max(0,Number(cfg.lockEntryDelay)||0);const style=delay?` style="--tutorial-lock-entry-delay:${delay}ms"`:'';if(mode==='unlock')return `<div class="tutorial-lock-stage tutorial-lock-unlock"${style} aria-label="Story desbloqueándose"><span class="tutorial-lock-icon tutorial-lock-red">${lockSvg(false)}</span><span class="tutorial-lock-flash" aria-hidden="true"></span><span class="tutorial-lock-icon tutorial-lock-green">${lockSvg(true)}</span></div>`;return `<div class="tutorial-lock-stage tutorial-lock-locked"${style} aria-label="Story bloqueada"><span class="tutorial-lock-icon tutorial-lock-red">${lockSvg(false)}</span></div>`}
 function tutorialButtonMarkup(step){if(step===1)return `<div class="tutorial-controls tutorial-controls-first"><button type="button" class="tutorial-next" data-tutorial-next>SIGUIENTE</button></div>`;if(step===5)return `<div class="tutorial-controls tutorial-controls-final"><button type="button" class="tutorial-back tutorial-nav-box" data-tutorial-back>ATRÁS</button><div class="tutorial-final-actions"><button type="button" class="tutorial-start" data-tutorial-start>EMPEZAR</button><button type="button" class="tutorial-more" data-tutorial-more>¿QUIERES SABER MÁS?</button></div></div>`;return `<div class="tutorial-controls tutorial-controls-nav"><button type="button" class="tutorial-back tutorial-nav-box" data-tutorial-back>ATRÁS</button><button type="button" class="tutorial-next tutorial-nav-box" data-tutorial-next>SIGUIENTE</button></div>`}
 function tutorialOverlayHtml(cfg){return `<div id="tutorialOverlay" class="tutorial-overlay-v61 tutorial-step-${cfg.step}${cfg.focusStrong?' tutorial-has-strong-focus':''}" style="--tutorial-dim:${cfg.dim??.64}"><div class="tutorial-dim-v61"></div><div class="tutorial-focus-ring-v61 hidden" aria-hidden="true"></div><div class="tutorial-tk-stage-v61 tutorial-tk-${cfg.tkLayout||'square'}"><div class="tutorial-tk-card"><video src="./assets/tutorials/tk/${escAttr(cfg.tk)}?v=${encodeURIComponent(APP_VERSION)}" autoplay muted loop playsinline preload="auto" aria-label="T.K." onerror="this.classList.add('missing')"></video><div class="tutorial-tk-fallback" aria-hidden="true"><span>TK</span></div></div></div>${tutorialLockMarkup(cfg.lockMode,cfg)}<section class="tutorial-bubble-v61" role="dialog" aria-modal="true" aria-label="Tutorial · ${escAttr(cfg.title)}"><button type="button" class="tutorial-close-v61" data-tutorial-close aria-label="Cerrar tutorial">×</button><div class="tutorial-step-label"><i aria-hidden="true"></i><span data-tutorial-typewrite="step">PASO ${cfg.step}/5</span></div><h2 data-tutorial-typewrite="title">${escapeHtml(cfg.title)}</h2><p class="tutorial-main-text" data-tutorial-typewrite="main">${escapeHtml(cfg.text)}</p>${cfg.secondary?`<p class="tutorial-secondary-text" data-tutorial-typewrite="secondary">${escapeHtml(cfg.secondary)}</p>`:''}${cfg.micro?`<div class="tutorial-micro-rule" data-tutorial-typewrite="micro">${escapeHtml(cfg.micro)}</div>`:''}${tutorialButtonMarkup(cfg.step)}</section></div>`}
-function positionTutorialTargetClone(targetSelector,enabled=false,signaled=true){const overlay=$('#tutorialOverlay');if(!overlay)return;let clone=overlay.querySelector('.tutorial-target-clone-v62');if(!enabled||!targetSelector){clone?.remove();return}const target=document.querySelector(targetSelector);if(!target)return;const r=target.getBoundingClientRect();if(!clone){clone=target.cloneNode(true);clone.classList.add('tutorial-target-clone-v62');clone.removeAttribute('id');clone.removeAttribute('data-route');clone.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));overlay.append(clone)}const cs=getComputedStyle(target);if(overlay.classList.contains('tutorial-guided-overlay')){clone.style.setProperty('background',cs.background,'important');clone.style.setProperty('background-color',cs.backgroundColor,'important');clone.style.setProperty('color',cs.color,'important');clone.style.setProperty('border-color','rgba(142,244,255,.78)','important')}clone.style.gridTemplateColumns=cs.gridTemplateColumns;clone.style.gridTemplateRows=cs.gridTemplateRows;clone.style.columnGap=cs.columnGap;clone.style.rowGap=cs.rowGap;clone.style.justifyContent=cs.justifyContent;clone.style.alignContent=cs.alignContent;[...target.children].forEach((src,i)=>{const dst=clone.children[i];if(!dst)return;const childStyle=getComputedStyle(src);dst.style.width=childStyle.width;dst.style.height=childStyle.height;dst.style.margin=childStyle.margin;dst.style.borderRadius=childStyle.borderRadius});clone.classList.toggle('is-signaled',!!signaled);Object.assign(clone.style,{left:`${r.left}px`,top:`${r.top}px`,width:`${r.width}px`,height:`${r.height}px`})}
+function copyTutorialMirrorVisuals(src,dst,isRoot=false){
+  if(!src||!dst)return;
+  const cs=getComputedStyle(src);
+  const common=['box-sizing','display','visibility','opacity','color','background','background-color','background-image','background-position','background-size','background-repeat','border','border-top','border-right','border-bottom','border-left','border-color','border-radius','box-shadow','filter','font','font-family','font-size','font-style','font-weight','line-height','letter-spacing','text-align','text-transform','text-shadow','white-space','overflow','overflow-wrap','word-break','flex','flex-direction','flex-wrap','flex-grow','flex-shrink','flex-basis','align-items','align-content','align-self','justify-content','justify-items','justify-self','gap','row-gap','column-gap','grid-template-columns','grid-template-rows','grid-column','grid-row','place-items','padding','padding-top','padding-right','padding-bottom','padding-left'];
+  const childOnly=['position','top','right','bottom','left','width','height','min-width','min-height','max-width','max-height','margin','margin-top','margin-right','margin-bottom','margin-left','transform','transform-origin','z-index'];
+  for(const prop of common){const value=cs.getPropertyValue(prop);if(value)dst.style.setProperty(prop,value,'important')}
+  if(!isRoot)for(const prop of childOnly){const value=cs.getPropertyValue(prop);if(value)dst.style.setProperty(prop,value,'important')}
+  const srcKids=[...src.children],dstKids=[...dst.children];
+  for(let i=0;i<Math.min(srcKids.length,dstKids.length);i++)copyTutorialMirrorVisuals(srcKids[i],dstKids[i],false)
+}
+function positionTutorialTargetClone(targetSelector,enabled=false,signaled=true){
+  const overlay=$('#tutorialOverlay');if(!overlay)return;
+  let clone=overlay.querySelector('.tutorial-target-clone-v62');
+  if(!enabled||!targetSelector){clone?.remove();return}
+  const target=document.querySelector(targetSelector);if(!target)return;
+  const r=target.getBoundingClientRect();
+  if(!clone){
+    clone=target.cloneNode(true);clone.classList.add('tutorial-target-clone-v62');clone.removeAttribute('id');clone.removeAttribute('data-route');clone.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));overlay.append(clone)
+  }
+  if(overlay.classList.contains('tutorial-guided-tutorial4')&&target.closest('.personal-stats')){
+    clone.classList.add('tutorial-preserve-original-v622');copyTutorialMirrorVisuals(target,clone,true);
+    const originalShadow=getComputedStyle(target).boxShadow;
+    const tutorialShadow='0 0 20px rgba(142,244,255,.52), 0 0 44px rgba(142,244,255,.18)';
+    clone.style.setProperty('box-shadow',originalShadow&&originalShadow!=='none'?`${originalShadow}, ${tutorialShadow}`:tutorialShadow,'important')
+  }else if(overlay.classList.contains('tutorial-guided-overlay')){
+    const cs=getComputedStyle(target);clone.style.setProperty('background',cs.background,'important');clone.style.setProperty('background-color',cs.backgroundColor,'important');clone.style.setProperty('color',cs.color,'important');clone.style.setProperty('border-color','rgba(142,244,255,.78)','important');clone.style.gridTemplateColumns=cs.gridTemplateColumns;clone.style.gridTemplateRows=cs.gridTemplateRows;clone.style.columnGap=cs.columnGap;clone.style.rowGap=cs.rowGap;clone.style.justifyContent=cs.justifyContent;clone.style.alignContent=cs.alignContent;
+    [...target.children].forEach((src,i)=>{const dst=clone.children[i];if(!dst)return;const childStyle=getComputedStyle(src);dst.style.width=childStyle.width;dst.style.height=childStyle.height;dst.style.margin=childStyle.margin;dst.style.borderRadius=childStyle.borderRadius})
+  }
+  clone.classList.toggle('is-signaled',!!signaled);
+  clone.style.setProperty('position','fixed','important');clone.style.setProperty('left',`${r.left}px`,'important');clone.style.setProperty('top',`${r.top}px`,'important');clone.style.setProperty('width',`${r.width}px`,'important');clone.style.setProperty('height',`${r.height}px`,'important');clone.style.setProperty('margin','0','important');clone.style.setProperty('transform','none','important');clone.style.setProperty('pointer-events','none','important');clone.style.setProperty('z-index','5203','important')
+}
 function positionTutorialFocus(targetSelector,strong=false,visible=true){const ring=$('.tutorial-focus-ring-v61');if(!ring)return;ring.classList.toggle('is-strong',!!strong);if(!visible||!targetSelector){ring.classList.add('hidden');return}const target=document.querySelector(targetSelector);if(!target){ring.classList.add('hidden');return}const r=target.getBoundingClientRect(),pad=strong?12:8,cx=r.left+r.width/2,cy=r.top+r.height/2,w=r.width+pad*2,h=r.height+pad*2;ring.classList.remove('hidden');ring.style.left=`${Math.round(cx-w/2)}px`;ring.style.top=`${Math.round(cy-h/2)}px`;ring.style.width=`${Math.round(w)}px`;ring.style.height=`${Math.round(h)}px`;ring.style.borderRadius=(parseFloat(getComputedStyle(target).borderRadius)||10)+pad+'px'}
 function tutorialClamp(v,min,max){return Math.max(min,Math.min(max,v))}
 function tutorialSetBox(el,left,top){if(!el)return;el.style.left=`${Math.round(left)}px`;el.style.top=`${Math.round(top)}px`;el.style.right='auto';el.style.bottom='auto';el.style.transform='none'}
@@ -1635,7 +1665,7 @@ function tutorialProjectVideoFallback(video){
 function renderTutorialAbout(){
   currentStory=null;markTutorialViewed('tutorial2');
   const video=(file,label)=>`<div class="tutorial-about-video-card"><video class="tutorial-about-video" data-tutorial-project-video data-tutorial-project-file="${escAttr(file)}" src="./assets/${escAttr(file)}?v=${encodeURIComponent(APP_VERSION)}" playsinline controls preload="metadata" aria-label="${escAttr(label)}" onerror="tutorialProjectVideoFallback(this)"></video><div class="tutorial-about-video-fallback">No se pudo cargar este vídeo.</div></div>`;
-  view.innerHTML=`<section class="section tutorial-about-page-v621"><div class="tutorial-about-head-v621"><div class="eyebrow">TUTORIAL 02</div><h1>¿Qué es Disturbing Stories?</h1></div><div class="tutorial-about-videos-v621">${video('videoquees20seg.webm','Disturbing Stories en 20 segundos')}${video('videoquees60seg.webm','Disturbing Stories en 60 segundos')}</div></section>`;
+  view.innerHTML=`<section class="section tutorial-about-page-v621"><div class="tutorial-about-head-v621"><h1>¿Qué es Disturbing Stories?</h1></div><div class="tutorial-about-videos-v621">${video('videoquees20seg.webm','Disturbing Stories en 20 segundos')}${video('videoquees60seg.webm','Disturbing Stories en 60 segundos')}</div></section>`;
   const videos=[...view.querySelectorAll('[data-tutorial-project-video]')];videos.forEach(v=>v.addEventListener('play',()=>videos.forEach(other=>{if(other!==v&&!other.paused)other.pause()})));forcePageTop()
 }
 function guidedTutorialSteps(id){return id==='tutorial3'?TUTORIAL3_STEPS:id==='tutorial4'?TUTORIAL4_STEPS:[]}
@@ -1656,13 +1686,15 @@ function guidedTutorialOverlayHtml(cfg,total,id){
 function guidedTutorialBottomReserve(){const nav=$('.bottom-nav'),mini=$('.mini-player');let h=(nav?.getBoundingClientRect().height||70)+12;if(mini&&!mini.classList.contains('hidden')&&getComputedStyle(mini).display!=='none')h+=mini.getBoundingClientRect().height||0;return h}
 function positionGuidedTutorial(cfg){
   const target=document.querySelector(cfg.target),tk=$('.tutorial-guided-tk'),bubble=$('.tutorial-guided-bubble');if(!target||!tk||!bubble)return;
-  const horizontal=cfg.tkLayout==='horizontal',mobile=innerWidth<=600,tkW=horizontal?(mobile?132:154):(mobile?86:98),tkH=horizontal?(mobile?70:82):tkW;
-  tk.style.width=`${tkW}px`;tk.style.height=`${tkH}px`;bubble.style.width=mobile?'calc(100vw - 28px)':'min(360px, calc(100vw - 28px))';
+  const horizontal=cfg.tkLayout==='horizontal',mobile=innerWidth<=600;
+  let tkW=horizontal?(mobile?264:308):(mobile?172:196),tkH=horizontal?(mobile?140:164):tkW;
+  const maxTkW=Math.max(120,innerWidth-28);if(tkW>maxTkW){const scale=maxTkW/tkW;tkW*=scale;tkH*=scale}
+  tk.style.width=`${Math.round(tkW)}px`;tk.style.height=`${Math.round(tkH)}px`;bubble.style.width=mobile?'calc(100vw - 28px)':'min(360px, calc(100vw - 28px))';
   positionTutorialFocus(cfg.target,true,true);positionTutorialTargetClone(cfg.target,cfg.liftTarget!==false,true);
   const br=bubble.getBoundingClientRect(),gap=8,edge=14,reserve=guidedTutorialBottomReserve(),clusterH=tkH+gap+br.height;let top=innerHeight-reserve-clusterH-8;
   const rr=target.getBoundingClientRect(),headerH=$('.topbar')?.getBoundingClientRect().height||64;
   if(top<headerH+8||rr.bottom+12>top){const candidate=headerH+10;if(rr.top>candidate+clusterH+16)top=candidate;else top=Math.max(headerH+8,innerHeight-reserve-clusterH-8)}
-  const bubbleLeft=tutorialClamp((innerWidth-br.width)/2,edge,innerWidth-br.width-edge),tkLeft=tutorialClamp(bubbleLeft+10,edge,innerWidth-tkW-edge);
+  const bubbleLeft=tutorialClamp((innerWidth-br.width)/2,edge,innerWidth-br.width-edge),tkLeft=tutorialClamp((innerWidth-tkW)/2,edge,innerWidth-tkW-edge);
   tutorialSetBox(tk,tkLeft,top);tutorialSetBox(bubble,bubbleLeft,top+tkH+gap)
 }
 function scrollGuidedTargetIntoView(cfg,done){
@@ -1956,5 +1988,5 @@ function startIntroMedia(layer,video,resolve){
   const p=video.play();if(p&&typeof p.catch==='function')p.catch(()=>done(false))
 }
 bindGlobalStormMediaStop();
-async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=6.21.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
+async function registerSW(){if('serviceWorker'in navigator){try{const reg=await navigator.serviceWorker.register('./sw.js?v=6.22.0',{updateViaCache:'none'});try{await reg.update()}catch{} }catch(e){console.warn('SW',e)}}}
 boot();
