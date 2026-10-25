@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-10-25T02:01:59.057897+00:00",
+  "updated": "2026-10-25T02:02:04.469828+00:00",
   "stories": [
     {
       "id": "044",
@@ -29,7 +29,7 @@
         "extra"
       ],
       "contentRelations": [],
-      "publicTeaser": "https://www.youtube.com/watch?v=j_bJJZ7TKrI",
+      "publicTeaser": "https://www.youtube.com/embed/j_bJJZ7TKrI",
       "readTime": 10,
       "mediaAssetTags": [
         {
@@ -57,11 +57,6 @@
       },
       "mediaDurationSources": {
         "audio": "youtube"
-      },
-      "mediaTitleLocales": {
-        "audio": {
-          "es": "Carnaval en Venecia"
-        }
       }
     },
     {
