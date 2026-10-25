@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-10-25T23:47:13.765695+00:00",
+  "updated": "2026-10-25T23:47:19.247011+00:00",
   "stories": [
     {
       "id": "270",
@@ -25,8 +25,15 @@
         "extra"
       ],
       "contentRelations": [],
-      "publicTeaser": "https://www.youtube.com/embed/Ax1TFFUEago",
-      "readTime": 11
+      "publicTeaser": "https://www.youtube.com/watch?v=Ax1TFFUEago",
+      "readTime": 11,
+      "mediaAssetTags": [
+        {
+          "mediaId": "Ax1TFFUEago",
+          "kind": "teaser",
+          "locale": "es"
+        }
+      ]
     },
     {
       "id": "044",
