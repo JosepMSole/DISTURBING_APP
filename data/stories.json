@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-10-25T01:53:01.009860+00:00",
+  "updated": "2026-10-25T02:01:53.773792+00:00",
   "stories": [
     {
       "id": "044",
@@ -8,14 +8,16 @@
       "published": "2026-10-18",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/044.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/044-carnaval-en-venecia-frame-1.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/044-carnaval-en-venecia-frame-6.jpg",
       "data": "./data/stories/044.json",
       "source": "https://www.disturbingstories.com/044.html",
       "protected": false,
-      "book": "",
-      "year": "",
-      "categories": [],
-      "synopsis": "",
+      "book": "06",
+      "year": "1988",
+      "categories": [
+        "Oscuras"
+      ],
+      "synopsis": "Durante el carnaval de Venecia, tres amigos descubrirán que algunas máscaras ocultan mucho más que un rostro…",
       "tabLabels": [
         "LEER",
         "AUDIO",
@@ -27,7 +29,7 @@
         "extra"
       ],
       "contentRelations": [],
-      "publicTeaser": "https://www.youtube.com/watch?v=j_bJJZ7TKrI",
+      "publicTeaser": "https://www.youtube.com/embed/j_bJJZ7TKrI",
       "readTime": 10,
       "mediaAssetTags": [
         {
