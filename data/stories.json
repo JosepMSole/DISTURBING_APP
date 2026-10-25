@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-10-25T01:34:51.465361+00:00",
+  "updated": "2026-10-25T01:34:57.337867+00:00",
   "stories": [
     {
       "id": "044",
@@ -27,8 +27,20 @@
         "extra"
       ],
       "contentRelations": [],
-      "publicTeaser": "https://www.youtube.com/embed/j_bJJZ7TKrI",
-      "readTime": 10
+      "publicTeaser": "https://www.youtube.com/watch?v=j_bJJZ7TKrI",
+      "readTime": 10,
+      "mediaAssetTags": [
+        {
+          "mediaId": "vj66klAY74M",
+          "kind": "audio",
+          "locale": "es"
+        },
+        {
+          "mediaId": "j_bJJZ7TKrI",
+          "kind": "teaser",
+          "locale": "es"
+        }
+      ]
     },
     {
       "id": "277",
