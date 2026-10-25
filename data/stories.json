@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-10-25T01:51:36.007895+00:00",
+  "updated": "2026-10-25T01:53:01.009860+00:00",
   "stories": [
     {
       "id": "044",
@@ -55,6 +55,11 @@
       },
       "mediaDurationSources": {
         "audio": "youtube"
+      },
+      "mediaTitleLocales": {
+        "audio": {
+          "es": "Carnaval en Venecia"
+        }
       }
     },
     {
