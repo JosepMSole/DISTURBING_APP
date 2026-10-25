@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-10-25T02:02:04.469828+00:00",
+  "updated": "2026-10-25T02:06:07.396570+00:00",
   "stories": [
     {
       "id": "044",
@@ -8,7 +8,7 @@
       "published": "2026-10-18",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/044.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/044-carnaval-en-venecia-frame-6.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/044-carnaval-en-venecia-frame-12.jpg",
       "data": "./data/stories/044.json",
       "source": "https://www.disturbingstories.com/044.html",
       "protected": false,
