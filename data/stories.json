@@ -1,7 +1,35 @@
 {
   "schema": 6,
-  "updated": "2026-10-24T01:38:38.325789+00:00",
+  "updated": "2026-10-25T01:34:51.465361+00:00",
   "stories": [
+    {
+      "id": "044",
+      "title": "Carnaval en Venecia",
+      "published": "2026-10-18",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/044.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/044-carnaval-en-venecia-frame-1.jpg",
+      "data": "./data/stories/044.json",
+      "source": "https://www.disturbingstories.com/044.html",
+      "protected": false,
+      "book": "",
+      "year": "",
+      "categories": [],
+      "synopsis": "",
+      "tabLabels": [
+        "LEER",
+        "AUDIO",
+        "SPOILERS!",
+        "TEASER"
+      ],
+      "features": [
+        "audio",
+        "extra"
+      ],
+      "contentRelations": [],
+      "publicTeaser": "https://www.youtube.com/embed/j_bJJZ7TKrI",
+      "readTime": 10
+    },
     {
       "id": "277",
       "title": "Marzo 1950",
