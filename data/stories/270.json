@@ -1,0 +1,580 @@
+{
+  "schema": 7,
+  "id": "270",
+  "title": "ReInsertada",
+  "published": "2026-10-25",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/270.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/270.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-2.jpg",
+  "book": "",
+  "year": "",
+  "categories": [],
+  "synopsis": "",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Desperté de golpe, sobresaltada y sin saber muy bien dónde estaba..."
+        },
+        {
+          "type": "p",
+          "text": "No escuchaba ningún jadeo, ningún movimiento ni el zumbido familiar de los sistemas de ventilación de la base. Solo había un silencio compacto, interrumpido por pulsaciones graves que parecían surgir de las paredes blancas. Intenté incorporarme, pero una superficie transparente descendía sobre mi rostro y mantenía mi cuerpo encerrado dentro de una cápsula."
+        },
+        {
+          "type": "p",
+          "text": "Golpeé el cristal varias veces y la cubierta se abrió inmediatamente mientras una neblina fría escapaba alrededor de mis hombros. Entonces levanté mis puños, preparada para apartar a cualquiera que se acercara, cuando divisé a tres personas vestidas con uniformes grises que me observaban desde el otro lado de la sala. Dos parecían soldados, y la tercera, una mujer de cabello blanco y espalda recta sin armas visibles."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-1.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-1_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-2.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-2_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "—Capitana Lena Ardan —dijo—. No intente ponerse en pie todavía."
+        },
+        {
+          "type": "p",
+          "text": "—¿Dónde estoy?"
+        },
+        {
+          "type": "p",
+          "text": "Mi voz sonó como la mía, aunque me pareció muy limpia. No tenía la garganta seca ni sentía dolor en los pulmones. Bajé la mirada y descubrí que llevaba una prenda médica ajustada con un diseño que no había visto nunca. Mis manos parecían normales, pero la piel carecía de pequeñas marcas que recordaba perfectamente, como la cicatriz del pulgar o el lunar de mi muñeca, que habían desaparecido."
+        },
+        {
+          "type": "p",
+          "text": "—¿Qué me habéis hecho?"
+        },
+        {
+          "type": "p",
+          "text": "La mujer dio un paso hacia mí."
+        },
+        {
+          "type": "p",
+          "text": "—Mi nombre es doctora Soren. Está en el Centro Estratégico de la Amalgam Defense, en el territorio de Nueva Columbia."
+        },
+        {
+          "type": "p",
+          "text": "—No conozco ese centro."
+        },
+        {
+          "type": "p",
+          "text": "—Todavía no."
+        },
+        {
+          "type": "p",
+          "text": "Intenté levantarme y, sorprendentemente, mis piernas respondieron con una rapidez inesperada y estuve a punto de caer porque había calculado mal mi propio impulso. Uno de los soldados avanzó para sujetarme, pero lo aparté antes de que pudiera tocarme."
+        },
+        {
+          "type": "p",
+          "text": "—Necesito hablar con el comandante Resnik."
+        },
+        {
+          "type": "p",
+          "text": "Nadie respondió."
+        },
+        {
+          "type": "p",
+          "text": "—¿Dónde está mi escuadrón?"
+        },
+        {
+          "type": "p",
+          "text": "La doctora Soren mantuvo la mirada fija en mí."
+        },
+        {
+          "type": "p",
+          "text": "—Antes de contestar, necesito saber cuál es su último recuerdo."
+        },
+        {
+          "type": "p",
+          "text": "Entonces cerré los ojos. Recordaba la pista exterior de la base Neón Cuatro, cubierta por una lluvia aceitosa. Recordaba a Malik discutiendo con los mecánicos porque uno de los cañones de su avión se bloqueaba cuando giraba demasiado rápido. Recordaba la señal de una criatura detectada al norte del perímetro contaminado y el informe que la describía como una amenaza todavía sin clasificar."
+        },
+        {
+          "type": "p",
+          "text": "También recordaba haberle prometido a Tessa que cenaríamos juntas después de la siguiente patrulla."
+        },
+        {
+          "type": "p",
+          "text": "—Ayer por la tarde revisamos los Vortex —dije—. Hoy debíamos reconocer el sector norte."
+        },
+        {
+          "type": "p",
+          "text": "La doctora inclinó ligeramente la cabeza."
+        },
+        {
+          "type": "p",
+          "text": "—Ese recuerdo corresponde al 17 de mayo de 2503."
+        },
+        {
+          "type": "p",
+          "text": "Entonces le pregunté extrañada."
+        },
+        {
+          "type": "p",
+          "text": "—¿Qué fecha es hoy?"
+        },
+        {
+          "type": "p",
+          "text": "—Dos de septiembre de 2777."
+        },
+        {
+          "type": "p",
+          "text": "Me reí una sola vez, aunque fue una reacción automática, breve y sin humor."
+        },
+        {
+          "type": "p",
+          "text": "Después observé los rostros de los soldados, y ninguno parecía estar bromeando."
+        },
+        {
+          "type": "p",
+          "text": "La doctora Soren activó una pantalla sobre la pared y apareció una secuencia de cifras, diagramas neurológicos y una fotografía mía con el uniforme de la Amalgam Force. Bajo mi nombre figuraban dos fechas."
+        },
+        {
+          "type": "p",
+          "text": "Nacimiento: 2474."
+        },
+        {
+          "type": "p",
+          "text": "Fallecimiento: 2503."
+        },
+        {
+          "type": "p",
+          "text": "Sentí una presión intensa en el pecho, aunque los sensores médicos situados alrededor de la cápsula no detectaron ninguna alteración grave."
+        },
+        {
+          "type": "p",
+          "text": "—Eso es falso."
+        },
+        {
+          "type": "p",
+          "text": "—Su conciencia fue copiada tres días antes de su muerte —explicó la doctora—. Formaba parte del programa ReINSERTION. En aquella época solo algunos miembros del personal militar recibían copias de seguridad neuronales completas."
+        },
+        {
+          "type": "p",
+          "text": "En ese momento me acordé del procedimiento: nos habían explicado que aquella tecnología era experimental y que probablemente nunca llegaría a utilizarse. Una máquina registraba la estructura de la memoria, los patrones emocionales y los procesos de decisión. Lo llamaban copia preventiva, aunque entre nosotros lo considerábamos otro formulario inútil de la administración militar."
+        },
+        {
+          "type": "p",
+          "text": "—No podéis copiar una persona."
+        },
+        {
+          "type": "p",
+          "text": "—En su época, no podían restaurarla… pero ahora sí, y no es la primera."
+        },
+        {
+          "type": "p",
+          "text": "Volví a mirar mis manos."
+        },
+        {
+          "type": "p",
+          "text": "—Este cuerpo no es humano."
+        },
+        {
+          "type": "p",
+          "text": "—Es sintético. Exteriormente reproduce su anatomía original con un margen de error inferior al uno por ciento. Posee sistema nervioso artificial, circulación térmica y respuestas sensoriales equivalentes a las biológicas."
+        },
+        {
+          "type": "p",
+          "text": "Allí fue cuando me clavé una uña en la palma e inmediatamente después sentí dolor… pero no apareció sangre."
+        },
+        {
+          "type": "p",
+          "text": "—Entonces yo no sobreviví…"
+        },
+        {
+          "type": "p",
+          "text": "La doctora tardó unos segundos en responder."
+        },
+        {
+          "type": "p",
+          "text": "—La Lena Ardan original murió el 20 de mayo de 2503."
+        },
+        {
+          "type": "p",
+          "text": "—Tres días después de mis recuerdos."
+        },
+        {
+          "type": "p",
+          "text": "—Sí."
+        },
+        {
+          "type": "p",
+          "text": "—¿Cómo?"
+        },
+        {
+          "type": "p",
+          "text": "Soren pulsó algo en la consola y la pantalla cambió. Apareció una grabación militar tomada desde un avión de reconocimiento donde varias aeronaves rodeaban una criatura tan alta que atravesaba las nubes bajas. El monstruo gigante avanzaba sobre cuatro extremidades deformadas, aunque alzaba la parte delantera de su cuerpo como si intentara caminar erguido. Su piel parecía formada por placas de hueso ennegrecido, y cada impacto de sus brazos contra el suelo levantaba edificios, vehículos y tierra por doquier."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-3.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-3_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-4.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-4_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Reconocí los Vortex de mi escuadrón cuando, de repente, uno de ellos cayó envuelto en llamas. Momentos después vi como otro caía… Luego la grabación amplió la imagen de un Vortex que ascendía detrás de la criatura. Conocía aquella forma de inclinar las alas… conocía la manera de corregir el rumbo antes de acelerar… ¡era el mío!"
+        },
+        {
+          "type": "p",
+          "text": "—Detenga el vídeo."
+        },
+        {
+          "type": "p",
+          "text": "La doctora obedeció."
+        },
+        {
+          "type": "p",
+          "text": "—Quiero que me lo explique usted…"
+        },
+        {
+          "type": "p",
+          "text": "—Fue el primer gigante que salió de una zona contaminada. Las armas convencionales apenas podían penetrar su estructura externa, y su escuadrón perdió a siete de sus catorce miembros durante los primeros minutos."
+        },
+        {
+          "type": "p",
+          "text": "Malik, Tessa, Resnik… Sus nombres aparecieron en mi mente antes de que pudiera impedirlo."
+        },
+        {
+          "type": "p",
+          "text": "—Usted detectó una abertura entre las placas de la nuca —continuó la doctora—. Sus proyectiles se habían agotado y su aeronave estaba dañada. Así que hizo lo único que le quedaba por hacer: aumentó la potencia de los reactores, atravesó la capa exterior y detonó el arsenal restante dentro del organismo."
+        },
+        {
+          "type": "p",
+          "text": "La pantalla mostró una imagen congelada del gigante desplomándose sobre una extensión de terreno evacuada."
+        },
+        {
+          "type": "p",
+          "text": "—La criatura murió junto con usted..."
+        },
+        {
+          "type": "p",
+          "text": "No recordaba haber tomado aquella decisión, ni recordaba el miedo, el dolor o el momento en que comprendí que no regresaría a la base. Sin embargo, conocía suficientemente bien a la mujer que había sido para saber que la historia podía ser cierta."
+        },
+        {
+          "type": "p",
+          "text": "—¿Cuánta gente sobrevivió gracias a eso?"
+        },
+        {
+          "type": "p",
+          "text": "—Más de doscientas mil personas del Sector Yukan permanecían dentro del radio de avance."
+        },
+        {
+          "type": "p",
+          "text": "Entonces me senté de nuevo en el borde de la cápsula, procesando toda esa información."
+        },
+        {
+          "type": "p",
+          "text": "Durante unos instantes, no supe si debía sentir orgullo, horror o vergüenza por estar ocupando el lugar de alguien que había muerto de aquella manera."
+        },
+        {
+          "type": "p",
+          "text": "—¿Por qué me habéis “reinsertado”?"
+        },
+        {
+          "type": "p",
+          "text": "La doctora Soren cambió nuevamente la pantalla."
+        },
+        {
+          "type": "p",
+          "text": "Vi mapas de la Tierra transformados por fronteras que no reconocía. Tras el Incidente Global de 2099, las zonas contaminadas habían quedado dispersas por todos los continentes: algunas cubrían regiones enteras, mientras que otras eran franjas estrechas rodeadas por muros, torres de vigilancia y campos de aislamiento."
+        },
+        {
+          "type": "p",
+          "text": "Pacific City había dirigido la reconstrucción durante casi tres siglos, coordinando los nuevos países y creando rutas seguras entre territorios habitables. Pero la ciudad desapareció en 2400 después de un segundo desastre cuyo origen seguía parcialmente clasificado."
+        },
+        {
+          "type": "p",
+          "text": "Tras su pérdida, cada nación reforzó sus propias defensas."
+        },
+        {
+          "type": "p",
+          "text": "La Amalgam Force dejó de ser una única organización centralizada, y sus divisiones se adaptaron a cada territorio. Sus Rangers se convirtieron en la primera línea contra las criaturas que cruzaban los perímetros."
+        },
+        {
+          "type": "p",
+          "text": "—Después de su muerte, aparecieron más gigantes —explicó la doctora—. No eran frecuentes, pero cada uno obligaba a desarrollar nuevas respuestas."
+        },
+        {
+          "type": "p",
+          "text": "Las imágenes mostraron la evolución de los vehículos militares. Los antiguos Vortex de mi época dieron paso a aeronaves capaces de unirse en pleno vuelo para multiplicar su efectividad. Los primeros modelos combinables formaban un enorme cañón suspendido que concentraba la energía de todo el escuadrón, pero más adelante surgieron estructuras articuladas, plataformas móviles y máquinas de combate de proporciones colosales."
+        },
+        {
+          "type": "p",
+          "text": "—Durante décadas podíamos pasar muchos años sin una sola incursión importante —continuó—. Incluso algunas generaciones llegaron a creer que las zonas contaminadas estaban muriendo… pero después aparecía algo gigantesco y nuevo que destruía en una semana todo lo que habíamos aprendido…"
+        },
+        {
+          "type": "p",
+          "text": "Aquella idea me resultaba familiar. En mi tiempo también existían personas que confundían el silencio con la seguridad."
+        },
+        {
+          "type": "p",
+          "text": "—¿Y qué es lo que ha aparecido ahora?"
+        },
+        {
+          "type": "p",
+          "text": "La pantalla mostró una llanura cubierta de niebla oscura, y en el centro caminaba una figura de casi cien metros de altura. Se trataba de un súper-gigante…"
+        },
+        {
+          "type": "p",
+          "text": "Poseía una estructura ósea reforzada, una cabeza protegida por una estructura semejante a un caparazón y una peligrosa pinza deforme y monstruosa. Éste no se movía con la torpeza de la criatura contra la que había muerto mi original, sino que cada paso parecía medido."
+        },
+        {
+          "type": "p",
+          "text": "—Ha destruido tres puestos fronterizos —dijo uno de los soldados—. No ataca directamente cuando encuentra resistencia. Retrocede, cambia de ruta y busca sectores con menor cobertura."
+        },
+        {
+          "type": "p",
+          "text": "—Eso no significa que piense como nosotros —añadió la doctora—. Pero aprende. Reconoce patrones, evita las armas que pueden dañarlo y utiliza criaturas menores para forzar nuestras defensas."
+        },
+        {
+          "type": "p",
+          "text": "El vídeo mostró decenas de organismos saliendo de una abertura contaminada mientras el gigante permanecía inmóvil detrás de ellos. No estaba dirigiendo un ejército, estaba utilizando presas vivas para agotar nuestras municiones…"
+        },
+        {
+          "type": "p",
+          "text": "Aquello resultaba peor."
+        },
+        {
+          "type": "p",
+          "text": "—¿Cuánto tiempo lleva fuera?"
+        },
+        {
+          "type": "p",
+          "text": "—Hace diecinueve días que surgió del Mar Negro."
+        },
+        {
+          "type": "p",
+          "text": "—¿Y no habéis podido detenerlo?"
+        },
+        {
+          "type": "p",
+          "text": "—Hemos intentado contenerlo, pero su avance a través de Miradia Oriental es implacable."
+        },
+        {
+          "type": "p",
+          "text": "—¿Entonces qué se supone que debo hacer?"
+        },
+        {
+          "type": "p",
+          "text": "La doctora Soren apagó la pantalla."
+        },
+        {
+          "type": "p",
+          "text": "—Necesitamos que, con su pericia única, pilote el núcleo de una formación Amalgam de séptima generación."
+        },
+        {
+          "type": "p",
+          "text": "Dos horas después me encontraba atravesando las puertas del enorme hangar principal. Había visto edificios más pequeños que aquella sala…"
+        },
+        {
+          "type": "p",
+          "text": "Las máquinas de combate descansaban sujetas por plataformas magnéticas y torres de mantenimiento. No parecían vehículos individuales, sino fragmentos de una criatura metálica todavía sin ensamblar. Cada unidad tenía su propio sistema, algunos con vuelo, armamento y piloto, pero podían reorganizarse alrededor de un núcleo central hasta formar una estructura mucho mayor."
+        },
+        {
+          "type": "p",
+          "text": "La pieza que me correspondía estaba suspendida frente a mí. Tenía forma de aeronave, aunque su fuselaje se extendía hacia atrás en varias secciones móviles. Bajo la cabina había un entramado de conexiones diseñado para enlazarse con el resto de la formación."
+        },
+        {
+          "type": "p",
+          "text": "—El Arconte —dijo la comandante del hangar—. Una vez combinado, se convierte en el centro de coordinación. Desde ahí se distribuye la energía y se controlan los sistemas principales."
+        },
+        {
+          "type": "p",
+          "text": "—¿Quién lo pilotaba hasta ahora?"
+        },
+        {
+          "type": "p",
+          "text": "Una joven apoyada contra la pasarela levantó la mano. Tendría unos veinticinco años y observaba mi cuerpo sintético con una mezcla poco disimulada de curiosidad y desconfianza."
+        },
+        {
+          "type": "p",
+          "text": "—Teniente Sira Nolen —se presentó—. Ocho años de combate real."
+        },
+        {
+          "type": "p",
+          "text": "—¿Y por qué me cedes el asiento?"
+        },
+        {
+          "type": "p",
+          "text": "—No lo hago por voluntad propia…"
+        },
+        {
+          "type": "p",
+          "text": "La sinceridad me gustó más que cualquier saludo ceremonial."
+        },
+        {
+          "type": "p",
+          "text": "—…pero por otro lado respeto mucho el sacrificio que hizo la Capitana Ardan original."
+        },
+        {
+          "type": "p",
+          "text": "—Yo también…"
+        },
+        {
+          "type": "p",
+          "text": "Antes de que pudiéramos continuar, las luces del hangar cambiaron a rojo, y una alarma grave recorrió la estructura."
+        },
+        {
+          "type": "p",
+          "text": "Las pantallas tácticas se encendieron simultáneamente y mostraron el perímetro occidental. La mancha que representaba al súper-gigante había abandonado su posición, y esta vez no avanzaba hacia una base militar, sino que se dirigía a una ciudad."
+        },
+        {
+          "type": "p",
+          "text": "Los técnicos comenzaron a correr entre las plataformas. Los pilotos ocuparon sus vehículos mientras los sistemas de sujeción se abrían uno tras otro."
+        },
+        {
+          "type": "p",
+          "text": "—¿Cuánto falta para que alcance la zona habitada? —pregunté."
+        },
+        {
+          "type": "p",
+          "text": "—Con su velocidad actual, cuarenta y siete minutos —respondió la comandante."
+        },
+        {
+          "type": "p",
+          "text": "—¿La formación ha sido probada en combate?"
+        },
+        {
+          "type": "p",
+          "text": "Nadie contestó inmediatamente."
+        },
+        {
+          "type": "p",
+          "text": "Sira Nolen fue quien terminó diciendo la verdad."
+        },
+        {
+          "type": "p",
+          "text": "—Nunca completamente."
+        },
+        {
+          "type": "p",
+          "text": "Entonces me quedé contemplando el Arconte. No conocía sus controles, no confiaba en mi cuerpo y ni siquiera recordaba la batalla que había convertido mi nombre en una leyenda. La mujer original había tenido tres días más de vida, tres días de experiencias y decisiones que yo desconocería para siempre."
+        },
+        {
+          "type": "p",
+          "text": "Ella había muerto para detener al primer gigante, y yo acababa de despertar ante el peor de todos."
+        },
+        {
+          "type": "p",
+          "text": "Así que subí a la cabina ágilmente. El asiento se adaptó a mi espalda y una red de conexiones se acopló a la base de mi cráneo. Durante un segundo sentí las otras máquinas como presencias dormidas alrededor de mí. Sus reactores, sus armas y sus pilotos aparecieron en mi mente como puntos de luz esperando una orden."
+        },
+        {
+          "type": "p",
+          "text": "Sira se acomodó en el puesto auxiliar."
+        },
+        {
+          "type": "p",
+          "text": "—Capitana —dijo—, debería advertirle que el resto del escuadrón no la considera nuestra mejor piloto."
+        },
+        {
+          "type": "p",
+          "text": "—Yo tampoco…"
+        },
+        {
+          "type": "p",
+          "text": "La joven me miró."
+        },
+        {
+          "type": "p",
+          "text": "—¿Entonces por qué está aquí?"
+        },
+        {
+          "type": "p",
+          "text": "Las compuertas exteriores comenzaron a abrirse."
+        },
+        {
+          "type": "p",
+          "text": "Más allá del hangar, el cielo estaba cubierto por nubes negras procedentes de la zona contaminada. Activé los motores."
+        },
+        {
+          "type": "p",
+          "text": "—Porque la mujer que fui ya salvó el mundo una vez —respondí—. Ahora tendremos que descubrir qué soy capaz de hacer yo."
+        },
+        {
+          "type": "p",
+          "text": "El Arconte se elevó de la plataforma, mientras las otras unidades iban despegando a su alrededor, ocupando sus posiciones de formación. Durante unos segundos, el hangar entero tembló bajo el empuje de los reactores."
+        },
+        {
+          "type": "p",
+          "text": "No me habían devuelto la vida, me habían entregado una vida distinta, construida con recuerdos incompletos y una guerra que nunca había terminado."
+        },
+        {
+          "type": "p",
+          "text": "El viaje cruzando el océano atlántico fue bastante más rápido de lo que imaginé, y unos minutos después ya se divisaba la orografía de Miradia Oriental. En la distancia, detrás de las montañas, una silueta imposible avanzaba hacia millones de personas que todavía ignoraban cuánto tiempo les quedaba."
+        },
+        {
+          "type": "p",
+          "text": "Lanzamos un primer ataque inicial, pero el súper-gigante atravesó fácilmente esa línea defensiva."
+        },
+        {
+          "type": "p",
+          "text": "Entonces, sin querer esperar más, recibimos la orden de combinar. Extendí las manos sobre los controles y sentí cómo todas las máquinas respondían al mismo tiempo, mientras engranajes, piezas y circuitos empezaron a transformarse."
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-5.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-5_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-6.jpg",
+          "href": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-6_orig.jpg",
+          "alt": "",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "La humanidad llevaba siglos construyendo armas para sobrevivir a los monstruos, pero aquella mañana comprendí que ninguna máquina podía garantizar nuestra salvación. Mientras las personas siguieran confundiendo los años tranquilos con el final del peligro, siempre estaríamos a una sola criatura de desaparecer."
+        },
+        {
+          "type": "p",
+          "text": "Sin embargo, mientras alguien estuviera dispuesto a levantarse otra vez, ni siquiera el fin del mundo tendría asegurada la victoria…"
+        }
+      ]
+    },
+    "material-adicional": {
+      "label": "MATERIAL ADICIONAL",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/extra-reinsertada-amalgam-evolve-v1.jpg?1792858431",
+          "alt": "Picture",
+          "caption": ""
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/Ax1TFFUEago",
+          "title": "Teaser"
+        }
+      ]
+    }
+  }
+}

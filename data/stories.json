@@ -1,7 +1,33 @@
 {
   "schema": 6,
-  "updated": "2026-10-25T02:06:17.780771+00:00",
+  "updated": "2026-10-25T23:47:13.765695+00:00",
   "stories": [
+    {
+      "id": "270",
+      "title": "ReInsertada",
+      "published": "2026-10-25",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/270.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-2.jpg",
+      "data": "./data/stories/270.json",
+      "source": "https://www.disturbingstories.com/270.html",
+      "protected": false,
+      "book": "",
+      "year": "",
+      "categories": [],
+      "synopsis": "",
+      "tabLabels": [
+        "LEER",
+        "MATERIAL ADICIONAL",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "contentRelations": [],
+      "publicTeaser": "https://www.youtube.com/embed/Ax1TFFUEago",
+      "readTime": 11
+    },
     {
       "id": "044",
       "title": "Carnaval en Venecia",
