@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-10-25T01:34:57.337867+00:00",
+  "updated": "2026-10-25T01:35:02.588708+00:00",
   "stories": [
     {
       "id": "044",
@@ -40,7 +40,22 @@
           "kind": "teaser",
           "locale": "es"
         }
-      ]
+      ],
+      "mediaYoutube": {
+        "audio": [
+          {
+            "videoId": "vj66klAY74M",
+            "url": "https://www.youtube.com/watch?v=vj66klAY74M",
+            "durationSeconds": 1140
+          }
+        ]
+      },
+      "mediaDurations": {
+        "audio": 1140
+      },
+      "mediaDurationSources": {
+        "audio": "youtube"
+      }
     },
     {
       "id": "277",
