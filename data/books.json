@@ -6,43 +6,47 @@
     "5": {
       "amazon": "https://amzn.eu/d/0eaVJ9O0",
       "pages": 298,
+      "trailer": "https://www.youtube.com/watch?v=ce00hoq7Z-M",
       "back": "./assets/books/book-5-back.jpg",
       "front": "./assets/books/book-5-front.jpg",
-      "spine": "./assets/books/book-5-spine.jpg",
-      "trailer": "https://www.youtube.com/watch?v=ce00hoq7Z-M"
+      "spine": "./assets/books/book-5-spine.jpg"
     },
     "4": {
       "amazon": "https://amzn.eu/d/03BWQF0B",
       "pages": 288,
+      "trailer": "https://www.youtube.com/watch?v=SWT1IJcDt28&pp=0gcJCf4LAYcqIYzv",
       "back": "./assets/books/book-4-back.jpg",
       "front": "./assets/books/book-4-front.jpg",
-      "spine": "./assets/books/book-4-spine.jpg",
-      "trailer": "https://www.youtube.com/watch?v=SWT1IJcDt28&pp=0gcJCf4LAYcqIYzv"
+      "spine": "./assets/books/book-4-spine.jpg"
     },
     "3": {
       "amazon": "https://amzn.eu/d/1ZCINFs",
       "pages": 252,
+      "trailer": "https://www.youtube.com/watch?v=0Id7gKN6uIM",
       "back": "./assets/books/book-3-back.jpg",
       "front": "./assets/books/book-3-front.jpg",
-      "spine": "./assets/books/book-3-spine.jpg",
-      "trailer": "https://www.youtube.com/watch?v=0Id7gKN6uIM"
+      "spine": "./assets/books/book-3-spine.jpg"
     },
     "2": {
       "amazon": "https://amzn.eu/d/6OrkNU2",
       "pages": 262,
+      "trailer": "https://www.youtube.com/watch?v=RUQgmhH0VTo",
       "back": "./assets/books/book-2-back.jpg",
       "front": "./assets/books/book-2-front.jpg",
-      "spine": "./assets/books/book-2-spine.jpg",
-      "trailer": "https://www.youtube.com/watch?v=RUQgmhH0VTo"
+      "spine": "./assets/books/book-2-spine.jpg"
     },
     "1": {
       "amazon": "https://amzn.eu/d/6fH61MD",
       "pages": 222,
+      "trailer": "https://www.youtube.com/watch?v=4fvgmiuTrrg&pp=0gcJCf4LAYcqIYzv",
       "back": "./assets/books/book-1-back.jpg",
       "front": "./assets/books/book-1-front.jpg",
-      "spine": "./assets/books/book-1-spine.jpg",
-      "trailer": "https://www.youtube.com/watch?v=4fvgmiuTrrg&pp=0gcJCf4LAYcqIYzv"
+      "spine": "./assets/books/book-1-spine.jpg"
+    },
+    "6": {
+      "trailer": "https://youtu.be/GKtibKyXqvY",
+      "pages": 284
     }
   },
-  "updated": "2026-09-12T01:43:49.083725+00:00"
+  "updated": "2026-10-26T00:13:48.809950+00:00"
 }
