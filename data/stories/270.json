@@ -6,11 +6,13 @@
   "access": "public",
   "source": "https://www.disturbingstories.com/270.html",
   "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/270.jpg",
-  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-2.jpg",
-  "book": "",
-  "year": "",
-  "categories": [],
-  "synopsis": "",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-4.jpg",
+  "book": "06",
+  "year": "2777",
+  "categories": [
+    "Ciencia Ficción"
+  ],
+  "synopsis": "Lena despierta rodeada de respuestas que todavía no comprende…",
   "tabs": {
     "read": {
       "label": "LEER",

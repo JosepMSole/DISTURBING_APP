@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-10-25T23:47:19.247011+00:00",
+  "updated": "2026-10-26T00:03:57.247740+00:00",
   "stories": [
     {
       "id": "270",
@@ -8,14 +8,16 @@
       "published": "2026-10-25",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/270.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-2.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-4.jpg",
       "data": "./data/stories/270.json",
       "source": "https://www.disturbingstories.com/270.html",
       "protected": false,
-      "book": "",
-      "year": "",
-      "categories": [],
-      "synopsis": "",
+      "book": "06",
+      "year": "2777",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Lena despierta rodeada de respuestas que todavía no comprende…",
       "tabLabels": [
         "LEER",
         "MATERIAL ADICIONAL",
@@ -25,7 +27,7 @@
         "extra"
       ],
       "contentRelations": [],
-      "publicTeaser": "https://www.youtube.com/watch?v=Ax1TFFUEago",
+      "publicTeaser": "https://www.youtube.com/embed/Ax1TFFUEago",
       "readTime": 11,
       "mediaAssetTags": [
         {
