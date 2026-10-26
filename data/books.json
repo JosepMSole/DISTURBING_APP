@@ -1,5 +1,5 @@
 {
-  "schema": 5,
+  "schema": 6,
   "source": "assets/books + importer metadata",
   "naming": "book-N-front/back/spine.ext",
   "books": {
@@ -45,8 +45,10 @@
     },
     "6": {
       "trailer": "https://youtu.be/GKtibKyXqvY",
-      "pages": 284
+      "pages": 284,
+      "publishing": true,
+      "front": "./assets/books/book-6-front.jpg"
     }
   },
-  "updated": "2026-10-26T00:13:48.809950+00:00"
+  "updated": "2026-10-26T00:32:02.938127+00:00"
 }
