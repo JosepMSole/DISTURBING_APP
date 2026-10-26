@@ -137,8 +137,19 @@
         "type": "read_story",
         "storyId": "097"
       }
+    },
+    {
+      "id": "avatar15",
+      "name": "Neuro",
+      "file": "assets/avatar/avatar15.jpg",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/006-frame-1_orig.jpg",
+      "free": false,
+      "requirement": {
+        "type": "read_story",
+        "storyId": "006"
+      }
     }
   ],
   "schema": 1,
-  "updated": "2026-10-26T01:46:26.181564+00:00"
+  "updated": "2026-10-26T01:49:20.278871+00:00"
 }
