@@ -5,7 +5,7 @@
       "file": "assets/avatar/avatar1.jpg",
       "free": true,
       "requirement": null,
-      "name": "Charcharodon",
+      "name": "Charchar",
       "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/aquatika-3_orig.jpg"
     },
     {
@@ -48,7 +48,7 @@
         "type": "read_story",
         "storyId": "025"
       },
-      "name": "Organismo 419",
+      "name": "ORG.419",
       "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/025-raven-frame-08_orig.jpg"
     },
     {
@@ -118,5 +118,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-09-12T15:59:13.435410+00:00"
+  "updated": "2026-10-26T00:00:30.766032+00:00"
 }
