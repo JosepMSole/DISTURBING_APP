@@ -151,7 +151,7 @@
     },
     {
       "id": "avatar16",
-      "name": "El Guardián",
+      "name": "Guardián",
       "file": "assets/avatar/avatar16.jpg",
       "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/209-guardian-pretorio-frame-6_orig.jpg",
       "free": false,
@@ -162,5 +162,5 @@
     }
   ],
   "schema": 1,
-  "updated": "2026-10-26T02:03:41.198059+00:00"
+  "updated": "2026-10-26T02:05:55.376159+00:00"
 }
