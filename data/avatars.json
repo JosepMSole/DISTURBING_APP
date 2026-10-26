@@ -115,8 +115,19 @@
         "type": "read_book",
         "book": "5"
       }
+    },
+    {
+      "id": "avatar13",
+      "name": "Exterior",
+      "file": "assets/avatar/avatar13.jpg",
+      "heroBackground": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/091-conflicto-lunar-1-frame-7_orig.jpg",
+      "free": false,
+      "requirement": {
+        "type": "read_story",
+        "storyId": "091"
+      }
     }
   ],
   "schema": 1,
-  "updated": "2026-10-26T00:00:30.766032+00:00"
+  "updated": "2026-10-26T01:43:04.572874+00:00"
 }
