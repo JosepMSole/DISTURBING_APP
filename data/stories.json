@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-10-26T00:04:02.540416+00:00",
+  "updated": "2026-10-26T00:06:57.241774+00:00",
   "stories": [
     {
       "id": "270",
@@ -8,7 +8,7 @@
       "published": "2026-10-25",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/270.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-4.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/270-reinsertada-frame-1.jpg",
       "data": "./data/stories/270.json",
       "source": "https://www.disturbingstories.com/270.html",
       "protected": false,
@@ -27,7 +27,7 @@
         "extra"
       ],
       "contentRelations": [],
-      "publicTeaser": "https://www.youtube.com/watch?v=Ax1TFFUEago",
+      "publicTeaser": "https://www.youtube.com/embed/Ax1TFFUEago",
       "readTime": 11,
       "mediaAssetTags": [
         {
