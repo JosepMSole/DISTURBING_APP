@@ -47,8 +47,9 @@
       "trailer": "https://youtu.be/GKtibKyXqvY",
       "pages": 284,
       "publishing": true,
-      "front": "./assets/books/book-6-front.jpg"
+      "front": "./assets/books/book-6-front.jpg",
+      "spine": "./assets/books/book-6-spine.jpg"
     }
   },
-  "updated": "2026-10-26T00:37:46.220427+00:00"
+  "updated": "2026-10-26T00:39:05.044377+00:00"
 }
