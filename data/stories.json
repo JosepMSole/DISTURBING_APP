@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-11-01T12:01:27.626711+00:00",
+  "updated": "2026-11-01T12:01:32.876050+00:00",
   "stories": [
     {
       "id": "169",
@@ -33,6 +33,11 @@
           "mediaId": "ggvVN4iMV-k",
           "kind": "video",
           "locale": "es"
+        },
+        {
+          "mediaId": "STN0CXwHcy4",
+          "kind": "teaser",
+          "locale": "es"
         }
       ],
       "mediaYoutube": {
@@ -50,7 +55,7 @@
       "mediaDurationSources": {
         "video": "youtube"
       },
-      "publicTeaser": "https://www.youtube.com/embed/STN0CXwHcy4"
+      "publicTeaser": "https://www.youtube.com/watch?v=STN0CXwHcy4"
     },
     {
       "id": "270",
