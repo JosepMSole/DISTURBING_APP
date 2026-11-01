@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-01T14:19:51.560989+00:00",
+  "updated": "2026-11-01T15:02:05.460229+00:00",
   "items": [
     {
       "id": "highlight-001",
@@ -45,9 +45,11 @@
       "image": "assets/home-highlights/002/image.webp",
       "video": "",
       "createdAt": "2026-11-01T13:55:50.213661+00:00",
-      "updatedAt": "2026-11-01T14:19:51.120162+00:00",
-      "mediaVersion": "1793542791560",
-      "imageBytes": 515834
+      "updatedAt": "2026-11-01T15:02:05.094190+00:00",
+      "mediaVersion": "1793545325460",
+      "imageBytes": 515834,
+      "audio": "assets/home-highlights/002/audio.mp3",
+      "audioBytes": 58695
     }
   ]
 }
