@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-11-01T02:32:10.991861+00:00",
+  "updated": "2026-11-01T02:32:16.398312+00:00",
   "stories": [
     {
       "id": "169",
@@ -27,7 +27,14 @@
         "video"
       ],
       "contentRelations": [],
-      "readTime": 7
+      "readTime": 7,
+      "mediaAssetTags": [
+        {
+          "mediaId": "ggvVN4iMV-k",
+          "kind": "video",
+          "locale": "es"
+        }
+      ]
     },
     {
       "id": "270",
