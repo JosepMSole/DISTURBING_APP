@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-11-01T02:32:16.398312+00:00",
+  "updated": "2026-11-01T02:32:21.473823+00:00",
   "stories": [
     {
       "id": "169",
@@ -34,7 +34,22 @@
           "kind": "video",
           "locale": "es"
         }
-      ]
+      ],
+      "mediaYoutube": {
+        "video": [
+          {
+            "videoId": "ggvVN4iMV-k",
+            "url": "https://www.youtube.com/watch?v=ggvVN4iMV-k",
+            "durationSeconds": 297
+          }
+        ]
+      },
+      "mediaDurations": {
+        "video": 297
+      },
+      "mediaDurationSources": {
+        "video": "youtube"
+      }
     },
     {
       "id": "270",
