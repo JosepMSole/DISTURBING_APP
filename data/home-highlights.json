@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "updated": "2026-11-01T13:55:50.588682+00:00",
+  "updated": "2026-11-01T13:57:09.428367+00:00",
   "items": [
     {
       "id": "highlight-001",
       "number": 1,
-      "status": "active",
-      "enabled": true,
+      "status": "historical",
+      "enabled": false,
       "badge": "NEW",
       "title": "¡CUIDADO!",
       "text": "Halloween está a la vuelta de la esquina y se acercan nuevas criaturas... unas MICRO-criaturas inquietantes...",
@@ -23,13 +23,14 @@
       "mediaVersion": "1789525613602",
       "imageBytes": 286146,
       "showBadge": true,
-      "showTitle": true
+      "showTitle": true,
+      "endedAt": "2026-11-01T13:57:09.428367+00:00"
     },
     {
       "id": "highlight-002",
       "number": 2,
-      "status": "draft",
-      "enabled": false,
+      "status": "active",
+      "enabled": true,
       "badge": "NEW",
       "showBadge": true,
       "title": "¡DESCUBRE LAS MICRO-PESADILLAS!",
@@ -44,7 +45,7 @@
       "image": "assets/home-highlights/002/image.webp",
       "video": "",
       "createdAt": "2026-11-01T13:55:50.213661+00:00",
-      "updatedAt": "2026-11-01T13:55:50.213661+00:00",
+      "updatedAt": "2026-11-01T13:57:09.041800+00:00",
       "mediaVersion": "1793541350588",
       "imageBytes": 515952
     }
