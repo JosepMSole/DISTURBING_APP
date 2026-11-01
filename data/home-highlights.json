@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-01T13:57:09.428367+00:00",
+  "updated": "2026-11-01T13:59:00.881169+00:00",
   "items": [
     {
       "id": "highlight-001",
@@ -34,7 +34,7 @@
       "badge": "NEW",
       "showBadge": true,
       "title": "¡DESCUBRE LAS MICRO-PESADILLAS!",
-      "showTitle": true,
+      "showTitle": false,
       "text": "",
       "targetType": "micros",
       "targetId": "",
@@ -45,7 +45,7 @@
       "image": "assets/home-highlights/002/image.webp",
       "video": "",
       "createdAt": "2026-11-01T13:55:50.213661+00:00",
-      "updatedAt": "2026-11-01T13:57:09.041800+00:00",
+      "updatedAt": "2026-11-01T13:59:00.496244+00:00",
       "mediaVersion": "1793541350588",
       "imageBytes": 515952
     }
