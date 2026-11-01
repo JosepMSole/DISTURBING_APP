@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated": "2026-11-01T14:11:27.048110+00:00",
+  "updated": "2026-11-01T14:17:58.387873+00:00",
   "items": [
     {
       "id": "highlight-001",
@@ -38,16 +38,16 @@
       "text": "",
       "targetType": "micros",
       "targetId": "",
-      "buttonText": "DESCUBRIR",
+      "buttonText": "ATRÉVETE",
       "url": "",
       "startAt": "",
       "endAt": "",
       "image": "assets/home-highlights/002/image.webp",
       "video": "",
       "createdAt": "2026-11-01T13:55:50.213661+00:00",
-      "updatedAt": "2026-11-01T14:11:26.731956+00:00",
-      "mediaVersion": "1793541350588",
-      "imageBytes": 515952
+      "updatedAt": "2026-11-01T14:17:58.014012+00:00",
+      "mediaVersion": "1793542678387",
+      "imageBytes": 514184
     }
   ]
 }
