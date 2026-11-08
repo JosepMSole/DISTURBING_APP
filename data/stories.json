@@ -1,7 +1,32 @@
 {
   "schema": 6,
-  "updated": "2026-11-01T15:19:41.797181+00:00",
+  "updated": "2026-11-08T12:48:45.895958+00:00",
   "stories": [
+    {
+      "id": "207",
+      "title": "El Umbral de la Atención",
+      "published": "2026-11-08",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/207.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/207-el-umbral-de-la-atencion-frame-4.jpg",
+      "data": "./data/stories/207.json",
+      "source": "https://www.disturbingstories.com/207.html",
+      "protected": false,
+      "book": "06",
+      "year": "2047",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "Todo parece normal hasta que Lucía empieza a fijarse en los detalles...",
+      "tabLabels": [
+        "LEER",
+        "TEASER"
+      ],
+      "features": [],
+      "contentRelations": [],
+      "publicTeaser": "https://www.youtube.com/embed/iUd3W-Lvl2Q",
+      "readTime": 16
+    },
     {
       "id": "169",
       "title": "La Leyenda del Payaso Alto",
