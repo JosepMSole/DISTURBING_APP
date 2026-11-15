@@ -65,7 +65,7 @@
       "description": "¡Cuidado con los límites oscuros!\n​\nCompleta estos puzzles, que cada vez serán más difíciles, y obtén un resumen de los hechos acontecidos hasta la fecha durante los eventos de Dark Limits...\n​\n...puede que puedas echar una miradita al futuro, mientras escuchas una banda sonora hecha a medida...\n\n¡Completa el desafío!",
       "descriptionHtml": "¡Cuidado con los <b>límites oscuros</b>!<br>​<br>Completa estos<b>&nbsp;puzzles</b>, que cada vez serán más difíciles, y obtén un resumen de los hechos acontecidos hasta la fecha durante los eventos de <b>Dark Limits</b>...<br>​<br>...puede que puedas echar una miradita al futuro, mientras escuchas una banda sonora hecha a medida...<br><br><b>¡Completa el desafío!</b>",
       "instructions": "",
-      "relatedStoryId": "",
+      "relatedStoryId": "287",
       "relatedSagaId": "dark-limits-prelude",
       "compatibility": "desktop_only",
       "orientation": "landscape",
@@ -108,7 +108,7 @@
       "tracking": "none"
     }
   ],
-  "updated": "2026-11-08T12:48:58.054665+00:00",
+  "updated": "2026-11-15T12:01:08.257934+00:00",
   "heroImage": "assets/games/games-header.webp",
   "heroVersion": "20260914030118",
   "heroText": "¿Te atreves a JUGAR en el universo\nde Disturbing Stories?\n\n¡Demuéstralo y entra en uno de los minigames!\n\nConsulta la compatibilidad antes de jugar",
