@@ -1,6 +1,6 @@
 {
   "schema": 6,
-  "updated": "2026-11-15T12:01:03.947453+00:00",
+  "updated": "2026-11-15T12:08:58.214401+00:00",
   "stories": [
     {
       "id": "287",
@@ -8,7 +8,7 @@
       "published": "2026-11-15",
       "access": "public",
       "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/287.jpg",
-      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/darklimits1-banner-1_orig.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/287-dark-limits-1-frame-9.jpg",
       "data": "./data/stories/287.json",
       "source": "https://www.disturbingstories.com/287.html",
       "protected": false,
@@ -27,7 +27,7 @@
         "extra"
       ],
       "contentRelations": [],
-      "publicTeaser": "https://www.youtube.com/watch?v=4H6wVU8N1og",
+      "publicTeaser": "https://www.youtube.com/embed/4H6wVU8N1og",
       "readTime": 12,
       "mediaAssetTags": [
         {
