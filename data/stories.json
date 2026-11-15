@@ -1,7 +1,35 @@
 {
   "schema": 6,
-  "updated": "2026-11-08T12:48:53.746058+00:00",
+  "updated": "2026-11-15T12:00:58.199628+00:00",
   "stories": [
+    {
+      "id": "287",
+      "title": "Dark Limits I: Los Portales",
+      "published": "2026-11-15",
+      "access": "public",
+      "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/287.jpg",
+      "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/darklimits1-banner-1_orig.jpg",
+      "data": "./data/stories/287.json",
+      "source": "https://www.disturbingstories.com/287.html",
+      "protected": false,
+      "book": "06",
+      "year": "2020",
+      "categories": [
+        "Ciencia Ficción"
+      ],
+      "synopsis": "A mediodía, algo en el cielo comienza a abrirse en distintos puntos del mundo…",
+      "tabLabels": [
+        "LEER",
+        "PRECUELA",
+        "TEASER"
+      ],
+      "features": [
+        "extra"
+      ],
+      "contentRelations": [],
+      "publicTeaser": "https://www.youtube.com/embed/4H6wVU8N1og",
+      "readTime": 12
+    },
     {
       "id": "207",
       "title": "El Umbral de la Atención",

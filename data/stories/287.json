@@ -1,0 +1,627 @@
+{
+  "schema": 7,
+  "id": "287",
+  "title": "Dark Limits I: Los Portales",
+  "published": "2026-11-15",
+  "access": "public",
+  "source": "https://www.disturbingstories.com/287.html",
+  "cover": "https://raw.githubusercontent.com/JosepMSole/300Advent/main/imagenes/287.jpg",
+  "featuredImage": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/darklimits1-banner-1_orig.jpg",
+  "book": "06",
+  "year": "2020",
+  "categories": [
+    "Ciencia Ficción"
+  ],
+  "synopsis": "A mediodía, algo en el cielo comienza a abrirse en distintos puntos del mundo…",
+  "tabs": {
+    "read": {
+      "label": "LEER",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/darklimits1-banner-1_orig.jpg",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "9 de noviembre de 2020"
+        },
+        {
+          "type": "p",
+          "text": "Barnaúl, Rusia — 11:45"
+        },
+        {
+          "type": "p",
+          "text": "En la radio de un puesto de vigilancia, sonó un aviso que hablaba de excavaciones ilegales junto a una antigua pista forestal. No parecía nada especialmente urgente…"
+        },
+        {
+          "type": "p",
+          "text": "El agente Mijaíl Orlov condujo despacio entre los abedules, mientras su compañera, Irina Volkov, repasaba por radio las coordenadas. La señal se entrecortaba, pero alcanzaron a escuchar que varios vecinos habían visto llegar a pie a unas treinta personas."
+        },
+        {
+          "type": "p",
+          "text": "Cuando ambos agentes llegaron, las encontraron alrededor de un hoyo. Hombres y mujeres de distintas edades cavaban con ramas, piedras o las manos desnudas. Algunos tenían las uñas arrancadas, otros sangraban por los dedos, pero ninguno parecía sentir dolor… parecían estar hipnotizados."
+        },
+        {
+          "type": "p",
+          "text": "—¡Policía rural! —gritó Mijaíl— ¡Aléjense del agujero!"
+        },
+        {
+          "type": "p",
+          "text": "Nadie respondió."
+        },
+        {
+          "type": "p",
+          "text": "Irina activó la cámara de su uniforme y se acercó unos pasos. Enseguida reconoció a una mujer que había aparecido en las noticias semanas atrás: era una de las personas que habían regresado después de permanecer desaparecidas durante un año."
+        },
+        {
+          "type": "p",
+          "text": "—Mijaíl…"
+        },
+        {
+          "type": "p",
+          "text": "Él también la reconoció. En ese momento, en el fondo del hoyo, un hombre levantó una pequeña caja metálica. El grupo se apartó con una coordinación perfecta y formó un círculo. Los agentes no sabían qué hacer, y mientras Mijaíl pedía refuerzos, Irina ordenaba que soltaran la caja."
+        },
+        {
+          "type": "p",
+          "text": "Entonces comenzaron a cantar, pero con una sucesión de vocales graves, mantenidas durante demasiado tiempo para salir de pulmones humanos… El sonido parecía penetrar en el suelo y regresar desde debajo de sus botas."
+        },
+        {
+          "type": "p",
+          "text": "Entonces, esa misteriosa caja se abrió, y un cristal verdoso quedó depositado en el centro."
+        },
+        {
+          "type": "p",
+          "text": "A las 11:58, el viento empezó a girar alrededor del claro."
+        },
+        {
+          "type": "p",
+          "text": "A las 11:59, la radio dejó de funcionar."
+        },
+        {
+          "type": "p",
+          "text": "A las 12:00, el cristal ascendió hacia el cielo y estalló sin producir fuego, ante la atónita mirada de los agentes."
+        },
+        {
+          "type": "p",
+          "text": "Sobre ellos apareció una abertura circular, inmensa y oscura, rodeada por relámpagos verdes. Mijaíl levantó la vista, incapaz de comprender si aquello estaba en las nubes o si las nubes habían sido arrancadas para dejarlo pasar. Entonces, las primeras sombras descendieron un minuto después. Irina creyó que eran aves… hasta que una de ellas abrió cuatro alas membranosas y se aferró al rostro de uno de los excavadores. El resto de las personas hipnotizadas sonrieron incluso mientras las criaturas caían sobre ellas..."
+        },
+        {
+          "type": "p",
+          "text": "Mijaíl disparaba mientras algo golpeaba el techo del vehículo. Otra cosa quebró el parabrisas, y en el asiento del conductor Irina pedía ayuda mientras la imagen de su cámara se sacudía entre disparos, chillidos y destellos verdes."
+        },
+        {
+          "type": "p",
+          "text": "La transmisión terminó con su voz:"
+        },
+        {
+          "type": "p",
+          "text": "—No es uno solo… ¡¡Hay más detrás!!"
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/darklimits1-banner-2_orig.jpg",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Centro Internacional de Vigilancia Naval — 11:45"
+        },
+        {
+          "type": "p",
+          "text": "La teniente Samira Haddad detectó la anomalía doce minutos antes de que llegara la primera alerta desde Rusia."
+        },
+        {
+          "type": "p",
+          "text": "Cuatro grupos de embarcaciones navegaban hacia puntos sin interés estratégico aparente. Había un buque oceanográfico cerca de Madagascar, dos submarinos al sur de Sicilia, un remolcador en el golfo de Omán y tres barcos sin identificación en medio del océano Índico."
+        },
+        {
+          "type": "p",
+          "text": "Todos habían alterado el rumbo al mismo tiempo."
+        },
+        {
+          "type": "p",
+          "text": "—Muestren su identificación —ordenó Samira desde la sala de control."
+        },
+        {
+          "type": "p",
+          "text": "Pero ninguno respondió…"
+        },
+        {
+          "type": "p",
+          "text": "Un dron de reconocimiento alcanzó al buque de Madagascar. Las imágenes que transmitía mostraban que en cubierta había una docena de personas inmóviles alrededor de una grúa. Observaban como del agua emergía una jaula metálica cubierta de algas con una caja en su interior..."
+        },
+        {
+          "type": "p",
+          "text": "Samira amplió la imagen."
+        },
+        {
+          "type": "p",
+          "text": "—¿Qué están sacando?"
+        },
+        {
+          "type": "p",
+          "text": "Nadie contestó porque, en ese instante, apareció sobre Barnaúl la primera lectura atmosférica imposible. Luego llegó Sicilia…"
+        },
+        {
+          "type": "p",
+          "text": "Las cámaras costeras mostraron un resplandor verde bajo el agua, y luego la superficie se levantó en una columna, como si algo gigantesco respirara desde el fondo, y entonces un círculo negro se abrió sobre el mar…"
+        },
+        {
+          "type": "p",
+          "text": "Treinta segundos después se activó el punto del golfo de Omán, aunque instantes después el portal del Índico también, que fue el último."
+        },
+        {
+          "type": "p",
+          "text": "Samira apenas podía seguir las pantallas, mientras las cuatro aberturas vomitaban criaturas voladoras que caían, recuperaban el control y se dispersaban en todas direcciones. Otras golpeaban el agua y desaparecían bajo la superficie."
+        },
+        {
+          "type": "p",
+          "text": "Los sonares comenzaron a llenarse de contactos."
+        },
+        {
+          "type": "p",
+          "text": "—¡Son cientos! —dijo un operador."
+        },
+        {
+          "type": "p",
+          "text": "—No… ¡Miles!"
+        },
+        {
+          "type": "p",
+          "text": "Un barco próximo a Madagascar informó de golpes en el casco, mientras otro pedía permiso para abrir fuego. Samira ordenó la retirada de todas las unidades civiles, pero algunas señales se movían más rápido que cualquier embarcación conocida. En el mapa, los puntos rojos rodearon a los barcos y después se quedaron quietos."
+        },
+        {
+          "type": "p",
+          "text": "Luego, uno por uno, los transpondedores se apagaron, y entonces el sonar del golfo de Omán detectó una masa debajo de un destructor… No era una agrupación de criaturas, sino que era un único cuerpo ascendiendo desde las profundidades."
+        },
+        {
+          "type": "p",
+          "text": "—Profundidad, doscientos metros —informó el operador—. Ciento cincuenta. Cien…"
+        },
+        {
+          "type": "p",
+          "text": "El destructor intentó virar, mientras la lectura ocupaba ya toda la pantalla, hasta que a cincuenta metros les llegó el final ante ese abrumador ser…"
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/darklimits1-banner-3_orig.jpg",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Cuo Rikong, China — 12:07"
+        },
+        {
+          "type": "p",
+          "text": "Cuando Lin Wei recibió el primer aviso, la central habló de animales salvajes."
+        },
+        {
+          "type": "p",
+          "text": "Condujo la ambulancia hasta una avenida cubierta de vehículos detenidos. Las puertas estaban abiertas, los motores seguían encendidos y decenas de personas corrían hacia cualquier lugar que pareciera cerrado."
+        },
+        {
+          "type": "p",
+          "text": "Lin bajó junto a su compañero hacia un hombre que yacía contra una farola, con una herida profunda en el hombro."
+        },
+        {
+          "type": "p",
+          "text": "—¿Qué le ha atacado? —preguntó."
+        },
+        {
+          "type": "p",
+          "text": "El hombre señaló hacia arriba."
+        },
+        {
+          "type": "p",
+          "text": "Sobre los edificios se extendía otro portal, y de su interior caían criaturas del tamaño de perros, insectos con caparazones translúcidos y seres delgados que aterrizaban sobre dos extremidades antes de impulsarse con otras cuatro."
+        },
+        {
+          "type": "p",
+          "text": "No formaban un ejército ni seguían una dirección única. Atacaban, huían, se perseguían entre ellas o destrozaban cuanto encontraban a su paso. Eran el caos…"
+        },
+        {
+          "type": "p",
+          "text": "Lin intentó arrastrar al herido hacia la ambulancia, pero un animal cubierto de placas negras golpeó el lateral del vehículo. Otro se lanzó contra una motocicleta y empezó a morder el motor caliente."
+        },
+        {
+          "type": "p",
+          "text": "Por la radio llegaron avisos de Rusia, Madagascar, Italia y Sudáfrica. Después, la frecuencia quedó saturada."
+        },
+        {
+          "type": "p",
+          "text": "—Esto está ocurriendo en todas partes —murmuró su compañero."
+        },
+        {
+          "type": "p",
+          "text": "En ese momento, una criatura se detuvo frente a ellos. No tenía ojos visibles, pero inclinó la cabeza como si escuchara sus respiraciones. Lin, aterrorizada, dejó de moverse, y en ese instante, cerca de allí, alguien gritó. En un breve instante, el ser salió disparado hacia el sonido, y pudieron subir a la ambulancia... aunque no conseguirían llegar muy lejos…"
+        },
+        {
+          "type": "p",
+          "text": "Base Concordia, Antártida — 12:31"
+        },
+        {
+          "type": "p",
+          "text": "La doctora Élodie Martel escuchó los golpes antes de recibir el mensaje de emergencia."
+        },
+        {
+          "type": "p",
+          "text": "Cerca de allí, un vehículo regresaba desde una estación meteorológica exterior. Detrás de él avanzaban cinco monstruosidades bajas y rápidas, apenas visibles entre el hielo levantado por el viento."
+        },
+        {
+          "type": "p",
+          "text": "Tras una frenética persecución, los ocupantes lograron entrar en la base… pero las criaturas también…"
+        },
+        {
+          "type": "p",
+          "text": "Élodie cerró una compuerta y apagó las luces del módulo científico. Otras nueve personas se escondieron allí con ella, pero nadie hablaba y la tensión se podía cortar en el aire. Instantes después, en el pasillo, algo empezó a arañar las paredes con una lentitud deliberada."
+        },
+        {
+          "type": "p",
+          "text": "La radio interna transmitió una voz:"
+        },
+        {
+          "type": "p",
+          "text": "—No abráis. Están usando los conductos."
+        },
+        {
+          "type": "p",
+          "text": "Después se oyó un golpe, una respiración cortada y silencio."
+        },
+        {
+          "type": "p",
+          "text": "El frío empezó a entrar por una grieta en el momento en que Élodie comprendió que las criaturas no necesitaban derribar las puertas: podían esperar a que la propia Antártida hiciera el trabajo…"
+        },
+        {
+          "type": "p",
+          "text": "Sobre el techo sonaron pasos… demasiados pasos… Y lamentablemente, la última señal de Concordia fue un mensaje incompleto enviado a las 12:46:"
+        },
+        {
+          "type": "p",
+          "text": "“No vienen del hielo, ¡han caído del cielo! Hay algo…” – y aquí el audio se cortaba…"
+        },
+        {
+          "type": "p",
+          "text": "Nuwerus, Sudáfrica — 12:53"
+        },
+        {
+          "type": "p",
+          "text": "El sargento Abel Jacobs llevaba casi una hora evacuando viviendas cuando las criaturas pequeñas comenzaron a dispersarse."
+        },
+        {
+          "type": "p",
+          "text": "Durante unos minutos, la calle quedó vacía, y algunos vecinos salieron de sus escondites. Una mujer preguntó si había terminado, pero cuando Abel iba a responder el portal emitió un sonido grave, parecido al crujido de una montaña, pero con un eco monumental."
+        },
+        {
+          "type": "p",
+          "text": "La abertura se deformó, como si algo empujara desde el otro lado."
+        },
+        {
+          "type": "p",
+          "text": "Primero apareció una extremidad cubierta de espinas. Después, una cabeza sin cuello y un torso demasiado ancho para atravesar el círculo. Entonces, el borde del portal se expandió durante unos segundos para permitir su paso, y Abel olvidó la radio, las órdenes… todo... Solo pudo mirar cómo la criatura apoyaba una mano gigantesca en el suelo y empezaba a arrastrar el resto de su cuerpo hacia nuestro mundo."
+        },
+        {
+          "type": "p",
+          "text": "La primera pisada fue de tal magnitud que hizo caer todas las ventanas de esa calle…"
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/darklimits1-banner-4_orig.jpg",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Mejillones, Chile — 13:18"
+        },
+        {
+          "type": "p",
+          "text": "Tomás Leiva estaba a cuarenta metros de altura cuando el gigante terminó de salir."
+        },
+        {
+          "type": "p",
+          "text": "Desde la cabina de la grúa portuaria vio cómo la criatura se incorporaba junto a la costa. El agua le llegaba por debajo de las rodillas, y los barcos parecían trozos de madera alrededor de sus piernas."
+        },
+        {
+          "type": "p",
+          "text": "Tenía la piel oscura, surcada por grietas rojizas, y una espalda cubierta de estructuras semejantes a huesos exteriores. Cada movimiento desplazaba el aire con tanta fuerza que las lonas del puerto volaban como hojas."
+        },
+        {
+          "type": "p",
+          "text": "Tomás intentó bajar, pero la escalera vibraba bajo sus manos. A medio camino, el gigante golpeó un depósito de combustible, y la explosión iluminó su cuerpo entero, aunque la criatura ni siquiera se volvió. Caminó hacia la zona industrial, aplastando tuberías, almacenes y vehículos sin mostrar interés por nada concreto."
+        },
+        {
+          "type": "p",
+          "text": "No parecía buscar personas… y eso resultaba peor…"
+        },
+        {
+          "type": "p",
+          "text": "Tomás llegó al suelo cuando una de las patas del gigante derribó la grúa. Corrió sin mirar atrás, perseguido por un estruendo donde no podía distinguir entre metal, edificios o huesos."
+        },
+        {
+          "type": "p",
+          "text": "Durante las horas siguientes, las imágenes de Mejillones recorrieron el mundo: fueron las primeras en mostrar con claridad que las criaturas grandes no eran simples animales aumentados… eran otra escala de vida…"
+        },
+        {
+          "type": "p",
+          "text": "Bellavista, Belice — 17:42"
+        },
+        {
+          "type": "p",
+          "text": "La emisora de Elena Morales continuaba funcionando porque su generador estaba en el sótano."
+        },
+        {
+          "type": "p",
+          "text": "Desde primera hora de la tarde, su voz guiaba a quienes seguían atrapados: carreteras bloqueadas, refugios disponibles, zonas que debían evitar… y las llamadas entraban una tras otra."
+        },
+        {
+          "type": "p",
+          "text": "—Está cruzando el río —dijo un hombre."
+        },
+        {
+          "type": "p",
+          "text": "—¿Hacia dónde se dirige?"
+        },
+        {
+          "type": "p",
+          "text": "—No lo sé. Dios mío, no lo sé."
+        },
+        {
+          "type": "p",
+          "text": "La comunicación se cortó."
+        },
+        {
+          "type": "p",
+          "text": "Otra mujer llamó desde una escuela, y después un conductor desde una gasolinera. Todos describían lo mismo: una figura enorme avanzando entre la vegetación, tan alta que su cabeza desaparecía detrás de las nubes bajas."
+        },
+        {
+          "type": "p",
+          "text": "Elena repitió las instrucciones oficiales, aunque ya no confiaba en ellas."
+        },
+        {
+          "type": "p",
+          "text": "—Permanezcan bajo techo. Aléjense de las ventanas."
+        },
+        {
+          "type": "p",
+          "text": "Las ventanas del estudio vibraron, y en ese momento Elena dejó de leer."
+        },
+        {
+          "type": "p",
+          "text": "Cada impacto llegaba unos segundos después que el anterior. Sobre la mesa, un vaso se desplazó hasta caer al suelo, y todas las luces parpadearon de forma terrorífica."
+        },
+        {
+          "type": "p",
+          "text": "—A quienes todavía puedan escucharme —dijo— ¡no salgan para mirar!"
+        },
+        {
+          "type": "p",
+          "text": "Se acercó a la ventana, y el gigante apareció detrás de los edificios. No caminaba deprisa, pero cada paso devoraba media calle. Su cuerpo estaba cubierto de cavidades que se abrían y cerraban como bocas respiratorias."
+        },
+        {
+          "type": "p",
+          "text": "Elena regresó al micrófono."
+        },
+        {
+          "type": "p",
+          "text": "—Está aquí… - dijo mientras la pared del estudio se inclinaba."
+        },
+        {
+          "type": "p",
+          "text": "La última emisión de Radio Bellavista duró diecisiete segundos más. Solo se escucharon el generador, un rugido lejano y la voz de Elena intentando mantener la calma hasta el final…"
+        },
+        {
+          "type": "p",
+          "text": "Agua Prieta, México — 21:16"
+        },
+        {
+          "type": "p",
+          "text": "La operadora Valeria Cruz seguía al gigante con un dron fronterizo."
+        },
+        {
+          "type": "p",
+          "text": "La criatura atravesaba el desierto a una velocidad impropia de su tamaño. Derribaba torres y levantaba nubes de polvo, pero no se desviaba hacia la ciudad."
+        },
+        {
+          "type": "p",
+          "text": "—Parece que huye —dijo Valeria."
+        },
+        {
+          "type": "p",
+          "text": "El comandante creyó que había oído mal."
+        },
+        {
+          "type": "p",
+          "text": "—Repita."
+        },
+        {
+          "type": "p",
+          "text": "Valeria amplió la imagen y vio como el gigante miraba hacia atrás. En ese momento, tropezó, cayó sobre una loma y se levantó con desesperación. En su espalda había heridas recientes, largas y profundas… parecía un peligroso animal asustado…"
+        },
+        {
+          "type": "p",
+          "text": "Valeria elevó el dron, y al principio solo vio el horizonte cubierto de polvo. Después apareció una silueta mucho más lejana, aunque tardó varios segundos en comprender que no era una montaña."
+        },
+        {
+          "type": "p",
+          "text": "La segunda criatura avanzaba detrás de la primera… pero no tenía nada que ver…"
+        },
+        {
+          "type": "p",
+          "text": "Su cabeza superaba las nubes, sus extremidades tocaban el suelo a kilómetros de distancia unas de otras, y cada paso deformaba la imagen del dron."
+        },
+        {
+          "type": "p",
+          "text": "—Necesito más altura —dijo Valeria."
+        },
+        {
+          "type": "p",
+          "text": "—Ya está en el límite."
+        },
+        {
+          "type": "p",
+          "text": "El primer gigante llegó a las afueras de Agua Prieta y giró bruscamente, buscando otra ruta. La criatura mayor continuó acercándose sin acelerar, porque no tenía prisa."
+        },
+        {
+          "type": "p",
+          "text": "Valeria alejó la cámara hasta el máximo… pero, aun así, no consiguió encuadrarla entera…"
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/darklimits1-banner-5_orig.jpg",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "Anchorage, Alaska — 23:00"
+        },
+        {
+          "type": "p",
+          "text": "El capitán Daniel Brooks llevaba once horas observando morir la ciudad desde la azotea de un hospital."
+        },
+        {
+          "type": "p",
+          "text": "Una criatura alada descendió hacia un grupo de soldados cercano y todos levantaron las armas. Entonces, inexplicablemente, el animal se detuvo en el aire, giró la cabeza hacia el portal, y luego se marchó."
+        },
+        {
+          "type": "p",
+          "text": "En las calles ocurrió lo mismo: seres que perseguían supervivientes abandonaron la caza, y otros salieron de edificios, túneles y vehículos destrozados para avanzar en una única dirección."
+        },
+        {
+          "type": "p",
+          "text": "—¡No disparen! —ordenó Daniel—. ¡Que nadie dispare!"
+        },
+        {
+          "type": "p",
+          "text": "Los informes comenzaron a llegar desde otros continentes: las criaturas acuáticas regresaban a los puntos donde se habían abierto los portales marítimos, los gigantes interrumpían su marcha, e incluso el ser gigantesco que había cruzado el desierto mexicano había cambiado de rumbo."
+        },
+        {
+          "type": "p",
+          "text": "Nadie sabía si se retiraban o si acudían a una llamada…"
+        },
+        {
+          "type": "p",
+          "text": "Durante los siguientes cincuenta minutos, Anchorage contempló una procesión imposible. Animales pequeños, depredadores ciegos, criaturas heridas y formas que nadie había logrado clasificar cruzaron los portales sin atacar a quienes les observaban."
+        },
+        {
+          "type": "p",
+          "text": "El gigante apareció a las 23:48."
+        },
+        {
+          "type": "p",
+          "text": "Caminó entre las ruinas, se inclinó y desapareció al otro lado del portal."
+        },
+        {
+          "type": "p",
+          "text": "El círculo oscuro comenzó a reducir su tamaño… pero no fue el último…"
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/darklimits1-banner-6_orig.jpg",
+          "alt": "Foto",
+          "caption": ""
+        },
+        {
+          "type": "p",
+          "text": "10 de noviembre de 2020"
+        },
+        {
+          "type": "p",
+          "text": "La doctora Mara Cage, investigadora de Aura, llevaba toda la noche revisando grabaciones."
+        },
+        {
+          "type": "p",
+          "text": "En la pantalla principal, una criatura atravesaba el portal de Yugorsk con una mascarilla Aexternum entre sus manos. En otra, el gigante de Agua Prieta huía de algo todavía mayor. En una tercera, los seres acuáticos regresaban voluntariamente a las profundidades, buscando el portal por el que habían salido..."
+        },
+        {
+          "type": "p",
+          "text": "La comisión esperaba respuestas, pero Mara solo tenía una cronología."
+        },
+        {
+          "type": "p",
+          "text": "A las doce del mediodía se abrieron los portales. Durante once horas, las criaturas cruzaron, atacaron, exploraron o huyeron. A las once de la noche comenzaron a retirarse, y a medianoche, todas las aberturas desaparecieron."
+        },
+        {
+          "type": "p",
+          "text": "Las balizas de los portales habían sido activadas por los usuarios desaparecidos de las Aexternum, convertidos en herramientas de una voluntad externa aun por esclarecer. El único superviviente interrogado había repetido hasta morir una misma frase:"
+        },
+        {
+          "type": "p",
+          "text": "—El Advenimiento… están aquí…"
+        },
+        {
+          "type": "p",
+          "text": "Pero nadie sabía qué significaba."
+        },
+        {
+          "type": "p",
+          "text": "No habían ocupado ciudades, ni habían enviado mensajes, ni habían exigido recursos ni intentaron conservar territorio. Algunas criaturas cazaron, otras destruyeron, otras parecían escapar de seres mayores… una situación totalmente caótica…"
+        },
+        {
+          "type": "p",
+          "text": "Quizá aquello no había sido una invasión… quizá los portales eran rutas, y la Tierra solo había quedado en medio…"
+        },
+        {
+          "type": "p",
+          "text": "En ese momento, el presidente de la comisión cerró la carpeta."
+        },
+        {
+          "type": "p",
+          "text": "—Doctora Cage, después de todo lo que ha visto, responda a una sola pregunta."
+        },
+        {
+          "type": "p",
+          "text": "Mara miró la imagen congelada de la última criatura."
+        },
+        {
+          "type": "p",
+          "text": "—¿Qué querían?"
+        },
+        {
+          "type": "p",
+          "text": "Pero nadie contestó… porque quizás el caos no había sido el ataque… quizás solo había sido una distracción…"
+        },
+        {
+          "type": "image",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/published/continuara.png?1791764409",
+          "alt": "Foto",
+          "caption": ""
+        }
+      ]
+    },
+    "precuela": {
+      "label": "PRECUELA",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Descubre 4 stories que narran varios puntos de vista distintos sobre los hechos que has leído en \"Los Portales\""
+        },
+        {
+          "type": "p",
+          "text": "Accede a la saga del Preludio de Dark Limits:"
+        },
+        {
+          "type": "image_link",
+          "src": "https://www.disturbingstories.com/uploads/5/3/5/9/53592043/dark-limits-prelude-4_orig.jpg",
+          "href": "https://www.disturbingstories.com/dark-limits-prelude.html",
+          "alt": "Foto",
+          "caption": ""
+        }
+      ]
+    },
+    "teaser": {
+      "label": "TEASER",
+      "blocks": [
+        {
+          "type": "iframe",
+          "src": "https://www.youtube.com/embed/4H6wVU8N1og",
+          "title": "Teaser"
+        }
+      ]
+    }
+  }
+}
